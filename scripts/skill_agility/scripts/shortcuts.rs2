@@ -1,4 +1,4 @@
-[oploc1,loc_1947] 
+[oploc1,loc_1947]
 if (map_members = ^false) {
     mes(^mes_members_feature);
     return;
