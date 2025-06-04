@@ -347,3 +347,23 @@ scope=perm
 
 [ring_of_forging]
 scope=perm
+
+[varp_295]
+
+[varp_296]
+
+[varp_297]
+
+[varp_298]
+transmit=yes
+
+[elemental_workshop_bits]
+scope=perm
+
+[sa_energy]
+scope=perm
+transmit=yes
+
+[sa_enabled]
+type=boolean
+transmit=yes
