@@ -10,7 +10,7 @@ anim(human_push, 0);
 mes("You attempt to push the boulder out of the way.");
 
 if(%legends_progress >= ^legends_defeated_nezikchened_water) {
-    if(npc_coord ! %npc_start_coord) {
+    if(npc_coord ! npc_startcoord) {
         mes("This boulder has already");
         mes("been pushed as far as it can go.");
         return;
@@ -76,4 +76,4 @@ if (last_useitem = goldbowlbless_empty) {
 }
 
 [ai_queue10,legends_boulder]
-npc_walk(%npc_start_coord);
+npc_walk(npc_startcoord);
