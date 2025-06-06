@@ -1,6 +1,7 @@
 [opheld1,old_journal]
 // We will use the elements for the "books" here so we dont have to use up an extra var
 // https://youtu.be/ya7Cp845W_M?si=cIgwgRCjeDL3AB4M&t=227
+p_stopaction;
 mes("The journal is old and covered in dust...");
 p_delay(2);
 mes("inside are several chapters...");
