@@ -186,7 +186,8 @@ mes("You're outnumbered by all the guards.");
 p_delay(2);
 mes("They manhandle you into a cell.");
 p_delay(2);
-p_teleport(^desertrescue_prison_coord);
+if(inzone(0_51_147_0_0, 0_51_147_63_63, coord) = true) p_teleport(^desertrescue_underground_prison_coord);
+else p_teleport(^desertrescue_prison_coord);
 
 [oploc2,loc_2683] // RSC, this is completely different in osrs/post 2006
 ~mesbox("You search the window.");
