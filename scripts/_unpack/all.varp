@@ -365,5 +365,4 @@ scope=perm
 transmit=yes
 
 [sa_enabled]
-type=boolean
 transmit=yes

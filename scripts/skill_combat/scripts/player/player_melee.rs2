@@ -15,6 +15,10 @@ if (npc_stat(hitpoints) = 0) {
     return; // this means the npc is not avail to fight i.e dead
 }
 
+if(%sa_enabled = ^true) {
+    @player_melee_sa;
+}
+
 // check hit, give combat xp
 def_int $damage = 0;
 if (~player_npc_hit_roll(%damagetype) = true) {
@@ -57,3 +61,12 @@ if ($weapon = null) {
 }
 
 p_opnpc(2);
+
+
+[label,player_melee_sa]
+switch_obj(inv_getobj(worn, ^wearpos_rhand)) {
+    case dragon_longsword : ~pvm_dragon_longsword_sa;
+    case dragon_dagger : ~pvm_dragon_dagger_sa;
+    case dragon_mace : ~pvm_dragon_mace_sa;
+}
+%sa_enabled = ^false;

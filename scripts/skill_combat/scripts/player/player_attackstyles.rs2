@@ -101,6 +101,9 @@ if ($previous = null | $obj = null | oc_category($previous) ! oc_category($obj))
     // osrs keeps track of selected per category
     ~player_autocast_reset;
 }
+if(%sa_enabled = ^true) {
+    %sa_enabled = ^false;
+}
 if (~inzone_coord_pair_table(gnomeball_zones, coord) = true) {
     if_settab(gnomeball, 0);
     return;
@@ -116,10 +119,19 @@ switch_category (oc_category($obj)) {
     case weapon_blunt, flowers : ~weapon_category_tab_attack(combat_blunt:preview, combat_blunt:name, combat_blunt, $obj);
     case weapon_pickaxe : ~weapon_category_tab_attack(combat_pickaxe:preview, combat_pickaxe:name, combat_pickaxe, $obj);
     case weapon_scythe : ~weapon_category_tab_attack(combat_scythe:preview, combat_scythe:name, combat_scythe, $obj);
-    case weapon_slash : ~weapon_category_tab_attack(combat_hacksword:preview, combat_hacksword:name, combat_hacksword, $obj);
+    case weapon_slash : 
+        if($obj = excalibur | $obj = dragon_longsword) if_sethide(combat_hacksword:specbar, false);
+        else if_sethide(combat_hacksword:specbar, true);
+        ~weapon_category_tab_attack(combat_hacksword:preview, combat_hacksword:name, combat_hacksword, $obj);
     case weapon_spear : ~weapon_category_tab_attack(combat_spear:preview, combat_spear:name, combat_spear, $obj);
-    case weapon_spiked : ~weapon_category_tab_attack(combat_spiked:preview, combat_spiked:name, combat_spiked, $obj);
-    case weapon_stab : ~weapon_category_tab_attack(combat_stabsword:preview, combat_stabsword:name, combat_stabsword, $obj);
+    case weapon_spiked : 
+        if($obj = dragon_mace) if_sethide(combat_spiked:specbar, false);
+        else if_sethide(combat_spiked:specbar, true);
+        ~weapon_category_tab_attack(combat_spiked:preview, combat_spiked:name, combat_spiked, $obj);
+    case weapon_stab : 
+        if($obj = dragon_dagger) if_sethide(combat_stabsword:specbar, false);
+        else if_sethide(combat_hacksword:specbar, true);
+        ~weapon_category_tab_attack(combat_stabsword:preview, combat_stabsword:name, combat_stabsword, $obj);
     // ranged
     case weapon_bow : ~weapon_category_tab_attack(combat_bow:preview, combat_bow:name, combat_bow, $obj);
     case weapon_crossbow : ~weapon_category_tab_attack(combat_crossbow:preview, combat_crossbow:name, combat_crossbow, $obj);

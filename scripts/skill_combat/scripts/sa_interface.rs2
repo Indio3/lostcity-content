@@ -1,0 +1,21 @@
+[if_button,combat_hacksword:specbar_toggle]
+if(p_finduid(uid) = false) return;
+switch_obj(inv_getobj(worn, ^wearpos_rhand)) {
+    case excalibur :
+        if(%sa_energy < 1000) {
+            mes("not enough energy");
+        }
+        %sa_energy = sub(%sa_energy, 1000);
+        say("For Camelot!");
+        anim(seq_1057, 0);
+        spotanim_pl(spotanim_247, 0, 0);
+        sound_synth(sanctuary, 0, 0);
+        stat_boost(defence, 8, 0);
+    case default : %sa_enabled = togglebit(%sa_enabled, 0);
+}
+
+[if_button,combat_stabsword:specbar_toggle]
+if(p_finduid(uid) = true) %sa_enabled = togglebit(%sa_enabled, 0);
+
+[if_button,combat_spiked:specbar_toggle]
+if(p_finduid(uid) = true) %sa_enabled = togglebit(%sa_enabled, 0);
