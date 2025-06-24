@@ -113,7 +113,7 @@ if(stat_random(thieving, 111, 250) = false) {
     mes("You fail!");
     // you can get caught by guards first time in osrs, in rsc (at least openrsc) its always on 2nd attempt
     if ($attempts >= 2) {
-        if(.npc_find(coord, mercenary_1, 10, 0) = true | .npc_find(coord, mercenary_2, 10, 0) = true) {
+        if(.npc_find(coord, desertminingmercenary1, 10, 0) = true | .npc_find(coord, desertminingmercenary2, 10, 0) = true) {
             if_close;
             %desertrescue_map_mechanisms = setbit_range_toint(%desertrescue_map_mechanisms, 0, ^desertrescue_lock_attempts1, ^desertrescue_lock_attempts2);
             mes("A nearby guard spots you!");
