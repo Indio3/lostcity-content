@@ -1,7 +1,7 @@
-[spotanim_244]
+[elemental_shield_equip]
 model=model_166
 hasalpha=true
-anim=seq_1053
+anim=elemental_shield_appear
 
 [spotanim_245]
 model=model_3070_spotanim
