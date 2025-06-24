@@ -22,7 +22,7 @@ model=model_loc_3209
 name=Odd looking wall
 desc=A strange crack cuts into the wall.
 category=double_door_open_and_close_right
-param=next_loc_stage,loc_3392
+param=next_loc_stage,elemental_workshop_oddwall_r_open
 
 [elemental_workshop_oddwall_l]
 active=yes
@@ -31,15 +31,15 @@ model=model_loc_3211
 name=Odd looking wall
 desc=A strange crack cuts into the wall.
 category=double_door_open_and_close_left
-param=next_loc_stage,loc_3393
+param=next_loc_stage,elemental_workshop_oddwall_l_open
 
-[loc_3392]
+[elemental_workshop_oddwall_r_open]
 active=yes
 model=model_loc_3209
 name=Odd looking wall
 desc=A strange crack cuts into the wall.
 
-[loc_3393]
+[elemental_workshop_oddwall_l_open]
 active=yes
 model=model_loc_3211
 name=Odd looking wall
