@@ -262,7 +262,7 @@ if (~player_in_fire_octagram = true) {
 }
 ~mesbox("You see a white clad figure in the midst of the flames...");
 ~mesbox("You see the white robed figure inside the flaming octagram gesturing to you.");
-if (npc_find(coord, ungadulu, 10, 0) = true) {
+if (npc_find(coord, ungadulu_good, 10, 0) = true) {
     @ungadulu_no_closer;
 } else { // killed or possessed
     mes("The shaman isn't interested in you at the moment.");
@@ -499,7 +499,7 @@ p_teleport(0_43_145_58_34);
 p_delay(2);
 ~damage_self(8);
 
-[oploc1,_legends_boulder]
+[oploc1,_boulder_legends]
 def_obj $pickaxe = ~pickaxe_checker;
 if ($pickaxe = null) {
     // osrs
@@ -508,14 +508,14 @@ if ($pickaxe = null) {
     // this triggers if you are south of the first boulder, or interacting with either of the latter
     // two boulders from either side
     if(coordz(coord) < coordz(loc_coord) | loc_type = legends_boulder_2 | loc_type = legends_boulder_3) {
-        @legends_boulder_stuck;
+        @boulder_legends_stuck;
     }
     return;
 }
 if (stat(mining) < 52) {
     mes("You need a Mining level of 52 to mine your way through this rock.");
     if(coordz(coord) < coordz(loc_coord) | loc_type = legends_boulder_2 | loc_type = legends_boulder_3) {
-        @legends_boulder_stuck;
+        @boulder_legends_stuck;
     }
     return;
 }
@@ -550,7 +550,7 @@ else {
     stat_sub(mining, 1, 0);
 }
 
-[label,legends_boulder_stuck]
+[label,boulder_legends_stuck]
 // osrs wording
 ~mesbox("You seem to be stuck! You may be able to climb out, but it looks pretty dangerous. Would you like to try?");
 // rsc:
@@ -2065,46 +2065,3 @@ session_log(^log_adventure, "Quest complete: Legends Quest");
 // todo: older ref image?
 // https://storage.googleapis.com/tannerdino/images/legendscomplt.png
 ~send_quest_complete(questlist:legends, thtotempolegift, 250, ^legends_questpoints, "You have completed the\\nLegends Guild Quest!");
-
-// Debug
-[debugproc,lf]
-// legends fire
-if (p_finduid(uid) = true) {
-    p_telejump(0_43_145_32_51);
-}
-
-[debugproc,lgem]
-// legends gem puzzle
-if (p_finduid(uid) = true) {
-    p_telejump(0_43_145_12_16);
-}
-
-[debugproc,lb]
-// legends beach
-if (p_finduid(uid) = true) {
-    p_telejump(0_43_45_26_11);
-}
-
-[debugproc,lg]
-// legends guild
-if (p_finduid(uid) = true) {
-    p_telejump(0_42_52_40_38);
-}
-
-[debugproc,lw]
-// legends water
-if (p_finduid(uid) = true) {
-    p_telejump(0_44_45_23_36);
-}
-
-[debugproc,jf]
-// jungle forester
-if (p_finduid(uid) = true) {
-    p_telejump(^legends_gujuo_guide_coord);
-}
-
-[debugproc,lv]
-// viyeldi
-if (p_finduid(uid) = true) {
-    p_telejump(0_37_73_9_40);
-}
