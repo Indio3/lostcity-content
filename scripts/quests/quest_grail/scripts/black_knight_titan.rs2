@@ -17,6 +17,10 @@ if(finduid(%npc_aggressive_player) = true) {
 
 [queue,queue_defeat_titan](npc_uid $npc)
 if (npc_finduid($npc) = true) {
+    if(distance(coord, npc_coord) > 11) {
+        gosub(npc_death);
+        return;
+    }
     @defeat_titan;
 }
 
@@ -24,27 +28,21 @@ if (npc_finduid($npc) = true) {
 p_stopaction;
 // https://www.youtube.com/watch?v=KCjnsoBT0vA&t=97s
 if(inv_total(worn, excalibur) = 0) { // if this was queued we'll need to regain prot access
-    npc_statheal(hitpoints, 0, 100);
-    if(distance(coord, npc_coord) > 11) {
-        return;
-    }
     if(%grail_progress = ^grail_spoken_crone) {
         %grail_progress = ^grail_failed_defeat_titan;
     }
+    npc_statheal(hitpoints, 0, 100);
     mes("Maybe you need something more to beat the titan?");
     ~chatnpc("<p,angry>@red@Puny mortal...|@red@You cannot defeat me...");
     ~chatnpc("<p,angry>@red@I...|@red@Am...|@red@INVINCIBLE!!!");
 } else {
-    gosub(npc_death);
-    if(distance(coord, npc_coord) > 11) {
-        return;
-    }
     mes("Well done! You have defeated the Black Knight Titan!");
     def_coord $dest = movecoord(npc_coord, 1, 0, 0);
     if(coordx(coord) > coordx(npc_coord)) {
         $dest = movecoord(npc_coord, -1, 0, 0);
     }
     p_teleport($dest); // walking speed in osrs, can't do that here and match death timing
+    gosub(npc_death);
     obj_add(npc_coord, npc_param(death_drop), 1, ^lootdrop_duration);
     def_int $random = random(128);
     if ($random < 5) {
