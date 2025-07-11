@@ -18,8 +18,9 @@ if (.p_finduid(.uid) = false) {
     }
     return;
 }
+.p_stopaction;
 def_coord $end_coord = ~dragon_spear_push($dir, .coord);
-if ($end_coord ! .coord) {
+if ($end_coord ! .coord & lineofwalk(.coord, $end_coord)) {
     .p_teleport($end_coord);
 }
 
@@ -29,8 +30,9 @@ if ($end_coord ! .coord) {
 .p_delay(4);
 
 [queue,pvp_dragon_spear_push_west]
+p_stopaction;
 def_coord $end_coord = ~dragon_spear_push(^exact_west, coord);
-if ($end_coord ! coord) {
+if ($end_coord ! coord & lineofwalk(coord, $end_coord)) {
     p_teleport($end_coord);
 }
 spotanim_pl(stunned_shove, 96, 0);
@@ -39,8 +41,9 @@ queue(pvp_retaliate, 0, %pk_predator1);
 p_delay(4);
 
 [queue,pvp_dragon_spear_push_east]
+p_stopaction;
 def_coord $end_coord = ~dragon_spear_push(^exact_east, coord);
-if ($end_coord ! coord) {
+if ($end_coord ! coord & lineofwalk(coord, $end_coord)) {
     p_teleport($end_coord);
 }
 spotanim_pl(stunned_shove, 96, 0);
@@ -49,8 +52,9 @@ queue(pvp_retaliate, 0, %pk_predator1);
 p_delay(4);
 
 [queue,pvp_dragon_spear_push_north]
+p_stopaction;
 def_coord $end_coord = ~dragon_spear_push(^exact_north, coord);
-if ($end_coord ! coord) {
+if ($end_coord ! coord & lineofwalk(coord, $end_coord)) {
     p_teleport($end_coord);
 }
 spotanim_pl(stunned_shove, 96, 0);
@@ -59,8 +63,9 @@ queue(pvp_retaliate, 0, %pk_predator1);
 p_delay(4);
 
 [queue,pvp_dragon_spear_push_south]
+p_stopaction;
 def_coord $end_coord = ~dragon_spear_push(^exact_south, coord);
-if ($end_coord ! coord) {
+if ($end_coord ! coord & lineofwalk(coord, $end_coord)) {
     p_teleport($end_coord);
 }
 spotanim_pl(stunned_shove, 96, 0);

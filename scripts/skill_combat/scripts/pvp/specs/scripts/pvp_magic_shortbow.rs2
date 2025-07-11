@@ -25,7 +25,6 @@ def_int $duration = ~player_projectile(coord, .coord, .uid, sp_attack_glow_arrow
 ~ranged_dropammo_pvp($ammo, calc($duration / 30));
 ~ranged_dropammo_pvp($ammo, calc($duration / 30 + 1));
 ~pvp_magic_shortbow_spec_hit($ammo, $duration);
-p_delay(0);
 ~pvp_magic_shortbow_spec_hit($ammo, $duration);
 
 [proc,pvp_magic_shortbow_spec_hit](obj $ammo, int $delay)
