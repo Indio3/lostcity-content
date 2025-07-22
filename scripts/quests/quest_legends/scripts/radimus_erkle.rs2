@@ -118,6 +118,7 @@ if(string_length($skill_name) > 7) {
 
 [label,radimus_erkle_hand_in_totem]
 ~chatnpc("<p,happy>Well, it looks as if you have some interesting items there. Let's have a look at them!|@blu@--Sir Radimus sees the gilded totem pole.--");
+~mesbox("You show the totem pole to Sir Radimus.");
 // todo: mesanim check
 ~chatnpc("<p,neutral><text_gender("Sir", "Madam")>, this is truly amazing...");
 ~chatnpc("<p,neutral>That totem pole will take pride of place in the Legends Guild as a reminder of your quest to gain entry. And so that many other great adventurers can admire your bravery.");
