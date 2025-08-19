@@ -1,0 +1,215 @@
+[mm2_lab_wall_window_right]
+name=Large door
+desc=A sturdy wooden door.
+model=mm2_lab_wall_window_right
+active=yes
+op1=Open
+mirror=yes
+raiseobject=no
+category=door_right_closed
+param=next_loc_stage,mm2_lab_wall_join01
+
+[mm2_lab_wall_join01]
+name=Large door
+desc=A sturdy wooden door.
+model=mm2_lab_wall_join01
+active=yes
+op1=Close
+mirror=yes
+raiseobject=no
+category=door_right_opened
+param=next_loc_stage,mm2_lab_wall_window_right
+
+[mm2_lab_wall_join02]
+name=Large door
+desc=A sturdy wooden door.
+model=mm2_lab_wall_window_right
+active=yes
+op1=Open
+raiseobject=no
+category=door_left_closed
+param=next_loc_stage,bankdoor_r
+
+[bankdoor_r]
+name=Large door
+desc=A sturdy wooden door.
+model=mm2_lab_wall_join01
+active=yes
+op1=Close
+raiseobject=no
+category=door_left_opened
+param=next_loc_stage,mm2_lab_wall_join02
+
+[openbankdoor_l]
+name=Large door
+desc=A large double door.
+model=lefayeunopenabledoorl
+op1=Open
+raiseobject=no
+category=door_left_closed
+param=next_loc_stage,castledoor
+
+[castledoor]
+name=Large door
+desc=A large double door.
+model=lefayeunopenabledoorl
+op1=Close
+raiseobject=no
+category=door_left_opened
+param=next_loc_stage,openbankdoor_l
+
+[openthickpoordoor]
+name=Large door
+desc=A large double door.
+model=lefayeunopenabledoorl
+op1=Open
+mirror=yes
+raiseobject=no
+category=door_right_closed
+param=next_loc_stage,opencastledoor
+
+[opencastledoor]
+name=Large door
+desc=A large double door.
+model=lefayeunopenabledoorl
+op1=Close
+mirror=yes
+raiseobject=no
+category=door_right_opened
+param=next_loc_stage,openthickpoordoor
+
+[inactiveposhdoor]
+name=Door
+desc=Solid bars of iron.
+model=ctratgatea
+op1=Open
+active=yes
+blockrange=no
+raiseobject=no
+category=door_right_closed
+param=next_loc_stage,elfdoor
+param=open_sound,sound_332
+
+[elfdoor]
+name=Door
+desc=Solid bars of iron.
+model=ctratgatea
+op1=Close
+active=yes
+raiseobject=no
+category=door_right_opened
+param=next_loc_stage,inactiveposhdoor
+param=close_sound,sound_321
+
+[elfdooropen]
+name=Door
+desc=Solid bars of iron.
+model=ctratgatea
+op1=Open
+mirror=yes
+active=yes
+blockrange=no
+raiseobject=no
+category=door_left_closed
+param=next_loc_stage,inactiveelfdoor
+param=open_sound,sound_332
+
+[inactiveelfdoor]
+name=Door
+desc=Solid bars of iron.
+model=ctratgatea
+op1=Close
+mirror=yes
+active=yes
+raiseobject=no
+category=door_left_opened
+param=next_loc_stage,elfdooropen
+param=close_sound,sound_321
+
+[inactivesecretdoor]
+name=Gate
+desc=A wrought iron gate.
+model=ikov_mendedleverdoorl
+op1=Open
+active=yes
+blockrange=no
+raiseobject=no
+category=door_left_closed
+param=next_loc_stage,fencegate_r
+param=open_sound,sound_332
+
+[secretdoor2]
+name=Gate
+desc=A wrought iron gate.
+model=ikov_mendedleverdoorl
+op1=Open
+mirror=yes
+active=yes
+blockrange=no
+raiseobject=no
+category=door_right_closed
+param=next_loc_stage,farming_fencegate_l
+param=open_sound,sound_332
+
+[fencegate_r]
+name=Gate
+desc=A wrought iron gate.
+model=ikov_mendedleverdoorl
+op1=Close
+active=yes
+raiseobject=no
+category=door_left_opened
+param=next_loc_stage,portcullis_2r
+param=close_sound,sound_321
+
+[farming_fencegate_l]
+name=Gate
+desc=A wrought iron gate.
+model=ikov_mendedleverdoorl
+op1=Close
+mirror=yes
+active=yes
+raiseobject=no
+category=door_right_opened
+param=next_loc_stage,fencegate_l
+param=close_sound,sound_321
+
+[portcullis_2r]
+name=Gate
+desc=A wrought iron gate.
+model=ikov_mendedleverdoorl
+op1=Open
+active=yes
+blockrange=no
+raiseobject=no
+category=door_left_closed
+param=next_loc_stage,fencegate_r
+param=open_sound,sound_332
+
+[fencegate_l]
+name=Gate
+desc=A wrought iron gate.
+model=ikov_mendedleverdoorl
+op1=Open
+mirror=yes
+active=yes
+blockrange=no
+raiseobject=no
+category=door_right_closed
+param=next_loc_stage,farming_fencegate_l
+param=open_sound,sound_332
+
+[inaclefayeunopenabledoorl]
+name=Large door
+desc=Securely fastened shut.
+model=lefayeunopenabledoorl
+active=yes
+op1=Open
+
+[inaclefayeunopenabledoorr]
+name=Large door
+desc=Securely fastened shut.
+model=lefayeunopenabledoorl
+active=yes
+mirror=yes
+op1=Open
