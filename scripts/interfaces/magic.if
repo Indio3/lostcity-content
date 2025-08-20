@@ -1,3 +1,5 @@
+type=overlay
+
 [com_42]
 type=layer
 x=3
