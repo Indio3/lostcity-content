@@ -101,7 +101,7 @@ if(%lost_tribe_quest < 7) {
 
 [if_button,controls:com_78] 
 if(%emote_terrified = ^false) {
-   ~mesbox("This emote can be by doing a Halloween seasonal event."); // TODO: confirm for 2005-2006
+   ~mesbox("This emote can be unlocked by doing a Halloween seasonal event."); // TODO: confirm for 2005-2006
    return;
 }
 @controls_emote(terrified_emote);
@@ -120,7 +120,7 @@ if(%emote_zombie_dance = ^false) {
 
 [if_button,controls:com_86]
 if(%emote_bunny_hop = ^false) {
-   ~mesbox("This emote can be by doing an Easter seasonal event."); // TODO: confirm for 2005-2006
+   ~mesbox("This emote can be unlocked by doing an Easter seasonal event."); // TODO: confirm for 2005-2006
    return;
 }
 @controls_emote(easter07_flapping_emote);

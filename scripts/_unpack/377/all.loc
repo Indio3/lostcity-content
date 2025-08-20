@@ -16356,26 +16356,6 @@ desc=It's a sack!
 model=percy_sacks
 op1=Search
 
-[loc_2213]
-name=Bank booth
-desc=The bank teller will serve you from here.
-model=loc_2213
-op1=Use
-op2=Use-quickly
-blockrange=no
-
-[loc_2214]
-name=Bank booth
-desc=This booth is for private customers only.
-model=loc_2214
-blockrange=no
-
-[loc_2215]
-name=Closed bank booth
-desc=This booth is closed.
-model=loc_2215
-blockrange=no
-
 [shilo_brokencart]
 name=Broken cart
 desc=This looks like it's being used to block entrance to the village.
