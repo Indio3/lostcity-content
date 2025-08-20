@@ -2,6 +2,9 @@
 return (true);
 
 [if_button,logout:com_8]
+if_close;
 if (p_finduid(uid) = true) {
+    // TODO: re add logout checks
     p_logout;
 }
+
