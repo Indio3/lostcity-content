@@ -63,12 +63,81 @@ if (p_finduid(uid) = true) {
 [if_button,controls:com_23] @controls_emote(emote_cheer);
 [if_button,controls:com_24] @controls_emote(emote_clap);
 
+[if_button,controls:com_41]
+if(%emote_glasswall = ^false) {
+    @lockemote_mime_event;
+}
+@controls_emote(emote_glass_wall);
+
+[if_button,controls:com_42]
+if(%emote_glassbox = ^false) {
+    @lockemote_mime_event;
+}
+@controls_emote(emote_glass_box);
+
+[if_button,controls:com_43]
+if(%emote_climbrope = ^false) {
+    @lockemote_mime_event;
+}
+@controls_emote(emote_climbing_rope);
+
+[if_button,controls:com_44]
+if(%emote_lean = ^false) {
+    @lockemote_mime_event;
+}
+@controls_emote(emote_mime_lean);
+
+[if_button,controls:com_76]
+if(%lost_tribe_quest < 7) {
+    @lockemote_lost_tribe;
+}
+@controls_emote(human_cave_goblin_bow);
+
+[if_button,controls:com_77]
+if(%lost_tribe_quest < 7) {
+    @lockemote_lost_tribe;
+}
+@controls_emote(human_cave_goblin_dance);
+
+[if_button,controls:com_78] 
+if(%emote_terrified = ^false) {
+   ~mesbox("This emote can be by doing a Halloween seasonal event."); // TODO: confirm for 2005-2006
+   return;
+}
+@controls_emote(terrified_emote);
+
+[if_button,controls:com_84]
+if(%emote_zombie_walk = ^false) {
+    @lockemote_gravedigger_event;
+}
+@controls_emote(zombie_walk_emote);
+
+[if_button,controls:com_85]
+if(%emote_zombie_dance = ^false) {
+    @lockemote_gravedigger_event;
+}
+@controls_emote(zombie_dance);
+
+[if_button,controls:com_86]
+if(%emote_bunny_hop = ^false) {
+   ~mesbox("This emote can be by doing an Easter seasonal event."); // TODO: confirm for 2005-2006
+   return;
+}
+@controls_emote(easter07_flapping_emote);
+
 [label,controls_emote](seq $anim)
 if_close;
 if (p_finduid(uid) = false) {
-    // mes("You're already doing an emote!");
     return;
 }
 p_stopaction;
 anim($anim, 20);
-// p_delay(~seqlength20ms($anim));
+
+[label,lockemote_mime_event]
+~mesbox("This emote can be unlocked during the mime random event.");
+
+[label,lockemote_gravedigger_event]
+~mesbox("This emote can be unlocked during the gravedigger random event.");
+
+[label,lockemote_lost_tribe]
+~mesbox("This emote can be unlocked during the Lost Tribe quest.");

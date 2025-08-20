@@ -369,30 +369,6 @@ transmit=yes
 
 [elenaquest]
 
-[option_brightness]
-transmit=yes
-clientcode=1
-
-[option_jingles]
-transmit=yes
-clientcode=2
-
-[option_music]
-transmit=yes
-clientcode=3
-
-[option_sounds]
-transmit=yes
-clientcode=4
-
-[option_mouse]
-transmit=yes
-clientcode=5
-
-[option_chat]
-transmit=yes
-clientcode=6
-
 [option_nodef]
 transmit=yes
 
@@ -635,10 +611,6 @@ transmit=yes
 
 [dueloptions]
 transmit=yes
-
-[option_pm]
-transmit=yes
-clientcode=8
 
 [varp_288]
 
@@ -952,9 +924,6 @@ transmit=yes
 transmit=yes
 
 [varp_426]
-
-[option_aid]
-transmit=yes
 
 [varp_428]
 
