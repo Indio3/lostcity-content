@@ -1,19 +1,19 @@
 [mcannoncrate]
 name=Crate
 desc=I wonder what's inside.
-model=mcannoncrate
+model=crate
 op1=Search
 
 [mcannoncrateboy]
 name=Crate
 desc=I wonder what's inside.
-model=mcannoncrate
+model=crate
 op1=Search
 
 [mcannoncave]
 name=Cave Entrance
 desc=Looks and smells like a place where goblins live.
-model=mcannoncave
+model=caveentrance
 width=4
 length=2
 forceapproach=south
@@ -22,14 +22,14 @@ op1=Enter
 [mcannondoor]
 name=Door
 desc=The door is closed.
-model=mcannondoor
+model=door
 active=yes
 op1=Open
 
 [mcannondoor1]
 name=Door
 desc=The door is closed.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=door
 recol2s=6342
@@ -86,7 +86,7 @@ blockwalk=no
 [mcannonladder2]
 name=Ladder
 desc=I can climb down this.
-model=mcannonladder2
+model=ladder2
 active=yes
 op1=Climb-down
 mapscene=7
@@ -94,7 +94,7 @@ mapscene=7
 [mcannonladder]
 name=Ladder
 desc=I can climb up this.
-model=mcannonladder
+model=ladder
 active=yes
 op1=Climb-up
 mapscene=7
@@ -102,7 +102,7 @@ mapscene=7
 [mcannonrock]
 name=Rock pile
 desc=A pile of rocks is blocking my path.
-model=mcannonrock
+model=rock2
 recol1s=6342
 recol1d=15749
 op1=Climb-over
@@ -110,7 +110,7 @@ op1=Climb-over
 [mcanmudpile]
 name=Mud pile
 desc=Mud caved in from above.
-model=mcanmudpile
+model=mudpile
 length=2
 shadow=no
 blockrange=no
@@ -120,7 +120,7 @@ op1=Climb-over
 [mcannonplain]
 name=Railing
 desc=Intended to keep the goblins away from the mines.
-model=mcannonplain
+model=railing
 sharelight=yes
 hillskew=yes
 blockrange=no
@@ -129,7 +129,7 @@ op1=Inspect
 [mcannonrailing1]
 name=Railing
 desc=Intended to keep the goblins away from the mines.
-model=mcannonplain
+model=railing
 sharelight=yes
 hillskew=yes
 blockrange=no
@@ -138,7 +138,7 @@ op1=Inspect
 [mcannonrailing2]
 name=Railing
 desc=Intended to keep the goblins away from the mines.
-model=mcannonplain
+model=railing
 sharelight=yes
 hillskew=yes
 blockrange=no
@@ -147,7 +147,7 @@ op1=Inspect
 [mcannonrailing3]
 name=Railing
 desc=Intended to keep the goblins away from the mines.
-model=mcannonplain
+model=railing
 sharelight=yes
 hillskew=yes
 blockrange=no
@@ -156,7 +156,7 @@ op1=Inspect
 [mcannonrailing4]
 name=Railing
 desc=Intended to keep the goblins away from the mines.
-model=mcannonplain
+model=railing
 sharelight=yes
 hillskew=yes
 blockrange=no
@@ -165,7 +165,7 @@ op1=Inspect
 [mcannonrailing5]
 name=Railing
 desc=Intended to keep the goblins away from the mines.
-model=mcannonplain
+model=railing
 sharelight=yes
 hillskew=yes
 blockrange=no
@@ -174,7 +174,7 @@ op1=Inspect
 [mcannonrailing6]
 name=Railing
 desc=Intended to keep the goblins away from the mines.
-model=mcannonplain
+model=railing
 sharelight=yes
 hillskew=yes
 blockrange=no
@@ -204,7 +204,7 @@ op2=Open
 [merlinworkshop]
 name=Door
 desc=The door is shut.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=door2
 recol2s=6342
@@ -519,7 +519,7 @@ blockrange=no
 [jewellersdoor]
 name=Door
 desc=A fancy hole in the wall.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=door2
 recol2s=6342
@@ -530,7 +530,7 @@ op1=Open
 [jewellersladder]
 name=Ladder
 desc=A fancy hole in the ceiling.
-model=mcannonladder
+model=ladder
 active=yes
 op1=Climb-up
 mapscene=7
@@ -570,7 +570,7 @@ op2=Hide-in
 [merlincrate_wall]
 name=Crate wall
 desc=Surprisingly sturdy looking.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=elfwood
 recol2s=6342
@@ -582,7 +582,7 @@ op1=Climb-out
 [brimhaven_backdoor_entrance]
 name=Crate wall
 desc=Surprisingly sturdy looking.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=elfwood
 recol2s=6342
@@ -681,7 +681,7 @@ blockrange=no
 [fightarena_door1]
 name=Door
 desc=The door is closed.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=door
 recol2s=6342
@@ -692,7 +692,7 @@ op1=Open
 [fightarena_door2]
 name=Door
 desc=The door is closed.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=door
 recol2s=6342
@@ -759,7 +759,7 @@ op2=Search for traps
 [ikov_trapleverdoor]
 name=Door
 desc=The door is closed.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=door
 recol2s=6342
@@ -771,7 +771,7 @@ active=yes
 [ikov_firewarriordoor]
 name=Door
 desc=The door is closed.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=door
 recol2s=6342
@@ -842,7 +842,7 @@ active=yes
 [ikov_shinykeydoor]
 name=Door
 desc=The door is closed.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=door
 recol2s=6342
@@ -861,7 +861,7 @@ blockwalk=no
 [ikov_trapladder]
 name=Ladder
 desc=I can climb this.
-model=mcannonladder
+model=ladder
 active=yes
 op1=Climb-up
 mapscene=7
@@ -869,7 +869,7 @@ mapscene=7
 [ikov_luciendoor]
 name=Door
 desc=A sturdy door.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=elfdoor
 recol2s=6342
@@ -1627,7 +1627,7 @@ forceapproach=west
 [gnome_caveladder]
 name=Ladder
 desc=I can climb this.
-model=mcannonladder
+model=ladder
 active=yes
 op1=Climb-up
 mapscene=7
@@ -2605,7 +2605,7 @@ length=2
 [mudpile]
 name=Mudpile
 desc=A pile of something I hope is mud.
-model=mcanmudpile
+model=mudpile
 length=2
 
 [potato]
@@ -2967,7 +2967,7 @@ forceapproach=east
 [crate2]
 name=Crate
 desc=A wooden crate for storage.
-model=mcannoncrate
+model=crate
 op1=Search
 
 [crate3]
@@ -2989,7 +2989,7 @@ op1=Search
 [crate2_old]
 name=Crate
 desc=An old crate for storage.
-model=mcannoncrate
+model=crate
 retex1s=darkwood
 retex1d=wood2
 retex2s=elfwood
@@ -3290,7 +3290,7 @@ length=2
 op1=Open
 blockrange=no
 
-[deadman_safezone_indicator]
+[loc_399]
 name=Coffin
 desc=I see dead people.
 model=deadman_safezone_indicator
@@ -3631,7 +3631,8 @@ length=2
 mapscene=12
 blockrange=no
 
-[loc_443]
+// todo: name used from 244
+[boulder_group]
 model=loc_443
 width=2
 length=2
@@ -3683,40 +3684,44 @@ model=loc_449
 width=2
 length=4
 
-[loc_450]
+// todo: name used from 244
+[plainrock1]
 name=Rocks
 desc=Stoney!
-model=loc_450
+model=rock1
 op1=Mine
 op2=Prospect
 op3=hidden
 mapscene=12
 blockrange=no
 
-[loc_451]
+// todo: name used from 244
+[plainrock1_alt]
 name=Rocks
 desc=Stoney!
-model=mcannonrock
+model=rock2
 op1=Mine
 op2=Prospect
 op3=hidden
 mapscene=12
 blockrange=no
 
-[loc_452]
+// todo: name used from 244
+[plainrock2]
 name=Rocks
 desc=Stoney!
-model=mcannonrock
+model=rock2
 op1=Mine
 op2=Prospect
 op3=hidden
 mapscene=12
 blockrange=no
 
-[loc_453]
+// todo: name used from 244
+[plainrock3]
 name=Rocks
 desc=Stoney!
-model=loc_453
+model=rock3
 op1=Mine
 op2=Prospect
 op3=hidden
@@ -3726,7 +3731,7 @@ blockrange=no
 [loc_454]
 name=Cave rocks
 desc=Solid rock from the cave floor.
-model=mcannonrock
+model=rock2
 recol1s=6342
 recol1d=15749
 mapscene=12
@@ -3735,7 +3740,7 @@ blockrange=no
 [loc_455]
 name=Cave rocks
 desc=Solid rock from the cave floor.
-model=loc_453
+model=rock3
 recol1s=6342
 recol1d=15749
 mapscene=12
@@ -4098,7 +4103,8 @@ occlude=yes
 op1=Climb-down
 blockrange=no
 
-[loc_493]
+// todo: name used from 244
+[greatrunestone]
 model=loc_493
 width=5
 length=5
@@ -4106,28 +4112,32 @@ sharelight=yes
 occlude=yes
 active=no
 
-[loc_494]
+// todo: name used from 244
+[greatrunestone_mid]
 model=loc_494
 width=6
 length=7
 sharelight=yes
 active=no
 
-[loc_495]
+// todo: name used from 244
+[greatrunestone_uppermid]
 model=loc_495
 width=5
 length=5
 sharelight=yes
 active=no
 
-[loc_496]
+// todo: name used from 244
+[greatrunestone_top]
 model=loc_496
 width=5
 length=5
 sharelight=yes
 active=no
 
-[loc_497]
+// todo: name used from 244
+[greatrunestone_top2]
 model=loc_497
 width=5
 length=5
@@ -4271,7 +4281,8 @@ model=loc_513
 [loc_514]
 model=loc_514
 
-[loc_515]
+// todo: name used from 244
+[greatrunestone_top_glow]
 model=loc_515
 width=7
 length=7
@@ -4655,7 +4666,7 @@ recol1d=30653
 [caveentrance_ice]
 name=Cave entrance
 desc=It looks cold in there.
-model=mcannoncave
+model=caveentrance
 recol1s=10400
 recol1d=30653
 recol2s=8288
@@ -5398,41 +5409,48 @@ desc=Shattered.
 model=barrel_breaking
 anim=barrel
 
-[bh_icon]
-model=bh_icon
+// todo: name used from 244
+[gas]
+model=gas
 anim=gas
 active=no
 
-[net]
+// todo: name used from 244
+[gas_chest]
 model=net
 model2=neti2
 anim=diary_emote_playeranim
 active=no
 
-[corp_beast_grave_top]
-model=corp_beast_grave_top
+// todo: name used from 244
+[gas_rocks1]
+model=gas_rock1
 anim=gas
 active=no
 
-[corp_beast_grave_bottom]
-model=corp_beast_grave_bottom
+// todo: name used from 244
+[gas_rocks2]
+model=gas_rock2
 anim=gas
 active=no
 
-[corp_beast_entrance]
-model=corp_beast_entrance
+// todo: name used from 244
+[gas_rocks3]
+model=gas_rock3
 anim=gas
 active=no
 
-[corp_cave_entrance]
+// todo: name used from 244
+[fishingspot]
 name=Fishing spot
 desc=I see fish.
-model=corp_cave_entrance
+model=fishingspot
 
-[corp_cave_exit]
+// todo: name used from 244
+[fishingspot2]
 name=Fishing spot
 desc=I can see fish swimming in the water.
-model=corp_cave_exit
+model=fishingspot2
 
 [piano_a]
 name=Piano
@@ -5649,14 +5667,14 @@ active=no
 active=no
 
 [caveentrance3]
-model=mcannoncave
+model=caveentrance
 width=3
 length=2
 active=no
 active=no
 
 [loc_721]
-model=mcannoncave
+model=caveentrance
 recol1s=10400
 recol1d=23254
 recol2s=8288
@@ -6789,7 +6807,7 @@ recol1d=9513
 op1=Climb down
 blockrange=no
 
-[rustic_fencegate_l]
+[loc_883]
 name=Manhole cover
 desc=This is supposed to stop people falling down the manhole.
 model=manholeclosed
@@ -7542,7 +7560,7 @@ sharelight=yes
 blockrange=no
 
 [railing]
-model=mcannonplain
+model=railing
 sharelight=yes
 hillskew=yes
 blockrange=no
@@ -11132,7 +11150,7 @@ raiseobject=no
 [bordedupdoor]
 name=Wall
 desc=There is something strange about this wall...
-model=mcannondoor1
+model=door1
 active=yes
 op1=Push
 raiseobject=no
@@ -11140,20 +11158,20 @@ raiseobject=no
 [palacedoor_r]
 name=Wall
 desc=There is something strange about this wall...
-model=mcannondoor1
+model=door1
 active=yes
 op1=Push
 raiseobject=no
 
 [openpalacedoor_r]
-model=mcannondoor1
+model=door1
 active=no
 raiseobject=no
 
 [palacedoor_l]
 name=Wall
 desc=There is something strange about this wall...
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=mossybricks
 active=yes
@@ -11163,7 +11181,7 @@ raiseobject=no
 [openpalacedoor_l]
 name=Wall
 desc=There is something strange about this wall...
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=mossybricks
 active=yes
@@ -11171,7 +11189,7 @@ op1=Push
 raiseobject=no
 
 [stone_arched_doortop]
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=mossybricks
 active=no
@@ -11199,7 +11217,7 @@ raiseobject=no
 [stone_arched_doorbase_r]
 name=Door
 desc=The door is closed.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=door
 recol2s=6342
@@ -11240,7 +11258,7 @@ raiseobject=no
 [secretdoor]
 name=Dungeon door
 desc=An entranceway into the dungeon.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=door
 recol2s=6342
@@ -11252,7 +11270,7 @@ raiseobject=no
 [secretdooropen]
 name=Door
 desc=The way in.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=door
 recol2s=6342
@@ -11494,7 +11512,7 @@ blockwalk=no
 blockrange=no
 
 [oldwall]
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=mossybricks
 recol2s=6342
@@ -11767,7 +11785,7 @@ recol2d=5248
 mirror=yes
 
 [elfwall]
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=elfwall
 recol2s=6342
@@ -11877,7 +11895,7 @@ sharelight=yes
 active=no
 
 [egyptian_wall]
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=glyphs
 sharelight=yes
@@ -11885,7 +11903,7 @@ occlude=yes
 active=no
 
 [egyptian_wall_2]
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=mossy
 sharelight=yes
@@ -12325,7 +12343,7 @@ mapscene=7
 [loc_1746]
 name=Ladder
 desc=I can climb down this.
-model=mcannonladder2
+model=ladder2
 active=yes
 op1=Climb-down
 mapscene=7
@@ -12333,7 +12351,7 @@ mapscene=7
 [loc_1747]
 name=Ladder
 desc=I can climb this.
-model=mcannonladder
+model=ladder
 active=yes
 op1=Climb-up
 mapscene=7
@@ -12341,7 +12359,7 @@ mapscene=7
 [loc_1748]
 name=Ladder
 desc=I can climb this.
-model=mcannonladder
+model=ladder
 active=yes
 op1=Climb
 op2=Climb-up
@@ -12351,7 +12369,7 @@ mapscene=7
 [loc_1749]
 name=Ladder
 desc=I can climb down this.
-model=mcannonladder2
+model=ladder2
 active=yes
 op1=Climb-down
 mapscene=7
@@ -12360,7 +12378,7 @@ forceapproach=north
 [loc_1750]
 name=Ladder
 desc=I can climb this.
-model=mcannonladder
+model=ladder
 active=yes
 op1=Climb-up
 mapscene=7
@@ -12369,7 +12387,7 @@ forceapproach=north
 [loc_1751]
 name=Ladder
 desc=I can climb this.
-model=mcannonladder
+model=ladder
 active=yes
 op1=Climb
 op2=Climb-up
@@ -12377,7 +12395,8 @@ op3=Climb-down
 mapscene=7
 forceapproach=north
 
-[loc_1752]
+// todo: name used from 244
+[broken_ladder]
 name=Ladder
 desc=I can't climb this.
 model=loc_1752
@@ -12405,7 +12424,7 @@ mapscene=7
 [loc_1755]
 name=Ladder
 desc=I can climb this.
-model=mcannonladder
+model=ladder
 active=yes
 op1=Climb-up
 mapscene=7
@@ -12422,7 +12441,7 @@ forceapproach=north
 [loc_1757]
 name=Ladder
 desc=I can climb this.
-model=mcannonladder
+model=ladder
 active=yes
 op1=Climb-up
 mapscene=7
@@ -12463,7 +12482,8 @@ desc=A rope hangs here.
 model=loc_1762
 op1=Climb
 
-[loc_1763]
+// todo: name used from 244
+[climbing_rope_top]
 name=Climbing rope
 desc=A rope hangs here.
 model=loc_1763
@@ -12517,7 +12537,7 @@ active=yes
 op1=Climb-up
 
 [wood1]
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=elfwood
 recol2s=6342
@@ -12526,7 +12546,7 @@ sharelight=yes
 occlude=yes
 
 [wood2]
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=planks
 recol2s=6342
@@ -12765,7 +12785,7 @@ hillskew=yes
 [brasskeydoor]
 name=Door
 desc=This door requires a key.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=door2
 recol2s=6342
@@ -12776,7 +12796,7 @@ op1=Open
 [championdoor]
 name=Door
 desc=The door to the Champions' Guild.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=door2
 recol2s=6342
@@ -12795,7 +12815,7 @@ sharelight=yes
 occlude=yes
 
 [wall2]
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=rockwall
 recol2s=6342
@@ -12804,7 +12824,7 @@ sharelight=yes
 occlude=yes
 
 [mossyswall]
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=mossy
 sharelight=yes
@@ -13305,7 +13325,7 @@ width=4
 blockrange=no
 
 [brickwall]
-model=mcannondoor1
+model=door1
 sharelight=yes
 occlude=yes
 
@@ -13931,7 +13951,7 @@ op1=Search
 [baxtorian_door_waterfall_quest]
 name=Door
 desc=An elf-fashioned door.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=elfdoor
 recol2s=6342
@@ -13939,7 +13959,7 @@ recol2d=11458
 op1=Open
 
 [baxtorian_door_open_waterfall_quest]
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=elfdoor
 recol2s=6342
@@ -13948,7 +13968,7 @@ recol2d=11458
 [baxtorian_door_2_waterfall_quest]
 name=Door
 desc=An elf-fashioned door.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=elfdoor
 recol2s=6342
@@ -13956,13 +13976,13 @@ recol2d=11458
 op1=Open
 
 [baxtorian_door_2_open_waterfall_quest]
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=elfdoor
 recol2s=6342
 recol2d=11458
 
-[regicide_old_camp_footprints]
+[stonepillar_small_waterfall_quest]
 name=Pillar
 desc=The pillar has a rune shaped dent in it.
 model=stonepillar
@@ -13970,7 +13990,7 @@ resizex=50
 resizey=50
 resizez=50
 
-[stonepillar_small_waterfall_quest]
+[statue_king_waterfall_quest]
 name=Statue of Baxtorian
 desc=A statue of Baxtorian chiselled in stone.
 model=statue_king
@@ -14133,7 +14153,7 @@ op1=Drink From
 [loc_2025]
 name=Door
 desc=The door is closed.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=door2
 recol2s=6342
@@ -14194,40 +14214,40 @@ op4=hidden
 [guidordoor]
 name=Door
 desc=It's closed.
-model=mcannondoor
+model=door
 active=yes
 op1=Open
 
 [guidordooropen]
 name=Door
 desc=It's open.
-model=mcannondoor
+model=door
 active=yes
 
 [mournerstewdoorup]
 name=Door
 desc=It's closed.
-model=mcannondoor
+model=door
 active=yes
 op1=Open
 
 [mournerstewdoorupopen]
 name=Door
 desc=It's open.
-model=mcannondoor
+model=door
 active=yes
 
 [mournerstewdoor]
 name=Door
 desc=It's closed.
-model=mcannondoor
+model=door
 active=yes
 op1=Open
 
 [mournerstewdooropen]
 name=Door
 desc=It's open.
-model=mcannondoor
+model=door
 active=yes
 
 [biohazarddummy]
@@ -14343,12 +14363,12 @@ mirror=yes
 [elenadoor2]
 name=Door
 desc=It's a door.
-model=mcannondoor
+model=door
 active=yes
 op1=Open
 
 [elenadoor2open]
-model=mcannondoor
+model=door
 
 [jericoscupboardshut]
 name=Cupboard
@@ -14445,7 +14465,7 @@ op1=Squeeze-through
 [wydindoor]
 name=Door
 desc=A closed door.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=door2
 recol2s=6342
@@ -14454,7 +14474,7 @@ active=yes
 op1=Open
 
 [wydindooropen]
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=door2
 recol2s=6342
@@ -14622,10 +14642,11 @@ name=Rockery
 desc=Ornamental.
 model=rockery
 
-[loc_2090]
+// todo: name used from 244
+[copperrock1]
 name=Rocks
 desc=A rocky outcrop.
-model=loc_450
+model=rock1
 recol1s=6342
 recol1d=14596
 op1=Mine
@@ -14634,10 +14655,11 @@ op3=hidden
 mapscene=12
 blockrange=no
 
-[loc_2091]
+// todo: name used from 244
+[copperrock2]
 name=Rocks
 desc=A rocky outcrop.
-model=mcannonrock
+model=rock2
 recol1s=6342
 recol1d=14596
 op1=Mine
@@ -14646,10 +14668,11 @@ op3=hidden
 mapscene=12
 blockrange=no
 
-[loc_2092]
+// todo: name used from 244
+[ironrock1]
 name=Rocks
 desc=A rocky outcrop.
-model=loc_450
+model=rock1
 recol1s=6342
 recol1d=6242
 op1=Mine
@@ -14658,10 +14681,11 @@ op3=hidden
 mapscene=12
 blockrange=no
 
-[loc_2093]
+// todo: name used from 244
+[ironrock2]
 name=Rocks
 desc=A rocky outcrop.
-model=mcannonrock
+model=rock2
 recol1s=6342
 recol1d=6242
 op1=Mine
@@ -14670,10 +14694,11 @@ op3=hidden
 mapscene=12
 blockrange=no
 
-[loc_2094]
+// todo: name used from 244
+[tinrock1]
 name=Rocks
 desc=A rocky outcrop.
-model=loc_450
+model=rock1
 recol1s=6342
 recol1d=13741
 op1=Mine
@@ -14682,10 +14707,11 @@ op3=hidden
 mapscene=12
 blockrange=no
 
-[loc_2095]
+// todo: name used from 244
+[tinrock2]
 name=Rocks
 desc=A rocky outcrop.
-model=mcannonrock
+model=rock2
 recol1s=6342
 recol1d=13741
 op1=Mine
@@ -14694,10 +14720,11 @@ op3=hidden
 mapscene=12
 blockrange=no
 
-[loc_2096]
+// todo: name used from 244
+[coalrock1]
 name=Rocks
 desc=A rocky outcrop.
-model=loc_450
+model=rock1
 recol1s=6342
 recol1d=4226
 op1=Mine
@@ -14706,10 +14733,11 @@ op3=hidden
 mapscene=12
 blockrange=no
 
-[loc_2097]
+// todo: name used from 244
+[coalrock2]
 name=Rocks
 desc=A rocky outcrop.
-model=mcannonrock
+model=rock2
 recol1s=6342
 recol1d=4226
 op1=Mine
@@ -14718,10 +14746,11 @@ op3=hidden
 mapscene=12
 blockrange=no
 
-[loc_2098]
+// todo: name used from 244
+[goldrock1]
 name=Rocks
 desc=A rocky outcrop.
-model=loc_450
+model=rock1
 recol1s=6342
 recol1d=23108
 op1=Mine
@@ -14730,10 +14759,11 @@ op3=hidden
 mapscene=12
 blockrange=no
 
-[loc_2099]
+// todo: name used from 244
+[goldrock2]
 name=Rocks
 desc=A rocky outcrop.
-model=mcannonrock
+model=rock2
 recol1s=6342
 recol1d=23108
 op1=Mine
@@ -14742,10 +14772,11 @@ op3=hidden
 mapscene=12
 blockrange=no
 
-[loc_2100]
+// todo: name used from 244
+[silverrock1]
 name=Rocks
 desc=A rocky outcrop.
-model=loc_450
+model=rock1
 recol1s=6342
 recol1d=19026
 op1=Mine
@@ -14754,10 +14785,11 @@ op3=hidden
 mapscene=12
 blockrange=no
 
-[loc_2101]
+// todo: name used from 244
+[silverrock2]
 name=Rocks
 desc=A rocky outcrop.
-model=mcannonrock
+model=rock2
 recol1s=6342
 recol1d=19026
 op1=Mine
@@ -14766,10 +14798,11 @@ op3=hidden
 mapscene=12
 blockrange=no
 
-[loc_2102]
+// todo: name used from 244
+[mithrilrock1]
 name=Rocks
 desc=A rocky outcrop.
-model=loc_450
+model=rock1
 recol1s=6342
 recol1d=6346
 op1=Mine
@@ -14778,10 +14811,11 @@ op3=hidden
 mapscene=12
 blockrange=no
 
-[loc_2103]
+// todo: name used from 244
+[mithrilrock2]
 name=Rocks
 desc=A rocky outcrop.
-model=mcannonrock
+model=rock2
 recol1s=6342
 recol1d=6346
 op1=Mine
@@ -14790,10 +14824,11 @@ op3=hidden
 mapscene=12
 blockrange=no
 
-[loc_2104]
+// todo: name used from 244
+[adamantiterock1]
 name=Rocks
 desc=A rocky outcrop.
-model=loc_450
+model=rock1
 recol1s=6342
 recol1d=6438
 op1=Mine
@@ -14802,10 +14837,11 @@ op3=hidden
 mapscene=12
 blockrange=no
 
-[loc_2105]
+// todo: name used from 244
+[adamantiterock2]
 name=Rocks
 desc=A rocky outcrop.
-model=mcannonrock
+model=rock2
 recol1s=6342
 recol1d=6438
 op1=Mine
@@ -14814,10 +14850,11 @@ op3=hidden
 mapscene=12
 blockrange=no
 
-[loc_2106]
+// todo: name used from 244
+[runiterock1]
 name=Rocks
 desc=A rocky outcrop.
-model=loc_450
+model=rock1
 recol1s=6342
 recol1d=8721
 op1=Mine
@@ -14826,10 +14863,11 @@ op3=hidden
 mapscene=12
 blockrange=no
 
-[loc_2107]
+// todo: name used from 244
+[runiterock2]
 name=Rocks
 desc=A rocky outcrop.
-model=mcannonrock
+model=rock2
 recol1s=6342
 recol1d=8721
 op1=Mine
@@ -14838,10 +14876,11 @@ op3=hidden
 mapscene=12
 blockrange=no
 
-[loc_2108]
+// todo: name used from 244
+[clayrock1]
 name=Rocks
 desc=A rocky outcrop.
-model=loc_450
+model=rock1
 recol1s=6342
 recol1d=18854
 op1=Mine
@@ -14850,10 +14889,11 @@ op3=hidden
 mapscene=12
 blockrange=no
 
-[loc_2109]
+// todo: name used from 244
+[clayrock2]
 name=Rocks
 desc=A rocky outcrop.
-model=mcannonrock
+model=rock2
 recol1s=6342
 recol1d=18854
 op1=Mine
@@ -14862,7 +14902,8 @@ op3=hidden
 mapscene=12
 blockrange=no
 
-[loc_2110]
+// todo: name used from 244
+[bluriterock]
 name=Rocks
 desc=A rocky outcrop.
 model=loc_2110
@@ -14878,10 +14919,11 @@ blockrange=no
 ambient=10
 ambient=20
 
-[loc_2111]
+// todo: name used from 244
+[gemrock]
 name=Rocks
 desc=A rocky outcrop.
-model=mcannonrock
+model=rock2
 recol1s=6342
 recol1d=15407
 op1=Mine
@@ -14893,7 +14935,7 @@ blockrange=no
 [loc_2112]
 name=Door
 desc=The door is closed.
-model=mcannondoor
+model=door
 active=yes
 op1=Open
 
@@ -14931,7 +14973,7 @@ active=yes
 [scorpionwall]
 name=Old wall
 desc=It's an old wall.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=mossybricks
 recol2s=6342
@@ -14952,10 +14994,11 @@ resizey=32
 resizez=32
 blockrange=no
 
-[loc_2119]
+// todo: name used from 244
+[macro_copperrock1]
 name=Rocks
 desc=A rocky outcrop.
-model=corp_beast_grave_top
+model=gas_rock1
 recol1s=6342
 recol1d=14596
 op1=Mine
@@ -14965,10 +15008,11 @@ mapscene=12
 anim=gas
 blockrange=no
 
-[loc_2120]
+// todo: name used from 244
+[macro_copperrock2]
 name=Rocks
 desc=A rocky outcrop.
-model=corp_beast_grave_bottom
+model=gas_rock2
 recol1s=6342
 recol1d=14596
 op1=Mine
@@ -14978,10 +15022,11 @@ mapscene=12
 anim=gas
 blockrange=no
 
-[loc_2121]
+// todo: name used from 244
+[macro_ironrock1]
 name=Rocks
 desc=A rocky outcrop.
-model=corp_beast_grave_top
+model=gas_rock1
 recol1s=6342
 recol1d=6242
 recol2s=28538
@@ -14993,10 +15038,11 @@ mapscene=12
 anim=gas
 blockrange=no
 
-[loc_2122]
+// todo: name used from 244
+[macro_ironrock2]
 name=Rocks
 desc=A rocky outcrop.
-model=corp_beast_grave_bottom
+model=gas_rock2
 recol1s=6342
 recol1d=6242
 recol2s=28538
@@ -15008,10 +15054,11 @@ mapscene=12
 anim=gas
 blockrange=no
 
-[loc_2123]
+// todo: name used from 244
+[macro_tinrock1]
 name=Rocks
 desc=A rocky outcrop.
-model=corp_beast_grave_top
+model=gas_rock1
 recol1s=6342
 recol1d=13741
 op1=Mine
@@ -15021,10 +15068,11 @@ mapscene=12
 anim=gas
 blockrange=no
 
-[loc_2124]
+// todo: name used from 244
+[macro_tinrock2]
 name=Rocks
 desc=A rocky outcrop.
-model=corp_beast_grave_bottom
+model=gas_rock2
 recol1s=6342
 recol1d=13741
 op1=Mine
@@ -15034,10 +15082,11 @@ mapscene=12
 anim=gas
 blockrange=no
 
-[loc_2125]
+// todo: name used from 244
+[macro_coalrock1]
 name=Rocks
 desc=A rocky outcrop.
-model=corp_beast_grave_top
+model=gas_rock1
 recol1s=6342
 recol1d=4226
 recol2s=28538
@@ -15049,10 +15098,11 @@ mapscene=12
 anim=gas
 blockrange=no
 
-[loc_2126]
+// todo: name used from 244
+[macro_coalrock2]
 name=Rocks
 desc=A rocky outcrop.
-model=corp_beast_grave_bottom
+model=gas_rock2
 recol1s=6342
 recol1d=4226
 recol2s=28538
@@ -15064,10 +15114,11 @@ mapscene=12
 anim=gas
 blockrange=no
 
-[loc_2127]
+// todo: name used from 244
+[macro_goldrock1]
 name=Rocks
 desc=A rocky outcrop.
-model=corp_beast_grave_top
+model=gas_rock1
 recol1s=6342
 recol1d=23108
 recol2s=28538
@@ -15079,10 +15130,11 @@ mapscene=12
 anim=gas
 blockrange=no
 
-[loc_2128]
+// todo: name used from 244
+[macro_goldrock2]
 name=Rocks
 desc=A rocky outcrop.
-model=corp_beast_grave_bottom
+model=gas_rock2
 recol1s=6342
 recol1d=23108
 recol2s=28538
@@ -15094,10 +15146,11 @@ mapscene=12
 anim=gas
 blockrange=no
 
-[loc_2129]
+// todo: name used from 244
+[macro_silverrock1]
 name=Rocks
 desc=A rocky outcrop.
-model=corp_beast_grave_top
+model=gas_rock1
 recol1s=6342
 recol1d=19026
 recol2s=28538
@@ -15109,10 +15162,11 @@ mapscene=12
 anim=gas
 blockrange=no
 
-[loc_2130]
+// todo: name used from 244
+[macro_silverrock2]
 name=Rocks
 desc=A rocky outcrop.
-model=corp_beast_grave_bottom
+model=gas_rock2
 recol1s=6342
 recol1d=19026
 recol2s=28538
@@ -15124,10 +15178,11 @@ mapscene=12
 anim=gas
 blockrange=no
 
-[loc_2131]
+// todo: name used from 244
+[macro_mithrilrock1]
 name=Rocks
 desc=A rocky outcrop.
-model=corp_beast_grave_top
+model=gas_rock1
 recol1s=6342
 recol1d=6346
 recol2s=28538
@@ -15139,10 +15194,11 @@ mapscene=12
 anim=gas
 blockrange=no
 
-[loc_2132]
+// todo: name used from 244
+[macro_mithrilrock2]
 name=Rocks
 desc=A rocky outcrop.
-model=corp_beast_grave_bottom
+model=gas_rock2
 recol1s=6342
 recol1d=6346
 recol2s=28538
@@ -15154,10 +15210,11 @@ mapscene=12
 anim=gas
 blockrange=no
 
-[loc_2133]
+// todo: name used from 244
+[macro_adamantiterock1]
 name=Rocks
 desc=A rocky outcrop.
-model=corp_beast_grave_top
+model=gas_rock1
 recol1s=6342
 recol1d=6438
 recol2s=28538
@@ -15169,10 +15226,11 @@ mapscene=12
 anim=gas
 blockrange=no
 
-[loc_2134]
+// todo: name used from 244
+[macro_adamantiterock2]
 name=Rocks
 desc=A rocky outcrop.
-model=corp_beast_grave_bottom
+model=gas_rock2
 recol1s=6342
 recol1d=6438
 recol2s=28538
@@ -15184,10 +15242,11 @@ mapscene=12
 anim=gas
 blockrange=no
 
-[loc_2135]
+// todo: name used from 244
+[macro_runiterock1]
 name=Rocks
 desc=A rocky outcrop.
-model=corp_beast_grave_top
+model=gas_rock1
 recol1s=6342
 recol1d=8721
 recol2s=28538
@@ -15199,10 +15258,11 @@ mapscene=12
 anim=gas
 blockrange=no
 
-[loc_2136]
+// todo: name used from 244
+[macro_runiterock2]
 name=Rocks
 desc=A rocky outcrop.
-model=corp_beast_grave_bottom
+model=gas_rock2
 recol1s=6342
 recol1d=8721
 recol2s=28538
@@ -15214,10 +15274,11 @@ mapscene=12
 anim=gas
 blockrange=no
 
-[loc_2137]
+// todo: name used from 244
+[macro_clayrock1]
 name=Rocks
 desc=A rocky outcrop.
-model=corp_beast_grave_top
+model=gas_rock1
 recol1s=6342
 recol1d=18854
 recol2s=28538
@@ -15229,10 +15290,11 @@ mapscene=12
 anim=gas
 blockrange=no
 
-[loc_2138]
+// todo: name used from 244
+[macro_clayrock2]
 name=Rocks
 desc=A rocky outcrop.
-model=corp_beast_grave_bottom
+model=gas_rock2
 recol1s=6342
 recol1d=18854
 recol2s=28538
@@ -15244,7 +15306,8 @@ mapscene=12
 anim=gas
 blockrange=no
 
-[loc_2139]
+// todo: name used from 244
+[macro_bluriterock]
 name=Rocks
 desc=A rocky outcrop.
 model=loc_2139
@@ -15260,10 +15323,11 @@ mapscene=12
 anim=gas
 blockrange=no
 
-[loc_2140]
+// todo: name used from 244
+[macro_gemrock]
 name=Rocks
 desc=A rocky outcrop.
-model=corp_beast_grave_bottom
+model=gas_rock2
 recol1s=6342
 recol1d=15407
 recol2s=28538
@@ -15275,7 +15339,8 @@ mapscene=12
 anim=gas
 blockrange=no
 
-[loc_2141]
+// todo: name used from 244
+[chest_macro_gas]
 name=Chest
 desc=An open chest.
 model=loc_2141
@@ -15339,7 +15404,7 @@ mapscene=7
 [wizards_tower_ladder]
 name=Ladder
 desc=Going up?
-model=mcannonladder
+model=ladder
 active=yes
 op1=Climb-up
 mapscene=7
@@ -15417,38 +15482,44 @@ length=2
 active=yes
 op1=Enter
 
-[loc_2159]
+// todo: name used from 244
+[game_trawler_barrel1]
 name=Barrel
 desc=It's a floating barrel.
 model=loc_2159
 op1=Climb-on
 
-[loc_2160]
+// todo: name used from 244
+[game_trawler_barrel2]
 name=Barrel
 desc=It's a floating barrel.
 model=loc_2160
 op1=Climb-on
 
-[loc_2161]
+// todo: name used from 244
+[game_trawler_barrel3]
 name=Barrel
 desc=It's a floating barrel.
 model=loc_2161
 op1=Climb-on
 
-[loc_2162]
+// todo: name used from 244
+[game_trawler_net1]
 name=Trawler net
 desc=Smells like fish.
 model=loc_2162
 length=2
 
-[loc_2163]
+// todo: name used from 244
+[game_trawler_net2]
 name=Trawler net
 desc=Smells like fish.
 model=loc_2162
 length=2
 mirror=yes
 
-[loc_2164]
+// todo: name used from 244
+[game_trawler_fish_net1]
 name=Trawler net
 desc=Smells like fish.
 model=loc_2164
@@ -15456,7 +15527,8 @@ width=2
 length=6
 op1=Inspect
 
-[loc_2165]
+// todo: name used from 244
+[game_trawler_fish_net2]
 name=Trawler net
 desc=Smells like fish.
 model=loc_2164
@@ -15465,7 +15537,8 @@ length=6
 mirror=yes
 op1=Inspect
 
-[loc_2166]
+// todo: name used from 244
+[game_trawler_reward_net]
 name=Trawler net
 desc=Smells like fish.
 model=loc_2166
@@ -15473,7 +15546,8 @@ width=2
 length=2
 op1=Inspect
 
-[loc_2167]
+// todo: name used from 244
+[game_trawler_leak]
 name=Leak
 desc=Water is pouring in through the hole.
 model=loc_2167
@@ -15495,7 +15569,8 @@ op1=Fill
 blockwalk=no
 forceapproach=south
 
-[loc_2168]
+// todo: name used from 244
+[game_trawler_repaired_leak]
 name=Repaired leak
 desc=A patch of swamp tar has bunged up the hole.
 model=loc_2168
@@ -15514,12 +15589,14 @@ recol6d=13571
 width=2
 blockwalk=no
 
-[loc_2169]
+// todo: name used from 244
+[game_trawler_spray1]
 name=Spray
 desc=There's a strong wind whipping up the sea.
 model=barrel
 
-[loc_2170]
+// todo: name used from 244
+[game_trawler_spray2]
 name=Spray
 desc=There's a strong wind whipping up the sea.
 model=barrel
@@ -15528,7 +15605,8 @@ model=barrel
 model=milltop3
 active=no
 
-[loc_2172]
+// todo: name used from 244
+[game_trawler_fish_net_broken1]
 name=Trawler net
 desc=A huge net to catch little fish.
 model=loc_2172
@@ -15536,7 +15614,8 @@ width=2
 length=6
 op1=Inspect
 
-[loc_2173]
+// todo: name used from 244
+[game_trawler_fish_net_broken2]
 name=Trawler net
 desc=A huge net to catch little fish.
 model=loc_2172
@@ -15545,7 +15624,8 @@ length=6
 mirror=yes
 op1=Inspect
 
-[loc_2174]
+// todo: name used from 244
+[game_trawler_ship_ladder_up]
 name=Ship's ladder
 desc=The upper deck can be accessed with this ladder.
 model=ship_ladder
@@ -15561,7 +15641,8 @@ forceapproach=south
 op1=Climb-up
 sharelight=yes
 
-[loc_2175]
+// todo: name used from 244
+[game_trawler_ship_ladder_down]
 name=Ship's ladder
 desc=Back down to the main deck.
 model=ship_laddertop
@@ -15576,14 +15657,16 @@ recol4d=10434
 op1=Climb-down
 sharelight=yes
 
-[loc_2176]
+// todo: name used from 244
+[game_trawler_hole]
 name=Hole
 desc=This old trawler has seen better days.
 model=loc_2176
 width=2
 active=yes
 
-[loc_2177]
+// todo: name used from 244
+[game_trawler_hull]
 name=Hull
 desc=This old trawler has seen better days.
 model=loc_2177
@@ -15601,7 +15684,8 @@ width=2
 active=yes
 blockwalk=no
 
-[loc_2178]
+// todo: name used from 244
+[game_trawler_gangplank1]
 name=Gangplank
 desc=Handy for boarding boats.
 model=arhein_ship_on
@@ -15609,7 +15693,8 @@ op1=Cross
 active=yes
 sharelight=yes
 
-[loc_2179]
+// todo: name used from 244
+[game_trawler_gangplank2]
 name=Gangplank
 desc=Handy for boarding boats.
 model=arhein_ship_on
@@ -15651,7 +15736,7 @@ forceapproach=north
 [khazard_stronghold_door]
 name=Door
 desc=The door is closed.
-model=mcannondoor
+model=door
 active=yes
 op1=Open
 
@@ -15684,14 +15769,14 @@ op1=Climb-down
 [loc_2188]
 name=Ladder
 desc=I can climb up this ladder.
-model=mcannonladder
+model=ladder
 active=yes
 op1=Climb-up
 
 [loc_2189]
 name=Ladder
 desc=I can climb up this ladder.
-model=mcannonladder
+model=ladder
 active=yes
 op1=Climb-up
 
@@ -15916,7 +16001,7 @@ op2=Search
 [secretrubble]
 name=Cave in
 desc=A pile of rubble.
-model=mcanmudpile
+model=mudpile
 length=2
 op2=Search
 
@@ -15931,7 +16016,7 @@ op2=Investigate
 [secretrubblebook]
 name=Loose rocks
 desc=A pile of loose rocks.
-model=mcanmudpile
+model=mudpile
 length=2
 op2=Search
 
@@ -16018,7 +16103,7 @@ forcedecor=yes
 [zqrocks]
 name=Well stacked rocks
 desc=Rocks that have been stacked at regular intervals.
-model=loc_450
+model=rock1
 op1=Investigate
 op2=Search
 hillskew=yes
@@ -16050,14 +16135,14 @@ length=2
 op2=Search
 mapscene=5
 
-[cluescroll_tutor_icon]
+[loc_2238]
 name=Hillside entrance
 desc=Large doors set into the hillside.
 model=cluescroll_tutor_icon
 width=2
 op1=Enter
 
-[mimic_wall_wood_01]
+[loc_2239]
 name=Hillside entrance
 desc=Large doors set into the hillside.
 model=cluescroll_tutor_icon
@@ -16227,7 +16312,7 @@ op2=Search
 [zq_rashrocks]
 name=Rocks
 desc=A rocky outcrop.
-model=loc_450
+model=rock1
 hillskew=yes
 op1=Climb
 
@@ -16291,10 +16376,10 @@ op1=Look-at
 op2=Board
 blockrange=no
 
-[mistmyst_clue_library]
+[loc_2266]
 name=Blacksmith's door
 desc=The door is closed.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=door
 recol2s=6342
@@ -16304,10 +16389,10 @@ op1=Open
 active=yes
 op1=Open
 
-[mistmyst_clue_outside]
+[loc_2267]
 name=Blacksmith's door
 desc=The door is closed.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=door
 recol2s=6342
@@ -16319,13 +16404,13 @@ active=yes
 [paramayaladderup]
 name=Ladder
 desc=This leads up to the sleeping area.
-model=mcannonladder
+model=ladder
 op1=Climb-up
 
 [paramayaladderdown]
 name=Ladder
 desc=This leads downwards.
-model=mcannonladder2
+model=ladder2
 op1=Climb-down
 forceapproach=south
 
@@ -16420,7 +16505,8 @@ desc=Holds the rope up. Hopefuly.
 model=loc_2281
 length=2
 
-[loc_2282]
+// todo: name used from 244
+[barbarian_rope_swing]
 name=Ropeswing
 desc=Use this to swing over crevices.
 model=loc_2282
@@ -16428,7 +16514,8 @@ op1=Swing-on
 length=6
 blockwalk=no
 
-[loc_2283]
+// todo: name used from 244
+[wilderness_rope_swing]
 name=Ropeswing
 desc=Use this to swing over crevices.
 model=loc_2282
@@ -16436,28 +16523,32 @@ op1=Swing-on
 length=6
 blockwalk=no
 
-[loc_2284]
+// todo: name used from 244
+[barbarian_obstacle_net]
 name=Obstacle net
 desc=This must be climbed over.
 model=loc_2284
 width=2
 op1=Climb-over
 
-[loc_2285]
+// todo: name used from 244
+[gnome_obstacle_net_1]
 name=Obstacle net
 desc=This must be climbed over.
 model=loc_2284
 width=2
 op1=Climb-over
 
-[loc_2286]
+// todo: name used from 244
+[gnome_obstacle_net_2]
 name=Obstacle net
 desc=This must be climbed over.
 model=loc_2284
 width=2
 op1=Climb-over
 
-[loc_2287]
+// todo: name used from 244
+[barbarian_obstacle_pipe]
 name=Obstacle pipe
 desc=A pipe I can squeeze through.
 model=loc_154
@@ -16468,7 +16559,8 @@ recol2d=5248
 op1=Squeeze-through
 width=2
 
-[loc_2288]
+// todo: name used from 244
+[wilderness_obstacle_pipe]
 name=Obstacle pipe
 desc=A pipe I can squeeze through.
 model=loc_2288
@@ -16505,7 +16597,8 @@ blockwalk=no
 sharelight=yes
 forcedecor=yes
 
-[loc_2294]
+// todo: name used from 244
+[barbarian_log_balance]
 name=Log balance
 desc=A slippery log I can walk across.
 model=loc_2291
@@ -16513,7 +16606,8 @@ op1=Walk-across
 active=yes
 sharelight=yes
 
-[loc_2295]
+// todo: name used from 244
+[gnome_log_balance]
 name=Log balance
 desc=A slippery log I can walk across.
 model=loc_2291
@@ -16529,7 +16623,8 @@ op1=Walk-across
 active=yes
 sharelight=yes
 
-[loc_2297]
+// todo: name used from 244
+[wilderness_log_balance]
 name=Log balance
 desc=A slippery log I can walk across.
 model=loc_2291
@@ -16562,7 +16657,8 @@ model=loc_2301
 active=yes
 op1=Walk-across
 
-[loc_2302]
+// todo: name used from 244
+[barbarian_ledge]
 name=Balancing ledge
 desc=Tread carefully!
 model=straightledge2
@@ -16616,7 +16712,8 @@ op1=Open
 active=yes
 blockrange=no
 
-[loc_2311]
+// todo: name used from 244
+[wilderness_stepping_stone]
 name=Stepping stone
 desc=Hop, hop, hoppity hop, and then you fall in molten lava.
 model=loc_2311
@@ -16629,7 +16726,8 @@ resizey=32
 active=yes
 op1=Cross
 
-[loc_2312]
+// todo: name used from 244
+[gnome_balancing_rope]
 name=Balancing rope
 desc=I can balance on this rope.
 model=shiprope
@@ -16638,21 +16736,24 @@ sharelight=yes
 active=yes
 op1=Walk-on
 
-[loc_2313]
+// todo: name used from 244
+[gnome_tree_branch_1]
 name=Tree branch
 desc=I can climb up this.
 model=tk_end2
 active=yes
 op1=Climb
 
-[loc_2314]
+// todo: name used from 244
+[gnome_tree_branch_2]
 name=Tree branch
 desc=I can climb down here.
 model=tk_l
 active=yes
 op1=Climb-down
 
-[loc_2315]
+// todo: name used from 244
+[gnome_tree_branch_3]
 name=Tree branch
 desc=I can climb down here.
 model=tk_ns
@@ -16670,7 +16771,7 @@ op1=Climb-up
 [loc_2317]
 name=Pile of rubble
 desc=I can climb up these rocks to another cave.
-model=mcanmudpile
+model=mudpile
 recol1s=12512
 recol1d=15749
 length=2
@@ -16755,7 +16856,8 @@ width=2
 length=2
 active=yes
 
-[loc_2328]
+// todo: name used from 244
+[wilderness_rocks]
 name=Rocks
 desc=A rocky outcrop.
 model=zqclimbingrocks
@@ -16842,7 +16944,7 @@ op1=Open
 [bkfortressdoor2]
 name=Door
 desc=This door is closed.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=door
 recol2s=6342
@@ -16875,7 +16977,7 @@ op1=Open
 [bksecretdoor]
 name=Wall
 desc=There is something strange about this wall...
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=mossybricks
 active=yes
@@ -17297,7 +17399,7 @@ length=3
 [phoenixdoor]
 name=Door
 desc=A solid looking door.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=door2
 recol2s=6342
@@ -17308,7 +17410,7 @@ op1=Open
 [phoenixdoor2]
 name=Door
 desc=A solid looking door.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=door2
 recol2s=6342
@@ -17319,7 +17421,7 @@ op1=Open
 [blackarmdoor]
 name=Door
 desc=A solid looking door.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=door2
 recol2s=6342
@@ -17382,7 +17484,7 @@ forceapproach=north
 [phoenixladder]
 name=Ladder
 desc=I can climb this.
-model=mcannonladder
+model=ladder
 active=yes
 op1=Climb-up
 mapscene=7
@@ -17405,7 +17507,7 @@ op1=Open
 [zanarismagicdoor]
 name=Magic door
 desc=The door is closed.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=door2
 recol2s=6342
@@ -17435,7 +17537,7 @@ op1=Chop
 [zanarisladderout]
 name=Ladder
 desc=I can climb this.
-model=mcannonladder
+model=ladder
 active=yes
 op1=Climb-up
 mapscene=7
@@ -17443,7 +17545,7 @@ mapscene=7
 [zanarismarketdoor]
 name=Sturdy door
 desc=The door is closed.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=door2
 recol2s=6342
@@ -17563,7 +17665,7 @@ op1=Pull
 [famcrest_doorh2]
 name=Door
 desc=This door is closed by an unknown mechanism.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=door2
 recol2s=6342
@@ -17574,7 +17676,7 @@ op1=Open
 [famcrest_doorh2i2]
 name=Door
 desc=This door is closed by an unknown mechanism.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=door2
 recol2s=6342
@@ -17585,7 +17687,7 @@ op1=Open
 [famcrest_doorg2h1]
 name=Door
 desc=This door is closed by an unknown mechanism.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=door2
 recol2s=6342
@@ -17596,7 +17698,7 @@ op1=Open
 [famcrest_doori2h1]
 name=Door
 desc=This door is closed by an unknown mechanism.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=door2
 recol2s=6342
@@ -17607,7 +17709,7 @@ op1=Open
 [famcrest_doorh2g1]
 name=Door
 desc=This door is closed by an unknown mechanism.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=door2
 recol2s=6342
@@ -17748,14 +17850,14 @@ op1=Climb-down
 [grandtree_daconiarocks1]
 name=Daconia rocks
 desc=Some magical rocks.
-model=loc_450
+model=rock1
 recol1s=6342
 recol1d=4264
 
 [grandtree_daconiarocks2]
 name=Daconia rocks
 desc=Some magical rocks.
-model=mcannonrock
+model=rock2
 recol1s=6342
 recol1d=4264
 
@@ -17768,7 +17870,8 @@ hillskew=yes
 op1=Push
 active=yes
 
-[loc_2452]
+// todo: name used from 244
+[airtemple_ruined]
 active=yes
 width=3
 length=3
@@ -17777,7 +17880,8 @@ multivar=rc_no_tally_required_air
 multiloc=0,loc_7103
 multiloc=1,loc_7104
 
-[loc_2453]
+// todo: name used from 244
+[mindtemple_ruined]
 active=yes
 width=3
 length=3
@@ -17786,7 +17890,8 @@ multivar=rc_no_tally_required_mind
 multiloc=0,loc_7105
 multiloc=1,loc_7106
 
-[loc_2454]
+// todo: name used from 244
+[watertemple_ruined]
 active=yes
 width=3
 length=3
@@ -17795,7 +17900,8 @@ multivar=rc_no_tally_required_water
 multiloc=0,loc_7107
 multiloc=1,loc_7108
 
-[loc_2455]
+// todo: name used from 244
+[earthtemple_ruined]
 active=yes
 width=3
 length=3
@@ -17804,7 +17910,8 @@ multivar=rc_no_tally_required_earth
 multiloc=0,loc_7109
 multiloc=1,loc_7110
 
-[loc_2456]
+// todo: name used from 244
+[firetemple_ruined]
 active=yes
 width=3
 length=3
@@ -17813,7 +17920,8 @@ multivar=rc_no_tally_required_fire
 multiloc=0,loc_7111
 multiloc=1,loc_7112
 
-[loc_2457]
+// todo: name used from 244
+[bodytemple_ruined]
 active=yes
 width=3
 length=3
@@ -17822,7 +17930,8 @@ multivar=rc_no_tally_required_body
 multiloc=0,loc_7113
 multiloc=1,loc_7114
 
-[loc_2458]
+// todo: name used from 244
+[cosmictemple_ruined]
 active=yes
 width=3
 length=3
@@ -17831,7 +17940,8 @@ multivar=rc_no_tally_required_cosmic
 multiloc=0,loc_7115
 multiloc=1,loc_7116
 
-[loc_2459]
+// todo: name used from 244
+[lawtemple_ruined]
 active=yes
 width=3
 length=3
@@ -17840,7 +17950,8 @@ multivar=rc_no_tally_required_law
 multiloc=0,loc_7117
 multiloc=1,loc_7118
 
-[loc_2460]
+// todo: name used from 244
+[naturetemple_ruined]
 active=yes
 width=3
 length=3
@@ -17849,7 +17960,8 @@ multivar=rc_no_tally_required_nature
 multiloc=0,loc_7119
 multiloc=1,loc_7120
 
-[loc_2461]
+// todo: name used from 244
+[chaostemple_ruined]
 active=yes
 width=3
 length=3
@@ -17858,7 +17970,8 @@ multivar=rc_no_tally_required_chaos
 multiloc=0,loc_7121
 multiloc=1,loc_7122
 
-[loc_2462]
+// todo: name used from 244
+[deathtemple_ruined]
 active=yes
 width=3
 length=3
@@ -17867,7 +17980,8 @@ multivar=rc_no_tally_required_death
 multiloc=0,loc_7123
 multiloc=1,loc_7124
 
-[loc_2463]
+// todo: name used from 244
+[soultemple_ruined]
 active=yes
 width=3
 length=3
@@ -17876,7 +17990,8 @@ multivar=varbit_618
 multiloc=0,loc_7125
 multiloc=1,loc_7126
 
-[loc_2464]
+// todo: name used from 244
+[bloodtemple_ruined]
 active=yes
 width=3
 length=3
@@ -17885,7 +18000,8 @@ multivar=varbit_619
 multiloc=0,loc_7127
 multiloc=1,loc_7128
 
-[loc_2465]
+// todo: name used from 244
+[rc_air_altar_exit_portal]
 name=Portal
 desc=A portal from this mystical place.
 model=glowing_circle
@@ -17894,7 +18010,8 @@ op1=Use
 ambient=100
 contrast=100
 
-[loc_2466]
+// todo: name used from 244
+[rc_mind_altar_exit_portal]
 name=Portal
 desc=A portal from this mystical place.
 model=glowing_circle
@@ -17903,7 +18020,8 @@ op1=Use
 ambient=100
 contrast=100
 
-[loc_2467]
+// todo: name used from 244
+[rc_water_altar_exit_portal]
 name=Portal
 desc=A portal from this mystical place.
 model=glowing_circle
@@ -17914,7 +18032,8 @@ op1=Use
 ambient=100
 contrast=100
 
-[loc_2468]
+// todo: name used from 244
+[rc_earth_altar_exit_portal]
 name=Portal
 desc=A portal from this mystical place.
 model=glowing_circle
@@ -17923,7 +18042,8 @@ op1=Use
 ambient=100
 contrast=100
 
-[loc_2469]
+// todo: name used from 244
+[rc_fire_altar_exit_portal]
 name=Portal
 desc=A portal from this mystical place.
 model=glowing_circle
@@ -17934,7 +18054,8 @@ op1=Use
 ambient=100
 contrast=100
 
-[loc_2470]
+// todo: name used from 244
+[rc_body_altar_exit_portal]
 name=Portal
 desc=A portal from this mystical place.
 model=glowing_circle
@@ -17945,7 +18066,8 @@ op1=Use
 ambient=100
 contrast=100
 
-[loc_2471]
+// todo: name used from 244
+[rc_cosmic_altar_exit_portal]
 name=Portal
 desc=A portal from this mystical place.
 model=glowing_circle
@@ -17963,7 +18085,8 @@ op1=Use
 ambient=100
 contrast=100
 
-[loc_2473]
+// todo: name used from 244
+[rc_nature_altar_exit_portal]
 name=Portal
 desc=A portal from this mystical place.
 model=glowing_circle
@@ -17972,7 +18095,8 @@ op1=Use
 ambient=100
 contrast=100
 
-[loc_2474]
+// todo: name used from 244
+[rc_chaos_altar_exit_portal]
 name=Portal
 desc=A portal from this mystical place.
 model=glowing_circle
@@ -17981,7 +18105,8 @@ op1=Use
 ambient=100
 contrast=100
 
-[loc_2475]
+// todo: name used from 244
+[rc_death_altar_exit_portal]
 name=Portal
 desc=A portal from this mystical place.
 model=glowing_circle
@@ -18008,7 +18133,8 @@ op1=Use
 ambient=100
 contrast=100
 
-[loc_2478]
+// todo: name used from 244
+[rc_air_altar]
 name=Altar
 desc=A mysterious power emanates from this shrine.
 model=runetemple_altar_new
@@ -18017,7 +18143,8 @@ length=3
 op1=Craft-rune
 anim=rune_altar
 
-[loc_2479]
+// todo: name used from 244
+[rc_mind_altar]
 name=Altar
 desc=A mysterious power emanates from this shrine.
 model=loc_2479
@@ -18026,7 +18153,8 @@ length=3
 op1=Craft-rune
 anim=rune_altar
 
-[loc_2480]
+// todo: name used from 244
+[rc_water_altar]
 name=Altar
 desc=A mysterious power emanates from this shrine.
 model=loc_2480
@@ -18035,7 +18163,8 @@ length=3
 op1=Craft-rune
 anim=rune_altar
 
-[loc_2481]
+// todo: name used from 244
+[rc_earth_altar]
 name=Altar
 desc=A mysterious power emanates from this shrine.
 model=loc_2481
@@ -18044,7 +18173,8 @@ length=3
 op1=Craft-rune
 anim=rune_altar
 
-[loc_2482]
+// todo: name used from 244
+[rc_fire_altar]
 name=Altar
 desc=A mysterious power emanates from this shrine.
 model=loc_2482
@@ -18053,7 +18183,8 @@ length=3
 op1=Craft-rune
 anim=rune_altar
 
-[loc_2483]
+// todo: name used from 244
+[rc_body_altar]
 name=Altar
 desc=A mysterious power emanates from this shrine.
 model=loc_2483
@@ -18062,7 +18193,8 @@ length=3
 op1=Craft-rune
 anim=rune_altar
 
-[loc_2484]
+// todo: name used from 244
+[rc_cosmic_altar]
 name=Altar
 desc=A mysterious power emanates from this shrine.
 model=loc_2484
@@ -18080,7 +18212,8 @@ length=3
 op1=Craft-rune
 anim=rune_altar
 
-[loc_2486]
+// todo: name used from 244
+[rc_nature_altar]
 name=Altar
 desc=A mysterious power emanates from this shrine.
 model=loc_2486
@@ -18089,7 +18222,8 @@ length=3
 op1=Craft-rune
 anim=rune_altar
 
-[loc_2487]
+// todo: name used from 244
+[rc_chaos_altar]
 name=Altar
 desc=A mysterious power emanates from this shrine.
 model=loc_2487
@@ -18098,7 +18232,8 @@ length=3
 op1=Craft-rune
 anim=rune_altar
 
-[loc_2488]
+// todo: name used from 244
+[rc_death_altar]
 name=Altar
 desc=A mysterious power emanates from this shrine.
 model=loc_2488
@@ -18257,7 +18392,7 @@ model=loc_2510
 [loc_2511]
 name=Tower ladder
 desc=This leads to the practice tower.
-model=mcannonladder
+model=ladder
 active=yes
 op1=Climb-up
 mapscene=7
@@ -18265,7 +18400,7 @@ mapscene=7
 [loc_2512]
 name=Tower ladder
 desc=This leads back down to the guild.
-model=mcannonladder2
+model=ladder2
 active=yes
 op1=Climb-down
 mapscene=7
@@ -18280,7 +18415,7 @@ op1=Fire-at
 [loc_2514]
 name=Guild door
 desc=The door to the Ranging Guild.
-model=mcannondoor
+model=door
 active=yes
 op1=Open
 
@@ -18301,13 +18436,13 @@ length=2
 [slugladder]
 name=Ladder
 desc=Going up?
-model=mcannonladder
+model=ladder
 op1=Climb-up
 
 [loosepanel]
 name=Loose panel
 desc=Typical shoddy workmanship.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=elfwood
 recol2s=6342
@@ -18375,7 +18510,7 @@ forceapproach=east
 [elenagateshut]
 name=Door
 desc=The door of a small prison.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=door
 recol2s=6342
@@ -18386,7 +18521,7 @@ op1=Open
 [elenagateopen]
 name=Door
 desc=The door of a small prison.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=door
 recol2s=6342
@@ -18396,7 +18531,7 @@ active=yes
 [bravekdoorshut]
 name=Door
 desc=The door is closed.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=door
 recol2s=6342
@@ -18407,7 +18542,7 @@ op1=Open
 [bravekdooropen]
 name=Door
 desc=A door.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=door
 recol2s=6342
@@ -18437,7 +18572,7 @@ multiloc=1,plague_hole
 [plaguemudpile]
 name=Mud pile
 desc=A pile of what is hopefully mud.
-model=mcanmudpile
+model=mudpile
 length=2
 op1=Climb
 
@@ -18476,7 +18611,7 @@ active=yes
 [rehnisondoorshut]
 name=Door
 desc=The door is closed.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=door
 recol2s=6342
@@ -18487,7 +18622,7 @@ op1=Open
 [rehnisondooropen]
 name=Door
 desc=A door.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=door
 recol2s=6342
@@ -18599,7 +18734,7 @@ op1=Close
 [loc_2550]
 name=Door
 desc=A secure door.
-model=mcannondoor
+model=door
 active=yes
 op1=Open
 op2=Pick-lock
@@ -18607,12 +18742,13 @@ op2=Pick-lock
 [loc_2551]
 name=Door
 desc=A secure door.
-model=mcannondoor
+model=door
 active=yes
 op1=Open
 op2=Pick-lock
 
-[loc_2552]
+// todo: name used from 244
+[east_ardy_sewer_gate_north]
 name=Gate
 desc=A metal gate bars your way.
 model=ikov_mendedleverdoorl
@@ -18620,7 +18756,8 @@ active=yes
 op1=Open
 op2=Pick-lock
 
-[loc_2553]
+// todo: name used from 244
+[east_ardy_sewer_gate_south]
 name=Gate
 desc=A metal gate bars your way.
 model=ikov_mendedleverdoorl
@@ -18632,7 +18769,7 @@ op2=Pick-lock
 [loc_2554]
 name=Door
 desc=A secure door.
-model=mcannondoor
+model=door
 active=yes
 op1=Open
 op2=Pick-lock
@@ -18640,7 +18777,7 @@ op2=Pick-lock
 [loc_2555]
 name=Door
 desc=A secure door.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=elfdoor
 recol2s=6342
@@ -18652,7 +18789,7 @@ op2=Pick-lock
 [loc_2556]
 name=Door
 desc=A secure door.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=elfdoor
 recol2s=6342
@@ -18676,7 +18813,7 @@ op2=Pick-lock
 [loc_2558]
 name=Door
 desc=A secure door.
-model=mcannondoor
+model=door
 active=yes
 op1=Open
 op2=Pick-lock
@@ -18684,7 +18821,7 @@ op2=Pick-lock
 [loc_2559]
 name=Door
 desc=A secure door.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=door2
 recol2s=6342
@@ -18693,7 +18830,8 @@ active=yes
 op1=Open
 op2=Pick-lock
 
-[loc_2560]
+// todo: name used from 244
+[silk_stall_stealing]
 name=Silk stall
 desc=Fine silk woven by experts.
 model=silvermarket
@@ -18702,7 +18840,8 @@ width=2
 length=2
 op2=Steal-from
 
-[loc_2561]
+// todo: name used from 244
+[bakers_stall_stealing]
 name=Baker's stall
 desc=This stall smells great.
 model=silvermarket
@@ -18711,7 +18850,8 @@ width=2
 length=2
 op2=Steal-from
 
-[loc_2562]
+// todo: name used from 244
+[gem_stall_stealing]
 name=Gem stall
 desc=Precious stones from around the world.
 model=silvermarket
@@ -18720,7 +18860,8 @@ width=2
 length=2
 op2=Steal-from
 
-[loc_2563]
+// todo: name used from 244
+[fur_stall_stealing]
 name=Fur stall
 desc=All manner of animal clothing.
 model=silvermarket
@@ -18729,7 +18870,8 @@ width=2
 length=2
 op2=Steal-from
 
-[loc_2564]
+// todo: name used from 244
+[spice_stall_stealing]
 name=Spice stall
 desc=Spices to tingle your taste buds.
 model=silvermarket
@@ -18738,7 +18880,8 @@ width=2
 length=2
 op2=Steal-from
 
-[loc_2565]
+// todo: name used from 244
+[silver_stall_stealing]
 name=Silver stall
 desc=Fine silver items are for sale here.
 model=silvermarket
@@ -18747,7 +18890,8 @@ width=2
 length=2
 op2=Steal-from
 
-[loc_2566]
+// todo: name used from 244
+[chest_10_coins]
 name=Chest
 desc=I wonder what's inside it.
 model=arena_guard_chest_shut
@@ -18756,7 +18900,8 @@ op1=Open
 op2=Search for traps
 forceapproach=north
 
-[loc_2567]
+// todo: name used from 244
+[chest_nature_rune]
 name=Chest
 desc=I wonder what's inside it.
 model=arena_guard_chest_shut
@@ -18765,7 +18910,8 @@ op1=Open
 op2=Search for traps
 forceapproach=north
 
-[loc_2568]
+// todo: name used from 244
+[chest_50_coins]
 name=Chest
 desc=I wonder what's inside it.
 model=arena_guard_chest_shut
@@ -18774,7 +18920,8 @@ op1=Open
 op2=Search for traps
 forceapproach=north
 
-[loc_2569]
+// todo: name used from 244
+[chest_blood_runes]
 name=Chest
 desc=I wonder what's inside it.
 model=arena_guard_chest_shut
@@ -18783,7 +18930,8 @@ op1=Open
 op2=Search for traps
 forceapproach=north
 
-[loc_2570]
+// todo: name used from 244
+[chest_ardougne_castle]
 name=Chest
 desc=I wonder what's inside it.
 model=arena_guard_chest_shut
@@ -18810,7 +18958,8 @@ op1=Open
 op2=Search for traps
 forceapproach=north
 
-[loc_2573]
+// todo: name used from 244
+[chest_steel_arrowtips]
 name=Chest
 desc=I wonder what's inside it.
 model=arena_guard_chest_shut
@@ -18887,14 +19036,14 @@ hillskew=yes
 [volencia_moss_rock_full]
 name=Rock
 desc=A rock with green moss growing on it.
-model=loc_453
+model=rock3
 mapscene=12
 op2=Search
 
 [volencia_moss_rock_empty]
 name=Rock
 desc=A rock, it looks like something was growing here.
-model=loc_453
+model=rock3
 mapscene=12
 
 [rogues_purse_cave_full]
@@ -18928,10 +19077,11 @@ ambient=50
 active=yes
 op1=Climb
 
-[loc_2586]
+// todo: name used from 244
+[dragon_slayer_magic_door]
 name=Door
 desc=It's closed.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=door2
 recol2s=6342
@@ -18993,7 +19143,7 @@ mapscene=7
 [dragonshipladdertop2]
 name=Ladder
 desc=Takes me into the ship.
-model=mcannonladder2
+model=ladder2
 active=yes
 op1=Climb-down
 mapscene=7
@@ -19025,7 +19175,7 @@ op1=Cross
 [melzardoor]
 name=Door
 desc=It's closed.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=door2
 recol2s=6342
@@ -19036,7 +19186,7 @@ op1=Open
 [reddoor]
 name=Red door
 desc=A blood-red door.
-model=mcannondoor
+model=door
 recol1s=14626
 recol1d=13443
 recol2s=13569
@@ -19051,7 +19201,7 @@ op1=Open
 [orangedoor]
 name=Orange door
 desc=A lurid orange door.
-model=mcannondoor
+model=door
 recol1s=14626
 recol1d=27041
 recol2s=13569
@@ -19066,7 +19216,7 @@ op1=Open
 [yellowdoor]
 name=Yellow door
 desc=A sickly yellow door.
-model=mcannondoor
+model=door
 recol1s=14626
 recol1d=23243
 recol2s=13569
@@ -19081,7 +19231,7 @@ op1=Open
 [bluedoor]
 name=Blue door
 desc=A gloomy blue door.
-model=mcannondoor
+model=door
 recol1s=14626
 recol1d=10640
 recol2s=13569
@@ -19096,7 +19246,7 @@ op1=Open
 [magentadoor]
 name=Magenta door
 desc=A groovy magenta door.
-model=mcannondoor
+model=door
 recol1s=14626
 recol1d=15695
 recol2s=13569
@@ -19111,7 +19261,7 @@ op1=Open
 [greendoor]
 name=Green door
 desc=A putrid green door.
-model=mcannondoor
+model=door
 recol1s=14626
 recol1d=6437
 recol2s=13569
@@ -19126,7 +19276,7 @@ op1=Open
 [funexit]
 name=Exit door
 desc=Probably the nicest door in this ghastly place.
-model=mcannondoor
+model=door
 active=yes
 op1=Open
 
@@ -19156,13 +19306,14 @@ mapscene=7
 [dragonsecretdoor]
 name=Wall
 desc=There is something strange about this wall...
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=mossybricks
 active=yes
 op1=Open
 
-[loc_2607]
+// todo: name used from 244
+[elvarg_gate_right]
 name=Gate
 desc=It's closed.
 model=ikov_mendedleverdoorl
@@ -19173,7 +19324,8 @@ recol2d=11458
 active=yes
 op1=Open
 
-[loc_2608]
+// todo: name used from 244
+[elvarg_gate_left]
 name=Gate
 desc=It's closed.
 model=ikov_mendedleverdoorl
@@ -19185,7 +19337,8 @@ active=yes
 op1=Open
 mirror=yes
 
-[loc_2609]
+// todo: name used from 244
+[crandor_rock_opening]
 name=Rock opening
 desc=A collection of rocks over what looks like a depression.
 model=caveentrance5
@@ -19195,7 +19348,8 @@ length=2
 occlude=yes
 op1=Climb-down
 
-[loc_2610]
+// todo: name used from 244
+[crandor_climbing_rope]
 name=Climbing rope
 desc=A rope hangs here that I can climb.
 model=loc_1762
@@ -19204,7 +19358,7 @@ op1=Climb
 [loc_2611]
 name=Ladder
 desc=It's a ladder.
-model=mcannonladder2
+model=ladder2
 active=yes
 op1=Climb-down
 mapscene=7
@@ -19228,7 +19382,7 @@ op2=Close
 forceapproach=east
 raiseobject=no
 
-[lovakengj_dynamite_poison]
+[loc_2614]
 name=Coffin
 desc=Spooky!
 model=lovakengj_dynamite_poison
@@ -19278,7 +19432,7 @@ op1=Search
 [gertrudeempty_crate]
 name=Crate
 desc=An old crate for storage.
-model=mcannoncrate
+model=crate
 retex1s=darkwood
 retex1d=wood2
 retex2s=elfwood
@@ -19288,7 +19442,7 @@ op1=Search
 [pete_treasuredoor]
 name=Door
 desc=It's a door.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=door2
 recol2s=6342
@@ -19299,7 +19453,7 @@ op1=Open
 [pete_sidedoor]
 name=Door
 desc=It's a door.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=door2
 recol2s=6342
@@ -19341,7 +19495,7 @@ mirror=yes
 [grubordoor]
 name=Door
 desc=It's a door.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=door2
 recol2s=6342
@@ -19352,7 +19506,7 @@ op1=Open
 [garvdoor]
 name=Door
 desc=It's a door.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=door2
 recol2s=6342
@@ -19363,7 +19517,7 @@ op1=Open
 [herokitchendoor]
 name=Door
 desc=It's a door.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=door2
 recol2s=6342
@@ -19377,7 +19531,7 @@ desc=There is something unusual about this wall...
 model=openbankdoorr
 op1=Push
 
-[cryptstairsdown_inactive]
+[loc_2630]
 name=Fishing spot
 desc=I can see eels swimming in the lava.
 model=cryptstairsdown_inactive
@@ -19439,10 +19593,11 @@ op2=Shut
 forceapproach=east
 
 [snipable_wall]
-model=mcannondoor1
+model=door1
 blockrange=no
 
-[loc_2638]
+// todo: name used from 244
+[fountain_of_heroes]
 name=Fountain of Heroes
 desc=A source of pure water.
 model=fountain
@@ -19469,18 +19624,20 @@ op1=Pray-at
 [monasteryladder]
 name=Ladder
 desc=I can climb this.
-model=mcannonladder
+model=ladder
 active=yes
 op1=Climb-up
 mapscene=7
 
-[loc_2642]
+// todo: name used from 244
+[potters_wheel]
 name=Potter's Wheel
 desc=Used for fashioning clay items.
 model=loc_2642
 forceapproach=east
 
-[loc_2643]
+// todo: name used from 244
+[pottery_oven]
 name=Pottery Oven
 desc=Bake your clay items in here.
 model=loc_2643
@@ -19488,21 +19645,24 @@ length=2
 forceapproach=east
 op1=Fire
 
-[loc_2644]
+// todo: name used from 244
+[spinning_wheel]
 name=Spinning wheel
 desc=Used for spinning thread.
 model=loc_2644
 forceapproach=south
 op2=Spin
 
-[loc_2645]
+// todo: name used from 244
+[sand_pit]
 name=Sand pit
 desc=A tray of sand.
 model=specimen_tray
 width=2
 length=2
 
-[loc_2646]
+// todo: name used from 244
+[flax_ground]
 name=Flax
 desc=A plant cultivated for fibres.
 model=loc_2646
@@ -19510,10 +19670,11 @@ op2=Pick
 mapscene=32
 blockwalk=no
 
-[loc_2647]
+// todo: name used from 244
+[crafting_guild_door]
 name=Guild Door
 desc=The door to the Crafting Guild.
-model=mcannondoor
+model=door
 active=yes
 op1=Open
 
@@ -19533,7 +19694,8 @@ width=2
 length=2
 op2=Investigate
 
-[loc_2651]
+// todo: name used from 244
+[quest_murder_beehive]
 name=Sinclair family beehive
 desc=A sturdy home for bees.
 model=merlin_beehive
@@ -19753,7 +19915,7 @@ model=barrel
 op1=Look in
 op2=Search
 
-[tourtrap_qip_multi_flatback_cart]
+[loc_2682]
 name=Mine Cart
 desc=The cart which takes barrels of rocks from the mining encampment to Al-Kharid.
 model=cart
@@ -19849,7 +20011,7 @@ forceapproach=north
 [ttcellclimbrock1]
 name=Rock
 desc=A rocky rock.
-model=mcannonrock
+model=rock2
 recol1s=6342
 recol1d=15749
 op2=Climb-to
@@ -19858,7 +20020,7 @@ blockrange=no
 [ttcellclimbrock2]
 name=Rock
 desc=A rocky rock.
-model=loc_453
+model=rock3
 recol1s=6342
 recol1d=15749
 op2=Climb-to
@@ -19867,7 +20029,7 @@ blockrange=no
 [ttcellclimbrock3]
 name=Rock
 desc=A rocky rock.
-model=mcannonrock
+model=rock2
 recol1s=6342
 recol1d=15749
 op2=Climb-to
@@ -19876,7 +20038,7 @@ blockrange=no
 [ttcellclimbrock4]
 name=Rock
 desc=A rocky rock.
-model=loc_453
+model=rock3
 recol1s=6342
 recol1d=15749
 op2=Climb down
@@ -19940,7 +20102,7 @@ shadow=no
 [punishrocks]
 name=Rocks
 desc=Rocky!
-model=loc_453
+model=rock3
 recol1s=6342
 recol1d=7400
 op1=Mine
@@ -19950,7 +20112,7 @@ op3=hidden
 [combodoor]
 name=Door
 desc=It's a door.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=door2
 recol2s=6342
@@ -19961,7 +20123,7 @@ op1=Open
 [tribaltotemdoor]
 name=Door
 desc=A nicely fitted door.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=door2
 recol2s=6342
@@ -20009,7 +20171,7 @@ forceapproach=south
 [loc_2712]
 name=Door
 desc=The door is closed.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=door2
 recol2s=6342
@@ -20017,69 +20179,79 @@ recol2d=11458
 active=yes
 op1=Open
 
-[loc_2713]
+// todo: name used from 244
+[hopper_full]
 name=Hopper
 desc=Grain goes in here.
 model=milltop1
 width=2
 
-[loc_2714]
-name=Hopper
-desc=Grain goes in here.
-model=milltop1
-width=2
-forceapproach=north
-
-[loc_2715]
+// todo: name used from 244
+[hopper_lumbridge]
 name=Hopper
 desc=Grain goes in here.
 model=milltop1
 width=2
 forceapproach=north
 
-[loc_2716]
+// todo: name used from 244
+[hopper_varrock]
 name=Hopper
 desc=Grain goes in here.
 model=milltop1
 width=2
 forceapproach=north
 
-[loc_2717]
+// todo: name used from 244
+[hopper_zanaris]
 name=Hopper
 desc=Grain goes in here.
 model=milltop1
 width=2
 forceapproach=north
 
-[loc_2718]
+// todo: name used from 244
+[hopper_ardougne]
+name=Hopper
+desc=Grain goes in here.
+model=milltop1
+width=2
+forceapproach=north
+
+// todo: name used from 244
+[hoppercontrol_lumbridge]
 name=Hopper controls
 desc=These control the flow of grain from the hopper to the millstones.
 model=milltop3
 op1=Operate
 forceapproach=north
 
-[loc_2719]
+// todo: name used from 244
+[hoppercontrol_varrock]
 name=Hopper controls
 desc=These control the flow of grain from the hopper to the millstones.
 model=milltop3
 op1=Operate
 forceapproach=north
 
-[loc_2720]
+// todo: name used from 244
+[hoppercontrol_zanaris]
 name=Hopper controls
 desc=These control the flow of grain from the hopper to the millstones.
 model=milltop3
 op1=Operate
 forceapproach=north
 
-[loc_2721]
+// todo: name used from 244
+[hoppercontrol_ardougne]
 name=Hopper controls
 desc=These control the flow of grain from the hopper to the millstones.
 model=milltop3
 op1=Operate
 forceapproach=north
 
-[loc_2722]
+// todo: name used from 244
+[hoppercontrol_inuse]
 name=Hopper controls
 desc=These control the flow of grain from the hopper to the millstones.
 model=loc_2722
@@ -20390,7 +20562,8 @@ model=minigame_start_icon
 forcedecor=yes
 mapfunction=48
 
-[loc_2781]
+// todo: name used from 244
+[furnace1]
 name=Furnace
 desc=A hot place for forging things in.
 model=plaguesheep_furnace
@@ -20400,13 +20573,15 @@ sharelight=yes
 forceapproach=east
 op2=Smelt
 
-[loc_2782]
+// todo: name used from 244
+[doric_anvil]
 name=Anvil
 desc=It says "Property of Doric the dwarf." on the side.
 model=experimental_anvil
 forceapproach=north
 
-[loc_2783]
+// todo: name used from 244
+[anvil]
 name=Anvil
 desc=Used for fashioning metal items.
 model=experimental_anvil
@@ -20417,7 +20592,8 @@ desc=Various implements for working with metal.
 model=loc_2784
 active=yes
 
-[loc_2785]
+// todo: name used from 244
+[furnace_side]
 name=Furnace
 desc=A hot place for forging things in.
 model=loc_2785
@@ -20502,7 +20678,7 @@ active=yes
 [watchladderup]
 name=Ladder
 desc=This leads to the watchtower.
-model=mcannonladder
+model=ladder
 op1=Climb-up
 mapscene=7
 
@@ -20558,7 +20734,7 @@ mapscene=9
 [shamanentrance]
 name=Cave entrance
 desc=I think I can squeeze through here...
-model=mcannoncave
+model=caveentrance
 width=4
 length=2
 op1=Enter
@@ -20567,7 +20743,7 @@ active=yes
 [skavid_cave1]
 name=Cave entrance
 desc=I think I can squeeze through here...
-model=mcannoncave
+model=caveentrance
 width=4
 length=2
 op1=Enter
@@ -20575,7 +20751,7 @@ op1=Enter
 [skavid_cave2]
 name=Cave entrance
 desc=I think I can squeeze through here...
-model=mcannoncave
+model=caveentrance
 width=4
 length=2
 op1=Enter
@@ -20583,7 +20759,7 @@ op1=Enter
 [skavid_cave3]
 name=Cave entrance
 desc=I think I can squeeze through here...
-model=mcannoncave
+model=caveentrance
 width=4
 length=2
 op1=Enter
@@ -20591,7 +20767,7 @@ op1=Enter
 [skavid_cave4]
 name=Cave entrance
 desc=I think I can squeeze through here...
-model=mcannoncave
+model=caveentrance
 width=4
 length=2
 op1=Enter
@@ -20599,7 +20775,7 @@ op1=Enter
 [skavid_cave5]
 name=Cave entrance
 desc=I think I can squeeze through here...
-model=mcannoncave
+model=caveentrance
 width=4
 length=2
 op1=Enter
@@ -20607,7 +20783,7 @@ op1=Enter
 [skavid_cave6]
 name=Cave entrance
 desc=I think I can squeeze through here...
-model=mcannoncave
+model=caveentrance
 width=4
 length=2
 op1=Enter
@@ -20615,7 +20791,7 @@ op1=Enter
 [tobancave]
 name=Cave entrance
 desc=I think I can squeeze through here...
-model=mcannoncave
+model=caveentrance
 width=4
 length=2
 op1=Enter
@@ -20630,7 +20806,7 @@ mapscene=7
 [enclavecave]
 name=Cave entrance
 desc=I think I can squeeze through here...
-model=mcannoncave
+model=caveentrance
 width=4
 length=2
 op1=Enter
@@ -20766,13 +20942,13 @@ forceapproach=north
 [tanothjump1]
 name=Rock
 desc=You can probably jump over from here.
-model=mcannonrock
+model=rock2
 op1=Jump-From
 
 [tanothjump2]
 name=Rock
 desc=You can probably jump over from here.
-model=mcannonrock
+model=rock2
 op1=Jump-From
 
 [ganothbattlement]
@@ -20786,7 +20962,7 @@ op1=Climb-over
 [towerladder]
 name=Ladder
 desc=This goes up!
-model=mcannonladder
+model=ladder
 op1=Climb-up
 mapscene=7
 
@@ -20800,19 +20976,19 @@ active=yes
 [darkcaverock]
 name=Rock
 desc=Looks hard.
-model=loc_450
+model=rock1
 op1=Search
 
 [darkcaverock2]
 name=Rock
 desc=Looks hard.
-model=mcannonrock
+model=rock2
 op1=Search
 
 [darkcaverock3]
 name=Rock
 desc=Looks hard.
-model=loc_453
+model=rock3
 op1=Search
 
 [stone_stand_crystal_cyan]
@@ -20935,7 +21111,7 @@ width=2
 length=3
 op1=Climb-up
 
-[sotn_window_outer]
+[loc_2854]
 name=Wall
 desc=Made of wood.
 model=timberwall
@@ -20944,12 +21120,13 @@ occlude=yes
 active=yes
 op1=Knock-at
 
-[inaccarnilleanbookcase]
+// todo: name used from 244
+[loc_2855]
 model=timberwall
 wallwidth=8
 occlude=yes
 
-[sotn_window_inner]
+[loc_2856]
 name=Chest
 desc=I wonder what's inside?
 model=arena_guard_chest_shut
@@ -20988,7 +21165,7 @@ active=yes
 [witchhousedoor]
 name=Door
 desc=It's a door.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=door2
 recol2s=6342
@@ -20999,7 +21176,7 @@ op1=Open
 [witchbackdoor]
 name=Door
 desc=It's a door.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=door2
 recol2s=6342
@@ -21010,7 +21187,7 @@ op1=Open
 [witchsheddoor]
 name=Door
 desc=The door is closed.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=door
 recol2s=6342
@@ -21103,7 +21280,7 @@ mapscene=7
 [magearena_ladder_from_cellar]
 name=Ladder
 desc=I can climb this.
-model=mcannonladder
+model=ladder
 active=yes
 op1=Climb-up
 mapscene=7
@@ -21177,13 +21354,15 @@ desc=It's closed.
 model=ctratgatea
 op1=Open
 
-[loc_2882]
+// todo: name used from 244
+[border_gate_toll_left]
 name=Gate
 desc=The toll gate from Lumbridge to Al-Kharid.
 model=ikov_mendedleverdoorl
 op1=Open
 
-[loc_2883]
+// todo: name used from 244
+[border_gate_toll_right]
 name=Gate
 desc=The toll gate from Lumbridge to Al-Kharid.
 model=ikov_mendedleverdoorl
@@ -21193,7 +21372,7 @@ mirror=yes
 [loc_2884]
 name=Ladder
 desc=I can climb this.
-model=mcannonladder
+model=ladder
 active=yes
 op1=Climb
 op2=Climb-up
@@ -21389,7 +21568,7 @@ op1=Search
 [lgshamancaverock3]
 name=Rocks
 desc=Stoney!
-model=loc_453
+model=rock3
 op1=Search
 mapscene=12
 
@@ -21498,10 +21677,11 @@ model=lglockpickgatebottoml
 [inac_lglockpickgatebottomr]
 model=lglockpickgatebottomr
 
-[loc_2916]
+// todo: name used from 244
+[legends_cave_entrance_3]
 name=Cave Entrance
 desc=A dark cave entrance leading to the surface.
-model=mcannoncave
+model=caveentrance
 width=4
 length=2
 op1=Enter
@@ -21729,7 +21909,8 @@ recol4s=7360
 recol4d=14592
 op1=Look
 
-[fountain_of_heroes]
+// todo: name used from 244
+[legends_totem_pole_4]
 name=Totem Pole
 desc=A sculpted trunk of wood.
 model=totem_pole
@@ -21932,7 +22113,7 @@ op1=Climb
 [rocky_ledge]
 name=Rocky Ledge
 desc=A dangerous path onwards.
-model=mcannonrock
+model=rock2
 hillskew=yes
 hillskew=yes
 op1=Climb-over
@@ -21940,35 +22121,35 @@ op1=Climb-over
 [rocky_ledge1]
 name=Rocky Ledge
 desc=A dangerous path onwards.
-model=mcannonrock
+model=rock2
 hillskew=yes
 op1=Climb-over
 
 [rocky_ledge2]
 name=Rocky Ledge
 desc=A dangerous path onwards.
-model=mcannonrock
+model=rock2
 hillskew=yes
 op1=Climb-over
 
 [viycaves_climbrock1]
 name=Rocks
 desc=Stoney!
-model=mcannonrock
+model=rock2
 hillskew=yes
 op1=Climb-over
 
 [viycaves_climbrock2]
 name=Rocks
 desc=Stoney!
-model=mcannonrock
+model=rock2
 hillskew=yes
 op1=Climb-over
 
 [viycaves_climbrock3]
 name=Rocks
 desc=Stoney!
-model=mcannonrock
+model=rock2
 hillskew=yes
 op1=Climb-over
 
@@ -22410,10 +22591,11 @@ model=lum_bridge_d_low
 sharelight=yes
 active=no
 
-[loc_3014]
+// todo: name used from 244
+[newbie_door1]
 name=Door
 desc=A nicely fitted door.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=door2
 recol2s=6342
@@ -22421,14 +22603,16 @@ recol2d=11458
 active=yes
 op1=Open
 
-[loc_3015]
+// todo: name used from 244
+[newbiegateclosedl2]
 name=Gate
 desc=A wooden gate.
 model=plaguesheep_gatel
 active=yes
 op1=Open
 
-[loc_3016]
+// todo: name used from 244
+[newbiegateclosedr2]
 name=Gate
 desc=A wooden gate.
 model=plaguesheep_gatel
@@ -22436,10 +22620,11 @@ active=yes
 mirror=yes
 op1=Open
 
-[loc_3017]
+// todo: name used from 244
+[newbie_door2]
 name=Door
 desc=A nicely fitted door.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=door2
 recol2s=6342
@@ -22447,10 +22632,11 @@ recol2d=11458
 active=yes
 op1=Open
 
-[loc_3018]
+// todo: name used from 244
+[newbie_door3]
 name=Door
 desc=A nicely fitted door.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=door2
 recol2s=6342
@@ -22458,10 +22644,11 @@ recol2d=11458
 active=yes
 op1=Open
 
-[loc_3019]
+// todo: name used from 244
+[newbie_door4]
 name=Door
 desc=A nicely fitted door.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=door2
 recol2s=6342
@@ -22469,7 +22656,8 @@ recol2d=11458
 active=yes
 op1=Open
 
-[loc_3020]
+// todo: name used from 244
+[newbiedoor4l]
 name=Gate
 desc=A wrought iron gate.
 model=ikov_mendedleverdoorl
@@ -22477,7 +22665,8 @@ op1=Open
 active=yes
 blockrange=no
 
-[loc_3021]
+// todo: name used from 244
+[newbiedoor4r]
 name=Gate
 desc=A wrought iron gate.
 model=ikov_mendedleverdoorl
@@ -22486,7 +22675,8 @@ mirror=yes
 active=yes
 blockrange=no
 
-[loc_3022]
+// todo: name used from 244
+[newbiedoor5_l]
 name=Gate
 desc=A wrought iron gate.
 model=ikov_mendedleverdoorl
@@ -22494,7 +22684,8 @@ op1=Open
 active=yes
 blockrange=no
 
-[loc_3023]
+// todo: name used from 244
+[newbiedoor5_r]
 name=Gate
 desc=A wrought iron gate.
 model=ikov_mendedleverdoorl
@@ -22503,10 +22694,11 @@ mirror=yes
 active=yes
 blockrange=no
 
-[loc_3024]
+// todo: name used from 244
+[newbie_door6]
 name=Door
 desc=A closed door.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=door2
 recol2s=6342
@@ -22514,10 +22706,11 @@ recol2d=11458
 active=yes
 op1=Open
 
-[loc_3025]
+// todo: name used from 244
+[newbie_door7]
 name=Door
 desc=A closed door.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=door2
 recol2s=6342
@@ -22525,10 +22718,11 @@ recol2d=11458
 active=yes
 op1=Open
 
-[loc_3026]
+// todo: name used from 244
+[newbie_door8]
 name=Door
 desc=A closed door.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=door2
 recol2s=6342
@@ -22536,10 +22730,11 @@ recol2d=11458
 active=yes
 op1=Open
 
-[loc_3027]
+// todo: name used from 244
+[newbie_door9]
 name=Door
 desc=A closed door.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=door2
 recol2s=6342
@@ -22547,15 +22742,17 @@ recol2d=11458
 active=yes
 op1=Open
 
-[loc_3028]
+// todo: name used from 244
+[newbieladder1]
 name=Ladder
 desc=I can climb this.
-model=mcannonladder
+model=ladder
 active=yes
 op1=Climb-up
 mapscene=7
 
-[loc_3029]
+// todo: name used from 244
+[newbieladdertop1]
 name=Ladder
 desc=I can climb down this.
 model=loc_1759
@@ -22563,15 +22760,17 @@ active=yes
 op1=Climb-down
 mapscene=7
 
-[loc_3030]
+// todo: name used from 244
+[newbieladder2]
 name=Ladder
 desc=I can climb this.
-model=mcannonladder
+model=ladder
 active=yes
 op1=Climb-up
 mapscene=7
 
-[loc_3031]
+// todo: name used from 244
+[newbieladdertop2]
 name=Ladder
 desc=I can climb down this.
 model=loc_1759
@@ -22579,14 +22778,16 @@ active=yes
 op1=Climb-down
 mapscene=7
 
-[loc_3032]
+// todo: name used from 244
+[newbiefishing]
 name=Fishing spot
 desc=I can see fish swimming in the water.
 model=compofishspot
 op1=Net
 op3=hidden
 
-[loc_3033]
+// todo: name used from 244
+[newbietree]
 name=Tree
 desc=One of the most common trees in RuneScape.
 model=tree
@@ -22596,7 +22797,8 @@ mapscene=0
 op1=Chop down
 op3=hidden
 
-[loc_3034]
+// todo: name used from 244
+[newbietree2]
 name=Tree
 desc=One of the most common trees in RuneScape.
 model=tree2
@@ -22606,7 +22808,8 @@ mapscene=0
 op1=Chop down
 op3=hidden
 
-[loc_3035]
+// todo: name used from 244
+[newbiedeadtree]
 name=Tree
 desc=One of the most common trees in RuneScape.
 model=deadtree1
@@ -22616,7 +22819,8 @@ mapscene=6
 op1=Chop down
 op3=hidden
 
-[loc_3036]
+// todo: name used from 244
+[newbiedeadtree2]
 name=Tree
 desc=One of the most common trees in RuneScape.
 model=deadtree2
@@ -22626,7 +22830,8 @@ mapscene=6
 op1=Chop down
 op3=hidden
 
-[loc_3037]
+// todo: name used from 244
+[newbieoaktree]
 name=Oak
 desc=A beautiful old oak.
 model=loc_3037
@@ -22636,7 +22841,8 @@ op1=Chop down
 op3=hidden
 mapscene=1
 
-[loc_3038]
+// todo: name used from 244
+[newbiefire]
 name=Fire
 desc=Hot!
 model=loc_2732
@@ -22646,14 +22852,16 @@ blockrange=no
 ambient=75
 contrast=75
 
-[loc_3039]
+// todo: name used from 244
+[newbierange]
 name=Range
 desc=Ideal for cooking on.
 model=loc_2728
 length=2
 op1=Use
 
-[loc_3040]
+// todo: name used from 244
+[newbiecbshut]
 name=Cupboard
 desc=It's closed.
 model=cupboardhigh
@@ -22661,7 +22869,8 @@ length=2
 op1=Open
 forceapproach=east
 
-[loc_3041]
+// todo: name used from 244
+[newbiecbopen]
 name=Cupboard
 desc=It's open.
 model=cupboardopen_high
@@ -22670,25 +22879,28 @@ op1=Search
 op2=Shut
 forceapproach=east
 
-[loc_3042]
+// todo: name used from 244
+[newbiecopperrock]
 name=Rocks
 desc=A rocky outcrop.
-model=loc_450
+model=rock1
 recol1s=6342
 recol1d=11492
 op1=Mine
 op2=Prospect
 
-[loc_3043]
+// todo: name used from 244
+[newbietinrock]
 name=Rocks
 desc=A rocky outcrop.
-model=loc_450
+model=rock1
 recol1s=6342
 recol1d=13741
 op1=Mine
 op2=Prospect
 
-[loc_3044]
+// todo: name used from 244
+[newbiefurnace]
 name=Furnace
 desc=A hot place for forging things in.
 model=plaguesheep_furnace
@@ -22698,7 +22910,8 @@ length=3
 forceapproach=east
 op1=Use
 
-[loc_3045]
+// todo: name used from 244
+[newbiebankbooth]
 name=Bank booth
 desc=The bank teller will serve you from here.
 model=loc_2213
@@ -23955,7 +24168,7 @@ resizey=100
 resizez=100
 active=yes
 
-[invisible_type8_blocking_size9]
+[loc_3192]
 name=Scoreboard
 desc=You can see the last 50 fights on here.
 model=invisible_type8_blocking_size9
@@ -23966,7 +24179,8 @@ contrast=50
 op1=View
 active=yes
 
-[tog_juna]
+// todo: name used from 244
+[loc_3193]
 name=Closed chest
 desc=Used to store players' items whilst they duel.
 model=arena_guard_chest_shut
@@ -23994,7 +24208,8 @@ model=damagedarmour1_dusty
 recol1s=11627
 recol1d=18890
 
-[trawlernet_top_l]
+// todo: name used from 244
+[loc_3197]
 name=Gate
 desc=Entrance to the Duel Arena.
 model=plaguesheep_gatel
@@ -24004,7 +24219,8 @@ op1=Open
 active=yes
 blockrange=no
 
-[trawlernet_top_r]
+// todo: name used from 244
+[loc_3198]
 name=Gate
 desc=Entrance to the Duel Arena.
 model=plaguesheep_gatel
@@ -24055,7 +24271,8 @@ model=arena_cliffrock
 sharelight=yes
 hillskew=yes
 
-[loc_3205]
+// todo: name used from 244
+[laddertop_norim]
 name=Ladder
 desc=I can climb down this.
 model=loc_3205
@@ -24079,7 +24296,8 @@ recol1d=21071
 sharelight=yes
 active=no
 
-[loc_3209]
+// todo: name used from 244
+[oddwall_r]
 name=Odd looking wall
 desc=A strange crack cuts into the wall.
 model=loc_3209
@@ -24093,7 +24311,8 @@ active=yes
 op1=Push
 raiseobject=no
 
-[loc_3210]
+// todo: name used from 244
+[openoddwall_r]
 name=Odd looking wall
 desc=A strange crack cuts into the wall.
 model=loc_3210
@@ -24106,7 +24325,8 @@ recol3d=5216
 active=yes
 raiseobject=no
 
-[loc_3211]
+// todo: name used from 244
+[oddwall_l]
 name=Odd looking wall
 desc=A strange crack cuts into the wall.
 model=loc_3211
@@ -24120,7 +24340,8 @@ active=yes
 op1=Push
 raiseobject=no
 
-[loc_3212]
+// todo: name used from 244
+[openoddwall_l]
 name=Odd looking wall
 desc=A strange crack cuts into the wall.
 model=loc_3212
@@ -24136,7 +24357,7 @@ raiseobject=no
 [upass_caveentrance2]
 name=Cave entrance
 desc=It looks like I can squeeze through here.
-model=mcannoncave
+model=caveentrance
 width=4
 length=2
 op1=Enter
@@ -24144,7 +24365,7 @@ op1=Enter
 [cave_exit_upass]
 name=Underground Pass Exit
 desc=The easy way out...
-model=mcannoncave
+model=caveentrance
 recol1s=10400
 recol1d=7329
 recol2s=8288
@@ -24648,7 +24869,7 @@ op1=Climb-down
 [caverockpile]
 name=Pile of rocks
 desc=I can climb this pile of rocks...
-model=mcanmudpile
+model=mudpile
 length=2
 mapscene=11
 op1=Climb
@@ -24656,31 +24877,31 @@ op1=Climb
 [cave_railings2]
 name=Cage
 desc=Usually used for storing living things...
-model=mcannonplain
+model=railing
 op1=Pick-lock
 op2=Search
 
 [cave_railings3]
 name=Cage
 desc=Usually used for storing living things...
-model=mcannonplain
+model=railing
 op2=Search
 
 [cave_railings5]
 name=Cage
 desc=Usually used for storing living things...
-model=mcannonplain
+model=railing
 op1=Pick-lock
 op2=Search
 
 [inact_cave_railings]
-model=mcannonplain
+model=railing
 active=no
 
 [cavewitch_door]
 name=Door
 desc=The door is closed.
-model=mcannondoor
+model=door
 active=yes
 op1=Open
 op2=Knock
@@ -24688,7 +24909,7 @@ op2=Knock
 [witchdoor]
 name=Door
 desc=The door is open.
-model=mcannondoor
+model=door
 active=yes
 op1=Close
 
@@ -24948,7 +25169,7 @@ sharelight=yes
 [mudpile_upass]
 name=Rockpile
 desc=A pile of rocks.
-model=mcanmudpile
+model=mudpile
 recol1s=12512
 recol1d=7329
 length=2
@@ -25410,7 +25631,8 @@ desc=A wooden crate for storage.
 model=crate3
 op1=Search
 
-[loc_3361]
+// todo: name used from 244
+[caveorb_vis]
 name=Orb of Light
 desc=A magical sphere that glimmers within.
 model=loc_3361
@@ -25539,7 +25761,7 @@ op1=Search
 [rantzogrecaveentrance]
 name=Cave entrance
 desc=The entrance to Rantz's cave
-model=mcannoncave
+model=caveentrance
 width=3
 length=2
 op1=Enter
@@ -25621,7 +25843,8 @@ forcedecor=yes
 sharelight=yes
 active=no
 
-[loc_3389]
+// todo: name used from 244
+[elemental_workshop_bookcase]
 name=Bookcase
 desc=A good source of books!
 model=bookcase
@@ -25629,27 +25852,31 @@ length=2
 op1=Search
 forceapproach=east
 
-[loc_3390]
+// todo: name used from 244
+[elemental_workshop_oddwall_r]
 name=Odd looking wall
 desc=A strange crack cuts into the wall.
 model=loc_3209
 active=yes
 op1=Open
 
-[loc_3391]
+// todo: name used from 244
+[elemental_workshop_oddwall_l]
 name=Odd looking wall
 desc=A strange crack cuts into the wall.
 model=loc_3211
 active=yes
 op1=Open
 
-[loc_3392]
+// todo: name used from 244
+[elemental_workshop_oddwall_r_open]
 name=Odd looking wall
 desc=A strange crack cuts into the wall.
 model=loc_3209
 active=yes
 
-[loc_3393]
+// todo: name used from 244
+[elemental_workshop_oddwall_l_open]
 name=Odd looking wall
 desc=A strange crack cuts into the wall.
 model=loc_3211
@@ -25658,7 +25885,7 @@ active=yes
 [elemental_workshop_box_1]
 name=Crate
 desc=A wooden crate for storage.
-model=mcannoncrate
+model=crate
 retex1s=elfwood
 retex1d=wood2
 op1=Search
@@ -25708,7 +25935,7 @@ op1=Search
 [elemental_workshop_box_8]
 name=Crate
 desc=A wooden crate for storage.
-model=mcannoncrate
+model=crate
 retex1s=elfwood
 retex1d=wood2
 op1=Search
@@ -25721,7 +25948,8 @@ recol1s=15855
 recol1d=5250
 width=3
 
-[elemental_workshop_valve_1]
+// todo: name used from 244
+[elemental_workshop_rock]
 name=Pile of Rock
 desc=A pile of Elemental rock.
 model=elemental_workshop_valve1
@@ -25731,7 +25959,8 @@ recol2s=6342
 recol2d=10259
 op1=Mine
 
-[elemental_workshop_valve_2]
+// todo: name used from 244
+[elemental_workshop_valve_1]
 name=Water Valve
 desc=A valve to start and stop the flow of water.
 model=sewervalve1
@@ -25739,7 +25968,8 @@ recol1s=9545
 recol1d=5250
 op1=Turn
 
-[elemental_workshop_wheel]
+// todo: name used from 244
+[elemental_workshop_valve_2]
 name=Water Valve
 desc=A valve to start and stop the flow of water.
 model=sewervalve1
@@ -25753,7 +25983,8 @@ desc=This lever can be operated.
 model=floorlever_off
 op1=Pull
 
-[loc_3407]
+// todo: name used from 244
+[elemental_wheel]
 name=Water wheel
 desc=It spins.
 model=loc_3407
@@ -25778,7 +26009,8 @@ desc=This lever can be operated.
 model=floorlever_off
 op1=Pull
 
-[elemental_workshop_furnace]
+// todo: name used from 244
+[elemental_workshop_bellows_l]
 name=Bellows
 desc=Big bellows.
 model=elemental_workshop_furnace
@@ -25790,7 +26022,8 @@ width=2
 length=5
 op1=Fix
 
-[elemental_pipe_end]
+// todo: name used from 244
+[elemental_workshop_bellows_r]
 name=Bellows
 desc=Big bellows.
 model=elemental_workshop_furnace
@@ -25812,7 +26045,8 @@ recol2d=5250
 width=2
 active=no
 
-[loc_3413]
+// todo: name used from 244
+[elemental_workshop_furnace]
 name=Furnace
 desc=A furnace with an air blast pipe.
 model=plaguesheep_furnace
@@ -25827,7 +26061,8 @@ recol4d=5250
 width=3
 length=3
 
-[loc_3414]
+// todo: name used from 244
+[elemental_workshop_trough]
 name=Lava trough
 desc=A small trough full of lava.
 model=loc_3414
@@ -25963,7 +26198,8 @@ ambient=20
 length=2
 active=yes
 
-[duel_arena_bigwallb]
+// todo: name used from 244
+[loc_3430]
 model=duel_arena_bigwallb
 ambient=15
 contrast=15
@@ -25973,7 +26209,7 @@ wallwidth=32
 [loc_3431]
 name=Rocks
 desc=Stoney!
-model=loc_450
+model=rock1
 op1=Mine
 op2=Prospect
 op3=hidden
@@ -27269,7 +27505,7 @@ forcedecor=yes
 active=yes
 
 [agility_wall]
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=elfbrick
 recol2s=6342
@@ -27531,7 +27767,7 @@ active=yes
 [agilityarena_ladderup]
 name=Ladder
 desc=Leads back to Brimhaven.
-model=mcannonladder
+model=ladder
 active=yes
 op1=Climb-up
 mapscene=7
@@ -28505,7 +28741,7 @@ blockrange=no
 [death_hermitcave_entrance]
 name=Cave Entrance
 desc=Looks like a small cave.
-model=mcannoncave
+model=caveentrance
 recol1s=10400
 recol1d=11592
 recol2s=8288
@@ -28614,7 +28850,7 @@ active=no
 [death_sherpa_door]
 name=Door
 desc=The door is closed.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=door
 recol2s=6342
@@ -28625,7 +28861,7 @@ op1=Open
 [death_sherpa_backdoor]
 name=Door
 desc=The door is closed.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=door
 recol2s=6342
@@ -28636,7 +28872,7 @@ op1=Open
 [death_harold_door]
 name=Door
 desc=A nicely fitted door.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=door2
 recol2s=6342
@@ -28735,7 +28971,7 @@ active=no
 [troll_pass_entrance]
 name=Cave Entrance
 desc=Looks like a small cave.
-model=mcannoncave
+model=caveentrance
 recol1s=10400
 recol1d=11592
 recol2s=8288
@@ -28777,7 +29013,7 @@ op1=Exit
 [troll_mad_eadgar_entrance]
 name=Cave Entrance
 desc=Looks like a small cave.
-model=mcannoncave
+model=caveentrance
 recol1s=10400
 recol1d=11592
 recol2s=8288
@@ -30499,7 +30735,7 @@ model=regicide_sulphar_vent
 active=no
 
 [regicide_sulphar_gas]
-model=bh_icon
+model=gas
 recol1s=28538
 recol1d=19016
 anim=gas
@@ -30896,7 +31132,7 @@ op1=Climb-down
 [regicide_voyage_temple_entrance]
 name=Cave entrance
 desc=It looks like I can squeeze through here.
-model=mcannoncave
+model=caveentrance
 recol1s=10400
 recol1d=16737
 recol2s=8288
@@ -32172,7 +32408,7 @@ active=no
 [viking_trollcave_entrance]
 name=Cave Entrance
 desc=This must be Lalli's home.
-model=mcannoncave
+model=caveentrance
 recol1s=10400
 recol1d=11592
 recol2s=8288
@@ -32287,7 +32523,7 @@ contrast=100
 [vt_mazeladdertopentrance]
 name=Ladder
 desc=Takes me into the maze.
-model=mcannonladder2
+model=ladder2
 active=yes
 op1=Climb-down
 mapscene=7
@@ -34979,7 +35215,7 @@ op1=Take-from
 [castlewars_saradomin_sidedoor]
 name=Door
 desc=An elf-fashioned door.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=elfdoor
 recol2s=6342
@@ -34991,7 +35227,7 @@ raiseobject=no
 [castlewars_saradomin_sidedoor_open]
 name=Door
 desc=An elf-fashioned door.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=elfdoor
 recol2s=6342
@@ -35003,7 +35239,7 @@ raiseobject=no
 [castlewars_zamorak_sidedoor]
 name=Door
 desc=The door is closed.
-model=mcannondoor
+model=door
 active=yes
 op1=Unlock
 raiseobject=no
@@ -35011,7 +35247,7 @@ raiseobject=no
 [castlewars_zamorak_sidedoor_open]
 name=Door
 desc=The door is open.
-model=mcannondoor
+model=door
 active=yes
 op1=Lock
 raiseobject=no
@@ -35287,7 +35523,7 @@ mapscene=7
 [loc_4499]
 name=Cave Entrance
 desc=Wow - it's a guinea pig! No, hang on, it's a cave.
-model=mcannoncave
+model=caveentrance
 recol1s=10400
 recol1d=11592
 recol2s=8288
@@ -35306,7 +35542,7 @@ op1=Enter
 [loc_4500]
 name=Tunnel
 desc=This leads back to the cruel world above.
-model=loc_4500
+model=rock10
 width=3
 length=2
 ambient=60
@@ -35324,7 +35560,7 @@ forcedecor=yes
 ambient=10
 
 [loc_4502]
-model=loc_4502
+model=rock12
 retex1s=wall
 retex1d=mossybricks
 recol2s=6342
@@ -35337,7 +35573,7 @@ resizex=128
 resizey=192
 
 [loc_4503]
-model=loc_4503
+model=rock13
 retex1s=wall
 retex1d=mossybricks
 recol2s=6342
@@ -35350,7 +35586,7 @@ resizex=128
 resizey=192
 
 [loc_4504]
-model=loc_4502
+model=rock12
 sharelight=yes
 hillskew=yes
 ambient=20
@@ -35359,7 +35595,7 @@ resizex=128
 resizey=192
 
 [loc_4505]
-model=loc_4505
+model=rock15
 sharelight=yes
 hillskew=yes
 ambient=20
@@ -35368,7 +35604,7 @@ resizex=128
 resizey=192
 
 [loc_4506]
-model=loc_4506
+model=rock16
 sharelight=yes
 hillskew=yes
 ambient=20
@@ -35377,7 +35613,7 @@ resizex=128
 resizey=192
 
 [loc_4507]
-model=loc_4506
+model=rock16
 sharelight=yes
 hillskew=yes
 ambient=20
@@ -35388,7 +35624,7 @@ hillskew=yes
 mirror=yes
 
 [loc_4508]
-model=loc_4508
+model=rock18
 sharelight=yes
 hillskew=yes
 ambient=20
@@ -35397,7 +35633,7 @@ resizex=128
 resizey=192
 
 [loc_4509]
-model=loc_4509
+model=rock19
 sharelight=yes
 hillskew=yes
 ambient=20
@@ -35630,7 +35866,7 @@ active=no
 ambient=20
 
 [loc_4530]
-model=loc_4530
+model=rock30
 recol1s=21140
 recol1d=4554
 recol2s=15855
@@ -35642,7 +35878,7 @@ active=no
 ambient=20
 
 [loc_4531]
-model=loc_4531
+model=rock31
 recol1s=21140
 recol1d=4554
 recol2s=15855
@@ -35654,7 +35890,7 @@ active=no
 ambient=20
 
 [loc_4532]
-model=loc_4532
+model=rock32
 recol1s=21140
 recol1d=4554
 recol2s=15855
@@ -35666,7 +35902,7 @@ active=no
 ambient=20
 
 [loc_4533]
-model=loc_4533
+model=rock33
 sharelight=yes
 hillskew=yes
 
@@ -35695,7 +35931,7 @@ hillskew=yes
 active=no
 
 [loc_4537]
-model=loc_4533
+model=rock33
 recol1s=10535
 recol1d=11592
 recol2s=9478
@@ -36620,7 +36856,7 @@ active=no
 [boardgames_draughts_door_experienced]
 name=Door
 desc=An elf-fashioned door.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=elfdoor
 recol2s=6342
@@ -36632,7 +36868,7 @@ raiseobject=no
 [boardgames_runelink_door_experienced]
 name=Door
 desc=An elf-fashioned door.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=elfdoor
 recol2s=6342
@@ -36644,7 +36880,7 @@ raiseobject=no
 [elfdoor_reverse]
 name=Door
 desc=An elf-fashioned door.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=elfdoor
 recol2s=6342
@@ -36656,7 +36892,7 @@ raiseobject=no
 [elfdooropen_reverse]
 name=Door
 desc=An elf-fashioned door.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=elfdoor
 recol2s=6342
@@ -36669,7 +36905,7 @@ mirror=yes
 [elfdoor_locked]
 name=Door
 desc=An elf-fashioned door.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=elfdoor
 recol2s=6342
@@ -36694,7 +36930,7 @@ op1=Read
 [boardgames_runelink_ladderup_experienced]
 name=Ladder
 desc=The ladder to the Runelink challenge room for experienced players.
-model=mcannonladder
+model=ladder
 forceapproach=north
 active=yes
 op1=Climb-up
@@ -36702,7 +36938,7 @@ op1=Climb-up
 [boardgames_runelink_ladderdown_experienced]
 name=Ladder
 desc=The ladder back to the Runelink challenge room.
-model=mcannonladder2
+model=ladder2
 forceapproach=north
 active=yes
 op1=Climb-Down
@@ -36710,7 +36946,7 @@ op1=Climb-Down
 [boardgames_draughts_ladderup_experienced]
 name=Ladder
 desc=The ladder to the Draughts challenge room for experienced players.
-model=mcannonladder
+model=ladder
 forceapproach=north
 active=yes
 op1=Climb-up
@@ -36718,7 +36954,7 @@ op1=Climb-up
 [boardgames_draughts_ladderdown_experienced]
 name=Ladder
 desc=The ladder back to the Draughts challenge room.
-model=mcannonladder2
+model=ladder2
 forceapproach=north
 active=yes
 op1=Climb-Down
@@ -36726,7 +36962,7 @@ op1=Climb-Down
 [boardgames_ladderup]
 name=Ladder
 desc=The ladder back up to the Toad and Chicken.
-model=mcannonladder
+model=ladder
 forceapproach=north
 active=yes
 op1=Climb-up
@@ -36949,7 +37185,7 @@ op3=hidden
 [misc_dummy_coalrock1]
 name=Rocks
 desc=A rocky outcrop.
-model=loc_450
+model=rock1
 recol1s=6342
 recol1d=4226
 op1=Mine
@@ -39170,7 +39406,7 @@ blockrange=no
 [castlewars_laddertop]
 name=Ladder
 desc=I can climb down this.
-model=mcannonladder2
+model=ladder2
 active=yes
 op1=Climb-down
 mapscene=7
@@ -39551,7 +39787,7 @@ model=floorlever_off
 [hauntedmine_boss_door]
 name=Door
 desc=The door is closed.
-model=mcannondoor
+model=door
 active=yes
 op1=Open
 
@@ -39581,7 +39817,7 @@ mapscene=7
 [hauntedmine_ladder]
 name=Ladder
 desc=I can climb this.
-model=mcannonladder
+model=ladder
 active=yes
 op1=Climb-up
 mapscene=7
@@ -39597,7 +39833,7 @@ mapscene=7
 [hauntedmine_ladder_1w]
 name=Ladder
 desc=I can climb this.
-model=mcannonladder
+model=ladder
 active=yes
 op1=Climb-up
 mapscene=7
@@ -39613,7 +39849,7 @@ mapscene=7
 [hauntedmine_ladder_1ne]
 name=Ladder
 desc=I can climb this.
-model=mcannonladder
+model=ladder
 active=yes
 op1=Climb-up
 mapscene=7
@@ -39665,7 +39901,7 @@ op1=Search
 [hauntedmine_chisel_crate]
 name=Crate
 desc=An old crate for storage.
-model=mcannoncrate
+model=crate
 retex1s=darkwood
 retex1d=wood2
 retex2s=elfwood
@@ -40067,7 +40303,7 @@ blockrange=no
 [trollromance_caveentrance]
 name=Cave entrance
 desc=Looks like small cave.
-model=mcannoncave
+model=caveentrance
 recol1s=10400
 recol1d=30653
 recol2s=8288
@@ -40086,7 +40322,7 @@ op1=Enter
 [trollromance_stronghold_exit_tunnel]
 name=Tunnel
 desc=Looks dark...
-model=mcannoncave
+model=caveentrance
 recol1s=10400
 recol1d=11592
 recol2s=8288
@@ -40171,7 +40407,7 @@ op1=Enter
 [trollromance_piste_exit_tunnel_exit]
 name=Tunnel
 desc=Looks dark...
-model=mcannoncave
+model=caveentrance
 recol1s=10400
 recol1d=30655
 recol2s=8288
@@ -40568,7 +40804,7 @@ length=3
 [thrttavernbasementfalsewall]
 name=Wall
 desc=If it had paint on it, you'd probably watch it dry.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=mossybricks
 recol2s=6342
@@ -40580,7 +40816,7 @@ op1=Search
 [thrttavernbasementfalsewall_inactive]
 name=Wall
 desc=If it had paint on it, you'd probably watch it dry.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=mossybricks
 recol2s=6342
@@ -40591,7 +40827,7 @@ active=yes
 [thrttavernbasementladder]
 name=Ladder
 desc=I can climb this.
-model=mcannonladder
+model=ladder
 active=yes
 op1=Climb-up
 mapscene=7
@@ -40873,7 +41109,7 @@ sharelight=yes
 op1=Walk-across
 
 [loc_5091]
-model=loc_4533
+model=rock33
 recol1s=6307
 recol1d=7296
 recol2s=7364
@@ -41758,7 +41994,7 @@ forcedecor=yes
 ambient=10
 
 [fenk_exterior_wall]
-model=loc_4502
+model=rock12
 retex1s=wall
 retex1d=mossybricks
 recol2s=6342
@@ -41768,7 +42004,7 @@ sharelight=yes
 occlude=yes
 
 [fenk_exterior_wall_lvl2]
-model=loc_4503
+model=rock13
 retex1s=wall
 retex1d=mossybricks
 recol2s=6342
@@ -41778,25 +42014,25 @@ sharelight=yes
 occlude=yes
 
 [fenk_interior_wall]
-model=loc_4502
+model=rock12
 sharelight=yes
 hillskew=yes
 ambient=20
 
 [fenk_interior_wall_vari]
-model=loc_4505
+model=rock15
 sharelight=yes
 hillskew=yes
 ambient=20
 
 [fenk_crumblywall1]
-model=loc_4506
+model=rock16
 sharelight=yes
 hillskew=yes
 ambient=20
 
 [fenk_crumblywall1r]
-model=loc_4506
+model=rock16
 sharelight=yes
 hillskew=yes
 ambient=20
@@ -41804,13 +42040,13 @@ hillskew=yes
 mirror=yes
 
 [fenk_crumblywall2]
-model=loc_4508
+model=rock18
 sharelight=yes
 hillskew=yes
 ambient=20
 
 [fenk_crumblywall2_top]
-model=loc_4508
+model=rock18
 recol1s=3203
 recol1d=7431
 recol2s=4260
@@ -41822,7 +42058,7 @@ hillskew=yes
 ambient=20
 
 [fenk_crumblywalllow]
-model=loc_4509
+model=rock19
 sharelight=yes
 hillskew=yes
 ambient=20
@@ -42092,7 +42328,7 @@ active=no
 ambient=20
 
 [fenk_short_grass_4_wall_edge]
-model=loc_4530
+model=rock30
 recol1s=21140
 recol1d=2213
 recol2s=15855
@@ -42104,7 +42340,7 @@ active=no
 ambient=20
 
 [fenk_short_grass_4_wall_corner]
-model=loc_4531
+model=rock31
 recol1s=21140
 recol1d=2213
 recol2s=15855
@@ -42116,7 +42352,7 @@ active=no
 ambient=20
 
 [fenk_short_grass_wall_edge_2]
-model=loc_4532
+model=rock32
 recol1s=21140
 recol1d=2213
 recol2s=15855
@@ -42382,7 +42618,7 @@ mapscene=7
 [roving_golrie_ladder_from_cellar]
 name=Ladder
 desc=I can climb this.
-model=mcannonladder
+model=ladder
 active=yes
 op1=Climb-up
 mapscene=7
@@ -42996,7 +43232,7 @@ active=no
 shadow=no
 
 [ahoy_shipwreck_rocks_medium]
-model=loc_4533
+model=rock33
 recol1s=11592
 recol1d=10599
 recol2s=10535
@@ -43015,7 +43251,7 @@ mapscene=22
 hillskew=yes
 
 [ahoy_shipwreck_rocks_tall]
-model=loc_4533
+model=rock33
 recol1s=11592
 recol1d=10599
 recol2s=10535
@@ -43037,7 +43273,7 @@ mapscene=22
 hillskew=yes
 
 [ahoy_shipwreck_rocks_taller]
-model=loc_4533
+model=rock33
 recol1s=11592
 recol1d=10599
 recol2s=10535
@@ -43059,7 +43295,7 @@ mapscene=22
 hillskew=yes
 
 [ahoy_shipwreck_rocks_low]
-model=loc_4533
+model=rock33
 recol1s=11592
 recol1d=10599
 recol2s=10535
@@ -43081,7 +43317,7 @@ mapscene=22
 hillskew=yes
 
 [ahoy_shipwreck_rocks_medium_low]
-model=loc_4533
+model=rock33
 recol1s=11592
 recol1d=10599
 recol2s=10535
@@ -43369,7 +43605,7 @@ active=no
 ambient=20
 
 [ahoy_short_grass_4_wall_edge]
-model=loc_4530
+model=rock30
 recol1s=21140
 recol1d=7460
 recol2s=15855
@@ -43381,7 +43617,7 @@ active=no
 ambient=20
 
 [ahoy_short_grass_4_wall_corner]
-model=loc_4531
+model=rock31
 recol1s=21140
 recol1d=7460
 recol2s=15855
@@ -43393,7 +43629,7 @@ active=no
 ambient=20
 
 [ahoy_short_grass_wall_edge_2]
-model=loc_4532
+model=rock32
 recol1s=21140
 recol1d=7460
 recol2s=15855
@@ -43634,7 +43870,7 @@ width=2
 blockrange=no
 
 [ahoy_tower_exterior_wall]
-model=loc_4502
+model=rock12
 recol1s=7431
 recol1d=6373
 recol2s=6374
@@ -43655,7 +43891,7 @@ resizex=128
 resizey=192
 
 [ahoy_tower_exterior_wall_lvl2]
-model=loc_4503
+model=rock13
 recol1s=7431
 recol1d=6373
 recol2s=6374
@@ -44517,7 +44753,7 @@ occlude=yes
 hillskew=yes
 
 [ahoy_town_wall_standardwall]
-model=loc_4502
+model=rock12
 recol1s=7431
 recol1d=8486
 recol2s=6374
@@ -44960,7 +45196,7 @@ hillskew=yes
 [zanarisladderout2]
 name=Ladder
 desc=I can climb this.
-model=mcannonladder
+model=ladder
 active=yes
 op1=Climb-up
 mapscene=7
@@ -45011,7 +45247,7 @@ multiloc=3,osf_trapdoor_closed
 [osf_ham_ladder]
 name=Ladder
 desc=I can climb this.
-model=mcannonladder
+model=ladder
 active=yes
 op1=Climb-up
 mapscene=7
@@ -45132,7 +45368,7 @@ offsety=10
 offsetz=0
 
 [favour_wall]
-model=loc_4502
+model=rock12
 recol1s=2146
 recol1d=6274
 recol2s=3203
@@ -45309,7 +45545,7 @@ hillskew=yes
 active=no
 
 [favour_cavewall_face1]
-model=loc_4533
+model=rock33
 recol1s=6307
 recol1d=6240
 recol2s=7364
@@ -45405,7 +45641,7 @@ active=no
 ambient=20
 
 [short_grass_4_wall_edge]
-model=loc_4530
+model=rock30
 recol1s=21140
 recol1d=11712
 recol2s=15855
@@ -45417,7 +45653,7 @@ active=no
 ambient=20
 
 [short_grass_4_wall_corner]
-model=loc_4531
+model=rock31
 recol1s=21140
 recol1d=11712
 recol2s=15855
@@ -45429,7 +45665,7 @@ active=no
 ambient=20
 
 [short_grass_wall_edge_2]
-model=loc_4532
+model=rock32
 recol1s=21140
 recol1d=11712
 recol2s=15855
@@ -47578,7 +47814,7 @@ multiloc=1,favour_weathervane
 [loc_5812]
 name=Ladder
 desc=I can climb this.
-model=mcannonladder
+model=ladder
 active=yes
 op1=Climb-up
 mapscene=7
@@ -47587,7 +47823,7 @@ forceapproach=north
 [favour_seer_laddertop]
 name=Ladder
 desc=I can climb down this.
-model=mcannonladder2
+model=ladder2
 active=yes
 op1=Climb-down
 mapscene=7
@@ -47987,7 +48223,7 @@ op3=Pick-from
 [mdaughter_caveentrance]
 name=Cave entrance
 desc=There's a nasty stench coming from the cave.
-model=mcannoncave
+model=caveentrance
 recol1s=10400
 recol1d=30653
 recol2s=8288
@@ -51047,7 +51283,7 @@ width=2
 length=2
 
 [oldwall_no_occlude]
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=mossybricks
 recol2s=6342
@@ -51464,7 +51700,7 @@ forceapproach=south
 [feud_ladder]
 name=Ladder
 desc=I can climb this.
-model=mcannonladder
+model=ladder
 active=yes
 op1=Climb-up
 mapscene=7
@@ -51473,7 +51709,7 @@ forceapproach=south
 [feud_laddermiddle]
 name=Ladder
 desc=I can climb this.
-model=mcannonladder
+model=ladder
 active=yes
 op1=Climb
 op2=Climb-up
@@ -51622,7 +51858,7 @@ op1=Climb-down
 [castlewars_saradomin_spawnladder]
 name=Ladder
 desc=I can climb this.
-model=mcannonladder
+model=ladder
 active=yes
 op1=Climb-up
 mapscene=7
@@ -51631,7 +51867,7 @@ forceapproach=north
 [castlewars_zamorak_spawnladder]
 name=Ladder
 desc=I can climb this.
-model=mcannonladder
+model=ladder
 active=yes
 op1=Climb-up
 mapscene=7
@@ -52876,7 +53112,7 @@ hillskew=yes
 [4d_ladder1]
 name=Ladder
 desc=I can climb this.
-model=mcannonladder
+model=ladder
 active=yes
 op1=Climb-up
 mapscene=7
@@ -52884,7 +53120,7 @@ mapscene=7
 [4d_ladder2]
 name=Ladder
 desc=I can climb this.
-model=mcannonladder
+model=ladder
 active=yes
 op1=Climb-up
 mapscene=7
@@ -53023,7 +53259,7 @@ op1=Climb-down
 [vampire_ladder]
 name=Ladder
 desc=I can climb this.
-model=mcannonladder
+model=ladder
 active=yes
 op1=Climb-up
 mapscene=7
@@ -53081,7 +53317,7 @@ multiloc=9,trollrescue_troll_cave_entrance_multi
 [trollrescue_troll_cave_entrance_multi]
 name=Cave entrance
 desc=Looks like a small cave.
-model=mcannoncave
+model=caveentrance
 recol1s=10400
 recol1d=30655
 recol2s=8288
@@ -53100,7 +53336,7 @@ op1=Enter
 [trollrescue_troll_cave_entrance1]
 name=Cave entrance
 desc=Blocked by an icicle.
-model=mcannoncave
+model=caveentrance
 model2=trollrescue_troll_cave_entrance1
 recol1s=10400
 recol1d=30655
@@ -53120,7 +53356,7 @@ op1=Enter
 [trollrescue_troll_cave_entrance2]
 name=Cave entrance
 desc=Blocked by two icicles.
-model=mcannoncave
+model=caveentrance
 model2=trollrescue_troll_cave_entrance2
 recol1s=10400
 recol1d=30655
@@ -53140,7 +53376,7 @@ op1=Enter
 [trollrescue_troll_cave_entrance3]
 name=Cave entrance
 desc=Blocked by three icicles.
-model=mcannoncave
+model=caveentrance
 model2=trollrescue_troll_cave_entrance3
 recol1s=10400
 recol1d=30655
@@ -53160,7 +53396,7 @@ op1=Enter
 [trollrescue_troll_cave_entrance4]
 name=Cave entrance
 desc=Blocked by four icicles.
-model=mcannoncave
+model=caveentrance
 model2=trollrescue_troll_cave_entrance4
 recol1s=10400
 recol1d=30655
@@ -53180,7 +53416,7 @@ op1=Enter
 [trollrescue_troll_cave_entrance5]
 name=Cave entrance
 desc=Blocked by five icicles.
-model=mcannoncave
+model=caveentrance
 model2=trollrescue_troll_cave_entrance5
 recol1s=10400
 recol1d=30655
@@ -53200,7 +53436,7 @@ op1=Enter
 [trollrescue_troll_cave_exit]
 name=Cave exit
 desc=Looks like a small cave.
-model=mcannoncave
+model=caveentrance
 recol1s=10400
 recol1d=30655
 recol2s=8288
@@ -53235,7 +53471,7 @@ forceapproach=north
 [fd_shadowladder]
 name=Ladder
 desc=I can climb this.
-model=mcannonladder
+model=ladder
 active=yes
 op1=Climb-up
 mapscene=7
@@ -53256,7 +53492,7 @@ mirror=yes
 active=yes
 
 [fd_fw_cave_railings]
-model=mcannonplain
+model=railing
 active=no
 
 [protect_rock]
@@ -54405,7 +54641,7 @@ mirror=yes
 active=no
 
 [icthalarins_exterior_wall]
-model=loc_4502
+model=rock12
 recol1s=7431
 recol1d=18954
 recol2s=6374
@@ -54424,7 +54660,7 @@ occlude=yes
 active=no
 
 [icthalarins_exterior_wall_lvl2]
-model=loc_4503
+model=rock13
 recol1s=7431
 recol1d=18954
 recol2s=6374
@@ -54443,7 +54679,7 @@ occlude=yes
 active=no
 
 [icthalarins_interior_wall]
-model=loc_4502
+model=rock12
 recol1s=7431
 recol1d=18954
 recol2s=6374
@@ -54461,7 +54697,7 @@ hillskew=yes
 active=no
 
 [icthalarins_interior_wall_vari]
-model=loc_4505
+model=rock15
 recol1s=7431
 recol1d=18954
 recol2s=6374
@@ -54479,7 +54715,7 @@ hillskew=yes
 active=no
 
 [icthalarins_crumblywall1]
-model=loc_4506
+model=rock16
 recol1s=7431
 recol1d=18954
 recol2s=6374
@@ -54497,7 +54733,7 @@ hillskew=yes
 active=no
 
 [icthalarins_crumblywall1r]
-model=loc_4506
+model=rock16
 recol1s=7431
 recol1d=18954
 recol2s=6374
@@ -54517,7 +54753,7 @@ mirror=yes
 active=no
 
 [icthalarins_crumblywall2]
-model=loc_4508
+model=rock18
 recol1s=7431
 recol1d=18954
 recol2s=6374
@@ -54535,7 +54771,7 @@ hillskew=yes
 active=no
 
 [icthalarins_crumblywalllow]
-model=loc_4509
+model=rock19
 recol1s=7431
 recol1d=18954
 recol2s=6374
@@ -56300,7 +56536,7 @@ hillskew=yes
 active=no
 
 [barrows_grass_4_wall_edge]
-model=loc_4530
+model=rock30
 recol1s=21140
 recol1d=9670
 recol2s=15855
@@ -56311,7 +56547,7 @@ hillskew=yes
 active=no
 
 [barrows_grass_4_wall_corner]
-model=loc_4531
+model=rock31
 recol1s=21140
 recol1d=9670
 recol2s=15855
@@ -56322,7 +56558,7 @@ hillskew=yes
 active=no
 
 [barrows_grass_wall_edge_2]
-model=loc_4532
+model=rock32
 recol1s=21140
 recol1d=9670
 recol2s=15855
@@ -58034,7 +58270,7 @@ ambient=20
 contrast=50
 
 [brickwall_church]
-model=mcannondoor1
+model=door1
 sharelight=yes
 
 [brickwall_church_frame]
@@ -60568,7 +60804,7 @@ forcedecor=yes
 [roguesden_gallery_door]
 name=Door
 desc=This way to the viewing gallery.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=elfdoor
 recol2s=6342
@@ -60580,7 +60816,7 @@ raiseobject=no
 [roguesden_gallery_door_inactive]
 name=Door
 desc=This way to the viewing gallery.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=elfdoor
 recol2s=6342
@@ -61051,7 +61287,7 @@ forcedecor=yes
 [roguesden_door_to_pub]
 name=Door
 desc=This way to exit.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=elfdoor
 recol2s=6342
@@ -61063,7 +61299,7 @@ raiseobject=no
 [roguesden_door_to_pub_open]
 name=Door
 desc=This way to exit.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=elfdoor
 recol2s=6342
@@ -61137,7 +61373,7 @@ active=no
 ambient=20
 
 [death_short_grass_4_wall_edge]
-model=loc_4530
+model=rock30
 recol1s=21140
 recol1d=8550
 recol2s=15855
@@ -61149,7 +61385,7 @@ active=no
 ambient=20
 
 [death_short_grass_4_wall_corner]
-model=loc_4531
+model=rock31
 recol1s=21140
 recol1d=8550
 recol2s=15855
@@ -61161,7 +61397,7 @@ active=no
 ambient=20
 
 [death_short_grass_wall_edge_2]
-model=loc_4532
+model=rock32
 recol1s=21140
 recol1d=8550
 recol2s=15855
@@ -90697,7 +90933,7 @@ raiseobject=no
 [mourner_hideout_ladder1]
 name=Ladder
 desc=I can climb this.
-model=mcannonladder
+model=ladder
 active=yes
 op1=Climb-up
 mapscene=7
@@ -90705,7 +90941,7 @@ mapscene=7
 [mourner_hideout_door1]
 name=Door
 desc=The door is closed.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=door
 recol2s=6342
@@ -90717,7 +90953,7 @@ raiseobject=no
 [mourner_hideout_door2]
 name=Door
 desc=The door is closed.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=door
 recol2s=6342
@@ -90737,7 +90973,7 @@ raiseobject=no
 [mourner_hideout_door4]
 name=Door
 desc=The door is closed.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=door
 recol2s=6342
@@ -90749,7 +90985,7 @@ raiseobject=no
 [mourner_hideout_door1_open]
 name=Door
 desc=The door is open.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=door
 recol2s=6342
@@ -90760,7 +90996,7 @@ raiseobject=no
 [mourner_hideout_door2_open]
 name=Door
 desc=The door is open.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=door
 recol2s=6342
@@ -90779,7 +91015,7 @@ raiseobject=no
 [mourner_hideout_door4_open]
 name=Door
 desc=The door is open.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=door
 recol2s=6342
@@ -90994,7 +91230,7 @@ length=2
 [mourning_poordoor]
 name=Door
 desc=The door is closed.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=door
 recol2s=6342
@@ -91006,7 +91242,7 @@ raiseobject=no
 [mourning_poordooropen]
 name=Door
 desc=The door is open.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=door
 recol2s=6342
@@ -91035,7 +91271,7 @@ active=yes
 raiseobject=no
 
 [mourning_cavewall_face1]
-model=loc_4533
+model=rock33
 recol1s=6307
 recol1d=8386
 recol2s=7364
@@ -91056,7 +91292,7 @@ resizez=128
 ambient=30
 
 [mourning_shorter_cavewall_face1]
-model=loc_4533
+model=rock33
 recol1s=6307
 recol1d=8386
 recol2s=7364
@@ -91117,21 +91353,21 @@ resizez=128
 [mourning_rocks1]
 name=Rocks
 desc=Heavy.
-model=loc_450
+model=rock1
 recol1s=6342
 recol1d=9443
 
 [mourning_rocks2]
 name=Rocks
 desc=Heavy.
-model=mcannonrock
+model=rock2
 recol1s=6342
 recol1d=9443
 
 [mourning_rocks3]
 name=Rocks
 desc=Heavy.
-model=loc_453
+model=rock3
 recol1s=6342
 recol1d=9443
 
@@ -92277,7 +92513,7 @@ op1=Enter
 [dagannoth_caveentrance_ice]
 name=Cave entrance
 desc=It looks cold in there.
-model=mcannoncave
+model=caveentrance
 recol1s=10400
 recol1d=30653
 recol2s=8288
@@ -92297,7 +92533,7 @@ op1=Enter
 forceapproach=south
 
 [dagannoth_cavewall_face1]
-model=loc_4533
+model=rock33
 recol1s=6307
 recol1d=1122
 recol2s=7364
@@ -92316,7 +92552,7 @@ ambient=20
 contrast=40
 
 [dagannoth_cavewall_face1_glow]
-model=loc_4533
+model=rock33
 recol1s=6307
 recol1d=9608
 recol2s=7364
@@ -92335,7 +92571,7 @@ ambient=20
 contrast=40
 
 [dagannoth_cavewall_face1_falloff]
-model=loc_4533
+model=rock33
 recol1s=6307
 recol1d=1057
 recol2s=7364
@@ -92405,7 +92641,7 @@ hillskew=yes
 active=no
 
 [dagannoth_cavewall_face1_shorter]
-model=loc_4533
+model=rock33
 recol1s=6307
 recol1d=1122
 recol2s=7364
@@ -92425,7 +92661,7 @@ resizex=128
 resizey=64
 
 [dagannoth_cavewall_face1_shorter_glow]
-model=loc_4533
+model=rock33
 recol1s=6307
 recol1d=9608
 recol2s=7364
@@ -94345,7 +94581,7 @@ length=2
 [wom_unbroken_wall]
 name=Wall
 desc=An old wall.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=mossybricks
 recol2s=6342
@@ -97463,7 +97699,7 @@ blockrange=no
 forcedecor=yes
 
 [reddoor_open]
-model=mcannondoor
+model=door
 recol1s=14626
 recol1d=13443
 recol2s=13569
@@ -97475,7 +97711,7 @@ recol4d=10272
 active=no
 
 [orangedoor_open]
-model=mcannondoor
+model=door
 recol1s=14626
 recol1d=27041
 recol2s=13569
@@ -97487,7 +97723,7 @@ recol4d=22881
 active=no
 
 [yellowdoor_open]
-model=mcannondoor
+model=door
 recol1s=14626
 recol1d=23243
 recol2s=13569
@@ -97499,7 +97735,7 @@ recol4d=20072
 active=no
 
 [bluedoor_open]
-model=mcannondoor
+model=door
 recol1s=14626
 recol1d=10640
 recol2s=13569
@@ -97511,7 +97747,7 @@ recol4d=7469
 active=no
 
 [magentadoor_open]
-model=mcannondoor
+model=door
 recol1s=14626
 recol1d=15695
 recol2s=13569
@@ -97523,7 +97759,7 @@ recol4d=12524
 active=no
 
 [greendoor_open]
-model=mcannondoor
+model=door
 recol1s=14626
 recol1d=6437
 recol2s=13569
@@ -97793,7 +98029,7 @@ ambient=20
 resizey=300
 
 [long_grass_4_wall_edge]
-model=loc_4530
+model=rock30
 recol1s=21140
 recol1d=11712
 recol2s=15855
@@ -97806,7 +98042,7 @@ ambient=20
 resizey=300
 
 [long_grass_4_wall_corner]
-model=loc_4531
+model=rock31
 recol1s=21140
 recol1d=11712
 recol2s=15855
@@ -97819,7 +98055,7 @@ ambient=20
 resizey=300
 
 [long_grass_wall_edge_2]
-model=loc_4532
+model=rock32
 recol1s=21140
 recol1d=11712
 recol2s=15855
@@ -98813,7 +99049,7 @@ active=no
 resizey=120
 
 [melzar_interior_wall]
-model=loc_4502
+model=rock12
 recol1s=7431
 recol1d=13705
 recol2s=6374
@@ -98829,7 +99065,7 @@ recol6d=8420
 sharelight=yes
 
 [melzar_interior_wall_vari]
-model=loc_4505
+model=rock15
 recol1s=7431
 recol1d=13705
 recol2s=6374
@@ -98845,7 +99081,7 @@ recol6d=8420
 sharelight=yes
 
 [melzar_exterior_wall_lvl2]
-model=loc_4503
+model=rock13
 recol1s=7431
 recol1d=13705
 recol2s=6374
@@ -106079,7 +106315,7 @@ model=summon_standard_red
 ambient=20
 
 [funexit_open]
-model=mcannondoor
+model=door
 active=no
 
 [makinghistory_poorbed]
@@ -106144,7 +106380,7 @@ blockrange=no
 [makinghistory_door]
 name=Door
 desc=The door is closed.
-model=mcannondoor
+model=door
 recol1s=14626
 recol1d=10466
 recol2s=13569
@@ -106160,7 +106396,7 @@ raiseobject=no
 [makinghistory_door_open]
 name=Door
 desc=The door is open.
-model=mcannondoor
+model=door
 recol1s=14626
 recol1d=10466
 recol2s=13569
@@ -106453,7 +106689,7 @@ multiloc=0,barrows_stone_chest_closed
 multiloc=1,barrows_stone_chest_open
 
 [vc_door_closed_inactive]
-model=mcannondoor
+model=door
 retex1s=wall
 retex1d=elfdoor
 recol2s=6342
@@ -106751,7 +106987,7 @@ contrast=22
 [vc_laddertop]
 name=Ladder
 desc=I can climb down this.
-model=mcannonladder2
+model=ladder2
 active=yes
 op1=Climb-down
 mapscene=7
@@ -106760,7 +106996,7 @@ forceapproach=south
 [vc_ladder]
 name=Ladder
 desc=I can climb this.
-model=mcannonladder
+model=ladder
 active=yes
 op1=Climb-up
 mapscene=7
@@ -106902,7 +107138,7 @@ contrast=5
 [vc_elfdoor]
 name=Door
 desc=A magical device that enables one to walk through walls.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=elfdoor
 recol2s=6342
@@ -106914,7 +107150,7 @@ raiseobject=no
 [vc_elfdoor_closed_always]
 name=Door
 desc=A locked door.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=elfdoor
 recol2s=6342
@@ -106926,7 +107162,7 @@ raiseobject=no
 [vc_elfdooropen]
 name=Door
 desc=A magical device that enables one to walk through walls.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=elfdoor
 recol2s=6342
@@ -107299,7 +107535,7 @@ blockrange=no
 [vc_elfdooropen_noclose]
 name=Door
 desc=A wonderful device that enables one to walk through walls.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=elfdoor
 recol2s=6342
@@ -108359,7 +108595,7 @@ forcedecor=yes
 mapfunction=39
 
 [elid_underground_walls]
-model=loc_4533
+model=rock33
 recol1s=11592
 recol1d=25065
 recol2s=10535
@@ -108376,7 +108612,7 @@ sharelight=yes
 hillskew=yes
 
 [elid_underground_wall_shorter]
-model=loc_4533
+model=rock33
 recol1s=11592
 recol1d=25065
 recol2s=10535
@@ -109747,7 +109983,7 @@ ambient=10
 ambient=20
 
 [wyvern_cave_wall]
-model=loc_4533
+model=rock33
 recol1s=10535
 recol1d=24511
 recol2s=9478
@@ -110304,7 +110540,7 @@ sharelight=yes
 hillskew=yes
 
 [loc_10644]
-model=loc_4502
+model=rock12
 recol1s=7431
 recol1d=15818
 recol2s=6374
@@ -112301,7 +112537,7 @@ model=hauntedfountain
 width=2
 length=2
 
-[deadman_yewtree_insurancestall]
+[loc_10828]
 name=Trawler net
 desc=Smells like fish.
 model=deadman_yewtree_insurancestall
@@ -112343,7 +112579,7 @@ desc=Smells like fish.
 model=magictree
 sharelight=yes
 
-[deadman_magictree]
+[loc_10835]
 name=Trawler net
 desc=Smells like fish.
 model=deadman_magictree
@@ -116370,7 +116606,7 @@ blockrange=no
 [boardgames_runeversi_door_experienced]
 name=Door
 desc=An elf-fashioned door.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=elfdoor
 recol2s=6342
@@ -116382,7 +116618,7 @@ raiseobject=no
 [boardgames_runesquares_door_experienced]
 name=Door
 desc=An elf-fashioned door.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=elfdoor
 recol2s=6342
@@ -116394,7 +116630,7 @@ raiseobject=no
 [boardgames_runeversi_ladderup_experienced]
 name=Ladder
 desc=The ladder to the Runeversi challenge room for experienced players.
-model=mcannonladder
+model=ladder
 forceapproach=north
 active=yes
 op1=Climb-up
@@ -116402,7 +116638,7 @@ op1=Climb-up
 [boardgames_runeversi_ladderdown_experienced]
 name=Ladder
 desc=The ladder back to the Runeversi challenge room.
-model=mcannonladder2
+model=ladder2
 forceapproach=north
 active=yes
 op1=Climb-Down
@@ -116410,7 +116646,7 @@ op1=Climb-Down
 [boardgames_runesquares_ladderup_experienced]
 name=Ladder
 desc=The ladder to the Runesquares challenge room for experienced players.
-model=mcannonladder
+model=ladder
 forceapproach=north
 active=yes
 op1=Climb-up
@@ -116418,7 +116654,7 @@ op1=Climb-up
 [boardgames_runesquares_ladderdown_experienced]
 name=Ladder
 desc=The ladder back to the Runesquares challenge room.
-model=mcannonladder2
+model=ladder2
 forceapproach=north
 active=yes
 op1=Climb-Down
@@ -119313,7 +119549,7 @@ sharelight=yes
 [draynor_basement_door_open]
 name=Door
 desc=It's closed.
-model=mcannondoor
+model=door
 recol1s=14626
 recol1d=8420
 recol2s=13569
@@ -122296,7 +122532,7 @@ blockrange=no
 [loc_11713]
 name=Door
 desc=The door is closed.
-model=mcannondoor
+model=door
 recol1s=14626
 recol1d=17865
 recol2s=13569
@@ -122318,7 +122554,7 @@ resizey=156
 [loc_11714]
 name=Door
 desc=The door is closed.
-model=mcannondoor
+model=door
 recol1s=14626
 recol1d=17865
 recol2s=13569
@@ -122341,7 +122577,7 @@ resizey=152
 [loc_11715]
 name=Door
 desc=The door is open.
-model=mcannondoor
+model=door
 recol1s=14626
 recol1d=17865
 recol2s=13569
@@ -124007,7 +124243,7 @@ ambient=20
 contrast=15
 
 [tzhaar_cave_floor_1]
-model=mcannondoor
+model=door
 recol1s=14626
 recol1d=17865
 recol2s=13569
@@ -128906,7 +129142,7 @@ op1=Inspect
 [hundred_lumbridge_door]
 name=Door
 desc=An ornate-fashioned door.
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=elfdoor
 recol2s=6342
@@ -129787,7 +130023,7 @@ ambient=20
 [goblin_outpost_poordoor]
 name=Door
 desc=The door is closed.
-model=mcannondoor
+model=door
 recol1s=14626
 recol1d=8386
 recol2s=13569
@@ -129803,7 +130039,7 @@ raiseobject=no
 [goblin_outpost_openpoordoor]
 name=Door
 desc=The door is open.
-model=mcannondoor
+model=door
 recol1s=14626
 recol1d=8386
 recol2s=13569
@@ -132388,14 +132624,14 @@ blockwalk=no
 active=no
 
 [loc_12654]
-model=bh_icon
+model=gas
 recol1s=0
 recol1d=6273
 anim=gas
 active=no
 
 [loc_12655]
-model=loc_4533
+model=rock33
 recol1s=6307
 recol1d=12580
 recol2s=7364
@@ -132449,7 +132685,7 @@ op1=Exit
 ambient=20
 
 [loc_12658]
-model=loc_4533
+model=rock33
 recol1s=6307
 recol1d=7296
 recol2s=7364
@@ -133021,7 +133257,7 @@ hillskew=yes
 ambient=30
 
 [wiz_tower_texture_wall_test]
-model=mcannondoor1
+model=door1
 retex1s=wall
 retex1d=door
 active=no
@@ -133372,7 +133608,7 @@ op2=Search
 [burgh_inn_climb_over]
 name=Broken down wall
 desc=A broken down wall.
-model=loc_4508
+model=rock18
 recol1s=7431
 recol1d=7428
 recol2s=6374
@@ -133479,7 +133715,7 @@ op2=Close
 [burgh_inn_rubble_rock]
 name=Rubble
 desc=A pile of rubble.
-model=loc_450
+model=rock1
 recol1s=6342
 recol1d=14596
 op1=Mine
@@ -133498,7 +133734,7 @@ active=yes
 [burgh_inn_basement_ladder]
 name=Ladder
 desc=I can climb this.
-model=mcannonladder
+model=ladder
 active=yes
 mapscene=7
 op1=Climb-up
@@ -133609,7 +133845,7 @@ op1=Climb-down
 [burgh_temple_library_ladder_up]
 name=Ladder
 desc=I can climb this.
-model=mcannonladder
+model=ladder
 active=yes
 mapscene=7
 op1=Climb-up
@@ -134250,7 +134486,7 @@ mirror=yes
 ambient=15
 
 [burgh_stone]
-model=loc_4502
+model=rock12
 recol1s=7431
 recol1d=7428
 recol2s=6374
@@ -134267,7 +134503,7 @@ ambient=20
 sharelight=yes
 
 [burgh_stone_vari]
-model=loc_4505
+model=rock15
 recol1s=7431
 recol1d=7428
 recol2s=6374
@@ -134284,7 +134520,7 @@ ambient=20
 sharelight=yes
 
 [burgh_stone_crumbly_right]
-model=loc_4506
+model=rock16
 recol1s=7431
 recol1d=7428
 recol2s=6374
@@ -134301,7 +134537,7 @@ ambient=20
 sharelight=yes
 
 [burgh_stone_crumbly_left]
-model=loc_4506
+model=rock16
 recol1s=7431
 recol1d=7428
 recol2s=6374
@@ -134319,7 +134555,7 @@ ambient=20
 sharelight=yes
 
 [burgh_stone_crumbly_half_right]
-model=loc_4508
+model=rock18
 recol1s=7431
 recol1d=7428
 recol2s=6374
@@ -134336,7 +134572,7 @@ ambient=20
 sharelight=yes
 
 [burgh_stone_crumbly_half_left]
-model=loc_4508
+model=rock18
 recol1s=7431
 recol1d=7428
 recol2s=6374
@@ -134354,7 +134590,7 @@ ambient=20
 sharelight=yes
 
 [burgh_stone_crumbly_low_left]
-model=loc_4509
+model=rock19
 recol1s=7431
 recol1d=7428
 recol2s=6374
@@ -134371,7 +134607,7 @@ ambient=20
 sharelight=yes
 
 [burgh_stone_crumbly_low_right]
-model=loc_4509
+model=rock19
 recol1s=7431
 recol1d=7428
 recol2s=6374
@@ -134474,7 +134710,7 @@ hillskew=yes
 sharelight=yes
 
 [burgh_stone_crumbly_right_lev2]
-model=loc_4506
+model=rock16
 recol1s=7431
 recol1d=7428
 recol2s=6374
@@ -134491,7 +134727,7 @@ ambient=20
 sharelight=yes
 
 [burgh_stone_crumbly_left_lev2]
-model=loc_4506
+model=rock16
 recol1s=7431
 recol1d=7428
 recol2s=6374
@@ -134509,7 +134745,7 @@ ambient=20
 sharelight=yes
 
 [burgh_stone_crumbly_half_right_lev2]
-model=loc_4508
+model=rock18
 recol1s=7431
 recol1d=7428
 recol2s=6374
@@ -134526,7 +134762,7 @@ ambient=20
 sharelight=yes
 
 [burgh_stone_crumbly_half_left_lev2]
-model=loc_4508
+model=rock18
 recol1s=7431
 recol1d=7428
 recol2s=6374
@@ -134544,7 +134780,7 @@ ambient=20
 sharelight=yes
 
 [burgh_stone_lev2]
-model=loc_4503
+model=rock13
 recol1s=7431
 recol1d=7428
 recol2s=6374
@@ -136306,7 +136542,7 @@ active=no
 [qip_sheep_shearer_poordoor]
 name=Door
 desc=The door is closed.
-model=mcannondoor
+model=door
 recol1s=12512
 recol1d=10434
 recol2s=13569
@@ -136323,7 +136559,7 @@ raiseobject=no
 [qip_sheep_shearer_poordooropen]
 name=Door
 desc=The door is open.
-model=mcannondoor
+model=door
 recol1s=12512
 recol1d=10434
 recol2s=13569
@@ -147929,7 +148165,7 @@ hillskew=yes
 sharelight=yes
 
 [pest_outpost_wall]
-model=loc_4502
+model=rock12
 recol1s=7431
 recol1d=21072
 recol2s=6374
@@ -148099,7 +148335,7 @@ active=no
 mirror=yes
 
 [pest_outpost_wall_vari]
-model=loc_4505
+model=rock15
 recol1s=7431
 recol1d=21072
 recol2s=6374
@@ -148116,7 +148352,7 @@ ambient=20
 sharelight=yes
 
 [pest_outpost_crumblystone_right]
-model=loc_4506
+model=rock16
 recol1s=7431
 recol1d=21072
 recol2s=6374
@@ -148133,7 +148369,7 @@ ambient=20
 sharelight=yes
 
 [pest_outpost_crumblystone_left]
-model=loc_4506
+model=rock16
 recol1s=7431
 recol1d=21072
 recol2s=6374
@@ -148150,7 +148386,7 @@ ambient=20
 mirror=yes
 
 [pest_outpost_crumblystone_half_right]
-model=loc_4508
+model=rock18
 recol1s=7431
 recol1d=21072
 recol2s=6374
@@ -148166,7 +148402,7 @@ recol6d=12617
 ambient=20
 
 [pest_outpost_crumblystone_half_left]
-model=loc_4508
+model=rock18
 recol1s=7431
 recol1d=21072
 recol2s=6374
@@ -148183,7 +148419,7 @@ ambient=20
 mirror=yes
 
 [pest_outpost_crumblystone_low_left]
-model=loc_4509
+model=rock19
 recol1s=7431
 recol1d=21072
 recol2s=6374
@@ -148199,7 +148435,7 @@ recol6d=12617
 ambient=20
 
 [pest_outpost_crumblystone_low_right]
-model=loc_4509
+model=rock19
 recol1s=7431
 recol1d=21072
 recol2s=6374
@@ -149255,7 +149491,7 @@ blockrange=no
 [wild_gas]
 name=Gas bubble
 desc=Looks like a bubble of gas to me.
-model=bh_icon
+model=gas
 anim=gas
 forcedecor=yes
 resizey=32
@@ -150367,7 +150603,7 @@ resizez=75
 blockrange=no
 
 [wild1_wall]
-model=loc_4502
+model=rock12
 recol1s=7431
 recol1d=7399
 recol2s=6374
@@ -150384,7 +150620,7 @@ sharelight=yes
 hillskew=yes
 
 [wild1_wall_top]
-model=loc_4502
+model=rock12
 recol1s=7431
 recol1d=7399
 recol2s=6374
@@ -150401,7 +150637,7 @@ sharelight=yes
 hillskew=yes
 
 [wild1_wall_crumble_l]
-model=loc_4506
+model=rock16
 recol1s=7431
 recol1d=7399
 recol2s=6374
@@ -150418,7 +150654,7 @@ sharelight=yes
 hillskew=yes
 
 [wild1_wall_crumble_small_l]
-model=loc_4508
+model=rock18
 recol1s=7431
 recol1d=7399
 recol2s=6374
@@ -150435,7 +150671,7 @@ sharelight=yes
 hillskew=yes
 
 [wild1_wall_crumble_r]
-model=loc_4506
+model=rock16
 recol1s=7431
 recol1d=7399
 recol2s=6374
@@ -150453,7 +150689,7 @@ hillskew=yes
 mirror=yes
 
 [wild1_wall_crumble_small_r]
-model=loc_4508
+model=rock18
 recol1s=7431
 recol1d=7399
 recol2s=6374
@@ -150471,7 +150707,7 @@ hillskew=yes
 mirror=yes
 
 [wild1_wall_top_crumble_l]
-model=loc_4506
+model=rock16
 recol1s=7431
 recol1d=7399
 recol2s=6374
@@ -150488,7 +150724,7 @@ sharelight=yes
 hillskew=yes
 
 [wild1_wall_top_crumble_small_l]
-model=loc_4508
+model=rock18
 recol1s=7431
 recol1d=7399
 recol2s=6374
@@ -150505,7 +150741,7 @@ sharelight=yes
 hillskew=yes
 
 [wild1_wall_top_crumble_r]
-model=loc_4506
+model=rock16
 recol1s=7431
 recol1d=7399
 recol2s=6374
@@ -150523,7 +150759,7 @@ hillskew=yes
 mirror=yes
 
 [wild1_wall_top_crumble_small_r]
-model=loc_4508
+model=rock18
 recol1s=7431
 recol1d=7399
 recol2s=6374
@@ -150558,7 +150794,7 @@ sharelight=yes
 hillskew=yes
 
 [wild1_wall_crumble_low1]
-model=loc_4509
+model=rock19
 recol1s=7431
 recol1d=7399
 recol2s=6374
@@ -151437,7 +151673,7 @@ resizez=50
 blockrange=no
 
 [wild3_wall]
-model=loc_4502
+model=rock12
 recol1s=7431
 recol1d=7399
 recol2s=6374
@@ -151454,7 +151690,7 @@ sharelight=yes
 hillskew=yes
 
 [wild3_wall_crumble_l]
-model=loc_4506
+model=rock16
 recol1s=7431
 recol1d=7399
 recol2s=6374
@@ -151471,7 +151707,7 @@ sharelight=yes
 hillskew=yes
 
 [wild3_wall_crumble_small_l]
-model=loc_4508
+model=rock18
 recol1s=7431
 recol1d=7399
 recol2s=6374
@@ -151488,7 +151724,7 @@ sharelight=yes
 hillskew=yes
 
 [wild3_wall_crumble_r]
-model=loc_4506
+model=rock16
 recol1s=7431
 recol1d=7399
 recol2s=6374
@@ -151506,7 +151742,7 @@ hillskew=yes
 mirror=yes
 
 [wild3_wall_crumble_small_r]
-model=loc_4508
+model=rock18
 recol1s=7431
 recol1d=7399
 recol2s=6374
@@ -151541,7 +151777,7 @@ sharelight=yes
 hillskew=yes
 
 [wild3_wall_crumble_low1]
-model=loc_4509
+model=rock19
 recol1s=7431
 recol1d=7399
 recol2s=6374
@@ -152712,7 +152948,7 @@ resizez=60
 blockrange=no
 
 [wild6_wall]
-model=loc_4502
+model=rock12
 recol1s=7431
 recol1d=7399
 recol2s=6374
@@ -152729,7 +152965,7 @@ sharelight=yes
 hillskew=yes
 
 [wild6_wall_crumble_l]
-model=loc_4506
+model=rock16
 recol1s=7431
 recol1d=7399
 recol2s=6374
@@ -152746,7 +152982,7 @@ sharelight=yes
 hillskew=yes
 
 [wild6_wall_crumble_small_l]
-model=loc_4508
+model=rock18
 recol1s=7431
 recol1d=7399
 recol2s=6374
@@ -152763,7 +152999,7 @@ sharelight=yes
 hillskew=yes
 
 [wild6_wall_crumble_r]
-model=loc_4506
+model=rock16
 recol1s=7431
 recol1d=7399
 recol2s=6374
@@ -152781,7 +153017,7 @@ hillskew=yes
 mirror=yes
 
 [wild6_wall_crumble_small_r]
-model=loc_4508
+model=rock18
 recol1s=7431
 recol1d=7399
 recol2s=6374
@@ -152816,7 +153052,7 @@ sharelight=yes
 hillskew=yes
 
 [wild6_wall_crumble_low1]
-model=loc_4509
+model=rock19
 recol1s=7431
 recol1d=7399
 recol2s=6374
@@ -153147,7 +153383,7 @@ mapscene=7
 [wild_door]
 name=Door
 desc=A tatty old door.
-model=mcannondoor
+model=door
 recol1s=14626
 recol1d=10499
 recol2s=13569
@@ -153167,7 +153403,7 @@ raiseobject=no
 [wild_door_open]
 name=Door
 desc=A tatty old door.
-model=mcannondoor
+model=door
 recol1s=14626
 recol1d=10499
 recol2s=13569
@@ -153419,7 +153655,7 @@ width=2
 active=yes
 
 [wild_temple_walls]
-model=loc_4502
+model=rock12
 recol1s=7431
 recol1d=7399
 recol2s=6374

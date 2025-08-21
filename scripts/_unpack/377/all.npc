@@ -15802,7 +15802,7 @@ head1=npc_kittenpet1_head
 [kittens_mew]
 name=Crate
 desc=Can I hear kittens?
-model1=mcannoncrate_8
+model1=crate_8
 vislevel=hide
 op1=Search
 minimap=no
@@ -52956,7 +52956,7 @@ head1=npc_2591_head
 [npc_2626]
 name=Rocks
 desc=Stoney!
-model1=loc_450_8
+model1=rock1_8
 minimap=no
 vislevel=1
 
