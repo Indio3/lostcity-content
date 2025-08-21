@@ -222,6 +222,7 @@ param=crush_sound,baxe_crush
 param=broken,macro_broken_black_hatchet
 param=axe_head,macro_black_hatchethead
 
+// https://oldschool.runescape.wiki/w/Update:New_f2p_prayers,_port_to_port_transport_and_improved_dragon_axe only as good as rune before this
 [dragon_axe]
 name=Dragon axe
 desc=A very powerful axe.

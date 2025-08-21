@@ -9287,114 +9287,6 @@ model=grass4
 recol1s=352
 recol1d=1252
 
-[lighttree]
-name=Tree
-desc=A healthy young tree.
-model=tree
-recol1s=5218
-recol1d=17633
-width=2
-length=2
-mapscene=0
-op1=Chop down
-op3=hidden
-
-[tree2]
-name=Tree
-desc=A commonly found tree.
-model=tree2
-recol1s=5218
-recol1d=12548
-width=2
-length=2
-mapscene=1
-op1=Chop down
-op3=hidden
-
-[tree3]
-name=Tree
-desc=A commonly found tree.
-model=tree2
-width=2
-length=2
-mapscene=1
-resizex=100
-resizey=100
-resizez=100
-op1=Chop down
-op3=hidden
-
-[lighttree2]
-name=Tree
-desc=A healthy young tree.
-model=tree2
-recol1s=5218
-recol1d=17633
-width=2
-length=2
-mapscene=1
-op1=Chop down
-op3=hidden
-
-[deadtree1]
-name=Dead tree
-desc=This tree has long been dead.
-model=deadtree1
-width=2
-length=2
-mapscene=6
-op1=Chop down
-op3=hidden
-
-[deadtree1_large]
-name=Dead tree
-desc=This tree has long been dead.
-model=deadtree1
-width=2
-length=2
-mapscene=6
-op1=Chop down
-op3=hidden
-
-[deadtree4]
-name=Dead tree
-desc=This tree has long been dead.
-model=deadtree1
-width=2
-length=2
-mapscene=6
-resizex=100
-resizey=100
-resizez=100
-op1=Chop down
-op3=hidden
-
-[lightdeadtree1]
-name=Dead tree
-desc=An old weather beaten tree.
-model=deadtree1
-recol1s=4194
-recol1d=13602
-recol2s=5250
-recol2d=12514
-width=2
-length=2
-mapscene=6
-op1=Chop down
-op3=hidden
-
-[deadtree2]
-name=Dead tree
-desc=It's only useful for firewood now.
-model=deadtree2
-recol1s=6240
-recol1d=5218
-recol2s=7296
-recol2d=5218
-mapscene=27
-op1=Chop down
-op3=hidden
-
 [deadtree2_web_r]
 name=Dead tree
 desc=It's only useful for firewood now.
@@ -9409,38 +9301,6 @@ model=deadtree2_webr
 mapscene=6
 mirror=yes
 sharelight=yes
-
-[deadtree2_dark]
-name=Dead tree
-desc=It's only useful for firewood now.
-model=deadtree2
-recol1s=7296
-recol1d=4194
-recol2s=6240
-recol2d=4194
-mapscene=27
-op1=Chop down
-op3=hidden
-
-[deadtree3]
-name=Dead tree
-desc=It's only useful for firewood now.
-model=deadtree3
-width=2
-length=2
-mapscene=6
-op1=Chop down
-op3=hidden
-
-[deadtree2_snowy]
-name=Dead tree
-desc=It's only useful for firewood now.
-model=deadtree2
-recol1s=7296
-recol1d=30619
-mapscene=6
-op1=Chop down
-op3=hidden
 
 [dramentree]
 name=Dramen tree
@@ -9585,50 +9445,6 @@ resizex=170
 resizey=170
 resizez=170
 
-[loc_1306]
-name=Magic tree
-desc=The tree shimmers with a magical force.
-model=mm2_lab_cage_broken_door
-width=2
-length=2
-op1=Chop down
-op3=hidden
-mapscene=0
-ambient=25
-
-[loc_1307]
-name=Maple tree
-desc=I bet this makes good syrup!
-model=mm2_lab_wall_outer_01
-width=2
-mapscene=2
-length=2
-op1=Chop down
-op3=hidden
-ambient=25
-
-[loc_1308]
-name=Willow
-desc=These trees are found near water.
-model=mm2_lab_wall_outer_02
-width=2
-length=2
-mapscene=3
-op1=Chop down
-op3=hidden
-ambient=25
-
-[loc_1309]
-name=Yew
-desc=A splendid tree.
-model=mm2_lab_wall_outer_03
-width=3
-length=3
-op1=Chop down
-op3=hidden
-mapscene=3
-ambient=25
-
 [loc_1310]
 name=Tree
 desc=This tree has vines hanging from it.
@@ -9674,30 +9490,6 @@ width=3
 length=2
 mapscene=5
 
-[loc_1315]
-name=Evergreen
-desc=A hardy evergreen tree.
-model=mm2_lab_wall_outer_end01
-recol1s=5218
-recol1d=12548
-width=2
-length=2
-op1=Chop down
-op3=hidden
-mapscene=0
-
-[loc_1316]
-name=Evergreen
-desc=A hardy evergreen tree.
-model=mm2_lab_wall_outer_end02
-recol1s=5218
-recol1d=12548
-width=3
-length=3
-op1=Chop down
-op3=hidden
-mapscene=0
-
 [loc_1317]
 name=Spirit tree
 desc=A young sentient tree.
@@ -9706,30 +9498,6 @@ width=2
 length=2
 op1=Talk-to
 mapscene=0
-
-[evergreen_vsnowy_large]
-name=Evergreen
-desc=This would make good firewood.
-model=evergreen_vsnowy_large
-recol1s=5218
-recol1d=12548
-width=3
-length=3
-op1=Chop down
-op3=hidden
-mapscene=1
-
-[evergreen_snowy_large]
-name=Evergreen
-desc=This would make good firewood.
-model=evergreen_snowy_large
-recol1s=5218
-recol1d=12548
-width=3
-length=3
-op1=Chop down
-op3=hidden
-mapscene=1
 
 [mossbranch1]
 name=Mossy branch
@@ -9796,36 +9564,6 @@ desc=Leaves of a bamboo tree.
 model=bamboo_tree_top
 width=3
 length=3
-
-[snowtree1]
-name=Tree
-desc=It's thick with snow.
-model=snowtree1
-width=3
-length=3
-mapscene=0
-op1=Chop down
-op3=hidden
-
-[snowtree2]
-name=Tree
-desc=It's thick with snow.
-model=snowtree2
-width=3
-length=3
-mapscene=0
-op1=Chop down
-op3=hidden
-
-[snowtree3]
-name=Tree
-desc=It's thick with snow.
-model=snowtree3
-width=3
-length=3
-mapscene=0
-op1=Chop down
-op3=hidden
 
 [deadtree_with_vine]
 name=Dead tree
@@ -9903,194 +9641,6 @@ width=3
 length=3
 mapscene=6
 
-[treestump]
-name=Tree stump
-desc=This tree has been cut down.
-model=treestump
-recol1s=4194
-recol1d=5218
-mapscene=6
-
-[treestump2]
-name=Tree stump
-desc=This tree has been cut down.
-model=treestump2
-recol1s=4194
-recol1d=5218
-recol2s=5218
-recol2d=12548
-width=2
-length=2
-mapscene=6
-
-[treestump2_light]
-name=Tree stump
-desc=This tree has been cut down.
-model=treestump2
-recol1s=4194
-recol1d=17633
-width=2
-length=2
-mapscene=6
-
-[treestump2_green]
-name=Tree stump
-desc=This tree has been cut down.
-model=treestump2
-recol1s=4194
-recol1d=11490
-width=2
-length=2
-mapscene=6
-
-[treestump2_small]
-name=Tree stump
-desc=This tree has been cut down.
-model=treestump2
-recol1s=4194
-recol1d=5218
-width=2
-length=2
-resizex=100
-resizey=100
-resizez=100
-
-[treestump2_big]
-name=Tree stump
-desc=This tree has been cut down.
-model=treestump2
-recol1s=4194
-recol1d=5218
-width=2
-length=2
-resizex=448
-resizey=448
-resizez=448
-mapscene=6
-
-[deadtree1_large_stump]
-name=Tree stump
-desc=This tree has been cut down.
-model=deadtree1_large_stump
-recol1s=7330
-recol1d=4194
-width=2
-length=2
-mapscene=6
-
-[deadtree1_stump]
-name=Tree stump
-desc=This tree has been cut down.
-model=deadtree1_large_stump
-recol1s=7330
-recol1d=4194
-width=2
-length=2
-resizex=100
-resizey=100
-resizez=100
-mapscene=6
-
-[deadtree1_light_stump]
-name=Tree stump
-desc=This tree has been cut down.
-model=deadtree1_large_stump
-recol1s=4194
-recol1d=13602
-recol2s=7330
-recol2d=13602
-width=2
-length=2
-resizex=100
-resizey=100
-resizez=100
-mapscene=6
-
-[deadtree1_small_stump]
-name=Tree stump
-desc=This tree has been cut down.
-model=deadtree1_large_stump
-recol1s=7330
-recol1d=4194
-width=2
-length=2
-resizex=80
-resizey=80
-resizez=80
-mapscene=6
-
-[deadtree2_stump]
-name=Tree stump
-desc=This tree has been cut down.
-model=deadtree2_stump
-recol1s=6240
-recol1d=5218
-recol2s=7296
-recol2d=5218
-mapscene=6
-
-[deadtree2_stump_swamp]
-name=Tree stump
-desc=This tree has been cut down.
-model=deadtree2_stump
-recol1s=7296
-recol1d=3203
-recol2s=6240
-recol2d=3203
-mapscene=6
-
-[deadtree2_stump_dark]
-name=Tree stump
-desc=This tree has been cut down.
-model=deadtree2_stump
-recol1s=7296
-recol1d=4194
-recol2s=6240
-recol2d=4194
-
-[deadtree3_stump]
-name=Tree stump
-desc=This tree has been cut down.
-model=deadtree3_stump
-width=2
-length=2
-
-[evergreen_large_stump]
-name=Tree stump
-desc=This tree has been cut down.
-model=evergreen_large_stump
-recol1s=5218
-recol1d=12548
-width=3
-length=3
-
-[oaktree_stump]
-name=Tree stump
-desc=This tree has been cut down.
-model=oaktree_stump
-ambient=25
-width=3
-length=3
-
-[yewtree_stump]
-name=Tree stump
-desc=This tree has been cut down.
-model=yewtree_stump
-width=3
-length=3
-
-[deadtree6_stump]
-name=Tree stump
-desc=This tree has been cut down.
-model=deadtree6_stump
-recol1s=4193
-recol1d=5218
-
-[deadtree_burnt_stump]
-name=Tree stump
-desc=This tree has been cut down.
-model=deadtree_burnt_stump
-
 [leaning_bamboo_tree_base]
 name=Tropical tree
 desc=This tree contains dangerous insects no doubt.
@@ -10130,18 +9680,6 @@ recol1d=3235
 width=3
 length=3
 mapscene=6
-
-[deadtree2_swamp]
-name=Dead tree
-desc=It's only useful for firewood now.
-model=deadtree2
-recol1s=7296
-recol1d=3203
-recol2s=6240
-recol2d=3203
-mapscene=6
-op1=Chop down
-op3=hidden
 
 [swamp_roots_1]
 name=Roots
@@ -10274,16 +9812,6 @@ model=roots3
 recol1s=6240
 recol1d=4194
 mapscene=6
-
-[deadtree6]
-name=Dead tree
-desc=This tree has long been dead.
-model=deadtree6
-recol1s=4193
-recol1d=5218
-mapscene=6
-op1=Chop down
-op3=hidden
 
 [body_roots_1]
 name=Roots
@@ -16949,19 +16477,6 @@ recol1d=10570
 op1=Squeeze-through
 width=2
 
-[loc_2289]
-name=Hollow tree
-desc=It's hollow...
-model=loc_2289
-recol1s=8352
-recol1d=7428
-recol2s=7330
-recol2d=5283
-mapscene=0
-ambient=25
-op1=Chop down
-op3=hidden
-
 [loc_2290]
 name=Obstacle pipe
 desc=A pipe I can squeeze through.
@@ -17100,17 +16615,6 @@ model=ctratgatea
 op1=Open
 active=yes
 blockrange=no
-
-[hollow_tree_stump]
-name=Tree stump
-desc=This tree has been cut down.
-model=hollow_tree_stump
-recol1s=8352
-recol1d=7428
-recol2s=7330
-recol2d=5283
-ambient=25
-mapscene=6
 
 [loc_2311]
 name=Stepping stone
@@ -30228,71 +29732,6 @@ model=grandwall1_upper_lamp
 anim=crystallamp_float
 ambient=20
 
-[regicide_tree_large]
-name=Tree
-desc=A tree.
-model=regicide_tree_large
-width=3
-length=3
-mapscene=10
-op1=Chop down
-op3=hidden
-
-[regicide_tree_stump]
-name=Tree stump
-desc=It's a tree stump.
-model=regicide_tree_stump
-width=3
-length=3
-mapscene=10
-
-[regicide_tree_large2]
-name=Tree
-desc=A tree.
-model=regicide_tree_large
-width=3
-length=3
-resizex=128
-resizey=150
-resizez=128
-mapscene=10
-op1=Chop down
-op3=hidden
-
-[regicide_tree_large3]
-name=Tree
-desc=A tree.
-model=regicide_tree_large
-width=3
-length=3
-resizex=128
-resizey=170
-resizez=128
-mapscene=10
-op1=Chop down
-op3=hidden
-
-[regicide_tree_small]
-name=Tree
-desc=A tree.
-model=regicide_tree_large
-width=2
-length=2
-resizex=64
-resizey=84
-resizez=64
-mapscene=9
-op1=Chop down
-op3=hidden
-
-[regicide_tree_stump_small]
-name=Tree stump
-desc=It's a tree stump.
-model=regicide_tree_stump
-width=2
-length=2
-mapscene=10
-
 [regicide_roottree]
 name=Tree
 desc=A tree.
@@ -31908,34 +31347,6 @@ sharelight=yes
 active=yes
 blockwalk=no
 op1=Cross
-
-[loc_4060]
-name=Hollow tree
-desc=It's hollow...
-model=loc_4060
-recol1s=8352
-recol1d=7428
-recol2s=7330
-recol2d=5283
-width=2
-length=2
-mapscene=0
-ambient=25
-op1=Chop down
-op3=hidden
-
-[hollow_tree_stump_big]
-name=Tree stump
-desc=This tree has been cut down.
-model=hollow_tree_stump_big
-recol1s=8352
-recol1d=7428
-recol2s=7330
-recol2d=5283
-width=2
-length=2
-ambient=25
-mapscene=6
 
 [shades_experimentshelf]
 name=Shelf
@@ -46157,43 +45568,6 @@ model=dock_leaf_plant
 ambient=40
 blockwalk=no
 blockrange=no
-
-[loc_5551]
-name=Willow
-desc=A droopy tree.
-model=loc_5551
-recol1s=11490
-recol1d=8419
-width=2
-length=2
-mapscene=3
-op1=Chop down
-op3=hidden
-
-[loc_5552]
-name=Willow
-desc=These trees are found near water.
-model=loc_5551
-recol1s=11490
-recol1d=8419
-width=2
-length=2
-mirror=yes
-mapscene=3
-op1=Chop down
-op3=hidden
-
-[loc_5553]
-name=Willow
-desc=These trees are found near water.
-model=loc_5553
-recol1s=11490
-recol1d=8419
-width=2
-length=2
-mapscene=3
-op1=Chop down
-op3=hidden
 
 [loc_5554]
 name=Tree Stump
@@ -94042,44 +93416,6 @@ model=village_gout_tuber
 hillskew=yes
 blockrange=no
 
-[mahoganytree]
-name=Mahogany
-desc=A beautiful old mahogany tree.
-model=mahoganytree
-recol1s=5218
-recol1d=3136
-width=3
-length=3
-op1=Chop down
-op3=hidden
-mapscene=1
-
-[mahogany_stump]
-name=Tree stump
-desc=This once was a beautiful tree.
-model=mahogany_stump
-recol1s=5218
-recol1d=3136
-width=3
-length=3
-
-[teaktree]
-name=Teak
-desc=A beautiful old teak tree.
-model=teaktree
-recol1s=5218
-recol1d=12576
-mapscene=1
-op1=Chop down
-op3=hidden
-
-[teak_stump]
-name=Tree stump
-desc=This tree has been cut down.
-model=teak_stump
-recol1s=5218
-recol1d=12576
-
 [tbwcu_bamboo_door_l]
 name=Hardwood Grove Doors
 desc=A set of large, sturdy wooden doors.
@@ -112989,7 +112325,7 @@ desc=Smells like fish.
 model=willow_tree3
 sharelight=yes
 
-[mapletree]
+[loc_10832]
 name=Trawler net
 desc=Smells like fish.
 model=mapletree
@@ -113001,7 +112337,7 @@ desc=Smells like fish.
 model=willow_tree4i2
 sharelight=yes
 
-[magictree]
+[loc_10834]
 name=Trawler net
 desc=Smells like fish.
 model=magictree

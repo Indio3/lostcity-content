@@ -1304,10 +1304,10 @@
 1303=jungletree1_karamja
 1304=jungletree2_karamja
 1305=loc_1305
-1306=loc_1306
-1307=loc_1307
-1308=loc_1308
-1309=loc_1309
+1306=magictree
+1307=mapletree
+1308=willowtree
+1309=yewtree
 1310=loc_1310
 1311=palm
 1312=palm2
@@ -10830,9 +10830,9 @@
 10829=willow_tree2
 10830=hollow_tree_big
 10831=willow_tree3
-10832=mapletree
+10832=loc_10832
 10833=willow_tree4
-10834=magictree
+10834=loc_10834
 10835=deadman_magictree
 10836=coal_truck
 10837=pier_edge_mirror
