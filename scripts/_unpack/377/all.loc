@@ -9287,18 +9287,6 @@ model=grass4
 recol1s=352
 recol1d=1252
 
-[tree]
-name=Tree
-desc=One of the most common trees in RuneScape.
-model=tree
-recol1s=5218
-recol1d=12548
-width=2
-length=2
-mapscene=0
-op1=Chop down
-op3=hidden
-
 [lighttree]
 name=Tree
 desc=A healthy young tree.
@@ -9347,18 +9335,6 @@ length=2
 mapscene=1
 op1=Chop down
 op3=hidden
-
-[oaktree]
-name=Oak
-desc=A beautiful old oak.
-model=oaktree
-model2=oaktreei2
-ambient=25
-width=3
-length=3
-op1=Chop down
-op3=hidden
-mapscene=1
 
 [deadtree1]
 name=Dead tree
@@ -10305,14 +10281,6 @@ desc=This tree has long been dead.
 model=deadtree6
 recol1s=4193
 recol1d=5218
-mapscene=6
-op1=Chop down
-op3=hidden
-
-[deadtree_burnt]
-name=Dead tree
-desc=It's only useful for firewood now.
-model=deadtree_burnt
 mapscene=6
 op1=Chop down
 op3=hidden
@@ -14626,16 +14594,6 @@ name=Barrel
 desc=A wooden barrel, maybe a way off this rock.
 model=barrel
 op1=Get in
-
-[achey_tree]
-name=Achey Tree
-desc=An interesting tree with long straight branches.
-model=achey_tree
-width=2
-length=2
-mapscene=0
-op1=Chop
-op3=hidden
 
 [hettycauldron]
 name=Cauldron

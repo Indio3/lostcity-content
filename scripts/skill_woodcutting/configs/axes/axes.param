@@ -1,0 +1,7 @@
+[woodcutting_struct]
+type=struct
+default=null
+
+[skill_anim]
+type=seq
+default=null
