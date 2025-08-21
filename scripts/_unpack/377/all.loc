@@ -10929,33 +10929,6 @@ mirror=yes
 blockrange=no
 raiseobject=no
 
-[loc_1551]
-name=Gate
-desc=A wooden gate.
-model=plaguesheep_gatel
-op1=Open
-active=yes
-blockrange=no
-raiseobject=no
-
-[loc_1552]
-name=Gate
-desc=A wooden gate.
-model=plaguesheep_gatel
-op1=Close
-active=yes
-raiseobject=no
-
-[loc_1553]
-name=Gate
-desc=A wooden gate.
-model=plaguesheep_gatel
-mirror=yes
-op1=Open
-active=yes
-blockrange=no
-raiseobject=no
-
 [portcullis_1l]
 model=plaguesheep_gatel
 mirror=yes
@@ -10967,15 +10940,6 @@ raiseobject=no
 model=plaguesheep_gatel
 active=no
 blockrange=no
-raiseobject=no
-
-[portcullis_2l]
-name=Gate
-desc=A wooden gate.
-model=plaguesheep_gatel
-mirror=yes
-op1=Close
-active=yes
 raiseobject=no
 
 [openfencegate_l]
@@ -58962,39 +58926,6 @@ hillskew=yes
 sharelight=yes
 forcedecor=yes
 
-[short_grass_dark_3_wall_edge]
-name=Gate
-desc=A wooden gate.
-model=short_grass_dark_3_wall_edge
-op1=Open
-active=yes
-blockrange=no
-
-[short_grass_dark_4_wall_edge]
-name=Gate
-desc=A wooden gate.
-model=short_grass_dark_3_wall_edge
-mirror=yes
-op1=Open
-active=yes
-blockrange=no
-
-[short_grass_dark_4_wall_corner]
-name=Gate
-desc=A wooden gate.
-model=short_grass_dark_3_wall_edge
-op1=Close
-active=yes
-blockrange=no
-
-[short_grass_dark_wall_edge_2]
-name=Gate
-desc=A wooden gate.
-model=short_grass_dark_3_wall_edge
-mirror=yes
-op1=Close
-blockrange=no
-
 [seed_stall]
 name=Seed Stall
 desc=Lots of seeds here.
@@ -90166,22 +90097,6 @@ active=no
 [farm_rockingchair]
 model=farm_rockingchair
 active=no
-
-[farmdoor]
-name=Door
-desc=The door is closed.
-model=farmdoor
-active=yes
-op1=Open
-raiseobject=no
-
-[farmdooropen]
-name=Door
-desc=The door is open.
-model=farmdoor
-active=yes
-op1=Close
-raiseobject=no
 
 [farm_cookingshelf]
 model=cookingshelf
@@ -136300,55 +136215,6 @@ recol1s=10400
 recol1d=10434
 sharelight=yes
 hillskew=yes
-blockrange=no
-
-[qip_sheep_shearer_fencegate_l]
-name=Gate
-desc=A wooden gate.
-model=short_grass_dark_3_wall_edge
-recol1s=10501
-recol1d=10434
-recol2s=8387
-recol2d=7297
-op1=Open
-active=yes
-blockrange=no
-
-[qip_sheep_shearer_fencegate_r]
-name=Gate
-desc=A wooden gate.
-model=short_grass_dark_3_wall_edge
-recol1s=10501
-recol1d=10434
-recol2s=8387
-recol2d=7297
-mirror=yes
-op1=Open
-active=yes
-blockrange=no
-
-[qip_sheep_shearer_openfencegate_l]
-name=Gate
-desc=A wooden gate.
-model=short_grass_dark_3_wall_edge
-recol1s=10501
-recol1d=10434
-recol2s=8387
-recol2d=7297
-op1=Close
-active=yes
-blockrange=no
-
-[qip_sheep_shearer_openfencegate_r]
-name=Gate
-desc=A wooden gate.
-model=short_grass_dark_3_wall_edge
-recol1s=10501
-recol1d=10434
-recol2s=8387
-recol2d=7297
-mirror=yes
-op1=Close
 blockrange=no
 
 [qip_sheep_shearer_walls]
