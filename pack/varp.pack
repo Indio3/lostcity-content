@@ -124,10 +124,10 @@
 123=varp_123
 124=varp_124
 125=varp_125
-126=varp_126
-127=varp_127
-128=varp_128
-129=varp_129
+126=shop
+127=shop_buy
+128=shop_sell
+129=shop_haggle
 130=spy
 131=itexamlevel
 132=varp_132
