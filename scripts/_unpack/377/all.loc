@@ -20157,6 +20157,7 @@ desc=Grain goes in here.
 model=milltop1
 width=2
 forceapproach=north
+category=hopper_nonfull
 
 // todo: name used from 244
 [hopper_varrock]
@@ -20165,6 +20166,7 @@ desc=Grain goes in here.
 model=milltop1
 width=2
 forceapproach=north
+category=hopper_nonfull
 
 // todo: name used from 244
 [hopper_zanaris]
@@ -20173,6 +20175,7 @@ desc=Grain goes in here.
 model=milltop1
 width=2
 forceapproach=north
+category=hopper_nonfull
 
 // todo: name used from 244
 [hopper_ardougne]
@@ -20181,6 +20184,7 @@ desc=Grain goes in here.
 model=milltop1
 width=2
 forceapproach=north
+category=hopper_nonfull
 
 // todo: name used from 244
 [hoppercontrol_lumbridge]
@@ -20189,6 +20193,10 @@ desc=These control the flow of grain from the hopper to the millstones.
 model=milltop3
 op1=Operate
 forceapproach=north
+category=hoppercontrol
+param=next_loc_stage,hopper_lumbridge
+param=millbase_coord,0_49_51_30_43
+param=hopper_coord,2_49_51_30_43
 
 // todo: name used from 244
 [hoppercontrol_varrock]
@@ -20197,6 +20205,10 @@ desc=These control the flow of grain from the hopper to the millstones.
 model=milltop3
 op1=Operate
 forceapproach=north
+category=hoppercontrol
+param=next_loc_stage,hopper_varrock
+param=millbase_coord,0_49_53_3_58
+param=hopper_coord,2_49_53_4_58
 
 // todo: name used from 244
 [hoppercontrol_zanaris]
@@ -20205,6 +20217,10 @@ desc=These control the flow of grain from the hopper to the millstones.
 model=milltop3
 op1=Operate
 forceapproach=north
+category=hoppercontrol
+param=next_loc_stage,hopper_zanaris
+param=millbase_coord,0_49_149_37_41
+param=hopper_coord,1_49_149_37_41
 
 // todo: name used from 244
 [hoppercontrol_ardougne]
@@ -20213,6 +20229,10 @@ desc=These control the flow of grain from the hopper to the millstones.
 model=milltop3
 op1=Operate
 forceapproach=north
+category=hoppercontrol
+param=next_loc_stage,hopper_ardougne
+param=millbase_coord,0_41_52_8_57
+param=hopper_coord,2_41_52_8_58
 
 // todo: name used from 244
 [hoppercontrol_inuse]

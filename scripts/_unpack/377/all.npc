@@ -76997,7 +76997,7 @@ readyanim=human_ready
 op1=Talk-to
 head1=idk_woman_hair_pigtails_head
 
-[npc_3807]
+[gillie_the_milkmaid]
 name=Gillie Groats
 desc=Gillie the Milkmaid milks cows. She's udderly fantastic at it.
 model1=obj_viking_helmet_womanwear
@@ -77007,7 +77007,7 @@ model4=npc_3792i2
 model5=npc_3137i3
 model6=npc_3164
 model7=idk_79
-model8=npc_3807
+model8=gillie_the_milkmaid
 recol1s=6144
 recol1d=132
 recol2s=8258
