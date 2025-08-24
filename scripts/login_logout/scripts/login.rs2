@@ -15,6 +15,11 @@ buildappearance(worn);
 inv_transmit(inv, inventory:inv);
 inv_transmit(worn, wornitems:worn);
 
+set_player_op(null, 2, ^false);
+set_player_op("Follow", 3, ^false);
+set_player_op("Trade with", 4, ^false);
+set_player_op(null, 5, ^false);
+
 if_settab("combat-unarmed", ^tab_combat);
 if_settab(stats, ^tab_stats);
 if_settab(questlist, ^tab_quests);
