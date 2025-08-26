@@ -3,14 +3,8 @@ mes("Welcome to RuneScape.");
 
 %musicplay = 1; // set to auto on login
 
-bas_readyanim(human_ready);
-bas_turnonspot(human_turnonspot);
-bas_walk_f(human_walk_f);
-bas_walk_b(human_walk_b);
-bas_walk_l(human_walk_l);
-bas_walk_r(human_walk_r);
-bas_running(human_running);
-buildappearance(worn);
+~update_all(inv_getobj(worn, ^wearpos_rhand));
+cam_reset;
 
 inv_transmit(inv, inventory:inv);
 inv_transmit(worn, wornitems:worn);
@@ -20,7 +14,7 @@ set_player_op("Follow", 3, ^false);
 set_player_op("Trade with", 4, ^false);
 set_player_op(null, 5, ^false);
 
-if_settab("combat-unarmed", ^tab_combat);
+if_settab("combat_unarmed", ^tab_combat);
 if_settab(stats, ^tab_stats);
 if_settab(questlist, ^tab_quests);
 if_settab(inventory, ^tab_inv);

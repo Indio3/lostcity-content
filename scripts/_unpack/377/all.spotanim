@@ -168,7 +168,7 @@ anim=arrow_launch
 [crossbowbolt_travel]
 model=spot_crossbowbolt_travel
 
-[dragon_tknife_travel]
+[crossbowbolt_launch]
 model=spot_dragon_tknife_travel
 anim=poh_nexus
 

@@ -56,50 +56,75 @@ transmit=yes
 
 [varp_35]
 
-[varp_36]
+[damagetype]
+protect=no
 
-[varp_37]
+[damagestyle]
+protect=no
 
-[varp_38]
+[lastcombat]
+protect=no
 
-[varp_39]
+[lastcombat_pvp]
+protect=no
 
-[varp_40]
+[eat_delay]
 
-[varp_41]
+[aggressive_npc]
+type=npc_uid
+protect=no
 
-[varp_42]
+[frozen]
 
+// not perm: https://youtu.be/HAeh4qE3WJ4?t=34
 [com_mode]
+protect=no
 transmit=yes
 
-[com_ammo]
+[com_stabattack]
+protect=no
 
-[varp_45]
+[com_stabdef]
+protect=no
 
-[com_stance]
+[com_slashattack]
+protect=no
 
-[varp_47]
+[com_slashdef]
+protect=no
 
-[varp_48]
+[com_crushattack]
+protect=no
 
-[varp_49]
+[com_crushdef]
+protect=no
 
-[varp_50]
+[com_magicattack]
+protect=no
 
-[varp_51]
+[com_magicdef]
+protect=no
 
-[varp_52]
+[com_rangeattack]
+protect=no
 
-[varp_53]
+[com_rangedef]
+protect=no
 
-[varp_54]
+[com_attackanim]
+protect=no
+type=seq
 
-[varp_55]
+[com_defendanim]
+protect=no
+type=seq
 
-[varp_56]
+[com_attacksound]
+protect=no
+type=synth
 
-[varp_57]
+[com_maxhit]
+protect=no
 
 [action_delay]
 
@@ -158,25 +183,25 @@ transmit=yes
 [prayer1]
 transmit=yes
 
-[varp_85]
+[prayer2]
 transmit=yes
 
-[varp_86]
+[prayer3]
 transmit=yes
 
-[varp_87]
+[prayer4]
 transmit=yes
 
-[varp_88]
+[prayer5]
 transmit=yes
 
-[varp_89]
+[prayer6]
 transmit=yes
 
-[varp_90]
+[prayer7]
 transmit=yes
 
-[varp_91]
+[prayer8]
 transmit=yes
 
 [prayer9]
@@ -191,10 +216,10 @@ transmit=yes
 [prayer12]
 transmit=yes
 
-[varp_96]
+[prayer13]
 transmit=yes
 
-[varp_97]
+[prayer14]
 transmit=yes
 
 [prayer15]
@@ -211,7 +236,8 @@ transmit=yes
 
 [poison]
 
-[varp_103]
+[prayer_drain_resistance]
+protect=no
 
 [varp_104]
 
