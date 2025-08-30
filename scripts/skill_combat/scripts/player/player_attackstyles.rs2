@@ -78,7 +78,7 @@ if (%autocast_spell = 0) {
 }
 if (p_finduid(uid) = true) {
     p_clearpendingaction; // https://www.youtube.com/watch?v=P_QzMzpaA04&t=12s
-    %autocast_set = 1;
+    %autocast_set = togglebit(%autocast_set, 0);
     return;
 }
 
