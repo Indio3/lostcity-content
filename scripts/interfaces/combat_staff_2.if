@@ -273,7 +273,7 @@ text=S P E C I A L  A T T A C K
 activetext=@yel@S P E C I A L  A T T A C K
 colour=0x000010
 
-[com_25]
+[preview]
 type=model
 x=119
 y=21
@@ -295,7 +295,7 @@ shadowed=yes
 text=Weapon:
 colour=0xFFFF00
 
-[com_27]
+[name]
 type=text
 x=52
 y=10
@@ -324,7 +324,7 @@ y=51
 width=145
 height=202
 
-[com_30]
+[staff2c]
 layer=com_29
 type=graphic
 x=5
@@ -337,7 +337,7 @@ script1=eq,2
 graphic=combatboxes,0
 activegraphic=combatboxes,1
 
-[com_31]
+[staff2b]
 layer=com_29
 type=graphic
 x=5
@@ -350,7 +350,7 @@ script1=eq,1
 graphic=combatboxes,0
 activegraphic=combatboxes,1
 
-[com_32]
+[staff2a]
 layer=com_29
 type=graphic
 x=5
@@ -459,7 +459,7 @@ font=p11_full
 text=(Defensive)
 colour=0xFFFF00
 
-[com_45]
+[auto_toggle]
 layer=com_29
 type=graphic
 x=5
@@ -527,7 +527,7 @@ font=p11_full
 text=(Crush)
 colour=0xFFFF00
 
-[com_48]
+[auto_spell]
 type=text
 x=81
 y=199
@@ -542,7 +542,7 @@ activetext=(none set)
 colour=0xFFFF00
 activecolour=0xB0A392
 
-[com_49]
+[auto_choose]
 type=model
 x=149
 y=173

@@ -1,6 +1,6 @@
 [proc,send_quest_progress](component $component, int $progress, int $complete_progress)
 ~send_quest_progress_colour($component, $progress, $complete_progress);
-if_settab(questlist, ^tab_quests);
+if_settab(questlist, ^tab_quest_journal);
 
 [proc,send_quest_progress_colour](component $component, int $progress, int $complete_progress)
 // if_setcolor uses 5 bits per color
@@ -44,7 +44,7 @@ switch_component ($component) {
 }
 // Update Quest Tab color
 if_setcolour($component, ^green_rgb);
-if_settab(questlist, ^tab_quests);
+if_settab(questlist, ^tab_quest_journal);
 mes("Congratulations! Quest complete!");
 
 [proc,update_questpoints]
@@ -280,7 +280,7 @@ if (testbit(%upass_map_mechanisms, ^upass_started_bit) = ^true & %upass_progress
 ~send_quest_progress_colour(questlist:itwatchtower, %itwatchtower_progress, ^itwatchtower_complete);
 ~send_quest_progress_colour(questlist:legends, %legends_progress, ^legends_complete);
 ~send_quest_progress_colour(questlist:elemental_workshop, %elemental_workshop_bits, sub(pow(2, ^elemental_workshop_complete), 1));*/
-if_settab(questlist, ^tab_quests);
+if_settab(questlist, ^tab_quest_journal);
 
 /*if (%drunkmonk_progress >= ^drunkmonk_spoken_to_omad) {
     settimer(blanket_ladder, 1);

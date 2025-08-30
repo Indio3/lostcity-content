@@ -6598,7 +6598,7 @@ width=167
 height=167
 scroll=215
 
-[com_0]
+[wind_strike]
 layer=com_510
 type=graphic
 x=0
@@ -6625,7 +6625,7 @@ actionverb=Cast on
 actiontarget=npc,player
 action=Wind strike
 
-[com_1]
+[confuse]
 layer=com_510
 type=graphic
 x=24
@@ -6666,7 +6666,7 @@ actionverb=Cast on
 actiontarget=npc,player
 action=Confuse
 
-[com_2]
+[water_strike]
 layer=com_510
 type=graphic
 x=48
@@ -6703,7 +6703,7 @@ actionverb=Cast on
 actiontarget=npc,player
 action=Water strike
 
-[com_3]
+[enchant_lvl1]
 layer=com_510
 type=graphic
 x=72
@@ -6732,7 +6732,7 @@ actionverb=Cast on
 actiontarget=heldobj
 action=Enchant Lvl-1 Jewelry
 
-[com_4]
+[earth_strike]
 layer=com_510
 type=graphic
 x=96
@@ -6771,7 +6771,7 @@ actionverb=Cast on
 actiontarget=npc,player
 action=Earth strike
 
-[com_5]
+[weaken]
 layer=com_510
 type=graphic
 x=120
@@ -6812,7 +6812,7 @@ actionverb=Cast on
 actiontarget=npc,player
 action=Weaken
 
-[com_6]
+[fire_strike]
 layer=com_510
 type=graphic
 x=144
@@ -6849,7 +6849,7 @@ actionverb=Cast on
 actiontarget=npc,player
 action=Fire strike
 
-[com_7]
+[bones_to_bananas]
 layer=com_510
 type=graphic
 x=0
@@ -6888,7 +6888,7 @@ graphic=magicoff,7
 activegraphic=magicon,7
 option=Cast @gre@Bones to bananas
 
-[com_8]
+[wind_bolt]
 layer=com_510
 type=graphic
 x=24
@@ -6915,7 +6915,7 @@ actionverb=Cast on
 actiontarget=npc,player
 action=Wind bolt
 
-[com_9]
+[curse]
 layer=com_510
 type=graphic
 x=48
@@ -6956,7 +6956,7 @@ actionverb=Cast on
 actiontarget=npc,player
 action=Curse
 
-[com_10]
+[lowlvl_alchemy]
 layer=com_510
 type=graphic
 x=96
@@ -6985,7 +6985,7 @@ actionverb=Cast on
 actiontarget=heldobj
 action=Low level alchemy
 
-[com_11]
+[water_bolt]
 layer=com_510
 type=graphic
 x=120
@@ -7022,7 +7022,7 @@ actionverb=Cast on
 actiontarget=npc,player
 action=Water bolt
 
-[com_12]
+[varrock_teleport]
 layer=com_510
 type=graphic
 x=144
@@ -7057,7 +7057,7 @@ graphic=magicoff,12
 activegraphic=magicon,12
 option=Cast @gre@Varrock teleport
 
-[com_13]
+[enchant_lvl2]
 layer=com_510
 type=graphic
 x=0
@@ -7084,7 +7084,7 @@ actionverb=Cast on
 actiontarget=heldobj
 action=Enchant Lvl-2 Jewelry
 
-[com_14]
+[earth_bolt]
 layer=com_510
 type=graphic
 x=24
@@ -7123,7 +7123,7 @@ actionverb=Cast on
 actiontarget=npc,player
 action=Earth bolt
 
-[com_15]
+[lumbridge_teleport]
 layer=com_510
 type=graphic
 x=48
@@ -7160,7 +7160,7 @@ graphic=magicoff,15
 activegraphic=magicon,15
 option=Cast @gre@Lumbridge teleport
 
-[com_16]
+[telekinetic_grab]
 layer=com_510
 type=graphic
 x=72
@@ -7187,7 +7187,7 @@ actionverb=Cast on
 actiontarget=obj
 action=Telekinetic grab
 
-[com_17]
+[fire_bolt]
 layer=com_510
 type=graphic
 x=96
@@ -7224,7 +7224,7 @@ actionverb=Cast on
 actiontarget=npc,player
 action=Fire bolt
 
-[com_18]
+[falador_teleport]
 layer=com_510
 type=graphic
 x=120
@@ -7259,7 +7259,7 @@ graphic=magicoff,18
 activegraphic=magicon,18
 option=Cast @gre@Falador teleport
 
-[com_19]
+[crumble_undead]
 layer=com_510
 type=graphic
 x=144
@@ -7298,7 +7298,7 @@ actionverb=Cast on
 actiontarget=npc
 action=Crumble undead
 
-[com_20]
+[wind_blast]
 layer=com_510
 type=graphic
 x=0
@@ -7325,7 +7325,7 @@ actionverb=Cast on
 actiontarget=npc,player
 action=Wind blast
 
-[com_21]
+[superheat_item]
 layer=com_510
 type=graphic
 x=24
@@ -7354,7 +7354,7 @@ actionverb=Cast on
 actiontarget=heldobj
 action=Superheat Item
 
-[com_22]
+[camelot_teleport]
 layer=com_510
 type=graphic
 x=48
@@ -7379,7 +7379,7 @@ graphic=magicoff,22
 activegraphic=magicon,22
 option=Cast @gre@Camelot teleport
 
-[com_23]
+[water_blast]
 layer=com_510
 type=graphic
 x=72
@@ -7416,7 +7416,7 @@ actionverb=Cast on
 actiontarget=npc,player
 action=Water blast
 
-[com_24]
+[enchant_lvl3]
 layer=com_510
 type=graphic
 x=96
@@ -7445,7 +7445,7 @@ actionverb=Cast on
 actiontarget=heldobj
 action=Enchant Lvl-3 Jewelry
 
-[com_25]
+[earth_blast]
 layer=com_510
 type=graphic
 x=48
@@ -7484,7 +7484,7 @@ actionverb=Cast on
 actiontarget=npc,player
 action=Earth blast
 
-[com_26]
+[highlvl_alchemy]
 layer=com_510
 type=graphic
 x=72
@@ -7513,7 +7513,7 @@ actionverb=Cast on
 actiontarget=heldobj
 action=High level alchemy
 
-[com_27]
+[water_orb]
 layer=com_510
 type=graphic
 x=96
@@ -7544,7 +7544,7 @@ actionverb=Cast on
 actiontarget=loc
 action=Charge water orb
 
-[com_28]
+[enchant_lvl4]
 layer=com_510
 type=graphic
 x=120
@@ -7575,7 +7575,7 @@ actionverb=Cast on
 actiontarget=heldobj
 action=Enchant Lvl-4 Jewelry
 
-[com_29]
+[fire_blast]
 layer=com_510
 type=graphic
 x=0
@@ -7612,7 +7612,7 @@ actionverb=Cast on
 actiontarget=npc,player
 action=Fire blast
 
-[com_30]
+[earth_orb]
 layer=com_510
 type=graphic
 x=24
@@ -7645,7 +7645,7 @@ actionverb=Cast on
 actiontarget=loc
 action=Charge earth orb
 
-[com_31]
+[wind_wave]
 layer=com_510
 type=graphic
 x=0
@@ -7672,7 +7672,7 @@ actionverb=Cast on
 actiontarget=npc,player
 action=Wind wave
 
-[com_32]
+[fire_orb]
 layer=com_510
 type=graphic
 x=24
@@ -7703,7 +7703,7 @@ actionverb=Cast on
 actiontarget=loc
 action=Charge fire orb
 
-[com_33]
+[water_wave]
 layer=com_510
 type=graphic
 x=71
@@ -7740,7 +7740,7 @@ actionverb=Cast on
 actiontarget=npc,player
 action=Water wave
 
-[com_34]
+[air_orb]
 layer=com_510
 type=graphic
 x=95
@@ -7769,7 +7769,7 @@ actionverb=Cast on
 actiontarget=loc
 action=Charge air orb
 
-[com_35]
+[enchant_lvl5]
 layer=com_510
 type=graphic
 x=144
@@ -7810,7 +7810,7 @@ actionverb=Cast on
 actiontarget=heldobj
 action=Enchant Lvl-5 Jewelry
 
-[com_36]
+[earth_wave]
 layer=com_510
 type=graphic
 x=0
@@ -7849,7 +7849,7 @@ actionverb=Cast on
 actiontarget=npc,player
 action=Earth wave
 
-[com_37]
+[fire_wave]
 layer=com_510
 type=graphic
 x=72
@@ -7886,7 +7886,7 @@ actionverb=Cast on
 actiontarget=npc,player
 action=Fire wave
 
-[com_38]
+[saradomin_strike]
 layer=com_510
 type=graphic
 x=72
@@ -7925,7 +7925,7 @@ actionverb=Cast on
 actiontarget=npc,player
 action=Saradomin strike
 
-[com_39]
+[claws_of_guthix]
 layer=com_510
 type=graphic
 x=96
@@ -7964,7 +7964,7 @@ actionverb=Cast on
 actiontarget=npc,player
 action=Claws of Guthix
 
-[com_40]
+[flames_of_zamorak]
 layer=com_510
 type=graphic
 x=120
@@ -8003,7 +8003,7 @@ actionverb=Cast on
 actiontarget=npc,player
 action=Flames of Zamorak
 
-[com_41]
+[charge]
 layer=com_510
 type=graphic
 x=144

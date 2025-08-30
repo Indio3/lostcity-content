@@ -20,7 +20,7 @@ default=unarmed_punch
 
 [defend_sound]
 type=synth
-default=sound_69
+default=human_hit4
 
 [death_sound]
 type=synth

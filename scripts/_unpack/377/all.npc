@@ -48,6 +48,15 @@ op3=Pickpocket
 op1=Talk-to
 vislevel=2
 head1=obj_pickpocket_guide_man
+respawnrate=50
+hitpoints=7
+param=stabdefence,-21
+param=slashdefence,-21
+param=crushdefence,-21
+param=magicdefence,-21
+param=rangedefence,-21
+param=damagetype,^crush_style
+category=citizen
 
 [man2]
 name=Man
@@ -79,6 +88,15 @@ op3=Pickpocket
 op1=Talk-to
 vislevel=2
 head1=obj_pickpocket_guide_farmer
+respawnrate=50
+hitpoints=7
+param=stabdefence,-21
+param=slashdefence,-21
+param=crushdefence,-21
+param=magicdefence,-21
+param=rangedefence,-21
+param=damagetype,^crush_style
+category=citizen
 
 [man3]
 name=Man
@@ -105,6 +123,15 @@ op1=Talk-to
 vislevel=2
 head1=idk_man_hair_cropped_head
 head2=idk_man_jaw_pointy_head
+respawnrate=50
+hitpoints=7
+param=stabdefence,-21
+param=slashdefence,-21
+param=crushdefence,-21
+param=magicdefence,-21
+param=rangedefence,-21
+param=damagetype,^crush_style
+category=citizen
 
 [woman]
 name=Woman
