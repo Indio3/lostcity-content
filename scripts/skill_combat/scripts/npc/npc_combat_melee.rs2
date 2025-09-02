@@ -19,6 +19,15 @@ $effective_attack = add($effective_attack, 9); // 'style bonus' of 1
 //npcs are essentially always on controlled
 return(~combat_stat($effective_attack, $attackbonus));
 
+// returns the npc attack roll for this npc, doesn't account for prot melee
+// npcs only have one attackbonus.
+[proc,npc_melee_attack_roll_typeless]()(int)
+def_int $attackbonus = npc_param(attackbonus);
+def_int $effective_attack = ~combat_effective_stat(npc_stat(attack), 100); // no prayerbonus
+$effective_attack = add($effective_attack, 9); // 'style bonus' of 1
+//npcs are essentially always on controlled
+return(~combat_stat($effective_attack, $attackbonus));
+
 // perform a basic melee attack from the npc to the player.
 [proc,npc_meleeattack]
 def_int $attack_roll = ~npc_melee_attack_roll;

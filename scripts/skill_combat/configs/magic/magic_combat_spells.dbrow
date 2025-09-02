@@ -87,3 +87,21 @@ data=spotanim_target,windbolt_impact,124
 data=sound_cast,windbolt_cast_and_fire
 data=sound_hit,windbolt_hit
 data=continue_by_autocast,true
+
+[magic_spell_fire_blast]
+table=magic_spell_table
+data=spell,^fire_blast
+data=spellcom,magic:fire_blast
+data=name,Fire Blast
+data=members,false
+data=levelrequired,59
+data=runesrequired,deathrune,1,firerune,5,airrune,4
+data=experience,345
+data=maxhit,16
+data=anim,human_caststrike
+data=spotanim_origin,fireblast_casting
+data=spotanim_proj,fireblast_travel,43,31,51,16,-5,64,10
+data=spotanim_target,fireblast_impact,124
+data=sound_cast,sound_1020
+data=sound_hit,sound_1019
+data=continue_by_autocast,true

@@ -31,6 +31,7 @@
 ^bind = 46
 ^snare = 47
 ^entangle = 48
+^magic_dart = 51
 
 //utility
 ^enchant_lvl1 = 22

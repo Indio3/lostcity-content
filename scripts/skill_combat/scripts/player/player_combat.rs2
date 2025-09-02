@@ -92,6 +92,10 @@ if (%npc_macro_event_target ! null & %npc_macro_event_target ! uid) {
     mes("It's not after you."); // https://youtu.be/y58EFTJNIH8
     return(false);
 }
+if (stat(slayer) < enum(int, int, slayer_req, npc_param(slayer_category))) {
+    mes("You need a higher Slayer level to know how to wound this monster."); // OSRS behaviour
+    return(false);
+}
 return(true);
 
 [proc,player_attackrange](obj $rhand)(int)

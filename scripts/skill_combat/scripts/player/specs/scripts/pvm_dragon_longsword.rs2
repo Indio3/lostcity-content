@@ -11,6 +11,9 @@ if (randominc($attack_roll) > randominc($defence_roll)) {
         $maxhit = add($maxhit, 1);
     }
     $damage = randominc(min($maxhit, npc_param(max_dealt)));
+    if(npc_param(slayer_category) = ^slayer_kurask | npc_param(slayer_category) = ^slayer_turoth) {
+        $damage = 0;
+    }
     $damage_capped = min($damage, npc_stat(hitpoints));
     ~give_combat_experience(%damagestyle, $damage_capped, %npc_combat_xp_multiplier);
     npc_heropoints($damage_capped);

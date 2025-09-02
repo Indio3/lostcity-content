@@ -16,7 +16,7 @@ switch_int(stat_base(slayer)) {
     case 50 : ~objbox(slayerguide_bloodveld, "You can now kill @dbl@Bloodvelds@bla@!", 250, 0, ^objbox_height);
     case 52 : ~objbox(slayerguide_jelly, "You can now kill @dbl@Jellies@bla@!", 250, 0, ^objbox_height);
     case 55 : ~objbox(slayerguide_turoth, "You can now kill @dbl@Turoths@bla@!", 250, 0, ^objbox_height);
-    case 60 : ~objbox(slayerguide_aberrantspecter, "You can now kill @dbl@aberrant spectres@bla@!", 250, 0, ^objbox_height);
+    case 60 : ~objbox(slayerguide_aberrantspecter, "You can now kill @dbl@aberrant specters@bla@!", 250, 0, ^objbox_height);
     case 65 : ~objbox(slayerguide_dustdevil,"You can now kill @dbl@Dust Devils@bla@!", 250, 0, ^objbox_height);
     case 70 : ~objbox(slayerguide_kurask,"You can now kill @dbl@Kurasks@bla@!", 250, 0, ^objbox_height);
     case 72 : ~objbox(slayerguide_skeletalwyvern,"You can now kill @dbl@Skeletal Wyverns@bla@!", 250, 0, ^objbox_height);

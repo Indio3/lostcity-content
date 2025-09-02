@@ -112,7 +112,7 @@
 ^advance_woodcutting_2_millis = 6000
 
 ^advance_slayer_jingle = advance slayer
-^advance_slayer_millis = 6000
+^advance_slayer_millis = 5644
 
 ^advance_slayer_2_jingle = advance slayer2
 ^advance_slayer_2_millis = 8400

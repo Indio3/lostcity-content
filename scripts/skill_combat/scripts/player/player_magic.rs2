@@ -33,7 +33,7 @@ p_opnpct(db_getfield($spell_data, magic_spell_table:spellcom, 0));
 // [apnpct,magic:wind_blast] ~pvm_default_spell(^wind_blast);
 // [apnpct,magic:water_blast] ~pvm_default_spell(^water_blast);
 // [apnpct,magic:earth_blast] ~pvm_default_spell(^earth_blast);
-// [apnpct,magic:fire_blast] ~pvm_default_spell(^fire_blast);
+[apnpct,magic:fire_blast] ~pvm_default_spell(^fire_blast);
 // [apnpct,magic:wind_wave] ~pvm_default_spell(^wind_wave);
 // [apnpct,magic:water_wave] ~pvm_default_spell(^water_wave);
 // [apnpct,magic:earth_wave] ~pvm_default_spell(^earth_wave);
@@ -81,6 +81,9 @@ if (~player_npc_hit_roll(^magic_style) = true) {
     if (npc_type = count_draynor & inv_total(inv, garlic) > 0) {
         $maxhit = add($maxhit, 1);
     }
+    if((npc_param(slayer_category) = ^slayer_kurask | npc_param(slayer_category) = ^slayer_turoth) & $spell ! ^magic_dart) {
+        $maxhit = 0;
+    }    
     ~pvm_spell_success($spell_data, $maxhit, $duration);
     ~pvm_stat_change_effect($spell_data);
     ~pvm_freeze_effect($spell_data);
