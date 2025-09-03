@@ -41,7 +41,7 @@ stat_drain(defence, 0, 20);
 stat_drain(prayer, 0, 20);
 stat_drain(agility, 0, 20);
 npc_anim(npc_param(attack_anim), 0);
-~player_projectile(npc_coord, coord, uid, slayer_cockatrice_zap, 92, 124, 18, 0, 0, 0, 2); // TODO: recheck this
+~player_projectile(npc_coord, coord, uid, slayer_cockatrice_zap, 23, 32, 0, 0, 0, 16, 2); // TODO: recheck this
 if (npc_param(attack_sound) ! null) {
     sound_synth(npc_param(attack_sound), 0, 0);
 }

@@ -5,6 +5,8 @@ if(%slayer_target = 0) {
 }
 @multi3("I need another assignment.", slayer_master_assign, "Do you have anything for trade?", slayer_master_trade, "Er...nothing...", slayer_master_nothing);
 
+[opnpc4,_slayer_master] ~openshop_activenpc;
+
 [label,slayer_master_who]
 ~chatplayer("<p,quiz>Who are you?");
 ~chatnpc("<p,happy>I'm one of the elite Slayer Masters.");

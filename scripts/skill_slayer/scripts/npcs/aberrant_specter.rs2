@@ -40,7 +40,6 @@ if(inv_total(worn, slayer_nosepeg) = 0) {
     stat_drain(defence, 0, 40);
     stat_drain(prayer, 0, 40);
 }
-mes("<tostring($damage)>");
 if (~npc_player_hit_roll(^magic_style) = true | inv_total(worn, slayer_nosepeg) = 0) {
     queue(combat_damage_player, calc($duration / 30), $damage);
 } else {

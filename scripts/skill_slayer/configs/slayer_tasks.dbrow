@@ -992,6 +992,13 @@ data=weight,9
 data=min_amount,130
 data=max_amount,200
 
+[duradel_nechryael]
+table=slayer_master_task
+data=task,^slayer_nechryael
+data=weight,9
+data=min_amount,110
+data=max_amount,170
+
 [duradel_blackdemons]
 table=slayer_master_task
 data=task,^slayer_blackdemon

@@ -15,4 +15,6 @@ if(last_useitem = slayer_rock_hammer) {
         mes("The gargoyle cracks apart.");
         npc_queue(4, 0, 0);
     }
+    return;
 }
+~displaymessage(^dm_default);

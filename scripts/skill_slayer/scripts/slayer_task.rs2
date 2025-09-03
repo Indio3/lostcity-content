@@ -44,6 +44,9 @@ if (stat_base(slayer) < enum(int, int, slayer_req, $target)) { // slayer req che
     return (false);
 }
 // TODO: should combat reqs exist? seems like they might of https://oldschool.runescape.wiki/w/Update:Slayer_Assignment_Rework
+if(~player_combat_level < enum(int, int, combat_req, $target)) {
+    return (false);
+}
 // quest reqs, this can possibly be done in dbtable/enum as well?
 // just defaulting any unimplemented quests to false for now
 // https://oldschool.runescape.wiki/w/Update:Valentine%27s_Day no agil req for earth warriors
@@ -51,7 +54,8 @@ if (stat_base(slayer) < enum(int, int, slayer_req, $target)) { // slayer req che
 // https://oldschool.runescape.wiki/w/Update:Patch_Notes_(4_April_2013) no def level reqs (mirror shield)
 switch_int($target) {
     case ^slayer_crawlinghand, ^slayer_banshee, ^slayer_infernalmage, ^slayer_bloodveld, 
-            ^slayer_aberrantspecter, ^slayer_gargoyle, ^slayer_nechryael, ^slayer_abyssaldemon : // priest peril
+            ^slayer_aberrantspecter, ^slayer_gargoyle, ^slayer_nechryael, ^slayer_abyssaldemon, 
+            ^slayer_ghoul, ^slayer_werewolf, ^slayer_vampire : // priest peril
         return (false);
     case ^slayer_otherworldlybeing, ^slayer_mutatedzygomite :
         if(%zanaris < ^zanaris_complete) {
