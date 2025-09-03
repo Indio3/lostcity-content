@@ -159,6 +159,3 @@ if(npc_finduid($uid) = true) {
 // https://youtu.be/xq8oz9of6Ck?si=WgGJ5L-rC1sCCh2F&t=66
 mes("You've completed your task; return to a Slayer master.");
 midi_jingle(^advance_slayer_jingle, ^advance_slayer_millis);
-
-
-

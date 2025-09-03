@@ -24,13 +24,16 @@ if (npc_param(attack_sound) ! null) {
 
 [proc,summon_nechryael_spawn]
 %npc_action_delay = add(map_clock, 4);
-def_coord $spawn_coord = map_findsquare(npc_coord, 1, 3, ^map_findsquare_lineofwalk);
+def_coord $spawn_coord = coord;
+while($spawn_coord = coord) {
+    $spawn_coord = map_findsquare(npc_coord, 1, 2, ^map_findsquare_lineofwalk);
+}
 npc_anim(demons_bringdead, 0);
 if (npc_param(attack_sound) ! null) {
     sound_synth(npc_param(attack_sound), 0, 0);
 }
-spotanim_map(demon_spawn_portal, npc_coord, 92, 0);
 npc_add($spawn_coord, slayer_nechryael_spawn, 100); // 1 min
+spotanim_map(demon_spawn_portal, npc_coord, 92, 0);
 npc_setmode(opplayer2);
 
 [ai_opplayer2,slayer_nechryael_spawn] ~slayer_nechryael_spawn_attack;
