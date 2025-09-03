@@ -8,7 +8,7 @@ gosub(npc_default_death);
 if(last_useitem = slayer_icy_water) {
     inv_del(inv, slayer_icy_water, 1);
     anim(human_chinchompa_attack, 0);
-    spotanim_npc(slayer_salt_sprinkle_spotanim, 0, 1);
+    spotanim_npc(skip_water_splash, 0, 1);
     sound_synth(sound_1895, 0, 0);
     if(npc_stat(hitpoints) > 4) {
         mes("The lizard isn't weak enough to be affected by the icy water.");

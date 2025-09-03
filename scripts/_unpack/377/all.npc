@@ -33682,7 +33682,7 @@ param=demonbane_vulnerable,^true
 param=death_drop,ashes
 param=slayer_category,^slayer_abyssaldemon
 
-[npc_1616]
+[slayer_basilisk]
 name=Basilisk
 desc=The eyes of evil.
 model1=obj_slayerguide_basilisk
@@ -33710,7 +33710,7 @@ param=death_sound,sound_844
 param=slayer_category,^slayer_basilisk
 category=slayer_basilisk
 
-[npc_1617]
+[slayer_basilisk_baby]
 name=Basilisk
 desc=The eyes of evil.
 model1=obj_slayerguide_basilisk
@@ -33857,7 +33857,7 @@ param=death_sound,sound_837
 param=slayer_category,^slayer_rockslug
 param=damagetype,^crush_style
 
-[npc_1623]
+[slayer_rockslug_baby]
 name=Rockslug
 desc=The slime of evil.
 model1=obj_slayerguide_rockslug
@@ -34203,7 +34203,7 @@ param=slayer_category,^slayer_pyrefiend
 param=damagetype,^magic_style
 param=death_drop,ashes
 
-[npc_1637]
+[slayer_jelly_1]
 name=Jelly
 desc=Looks scared to see me.
 model1=obj_slayerguide_jelly
@@ -34229,7 +34229,7 @@ param=slayer_category,^slayer_jelly
 param=damagetype,^magic_style
 category=slayer_jelly
 
-[npc_1638]
+[slayer_jelly_2]
 name=Jelly
 desc=Doesn't look so tough...
 model1=obj_slayerguide_jelly
@@ -34265,7 +34265,7 @@ param=slayer_category,^slayer_jelly
 param=damagetype,^magic_style
 category=slayer_jelly
 
-[npc_1639]
+[slayer_jelly_3]
 name=Jelly
 desc=Wibbly.
 model1=obj_slayerguide_jelly
@@ -34301,7 +34301,7 @@ param=slayer_category,^slayer_jelly
 param=damagetype,^magic_style
 category=slayer_jelly
 
-[npc_1640]
+[slayer_jelly_4]
 name=Jelly
 desc=There's always room for jelly.
 model1=obj_slayerguide_jelly
@@ -34337,7 +34337,7 @@ param=slayer_category,^slayer_jelly
 param=damagetype,^magic_style
 category=slayer_jelly
 
-[npc_1641]
+[slayer_jelly_5]
 name=Jelly
 desc=Needs cream.....
 model1=obj_slayerguide_jelly
@@ -34373,7 +34373,7 @@ param=slayer_category,^slayer_jelly
 param=damagetype,^magic_style
 category=slayer_jelly
 
-[npc_1642]
+[slayer_jelly_6]
 name=Jelly
 desc=Wobbly...
 model1=obj_slayerguide_jelly
