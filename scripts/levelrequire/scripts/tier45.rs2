@@ -1,4 +1,4 @@
-[opheld2,rune_med_helm]  @levelrequire_viking_defence(45, last_slot);
-[opheld2,rune_full_helm] @levelrequire_viking_defence(45, last_slot);
-[opheld2,rune_sq_shield] @levelrequire_viking_defence(45, last_slot);
-[opheld2,rune_kiteshield] @levelrequire_viking_defence(45, last_slot);
+[opheld2,viking_helmet_crush] @levelrequire_viking_quest_defence(45, last_slot);
+[opheld2,viking_helmet_slash] @levelrequire_viking_quest_defence(45, last_slot);
+[opheld2,viking_helmet_magic] @levelrequire_viking_quest_defence(45, last_slot);
+[opheld2,viking_helmet_range] @levelrequire_viking_quest_defence(45, last_slot);

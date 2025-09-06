@@ -41,6 +41,11 @@
 ^junglepotion_complete = 12
 ^biohazard_complete = 16
 ^desertrescue_complete = 30
+^regicide_complete = 15
+^viking_complete = 10
+^mm_complete = 10
+^recruitmentdrive_complete = 2
+^deserttreasure_complete = 15
 
 ^blackarmgang_questpoints = 1
 ^blackknight_questpoints = 3
