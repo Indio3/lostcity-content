@@ -344,12 +344,12 @@ startbit=15
 endbit=15
 
 [varbit_69]
-basevar=varp_357
+basevar=boardgames_partner
 startbit=0
 endbit=15
 
 [varbit_70]
-basevar=varp_357
+basevar=boardgames_partner
 startbit=16
 endbit=31
 

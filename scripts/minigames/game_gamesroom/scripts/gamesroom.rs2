@@ -1,0 +1,132 @@
+[opplayer1,_]
+if (.busy = true) {
+    mes("<.displayname> is busy at the moment.");
+    return;
+}
+if (.%boardgames_partner = uid) {
+    %boardgames_partner = .uid;
+    %boardgames_timepermove = .%boardgames_timepermove;
+    %boardgames_rankedgame = .%boardgames_rankedgame;
+    if(.%boardgames_piece = 1) {
+        %boardgames_piece = 2;
+    } else {
+        %boardgames_piece = 1;
+    }
+    switch_int(.%boardgames_game) {
+        case 0 : 
+            if_openmain(inter_28);
+        case 1 :
+            if_openmain(inter_207);
+        case 2 :
+            mes("unsupported");
+        case 3 :
+            mes("unsupported");
+    }
+} else {
+    %boardgames_partner = .uid;
+    if_openmain(inter_202);
+}
+
+[if_button,inter_202:com_77] %boardgames_game = 0;
+[if_button,inter_202:com_78] %boardgames_game = 1;
+[if_button,inter_202:com_85] %boardgames_game = 2;
+[if_button,inter_202:com_88] %boardgames_game = 3;
+
+[if_button,inter_202:com_67]
+%boardgames_piece = 1;
+switch_int(%boardgames_game) {
+    case 0 : 
+        if_openmain(inter_28);
+    case 1 :
+        if_openmain(inter_207);
+    case 2 :
+        mes("unsupported");
+    case 3 :
+        mes("unsupported");
+}
+
+// idt these work cause no cs2
+// [if_button,inter_202:com_79] %boardgames_game = 0;
+// [if_button,inter_202:com_80] %boardgames_game = 1;
+// [if_button,inter_202:com_86] %boardgames_game = 2;
+// [if_button,inter_202:com_89] %boardgames_game = 3;
+
+[if_button,inter_207:com_87] %boardgames_piece = 1;
+[if_button,inter_207:com_101] %boardgames_piece = 2;
+[if_button,inter_207:com_102] %boardgames_piece = 3;
+[if_button,inter_207:com_103] %boardgames_piece = 4;
+[if_button,inter_207:com_104] %boardgames_piece = 5;
+[if_button,inter_207:com_105] %boardgames_piece = 6;
+[if_button,inter_207:com_106] %boardgames_piece = 7;
+[if_button,inter_207:com_107] %boardgames_piece = 8;
+[if_button,inter_207:com_108] %boardgames_piece = 9;
+[if_button,inter_207:com_109] %boardgames_piece = 10;
+[if_button,inter_207:com_110] %boardgames_piece = 11;
+[if_button,inter_207:com_111] %boardgames_piece = 12;
+
+[if_button,inter_207:com_81] %boardgames_timepermove = 0;
+[if_button,inter_207:com_77] %boardgames_timepermove = 1;
+[if_button,inter_207:com_79] %boardgames_timepermove = 2;
+[if_button,inter_207:com_80] %boardgames_timepermove = 3;
+
+[if_button,inter_207:com_113] %boardgames_rankedgame = togglebit(%boardgames_rankedgame, 0);
+
+[if_button,inter_207:com_67] ~send_boardgames_challenge;
+
+[proc,send_boardgames_challenge]
+if_close;
+if(.finduid(%boardgames_partner) = true) {
+    if(%boardgames_partner = .uid & .%boardgames_partner = uid) {
+        ~boardgames_start_game;
+    }
+    mes("Sending challenge...");
+    .mes("<displayname>:(<tostring(~get_boardgames_req_elo)>) wants <~get_ranked_boardgame> game of <~get_boardgame_str>, <~get_timepermove_str> per move.:chalreq:");
+} else {
+    %boardgames_timepermove = 0;
+    %boardgames_piece = 0;
+    mes("That player is no longer available.");
+}
+
+[proc,boardgames_start_game]
+if_openmain(inter_206);
+.if_openmain(inter_206);
+
+[proc,get_boardgames_req_elo]()(int)
+switch_int(%boardgames_game) {
+    case 0 : return (%boardgames_draughts_rank);
+    case 1 : return (%boardgames_runelink_rank);
+    case 2 : return (%boardgames_runesquares_rank);
+    case 3 : return (%boardgames_runeversi_rank);
+}
+
+[proc,get_ranked_boardgame]()(string)
+switch_int(%boardgames_rankedgame) {
+    case 0 : return ("an unranked");
+    case 1 : return ("a ranked");
+}
+
+[proc,get_timepermove_str]()(string)
+switch_int(%boardgames_timepermove) {
+    case 0 : return ("15 seconds");
+    case 1 : return ("30 seconds");
+    case 2 : return ("1 minute");
+    case 3 : return ("2 minutes");
+}
+
+[proc,get_boardgame_str]()(string)
+switch_int(%boardgames_game) {
+    case 0 : return ("Draughts");
+    case 1 : return ("Runelink");
+    case 2 : return ("Runesquares");
+    case 3 : return ("Runeversi");
+}
+
+
+[mapzone,0_34_77] 
+if(%boardgames_draughts_rank = 0) {
+    %boardgames_draughts_rank = 1000;
+}
+if(%boardgames_runelink_rank = 0) {
+    %boardgames_runelink_rank = 1000;
+}
+set_player_op("Challenge", 1, ^false);

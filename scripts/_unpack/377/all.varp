@@ -761,7 +761,9 @@ transmit=yes
 [boardgames_varbit2]
 transmit=yes
 
-[varp_357]
+[boardgames_partner]
+type=player_uid
+protect=no
 
 [varp_358]
 
