@@ -1092,6 +1092,7 @@ stock25=gnomebowl_mould,10
 
 [tradeoffer]
 size=28
+protect=no
 
 [partyroom_dropinv]
 size=216
