@@ -1,0 +1,25 @@
+[opnpc1,npc_1080]
+~chatplayer("<p,happy>Hi!");
+~chatnpc("<p,happy>Hi, can I help?");
+def_int $op = ~p_choice4("What is this castle?", 1, "Where is the prince?", 2, "Do you have any quests for me?", 3, "No, I'm just looking around.", 4);
+while($op ! 4) {
+    if($op = 1) {
+        ~chatplayer("<p,neutral>What is this castle?");
+        ~chatnpc("<p,neutral>Welcome to Burthorpe Castle! Home to his Royal Highness the Prince of Burthorpe, Heir to the Throne of Asgarnia!");
+        ~chatplayer("<p,shock>Wow!");
+    } else if($op = 2) {
+        ~chatplayer("<p,neutral>Where is the prince?");
+        ~chatnpc("<p,neutral>We do not disclose his majesty's business.");
+    } else if($op = 3) {
+        ~chatplayer("<p,neutral>Do you have any quests for me?");
+        ~chatnpc("<p,neutral>Yes actually I do, we need another servant.");
+        ~chatplayer("<p,neutral>Does this noble quest have a name?");
+        ~chatnpc("<p,shifty>Yes, it's the... er... Empty the Cesspit Quest!");
+        ~chatplayer("<p,angry>I'll give it a miss!");
+    } else if($op = 4) {
+        ~chatplayer("<p,neutral>No, I'm just looking around.");
+        return;
+    }
+    ~chatnpc("<p,neutral>Anything else I can help you with?");
+    $op = ~p_choice4("What is this castle?", 1, "Where is the prince?", 2, "Do you have any quests for me?", 3, "No, I'm just looking around.", 4);
+}

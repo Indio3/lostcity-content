@@ -1,0 +1,19 @@
+[opnpc1,npc_1082]
+switch_int(%death_equiproom) {
+    case default :
+        ~chatplayer("<p,happy>Hi!");
+        ~chatnpc("<p,happy>Hi! Did you want something?");
+        @multi2("Is it OK if I use your anvil?", dunstan_anvil, "Nothing, thanks.", dunstan_nothing);
+}
+
+[label,dunstan_anvil]
+~chatplayer("<p,neutral>Is it OK if I use your anvil?");
+~chatnpc("<p,neutral>So you're a smithy are you?");
+~chatplayer("<p,neutral>I dabble.");
+~chatnpc("<p,neutral>A fellow smith is welcome to use my anvil!");
+~chatplayer("<p,happy>Thanks!");
+~chatnpc("<p,neutral>Anything else before I get on with my work?");
+@multi2("Is it OK if I use your anvil?", dunstan_anvil, "Nothing, thanks.", dunstan_nothing);
+
+[label,dunstan_nothing]
+~chatplayer("<p,neutral>Nothing, thanks.");

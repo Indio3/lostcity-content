@@ -1,0 +1,9 @@
+// wounded soldier by mountain
+[opnpc1,npc_1069]
+~chatplayer("<p,confused>Are you OK?");
+~chatnpc("<p,sad>Urrrgggh.....");
+~chatnpc("<p,neutral>I'll be OK, the trolls only leave the plateau at nightfall. The guys are bringing a stretcher shortly.");
+~chatplayer("<p,neutral>As long as you're sure.");
+~chatnpc("<p,sad>It's my own fault really, I was having a walk and wandered past the danger sign. The trolls throw rocks down at any one who goes up the path!");
+~chatnpc("<p,shock>Don't go up there!");
+~chatplayer("<p,neutral>OK, thanks for the warning.");

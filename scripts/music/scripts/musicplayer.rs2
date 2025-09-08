@@ -14,3 +14,5 @@
 [if_button,music:scape_original] ~music_playbybutton(music:scape_original);
 [if_button,music:scape_santa] ~music_playbybutton(music:scape_santa);
 [if_button,music:scape_scared] ~music_playbybutton(music:scape_scared);
+[if_button,music:principality] ~music_playbybutton(music:principality);
+[if_button,music:hermit] ~music_playbybutton(music:hermit);

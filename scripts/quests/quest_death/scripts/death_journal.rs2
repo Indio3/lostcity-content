@@ -1,0 +1,13 @@
+[if_button,questlist:death]
+~clear_quest_journal("Death Plateau");
+if_openmain(inter_173);
+
+switch_int(%death_equiproom) {
+    case ^death_not_started :
+        if_settext(inter_173:com_4, "@dbl@I can start this quest by speaking to @dre@Denulth@dbl@ who is in his");
+        if_settext(inter_173:com_6, "@dbl@tent at the @dre@Imperial Guard camp@dbl@ in @dre@Burthrope");
+    case ^death_started :
+        if_settext(inter_173:com_4, "@dbl@I have offered to help @dre@Denulth@dbl@ by finding @dre@another way@dbl@ up");
+        if_settext(inter_173:com_6, "@dre@Death Plateau.@dbl@ I also need to find the @dre@combination@dbl@ to the");
+        if_settext(inter_173:com_7, "@dre@equipment room@dbl@ and @dre@unlock@dbl@ the door.");
+}

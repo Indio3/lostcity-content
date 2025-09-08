@@ -1,0 +1,6 @@
+[opnpc1,death_saba]
+switch_int(%death_equiproom) {
+    case ^death_not_started :
+        ~chatplayer("<p,happy>Hello!");
+        ~chatnpc("<p,angry>Why won't people leave me alone?!");
+}

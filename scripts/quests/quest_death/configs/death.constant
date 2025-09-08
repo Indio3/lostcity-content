@@ -1,0 +1,3 @@
+^death_not_started = 0
+^death_started = 10
+^death_complete = 80

@@ -33,3 +33,16 @@ data=playbutton,music:scape_santa
 table=music
 data=name,Scape Scared
 data=playbutton,music:scape_scared
+
+[music_principality]
+table=music
+data=name,Principality
+data=playbutton,music:principality
+data=unlock,6,28
+
+[music_hermit]
+table=music
+data=name,Hermit
+data=playbutton,music:hermit
+data=unlock,6,31
+

@@ -1,0 +1,8 @@
+[opnpc1,_citizen_burthrope]
+~chatplayer("<p,neutral>Hi!");
+switch_int(random(14)) {
+    case 0 : ~chatnpc("<p,angry>Let me at 'em!");
+    case 4 :
+        ~chatnpc("<p,happy>Welcome to Burthorpe!");
+        ~chatplayer("<p,happy>Thanks!");
+}

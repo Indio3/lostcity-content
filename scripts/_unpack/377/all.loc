@@ -28100,48 +28100,6 @@ recol1d=8454
 hillskew=yes
 forcedecor=yes
 
-[death_fencegate_l]
-name=Gate
-desc=A wooden gate.
-model=plaguesheep_gatel
-recol1s=12480
-recol1d=10502
-op1=Open
-active=yes
-blockrange=no
-
-[death_fencegate_r]
-name=Gate
-desc=A wooden gate.
-model=plaguesheep_gatel
-recol1s=12480
-recol1d=10502
-mirror=yes
-op1=Open
-active=yes
-blockrange=no
-
-[death_openfencegate_l]
-name=Gate
-desc=A wooden gate.
-model=plaguesheep_gatel
-recol1s=12480
-recol1d=10502
-op1=Close
-active=yes
-blockrange=no
-
-[death_openfencegate_r]
-name=Gate
-desc=A wooden gate.
-model=plaguesheep_gatel
-recol1s=12480
-recol1d=10502
-mirror=yes
-op1=Close
-active=yes
-blockrange=no
-
 [death_fencing]
 model=fencing
 recol1s=10400

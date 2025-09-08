@@ -22369,7 +22369,7 @@ vislevel=hide
 readyanim=human_sitting_chair
 minimap=no
 
-[npc_1060]
+[death_ig_commander]
 name=Denulth
 desc=Commander of the Imperial Guard.
 model1=npc_ardougne_guard
@@ -22650,7 +22650,7 @@ op1=Talk-to
 vislevel=hide
 head1=obj_pickpocket_guide_farmer
 
-[npc_1070]
+[death_saba]
 name=Saba
 desc=A dishevelled and irritable hermit.
 model1=idk_man_hair_wildspikes
@@ -23043,6 +23043,7 @@ op1=Talk-to
 op2=Attack
 vislevel=5
 head1=obj_castlewars_cloak_saradomin_manhead
+category=citizen_burthrope
 
 [npc_1085]
 name=Ocga
@@ -23065,6 +23066,7 @@ op2=Attack
 vislevel=5
 head1=obj_castlewars_cloak_saradomin_manhead
 head2=idk_man_jaw_goatee_head
+category=citizen_burthrope
 
 [npc_1086]
 name=Man
@@ -23114,6 +23116,7 @@ op1=Talk-to
 op2=Attack
 vislevel=5
 head1=idk_man_hair_long_head
+category=citizen_burthrope
 
 [npc_1088]
 name=Hygd
@@ -23134,6 +23137,7 @@ op1=Talk-to
 op2=Attack
 vislevel=4
 head1=obj_pickpocket_guide_fham
+category=citizen_burthrope
 
 [npc_1089]
 name=Ceolburg
@@ -23155,6 +23159,7 @@ op1=Talk-to
 op2=Attack
 vislevel=4
 head1=obj_pickpocket_guide_fham
+category=citizen_burthrope
 
 [npc_1090]
 name=Hild
@@ -23180,6 +23185,7 @@ op1=Talk-to
 vislevel=hide
 alwaysontop=yes
 head1=idk_woman_hair_bun_head
+category=citizen_burthrope
 
 [npc_1091]
 name=Bob

@@ -2989,7 +2989,7 @@ text=Time Out
 colour=0xFF0000
 activecolour=0x00FF00
 
-[com_219]
+[principality]
 layer=com_0
 type=text
 x=10
@@ -3005,7 +3005,7 @@ text=Principality
 colour=0xFF0000
 activecolour=0x00FF00
 
-[com_220]
+[hermit]
 layer=com_0
 type=text
 x=10

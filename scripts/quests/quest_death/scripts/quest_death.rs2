@@ -1,0 +1,17 @@
+[oploc1,death_hermitcave_entrance]
+p_arrivedelay;
+p_teleport(0_35_74_29_16);
+
+[oploc1,death_hermitcave_exit]
+p_arrivedelay;
+p_teleport(0_44_55_42_57);
+
+[oploc1,death_harold_door]
+~chatplayer("<p,neutral>I'd better not go into someone's bedroom without a reason!");
+
+[oploc1,death_sherpa_door]
+sound_synth(knock_knock, 0, 0);
+~mesbox("You knock on the door.");
+if(npc_find(coord, npc_1071, 5, 0) = true) {
+    ~chatnpc("<p,angry>No milk today! Thank you!");
+}
