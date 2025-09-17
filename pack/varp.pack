@@ -161,8 +161,8 @@
 160=imp
 161=upass
 162=ibanmulti
-163=varp_163
-164=varp_164
+163=open_book
+164=book_page
 165=elenaquest
 166=option_brightness
 167=option_jingles
@@ -301,7 +301,7 @@
 300=sa_energy
 301=sa_attack
 302=priestperil
-303=varp_303
+303=priestperil_mausoleum
 304=bankinsert
 305=varp_305
 306=varp_306

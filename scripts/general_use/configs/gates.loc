@@ -29,9 +29,9 @@ active=yes
 blockrange=no
 raiseobject=no
 category=gate_outer_closed
-param=next_loc_stage,portcullis_2l
+param=next_loc_stage,loc_1556
 
-[portcullis_2l]
+[loc_1556]
 name=Gate
 desc=A wooden gate.
 model=plaguesheep_gatel
