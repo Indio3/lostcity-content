@@ -79,7 +79,13 @@ switch_int(~p_choice2("Yes, but I still want them.", 1, "Oh OK, I'll leave them 
         } else if(inv_total(inv, death_climbingboots) = 0) {
             ~chatplayer("<p,neutral>I don't have them on me.");
         } else {
-            // TODO: add
+            inv_del(inv, iron_bar, 1);
+            inv_del(inv, death_climbingboots, 1);
+            inv_add(inv, death_spikedboots, 1);
+            mes("You give Dunstan an Iron bar and the climbing boots.");
+            mes("Dunstan has given you the Spiked boots.");
+            ~doubleobjbox(iron_bar, death_climbingboots, "You give Dunstan an Iron bar and the climbing boots.| ", 200); // does this break in osrs (and the space)
+            ~objbox(death_spikedboots, "Dunstan has given you the Spiked boots.", 250, 0, ^objbox_height);
         }
         @dunstan_ops;
     case 2 :

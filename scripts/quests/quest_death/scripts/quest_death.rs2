@@ -35,31 +35,13 @@ if(%death_equiproom = ^death_given_iou) %death_equiproom = ^death_found_combo;
 ~objbox(death_combination, "You have found the combination!", 250, 0, 0);
 
 [opheld1,death_combination]
-if_settext(scroll:com_2, ^string_empty);
-if_settext(scroll:com_3, ^string_empty);
-if_settext(scroll:com_4, ^string_empty);
-if_settext(scroll:com_5, ^string_empty);
-if_settext(scroll:com_6, "Red is North of Blue. Yellow is South of Purple.");
-if_settext(scroll:com_7, "Green is North of Purple. Blue is West of");
-if_settext(scroll:com_8, "Yellow. Purple is East of Red.");
-if_settext(scroll:com_9, ^string_empty);
-if_settext(scroll:com_10, ^string_empty);
-if_settext(scroll:com_11, ^string_empty);
-if_settext(scroll:com_12, ^string_empty);
-if_settext(scroll:com_13, ^string_empty);
-if_setcolour(scroll:com_2, ^yellow_rgb);
-if_setcolour(scroll:com_3, ^yellow_rgb);
-if_setcolour(scroll:com_4, ^yellow_rgb);
-if_setcolour(scroll:com_5, ^yellow_rgb);
-if_setcolour(scroll:com_6, ^black_rgb);
-if_setcolour(scroll:com_7, ^black_rgb);
-if_setcolour(scroll:com_8, ^black_rgb);
-if_setcolour(scroll:com_9, ^black_rgb);
-if_setcolour(scroll:com_10, ^black_rgb);
-if_setcolour(scroll:com_11, ^yellow_rgb);
-if_setcolour(scroll:com_12, ^yellow_rgb);
-if_setcolour(scroll:com_13, ^yellow_rgb);
-if_openmain(scroll);
+// https://web.archive.org/web/20061231212357/http://www.runeweb.net/index.php?page=rs2-quest-deathplateau
+if_settext(messagescroll_handwriting:com_2, "Red is North of Blue.");
+if_settext(messagescroll_handwriting:com_3, "Yellow is South of Purple.");
+if_settext(messagescroll_handwriting:com_4, "Green is North of Purple.");
+if_settext(messagescroll_handwriting:com_5, "Blue is West of Yellow.");
+if_settext(messagescroll_handwriting:com_6, "Purple is East of Red.");
+if_openmain(messagescroll_handwriting);
 
 [oploc1,death_sherpa_door]
 def_boolean $leaving = ~check_axis(coord, loc_coord, loc_angle);
