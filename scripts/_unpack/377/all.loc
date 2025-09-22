@@ -27755,6 +27755,7 @@ retex1s=wood2
 retex1d=elfwood
 blockrange=no
 op1=Search
+category=empty_boxes
 
 [death_boxes_2]
 name=Boxes
@@ -27764,6 +27765,7 @@ retex1s=wood2
 retex1d=elfwood
 blockrange=no
 op1=Search
+category=empty_boxes
 
 [death_boxes_3]
 name=Boxes
@@ -27773,6 +27775,7 @@ retex1s=wood2
 retex1d=elfwood
 blockrange=no
 op1=Search
+category=empty_boxes
 
 [death_stonehut]
 model=death_stonehut

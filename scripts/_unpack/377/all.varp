@@ -663,12 +663,6 @@ transmit=yes
 [emote_access]
 transmit=yes
 
-[death_equiproom]
-
-[varp_315]
-
-[varp_316]
-
 [troll_quest]
 
 [troll_varbit]

@@ -12,7 +12,7 @@ if ($progress = 0) {
     if_setcolour($component, ^yellow_rgb);
 }
 
-[proc,send_quest_complete](component $component, namedobj $obj, int $objscale, int $questpoints, string $questmessage)
+[proc,send_quest_complete](component $component, namedobj $obj, int $objscale, int $questpoints, string $questmessage, string $rewardtext)
 // Random quest complete jingle.
 def_int $random = random(128);
 if ($random < 32) {       // The least common music that plays when completing a quest.
@@ -36,11 +36,16 @@ switch_component ($component) {
         if_openmain(questscroll);*/
     case default ://All other quests
         ~update_questpoints;
-        if_settext(questscroll:com_3, $questmessage);
-        if_settext(questscroll:com_9, tostring($questpoints));
-        if_settext(questscroll:com_10, "Quest points.");
-        if_setobject(questscroll:com_4, $obj, $objscale);
-        if_openmain(questscroll);
+        split_init($rewardtext, 200, 5, q8_full);
+        if_settext(inter_238:com_3, $questmessage);
+        if_settext(inter_238:com_9, "<~pluralise($questpoints, "Quest Point")>");
+        if_settext(inter_238:com_10, split_get(0, 0));
+        if_settext(inter_238:com_11, split_get(0, 1));
+        if_settext(inter_238:com_12, split_get(0, 2));
+        if_settext(inter_238:com_13, split_get(0, 3));
+        if_settext(inter_238:com_14, split_get(0, 4));
+        if_setobject(inter_238:com_4, $obj, $objscale);
+        if_openmain(inter_238);
 }
 // Update Quest Tab color
 if_setcolour($component, ^green_rgb);
@@ -215,6 +220,9 @@ if (%legends_progress = ^legends_complete) {
 if (testbit(%elemental_workshop_bits, ^elemental_workshop_complete) = ^true) {
     $questpoints = add($questpoints, ^elemental_workshop_questpoints); 
 }*/
+if (%death_equiproom = ^death_complete) {
+    $questpoints = add($questpoints, ^death_questpoints); 
+}
 return ($questpoints);
 
 [proc,update_questlist]
@@ -280,6 +288,7 @@ if (testbit(%upass_map_mechanisms, ^upass_started_bit) = ^true & %upass_progress
 ~send_quest_progress_colour(questlist:itwatchtower, %itwatchtower_progress, ^itwatchtower_complete);
 ~send_quest_progress_colour(questlist:legends, %legends_progress, ^legends_complete);
 ~send_quest_progress_colour(questlist:elemental_workshop, %elemental_workshop_bits, sub(pow(2, ^elemental_workshop_complete), 1));*/
+~send_quest_progress_colour(questlist:death, %death_equiproom, ^death_complete);
 if_settab(questlist, ^tab_quest_journal);
 
 /*if (%drunkmonk_progress >= ^drunkmonk_spoken_to_omad) {

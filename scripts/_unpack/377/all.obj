@@ -33931,8 +33931,12 @@ model=obj_ikov_bootsoflightness
 2dyan=160
 2dxan=152
 iop2=Wear
+wearpos=feet
 manwear=obj_death_climbingboots_manwear,0
 womanwear=obj_death_climbingboots_womanwear,0
+param=slashdefence,2
+param=crushdefence,2
+param=strengthbonus,2
 
 [cert_death_climbingboots]
 certlink=death_climbingboots
@@ -33971,6 +33975,8 @@ model=obj_mcannonball
 2dxan=156
 cost=1
 members=yes
+respawnrate=10
+category=death_cannonball
 
 [death_cannonball_blue]
 name=Stone ball
@@ -33984,6 +33990,8 @@ model=obj_mcannonball
 2dxan=156
 cost=1
 members=yes
+respawnrate=10
+category=death_cannonball
 
 [death_cannonball_yellow]
 name=Stone ball
@@ -33997,6 +34005,8 @@ model=obj_mcannonball
 2dxan=156
 cost=1
 members=yes
+respawnrate=10
+category=death_cannonball
 
 [death_cannonball_purple]
 name=Stone ball
@@ -34010,6 +34020,8 @@ model=obj_mcannonball
 2dxan=156
 cost=1
 members=yes
+respawnrate=10
+category=death_cannonball
 
 [death_cannonball_green]
 name=Stone ball
@@ -34023,6 +34035,8 @@ model=obj_mcannonball
 2dxan=156
 cost=1
 members=yes
+respawnrate=10
+category=death_cannonball
 
 [death_entrancecert]
 name=Certificate

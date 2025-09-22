@@ -4185,7 +4185,7 @@ text=Pathways
 colour=0xFF0000
 activecolour=0x00FF00
 
-[com_298]
+[kingdom]
 layer=com_0
 type=text
 x=10

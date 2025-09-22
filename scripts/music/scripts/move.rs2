@@ -2,4 +2,6 @@
 
 [mapzone,0_35_74] @music_playbyregion(coord);
 
+[mapzone,0_44_55] @music_playbyregion(coord);
+
 [mapzone,0_45_55] @music_playbyregion(coord);

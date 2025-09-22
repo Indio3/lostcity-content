@@ -40,9 +40,14 @@ data=name,Principality
 data=playbutton,music:principality
 data=unlock,6,28
 
+[music_kingdom]
+table=music
+data=name,Kingdom
+data=playbutton,music:kingdom
+data=unlock,6,30
+
 [music_hermit]
 table=music
 data=name,Hermit
 data=playbutton,music:hermit
 data=unlock,6,31
-

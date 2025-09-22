@@ -3,6 +3,11 @@ table=musicregion
 data=mapsquare,0_50_50_0_0
 data=name,Harmony
 
+[musicregion_44_55]
+table=musicregion
+data=mapsquare,0_44_55_0_0
+data=name,Kingdom
+
 [musicregion_45_55]
 table=musicregion
 data=mapsquare,0_45_55_0_0
