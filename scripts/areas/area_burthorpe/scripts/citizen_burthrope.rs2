@@ -1,7 +1,7 @@
-[opnpc1,_citizen_burthrope]
+[opnpc1,_citizen_burthorpe]
 ~chatplayer("<p,neutral>Hi!");
 if(%death_equiproom = ^death_complete) {
-    @citizen_burthrope_postquest;
+    @citizen_burthorpe_postquest;
 }
 switch_int(random(14)) {
     case 0 : ~chatnpc("<p,angry>Let me at 'em!");
@@ -20,7 +20,7 @@ switch_int(random(14)) {
         ~chatplayer("<p,happy>Thanks!");
 }
 
-[label,citizen_burthrope_postquest]
+[label,citizen_burthorpe_postquest]
 switch_int(random(6)) {
     case 0 : ~chatnpc("<p,happy>Surely we are safe now!");
     case 1 : ~chatnpc("<p,happy>I heard about what you did, thank you!");
