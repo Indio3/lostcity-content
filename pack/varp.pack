@@ -80,7 +80,7 @@
 79=varp_79
 80=druidquest
 81=varp_81
-82=varp_82
+82=prayer_guild
 83=prayer0
 84=prayer1
 85=prayer2
@@ -97,11 +97,11 @@
 96=prayer13
 97=prayer14
 98=prayer15
-99=varp_99
-100=varp_100
+99=prayer16
+100=prayer17
 101=qp
 102=poison
-103=prayer_drain_resistance
+103=varp_103
 104=varp_104
 105=varp_105
 106=varp_106
@@ -187,9 +187,9 @@
 186=varp_186
 187=varp_187
 188=heroquest
-189=varp_189
-190=varp_190
-191=varp_191
+189=prayer_drain_counter
+190=prayer_drain_effect
+191=prayer_drain_resistance
 192=murderquest
 193=varp_193
 194=varp_194

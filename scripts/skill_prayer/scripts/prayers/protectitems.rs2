@@ -1,0 +1,31 @@
+[if_button,prayer:prayer8]
+if_close;
+if (p_finduid(uid) = true) {
+    @activate_prayer8;
+}
+%prayer8 = %prayer8;
+
+[label,activate_prayer8]
+p_clearpendingaction;
+def_dbrow $data = ~get_prayer_data(^prayer8);
+if ($data = null) {
+    return;
+}
+if (%prayer8 = ^true) {
+    %prayer8 = ^false;
+    ~prayer_deactivate(^prayer8);
+    return;
+}
+if (~prayer_checks($data) = false) {
+    %prayer8 = ^false;
+    return;
+}
+def_int $levelreq = db_getfield($data, prayers:level, 0);
+if (stat_base(prayer) < $levelreq){
+    %prayer8 = ^false;
+    sound_synth(prayer_off, 0, 0);
+    ~mesbox("You need a @dbl@Prayer level of <tostring($levelreq)> to use <db_getfield($data, prayers:name, 0)>.");
+    return;
+}
+%prayer8 = ^true;
+~prayer_activate($data);

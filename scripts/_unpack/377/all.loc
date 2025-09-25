@@ -447,15 +447,6 @@ active=yes
 op1=Climb-up
 mapscene=7
 
-[thrantaxaltar]
-name=Chaos altar
-desc=A shrine to evil.
-model=thrantaxaltar
-active=yes
-width=2
-op1=Pray-at
-op2=Check
-
 [merlins_crystal]
 name=Giant crystal
 desc=Is there something in there?
@@ -3217,31 +3208,6 @@ model=henge_diagonal
 width=2
 length=2
 mapscene=14
-blockrange=no
-
-[altar]
-name=Altar
-desc=Shrine to the glory of Saradomin.
-model=altar
-width=2
-op1=Pray-at
-blockrange=no
-
-[guthix_altar]
-name=Altar of Guthix
-desc=An ancient altar to the glory of Guthix.
-model=guthix_altar
-width=2
-length=2
-op1=Pray-at
-blockrange=no
-
-[chaosaltar]
-name=Chaos altar
-desc=Shrine to the glory of Zamorak.
-model=thrantaxaltar
-width=2
-op1=Pray-at
 blockrange=no
 
 [trappedchaosaltar]

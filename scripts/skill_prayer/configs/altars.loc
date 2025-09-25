@@ -1,0 +1,37 @@
+[thrantaxaltar]
+name=Chaos altar
+desc=A shrine to evil.
+model=thrantaxaltar
+active=yes
+width=2
+op1=Pray-at
+op2=Check
+category=prayer_altar
+
+[altar]
+name=Altar
+desc=Shrine to the glory of Saradomin.
+model=altar
+width=2
+op1=Pray-at
+blockrange=no
+category=prayer_altar
+
+[guthix_altar]
+name=Altar of Guthix
+desc=An ancient altar to the glory of Guthix.
+model=guthix_altar
+width=2
+length=2
+op1=Pray-at
+blockrange=no
+category=prayer_altar
+
+[chaosaltar]
+name=Chaos altar
+desc=Shrine to the glory of Zamorak.
+model=thrantaxaltar
+width=2
+op1=Pray-at
+blockrange=no
+category=prayer_altar
