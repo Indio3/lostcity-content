@@ -54,7 +54,3 @@ if (npc_findhero = ^false) {
 
 // Default drop from config.
 obj_add(npc_coord, npc_param(death_drop), 1, ^lootdrop_duration);
-
-
-[debugproc,ts]
-sound_synth(sound_512, 3, 0);
