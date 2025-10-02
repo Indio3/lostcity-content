@@ -165,7 +165,6 @@ switch_int(%druidspirit) {
     case ^druidspirit_full_transform :
         ~chatnpc("<p,neutral>Have you brought me the silver sickle?");
         if(inv_total(inv, silver_sickle) = 0) {
-            // TODO: confirm mesanims
             ~chatplayer("<p,neutral>No sorry, not yet!");
             ~chatnpc("<p,neutral>Well, come to me when you have it.");
             @multi4("Where would I get a silver sickle?", ns_wheresickle, "What will you do to the silver sickle?", ns_whatsickle, "How can a blessed sickle help me to defeat the Ghasts?", ns_defeatghasts, "Ok, thanks.", filliman_ok2);
@@ -173,13 +172,13 @@ switch_int(%druidspirit) {
         ~chatplayer("<p,neutral>Yes, here it is. What are you going to do with it?");
         ~chatnpc("<p,neutral>My friend, I will bless it for you and you will then be able to accomplish great things. Now then, I must cast the enchantment. You can bless a new sickle by dipping it in the holy waterof the grotto.");
         if_close;
-        if(npc_find(coord, filliman_tarlock_ns, 10, 0) = false) {
+        if(npc_find(coord, filliman_tarlock_ns, 10, 0) = false) { // also stops if ns despawned
             return;
         }
-        ~coord_projectile(0_53_152_52_14, npc_coord, druid_shooting_star, 0, 32, 30, 180, 46, 0, 10);
-        ~coord_projectile(0_53_152_52_10, npc_coord, druid_shooting_star, 0, 48, 30, 180, 46, 0, 10);
-        ~coord_projectile(0_53_152_52_8, npc_coord, druid_shooting_star, 0, 48, 30, 180, 46, 0, 10);
-        ~coord_projectile(0_53_152_46_14, npc_coord, druid_shooting_star, 0, 32, 30, 180, 46, 0, 10);
+        ~coord_projectile(0_53_152_49_13, coord, druid_shooting_star, 0, 32, 30, 180, 46, 0, 10);
+        ~coord_projectile(0_53_152_50_13, coord, druid_shooting_star, 0, 48, 30, 180, 46, 0, 10);
+        ~coord_projectile(0_53_152_49_12, coord, druid_shooting_star, 0, 48, 30, 180, 46, 0, 10);
+        ~coord_projectile(0_53_152_50_12, coord, druid_shooting_star, 0, 32, 30, 180, 46, 0, 10);
         p_delay(1);
         anim(druidicspirit_human_bloom, 30);
         p_delay(0);
@@ -386,6 +385,7 @@ inv_add(inv, bloom_spell, 1);
 ~chatplayer("<p,neutral>I think I've solved the puzzle!");
 ~chatnpc("<p,neutral>Oh really.. Have you placed all the items on the stones? Ok, well, lets try! @blu@~ The druid attempts to cast a spell. @blu@~");
 if_close;
+// no npc check
 npc_anim(human_casting, 30);
 if(testbit(%druidspirit_bits, ^druidspirit_spirit_stone) = ^true & testbit(%druidspirit_bits, ^druidspirit_nature_stone) = ^true & coord = 0_53_52_48_7) {
     sound_synth(spirit_transform_start, 0, 30);

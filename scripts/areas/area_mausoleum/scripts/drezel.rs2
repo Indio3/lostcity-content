@@ -158,6 +158,9 @@ inv_add(inv, dagger_wolfbane, 1);
 
 [label,drezel_post_priestperil_dialogue]
 switch_int(%druidspirit) {
+    case ^druidspirit_complete :
+        ~chatplayer("<p,neutral>Hi there! Filliman says I've completed the quest!");
+        ~chatnpc("<p,neutral>That's fantastic, well done!");
     case ^druidspirit_killed_ghast3 :
         ~chatplayer("<p,neutral>Hiya, I'm a mighty Ghast killer! I've killed 3 so far!");
         ~chatnpc("<p,neutral>That's great! How many did Filliman ask you kill?");
@@ -190,10 +193,14 @@ switch_int(%druidspirit) {
         ~chatplayer("<p,neutral>Only something about harvesting natures bounty... that's all!");
         ~chatnpc("<p,neutral>Well, perhaps it has something to do with the silver sickle, do you think that in blessing it, it did something special to it?");
     case ^druidspirit_full_transform :
-        // TODO: confirm mesanims here, misclicked through fillimans dialogue again
-        ~chatplayer("<p,neutral>Hi again. Filliman has turned into the Nature Spirit. I now need to get a silver sickle so that I can try and defeat the Ghasts. Do you know where I could get something like that?");
-        ~chatnpc("<p,neutral>Well, let me think now. Aha, yes, if you're making something from silver, you'll more than likely need a mould, most crafting shops sell them, you could get one from Al Kharid.");
-        ~chatnpc("<p,neutral>You can mine silver from a silver rock, you can find some on the way to Al Kharid.");
+        if(inv_total(inv, silver_sickle) > 0| inv_total(worn, silver_sickle) > 0) {
+            ~chatplayer("<p,neutral>Hi again. Filliman has turned into the Nature Spirit. I've just gotten the Silver sickle that he asked me to get. He says he's going to bless it!");
+            ~chatnpc("<p,neutral>Well, that's great! You'd best take it to him then with all haste!");
+        } else {
+            ~chatplayer("<p,neutral>Hi again. Filliman has turned into the Nature Spirit. I now need to get a silver sickle so that I can try and defeat the Ghasts. Do you know where I could get something like that?");
+            ~chatnpc("<p,neutral>Well, let me think now. Aha, yes, if you're making something from silver, you'll more than likely need a mould, most crafting shops sell them, you could get one from Al Kharid.");
+            ~chatnpc("<p,neutral>You can mine silver from a silver rock, you can find some on the way to Al Kharid.");
+        }
     case ^druidspirit_entered_grotto :
         ~chatplayer("<p,neutral>I've entered Fillimans underground grotto, but I'm not sure what to do.");
         ~chatnpc("<p,neutral>Well, is there anything down there that might relate to Filliman? Perhaps if you search around you can contact him.");

@@ -72,7 +72,7 @@ if (~npc_check_notcombat = false) {
 if (~npc_check_notcombat_self = false) { // Doesnt change mode! Keeps trying!
     return;
 }
-if (add(%ghast_delay, 26) > map_clock) { // 26t delay between being attacked by ghasts
+if (add(%ghast_delay, 26) > map_clock & %aggressive_npc ! null & %aggressive_npc ! npc_uid) { // 26t delay between being attacked by ghasts
     return;
 }
 %ghast_delay = map_clock;
