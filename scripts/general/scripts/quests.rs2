@@ -218,7 +218,7 @@ if (testbit(%elemental_workshop_bits, ^elemental_workshop_complete) = ^true) {
 if (%priestperil = ^priestperil_complete) {
     $questpoints = add($questpoints, ^priestperil_questpoints); 
 }
-if (%priestperil = ^druidspirit_complete) {
+if (%druidspirit = ^druidspirit_complete) {
     $questpoints = add($questpoints, ^druidspirit_questpoints); 
 }
 return ($questpoints);
