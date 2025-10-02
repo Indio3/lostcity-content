@@ -119,14 +119,14 @@ p_teleport(0_53_52_48_9);
 ~objbox(filliman_journal, "'Something from nature', 'something with faith' and 'something of the spirit-to-become freely given'. It's all pretty vague.", 250, 0, 0);
 
 [oploc5,stonedisc_ds_faith]
-if(coord = loc_coord) {
+if(coord = loc_coord | %druidspirit >= ^druidspirit_performed_ritual) {
     ~mesbox("You search the stone and find that it has some sort of faith symbol scratched into it. This stone seems to be complete somehow.");
     return;
 }
 ~mesbox("You search the stone and find that it has some sort of faith symbol scratched into it.");
 
 [oploc5,stonedisc_ds_nature]
-if(testbit(%druidspirit_bits, ^druidspirit_nature_stone) = ^true) {
+if(testbit(%druidspirit_bits, ^druidspirit_nature_stone) = ^true | %druidspirit >= ^druidspirit_performed_ritual) {
     ~mesbox("You search the stone and find that it has some sort of nature symbol scratched into it. This stone seems to be complete in some way.");
     return;
 }
@@ -137,7 +137,7 @@ def_obj $last_useitem = last_useitem;
 p_delay(0); // not arrivedelay
 anim(human_pickupfloor, 0);
 p_delay(0);
-if(testbit(%druidspirit_bits, ^druidspirit_nature_stone) = ^true) {
+if(testbit(%druidspirit_bits, ^druidspirit_nature_stone) = ^true | %druidspirit >= ^druidspirit_performed_ritual) {
     mes("This stone seems to be complete already.");
     return;
 }
@@ -162,7 +162,7 @@ mes("You try to place the item onto the stone, but it just moves off.");
 if(npc_findexact(0_53_52_48_8, filliman_tarlock_spirit) = true) ~chatnpc("Hmm, that doesn't seem quite right.");
 
 [oploc5,stonedisc_ds_spirit]
-if(testbit(%druidspirit_bits, ^druidspirit_spirit_stone) = ^true) {
+if(testbit(%druidspirit_bits, ^druidspirit_spirit_stone) = ^true | %druidspirit >= ^druidspirit_performed_ritual) {
     ~mesbox("You search the stone and find that it has some sort of spirit symbol scratched into it. This stone seems to be complete in some way.");
     return;
 }
@@ -173,7 +173,7 @@ def_obj $last_useitem = last_useitem;
 p_delay(0);
 anim(human_pickupfloor, 0);
 p_delay(0);
-if(testbit(%druidspirit_bits, ^druidspirit_spirit_stone) = ^true) {
+if(testbit(%druidspirit_bits, ^druidspirit_spirit_stone) = ^true | %druidspirit >= ^druidspirit_performed_ritual) {
     mes("This stone seems to be complete already.");
     return;
 }
