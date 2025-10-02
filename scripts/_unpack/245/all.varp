@@ -1,10 +1,12 @@
 [bankinsert]
 clientcode=9
 
-[varp_305]
+[ghast_delay]
+protect=no
 
-[varp_306]
+[mortmyre]
 
 [druidspirit]
+scope=perm
 
-[varp_308]
+[druidspirit_bits]
