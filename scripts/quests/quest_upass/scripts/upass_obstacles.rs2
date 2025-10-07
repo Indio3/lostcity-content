@@ -338,19 +338,22 @@ if(coordx(loc_coord) < 2415) {
 }
 p_delay(0);
 p_walk($start);
-p_delay(2);
+p_delay(1);
 if(%upass_area2_pipe_used >= map_clock) {
     mes("The pipe is being used"); // todo: confirm, using the same as gnome course
     return;
 }
 %upass_area2_pipe_used = calc(map_clock + 6);
-~agility_exactmove(human_doublepipesqueeze, 30, 5, coord, movecoord(coord, calc(3 * $mod), 0, 0), 30, 126, $dir, true);
+~agility_exactmove(human_doublepipesqueeze, 30, 3, coord, movecoord(coord, calc(3 * $mod), 0, 0), 30, 126, $dir, true);
+sound_synth(squeeze_in, 0, 0);
+p_delay(4);
 mes("You crawl through the pipe.");
 if(%upass >= ^upass_killed_unicorn) {
     p_telejump(movecoord(coord, calc(26*$mod), 0, 0));
 } else {
     p_telejump(movecoord(coord, $mod, 0, 0));
 }
+sound_synth(squeeze_in, 0, 0);
 p_delay(0);
 if($dir = ^exact_west) {
     ~change_merged_loc(movecoord(coord, sub($mod,1), 0, 0));
@@ -358,6 +361,7 @@ if($dir = ^exact_west) {
     ~change_merged_loc(movecoord(coord, $mod, 0, 0));
 }
 ~agility_exactmove(human_doublepipesqueeze, 30, 3, coord, movecoord(coord, calc(3 * $mod), 0, 0), 30, 126, $dir, true);
+sound_synth(squeeze_in, 0, 0);
 p_delay(0);
 stat_advance(agility, 30);
 
