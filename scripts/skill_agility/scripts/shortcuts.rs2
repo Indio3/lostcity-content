@@ -31,7 +31,8 @@ p_teleport(movecoord(loc_coord, divide($z_dist, -5), 0, 0));
 p_arrivedelay;
 mes("You walk carefully across the slippery log...");
 ~agility_force_move(85, human_walk_logbalance, movecoord(coord, $z_dist, 0, 0));
-mes("...and make it safely to the other side.");
+// https://youtu.be/Fr0ZhqD6KKM?si=NUQInNCAp1j_PJhp&t=164
+mes("...You make it safely to the other side.");
 
 [oploc1,loc_2332]
 p_arrivedelay;
