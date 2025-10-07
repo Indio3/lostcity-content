@@ -248,28 +248,46 @@ if(coordx(coord) < coordx(loc_coord)) {
 mes("You put your foot on the ledge and try to edge across...");
 def_coord $dest = 0_37_150_6_38;
 def_seq $seq = human_walk_sidestep;
+def_seq $end_seq = human_outof_sidestep;
 if(coordz(coord) < coordz(loc_coord)) {
     $seq = human_walk_sidestepl;
+    $end_seq = human_outof_sidestepl;
     $dest = movecoord($dest, 0, 0, 5);
     anim(human_into_sidestepl, 0);
 } else {
     anim(human_into_sidestep, 0);
 }
-~agility_force_move(0, $seq, 0_37_150_6_42);
+~set_forcemove_bas($seq);
+if(coordz(coord) >= coordz(loc_coord)) {
+    ~forcemove(0_37_150_6_43);
+    ~forcemove(0_37_150_6_42);
+} else {
+    ~forcemove(0_37_150_6_39);
+    ~forcemove(0_37_150_6_41);
+    ~forcemove(0_37_150_6_42);
+}
 // https://youtu.be/n_ip_vEDbCA?si=0_EUH-TcBp6oAAZL&t=547
 if(stat_random(agility, 90, 300) = false) {
     anim(human_walk_logbalance_stumble, 0);
     mes("You fall in to the rat pit.");
     p_exactmove(coord, movecoord(coord, -1, 0, 0), 18, 30, ^exact_south);
     p_delay(0);
+    ~update_bas;
     ~damage_self(5); // always 5
     p_delay(0);
     return;
 }
-~agility_force_move(0, $seq, $dest);
-if(coordz(coord) > coordz(loc_coord)) {
-    ~agility_force_move(0, $seq, movecoord(coord, 1, 0, 1));
+if(coordz(coord) < coordz(loc_coord)) {
+    ~forcemove(0_37_150_6_41);
 }
+~forcemove($dest);
+if(coordz(coord) > coordz(loc_coord)) {
+    ~forcemove(movecoord(coord, 1, 0, 1));
+}
+// sound
+anim($end_seq, 20);
+p_delay(0);
+~update_bas;
 
 [oploc1,walkway_upass_narrow_mid_top]
 p_arrivedelay;
