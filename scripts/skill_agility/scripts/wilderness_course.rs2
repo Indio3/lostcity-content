@@ -94,7 +94,7 @@ if(%wilderness_ropeswing_used >= map_clock) {
 }
 %wilderness_ropeswing_used = calc(map_clock + 2);
 loc_anim(ropeswing_long);
-~agility_exactmove(human_ropeswing_long, 20, 1, $start_pos, movecoord($start_pos, 0, 0, 5), 45, 70, ^exact_north, false);
+~agility_exactmove(human_ropeswing_long, 20, 0, $start_pos, movecoord($start_pos, 0, 0, 5), 45, 70, ^exact_north, false);
 mes("You skillfully swing across.");
 stat_advance(agility, 200);
 ~update_wilderness_varp(2);

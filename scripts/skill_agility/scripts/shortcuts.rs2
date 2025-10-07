@@ -23,14 +23,21 @@ if(stat(agility) < 20) {
     ~mesbox("You need an Agility level of 20 to balance on this log.");
     return;
 }
-def_int $z_dist = -5;
+def_int $z_dist = -1;
 if(coordx(coord) < 2602) {
-    $z_dist = 5;
+    $z_dist = 1;
 }
-p_teleport(movecoord(loc_coord, divide($z_dist, -5), 0, 0));
+p_teleport(movecoord(loc_coord, multiply($z_dist, -1), 0, 0));
 p_arrivedelay;
 mes("You walk carefully across the slippery log...");
-~agility_force_move(85, human_walk_logbalance, movecoord(coord, $z_dist, 0, 0));
+~set_readywalk_bas(human_walk_logbalance_ready, human_walk_logbalance);
+~forcemove(movecoord(coord, $z_dist, 0, 0));
+sound_synth(log_balance, 2, 0);
+~forcemove(movecoord(coord, multiply($z_dist, 3), 0, 0));
+sound_synth(log_balance, 1, 0);
+~forcemove(movecoord(coord, $z_dist, 0, 0));
+~update_bas;
+stat_advance(agility, 85);
 // https://youtu.be/Fr0ZhqD6KKM?si=NUQInNCAp1j_PJhp&t=164
 mes("...You make it safely to the other side.");
 
@@ -132,7 +139,7 @@ if($dist > 0) {
     }
 }
 loc_anim(ropeswing_long);
-~agility_exactmove(human_ropeswing_long, 20, 1, coord, loc_param(end_coord), 45, 70, loc_param(dir), false);
+~agility_exactmove(human_ropeswing_long, 20, 0, coord, loc_param(end_coord), 45, 70, loc_param(dir), false);
 mes("You skillfully swing across.");
 stat_advance(agility, 30);
 
