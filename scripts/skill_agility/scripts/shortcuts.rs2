@@ -23,10 +23,6 @@ if(stat(agility) < 20) {
     ~mesbox("You need an Agility level of 20 to balance on this log.");
     return;
 }
-def_int $z_dist = -1;
-if(coordx(coord) < 2602) {
-    $z_dist = 1;
-}
 def_int $z_dist = -5;
 if(coordx(coord) < 2602) {
     $z_dist = 5;
