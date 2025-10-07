@@ -298,7 +298,6 @@ if(coordx(coord) > coordx(loc_coord)) {
 } else {
     $end = movecoord(loc_coord, 1, 0, 0);
 }
-sound_synth(log_balance, 2, 0);
 ~agility_force_move(0, human_walk_logbalance, movecoord(coord, calc((coordx($end) - coordx(coord)) / 2), 0, calc((coordz($end) - coordz(coord)) / 2)));
 // https://youtu.be/n_ip_vEDbCA?si=0_EUH-TcBp6oAAZL&t=547
 if(stat_random(agility, 90, 300) = false) {
@@ -311,7 +310,6 @@ if(stat_random(agility, 90, 300) = false) {
         $dir = ^exact_north;
     }
     anim(human_walk_logbalance_stumble, 10);
-    sound_synth(stumble_loop, 5, 10);
     mes("...and fall off it.");
     p_delay(0);
     p_exactmove(coord, movecoord(coord, 0, 0, $dz), 30, 45, $dir);

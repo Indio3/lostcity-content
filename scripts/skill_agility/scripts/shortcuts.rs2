@@ -27,17 +27,14 @@ def_int $z_dist = -1;
 if(coordx(coord) < 2602) {
     $z_dist = 1;
 }
-p_teleport(movecoord(loc_coord, multiply($z_dist, -1), 0, 0));
+def_int $z_dist = -5;
+if(coordx(coord) < 2602) {
+    $z_dist = 5;
+}
+p_teleport(movecoord(loc_coord, divide($z_dist, -5), 0, 0));
 p_arrivedelay;
 mes("You walk carefully across the slippery log...");
-~set_readywalk_bas(human_walk_logbalance_ready, human_walk_logbalance);
-~forcemove(movecoord(coord, $z_dist, 0, 0));
-sound_synth(log_balance, 2, 0);
-~forcemove(movecoord(coord, multiply($z_dist, 3), 0, 0));
-sound_synth(log_balance, 1, 0);
-~forcemove(movecoord(coord, $z_dist, 0, 0));
-~update_bas;
-stat_advance(agility, 85);
+~agility_force_move(85, human_walk_logbalance, movecoord(coord, $z_dist, 0, 0));
 // https://youtu.be/Fr0ZhqD6KKM?si=NUQInNCAp1j_PJhp&t=164
 mes("...You make it safely to the other side.");
 
