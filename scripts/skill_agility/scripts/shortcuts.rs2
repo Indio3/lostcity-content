@@ -23,14 +23,21 @@ if(stat(agility) < 20) {
     ~mesbox("You need an Agility level of 20 to balance on this log.");
     return;
 }
-def_int $z_dist = -5;
+def_int $z_dist = -1;
 if(coordx(coord) < 2602) {
-    $z_dist = 5;
+    $z_dist = 1;
 }
-p_teleport(movecoord(loc_coord, divide($z_dist, -5), 0, 0));
+p_teleport(movecoord(loc_coord, multiply($z_dist, -1), 0, 0));
 p_arrivedelay;
 mes("You walk carefully across the slippery log...");
-~agility_force_move(85, human_walk_logbalance, movecoord(coord, $z_dist, 0, 0));
+~set_readywalk_bas(human_walk_logbalance_ready, human_walk_logbalance);
+~forcemove(movecoord(coord, $z_dist, 0, 0));
+sound_synth(log_balance, 2, 0);
+~forcemove(movecoord(coord, multiply($z_dist, 3), 0, 0));
+sound_synth(log_balance, 1, 0);
+~forcemove(movecoord(coord, $z_dist, 0, 0));
+~update_bas;
+stat_advance(agility, 85);
 // https://youtu.be/Fr0ZhqD6KKM?si=NUQInNCAp1j_PJhp&t=164
 mes("...You make it safely to the other side.");
 
@@ -134,6 +141,7 @@ if($dist > 0) {
 loc_anim(ropeswing_long);
 ~agility_exactmove(human_ropeswing_long, 20, 0, coord, loc_param(end_coord), 45, 70, loc_param(dir), false);
 mes("You skillfully swing across.");
+sound_synth(swing_across, 0, 0);
 stat_advance(agility, 30);
 
 [oploc1,_monkeybars]
@@ -154,7 +162,9 @@ facesquare(movecoord(coord, 0, 0, calc($dist_mod)));
 ~bas_set(human_monkeybars_ready, human_monkeybars_ready, human_monkeybars_walk, 
          human_monkeybars_ready, human_monkeybars_ready, human_monkeybars_ready, null);
 anim(human_monkeybars_on, 0);
+sound_synth(monkeybars_on, 0, 0);
 p_delay(0);
+sound_synth(monkeybars_loop, 4, 40);
 ~forcemove(movecoord(coord, 0, 0, calc($dist_mod * 1)));
 p_delay(0);
 // You can only fail the monkeybars in the agility dungeon
@@ -172,10 +182,12 @@ if(stat_random(agility, loc_param(obstacle_low_fail), loc_param(obstacle_high_fa
 }
 p_teleport(movecoord(coord, 0, 0, calc($dist_mod * 3)));
 p_delay(0);
+sound_synth(monkeybars_loop, 3, 0);
 ~forcemove(movecoord(coord, 0, 0, calc($dist_mod * 1)));
 ~update_bas;
 stat_advance(agility, 200);
 anim(human_monkeybars_off, 0);
+sound_synth(monkeybars_off, 0, 0);
 p_delay(0);
 
 [oploc1,fullstyle]
@@ -222,6 +234,7 @@ if(coordz(coord) < coordz(loc_coord)) {
     $fall_seq = human_wobbleandfall_r;
 }
 mes("You attempt to balance on the stepping stone.");
+sound_synth(jump_no_land, 0, 20);
 // 1t longer delay than osrs for now, otherwise the fall seq won't play on fails 
 ~agility_exactmove(human_steppingstonejump, 20, 2, coord, movecoord(coord, 0, 0, $dz), 48, 60, $dir, false);
 if(stat_random(agility, 140, 250) = false) {
