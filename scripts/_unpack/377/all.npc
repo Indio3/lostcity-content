@@ -5706,57 +5706,6 @@ op1=Talk-to
 head1=npc_professor_oddenstein_head
 head2=idk_man_jaw_moustache_head
 
-[ernest]
-name=Ernest
-desc=A former chicken.
-model1=idk_man_hair_medium
-model2=idk_man_jaw_none
-model3=npc_ernest
-model4=idk_man_torso_dark_buttons
-model5=npc_ernesti2
-model6=obj_cert_drill_top_manwear3
-model7=idk_man_legs_turn_ups
-model8=obj_ikov_bootsoflightness_manwear
-recol1s=9419
-recol1d=13876
-recol2s=14724
-recol2d=11829
-recol3s=2340
-recol3d=300
-recol4s=7298
-recol4d=4192
-recol5s=14801
-recol5d=2407
-recol6s=6273
-recol6d=7331
-vislevel=hide
-walkanim=human_walk_f,human_walk_b,human_walk_l,human_walk_r
-readyanim=human_ready
-head1=obj_pickpocket_guide_farmer
-
-[ernest_the_chicken]
-name=Chicken
-desc=A strange chicken.
-model1=rd_chicken_normal_8
-recol1s=17830
-recol1d=13910
-recol2s=15716
-recol2d=13876
-recol3s=13602
-recol3d=11729
-recol4s=11488
-recol4d=9614
-recol5s=10432
-recol5d=7466
-recol6s=7328
-recol6d=6375
-vislevel=hide
-walkanim=roosterwalk
-readyanim=roosterready
-resizeh=32
-resizev=32
-head1=obj_pickpocket_guide_farmer
-
 [councillor_halgrive]
 name=Councillor Halgrive
 desc=An official of Ardougne.
@@ -66928,22 +66877,6 @@ recol3d=17836
 vislevel=hide
 walkanim=fai_racoon_walk
 readyanim=fai_racoon_turn
-
-[ernest_multiernest]
-walkanim=human_walk_f,human_walk_b,human_walk_l,human_walk_r
-readyanim=human_ready
-vislevel=1
-multivar=haunted
-multinpc=3,ernest
-
-[ernest_multichicken]
-walkanim=roosterwalk
-readyanim=roosterready
-vislevel=1
-multivar=haunted
-multinpc=0,ernest_the_chicken
-multinpc=1,ernest_the_chicken
-multinpc=2,ernest_the_chicken
 
 [draynor_skeleton]
 name=Skeleton
