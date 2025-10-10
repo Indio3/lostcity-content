@@ -1,0 +1,9 @@
+[haunted]
+scope=perm
+
+[ernestlever]
+transmit=yes
+scope=perm
+
+[haunted_manor_fountain_poisoned]
+scope=perm

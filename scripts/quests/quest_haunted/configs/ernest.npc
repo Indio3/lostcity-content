@@ -1,0 +1,15 @@
+[ernest_multiernest]
+walkanim=human_walk_f,human_walk_b,human_walk_l,human_walk_r
+readyanim=human_ready
+vislevel=1
+multivar=haunted
+multinpc=3,ernest
+
+[ernest_multichicken]
+walkanim=roosterwalk
+readyanim=roosterready
+vislevel=1
+multivar=haunted
+multinpc=0,ernest_the_chicken
+multinpc=1,ernest_the_chicken
+multinpc=2,ernest_the_chicken
