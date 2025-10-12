@@ -1,0 +1,16 @@
+[opnpc1,agilityarena_clerk]
+~chatplayer("<p,happy>Ahoy Cap'n!");
+~chatnpc("<p,happy>Ahoy there!");
+// no parrot head model so no parrot dialogue?
+def_int $op = ~p_choice4("What is this place?", 1, "What do I do in the arena?", 2, "I'd like to use the Agility Arena, please.", 3, "See you later.", 4);
+while($op ! null) {
+    if($op = 3) ~chatplayer("<p,neutral>I'd like to use the Agility Arena, please.");
+
+}
+
+[ai_timer,agilityarena_clerk]
+npc_say("Testing, <tostring(%agilityarena_next_pillar_time)>");
+if(map_clock >= %agilityarena_next_pillar_time) {
+    %agilityarena_pillar_index = random(24);
+    %agilityarena_next_pillar_time = add(map_clock, 100);
+}

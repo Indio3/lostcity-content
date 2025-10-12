@@ -1,0 +1,69 @@
+[oploc1,agilityarena_ladderdown]
+if(testbit(%agilityarena_varbit, ^agilityarena_paid) = ^false) {
+    ~chatnpc_specific(nc_name(agilityarena_clerk), agilityarena_clerk, "<p,angry>Ahoy there! Pay up first!");
+    return;
+}
+p_teleport(3_43_149_52_53);
+mes("TIMER SET, TIME TILL NEXT: <tostring(sub(%agilityarena_next_pillar_time, map_clock))>");
+settimer(agilityarena_pillar, sub(%agilityarena_next_pillar_time, map_clock));
+hint_stop();
+hint_coord(^hint_center, ~get_pillar_coord, 60);
+
+[oploc1,agilityarena_ladderup]
+p_teleport(0_43_49_56_57);
+hint_stop();
+cleartimer(agilityarena_pillar);
+
+[timer,agilityarena_pillar]
+mes("TIMER SET, TIME TILL NEXT: <tostring(sub(%agilityarena_next_pillar_time, map_clock))>");
+if(testbit(%agilityarena_varbit, ^agilityarena_pillar_tagged) = ^false) {
+    %agilityarena_varbit = clearbit(%agilityarena_varbit, ^agilityarena_first_tagged);
+}
+%agilityarena_varbit = clearbit(%agilityarena_varbit, ^agilityarena_pillar_tagged);
+hint_stop();
+hint_coord(^hint_center, ~get_pillar_coord, 60);
+settimer(agilityarena_pillar, sub(%agilityarena_next_pillar_time, map_clock));
+
+[oploc1,agility_ticketpillar] @agilityarena_tag_pillar;
+[oploc1,agilityarena_poisondarts] @agilityarena_tag_pillar;
+
+[label,agilityarena_tag_pillar]
+if(~get_pillar_coord ! loc_coord) {
+    mes("You can only get a ticket when the flashing arrow is above the pillar.");
+    return;
+}
+if(testbit(%agilityarena_varbit, ^agilityarena_pillar_tagged) = ^true) {
+    mes("You can only get one ticket at a time, wait till the arrow moves again.");
+    return;
+}
+%agilityarena_varbit = setbit(%agilityarena_varbit, ^agilityarena_pillar_tagged);
+if(testbit(%agilityarena_varbit, ^agilityarena_first_tagged) = ^false) {
+    %agilityarena_varbit = setbit(%agilityarena_varbit, ^agilityarena_first_tagged);
+    mes("You get tickets by tagging more than one pillar in a row, tag the next");
+    mes("pillar!");
+    ~mesbox("You get tickets by tagging more than one pillar in a row. @red@Tag the @red@next pillar for a ticket!");
+    return;
+}
+inv_add(inv, agilityarena_ticket, 1);
+~objbox(agilityarena_ticket, "You have received an Agility Arena Ticket!", 250, 0, 0);
+
+[oploc1,agilityarena_ropebalance]
+p_delay(0);
+~forcemove(loc_coord);
+def_int $z_dist = 1;
+if(loc_angle = ^loc_east) {
+    $z_dist = -1;
+}
+~set_readywalk_bas(human_walk_logbalance_ready, human_walk_logbalance);
+sound_synth(tightrope, 2, 0);
+~forcemove(movecoord(coord, 0, 0, multiply($z_dist, 3)));
+sound_synth(tightrope, 2, 0);
+~forcemove(movecoord(coord, 0, 0, multiply($z_dist, 2)));
+sound_synth(tightrope, 1, 0);
+~forcemove(movecoord(coord, 0, 0, $z_dist));
+~update_bas;
+~forcemove(movecoord(coord, 0, 0, $z_dist));
+stat_advance(agility, 100);
+
+[proc,get_pillar_coord]()(coord)
+return (enum(int, coord, agilityarena_pillar_coords, %agilityarena_pillar_index));

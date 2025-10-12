@@ -8677,6 +8677,7 @@ op3=Pay
 vislevel=hide
 head1=idk_man_hair_dreadlocks_head
 head2=npc_pirate2_head
+timer=1
 
 [macro_dryhad1]
 name=Tree spirit
