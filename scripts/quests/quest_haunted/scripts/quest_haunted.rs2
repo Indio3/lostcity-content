@@ -6,12 +6,13 @@ if(coordz(coord) > coordz(loc_coord)) {
     mes("The doors won't open.");
     return;
 }
-~open_and_close_double_door2(~check_axis(coord, loc_coord, loc_angle), $side, door_open);
-p_delay(2);
-mes("The doors slam shut behind you!");
+~open_and_close_double_door2(~check_axis(coord, loc_coord, loc_angle), $side, bigdoor_open);
+p_delay(0);
+sound_synth(bigdoor_close, 0, 0);
+mes("The doors slam shut behind you.");
 
 [oploc1,hauntedcompostheap]
-~mesbox("I'm not looking through that with my hands!");
+~chatplayer("<p,angry>I'm not looking through that with my hands!");
 
 [oplocu,hauntedcompostheap]
 if(last_useitem ! spade) {
@@ -152,8 +153,9 @@ if(testbit(%ernestlever, loc_param(lever_index)) = ^true) {
     $dir = "up";
 }
 %ernestlever = togglebit(%ernestlever, loc_param(lever_index));
-anim(human_leverdown, 0); // OSRS uses seq's not in 225, going to assume here
+anim(macro_lever_switch_down, 0); // OSRS uses seq's not in 225, going to assume here
 sound_synth(lever, 0, 0);
+~change_haunted_door_state;
 mes("You pull lever <substring(loc_name, calc($name_idx - 1), $name_idx)> <$dir>.");
 mes("You hear a clunk.");
 
@@ -164,21 +166,90 @@ if(testbit(%ernestlever, loc_param(lever_index)) = ^true) {
 }
 mes("The lever is <$dir>.");
 
-[oploc1,_haunted_door]
-if((loc_type = 1to2 & (testbit(%ernestlever, 0) = ^false & testbit(%ernestlever, 1) = ^false & testbit(%ernestlever, 3) = ^true & testbit(%ernestlever, 4) = ^true & testbit(%ernestlever, 5) = ^true))
-    | (loc_type = 2to3 & (testbit(%ernestlever, 1) = ^false & testbit(%ernestlever, 3) = ^true & testbit(%ernestlever, 5) = ^true))
-    | (loc_type = 4to5 & (testbit(%ernestlever, 0) = ^true & testbit(%ernestlever, 1) = ^true & testbit(%ernestlever, 3) = ^true))
-    | (loc_type = 5to6 & testbit(%ernestlever, 3) = ^true)
-    | (loc_type = 8to9 & (testbit(%ernestlever, 4) = ^false & testbit(%ernestlever, 5) = ^true))
-    | (loc_type = 2to5 & (testbit(%ernestlever, 0) = ^false & testbit(%ernestlever, 1) = ^false & testbit(%ernestlever, 2) = ^true & testbit(%ernestlever, 3) = ^true & testbit(%ernestlever, 4) = ^false & testbit(%ernestlever, 5) = ^true))
-    | (loc_type = 3to6 & (testbit(%ernestlever, 1) = ^false & testbit(%ernestlever, 3) = ^true & testbit(%ernestlever, 5) = ^false))
-    | (loc_type = 4to7 & (testbit(%ernestlever, 0) = ^true & testbit(%ernestlever, 1) = ^true & testbit(%ernestlever, 2) = ^false & testbit(%ernestlever, 3) = ^false & testbit(%ernestlever, 4) = ^false & testbit(%ernestlever, 5) = ^false))
-    | (loc_type = 5to8 & ((testbit(%ernestlever, 2) = ^false & testbit(%ernestlever, 3) = ^true) | (testbit(%ernestlever, 0) = ^false & testbit(%ernestlever, 1) = ^false & testbit(%ernestlever, 2) = ^true & testbit(%ernestlever, 3) = ^true & testbit(%ernestlever, 4) = ^false & testbit(%ernestlever, 5) = ^true)))) {
-    ~open_and_close_door2(loc_1535, ~check_axis(coord, loc_coord, loc_angle), door_open);
+[proc,change_haunted_door_state]
+if(%ernestlever_a = ^false & %ernestlever_b = ^false & %ernestlever_d = ^true & %ernestlever_e = ^true & %ernestlever_f = ^true) {
+    %ernestdoor_1to2 = ^true;
+} else {
+    %ernestdoor_1to2 = ^false;
+}
+
+if(%ernestlever_a = ^false & %ernestlever_b = ^false & %ernestlever_d = ^true & %ernestlever_e = ^true & %ernestlever_f = ^true) {
+    %ernestdoor_1to2 = ^true;
+} else {
+    %ernestdoor_1to2 = ^false;
+}
+
+
+if(%ernestlever_a = ^false & %ernestlever_b = ^false & %ernestlever_d = ^true & %ernestlever_e = ^true & %ernestlever_f = ^true) {
+    %ernestdoor_1to2 = ^true;
+} else {
+    %ernestdoor_1to2 = ^false;
+}
+
+
+if(%ernestlever_a = ^false & %ernestlever_b = ^false & %ernestlever_d = ^true & %ernestlever_e = ^true & %ernestlever_f = ^true) {
+    %ernestdoor_1to2 = ^true;
+} else {
+    %ernestdoor_1to2 = ^false;
+}
+
+
+if(%ernestlever_a = ^false & %ernestlever_b = ^false & %ernestlever_d = ^true & %ernestlever_e = ^true & %ernestlever_f = ^true) {
+    %ernestdoor_1to2 = ^true;
+} else {
+    %ernestdoor_1to2 = ^false;
+}
+
+
+if(%ernestlever_a = ^false & %ernestlever_b = ^false & %ernestlever_d = ^true & %ernestlever_e = ^true & %ernestlever_f = ^true) {
+    %ernestdoor_1to2 = ^true;
+} else {
+    %ernestdoor_1to2 = ^false;
+}
+
+if(%ernestlever_a = ^false & %ernestlever_b = ^false & %ernestlever_d = ^true & %ernestlever_e = ^true & %ernestlever_f = ^true) {
+    %ernestdoor_1to2 = ^true;
+} else {
+    %ernestdoor_1to2 = ^false;
+}
+
+
+if(%ernestlever_a = ^true & %ernestlever_b = ^true & %ernestlever_c = ^false & %ernestlever_d = ^false & %ernestlever_e = ^false & %ernestlever_f = ^false) {
+    %ernestdoor_4to7 = ^true;
+} else {
+    %ernestdoor_4to7 = ^false;
+}
+
+
+if(%ernestlever_a = ^false & %ernestlever_b = ^false & %ernestlever_d = ^true & %ernestlever_e = ^true & %ernestlever_f = ^true) {
+    %ernestdoor_1to2 = ^true;
+} else {
+    %ernestdoor_1to2 = ^false;
+}
+
+[aploc1,4to7]
+if(%ernestdoor_4to7 = ^false) {
     return;
 }
-mes("This door is locked.");
-sound_synth(locked, 0, 0);
+if(distance(coord, loc_coord) > 1) {
+    p_aprange(1);
+    return;
+}
+p_arrivedelay;
+def_coord $south_dest = movecoord(loc_coord, 0, 0, -1);
+def_coord $north_dest = movecoord(loc_coord, 0, 0, 1);
+def_coord $coord = coord;
+if(coordz($coord) < coordz(loc_coord) & $coord ! $south_dest) {
+    p_teleport($south_dest);
+    p_delay(0);
+}
+loc_del(3);
+loc_add(loc_coord, loc_1546, 0, wall_straight, 3);
+p_teleport(loc_coord);
+p_delay(0);
+if(coordz($coord) < coordz(loc_coord)) p_teleport($north_dest);
+else p_teleport($south_dest);
+p_delay(0);
 
 [proc,change_ernest]
 if(npc_find(coord, ernest_the_chicken, 8, 0) = true) {

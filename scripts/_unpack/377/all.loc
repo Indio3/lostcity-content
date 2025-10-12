@@ -117205,6 +117205,8 @@ recol3d=7265
 active=yes
 op1=Open
 raiseobject=no
+category=door_closed
+param=next_loc_stage,draynor_panelled_door_open
 
 [draynor_panelled_door_open]
 name=Door
@@ -117219,6 +117221,8 @@ recol3d=7265
 active=yes
 op1=Close
 raiseobject=no
+category=door_opened
+param=next_loc_stage,draynor_panelled_door
 
 [draynor_candles_1]
 name=Candles

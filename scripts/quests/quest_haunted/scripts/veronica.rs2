@@ -6,17 +6,17 @@ switch_int (%haunted) {
 }
 
 [label,haunted_start]
-~chatnpc("<p,shock>Can you please help me?|I'm in a terrible spot of trouble.");
+~chatnpc("<p,shock>Can you please help me? I'm in a terrible spot of trouble.");
 def_int $option = ~p_choice2("Aha, sounds like a quest. I'll help.", 1, "No, I'm looking for something to kill.", 2);
 if($option = 1) {
     ~chatplayer("<p,happy>Aha, sounds like a quest. I'll help.");
-    ~chatnpc("<p,neutral>Yes yes, I suppose it is a quest.|My fiance Ernest and I came upon this house here.");
-    ~chatnpc("<p,neutral>Seeing as we were a little lost|Ernest decided to go in and ask for directions.");
-    ~chatnpc("<p,neutral>That was an hour ago.|That house looks very spooky,|can you go and see if you can find him for me?");
+    ~chatnpc("<p,neutral>Yes yes, I suppose it is a quest. My fiance Ernest and I came upon this house here.");
+    ~chatnpc("<p,neutral>Seeing as we were a little lost Ernest decided to go in and ask for directions.");
+    ~chatnpc("<p,neutral>That was an hour ago. That house looks very spooky, can you go and see if you can find him for me?");
     %haunted = ^haunted_started;
-    ~send_quest_progress(questlist:haunted, %haunted, 3);
+    ~send_quest_progress(questlist:haunted, %haunted, ^haunted_complete);
     ~chatplayer("<p,neutral>Ok, I'll see what I can do.");
-    ~chatnpc("<p,happy>Thank you, thank you.|I'm very grateful.");
+    ~chatnpc("<p,happy>Thank you, thank you. I'm very grateful.");
 } else if($option = 2) {
     ~chatplayer("<p,neutral>No, I'm looking for something to kill.");
     ~chatnpc("<p,shock>Oooh, you violent person you.");

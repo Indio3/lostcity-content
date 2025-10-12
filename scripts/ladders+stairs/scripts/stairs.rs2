@@ -1011,8 +1011,9 @@ switch_coord (loc_coord) {
 }
 
 [oploc1,sarim_spiralstairstop]
-// arrive delay?
+p_arrivedelay;
 switch_coord (loc_coord) {
+    case 2_48_52_33_35 : p_telejump(1_48_52_34_35); // Draynor Manor - level 2
     case default : @unhandled_stairs(loc_coord);
 }
 
@@ -1137,22 +1138,15 @@ switch_coord (loc_coord) {
 }
 
 [oploc1,draynor_manor_stairs_up]
-// arrive delay?
-switch_coord (loc_coord) {
-    case default : @unhandled_stairs(loc_coord);
-}
+p_arrivedelay;
+p_telejump(movecoord(coord, 0, 1, 5));
 
 [oploc1,draynor_manor_stairs_down]
-// arrive delay?
-switch_coord (loc_coord) {
-    case default : @unhandled_stairs(loc_coord);
-}
+p_arrivedelay;
+p_telejump(movecoord(coord, 0, -1, -5));
 
 [oploc1,draynor_spiralstairs]
-// arrive delay?
-switch_coord (loc_coord) {
-    case default : @unhandled_stairs(loc_coord);
-}
+p_telejump(2_48_52_33_36);
 
 [oploc1,loc_11724]
 // arrive delay?
