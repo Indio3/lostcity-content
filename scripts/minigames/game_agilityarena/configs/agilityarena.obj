@@ -12,6 +12,7 @@ cost=1
 members=yes
 stackable=yes
 weight=5g
+tradeable=no
 
 [piratehook]
 name=Pirate's hook
