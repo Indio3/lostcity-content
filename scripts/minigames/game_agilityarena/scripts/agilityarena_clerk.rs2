@@ -73,7 +73,6 @@ if(map_clock >= %agilityarena_next_pillar_time) {
     %agilityarena_next_pillar_time = add(map_clock, 100);
     ~agilityarena_change_planks;
 }
-def_coord $dest;
 if(modulo(map_clock, 10) = 0) {
     // these all happen at the same time afaik
     if(loc_find(3_43_149_31_15, agilityarena_timedblade2_floor) = true) {
