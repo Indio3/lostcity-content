@@ -8678,6 +8678,7 @@ vislevel=hide
 head1=idk_man_hair_dreadlocks_head
 head2=npc_pirate2_head
 timer=1
+moverestrict=indoors
 
 [macro_dryhad1]
 name=Tree spirit
@@ -22022,6 +22023,7 @@ op1=Talk-to
 op3=Trade
 vislevel=hide
 head1=npc_lady_pirate_head
+moverestrict=indoors
 
 [macro_mime]
 name=Mime

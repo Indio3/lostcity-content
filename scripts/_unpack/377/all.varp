@@ -646,9 +646,6 @@ clientcode=9
 
 [varp_308]
 
-[agilityarena_varbit]
-transmit=yes
-
 [varp_310]
 
 [varp_312]

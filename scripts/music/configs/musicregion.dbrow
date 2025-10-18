@@ -1731,3 +1731,9 @@ table=musicregion
 data=mapsquare,0_57_55_0_0
 data=name,The Other Side
 data=musicdata,music_The_Other_Side
+
+[musicregion_43_149]
+table=musicregion
+data=mapsquare,0_43_149_0_0
+data=name,Aztec
+data=musicdata,music_Aztec
