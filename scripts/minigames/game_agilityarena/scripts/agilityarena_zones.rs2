@@ -103,7 +103,7 @@ if(loc_find(coord, agilityarena_floorspikes) = true) {
     // https://youtu.be/eHMW2KRp9_Q?si=H8uk_KvSW2zFNcIQ&t=119 1t delay before activating, which osrs doesnt seem to have
     p_stopaction;
     p_delay(0);
-    if(stat_random(agility, 200, 250) = false | stat(agility) < 20) {
+    if(stat_random(agility, 180, 250) = false | stat(agility) < 20) {
         if(stat(agility) < 20) mes("You need an agility level of at least 20 to get past this trap!");
         mes("You were hit by some floor spikes!");
         sound_synth(floor_spikes, 0, 0);
@@ -140,7 +140,7 @@ if(loc_find(coord, agilityarena_pressurepad) = true) {
     // https://youtu.be/eHMW2KRp9_Q?si=4o0WDWs9VMAxXitO&t=137 1t delay before activating, which osrs doesnt seem to have (same as floor spikes bascially)
     p_stopaction;
     p_delay(0);
-    if(stat_random(agility, 185, 235) = false | stat(agility) < 20) {
+    if(stat_random(agility, 165, 235) = false | stat(agility) < 20) {
         if(stat(agility) < 20) mes("You need an agility level of at least 20 to get past this trap!");
         mes("You were hit by some falling rocks!");
         sound_synth(roof_collapse, 0, 0);
