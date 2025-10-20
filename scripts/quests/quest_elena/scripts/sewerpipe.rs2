@@ -32,7 +32,7 @@ switch_int(%elenaquest) {
 [label,elena_climb_through_sewerpipe]
 // Enter tube
 ~forcewalk2(movecoord(loc_coord, 0, 0, 1));
-if(%elena_pipe_used >= map_clock) {
+if(%elena_pipe_used > map_clock) {
     mes("The pipe is being used"); 
     return;
 }
