@@ -434,8 +434,6 @@ transmit=yes
 
 [varp_204]
 
-[varp_205]
-
 [varp_206]
 
 [varp_207]
@@ -484,21 +482,21 @@ type=player_uid
 
 [ballquest]
 
-[varp_227]
+[gnome_cocktail_bits1]
 
-[varp_228]
+[gnome_cocktail_bits2]
 
-[varp_229]
+[gnome_batta_bits1]
 
-[varp_230]
+[gnome_batta_bits2]
 
-[varp_231]
+[gnome_bowl_bits1]
 
-[varp_232]
+[gnome_bowl_bits2]
 
-[varp_233]
+[gnome_crunchies_bits1]
 
-[varp_234]
+[gnome_crunchies_bits2]
 
 [varp_235]
 
@@ -645,9 +643,6 @@ clientcode=9
 [druidspirit]
 
 [varp_308]
-
-[agilityarena_varbit]
-transmit=yes
 
 [varp_310]
 
@@ -909,9 +904,6 @@ transmit=yes
 
 [feud_var_multi]
 
-[golem_quest]
-transmit=yes
-
 [varp_438]
 
 [alternate_spells]
@@ -1132,6 +1124,7 @@ transmit=yes
 
 [macro_transmit]
 transmit=yes
+scope=perm
 
 [varp_532]
 
@@ -1457,9 +1450,6 @@ transmit=yes
 [spitfire_coord]
 
 [ogre_area_extra]
-
-[varp_666]
-transmit=yes
 
 [elenaquest_extra_bits]
 transmit=yes

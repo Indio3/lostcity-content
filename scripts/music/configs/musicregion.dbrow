@@ -1,3 +1,9 @@
+[musicregion_30_78]
+table=musicregion
+data=mapsquare,0_30_78_0_0
+data=name,Background
+data=musicdata,music_Background
+
 [musicregion_33_48]
 table=musicregion
 data=mapsquare,0_33_48_0_0
@@ -543,6 +549,18 @@ table=musicregion
 data=mapsquare,0_42_58_0_0
 data=name,Borderland
 data=musicdata,music_Borderland
+
+[musicregion_0_42_76]
+table=musicregion
+data=mapsquare,0_42_76_0_0
+data=name,Forgotten
+data=musicdata,music_Forgotten
+
+[musicregion_2_42_76]
+table=musicregion
+data=mapsquare,2_42_76_0_0
+data=name,Throne of the Demon
+data=musicdata,music_Throne_of_the_Demon
 
 [musicregion_43_42]
 table=musicregion
@@ -1731,3 +1749,9 @@ table=musicregion
 data=mapsquare,0_57_55_0_0
 data=name,The Other Side
 data=musicdata,music_The_Other_Side
+
+[musicregion_43_149]
+table=musicregion
+data=mapsquare,0_43_149_0_0
+data=name,Aztec
+data=musicdata,music_Aztec
