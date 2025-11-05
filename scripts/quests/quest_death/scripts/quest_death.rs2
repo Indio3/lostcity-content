@@ -151,6 +151,26 @@ if(npc_findexact(0_44_56_35_14, death_troll_thrower5) = true) {
 }
 cam_reset;
 
+[oploc1,death_climbingrocks_top]
+if(inv_total(worn, death_climbingboots) = 0) {
+    mes("You need climbing boots to negotiate these rocks.");
+    return;
+}
+p_delay(0);
+sound_synth(climbing_loop, 4, 10);
+~agility_exactmove(death_human_climbing_down, 10, 2, coord, movecoord(coord, 0, 0, -3), 10, 90, ^exact_north, false);
+anim(null, 0);
+
+[oploc1,death_climbingrocks_bottom]
+if(inv_total(worn, death_climbingboots) = 0) {
+    mes("You need climbing boots to negotiate these rocks.");
+    return;
+}
+p_delay(0);
+sound_synth(climbing_loop, 4, 0);
+~agility_force_move(0, human_climbing, movecoord(coord, 0, 0, 2));
+p_teleport(movecoord(coord, 0, 0, 1));
+
 [proc,death_get_playerroll]()(int)
 return (getbit_range(%death_bits, ^death_playerroll_lower, ^death_playerroll_upper));
 

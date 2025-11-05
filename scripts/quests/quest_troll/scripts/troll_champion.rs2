@@ -1,0 +1,45 @@
+[opnpc1,troll_champion]
+if(%troll_accepted_challenge = ^true) {
+    mes("He doesn't seem interested in talking right now.");
+    return;
+}
+~chatnpc("<p,neutral>What tiny human do in troll arena? Dad challenge human to fight!");
+// TODO: recheck these mesanims, wasnt able to dump
+switch_int(~p_choice3("Why are you called Dad?", 1, "I accept your challenge!", 2, "Eek! No thanks.", 3)) {
+    case 1 :
+        ~chatplayer("<p,confused>Why are you called Dad?");
+        ~chatnpc("<p,happy>Troll named after first thing try to eat!");
+    case 2 :
+        ~chatplayer("<p,happy>I accept your challenge!");
+        %troll_accepted_challenge = ^true;
+        ~chatnpc("<p,happy>Tiny human brave. Dad squish!");
+        npc_setmode(opplayer2);
+        hint_npc(npc_uid);
+    case 3 :
+        ~chatplayer("<p,shock>Eek! No thanks.");
+        ~chatnpc("<p,angry>Coward. Dad wait for braver fighter.");
+}
+
+[ai_opplayer2,troll_champion]
+if(random(3) = 0) {
+
+}
+gosub(npc_default_attack);
+
+[opnpc2,troll_champion]
+if(%troll_accepted_challenge = ^false) {
+    %troll_accepted_challenge = ^true;
+    ~chatnpc("<p,happy>Tiny human brave. Dad squish!");
+    npc_setmode(opplayer2);
+    hint_npc(npc_uid);
+}
+@player_combat_start;
+
+[apnpc2,troll_champion]
+if(%troll_accepted_challenge = ^false) {
+    %troll_accepted_challenge = ^true;
+    ~chatnpc("<p,happy>Tiny human brave. Dad squish!");
+    npc_setmode(opplayer2);
+    hint_npc(npc_uid);
+}
+@player_combat_start_ap;
