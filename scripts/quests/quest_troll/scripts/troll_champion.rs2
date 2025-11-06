@@ -26,20 +26,32 @@ if(random(3) = 0) {
 }
 gosub(npc_default_attack);
 
-[opnpc2,troll_champion]
-if(%troll_accepted_challenge = ^false) {
-    %troll_accepted_challenge = ^true;
-    ~chatnpc("<p,happy>Tiny human brave. Dad squish!");
-    npc_setmode(opplayer2);
-    hint_npc(npc_uid);
+[opnpc2,troll_champion] @trollchamp_combat_start;
+[apnpc2,troll_champion] @trollchamp_combat_start_ap;
+
+// no in combat check
+[label,trollchamp_combat_start_ap]
+def_int $attackrange = ~player_attackrange(inv_getobj(worn, ^wearpos_rhand));
+if ($attackrange <= 1 | npc_range(coord) > $attackrange) {
+    p_aprange($attackrange);
+    return;
 }
 @player_combat_start;
 
-[apnpc2,troll_champion]
+[label,trollchamp_combat_start]
 if(%troll_accepted_challenge = ^false) {
     %troll_accepted_challenge = ^true;
     ~chatnpc("<p,happy>Tiny human brave. Dad squish!");
     npc_setmode(opplayer2);
     hint_npc(npc_uid);
 }
-@player_combat_start_ap;
+if (~sa_enabled = true) {
+    @player_special_attack;
+}
+if (%damagetype = ^ranged_style) {
+    @player_ranged_attack;
+}
+if (~player_autocast_enabled = true) {
+     @player_magic_attack;
+}
+@player_melee_attack;
