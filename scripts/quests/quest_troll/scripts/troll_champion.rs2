@@ -21,10 +21,37 @@ switch_int(~p_choice3("Why are you called Dad?", 1, "I accept your challenge!", 
 }
 
 [ai_opplayer2,troll_champion]
-if(random(3) = 0) {
-
+if (%death = ^true) {
+    npc_setmode(null);
+    return;
 }
-gosub(npc_default_attack);
+if (%npc_action_delay > map_clock) return;
+if (~npc_check_notcombat = false) {
+    npc_setmode(null);
+    return;
+}
+if (~npc_check_notcombat_self = false) { // Doesnt change mode! Keeps trying!
+    return;
+}
+if(random(3) = 0) {
+    anim(%com_defendanim, 0);
+    npc_anim(troll_treetrunk_attack, 0);
+    sound_synth(troll_champion_swing, 0, 0);
+    ~npc_meleeattack;
+    // doesnt queue, nothing will happen if no prot access
+    if(p_finduid(%npc_attacking_uid) = true) {
+        def_coord $dest = coord;
+        anim(human_troll_flyback, 20);
+        p_delay(1);
+    }
+    return;
+} 
+anim(%com_defendanim, 0);
+npc_anim(npc_param(attack_anim), 0);
+if (npc_param(attack_sound) ! null) {
+    sound_synth(npc_param(attack_sound), 0, 0);
+}
+~npc_meleeattack;
 
 [opnpc2,troll_champion] @trollchamp_combat_start;
 [apnpc2,troll_champion] @trollchamp_combat_start_ap;

@@ -108,6 +108,7 @@ if(%troll_quest < ^troll_defeated_dad) {
         npc_add(0_45_56_32_29, troll_champion, 1000); // osrs 1000t
     }
     npc_setmode(opplayer2);
+    hint_npc(npc_uid);
     ~chatnpc_specific(nc_name(troll_champion), troll_champion, "<p,angry>No human pass through arena without defeating Dad!");
     return;
 }
