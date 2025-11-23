@@ -730,6 +730,11 @@ table=musicregion
 data=mapsquare,0_45_57_0_0
 data=musicdata,music_Sojourn
 
+[musicregion_45_71]
+table=musicregion
+data=mapsquare,0_45_71_0_0
+data=musicdata,music_Time_Out
+
 [musicregion_45_73]
 table=musicregion
 data=mapsquare,0_45_73_0_0
