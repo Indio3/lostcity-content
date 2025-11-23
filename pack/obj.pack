@@ -3047,10 +3047,10 @@
 3046=obj_3046
 3047=obj_3047
 3048=obj_3048
-3049=unidentified_toadflax
-3050=cert_unidentified_toadflax
-3051=unidentified_snapdragon
-3052=cert_unidentified_snapdragon
+3049=obj_3049
+3050=obj_3050
+3051=obj_3051
+3052=obj_3052
 3053=lava_battlestaff
 3054=mystic_lava_staff
 3055=cert_lava_battlestaff
@@ -3140,11 +3140,3 @@
 3139=obj_3139
 3140=obj_3140
 3141=obj_3141
-3142=obj_3049
-3143=obj_3050
-3144=obj_3051
-3145=obj_3052
-3146=obj_3053
-3147=obj_3054
-3148=obj_3055
-3149=obj_3056
