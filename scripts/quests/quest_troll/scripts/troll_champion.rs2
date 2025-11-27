@@ -33,6 +33,9 @@ if (~npc_check_notcombat = false) {
 if (~npc_check_notcombat_self = false) { // Doesnt change mode! Keeps trying!
     return;
 }
+def_coord $dest;
+def_coord $npc_center;
+def_int $dir;
 if(random(3) = 0) {
     anim(%com_defendanim, 0);
     npc_anim(troll_treetrunk_attack, 0);
@@ -40,8 +43,46 @@ if(random(3) = 0) {
     ~npc_meleeattack;
     // doesnt queue, nothing will happen if no prot access
     if(p_finduid(%npc_attacking_uid) = true) {
-        def_coord $dest = coord;
+        p_stopaction;
+        $dest = coord;
+        $npc_center = movecoord(npc_coord, 1, 0, 1);
+        if(coordx(coord) < coordx($npc_center) & coordz(coord) = coordz($npc_center)) {
+            // west
+            $dest = movecoord($npc_center, -7, 0, 0);
+            $dir = ^exact_east;
+        } else if(coordx(coord) > coordx($npc_center) & coordz(coord) = coordz($npc_center)) {
+            // east
+            $dest = movecoord($npc_center, 7, 0, 0);
+            $dir = ^exact_west;
+        } else if(coordz(coord) > coordz($npc_center) & coordz(coord) = coordz($npc_center)) {
+            // north
+            $dest = movecoord($npc_center, 0, 0, 7);
+            $dir = ^exact_south;
+        }  else if(coordz(coord) < coordz($npc_center) & coordz(coord) = coordz($npc_center)) {
+            // south
+            $dest = movecoord($npc_center, 0, 0, -7);
+            $dir = ^exact_south;
+        } if(coordx(coord) > coordx($npc_center) & coordz(coord) > coordz($npc_center)) {
+            // northeast
+            $dest = movecoord($npc_center, 7, 0, 7);
+            $dir = ^exact_south;
+        } else if(coordx(coord) < coordx($npc_center) & coordz(coord) > coordz($npc_center)) {
+            // northwest
+            $dest = movecoord($npc_center, -7, 0, 7);
+            $dir = ^exact_south;
+        } else if(coordx(coord) > coordx($npc_center) & coordz(coord) < coordz($npc_center)) {
+            // southeast
+            $dest = movecoord($npc_center, 7, 0, -7);
+            $dir = ^exact_north;
+        } else if(coordx(coord) < coordx($npc_center) & coordz(coord) < coordz($npc_center)) {
+            // southwest
+            $dest = movecoord($npc_center, -7, 0, -7);
+            $dir = ^exact_north;
+        }
         anim(human_troll_flyback, 20);
+        if(lineofwalk(coord, $dest) = true & coord ! $dest) {
+            p_exactmove(coord, $dest, 20, 40, ^exact_east);
+        }
         p_delay(1);
     }
     return;
