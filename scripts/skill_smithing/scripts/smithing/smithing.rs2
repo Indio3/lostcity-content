@@ -169,7 +169,6 @@ switch_obj ($last_item)
         inv_transmit(smithing_adamant3, smithing:column3);
         inv_transmit(smithing_adamant4, smithing:column4);
         inv_transmit(smithing_adamant5, smithing:column5);
-        inv_transmit(smithing_adamant5, smithing:column5);
         inv_transmit(smithing_adamant_claws, smithing:column_claws);
     case runite_bar :
         // rune platebody, legs, and skirt go past 99 smithing
