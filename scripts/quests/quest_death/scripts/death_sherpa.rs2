@@ -119,7 +119,8 @@ switch_int(~death_get_map) {
         ~chatnpc("<p,neutral>Ah...Saba is still alive and kicking?");
         ~chatplayer("<p,happy>Yeh, he seemed very bitter.");
         ~chatnpc("<p,laugh>That's Saba alright!");
-        ~chatnpc("<p,neutral>I do know of a secret way up to Death Plateau, the Imperial Guard would be able to use it at night and not be seen until it was too late!");
+        // https://web.archive.org/web/20061231212357im_/http://www.runeweb.net/fireball/Death%20Plateau%20Images/DeathPlateau9.PNG
+        ~chatnpc("<p,neutral>I do know of a secret way up to Death Plateau,|the Imperial Guard would be able to use it at|night and not be seen until it was too late!");
         ~chatnpc("<p,neutral>I'd be happy to show you it if you do something for me first.");
         ~chatplayer("<p,neutral>Name it.");
         ~chatnpc("<p,neutral>I don't get into town much and I'm getting low on supplies. I need ten loaves of bread and ten cooked trout, that should see me through the winter.");
