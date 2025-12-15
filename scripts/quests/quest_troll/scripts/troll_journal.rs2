@@ -31,7 +31,7 @@ if(%troll_quest >= ^troll_defeated_dad) {
 
     if(%troll_quest >= ^troll_entered_prison) {
         $text = append($text, "||@str@I have found my way into the prison.");
-    } else if(inv_total(inv, obj_3135) > 0) {
+    } else if(inv_total(inv, troll_key_prison) > 0) {
         $text = append($text, "||@str@I have the prison key.");
         $text = append($text, "|@dbl@I have to get into the @dre@prison");
     } else {

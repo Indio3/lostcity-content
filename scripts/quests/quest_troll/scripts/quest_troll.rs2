@@ -197,31 +197,31 @@ switch_int(loc_angle) {
     case default : mes("Unhandled troll stairs, loc_angle <tostring(loc_angle)>");
 }
 
-[oploc1,loc_3816]
+[oploc1,eadgar_kitchen_drawers]
 p_arrivedelay;
 anim(human_openchest, 0);
 sound_synth(cupboard_open, 0, 0);
 p_delay(0);
-loc_change(loc_3817, 300);
+loc_change(eadgar_kitchen_drawers_open, 300);
 
-[oploc1,loc_3817]
+[oploc1,eadgar_kitchen_drawers_open]
 p_arrivedelay;
 anim(human_closechest, 0);
 sound_synth(cupboard_close, 0, 0);
 p_delay(0);
-loc_change(loc_3816, 300);
+loc_change(eadgar_kitchen_drawers, 300);
 
-[oploc2,loc_3817]
+[oploc2,eadgar_kitchen_drawers_open]
 p_arrivedelay;
 mes("You search the drawers...");
 p_delay(0);
 mes("You don't find anything.");
 
-[oploc1,loc_3810]
+[oploc1,eadgar_storeroomdoor]
 mes("You need to find the right key to open this door.");
 
 [oploc1,troll_stronghold_prison_door_closed]
-if(inv_total(inv, obj_3135) = 0 & %troll_quest < ^troll_entered_prison) {
+if(inv_total(inv, troll_key_prison) = 0 & %troll_quest < ^troll_entered_prison) {
     mes("You need a key.");
     return;
 }
@@ -229,14 +229,14 @@ if(inv_total(inv, obj_3135) = 0 & %troll_quest < ^troll_entered_prison) {
 
 [oplocu,troll_stronghold_prison_door_closed]
 // NO NIH
-if(last_useitem = obj_3135) {
+if(last_useitem = troll_key_prison) {
     @open_troll_stronghold_prison_door;
 }
 
 [label,open_troll_stronghold_prison_door]
 if(%troll_quest < ^troll_entered_prison) {
     mes("You unlock the door.");
-    inv_del(inv, obj_3135, 1);
+    inv_del(inv, troll_key_prison, 1);
     %troll_quest = ^troll_entered_prison;
 }
 sound_synth(lockeddoor, 0, 0);
@@ -246,9 +246,9 @@ sound_synth(lockeddoor, 0, 0);
 
 [oplocu,troll_celldoor_godric]
 // no nih
-if(last_useitem = obj_3136) {
+if(last_useitem = troll_key_godric) {
     @troll_unlock_cell_1;
-} else if(last_useitem = obj_3137) {
+} else if(last_useitem = troll_key_eadgar) {
     mes("This key doesn't open this door.");
 }
 
@@ -256,9 +256,9 @@ if(last_useitem = obj_3136) {
 
 [oplocu,troll_celldoor_eadgar]
 // no nih
-if(last_useitem = obj_3137) {
+if(last_useitem = troll_key_eadgar) {
     @troll_unlock_cell_2;
-} else if(last_useitem = obj_3137) {
+} else if(last_useitem = troll_key_eadgar) {
     mes("This key doesn't open this door.");
 }
 
@@ -267,7 +267,7 @@ if(%cell_1_unlock_timer > map_clock) { // idk if this is the correct way, but ca
     mes("The door is already unlocked.");
     return;
 }
-if(inv_total(inv, obj_3136) = 0) {
+if(inv_total(inv, troll_key_godric) = 0) {
     sound_synth(locked, 0, 0);
     mes("You need a key to unlock the door.");
     return;
@@ -288,7 +288,7 @@ if(%cell_2_unlock_timer > map_clock) { // idk if this is the correct way, but ca
     mes("The door is already unlocked.");
     return;
 }
-if(inv_total(inv, obj_3137) = 0) {
+if(inv_total(inv, troll_key_eadgar) = 0) {
     sound_synth(locked, 0, 0);
     mes("You need a key to unlock the door.");
     return;
@@ -307,7 +307,7 @@ if(%troll_freed_eadgar = ^true) {
 [label,troll_free_godric]
 sound_synth(locked, 0, 0);
 if(%troll_quest < ^troll_freed_godric) %troll_quest = ^troll_freed_godric;
-inv_del(inv, obj_3136, 1);
+inv_del(inv, troll_key_godric, 1);
 mes("You unlock the cell door.");
 npc_queue(5, 0, 1);
 ~chatnpc("<p,happy>Thank you, my friend.");
@@ -336,7 +336,7 @@ npc_del;
 [label,troll_free_eadgar]
 sound_synth(locked, 0, 0);
 if(%troll_freed_eadgar = ^false) %troll_freed_eadgar = ^true;
-inv_del(inv, obj_3137, 1);
+inv_del(inv, troll_key_eadgar, 1);
 mes("You unlock the cell door.");
 npc_queue(5, 0, 1);
 ~chatnpc("<p,happy>Thanks! I'm off back home!");

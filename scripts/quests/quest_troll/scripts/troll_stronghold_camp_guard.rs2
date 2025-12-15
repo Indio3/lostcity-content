@@ -33,10 +33,10 @@ if (add(%npc_action_delay, 4) < map_clock & add(%npc_lastcombat, 11) <= map_cloc
 }
 
 [opnpc3,troll_prison_guard1]
-~troll_prison_guard_steal(obj_3136, troll_prison_guard1_awake);
+~troll_prison_guard_steal(troll_key_godric, troll_prison_guard1_awake);
 
 [opnpc3,troll_prison_guard2]
-~troll_prison_guard_steal(obj_3137, troll_prison_guard2_awake);
+~troll_prison_guard_steal(troll_key_eadgar, troll_prison_guard2_awake);
 
 [proc,troll_prison_guard_steal](namedobj $key, npc $next_type)
 if (stat(thieving) < 30) {
