@@ -39,13 +39,18 @@ if(%troll_quest >= ^troll_defeated_dad) {
     }
 }
 
-if(%troll_quest = ^troll_freed_godric) {
+if(%troll_quest >= ^troll_freed_godric) {
     $text = append($text, "||@str@I've rescued Godric");
     if(%troll_freed_eadgar = ^true) $text = append($text, " and Mad Eadgar");
     $text = append($text, ".");
-    $text = append($text, "|@dbl@I should return and tell @dre@Dunstan@dbl@ his son is safe.");
+    if(%troll_quest < ^troll_complete) $text = append($text, "|@dbl@I should return and tell @dre@Dunstan@dbl@ his son is safe.");
 } else if(%troll_quest = ^troll_entered_prison) {
     $text = append($text, "||@dbl@I have to rescue @dre@Godric");
 }
 
+if(%troll_quest = ^troll_complete) {
+    $text = append($text, "||@str@I talked to Dunstan and he gave me the Law Talisman");
+    $text = append($text, "|@str@as a token of thanks!");
+    $text = append($text, "||@red@QUEST COMPLETE!");
+}
 ~quest_journal("Troll Stronghold", $text);

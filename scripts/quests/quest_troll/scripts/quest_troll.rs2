@@ -119,7 +119,7 @@ else p_teleport(0_45_56_24_59);
 
 [oploc1,troll_mad_eadgar_entrance]
 if(%troll_freed_eadgar = ^true) p_teleport(2_45_157_13_26);
-p_teleport(0_45_157_13_26);
+else p_teleport(0_45_157_13_26);
 
 [oploc1,troll_mad_eadgar_exit]
 p_teleport(0_45_57_13_23);
