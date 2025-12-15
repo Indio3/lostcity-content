@@ -362,6 +362,9 @@ if(loc_find(0_44_157_16_34, troll_celldoor_eadgar) = true) {
 npc_delay(0);
 npc_del;
 
+[oplocu,troll_eadgar_cooking_pot]
+~chatplayer("<p,neutral>I'd better not mess around with Eadgar's stew!");
+
 [queue,troll_quest_complete]
 // https://web.archive.org/web/20051108023748/http://runescape.salmoneus.net/quests/TrollStronghold/trollstrholdcomplt.png
 session_log(^log_adventure, "Quest complete: Troll Stronghold");

@@ -7,7 +7,7 @@ if(%troll_quest = ^troll_not_started) {
     return;
 }
 
-if(%troll_quest >= ^troll_started) {
+if(%troll_quest >= ^troll_started & %troll_quest < ^troll_freed_godric) {
     $text = "@dbl@I promised @dre@Denulth@dbl@ that I would rescue @dre@Godric@dbl@ from the @dre@Troll|@dre@Stronghold";
 }
 if(%troll_told = ^true | inv_total(inv, death_climbingboots) > 0 | inv_total(worn, death_climbingboots) > 0) {
