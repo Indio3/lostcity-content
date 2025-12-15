@@ -933,7 +933,7 @@ resizey=64
 resizez=64
 blockrange=no
 
-[loc_3749]
+[dugupsoil1_lawtemple]
 model=model_loc_184
 recol1s=13505
 recol1d=8458
@@ -943,7 +943,7 @@ recol3s=15586
 recol3d=8458
 hillskew=yes
 
-[loc_3750]
+[dugupsoil2_lawtemple]
 model=model_loc_185
 recol1s=13505
 recol1d=8458
@@ -953,7 +953,7 @@ recol3s=15586
 recol3d=8458
 hillskew=yes
 
-[loc_3751]
+[dugupsoil3_lawtemple]
 model=model_loc_186
 recol1s=13505
 recol1d=8458
@@ -963,7 +963,7 @@ recol3s=15586
 recol3d=8458
 hillskew=yes
 
-[loc_3752]
+[runetemple_standingstone_glow_law]
 name=Mysterious glow
 desc=Unusual energy is gathered here.
 model=model_loc_2498
@@ -973,14 +973,14 @@ anim=stoneglow
 ambient=60
 contrast=60
 
-[loc_3753]
+[lawtemple_cavewall_face1]
 model=model_loc_1417
 recol1s=12580
 recol1d=6345
 sharelight=yes
 hillskew=yes
 
-[loc_3754]
+[lawtemple_cavewall_top]
 model=model_loc_1434
 recol1s=12580
 recol1d=6345
@@ -988,7 +988,7 @@ sharelight=yes
 hillskew=yes
 active=no
 
-[loc_3755]
+[lawtemple_cavewall_top5]
 model=model_loc_1435
 recol1s=12580
 recol1d=6345
@@ -996,7 +996,7 @@ sharelight=yes
 hillskew=yes
 active=no
 
-[loc_3756]
+[lawtemple_cavewall_top_higher]
 model=model_loc_1436
 recol1s=12580
 recol1d=6345
@@ -1486,7 +1486,7 @@ op1=Climb
 ambient=20
 blockrange=no
 
-[loc_3805]
+[death_mountainrocks_2]
 name=Rocks
 desc=They don't seem to roll.
 model=loc_3714
@@ -1494,7 +1494,7 @@ active=yes
 hillskew=yes
 blockrange=no
 
-[loc_3806]
+[death_mountainrocks_2_large]
 name=Rocks
 desc=They're troll eggs. Or perhaps rocks.
 model=loc_3714
@@ -1507,7 +1507,7 @@ resizey=256
 resizez=256
 blockrange=no
 
-[loc_3807]
+[death_mountainrocks_3]
 name=Rocks
 desc=These make great pets.
 model=loc_3714
@@ -1515,7 +1515,7 @@ active=yes
 hillskew=yes
 blockrange=no
 
-[loc_3808]
+[death_mountainrocks_3_large]
 name=Rocks
 desc=It's a troll! Run! No, wait, it's just a rock.
 model=loc_3714
@@ -1528,7 +1528,7 @@ resizey=256
 resizez=256
 blockrange=no
 
-[loc_3809]
+[troll_climbingrocks_inactive]
 model=model_loc_471
 recol1s=12580
 recol1d=8454
@@ -1539,22 +1539,22 @@ resizez=64
 blockrange=no
 active=no
 
-[loc_3810]
+[eadgar_storeroomdoor]
 name=Storeroom Door
 desc=The door to the storeroom.
 model=loc_3763
 op1=Open
 
-[loc_3811]
+[eadgar_storeroomdoor_open]
 model=loc_3763
 
-[loc_3812]
+[eadgar_troll_thistle_base]
 model=loc_3812
 blockwalk=no
 blockrange=no
 active=no
 
-[loc_3813]
+[eadgar_troll_crate]
 name=Crate
 desc=It probably hasn't got anything interesting inside.
 model=loc_3813
@@ -1564,7 +1564,7 @@ ambient=15
 contrast=15
 blockrange=no
 
-[loc_3814]
+[eadgar_troll_crates]
 name=Crates
 desc=They probably haven't got anything interesting inside.
 model=loc_3814
@@ -1573,7 +1573,7 @@ mapscene=42
 ambient=15
 contrast=15
 
-[loc_3815]
+[eadgar_troll_crates_2]
 name=Crates
 desc=They probably haven't got anything interesting inside.
 model=loc_3815
@@ -1582,7 +1582,7 @@ mapscene=42
 ambient=15
 contrast=15
 
-[loc_3816]
+[eadgar_kitchen_drawers]
 name=Kitchen Drawers
 desc=They're closed.
 model=loc_3816
@@ -1593,7 +1593,7 @@ contrast=10
 op1=Open
 blockrange=no
 
-[loc_3817]
+[eadgar_kitchen_drawers_open]
 name=Kitchen Drawers
 desc=They're open.
 model=loc_3817
@@ -1605,7 +1605,7 @@ op1=Close
 op2=Search
 blockrange=no
 
-[loc_3818]
+[eadgar_kitchen_goat_poo]
 model=model_mudpile_upass
 recol1s=7329
 recol1d=7328
@@ -1613,7 +1613,7 @@ active=no
 forcedecor=yes
 blockrange=no
 
-[loc_3819]
+[eadgar_kitchen_goat_poo_small]
 model=model_mudpile_upass
 recol1s=7329
 recol1d=7328
@@ -1624,7 +1624,7 @@ resizey=112
 resizez=64
 blockrange=no
 
-[loc_3820]
+[eadgar_kitchen_foodtrough]
 name=Food Trough
 desc=It doesn't contain anything particularly appetising.
 model=model_loc_40
@@ -1635,7 +1635,7 @@ recol2d=14764
 width=2
 blockrange=no
 
-[loc_3821]
+[eadgar_rack]
 name=Rack
 desc=Makes you taller.
 model=model_loc_647
@@ -1645,14 +1645,14 @@ op1=Search
 active=yes
 blockrange=no
 
-[loc_3822]
+[eadgar_crate_goutweed]
 name=Goutweed Crate
 desc=It's full of dried goutweed.
 model=loc_3822
 op1=Search
 blockrange=no
 
-[loc_3823]
+[eadgar_cave_sign]
 name=Sign
 desc=Welcome to Mad Eadgar's! If I'm not in, I've probably been captured again.
 model=model_loc_1032
@@ -1663,7 +1663,7 @@ recol2d=7364
 active=yes
 blockrange=no
 
-[loc_3824]
+[eadgar_troll_cauldron]
 name=Troll Stew
 desc=I don't want to look too closely at what's cooking in there...
 model=model_loc_692
@@ -1678,7 +1678,7 @@ resizex=192
 resizey=192
 resizez=192
 
-[loc_3825]
+[stalagmite_large_dusty]
 name=Stalagmites
 desc=limestone ceiling growth.
 model=model_loc_468
@@ -1686,7 +1686,7 @@ recol1s=13537
 recol1d=18953
 hillskew=yes
 
-[loc_3826]
+[stagamite_small_dusty]
 name=Stalagmite
 desc=A tooth shaped rock formation protruding from the floor.
 model=model_loc_534
@@ -1694,14 +1694,14 @@ recol1s=13537
 recol1d=18953
 blockwalk=no
 
-[loc_3827]
+[kalphite_burrow_entrance]
 name=Tunnel entrance
 desc=How am I going to get down there?
 model=loc_3827
 width=2
 length=2
 
-[loc_3828]
+[kalphite_burrow_entrance_withrope]
 name=Tunnel entrance
 desc=How am I going to get down there?
 model=loc_3828
@@ -1709,7 +1709,7 @@ width=2
 length=2
 op1=Climb-down
 
-[loc_3829]
+[kalphite_burrow_exit]
 name=Rope
 desc=I hope this holds!
 model=model_loc_1762
@@ -1717,7 +1717,7 @@ blockwalk=no
 blockrange=no
 op1=Climb-up
 
-[loc_3830]
+[kalphite_chamber_entrance]
 name=Tunnel entrance
 desc=How am I going to get down there?
 model=loc_3827
@@ -1734,7 +1734,7 @@ recol5d=10497
 width=2
 length=2
 
-[loc_3831]
+[kalphite_chamber_entrance_withrope]
 name=Tunnel entrance
 desc=How am I going to get down there?
 model=loc_3828
@@ -1752,7 +1752,7 @@ width=2
 length=2
 op1=Climb-down
 
-[loc_3832]
+[kalphite_chamber_exit]
 name=Rope
 desc=I hope this holds!
 model=model_loc_1762
@@ -1760,7 +1760,7 @@ blockwalk=no
 blockrange=no
 op1=Climb-up
 
-[loc_3833]
+[kalphite_egg]
 name=Cocoon
 desc=It's moving...
 model=loc_3833

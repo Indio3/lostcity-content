@@ -1261,7 +1261,7 @@ resizeh=134
 resizev=134
 vislevel=hide
 
-[npc_1150]
+[eadgar_storeroom_guard]
 name=Guard
 model1=npc_1095
 model2=npc_1096i2
@@ -1304,7 +1304,7 @@ op1=Talk-to
 head1=npc_1125_head
 head2=model_2930_npc
 
-[npc_1152]
+[kalphite_oldman]
 name=Weird Old Man
 model1=model_230_idk
 model2=model_250_idk
@@ -1333,7 +1333,7 @@ op1=Talk-to
 head1=model_63_idk_head
 head2=model_82_idk_head
 
-[npc_1153]
+[kalphite_worker]
 name=Kalphite Worker
 model1=npc_1153
 recol1s=12677
@@ -1347,7 +1347,7 @@ readyanim=seq_1183
 op2=Attack
 vislevel=28
 
-[npc_1154]
+[kalphite_soldier]
 name=Kalphite Soldier
 model1=npc_1154
 recol1s=12677
@@ -1363,7 +1363,7 @@ resizev=172
 op2=Attack
 vislevel=85
 
-[npc_1155]
+[kalphite_lord]
 name=Kalphite Guardian
 model1=npc_1155
 recol1s=12677
@@ -1377,7 +1377,7 @@ resizev=256
 op2=Attack
 vislevel=141
 
-[npc_1156]
+[kalphite_worker_chamber]
 name=Kalphite Worker
 model1=npc_1153
 recol1s=12677
@@ -1391,7 +1391,7 @@ readyanim=seq_1183
 op2=Attack
 vislevel=28
 
-[npc_1157]
+[kalphite_lord_chamber]
 name=Kalphite Guardian
 model1=npc_1155
 recol1s=12677
@@ -1405,7 +1405,7 @@ resizev=256
 op2=Attack
 vislevel=141
 
-[npc_1158]
+[kalphite_queen]
 name=Kalphite Queen
 model1=npc_1158
 desc=I don't think insect repellent will work...
@@ -1416,7 +1416,7 @@ op2=Attack
 headicon=8
 vislevel=333
 
-[npc_1159]
+[kalphite_queen_form_swap]
 name=Kalphite Queen
 model1=npc_1158
 vislevel=296
@@ -1425,7 +1425,7 @@ size=5
 walkanim=seq_1189
 readyanim=seq_1183
 
-[npc_1160]
+[kalphite_flyingqueen]
 name=Kalphite Queen
 model1=npc_1160
 desc=I don't think insect repellent will work...
@@ -1438,7 +1438,7 @@ op2=Attack
 headicon=3
 vislevel=333
 
-[npc_1161]
+[kalphite_larva]
 name=Kalphite Larva
 model1=npc_1153
 recol1s=12677
