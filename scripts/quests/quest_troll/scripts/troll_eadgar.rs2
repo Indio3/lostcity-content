@@ -1,0 +1,13 @@
+[apnpc1,troll_eadgar]
+if (npc_range(coord) > 4) { // osrs
+    p_aprange(4);
+    return;
+}
+if(%troll_freed_eadgar = ^true) {
+    ~chatnpc("<p,happy>Don't worry about me, I'll be out in a jiffy. Talk to me at my home.");
+    return;
+}
+~chatplayer("<p,happy>How are you doing in there?");
+~chatnpc("<p,scared>I'm fine! Just dandy! A bit cold, I keep asking them to install a fireplace but they don't listen.");
+~chatplayer("<p,neutral>I haven't found the key.");
+~chatnpc("<p,scared>It's on the guard's belt, silly. Free me and I can cook you something good!");
