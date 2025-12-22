@@ -449,5 +449,4 @@ if(%legendsquest > ^legends_returned_to_radimus) {
     $text = append($text, "|@dbl@I still have @dre@<$training_sessions>@dbl@ training <$session_left> with @dre@Radimus@dbl@.");
 }
 
-
 ~quest_journal("The Legends Quest", $text);
