@@ -320,9 +320,9 @@ if(stat_random(agility, 240, 290) = false) {
     return;
 }
 sound_synth(climb_wall, 0, 40);
-~agility_exactmove(human_walk_crumbledwall, 30, 4, coord, movecoord(coord, multiply(3, $dx), 0, multiply(3, $dz)), 30, 100, $dir, true);
+~agility_exactmove(human_walk_crumbledwall, 30, 3, coord, movecoord(coord, multiply(3, $dx), 0, multiply(3, $dz)), 30, 100, $dir, true);
 // exact move for 270+ (changed sept 27 2004 most likely)
-// ~agility_exactmove(human_lowwall, 0, 4, coord, movecoord(coord, multiply(3, $dx), 0, multiply(3, $dz)), 0, 144, $dir, true);
+// ~agility_exactmove(human_lowwall, 0, 3, coord, movecoord(coord, multiply(3, $dx), 0, multiply(3, $dz)), 0, 144, $dir, true);
 stat_advance(agility, 80);
 
 [oploc1,agilityarena_monkeybars_end]

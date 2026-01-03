@@ -69,7 +69,11 @@ mes("You give Cap'n Izzy the 200 coin entrance fee.");
 
 [ai_timer,agilityarena_clerk]
 if(map_clock >= %agilityarena_next_pillar_time) {
-    %agilityarena_pillar_index = random(24);
+    def_int $new_pillar = random(24);
+    while ($new_pillar = %agilityarena_pillar_index) {
+        $new_pillar = random(24);
+    }
+    %agilityarena_pillar_index = $new_pillar;
     %agilityarena_next_pillar_time = add(map_clock, 100);
     ~agilityarena_change_planks;
 }
