@@ -74,7 +74,7 @@ if(map_clock >= %agilityarena_next_pillar_time) {
         $new_pillar = random(24);
     }
     %agilityarena_pillar_index = $new_pillar;
-    %agilityarena_next_pillar_time = add(map_clock, 100);
+    %agilityarena_next_pillar_time = add(map_clock, 99);
     ~agilityarena_change_planks;
 }
 if(modulo(map_clock, 7) = 0) {
