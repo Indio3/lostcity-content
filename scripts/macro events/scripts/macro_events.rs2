@@ -90,7 +90,7 @@ def_int $random = ~random_range(1, enum_getoutputcount(general_macro_events));
 if(map_members = ^false) {
     while($random = ^macro_triffidseed) $random = ~random_range(1, enum_getoutputcount(general_macro_events));
 }
-return(~random_range(1, enum_getoutputcount(general_macro_events)));
+return($random);
 
 // used for skilling random events
 [proc,macro_event_general_count]()(int)
