@@ -33,12 +33,15 @@ if (.npc_find(npc_coord, bloated_toad, 7, ^vis_lineofwalk) = true) {
 
 [ai_queue5,chompy_bird]
 if (.npc_finduid(%rantz_attacking_chompy) = true & distance(npc_coord, .npc_coord) = 1 & %npc_aggressive_player = null) {
+    %npc_int = ^true;
     npc_walk(npc_coord);
     npc_facesquare(.npc_coord);
     npc_say("Sqwark!");
+    ~sound_area(chompy_bird_squak, 0, npc_coord, 5);
     npc_delay(1);
     npc_anim(chompy_attack, 0);
     npc_delay(1);
+    ~sound_area(toad_croak, 0, npc_coord, 5);
     .npc_say("!!Croak!!");
     npc_say("Gobble!");
     .npc_delay(1);
@@ -52,6 +55,19 @@ if (.npc_finduid(%rantz_attacking_chompy) = true & distance(npc_coord, .npc_coor
 } else {
     npc_setmode(null);
     npc_sethuntmode(chompybird);
+}
+
+[ai_timer,chompy_bird]
+if(%npc_int = ^true) {
+    if(npc_getmode = playerescape) npc_setmode(null);
+    return;
+}
+huntall(npc_coord, 2, ^vis_lineofsight);
+if (huntnext = true) {
+    %npc_int = ^true;
+    npc_say("Screech!");
+    sound_synth(chompy_bird_screech, 0, 0);
+    npc_setmode(playerescape);
 }
 
 [opnpc4,chompybird_dead]
@@ -162,12 +178,6 @@ if (npc_param(defend_sound) ! null) {
 p_opnpc(5);
 
 ~ranged_dropammo_npc($ammo, divide($delay, 30));
-
-if (random(4) = 0) {
-    // There's some randomness here, this is a guess
-    npc_say("Screech!");
-    npc_setmode(playerescape);
-}
 
 // Ogre arrow launch spotanim is higher than other arrows by default, so we compensate for that here
 [proc,player_use_ogre_bow](obj $ammo)(int)
