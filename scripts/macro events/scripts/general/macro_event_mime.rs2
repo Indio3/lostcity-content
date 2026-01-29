@@ -33,8 +33,8 @@ if ($count < 4) {
         loc_anim(seq_1135);
     }
 }
-mes("You need to copy the mime's performance, then you'll return to");
-mes("where you were.");
+// http://img.photobucket.com/albums/v689/enkidutorix/random%20events/lolthelamp0.gif
+mes("You need to copy the mime's performance, then you'll return to where you were.");
 
 // Exit map trigger: restore tabs
 [mapzoneexit,0_31_74]

@@ -1,15 +1,14 @@
 [mapzoneexit,0_45_71]
 ~macro_events_varps_reset;
 ~macro_maze_cleanup;
-~initalltabs;
 
 [mapzone,0_45_71]
 %macro_event = ^macro_maze;
 settimer(macro_maze, 5);
 ~update_macro_maze_progress;
 if_openoverlay(mazetimer);
+// https://youtu.be/LWfcA_C2bJY?si=9sY2pzIesH4AkEjO&t=107 tabs not hidden originally
 //https://youtu.be/yCBpihIGy68?si=CsTkheu7cAfGpjHa&t=13 login inside maze
-~macro_events_set_tabs;
 @music_playbyregion(coord);
 
 [proc,start_macro_maze]

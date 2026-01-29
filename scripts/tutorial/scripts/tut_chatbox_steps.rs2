@@ -337,4 +337,5 @@ if_settab(magic, ^tab_magic);
 
 [proc,tutorial_cast_wind_strike_success]
 ~set_hint_icon_newbie_magic_instructor;
-~tutorialstep("You have almost completed the tutorial!", "|All you need to do now is move on to the mainland. Just speak with Terrova and he'll teleport you to Lumbridge Castle.");
+// http://i2.photobucket.com/albums/y29/ASadEmoKid/Thebank.jpg
+~tutorialstep("You have almost completed the tutorial!", "|All you need to do now is move on to the mainland.|Just speak with Terrova and he'll teleport you to Castle Lumbridge.|");
