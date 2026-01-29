@@ -212,3 +212,11 @@ if_settabactive(^tab_friends);
 %macro_event = ^no_macro_event;
 %macro_event_target_coord = null;
 %macro_event_uid = null;
+
+[proc,macro_return_teleport]
+if(%macro_event_target_coord = null | map_blocked(%macro_event_target_coord) = true) {
+    mes("Whoops, you couldn't be returned to where you came from.");
+    p_teleport(map_findsquare(0_50_50_21_18, 0, 2, ^map_findsquare_lineofwalk));
+    return;
+}
+p_teleport(%macro_event_target_coord);

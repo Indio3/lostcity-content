@@ -27,7 +27,7 @@ if_openoverlay(null);
 cleartimer(macro_maze);
 anim(emote_cheer, 20);
 p_delay(5);
-p_telejump(%macro_event_target_coord);
+~macro_return_teleport;
 if (%xplamp > 0) {
     ~macro_maze_give_reward(~total_level, %xplamp);
 }

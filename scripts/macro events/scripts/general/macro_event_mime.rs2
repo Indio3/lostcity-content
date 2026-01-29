@@ -128,7 +128,7 @@ if ($num = $curr_emote) {
         case ^macro_mime_solve_3 :
         // Return where you are from
         p_delay(4);
-        p_teleport(%macro_event_target_coord);
+        ~macro_return_teleport;
         def_int $rand = random(2);
         if($rand = 0 & ~has_all_mime_emotes = false) {
             ~unlock_mime_emote;
