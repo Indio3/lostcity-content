@@ -68,13 +68,12 @@ if(inzone(movecoord(^grandtree_jail_coord, 0, 0, -2), movecoord(^grandtree_jail_
     ~grandtree_spawn_charlie;
 }
 
+~update_all(inv_getobj(worn, ^wearpos_rhand));
+cam_reset;
 if (%tutorial < ^tutorial_complete & ~in_tutorial_island(coord) = true) {
-    ~update_bas;
     @start_tutorial;
 }
 ~initalltabs;
-~update_all(inv_getobj(worn, ^wearpos_rhand));
-cam_reset;
 queue(follower_login, 0, 0);
 if (map_live = true) {
     last_login_info;
