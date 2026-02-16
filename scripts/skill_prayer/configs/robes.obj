@@ -35,7 +35,7 @@ womanwear=model_348_idk,0
 manwear2=model_292_idk
 womanwear2=model_456_idk
 weight=2lb
-param=prayerbonus,6
+param=prayerbonus,4
 
 [monkrobebottom]
 model=model_2521_obj
