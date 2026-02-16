@@ -12,7 +12,7 @@ if(%druidquest = ^druid_not_started) {
     $text = append($text, "@dre@Sanfew@dbl@ told me for the ritual they would need me to place|@dre@raw bear meat@dbl@, @dre@raw chicken@dbl@, @dre@raw rat meat@dbl@ and @dre@raw beef@dbl@ in|@dbl@the@dre@ Cauldron of Thunder@dbl@ in the @dre@dungeon South@dbl@ of @dre@Taverley");
 } else if(%druidquest = ^druid_given_ingredients) {
     $text = "@str@I told Kaqemeex I would help them prepare their ceremony.|";
-    $text = append($text, "@str@The ceremony required various meats being placed in the|@str@Cauldron of Thunder. I did this and gave them to Sanfew.|@dbl@I should speak to @dre@Kaqemeex@dbl@ again and claim my @dre@reward@dbl@.");
+    $text = append($text, "@str@The ceremony required various meats being placed in the|@str@Cauldron of Thunder. I did this and gave them to Sanfew.|@dbl@I should speak to @dre@Kaqemeex@dbl@ again and claim my @dre@reward");
 } else {
     $text = "@str@I told Kaqemeex I would help them prepare their ceremony.|@str@The ceremony required various meats being placed in the|@str@Cauldron of Thunder. I did this and gave them to Sanfew.|@str@Kaqemeex then taught me the basics of the skill Herblore.||@red@QUEST COMPLETE!";
 }
