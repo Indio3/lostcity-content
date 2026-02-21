@@ -1906,6 +1906,21 @@ walkanim=human_walk_f,human_walk_b,human_walk_l,human_walk_r
 readyanim=human_ready
 op2=Attack
 vislevel=108
+wanderrange=4
+maxrange=6
+attackrange=5
+hitpoints=120
+attack=100
+strength=80
+defence=80
+magic=80
+param=attackbonus,40
+param=strengthbonus,40
+param=magicdefence,30
+param=damagetype,^stab_style
+param=attack_anim,human_ddagger_lunge
+param=defend_anim,human_ddagger_block
+timer=20
 
 [horror_rockcrab]
 name=Rock Crab
