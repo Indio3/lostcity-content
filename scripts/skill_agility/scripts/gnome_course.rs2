@@ -69,7 +69,7 @@ if(%gnome_obstacle_pipe_used >= map_clock) {
     mes("The pipe is being used"); 
     return;
 }
-%gnome_obstacle_pipe_used = calc(map_clock + 7);
+%gnome_obstacle_pipe_used = calc(map_clock + 12);
 ~agility_exactmove(human_doublepipesqueeze, 30, 3, movecoord(loc_coord, 0, 0, -1), movecoord(loc_coord, 0, 0, 2), 30, 126, ^exact_north, true);
 sound_synth(squeeze_in, 0, 0);
 p_delay(2);

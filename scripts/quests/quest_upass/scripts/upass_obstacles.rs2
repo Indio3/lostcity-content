@@ -64,7 +64,7 @@ if(%upass_area1_pipe_used >= map_clock) {
     mes("The pipe is being used"); // todo: confirm, using the same as gnome course
     return;
 }
-%upass_area1_pipe_used = calc(map_clock + 6);
+%upass_area1_pipe_used = calc(map_clock + 8);
 mes("You open the grating.");
 // Temp note: dur updated!!! nice even number :)
 loc_change(upass_pipe5, 10);
@@ -345,7 +345,7 @@ if(%upass_area2_pipe_used >= map_clock) {
     mes("The pipe is being used"); // todo: confirm, using the same as gnome course
     return;
 }
-%upass_area2_pipe_used = calc(map_clock + 6);
+%upass_area2_pipe_used = calc(map_clock + 15);
 ~agility_exactmove(human_doublepipesqueeze, 30, 3, coord, movecoord(coord, calc(3 * $mod), 0, 0), 30, 126, $dir, true);
 sound_synth(squeeze_in, 0, 0);
 p_delay(4);
