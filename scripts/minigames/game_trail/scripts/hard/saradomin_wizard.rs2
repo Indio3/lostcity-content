@@ -4,7 +4,7 @@ if (%npc_aggressive_player ! uid) {
     return;
 }
 npc_setmode(opplayer2);
-@player_combat_start;
+@player_combat_start_nomulti;
 
 [apnpc2,trail_hard2] 
 if (%npc_aggressive_player ! uid) {
@@ -12,7 +12,7 @@ if (%npc_aggressive_player ! uid) {
     return;
 }
 npc_setmode(applayer2);
-@player_combat_start_ap;
+@player_combat_start_ap_nomulti;
 
 [ai_queue1,trail_hard2]
 if(npc_getmode = applayer2) ~npc_default_retaliate_ap;
