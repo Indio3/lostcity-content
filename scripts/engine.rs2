@@ -278,6 +278,8 @@
 [command,tut_flash](int $tab)
 // info: Set a component's model animation
 [command,if_setanim](component $component, seq $anim)
+// info: Set a component's model animation for the secondary player
+[command,.if_setanim](component $component, seq $anim)
 // info: Set a side tab to a specific interface
 [command,if_settab](interface $interface, int $tab)
 // info: Set a side tab to a specific interface for the secondary player
@@ -306,6 +308,8 @@
 [command,if_setnpchead](component $component, npc $npc)
 // info: Reposition a component
 [command,if_setposition](component $component, int $x, int $y);
+// info: Reposition a component for the secondary player
+[command,.if_setposition](component $component, int $x, int $y);
 // info: Set the scrollbar position on a component
 [command,if_setscrollpos](component $component, int $y);
 // info: Give xp in a stat
@@ -324,6 +328,12 @@
 [command,midi_song](string $song)
 // info: Play a jingle (advancing levels, completing quests, ...)
 [command,midi_jingle](string $jingle, int $length)
+// info: Play a jingle for the secondary player (advancing levels, completing quests, ...)
+[command,.midi_jingle](string $jingle, int $length)
+// info: Change the active_player type of minimap displayed
+[command,minimap_toggle](int $type)
+// info: Change the secondary active_player type of minimap displayed
+[command,.minimap_toggle](int $type)
 // info: Show the hint arrow at $coord
 [command,hint_coord](int $offset, coord $coord, int $height)
 // info: Start a softtimer on the active_player
@@ -466,6 +476,10 @@
 [command,lowmem]()(boolean)
 // info: Set the player's identity kit
 [command,setidkit](idkit $kit, int $color)
+// info: Set the player's skill level for games room
+[command,set_skill_level](int $level)
+// info: Set the player's skill level for games room
+[command,.set_skill_level](int $level)
 // info: Set the active_player to the hero that's done the most damage to the current active_player
 [command,findhero]()(boolean)
 // info: Set the secondary active_player to the hero that's done the most damage to the current secondary active_player
@@ -936,7 +950,7 @@
 // info: Get the index of a char in a string
 [command,string_indexof_char](string $text, char $char)(int)
 // info: Get the index of a string in a string
-[command,string_indexof_string](string $text1, string $text2)(int)
+[command,string_indexof_string](string $find, string $text)(int)
 
 // Number ops (4600-4699)
 // info: Add two numbers together
@@ -996,17 +1010,22 @@
 [command,abs](int $num)(int)
 
 // DB ops (7500-7599)
-[command,db_find_with_count]
+// info: dynamic arg (indexed key)
+[command,db_find_with_count](dbrow $row)(int)
 [command,db_findnext]()(dbrow)
-[command,db_getfield]
-[command,db_getfieldcount](dbrow $dbrow0, dbcolumn $dbcolumn1)(int)
-[command,db_listall_with_count](dbtable $dbtable0)(int)
-[command,db_getrowtable](dbrow $dbrow0)(dbtable)
+// info: dynamic return type
+[command,db_getfield](dbrow $row, dbcolumn $column, int $list)
+[command,db_getfieldcount](dbrow $row, dbcolumn $column)(int)
+[command,db_listall_with_count](dbtable $table)(int)
+[command,db_getrowtable](dbrow $row)(dbtable)
 [command,db_findbyindex](int $index)(dbrow)
-[command,db_find_refine_with_count]
-[command,db_find]
-[command,db_find_refine]
-[command,db_listall](dbtable $dbtable0)()
+// info: dynamic arg (indexed key)
+[command,db_find_refine_with_count](dbrow $row)(int)
+// info: dynamic arg (indexed key)
+[command,db_find](dbrow $row)
+// info: dynamic arg (indexed key)
+[command,db_find_refine](dbrow $row)
+[command,db_listall](dbtable $table)
 
 // Debug ops (10000-11000)
 // info: Raise a script error on the server

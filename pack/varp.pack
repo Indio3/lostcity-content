@@ -331,8 +331,8 @@
 330=regicide_still_total
 331=regicide_still_settings
 332=varp_332
-333=varp_333
-334=varp_334
+333=skill_guide_skill
+334=skill_guide_pages
 335=eadgar_quest
 336=varp_336
 337=varp_337
@@ -350,7 +350,7 @@
 349=varp_349
 350=varp_350
 351=deephorror
-352=varp_352
+352=boardgames_drop_warning
 353=boardgames_runelink_rank
 354=boardgames_draughts_rank
 355=boardgames_varbit
