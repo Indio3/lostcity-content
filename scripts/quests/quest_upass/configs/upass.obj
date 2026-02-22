@@ -168,6 +168,7 @@ recol1d=4228
 weight=1200g
 members=yes
 tradeable=no
+param=destroy_drop,^true
 
 [ibandoll]
 name=Doll of iban
