@@ -238,7 +238,7 @@ mes("You attempt to balance on the stepping stone.");
 sound_synth(jump_no_land, 0, 20);
 // 1t longer delay than osrs for now, otherwise the fall seq won't play on fails 
 ~agility_exactmove(human_steppingstonejump, 20, 2, coord, movecoord(coord, 0, 0, $dz), 48, 60, $dir, false);
-if(stat_random(agility, 140, 250) = false) {
+if(stat_random(agility, 50, 253) = false) {
     // slip and fall, exact move when falling but force walk afterwards
     def_coord $fail_coord = 0_45_46_48_5;
     def_int $damage_bound = calc(stat(hitpoints) * 10 / 100);

@@ -97,7 +97,7 @@ if (~p_choice2_header("Yes please!", 1, "No thanks!", 2, "Would you like to sque
     p_delay(1);
     ~agility_exactmove(human_crawling, 0, 0, coord, 0_43_145_43_60, 6, 20, ^exact_east, false);
     // guess
-    if (stat_random(agility, 125, 250) = false) {
+    if (stat_random(agility, 60, 254) = false) {
         mes("You get stuck as you try to squeeze into the crevice.");
         p_delay(5);
         mes("It takes you a while to get back out again.");
@@ -1578,7 +1578,7 @@ if_close;
 mes("You prepare to climb down the rope.");
 p_delay(2);
 if(testbit(%legends_bits, ^legends_drank_bravery_potion) = ^true) {
-    if(stat_random(agility, 120, 250) = false) {
+    if(stat_random(agility, 60, 253) = false) {
         mes("Fear stabs at your heart....");
         say("Gulp!");
         p_delay(1);
