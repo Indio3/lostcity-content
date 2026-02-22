@@ -92,7 +92,7 @@ if(loc_angle = ^loc_east) {
 ~set_readywalk_bas(human_walk_logbalance_ready, human_walk_logbalance);
 sound_synth(tightrope, 2, 0);
 ~forcemove(movecoord(coord, 0, 0, multiply($z_dist, 2)));
-if(stat_random(agility, 100, 310) = false) {
+if(stat_random(agility, 200, 440) = false) {
     ~update_bas;
     anim(human_walk_logbalance_stumble, 0);
     facesquare(movecoord(coord, 0, 0, -1)); // face south
