@@ -1022,9 +1022,9 @@
 // info: dynamic arg (indexed key)
 [command,db_find_refine_with_count](dbrow $row)(int)
 // info: dynamic arg (indexed key)
-[command,db_find](dbrow $row)
+[command,db_find](dbcolumn $row)
 // info: dynamic arg (indexed key)
-[command,db_find_refine](dbrow $row)
+[command,db_find_refine](dbcolumn $row)
 [command,db_listall](dbtable $table)
 
 // Debug ops (10000-11000)
