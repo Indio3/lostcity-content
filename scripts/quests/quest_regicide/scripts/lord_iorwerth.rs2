@@ -1,5 +1,21 @@
 [opnpc1,lord_iorwerth]
 switch_int(%regicide_quest) {
+    case ^regicide_spoken_tracker, ^regicide_received_pendant :
+        ~chatnpc("<p,neutral>Good day, <displayname()>. How may I help you now?");
+        ~chatplayer("<p,neutral>Your scout refused to help, unless I take proof that you sent me.");
+        if(~obj_gettotal(regicide_crystal_pendant) > 0) {
+            ~chatnpc("<p,neutral>Just show him the pendant I gave you.");
+            return;
+        }
+        if(inv_freespace(inv) = 0) {
+            // allegience is correct here
+            ~chatnpc("<p,neutral>Bless his loyalty but curse his suspicion. I will give you a token by which you may prove your allegience, but you must first clear some inventory space.");
+            return;
+        }
+        ~chatnpc("<p,neutral>Bless his loyalty but curse his suspicion. Here, he will recognise this.");
+        inv_add(inv, regicide_crystal_pendant, 1);
+        if(%regicide_quest < ^regicide_received_pendant) %regicide_quest = ^regicide_received_pendant;
+        ~objbox(regicide_crystal_pendant, "Lord Iorwerth gives you a crystal pendant.", 250, 0, 0);
     case ^regicide_spoken_iorwerth :
         ~chatnpc("<p,neutral>The only help I can offer at this time is the use of a tracker. He can be found over the river to the south east. Good luck!");
     case ^regicide_spoken_scouts :

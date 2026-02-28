@@ -48,4 +48,12 @@ if(%regicide_quest > ^regicide_spoken_iorwerth) {
     $text = append($text, "@dbl@Lord Iorwerth has offered the help of one of his @dre@trackers@dbl@, @dbl@who I'm to meet with at a camp Tyras recently @dbl@abandoned. The @dre@abandoned camp@dbl@ is to the south east. Lord @dbl@Iorwerth asked that I tell him of my findings.||");
 }
 
+if(%regicide_quest = ^regicide_spoken_tracker | %regicide_quest = ^regicide_received_pendant) {
+    if(~obj_gettotal(regicide_crystal_pendant) > 0) {
+        $text = append($text, "@dbl@Lord Iorwerth has given me his pendant as proof that I @dbl@am not the intruder that the @dre@tracker@dbl@ believes me to be.||");
+    } else {
+        $text = append($text, "@dbl@The tracker didn't trust me and asked for some @dre@proof@dbl@ that @dbl@I had been sent by @dre@Lord Iorwerth@dbl@.||");
+    }
+}
+
 ~quest_journal("Regicide", $text);

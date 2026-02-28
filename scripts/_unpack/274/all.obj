@@ -886,6 +886,9 @@ cost=10
 iop2=Wear
 manwear=model_283_obj_wear,0
 womanwear=model_447_obj_wear,0
+wearpos=front
+weight=5g
+tradeable=no
 
 [regicide_sulphar]
 name=Sulphur
