@@ -599,6 +599,8 @@ readyanim=human_ready
 op1=Talk-to
 head1=npc_1182_head
 head2=npc_1186_head
+defaultmode=none
+hitpoints=51
 
 [regicide_evil_elf1]
 name=Essyllt
@@ -690,8 +692,9 @@ op2=Attack
 vislevel=2
 wanderrange=5
 maxrange=7
-// respawnrate= TODO
+respawnrate=50
 hitpoints=5
+category=rabbit
 param=attackbonus,-47
 param=strengthbonus,-42
 param=stabdefence,-42
@@ -721,8 +724,9 @@ op2=Attack
 vislevel=2
 wanderrange=5
 maxrange=7
-// respawnrate= TODO
+respawnrate=50
 hitpoints=5
+category=rabbit
 param=attackbonus,-47
 param=strengthbonus,-42
 param=stabdefence,-42
@@ -752,8 +756,9 @@ op2=Attack
 vislevel=2
 wanderrange=5
 maxrange=7
-// respawnrate= TODO
+respawnrate=50
 hitpoints=5
+category=rabbit
 param=attackbonus,-47
 param=strengthbonus,-42
 param=stabdefence,-42
@@ -795,6 +800,7 @@ param=attack_sound,bear_attack
 param=defend_sound,bear_hit
 param=death_sound,bear_death
 huntmode=cowardly
+category=bear
 // huntrange= TODO
 
 [regicide_darkbear_cub1]
@@ -825,6 +831,7 @@ param=attack_sound,bear_attack
 param=defend_sound,bear_hit
 param=death_sound,bear_death
 huntmode=cowardly
+category=bear
 // huntrange= TODO
 
 [regicide_darkbear_cub2]
@@ -855,6 +862,7 @@ param=attack_sound,bear_attack
 param=defend_sound,bear_hit
 param=death_sound,bear_death
 huntmode=cowardly
+category=bear
 // huntrange= TODO
 
 [direwolf]
@@ -4988,6 +4996,7 @@ param=death_anim,bear_death
 param=attack_sound,bear_attack
 param=defend_sound,bear_hit
 param=death_sound,bear_death
+category=bear
 // huntmode=cowardly TODO
 // huntrange= TODO
 
@@ -5019,6 +5028,7 @@ param=death_anim,bear_death
 param=attack_sound,bear_attack
 param=defend_sound,bear_hit
 param=death_sound,bear_death
+category=bear
 // huntmode=cowardly TODO
 // huntrange= TODO
 

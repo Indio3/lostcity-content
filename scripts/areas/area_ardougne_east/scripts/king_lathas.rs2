@@ -1,4 +1,20 @@
 [opnpc1,king_lathas]
+if(%regicide_quest > ^regicide_not_started) {
+    switch_int(%regicide_quest) {
+        case ^regicide_spoken_lathas :
+            ~chatplayer("<p,neutral>My Liege. What must I do again?");
+            ~chatnpc("<p,neutral>In short you must use the underpass to enter|the west lands, kill my brother Tyras, find an easy|route home and finally return back here, to report.|And don't worry, you will be well rewarded.");
+        case ^regicide_received_message :
+            ~chatplayer("<p,neutral>I received your message my Liege. How may I serve the kingdom?");
+            ~chatnpc("<p,neutral>Ahh.. <displayname()>. Yes... We have finally finished the work on the Well of Voyage. It is now time for us to move against my brother.");
+            ~chatnpc("<p,neutral>I've managed to get a letter through to the elves|that live to the west. They informed me that Tyras|and his brigands are camped up in the|woods to the South of their city.");
+            ~chatnpc("<p,neutral>The elves have agreed to help, however they have their battles to fight. Unfortunately the men at arms I promised you are unavailable but I have faith that you'll get the job done.");
+            ~chatnpc("<p,neutral>Finally and most importantly you must find an easy way to the west lands. We cannot use the well as a trade route, and certainly cannot move any bulk of troops through there.");
+            %regicide_quest = ^regicide_spoken_lathas;
+            ~chatnpc("<p,neutral>In short you must use the underpass to enter|the west lands, kill my brother Tyras, find an easy|route home and finally return back here, to report.|And don't worry, you will be well rewarded.");
+    }
+    return;
+}
 if(%biohazard = ^biohazard_reported_elena) {
     ~chatplayer("<p,quiz>I assume that you are the King of East Ardougne?");
     ~chatnpc("<p,angry>You assume correctly, but where do you get such impertinence.");

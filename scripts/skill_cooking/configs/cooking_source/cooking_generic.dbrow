@@ -512,3 +512,17 @@ data=successchance,500,500
 data=cantcookmessage_range,You need to warm that over a fire.
 data=cookmessage_fire,You warm the paste over the fire.
 data=successmessage,It thickens into a sticky goo.
+
+[cooking_generic_rabbit]
+table=cooking_generic
+data=uncooked,raw_rabbit
+data=cooked,cooked_rabbit
+data=burnt,burnt_meat
+data=levelrequired,1
+data=experience,300
+data=successchance,128,512
+data=successchance_cookomatic,138,532
+data=cookmessage_fire,You cook the rabbit on the fire...
+data=cookmessage_range,You cook the rabbit on the stove...
+data=successmessage,The rabbit is now nicely cooked.
+data=burnmessage,You accidentally burn the rabbit.

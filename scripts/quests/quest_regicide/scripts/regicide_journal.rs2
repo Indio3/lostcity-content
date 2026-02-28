@@ -1,0 +1,43 @@
+[if_button,questlist:com_84]
+def_string $text;
+if (%regicide_quest = ^regicide_not_started) {
+    // pretty sure this is different when you complete underground pass
+    $text  = append($text, "@dbl@I can start this quest by speaking to @dre@King Lathas@dbl@ in|");
+    $text = append($text, "@dre@Ardougne Castle@dbl@.||");
+    $text = append($text, "@dbl@This quest has the following requirements:|");
+    if (%upass >= ^upass_complete) {
+        $text = append($text, "@str@Underground Pass|");
+    } else {
+        $text = append($text, "@dre@Underground Pass|");
+    }
+    if (stat_base(agility) >= 56) {
+        $text = append($text, "@str@Level 56 Agility|");
+    } else {
+        $text = append($text, "@dre@Level 56 Agility|");
+    }
+    if (stat_base(crafting) >= 10) {
+        $text = append($text, "@str@Level 10 Crafting");
+    } else {
+        $text = append($text, "@dre@Level 10 Crafting");
+    }
+    ~quest_journal("Regicide", $text);
+    return;
+}
+
+if(%regicide_quest > ^regicide_received_message) {
+    $text  = append($text, "@str@A courier has given me a message. I have been sent for|@str@ by King Lathas. I must go to his castle in Ardougne.||");
+} else if(%regicide_quest = ^regicide_received_message) {
+    $text  = append($text, "@dbl@A courier has given me a message. I have been sent for|@dbl@ by @dre@King Lathas@dbl@. I must go to his castle in @dre@Ardougne@dbl@.||");
+}
+
+if(%regicide_quest > ^regicide_spoken_lathas) {
+    $text = append($text, "@str@King Lathas has asked me to re-enter the underground @str@pass. Now that the Well of Voyage is repaired I'm to go @str@to the realm beyond. Once there I must @str@assassinate his @str@brother@str@. I'm told that a group of @str@elves@str@ there will assist me.|");
+} else if(%regicide_quest = ^regicide_spoken_lathas) {
+    $text = append($text, "@dbl@King Lathas has asked me to re-enter the underground @dbl@pass. Now that the @dre@Well of Voyage@dbl@ is repaired I'm to go @dbl@to the realm beyond. Once there I must @dre@assassinate his @dre@brother@dbl@. I'm told that a group of @dre@elves@dbl@ there will assist me.|");
+}
+
+if(%regicide_quest = ^regicide_spoken_scouts) {
+    $text = append($text, "@dbl@I have met a elvish scout party, who said I should go see @dre@Lord Iowerth@dbl@. He can be found at his camp in the north @dbl@west of the woodland.");
+}
+
+~quest_journal("Regicide", $text);

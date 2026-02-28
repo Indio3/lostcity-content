@@ -99,6 +99,7 @@ data=consumable,half_an_apple_pie
 data=consumable,half_plain_pizza
 data=consumable,plain_pizza
 data=consumable,herring
+data=consumable,cooked_rabbit
 data=stat_heal,hitpoints,5,0
 data=consume_sound,eat
 

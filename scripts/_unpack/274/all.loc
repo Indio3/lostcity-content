@@ -123,71 +123,6 @@ model=loc_3878
 anim=crystallamp_float
 ambient=20
 
-[regicide_tree_large]
-name=Tree
-desc=A tree.
-model=loc_3879
-width=3
-length=3
-mapscene=10
-op1=Chop down
-op3=hidden
-
-[regicide_tree_stump]
-name=Treestump
-desc=It's a treestump.
-model=loc_3880
-width=3
-length=3
-mapscene=10
-
-[regicide_tree_large2]
-name=Tree
-desc=A tree.
-model=loc_3879
-width=3
-length=3
-resizex=128
-resizey=150
-resizez=128
-mapscene=10
-op1=Chop down
-op3=hidden
-
-[regicide_tree_large3]
-name=Tree
-desc=A tree.
-model=loc_3879
-width=3
-length=3
-resizex=128
-resizey=170
-resizez=128
-mapscene=10
-op1=Chop down
-op3=hidden
-
-[regicide_tree_small]
-name=Tree
-desc=A tree.
-model=loc_3879
-width=2
-length=2
-resizex=64
-resizey=84
-resizez=64
-mapscene=9
-op1=Chop down
-op3=hidden
-
-[regicide_tree_stump_small]
-name=Treestump
-desc=It's a treestump.
-model=loc_3880
-width=2
-length=2
-mapscene=10
-
 [regicide_roottree]
 name=Tree
 desc=A tree.
@@ -655,6 +590,7 @@ sharelight=yes
 forcedecor=yes
 active=yes
 op1=Cross
+category=regicide_logbalance
 
 [regicide_logbalance2_start]
 name=Log balance
@@ -667,6 +603,7 @@ sharelight=yes
 forcedecor=yes
 active=yes
 op1=Cross
+category=regicide_logbalance
 
 [regicide_logbalance3_start]
 name=Log balance
@@ -679,6 +616,7 @@ sharelight=yes
 forcedecor=yes
 active=yes
 op1=Cross
+category=regicide_logbalance
 
 [regicide_blue_grass1]
 model=loc_3547
@@ -717,6 +655,7 @@ model=loc_3937
 width=3
 length=2
 op1=Enter
+category=regicide_cross_over
 
 [regicide_cross_over2]
 name=Dense forest
@@ -725,6 +664,7 @@ model=loc_3938
 width=3
 length=2
 op1=Enter
+category=regicide_cross_over
 
 [regicide_cross_over3]
 name=Dense forest
@@ -733,6 +673,7 @@ model=loc_3939
 width=3
 length=2
 op1=Enter
+category=regicide_cross_over
 
 [regicide_rabbit_hutch]
 model=model_loc_748
@@ -1386,6 +1327,7 @@ desc=Shrine to the glory of Saradomin.
 model=loc_4008
 width=2
 op1=Pray-at
+category=prayer_altar
 
 [regicide_bridge_a]
 model=model_loc_2999

@@ -1056,6 +1056,8 @@ model=model_2760_obj
 2dxan=308
 cost=1
 members=yes
+weight=6oz
+category=cooking_generic
 
 [cooked_rabbit]
 name=Cooked rabbit
@@ -1073,6 +1075,8 @@ model=model_2760_obj
 2dyan=176
 2dxan=308
 members=yes
+weight=5oz
+category=category_5
 
 [regicide_alchemy]
 name=Big book of bangs
