@@ -1,3 +1,13 @@
 [opnpc1,regicide_old_camp_tracker]
 ~chatplayer("<p,happy>Hello.");
-~chatnpc("<p,neutral>Human! you must be one of Tyras's men. I have no time for brigands or outlaws.");
+switch_int(%regicide_quest) {
+    case ^regicide_spoken_iorwerth :
+        ~chatnpc("<p,neutral>Human! you must be one of Tyras's men....");
+        ~chatplayer("<p,neutral>No I'm <displayname()>. Lord Iorwerth said you may be able to help me.");
+        ~chatnpc("<p,neutral>And you have something to prove this?");
+        %regicide_quest = ^regicide_spoken_tracker;
+        ~chatplayer("<p,sad>Well... err... No.");
+        ~chatnpc("<p,neutral>As I was saying.... I have no time for brigands or outlaws.");
+    case default : 
+        ~chatnpc("<p,neutral>Human! you must be one of Tyras's men. I have no time for brigands or outlaws.");
+}

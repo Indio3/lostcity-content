@@ -1,0 +1,11 @@
+[opnpc1,lord_iorwerth]
+switch_int(%regicide_quest) {
+    case ^regicide_spoken_iorwerth :
+        ~chatnpc("<p,neutral>The only help I can offer at this time is the use of a tracker. He can be found over the river to the south east. Good luck!");
+    case ^regicide_spoken_scouts :
+        ~chatplayer("<p,neutral>Hello, I'm <displayname()>. Your scouts said that I should come and see you.");
+        ~chatnpc("<p,neutral>Ahh.. <displayname()>. Welcome to Isafdar. I understand you've been sent here to rid us of that criminal Tyras. I offer my full support.");
+        ~chatnpc("<p,neutral>Unfortunately all my troops are hunting down a group of renegade elves, but you should find one of our trackers by Tyras's old camp. He should be able to help you.");
+        %regicide_quest = ^regicide_spoken_iorwerth;
+        ~chatplayer("<p,neutral>Thank you. I shall return, when my task is complete.");
+}

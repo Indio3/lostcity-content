@@ -326,7 +326,7 @@ if(inzone(0_36_150_50_56, 0_36_150_51_56, coord) = true) {
 // todo: recheck this one cause i'm guessing the delays shouldnt match osrs
 [oploc1,regicide_logbalance3_start]
 if(stat(agility) < 45) {
-    mes("You need an Agility level of 45 to do that.");
+    mes("You need to be level 45 agility to cross this log."); // rs3
     return;
 }
 def_int $dz = -2;
@@ -348,7 +348,7 @@ sound_synth(log_balance, 2, 0);
 // https://www.youtube.com/watch?v=1QO8LtDwwMg&t=1462s works differently than osrs
 [label,regicide_logbalance](int $center_coord)
 if(stat(agility) < 45) {
-    mes("You need an Agility level of 45 to do that.");
+    mes("You need to be level 45 agility to cross this log."); // rs3
     return;
 }
 def_int $dx = -2;
@@ -369,3 +369,6 @@ sound_synth(log_balance, 2, 0);
 
 [oploc1,_regicide_cross_over]
 mes("You can see no way to get past this.");
+
+[oploc1,loc_3941]
+mes("You are unable to make anything of the markings.");

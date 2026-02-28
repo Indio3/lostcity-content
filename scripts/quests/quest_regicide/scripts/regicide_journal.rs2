@@ -31,13 +31,21 @@ if(%regicide_quest > ^regicide_received_message) {
 }
 
 if(%regicide_quest > ^regicide_spoken_lathas) {
-    $text = append($text, "@str@King Lathas has asked me to re-enter the underground @str@pass. Now that the Well of Voyage is repaired I'm to go @str@to the realm beyond. Once there I must @str@assassinate his @str@brother@str@. I'm told that a group of @str@elves@str@ there will assist me.|");
+    $text = append($text, "@str@King Lathas has asked me to re-enter the underground @str@pass. Now that the Well of Voyage is repaired I'm to go @str@to the realm beyond. Once there I must @str@assassinate his @str@brother@str@. I'm told that a group of @str@elves@str@ there will assist me.||");
 } else if(%regicide_quest = ^regicide_spoken_lathas) {
-    $text = append($text, "@dbl@King Lathas has asked me to re-enter the underground @dbl@pass. Now that the @dre@Well of Voyage@dbl@ is repaired I'm to go @dbl@to the realm beyond. Once there I must @dre@assassinate his @dre@brother@dbl@. I'm told that a group of @dre@elves@dbl@ there will assist me.|");
+    $text = append($text, "@dbl@King Lathas has asked me to re-enter the underground @dbl@pass. Now that the @dre@Well of Voyage@dbl@ is repaired I'm to go @dbl@to the realm beyond. Once there I must @dre@assassinate his @dre@brother@dbl@. I'm told that a group of @dre@elves@dbl@ there will assist me.||");
 }
 
-if(%regicide_quest = ^regicide_spoken_scouts) {
-    $text = append($text, "@dbl@I have met a elvish scout party, who said I should go see @dre@Lord Iowerth@dbl@. He can be found at his camp in the north @dbl@west of the woodland.");
+if(%regicide_quest > ^regicide_spoken_scouts) {
+    $text = append($text, "@str@I have met a elvish scout party, who said I should go see @str@Lord Iowerth@str@. He can be found at his camp in the north @str@west of the woodland.||");
+} else if(%regicide_quest = ^regicide_spoken_scouts) {
+    $text = append($text, "@dbl@I have met a elvish scout party, who said I should go see @dre@Lord Iowerth@dbl@. He can be found at his camp in the north @dbl@west of the woodland.||");
+}
+
+if(%regicide_quest > ^regicide_spoken_iorwerth) {
+    $text = append($text, "@str@Lord Iorwerth has offered the help of one of his @str@trackers@str@, @str@who I'm to meet with at a camp Tyras recently @str@abandoned. The @str@abandoned camp@str@ is to the south east. Lord @str@Iorwerth asked that I tell him of my findings.||");
+} else if(%regicide_quest = ^regicide_spoken_iorwerth) {
+    $text = append($text, "@dbl@Lord Iorwerth has offered the help of one of his @dre@trackers@dbl@, @dbl@who I'm to meet with at a camp Tyras recently @dbl@abandoned. The @dre@abandoned camp@dbl@ is to the south east. Lord @dbl@Iorwerth asked that I tell him of my findings.||");
 }
 
 ~quest_journal("Regicide", $text);
