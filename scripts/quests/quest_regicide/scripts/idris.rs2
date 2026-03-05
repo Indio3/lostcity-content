@@ -1,6 +1,11 @@
+[proc,clear_idris_timer]
+if(inzone(0_34_49_0_0, 0_36_50_63_63, coord) = false) {
+    cleartimer(spawn_idris);
+}
+
 [proc,regicide_spawn_timer_idris]
 if(%regicide_quest = ^regicide_spoken_lathas) {
-    settimer(spawn_idris, ~random_range(20, 40));
+    settimer(spawn_idris, ~random_range(20, 30));
 }
 
 [timer,spawn_idris]
@@ -19,6 +24,7 @@ queue*(spawn_evil_elves, 0)(npc_uid);
 
 [queue,spawn_evil_elves](npc_uid $uid)
 def_coord $idris_coord;
+def_npc_uid $idris_uid;
 // https://youtu.be/z8104ELBguI?si=tkT4pIHnRGtBfKiu&t=173 not sure tbh, guessing this might be how it works?
 def_int $dist = 100;
 def_coord $dest_escape = movecoord(coord, random(6), 0, random(6));
@@ -28,6 +34,7 @@ if(npc_finduid($uid) = true) {
         return;
     }
     $idris_coord = npc_coord;
+    $idris_uid = npc_uid;
     npc_queue(2, 28, 1);
     npc_queue(2, 23, 1);
     npc_add(map_findsquare(coord, 3, 5, ^map_findsquare_lineofwalk), regicide_evil_elf1, 200);
@@ -38,6 +45,11 @@ if(npc_finduid($uid) = true) {
     .npc_facesquare($idris_coord);
     npc_anim(human_bow, 0);
     .npc_anim(human_bow, 0);
+    // not glowing arrows in this version: https://youtu.be/1QO8LtDwwMg?si=sdX81mx5VDSdjL1f&t=1248
+    spotanim_npc(iron_arrow_launch, 96, 0);
+    spotanim_npc(iron_arrow_launch, 96, 0);
+    ~npc_projectile(npc_coord, $idris_uid, iron_arrow_travel, 40, 36, 32, 15, 0, 11, 5);
+    ~npc_projectile(.npc_coord, $idris_uid, iron_arrow_travel, 40, 36, 32, 15, 0, 11, 5);
     p_delay(0);
     npc_walk(map_findsquare(coord, 1, 1, ^vis_lineofwalk));
     .npc_walk(map_findsquare(coord, 1, 1, ^vis_lineofwalk));
@@ -56,3 +68,7 @@ if(npc_finduid($uid) = true) {
     npc_del;
     .npc_del;
 }
+
+[mapzoneexit,0_35_49] ~clear_idris_timer;
+[mapzoneexit,0_35_50] ~clear_idris_timer;
+[mapzoneexit,0_36_50] ~clear_idris_timer;

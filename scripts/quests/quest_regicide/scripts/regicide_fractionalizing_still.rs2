@@ -8,7 +8,7 @@ if(last_useitem = regicide_barrel_tar) {
 mes("You don't want to damage the still.");
 
 [if_close,regicide_still]
-if(%regicide_still_total = 26) {
+if(%regicide_still_total >= 26) {
     // this order is right :)
     inv_add(inv, regicide_barrel_naphtha, 1);
     inv_del(inv, regicide_barrel_empty, 1);
@@ -108,6 +108,16 @@ while ($i <= $max) {
 %regicide_still_settings = setbit(%regicide_still_settings, 29);
 
 [softtimer,still_progress]
+if(%regicide_still_total >= 26) {
+    clearsofttimer(still_progress);
+    %temp = 0;
+    %regicide_still_settings = 0;
+    %regicide_still_settings = setbit(%regicide_still_settings, 0);
+    %regicide_still_settings = setbit(%regicide_still_settings, 13);
+    %regicide_still_settings = setbit(%regicide_still_settings, 26);
+    %regicide_still_settings = setbit(%regicide_still_settings, 29);
+    return;
+}
 // PRESSURE VALVE
 def_int $pressure_change = 0;
 if(testbit(%regicide_still_settings, 27) = ^true) {
@@ -153,16 +163,6 @@ while ($r > 1) {
 if(%temp > 0) %temp = max(0, sub(%temp,add(5, multiply(6, $idx))));
 
 [proc,regicide_increase_still_total]
-if(add(%regicide_still_total, 2) > 26) {
-    clearsofttimer(still_progress);
-    %temp = 0;
-    %regicide_still_settings = 0;
-    %regicide_still_settings = setbit(%regicide_still_settings, 0);
-    %regicide_still_settings = setbit(%regicide_still_settings, 13);
-    %regicide_still_settings = setbit(%regicide_still_settings, 26);
-    %regicide_still_settings = setbit(%regicide_still_settings, 29);
-    return;
-}
 %regicide_still_total = add(%regicide_still_total, 2);
 
 [label,regicide_process_tar_still]

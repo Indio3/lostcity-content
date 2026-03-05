@@ -15,7 +15,6 @@ stock8=black_halberd,10,100
 stock9=mithril_halberd,7,100
 stock10=adamant_halberd,7,100
 stock11=rune_halberd,7,100
-stock12=dragon_halberd,0,500
 
 [regicide_general_shop_2]
 scope=shared
