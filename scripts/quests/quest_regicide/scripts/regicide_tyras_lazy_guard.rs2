@@ -29,7 +29,8 @@ if(testbit(%regicide_bits, ^regicide_given_rabbit) = ^true) {
 }
 if(last_useitem = cooked_rabbit) {
     ~chatplayer("<p,happy>Here, I caught this for you.");
-    ~chatnpc("<p,happy>You cooked me a rabbit! Thanks a lot. You don't mind watching things while I take 5 to eat it, do you?");
+    // https://web.archive.org/web/20061231211932im_/http://www.runeweb.net/fireball/Regicide%20Images/Regicide23.PNG
+    ~chatnpc("<p,happy>You cooked me a rabbit! Thanks a lot.|You don't mind watching things|while I take 5 to eat it, do you?");
     inv_del(inv, cooked_rabbit, 1);
     %regicide_bits = setbit(%regicide_bits, ^regicide_given_rabbit);
     ~chatplayer("<p,neutral>No problem.");

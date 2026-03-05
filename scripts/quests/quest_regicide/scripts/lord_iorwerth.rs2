@@ -19,7 +19,8 @@ switch_int(%regicide_quest) {
     case ^regicide_killed_tyras :
         ~chatplayer("<p,neutral>Lord Iorwerth, the deed is done.");
         ~chatnpc("<p,happy>Good good... One of my scouts just reported that they have seen his tent in a ball of flame.");
-        ~chatnpc("<p,neutral>I'm sure you will want to get back to your king and tell him. He will undoubtedly want some proof. Give him this letter; it verifies that the job is done. He should trust me enough in this matter.");
+        // https://web.archive.org/web/20061231211932im_/http://www.runeweb.net/fireball/Regicide%20Images/Regicide25.PNG
+        ~chatnpc("<p,neutral>I'm sure you will want to get back to your king|and tell him. He will undoubtedly want some proof.|He should trust me enough in this matter,|Give him this letter, it verifies that the job is done.");
         inv_add(inv, regicide_iorwerth_message, 1);
         %regicide_quest = ^regicide_reported_iorwerth;
         ~objbox(regicide_iorwerth_message, "Lord Iorwerth hands you a scroll.", 250, 0, 0);
@@ -34,7 +35,7 @@ switch_int(%regicide_quest) {
             }
             ~chatnpc("<p,neutral>It's lucky I had a scribe make a few copies.");
             inv_add(inv, regicide_alchemy, 1);
-            ~objbox(regicide_alchemy, "Lord Iorwerth gives you a Book.", 250, 0, 0);
+            ~objbox(regicide_alchemy, "Lord Iorwerth hands you a book.", 250, 0, 0);
             return;
         }
         ~chatplayer("<p,happy>Hello.");
@@ -82,11 +83,12 @@ switch_int(%regicide_quest) {
         }
         ~chatnpc("<p,neutral>Bless his loyalty but curse his suspicion. Here, he will recognise this.");
         inv_add(inv, regicide_crystal_pendant, 1);
-        ~objbox(regicide_crystal_pendant, "Lord Iorwerth gives you a crystal pendant.", 250, 0, 0);
+        ~objbox(regicide_crystal_pendant, "Lord Iorwerth gives you a crystal pendant.", 180, 0, divide(^objbox_height, -2));
     case ^regicide_spoken_iorwerth :
         ~chatnpc("<p,neutral>The only help I can offer at this time is the use of a tracker. He can be found over the river to the south east. Good luck!");
     case ^regicide_spoken_scouts :
-        ~chatplayer("<p,neutral>Hello, I'm <displayname()>. Your scouts said that I should come and see you.");
+        // https://web.archive.org/web/20061231211932im_/http://www.runeweb.net/fireball/Regicide%20Images/Regicide9.PNG
+        ~chatplayer("<p,neutral>Hello I'm <displayname()>.|Your scouts said that I should come and see you.");
         ~chatnpc("<p,neutral>Ahh.. <displayname()>. Welcome to Isafdar. I understand you've been sent here to rid us of that criminal Tyras. I offer my full support.");
         ~chatnpc("<p,neutral>Unfortunately all my troops are hunting down a group of renegade elves, but you should find one of our trackers by Tyras's old camp. He should be able to help you.");
         %regicide_quest = ^regicide_spoken_iorwerth;

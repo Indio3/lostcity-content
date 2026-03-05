@@ -57,7 +57,8 @@ if(npc_finduid($uid) = true) {
     p_delay($dist);
     ~.chatnpc("<p,shifty>Are you the human by the name of <displayname()>?");
     ~chatplayer("<p,neutral>Yes thats me.");
-    ~chatnpc("<p,neutral>Good... We have been expecting you. King Lathas sent word of your coming.");
+    // https://web.archive.org/web/20061231211932im_/http://www.runeweb.net/fireball/Regicide%20Images/Regicide6.PNG
+    ~chatnpc("<p,neutral>Good... We have been expecting you.|King Lathas sent word of your coming.");
     %regicide_quest = ^regicide_spoken_scouts;
     ~chatnpc("<p,neutral>You should speak with Lord Iorwerth. He will help you track down that brigand Tyras. You'll find his camp in the north west of the forest.");
     if_close;

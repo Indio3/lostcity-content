@@ -8,7 +8,6 @@ if(%regicide_quest > ^regicide_spoken_iorwerth2 & %regicide_quest < ^regicide_sp
     ~chatplayer("<p,neutral>Glad to help, anytime.");
 } else if(%regicide_quest = ^regicide_spoken_iorwerth2) {
     ~chatplayer("<p,happy>Good day. I was hoping you could help me with a formula I found in a book.");
-    ~chatnpc("<p,neutral>A formula, you say? Show me the book.");
     if(inv_total(inv, regicide_alchemy) > 0) {
         ~chatnpc("<p,neutral>A formula, you say? Let me see that!");
         ~objbox(regicide_alchemy, "The chemist takes the book and starts leafing through the pages.", 250, 0, 0);

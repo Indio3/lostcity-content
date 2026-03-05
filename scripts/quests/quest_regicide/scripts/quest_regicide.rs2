@@ -393,10 +393,21 @@ def_int $dir;
 def_seq $seq;
 def_coord $lb;
 def_coord $ub;
+def_synth $synth;
+def_int $synth_delay = 0;
 switch_loc (loc_type) {
-    case regicide_cross_over1, regicide_cross_over1_tyras_camp : $seq = human_walk_style;
-    case regicide_cross_over2, regicide_cross_over2_tyras_camp : $seq = human_doublepipesqueeze;
-    case regicide_cross_over3 : $seq = regicide_tightfit;
+    case regicide_cross_over1, regicide_cross_over1_tyras_camp : 
+        $seq = human_walk_style;
+        $synth = forest_lowwall;
+        $synth_delay = 30;
+    case regicide_cross_over2, regicide_cross_over2_tyras_camp : 
+        $seq = human_doublepipesqueeze;
+        $synth = forest_doublesqueeze;
+        $synth_delay = 30;
+    case regicide_cross_over3 : 
+        $seq = regicide_tightfit;
+        $synth = forest_sidesqueeze;
+        $synth_delay = 40;
 }
 switch_int(loc_angle) {
     case ^loc_north, ^loc_south :
@@ -424,7 +435,11 @@ switch_int(loc_angle) {
         $lb = movecoord(loc_coord, 0, 0, -1);
         $ub = movecoord(loc_coord, 2, 0, 2);
 }
+if(distance(coord, $start) > 1) {
+    return;
+}
 anim($seq, 30);
+sound_synth($synth, 0, $synth_delay);
 p_locmerge(30, 94, $lb, $ub); 
 p_exactmove($start, $dest, 30, 94, $dir);
 p_delay(3);
@@ -450,7 +465,7 @@ if(loc_type = regicide_cross_over3) {
 [oploc1,loc_3941]
 if(%regicide_quest = ^regicide_defeated_guard) {
     mes("I know where those tracks lead.");
-} else if(%regicide_quest = ^regicide_found_footprints) {
+} else if(%regicide_quest = ^regicide_spoken_tracker2) {
     mes("The tracks lead through the dense wood, you can follow them now.");
 } else if(%regicide_quest = ^regicide_shown_pendant) {
     %regicide_quest = ^regicide_found_footprints;
@@ -469,12 +484,21 @@ if(testbit(%regicide_bits, ^regicide_given_rabbit) = ^false) {
     return;
 }
 if(last_useitem = regicide_barrel_lid_fused) {
+    if(%regicide_quest ! ^regicide_spoken_iorwerth2) {
+        return;
+    }
+    if(%regicide_catapult_used = ^true) {
+        mes("The catapult is being used"); // complete guess
+        return;
+    }
+    %regicide_catapult_used = ^true;
     p_delay(0);
     ~forcewalk2(0_34_49_11_49);
     facesquare(movecoord(coord, 0, 0, 1));
     p_delay(1);
     anim(regicide_catapultwind, 0);
     loc_anim(winddown_catapult);
+    sound_synth(catapult_winch, 0, 0);
     if(.loc_find(0_34_49_10_47, regicide_catapult_left) = true) {
         .loc_anim(wind_catapult);
     }
@@ -483,6 +507,7 @@ if(last_useitem = regicide_barrel_lid_fused) {
     facesquare(movecoord(coord, 0, 0, -1));
     p_delay(0);
     anim(human_pickupfloor, 0);
+    inv_del(inv, regicide_barrel_lid_fused, 1);
     loc_anim(unlitbarrel);
     ~forcewalk2(0_34_49_7_49);
     p_delay(0);
@@ -491,6 +516,9 @@ if(last_useitem = regicide_barrel_lid_fused) {
         .loc_anim(trigger_catapult);
     }
     loc_anim(fire_catapult);
+    sound_synth(catapult_fire, 0, 0);
+    ~coord_projectile(0_34_49_9_49, 0_34_49_10_6, spotanim_286, 138, 75, 50, 30, 170, 0, 0);
+    %regicide_catapult_used = ^false;
     p_delay(4);
     anim(regicide_player_vanish, 0);
     p_teleport(0_36_71_10_6);
@@ -542,6 +570,7 @@ if(last_useitem = regicide_barrel_lid_fused) {
     loc_add(0_36_71_7_6, regicide_tent_human_fire, 2, wall_straight, 10);
     loc_add(0_36_71_7_5, regicide_tent_human_fire, 1, wall_diagonalcorner, 10);
     loc_add(0_36_71_7_7, regicide_tent_human_fire, 2, wall_diagonalcorner, 10);
+    sound_synth(bigfire, 0, 0);
     p_delay(7);
     anim(regicide_player_vanish, 0);
     p_teleport(0_34_49_7_49);
@@ -624,11 +653,17 @@ mes("You feel the quicklime corroding your skin.");
 
 [oplocu,regicide_loom]
 if(last_useitem = ball_of_wool) {
+    if(stat(crafting) < 10) {
+        ~mesbox("You need level 10 Crafting to make that."); // osrs
+        return;
+    }
     if(inv_total(inv, ball_of_wool) < 4) {
         ~mesbox("You don't have enough of that item to weave it into anything at this loom."); // OSRS, almost certainly wrong for pre-farming/weakqueue loom
         return;
     }
+    p_arrivedelay;
     anim(regicide_useloom, 0);
+    sound_synth(loom, 0, 0);
     p_delay(2);
     mes("You weave the balls of wool into a strip of cloth.");
     inv_del(inv, ball_of_wool, 4);
@@ -703,10 +738,10 @@ if(last_useitem = regicide_quicklime | last_useitem = regicide_sulphar) {
     mes("I think I should powder this first.");
     return;
 }
-if(last_useitem = regicide_sulphar_dust) {
+if(last_useitem = regicide_quicklime_dust) {
     mes("You mix the quicklime dust into the naphtha and seal the barrel.");
     mes("Now you just need to make a fuse for it.");
-    inv_del(inv, regicide_sulphar_dust, 1);
+    inv_del(inv, regicide_quicklime_dust, 1);
     inv_del(inv, regicide_barrel_naphtha_sulphar_mix, 1);
     inv_add(inv, regicide_barrel_lid, 1);
     return;
@@ -752,7 +787,10 @@ if(npc_find(coord, regicide_good_elf3, 5, 0) = true) {
     if($val = 6) ~chatplayer("<p,neutral>Well you seem to know everything else so I'll not lie. Yes.");
     if($val = 7) ~chatnpc("<p,neutral>Good, we understand each other well. Now hand it here and find the truth of who your real employer is.");
     if($val = 8) ~objbox(regicide_iorwerth_message, "You show the message to the elf, he moves his lips silently and the seal on the message is parted.", 250, 0, 0);
-    if($val = 9) ~regicide_iowerth_message_scroll;
+    if($val = 9) {
+        ~regicide_iowerth_message_scroll;
+        p_pausebutton;
+    }
     if($val = 10) ~chatplayer("<p,neutral>I had no idea!");
     if($val = 11) ~chatnpc("<p,neutral>There is still a chance to stop this. But we must be careful, or they will push their plans forward and act before we're ready.");
     if($val = 12) ~chatnpc("<p,neutral>Give the message to King Lathas, He will not see my little spell. Act like nothing unusual happened. You're going to be our man on the inside.");
@@ -789,7 +827,7 @@ if_openmain(inter_102);
 
 [queue,quest_regicide_complete]
 inv_add(inv, coins, 15000);
-stat_advance(thieving, 137500);
+stat_advance(agility, 137500);
 %regicide_quest = ^regicide_complete;
 session_log(^log_adventure, "Quest complete: Regicide");
 ~send_quest_complete(questlist:regicide, regicide_alchemy_symbol4, 250, ^regicide_questpoints, "You have completed the\\nRegicide Quest!");
