@@ -37,7 +37,7 @@ if (inv_freespace(inv) < 1) {
 def_int $levelreq = db_getfield($data, mining_table:rock_level, 0);
 if (stat(mining) < $levelreq) {
     anim(null, 0);
-    ~mesbox("You need a mining level of <tostring($levelreq)> to mine this rock.");
+    ~mesbox("You need a Mining level of <tostring($levelreq)> to mine this rock."); // https://www.youtube.com/watch?v=0U6sd3J_Ngo&t=64s
     return;
 }
 // Macro events
@@ -80,7 +80,7 @@ if (inv_freespace(inv) < 1) {
 def_int $levelreq = db_getfield($data, mining_table:rock_level, 0);
 if (stat(mining) < $levelreq) {
     anim(null, 0);
-    ~mesbox("You need a mining level of <tostring($levelreq)> to mine this rock.");
+    ~mesbox("You need a Mining level of <tostring($levelreq)> to mine this rock."); // https://www.youtube.com/watch?v=0U6sd3J_Ngo&t=64s
     return;
 }
 def_obj $pickaxe = ~pickaxe_checker;
