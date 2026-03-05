@@ -516,7 +516,7 @@ vislevel=90
 wanderrange=5
 maxrange=7
 attackrange=8
-// respawnrate= TODO
+respawnrate=60
 hitpoints=105
 attack=10
 strength=80
@@ -534,8 +534,9 @@ param=defend_anim,human_spear_block
 param=defend_sound,crystal_armour_1
 param=death_sound,elf_death
 param=rangeattack_sound,crystal_bow2
-// param=proj_launch, TODO
-// param=proj_travel, TODO
+param=proj_launch,iron_arrow_launch
+param=proj_travel,iron_arrow_travel
+category=elf_warrior
 
 [regicide_darkelf2]
 name=Elf warrior
@@ -552,7 +553,7 @@ vislevel=108
 wanderrange=5
 maxrange=7
 attackrange=2
-// respawnrate= TODO
+respawnrate=60
 hitpoints=105
 attack=95
 strength=95
@@ -569,6 +570,7 @@ param=defend_anim,human_spear_block
 param=attack_sound,crystal_polearm
 param=defend_sound,crystal_armour_2
 param=death_sound,elf_death
+category=elf_warrior
 
 [prif_city_guard]
 name=Elven city guard
@@ -970,6 +972,7 @@ param=damagetype,^stab_style
 param=attack_anim,human_staff_pummel
 param=defend_anim,human_spear_block
 param=attack_sound,scythe_slash
+category=tyras_guard
 // param=defend_sound, TODO
 // osrs sounds big_bar_mail, scythe_slash
 // old attack anim https://www.youtube.com/watch?v=zhzVchpmscU
@@ -1002,6 +1005,7 @@ walkanim=human_walk_f,human_walk_b,human_walk_l,human_walk_r
 readyanim=human_ready
 op1=Talk-to
 head1=npc_1202_head
+wanderrange=0
 
 [regicide_tyras_camp_guard]
 name=Tyras guard
@@ -1035,7 +1039,7 @@ defaultmode=none
 wanderrange=5
 maxrange=7
 attackrange=2
-// respawnrate= TODO
+respawnrate=100
 hitpoints=110
 attack=85
 strength=95
@@ -1052,6 +1056,7 @@ param=damagetype,^stab_style
 param=attack_anim,human_spear_spike
 param=defend_anim,human_spear_block
 param=attack_sound,scythe_slash
+category=tyras_guard
 // param=defend_sound, TODO
 // osrs defend sound big_bar_mail
 // old attack anim https://www.youtube.com/watch?v=zhzVchpmscU
@@ -1088,7 +1093,7 @@ head1=npc_1200_head
 wanderrange=5
 maxrange=7
 attackrange=2
-// respawnrate= TODO
+respawnrate=100
 hitpoints=110
 attack=85
 strength=95
@@ -1104,6 +1109,7 @@ param=rangedefence,79
 param=attack_anim,human_spear_spike
 param=defend_anim,human_spear_block
 param=attack_sound,scythe_slash
+category=tyras_guard
 // param=defend_sound, TODO
 // osrs defend sound big_bar_mail
 // osrs attack anim seq_440

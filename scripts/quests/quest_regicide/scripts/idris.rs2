@@ -55,5 +55,4 @@ if(npc_finduid($uid) = true) {
     p_delay(distance(npc_coord, $dest_escape));
     npc_del;
     .npc_del;
-
 }

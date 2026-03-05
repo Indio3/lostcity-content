@@ -876,6 +876,7 @@ desc=A yellow crystal structure.
 model=loc_3962
 hillskew=yes
 op1=Take
+category=regicide_sulphar
 
 [regicide_sulphar2]
 name=Sulphur
@@ -883,6 +884,7 @@ desc=A yellow crystal structure.
 model=loc_3963
 hillskew=yes
 op1=Take
+category=regicide_sulphar
 
 [regicide_sulphar3]
 name=Sulphur
@@ -890,6 +892,7 @@ desc=A yellow crystal structure.
 model=loc_3964
 hillskew=yes
 op1=Take
+category=regicide_sulphar
 
 [regicide_sulphar_vent]
 model=loc_3965
@@ -1212,6 +1215,7 @@ model=loc_3938
 width=3
 length=2
 op1=Enter
+category=regicide_cross_over
 
 [regicide_cross_over1_tyras_camp]
 name=Dense forest
@@ -1220,6 +1224,7 @@ model=loc_3937
 width=3
 length=2
 op1=Enter
+category=regicide_cross_over
 
 [flamming_tent_roof]
 name=Tent roof
@@ -1480,59 +1485,6 @@ name=Fractionalizing still
 desc=A still for fractionalizing oils.
 model=loc_4026
 op1=Operate
-
-[loc_4027]
-name=Pile of Rock
-desc=A pile of lime rock.
-model=model_3184
-recol1s=15854
-recol1d=16874
-recol2s=6342
-recol2d=14797
-op1=Mine
-op2=Prospect
-op3=hidden
-
-[loc_4028]
-name=Pile of Rock
-desc=A pile of lime rock.
-model=model_3183
-recol1s=9513
-recol1d=16874
-recol2s=6342
-recol2d=14797
-op1=Mine
-op2=Prospect
-op3=hidden
-
-[loc_4029]
-name=Pile of Rock
-desc=A pile of lime rock.
-model=model_3195
-recol1s=9513
-recol1d=16874
-recol2s=6342
-recol2d=14797
-op1=Mine
-op2=Prospect
-op3=hidden
-resizex=96
-resizey=96
-resizez=96
-
-[loc_4030]
-name=Pile of Rock
-desc=A pile of lime rock.
-model=model_3195
-recol1s=9513
-recol1d=16874
-recol2s=6342
-recol2d=16874
-op1=Mine
-op2=Prospect
-resizex=64
-resizey=64
-resizez=64
 
 [shantay_pass_henge_doorway]
 name=Shantay pass

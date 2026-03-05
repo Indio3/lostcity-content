@@ -668,6 +668,8 @@
 [command,loc_angle]()(int)
 // info: Play an animation on the loc
 [command,loc_anim](seq $anim)
+// info: Play an animation on the secondary loc
+[command,.loc_anim](seq $anim)
 // info: Get the current loc's category
 [command,loc_category]()(category)
 // info: Get the secondary loc's category

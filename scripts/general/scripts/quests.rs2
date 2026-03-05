@@ -230,6 +230,9 @@ if (%troll_quest = ^troll_complete) {
 if (%morttonquest = ^mortton_quest_complete) {
     $questpoints = add($questpoints, ^mortton_questpoints); 
 }
+if (%regicide_quest = ^regicide_complete) {
+    $questpoints = add($questpoints, ^regicide_questpoints); 
+}
 return ($questpoints);
 
 [proc,update_questlist]
@@ -300,6 +303,7 @@ if (testbit(%ibanmulti, ^upass_started_bit) = ^true & %upass ! ^upass_complete) 
 ~send_quest_progress_colour(questlist:death, %death_equiproom, ^death_complete);
 ~send_quest_progress_colour(questlist:troll, %troll_quest, ^troll_complete);
 ~send_quest_progress_colour(questlist:mortton, %morttonquest, ^mortton_quest_complete);
+~send_quest_progress_colour(questlist:regicide, %regicide_quest, ^regicide_complete);
 if_settab(questlist, ^tab_quest_journal);
 
 if (%drunkmonkquest >= ^drunkmonk_spoken_to_omad) {

@@ -297,6 +297,7 @@ scope=perm
 
 [temp]
 scope=temp
+protect=no
 
 [if1]
 transmit=yes

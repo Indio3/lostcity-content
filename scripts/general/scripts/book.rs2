@@ -19,6 +19,7 @@ switch_obj (%open_book) {
     case book_of_binding : @book_flip_page(^book_direction_backward, 0, 4, book_of_binding_page);
     case elemental_workshop_shield_book : @book_flip_page(^book_direction_backward, 0, 1, elemental_shield_book);
     case serum_book : @book_flip_page(^book_direction_backward, 0, 12, serum_book);
+    case regicide_alchemy : @book_flip_page(^book_direction_backward, 0, 3, regicide_alchemy);
 }
 p_delay(0);
 
@@ -40,6 +41,7 @@ switch_obj (%open_book) {
     case book_of_binding : @book_flip_page(^book_direction_forward, 0, 4, book_of_binding_page);
     case elemental_workshop_shield_book : @book_flip_page(^book_direction_forward, 0, 1, elemental_shield_book);
     case serum_book : @book_flip_page(^book_direction_forward, 0, 12, serum_book);
+    case regicide_alchemy : @book_flip_page(^book_direction_forward, 0, 3, regicide_alchemy);
 }
 p_delay(0);
 
