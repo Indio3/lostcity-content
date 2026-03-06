@@ -86,11 +86,31 @@ if ($bar = null) {
     ~displaymessage(^dm_default);
     return;
 }
-if(%action_delay < map_clock) {
-    %action_delay = add(map_clock, 1); // sets action delay here as well
-}
+// osrs sets action delay here, which delays the starting weakqueue by 1t, old videos
+// show this was instant originally : https://youtu.be/ser9EDJAhX8?si=t6vfx_yel5PmYvGN&t=379
+// smelting here is also 3t instead of 4t
 p_arrivedelay;
-@smelt_ore($bar, 1);
+if(~validate_first_smelt($bar) = true) @smelt_ore_weakqueue($bar, 1, 2);
+
+[proc,validate_first_smelt](obj $last)(boolean)
+def_struct $struct = oc_param($last, smelting_struct); 
+// If smithing level isnt high enough, dislpay level fail message
+if (stat(smithing) < struct_param($struct, levelrequired)) {
+    ~mesbox(struct_param($struct, levelfailure));
+    return (false);
+}
+def_int $primary_total = inv_total(inv, struct_param($struct, ingredient));
+def_int $secondary_total = inv_total(inv, struct_param($struct, ingredient_secondary));
+// If not enough ores
+if ($primary_total < struct_param($struct, bar_count)) {
+    ~mesbox(struct_param($struct, processfailure));
+    return (false);
+}
+if ($secondary_total < struct_param($struct, ingredient_secondary_count)) {
+    ~mesbox(struct_param($struct, processfailure));
+    return (false);
+}
+return (true);
 
 [label,smelt_ore](obj $last, int $count)
 if_close;
@@ -99,26 +119,9 @@ if_close;
 if($last = gold_bar & inv_total(inv, gold_ore) = 0 & inv_total(inv, perfect_gold_ore) > 0) {
     $last = perfect_gold_bar;
 }
-def_struct $struct = oc_param($last, smelting_struct); 
-// If smithing level isnt high enough, dislpay level fail message
-if (stat(smithing) < struct_param($struct, levelrequired)) {
-    ~mesbox(struct_param($struct, levelfailure));
-    return;
-}
-def_int $primary_total = inv_total(inv, struct_param($struct, ingredient));
-def_int $secondary_total = inv_total(inv, struct_param($struct, ingredient_secondary));
-// If not enough ores
-if ($primary_total < struct_param($struct, bar_count)) {
-    ~mesbox(struct_param($struct, processfailure));
-    return;
-}
-if ($secondary_total < struct_param($struct, ingredient_secondary_count)) {
-    ~mesbox(struct_param($struct, processfailure));
-    return;
-}
-@smelt_ore_weakqueue($last, $count);
+if(~validate_first_smelt($last) = true) @smelt_ore_weakqueue($last, $count, 4);
 
-[label,smelt_ore_weakqueue](obj $bar, int $count)
+[label,smelt_ore_weakqueue](obj $bar, int $count, int $delay)
 // https://youtu.be/mMQ1PmgpWtQ?si=2HE4hDPxhS7NlE1U&t=465
 // make x perfect gold works, if you have both ores it will prio regular gold and process both
 if($bar = gold_bar & inv_total(inv, gold_ore) = 0 & inv_total(inv, perfect_gold_ore) > 0) {
@@ -134,7 +137,7 @@ if (%action_delay < map_clock) {
     anim(human_furnace, 0);
     sound_synth(furnace, 0, 0);
     mes(struct_param($struct, processmessage));
-    weakqueue*(smelting_ore, 4)($struct, $count);
+    weakqueue*(smelting_ore, $delay)($struct, $count);
 } else {
     weakqueue*(start_smelt_ore, calc(%action_delay - map_clock - 1))($struct, $count);
 }
@@ -178,7 +181,7 @@ if ($product = iron_bar) {
         mes("The ore is too impure and you fail to refine it.");
         if(sub($count,1) > 0) {
             %action_delay = add(map_clock, 1);
-            @smelt_ore_weakqueue($product, sub($count,1));
+            @smelt_ore_weakqueue($product, sub($count,1), 4);
         }
         return;
     }
@@ -199,5 +202,5 @@ inv_add(inv, $product, 1);
 stat_advance(smithing, $xp);
 if(sub($count,1) > 0) {
     %action_delay = add(map_clock, 1);
-    @smelt_ore_weakqueue($product, sub($count,1));
+    @smelt_ore_weakqueue($product, sub($count,1), 4);
 }
