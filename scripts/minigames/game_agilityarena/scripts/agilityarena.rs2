@@ -121,10 +121,10 @@ def_int $dx = 0;
 def_coord $start_pos;
 def_int $dir;
 switch_int(loc_angle) {
-    case ^loc_west : 
+    case ^loc_west :
         if(coordz(coord) < coordz(loc_coord)) {
-        mes("You can't use that rope swing from here.");
-        return;
+            mes("You can't use that rope swing from here.");
+            return;
         }
         $dz = -5;
         $start_pos = movecoord(loc_coord, 0, 0, 2);
@@ -157,6 +157,9 @@ switch_int(loc_angle) {
 p_delay(0);
 ~playerwalk3($start_pos);
 p_arrivedelay;
+if(coord ! $start_pos) {
+    return;
+}
 if(stat_random(agility, 100, 310) = false) {
     sound_synth(stumble_loop, 6, 10);
     ~agility_exactmove(human_ropeswing_long_miss, 30, 2, $start_pos, movecoord($start_pos, divide($dx, 5), 0, divide($dz, 5)), 30, 76, $dir, false);
