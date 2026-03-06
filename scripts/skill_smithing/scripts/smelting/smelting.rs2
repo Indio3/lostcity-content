@@ -76,7 +76,6 @@ def_int $entered_value = last_int;
 @smelt_ore($bar, $entered_value);
 
 [label,smelt_ore_single](obj $last)
-p_arrivedelay;
 def_namedobj $bar = oc_param($last, smeltsto);
 // using coal on furnace assumes steel bar. If using iron on furnace and player has 2 or more coal, then assume steel bar
 if (($last = iron_ore & inv_total(inv, coal) >= 2 & stat(smithing) >= 30) | $last = coal) {
@@ -90,6 +89,7 @@ if ($bar = null) {
 if(%action_delay < map_clock) {
     %action_delay = add(map_clock, 1); // sets action delay here as well
 }
+p_arrivedelay;
 @smelt_ore($bar, 1);
 
 [label,smelt_ore](obj $last, int $count)
