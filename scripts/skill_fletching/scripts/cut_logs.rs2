@@ -50,6 +50,9 @@ if ($product = null) {
     ~displaymessage(^dm_default);
     return;
 }
+if($process_count = 0) {
+    return;
+}
 def_int $level = 1;
 // default to shafts
 def_int $count = 1;
