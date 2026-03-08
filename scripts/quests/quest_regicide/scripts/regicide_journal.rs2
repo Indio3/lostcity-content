@@ -4,6 +4,7 @@ if (%regicide_quest = ^regicide_not_started) {
     if(%upass = ^upass_complete) {
         $text  = append($text, "@dre@King Lathas@dbl@ will send word when I can start this quest.|");
         ~quest_journal("Regicide", $text);
+        return;
     }
     $text  = append($text, "@dbl@I can start this quest by speaking to @dre@King Lathas@dbl@ in|");
     $text = append($text, "@dre@Ardougne Castle@dbl@.||");
