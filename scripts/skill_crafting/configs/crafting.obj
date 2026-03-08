@@ -262,6 +262,7 @@ recol2d=12684
 2dxan=440
 weight=7lb
 members=yes
+param=color,black
 
 [dragonhide_red]
 cost=60
@@ -279,6 +280,7 @@ recol2d=12288
 2dxan=440
 weight=7lb
 members=yes
+param=color,red
 
 [dragonhide_blue]
 cost=40
@@ -296,6 +298,7 @@ recol2d=93
 2dxan=440
 weight=7lb
 members=yes
+param=color,blue
 
 [dragonhide_green]
 cost=20
@@ -309,3 +312,4 @@ model=model_2356_obj
 2dxan=440
 weight=7lb
 members=yes
+param=color,green
