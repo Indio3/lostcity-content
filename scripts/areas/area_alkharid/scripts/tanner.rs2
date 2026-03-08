@@ -172,7 +172,7 @@ def_int $hides_to_be_tanned = min(divide($coins, $cost), $total_hides);
 if ($hides_to_be_tanned = 1) {
     mes("The tanner tans your cowhide."); // osrs
 } else {
-    mes("The tanner tans <tostring($hides_to_be_tanned)> cowhide for you.");
+    mes("The tanner tans <tostring($hides_to_be_tanned)> cowhides for you.");
 }
 if (inv_total(inv, coins) < $cost & $hides > $hides_to_be_tanned) {
     mes("You haven't got enough coins to pay for more hard leather.");
