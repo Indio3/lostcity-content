@@ -72,6 +72,7 @@ if_openchat(smelting);
 [label,smelt_ore_makex](obj $bar)
 p_countdialog;
 def_int $entered_value = last_int;
+if($entered_value <= 0) return;
 // https://youtu.be/C21cqhLHj98?si=Wa8Jf9T-fl7Xez_Q&t=68
 @smelt_ore($bar, $entered_value);
 
