@@ -75,7 +75,6 @@ if (stat(fletching) < $level) {
     ~doubleobjbox($log, $product, "You need a Fletching level of at least <tostring($level)> to make <~add_article(lowercase(oc_name($product)))>.", 200);
     return;
 }
-mes("<tostring(%weakqueue_map_clock)>, <tostring(map_clock)>");
 if(%weakqueue_map_clock = map_clock) {
     if_close;
     p_delay(0);
