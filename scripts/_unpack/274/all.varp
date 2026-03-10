@@ -14,7 +14,7 @@
 
 [varp_327]
 
-[varp_332]
+[weakqueue_map_clock]
 
 [skill_guide_skill]
 type=stat

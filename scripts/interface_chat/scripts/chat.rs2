@@ -1021,3 +1021,23 @@ switch_component (last_com) {
     case skill_multi5:make1_e : return($obj5, 1);
     case default : return(null, null);
 }
+
+[if_close,skill_multi2]
+if(p_finduid(uid) = true) {
+    %weakqueue_map_clock = map_clock;
+}
+
+[if_close,skill_multi3]
+if(p_finduid(uid) = true) {
+    %weakqueue_map_clock = map_clock;
+}
+
+[if_close,skill_multi4]
+if(p_finduid(uid) = true) {
+    %weakqueue_map_clock = map_clock;
+}
+
+[if_close,skill_multi5]
+if(p_finduid(uid) = true) {
+    %weakqueue_map_clock = map_clock;
+}
