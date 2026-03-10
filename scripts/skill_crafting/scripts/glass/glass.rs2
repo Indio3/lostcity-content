@@ -80,10 +80,6 @@ if (stat(crafting) < $level) {
     mes("You need level <tostring($level)> Crafting to make <$name>.");
     return;
 }
-if(%weakqueue_map_clock = map_clock) {
-    if_close;
-    p_delay(0);
-}
 @process_glassblowing($item, $name, $level, $exp, $process_count);
 
 [label,process_glassblowing](namedobj $glass_item, string $name, int $level, int $exp, int $process_count)

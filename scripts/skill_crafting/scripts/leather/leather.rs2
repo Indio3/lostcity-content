@@ -132,10 +132,6 @@ if($product = hardleather_body) {
     }
     return;
 }
-if(%weakqueue_map_clock = map_clock) {
-    if_close;
-    p_delay(0);
-}
 @process_leather_crafting($product_data, $product, $count, $leather, $leather_count, $level);
 
 [label,process_leather_crafting](dbrow $product_data, namedobj $product, int $count, namedobj $leather, int $leather_count, int $level)
