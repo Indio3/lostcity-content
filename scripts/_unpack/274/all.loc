@@ -2235,18 +2235,6 @@ retex6s=wood2
 retex6d=elfwood
 active=yes
 
-[viking_potteryoven]
-name=Pottery Oven
-desc=Bake your clay pots in here.
-model=model_loc_2643
-retex1s=wall
-retex1d=pebblefloor
-recol2s=7399
-recol2d=4161
-length=2
-forceapproach=east
-op1=Fire
-
 [viking_spinningwheel]
 name=Spinning wheel
 desc=Used for spinning thread.
@@ -2261,12 +2249,6 @@ recol4s=15617
 recol4d=16741
 op2=Spin
 forceapproach=south
-
-[viking_potterywheel]
-name=Potter's Wheel
-desc=Used for fashioning clay items.
-model=model_loc_2642
-forceapproach=east
 
 [viking_fencegate_l]
 name=Gate
