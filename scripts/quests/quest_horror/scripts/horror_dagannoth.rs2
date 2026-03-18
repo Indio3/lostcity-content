@@ -27,9 +27,11 @@ if (%npc_aggressive_player = uid) {
 %horrorquest = ^horror_defeated_dagjr;
 ~chatplayer("<p,happy>Okay, now that the creature's dead we can get you out of here.");
 if(inzone(0_39_72_0_0, 0_39_72_63_63, coord) = true) queue(spawn_dagmother, 0, 0);
-~chatnpc_specific(nc_name(horror_lighthousekeeeper_injured), horror_lighthousekeeeper_injured, "<p,scared>No... you do not understand...");
-~chatnpc_specific(nc_name(horror_lighthousekeeeper_injured), horror_lighthousekeeeper_injured, "<p,scared>That was not the creature that attacked me...");
-~chatnpc_specific(nc_name(horror_lighthousekeeeper_injured), horror_lighthousekeeeper_injured, "<p,scared>That was one of its babies...");
+if(npc_findexact(0_39_72_22_25, horror_lighthousekeeeper_injured) = ^true) {
+    ~chatnpcnoturn("<p,scared>No... you do not understand...");
+    ~chatnpcnoturn("<p,scared>That was not the creature that attacked me...");
+    ~chatnpcnoturn("<p,scared>That was one of its babies...");
+}
 
 // works similar to sara wizards, check prayer so we dont get
 // stuck in setmode loop if spam clicking

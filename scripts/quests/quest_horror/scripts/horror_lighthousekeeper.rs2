@@ -241,7 +241,7 @@ def_coord $start;
 if(random(3) < 0) {
     $start = movecoord(0_39_72_11_27, random(3), 0, random(4));
 } else {
-    $start = movecoord(0_39_72_10_33, random(3), 0, random(7));
+    $start = movecoord(0_39_72_10_32, random(3), 0, random(8));
 }
 npc_add($start, horror_dagannoth_jr1, 1000);
 sound_synth(sound_753, 0, 0);
@@ -264,7 +264,7 @@ npc_walk(movecoord($start, 3, 0, 0));
 if(inzone(0_39_72_0_0, 0_39_72_63_63, coord) = true) cam_lookat(movecoord($start, 3, 0, 0), 10, 50, 10);
 p_delay(1);
 if(inzone(0_39_72_0_0, 0_39_72_63_63, coord) = true) { 
-    npc_tele(map_findsquare(coord, 1, 3, ^vis_lineofwalk));
+    npc_tele(map_findsquare(coord, 2, 5, ^vis_lineofwalk));
     cam_lookat(movecoord($start, 4, 0, 0), 10, 50, 10);
 }
 p_delay(0);

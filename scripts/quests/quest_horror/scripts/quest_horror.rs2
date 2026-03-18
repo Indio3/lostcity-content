@@ -482,9 +482,6 @@ while (npc_findnext = true) {
     }
 }
 
-[debugproc,t]
-queue(quest_horror_complete, 0, 0);
-
 [queue,quest_horror_complete]
 if(inzone(0_39_72_0_0, 0_39_72_63_63, coord) = false) {
     return;
