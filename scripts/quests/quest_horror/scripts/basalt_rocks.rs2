@@ -1,68 +1,40 @@
-[aploc1,horror_jumping_spot1]
-if(lineofwalk(coord, loc_coord) = true & distance(coord, loc_coord) > 1) {
-    p_aprange(1);
-    return;
-}
-if(lineofwalk(coord, loc_coord) = false) {
-    if(coord ! 0_39_56_26_13) {
-        p_aprange(2);
-        return;
-    }
-    p_delay(0);
-    ~agility_exactmove(human_steppingstonejump, 19, 1, 0_39_56_26_13, 0_39_56_26_11, 47, 59, ^exact_south, false);
-    sound_synth(jump_no_land, 0, 0);
-} else {
-    if(coord ! 0_39_56_26_11) {
-        p_delay(0);
-        p_teleport(0_39_56_26_11);
-        p_delay(1);
-    }
-    ~agility_exactmove(human_steppingstonejump, 19, 1, 0_39_56_26_11, 0_39_56_26_13, 47, 59, ^exact_north, false);
-    sound_synth(jump_no_land, 0, 0);
-}
+[oploc1,horror_jumping_spot1] @jump_basalt(0_39_56_26_11, 0_39_56_26_13, ^exact_north);
+[oploc1,horror_jumping_spot2] @jump_basalt(0_39_56_26_13, 0_39_56_26_11, ^exact_south);
+[oploc1,horror_jumping_spot3] @jump_basalt(0_39_56_26_16, 0_39_56_26_18, ^exact_north);
+[oploc1,horror_jumping_spot4] @jump_basalt(0_39_56_26_18, 0_39_56_26_16, ^exact_south);
+[oploc1,horror_jumping_spot5] @jump_basalt(0_39_56_22_27, 0_39_56_20_27, ^exact_west);
+[oploc1,horror_jumping_spot6] @jump_basalt(0_39_56_20_27, 0_39_56_22_27, ^exact_east);
+[oploc1,horror_jumping_spot7] @jump_basalt(0_39_56_18_29, 0_39_56_18_31, ^exact_north);
+[oploc1,horror_jumping_spot8] @jump_basalt(0_39_56_18_31, 0_39_56_18_29, ^exact_south);
+[oploc1,horror_jumping_spot9] @jump_basalt(0_39_56_18_33, 0_39_56_18_35, ^exact_north);
+[oploc1,horror_jumping_spot10] @jump_basalt(0_39_56_18_35, 0_39_56_18_33, ^exact_south);
 
-[aploc1,horror_jumping_spot2]
-if(lineofwalk(coord, loc_coord) = true & distance(coord, loc_coord) > 1) {
-    p_aprange(1);
-    return;
-}
-if(lineofwalk(coord, loc_coord) = false) {
-    if(coord ! 0_39_56_26_11) {
-        p_aprange(2);
-        return;
-    }
-    p_delay(0);
-    ~agility_exactmove(human_steppingstonejump, 19, 1, 0_39_56_26_11, 0_39_56_26_13, 47, 59, ^exact_north, false);
-    sound_synth(jump_no_land, 0, 0);
-} else {
-    if(coord ! 0_39_56_26_13) {
-        p_delay(0);
-        p_teleport(0_39_56_26_13);
-        p_delay(1);
-    }
-    ~agility_exactmove(human_steppingstonejump, 19, 1, 0_39_56_26_13, 0_39_56_26_11, 47, 59, ^exact_south, false);
-    sound_synth(jump_no_land, 0, 0);
-}
+[aploc1,horror_jumping_spot1] @jump_basalt_ap(0_39_56_26_13, 0_39_56_26_11, ^exact_south);
+[aploc1,horror_jumping_spot2] @jump_basalt_ap(0_39_56_26_11, 0_39_56_26_13, ^exact_north);
+[aploc1,horror_jumping_spot3] @jump_basalt_ap(0_39_56_26_18, 0_39_56_26_16, ^exact_south);
+[aploc1,horror_jumping_spot4] @jump_basalt_ap(0_39_56_26_16, 0_39_56_26_18, ^exact_north);
+[aploc1,horror_jumping_spot5] @jump_basalt_ap(0_39_56_20_27, 0_39_56_22_27, ^exact_east);
+[aploc1,horror_jumping_spot6] @jump_basalt_ap(0_39_56_22_27, 0_39_56_20_27, ^exact_west);
+[aploc1,horror_jumping_spot7] @jump_basalt_ap(0_39_56_18_31, 0_39_56_18_29, ^exact_south);
+[aploc1,horror_jumping_spot8] @jump_basalt_ap(0_39_56_18_29, 0_39_56_18_31, ^exact_north);
+[aploc1,horror_jumping_spot9] @jump_basalt_ap(0_39_56_18_35, 0_39_56_18_33, ^exact_south);
+[aploc1,horror_jumping_spot10] @jump_basalt_ap(0_39_56_18_33, 0_39_56_18_35, ^exact_north);
 
-[aploc1,horror_jumping_spot3]
-if(lineofwalk(coord, loc_coord) = true & distance(coord, loc_coord) > 1) {
-    p_aprange(1);
+[label,jump_basalt_ap](coord $start, coord $dest, int $dir)
+if(lineofwalk(coord, loc_coord) = true) {
+    p_aprange(0);
     return;
 }
-if(lineofwalk(coord, loc_coord) = false) {
-    if(coord ! 0_39_56_26_18) {
-        p_aprange(2);
-        return;
-    }
+~playerwalk3($start);
+@jump_basalt($start, $dest, $dir);
+
+[label,jump_basalt](coord $start, coord $dest, int $dir)
+if(coord ! $start) {
     p_delay(0);
-    ~agility_exactmove(human_steppingstonejump, 19, 1, 0_39_56_26_18, 0_39_56_26_16, 47, 59, ^exact_south, false);
-    sound_synth(jump_no_land, 0, 0);
-} else {
-    if(coord ! 0_39_56_26_16) {
-        p_delay(0);
-        p_teleport(0_39_56_26_16);
-        p_delay(1);
-    }
+    p_teleport($start);
+    p_delay(1);
+}
+if($start = 0_39_56_26_16) {
     if(stat_random(agility, 5, 255) = false) {
         mes("You slip on the slimy causeway.");
         ~agility_exactmove(human_wobbleandfall_l, 10, 0, 0_39_56_26_16, 0_39_56_25_16, 33, 53, ^exact_north, false);
@@ -76,159 +48,11 @@ if(lineofwalk(coord, loc_coord) = false) {
         ~update_bas;
         ~forcemove(movecoord(coord, 0, 0, -1));
         ~damage_self(~random_range(1, 10));
-        stat_advance(agility, 10);
+        stat_advance(agility, 5);
         return;
     }
-    ~agility_exactmove(human_steppingstonejump, 19, 1, 0_39_56_26_16, 0_39_56_26_18, 47, 59, ^exact_north, false);
-    sound_synth(jump_no_land, 0, 0);
 }
-stat_advance(agility, 10);
-
-[aploc1,horror_jumping_spot4]
-if(lineofwalk(coord, loc_coord) = true & distance(coord, loc_coord) > 1) {
-    p_aprange(1);
-    return;
-}
-if(lineofwalk(coord, loc_coord) = false) {
-    if(coord ! 0_39_56_26_16) {
-        p_aprange(2);
-        return;
-    }
-    p_delay(0);
-    if(stat_random(agility, 5, 255) = false) {
-        mes("You slip on the slimy causeway.");
-        ~agility_exactmove(human_wobbleandfall_l, 10, 0, 0_39_56_26_16, 0_39_56_25_16, 33, 53, ^exact_north, false);
-        sound_synth(jump_no_land, 0, 0);
-        ~set_readywalk_bas(human_swim_ready, human_swim);
-        spotanim_map(watersplash, coord, 0, 3);
-        sound_synth(pool_plop, 0, 0);
-        p_delay(0);
-        ~forcemove(movecoord(coord, 0, 0, -4));
-        mes("The tide sweeps you back to shore.");
-        ~update_bas;
-        ~forcemove(movecoord(coord, 0, 0, -1));
-        ~damage_self(~random_range(1, 10));
-        stat_advance(agility, 10);
-        return;
-    }
-    ~agility_exactmove(human_steppingstonejump, 19, 1, 0_39_56_26_16, 0_39_56_26_18, 47, 59, ^exact_north, false);
-    sound_synth(jump_no_land, 0, 0);
-} else {
-    if(coord ! 0_39_56_26_18) {
-        p_delay(0);
-        p_teleport(0_39_56_26_18);
-        p_delay(1);
-    }
-    ~agility_exactmove(human_steppingstonejump, 19, 1, 0_39_56_26_18, 0_39_56_26_16, 47, 59, ^exact_south, false);
-    sound_synth(jump_no_land, 0, 0);
-}
-stat_advance(agility, 10);
-
-[aploc1,horror_jumping_spot5]
-if(lineofwalk(coord, loc_coord) = true & distance(coord, loc_coord) > 1) {
-    p_aprange(1);
-    return;
-}
-if(lineofwalk(coord, loc_coord) = false) {
-    if(coord ! 0_39_56_20_27) {
-        p_aprange(2);
-        return;
-    }
-    p_delay(0);
-    ~agility_exactmove(human_steppingstonejump, 19, 1, 0_39_56_20_27, 0_39_56_22_27, 47, 59, ^exact_east, false);
-    sound_synth(jump_no_land, 0, 0);
-} else {
-    if(coord ! 0_39_56_22_27) {
-        p_delay(0);
-        p_teleport(0_39_56_22_27);
-        p_delay(1);
-    }
-    ~agility_exactmove(human_steppingstonejump, 19, 1, 0_39_56_22_27, 0_39_56_20_27, 47, 59, ^exact_west, false);
-    sound_synth(jump_no_land, 0, 0);
-}
-
-[aploc1,horror_jumping_spot6]
-if(lineofwalk(coord, loc_coord) = true & distance(coord, loc_coord) > 1) {
-    p_aprange(1);
-    return;
-}
-if(lineofwalk(coord, loc_coord) = false) {
-    if(coord ! 0_39_56_22_27) {
-        p_aprange(2);
-        return;
-    }
-    p_delay(0);
-    ~agility_exactmove(human_steppingstonejump, 19, 1, 0_39_56_22_27, 0_39_56_20_27, 47, 59, ^exact_west, false);
-    sound_synth(jump_no_land, 0, 0);
-} else {
-    if(coord ! 0_39_56_20_27) {
-        p_delay(0);
-        p_teleport(0_39_56_20_27);
-        p_delay(1);
-    }
-    ~agility_exactmove(human_steppingstonejump, 19, 1, 0_39_56_20_27, 0_39_56_22_27, 47, 59, ^exact_east, false);
-    sound_synth(jump_no_land, 0, 0);
-}
-
-[aploc1,horror_jumping_spot7]
-if(lineofwalk(coord, loc_coord) = true & distance(coord, loc_coord) > 1) {
-    p_aprange(1);
-    return;
-}
-if(lineofwalk(coord, loc_coord) = false) {
-    if(coord ! 0_39_56_18_31) {
-        p_aprange(2);
-        return;
-    }
-    p_delay(0);
-    if(stat_random(agility, 5, 255) = false) {
-        mes("You slip on the slimy causeway.");
-        ~agility_exactmove(human_wobbleandfall_l, 10, 0, 0_39_56_18_31, 0_39_56_19_31, 33, 53, ^exact_south, false);
-        sound_synth(jump_no_land, 0, 0);
-        ~set_readywalk_bas(human_swim_ready, human_swim);
-        spotanim_map(watersplash, coord, 0, 3);
-        sound_synth(pool_plop, 0, 0);
-        p_delay(0);
-        ~forcemove(movecoord(coord, 0, 0, 4));
-        mes("The tide sweeps you back to shore.");
-        ~update_bas;
-        ~forcemove(movecoord(coord, 0, 0, 1));
-        ~damage_self(~random_range(1, 10));
-        stat_advance(agility, 10);
-        return;
-    }
-    ~agility_exactmove(human_steppingstonejump, 19, 1, 0_39_56_18_31, 0_39_56_18_29, 47, 59, ^exact_south, false);
-    sound_synth(jump_no_land, 0, 0);
-} else {
-    if(coord ! 0_39_56_18_29) {
-        p_delay(0);
-        p_teleport(0_39_56_18_29);
-        p_delay(1);
-    }
-    ~agility_exactmove(human_steppingstonejump, 19, 1, 0_39_56_18_29, 0_39_56_18_31, 47, 59, ^exact_north, false);
-    sound_synth(jump_no_land, 0, 0);
-}
-stat_advance(agility, 10);
-
-[aploc1,horror_jumping_spot8]
-if(lineofwalk(coord, loc_coord) = true & distance(coord, loc_coord) > 1) {
-    p_aprange(1);
-    return;
-}
-if(lineofwalk(coord, loc_coord) = false) {
-    if(coord ! 0_39_56_18_29) {
-        p_aprange(2);
-        return;
-    }
-    p_delay(0);
-    ~agility_exactmove(human_steppingstonejump, 19, 1, 0_39_56_18_29, 0_39_56_18_31, 47, 59, ^exact_north, false);
-    sound_synth(jump_no_land, 0, 0);
-} else {
-    if(coord ! 0_39_56_18_31) {
-        p_delay(0);
-        p_teleport(0_39_56_18_31);
-        p_delay(1);
-    }
+if($start = 0_39_56_18_31) {
     if(stat_random(agility, 5, 255) = false) {
         mes("You slip on the slimy causeway.");
         ~agility_exactmove(human_wobbleandfall_l, 10, 0, 0_39_56_18_31, 0_39_56_19_31, 33, 53, ^exact_south, false);
@@ -242,56 +66,12 @@ if(lineofwalk(coord, loc_coord) = false) {
         ~update_bas;
         ~forcemove(movecoord(coord, 0, 0, 1));
         ~damage_self(~random_range(1, 10));
-        stat_advance(agility, 10);
+        stat_advance(agility, 5);
         return;
     }
-    ~agility_exactmove(human_steppingstonejump, 19, 1, 0_39_56_18_31, 0_39_56_18_29, 47, 59, ^exact_south, false);
-    sound_synth(jump_no_land, 0, 0);
 }
-stat_advance(agility, 10);
-
-[aploc1,horror_jumping_spot9]
-if(lineofwalk(coord, loc_coord) = true & distance(coord, loc_coord) > 1) {
-    p_aprange(1);
-    return;
+~agility_exactmove(human_steppingstonejump, 19, 1, $start, $dest, 47, 59, $dir, false);
+if(loc_type = horror_jumping_spot7 | loc_type = horror_jumping_spot8 | loc_type = horror_jumping_spot3 | loc_type = horror_jumping_spot4) {
+    stat_advance(agility, 20);
 }
-if(lineofwalk(coord, loc_coord) = false) {
-    if(coord ! 0_39_56_18_35) {
-        p_aprange(2);
-        return;
-    }
-    p_delay(0);
-    ~agility_exactmove(human_steppingstonejump, 19, 1, 0_39_56_18_35, 0_39_56_18_33, 47, 59, ^exact_south, false);
-    sound_synth(jump_no_land, 0, 0);
-} else {
-    if(coord ! 0_39_56_18_33) {
-        p_delay(0);
-        p_teleport(0_39_56_18_33);
-        p_delay(1);
-    }
-    ~agility_exactmove(human_steppingstonejump, 19, 1, 0_39_56_18_33, 0_39_56_18_35, 47, 59, ^exact_north, false);
-    sound_synth(jump_no_land, 0, 0);
-}
-
-[aploc1,horror_jumping_spot10]
-if(lineofwalk(coord, loc_coord) = true & distance(coord, loc_coord) > 1) {
-    p_aprange(1);
-    return;
-}
-if(lineofwalk(coord, loc_coord) = false) {
-    if(coord ! 0_39_56_18_33) {
-        p_aprange(2);
-        return;
-    }
-    p_delay(0);
-    ~agility_exactmove(human_steppingstonejump, 19, 1, 0_39_56_18_33, 0_39_56_18_35, 47, 59, ^exact_north, false);
-    sound_synth(jump_no_land, 0, 0);
-} else {
-    if(coord ! 0_39_56_18_35) {
-        p_delay(0);
-        p_teleport(0_39_56_18_35);
-        p_delay(1);
-    }
-    ~agility_exactmove(human_steppingstonejump, 19, 1, 0_39_56_18_35, 0_39_56_18_33, 47, 59, ^exact_south, false);
-    sound_synth(jump_no_land, 0, 0);
-}
+sound_synth(jump_no_land, 0, 0);

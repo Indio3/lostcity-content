@@ -43,6 +43,7 @@ if(inv_total(inv, horror_key) > 0) {
     inv_del(inv, horror_key, 1);
     %horrorlighthouseentrance = ^true;
     mes("You unlock the Lighthouse front door.");
+    return;
 }
 mes("This door is locked securely shut.");
 
@@ -129,6 +130,7 @@ if(inv_total(inv, hammer) = 0) {
 }
 anim(human_smithing, 0);
 sound_synth(anvil_4, 0, 0);
+inv_del(inv, woodplank, 1);
 inv_del(inv, nails, 4);
 %horrorbridgeleft = ^true;
 if(%horrorbridgeright = ^false) ~mesbox("You create half a makeshift walkway out of the plank.");
@@ -157,6 +159,7 @@ if(inv_total(inv, hammer) = 0) {
 }
 anim(human_smithing, 0);
 sound_synth(anvil_4, 0, 0);
+inv_del(inv, woodplank, 1);
 inv_del(inv, nails, 4);
 %horrorbridgeright = ^true;
 if(%horrorbridgeleft = ^false) ~mesbox("You create half a makeshift walkway out of the plank.");
@@ -479,6 +482,9 @@ while (npc_findnext = true) {
     }
 }
 
+[debugproc,t]
+queue(quest_horror_complete, 0, 0);
+
 [queue,quest_horror_complete]
 if(inzone(0_39_72_0_0, 0_39_72_63_63, coord) = false) {
     return;
@@ -491,7 +497,7 @@ stat_advance(ranged, 46620);
 inv_add(inv, horror_casket, 1);
 %horrorquest = ^horror_complete;
 session_log(^log_adventure, "Quest complete: Horror from the Deep");
-~send_quest_complete(questlist:horror, horror_casket, 250, ^horror_questpoints, "You have survived the\\nHorror From The Deep!");
+~send_quest_complete(questlist:horror, horror_casket, 225, ^horror_questpoints, "You have survived the\\nHorror From The Deep!");
 
 [opobj3,horror_casket]
 mes("It is too old and fragile to pick up.");

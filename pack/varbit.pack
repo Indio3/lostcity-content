@@ -28,7 +28,7 @@
 27=reclaim_holybook
 28=reclaim_unholybook
 29=reclaim_guthixbook
-30=godbook_reclaim_count
+30=varbit_30
 31=varbit_31
 32=varbit_32
 33=varbit_33
