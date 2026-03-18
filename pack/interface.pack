@@ -10118,12 +10118,12 @@
 10117=inter_188:com_0
 10118=inter_188:com_1
 10119=inter_188:com_2
-10120=inter_188:com_3
-10121=inter_188:com_4
-10122=inter_188:com_5
-10123=inter_188:com_6
-10124=inter_188:com_7
-10125=inter_188:com_8
+10120=inter_188:horror_fire
+10121=inter_188:horror_air
+10122=inter_188:horror_earth
+10123=inter_188:horror_water
+10124=inter_188:horror_ranging
+10125=inter_188:horror_melee
 10126=music:scape_scared
 10127=music:pirates_of_peril
 10128=music:dangerous_road
@@ -10133,7 +10133,7 @@
 10132=music:out_of_the_deep
 10133=music:tiptoe
 10134=boardgames_draughts_options:com_26
-10135=questlist:com_88
+10135=questlist:horror
 10136=book:com_2
 10137=book:com_3
 10138=book:com_4
