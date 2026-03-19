@@ -52,8 +52,8 @@ if($start = 0_39_56_18_31) {
     }
 }
 ~agility_exactmove(human_steppingstonejump, 19, 1, $start, $dest, 47, 59, $dir, false);
+sound_synth(jump_no_land, 0, 0);
 ~forcemove($final_dest);
 if(loc_type = horror_jumping_spot7 | loc_type = horror_jumping_spot8 | loc_type = horror_jumping_spot3 | loc_type = horror_jumping_spot4) {
     stat_advance(agility, 20);
 }
-sound_synth(jump_no_land, 0, 0);
