@@ -1,4 +1,25 @@
 [opnpc1,lord_iorwerth]
+if(inv_total(inv, trail_clue_hard_riddle018) > 0) {
+    // https://www.youtube.com/watch?v=Pu1lndWPMKU
+    if(~obj_gettotal(trail_clue_hard_riddle018_puzzlebox) > 0) {
+        if(inv_total(inv, trail_clue_hard_riddle018_puzzlebox) = 0) {
+            ~chatplayer("<p,neutral>I don't have the puzzle box with me.");
+            ~chatnpc("<p,angry>That's not much use. Go and fetch it.");
+            return;
+        }
+        if(~trail_puzzle_complete(trail_clue_hard_riddle018_puzzlebox) = true) {
+            ~chatnpc("<p,neutral>You have done well, human!");
+            inv_del(inv, trail_clue_hard_riddle018_puzzlebox, 1);
+            ~progress_clue_hard(trail_clue_hard_riddle018, "Lord Iorwerth has given you another clue scroll!");
+            return;
+        }
+        // TODO: check mesanim
+        ~chatnpc("<p,neutral>Do not waste my time, human!");
+        return;
+    }
+    ~give_trail_puzzle(trail_clue_hard_riddle018_puzzlebox, "<p,neutral>Before I will help you, human, you must complete this for me!", "Lord Iorwerth has given you a puzzle box!");
+    return;
+}
 switch_int(%regicide_quest) {
     case ^regicide_complete :
         ~chatplayer("<p,neutral>Good day, Lord Iorwerth.");
