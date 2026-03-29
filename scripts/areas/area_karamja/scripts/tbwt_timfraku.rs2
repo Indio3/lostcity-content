@@ -1,0 +1,22 @@
+[opnpc1,tbwt_timfraku]
+switch_int(%tbwt_main) {
+    case ^tbwt_not_started :
+        ~chatnpc("<p,angry>I am the Chief of Tai Bwo Wannai Village! Who dares set foot in my hut?");
+        @multi4("I am a roving adventurer.", tbwt_rovingadventurer, 
+                "I am a travelling explorer.", tbwt_travellingexplorer, 
+                "I am a wandering wayfarer.", tbwt_wanderingwayfarer, 
+                "Who me? Oh I'm just a nobody.", tbwt_nobody
+                );
+}
+
+[label,tbwt_rovingadventurer]
+~chatplayer("<p,happy>");
+
+[label,tbwt_travellingexplorer]
+~chatplayer("<p,happy>");
+
+[label,tbwt_wanderingwayfarer]
+~chatplayer("<p,happy>");
+
+[label,tbwt_nobody]
+~chatplayer("<p,happy>");

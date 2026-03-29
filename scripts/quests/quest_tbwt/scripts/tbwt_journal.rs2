@@ -1,0 +1,65 @@
+[if_button,questlist:tbwt]
+def_string $text;
+
+mes("<tostring(%tbwt_main)>");
+
+if (%tbwt_main = ^tbwt_not_started) {
+    if (%junglepotion = ^junglepotion_complete_after_spoken) {
+        $text = append($text, "@dbl@In @dre@Jungle Potion@dbl@, @dre@Trufitus@dbl@ found @dre@Tai Bwo Wannai Village@dbl@ was|");
+        $text = append($text, "@dbl@safe to inhabit. To start this quest I must deliver the news|");
+        $text = append($text, "@dbl@to @dre@Timfraku@dbl@, Chief of the village.||");
+        $text = append($text, "@dbl@To complete this quest I need:|");
+        $text = append($text, "@dbl@Level 30 Cooking|");
+        $text = append($text, "@dbl@Level 15 Agility|");
+        $text = append($text, "@dbl@Level 5 Fishing|");
+        $text = append($text, "@dbl@High level Agility and Herblore is a distinct advantage.|");
+        $text = append($text, "@dbl@I also need to be able to defeat @dre@level 48 Jogres@dbl@|");
+    } else {
+         $text = append($text, "@dbl@I can start this quest by speaking to @dre@Timfraku@dbl@, the Chief of|");
+        $text = append($text, "@dre@Tai Bwo Wannai Village@dbl@, after completing @dre@Jungle Potion@dbl@.");
+    }
+    ~quest_journal("Tai Bwo Wannai Trio", $text);
+    return;
+}
+
+if (%tbwt_main = ^tbwt_complete) {
+    $text = append($text, "@dbl@Completed it m8.|");
+    ~quest_journal("Tai Bwo Wannai Trio", $text);
+    return;
+}
+
+if (%tbwt_main = ^tbwt_started) {
+    $text = append($text, "@dbl@I need to find the three sons of @dre@Timfraku@dbl@:|");
+    $text = append($text, "@dre@Tamayu|");
+    $text = append($text, "@dre@Tinsay|");
+    $text = append($text, "@dre@Tiadeche||");
+    $text = append($text, "@dbl@I need to convince them to return to the village.|");
+    ~quest_journal("Tai Bwo Wannai Trio", $text);
+    return;
+}
+
+
+    $text = append($text, "@str@Tinsay:|");
+    $text = append($text, "@str@I have given him sliced banana in Karamja rum.||");
+    $text = append($text, "@str@I have given him a seaweed in monkey skin sandwich.||");
+    $text = append($text, "@str@I have given him a burnt Jogre bones marinated in|");
+    $text = append($text, "@str@Karambwanji paste.||");
+
+    $text = append($text, "@str@Tamayu:|");
+    $text = append($text, "@str@He will only return to the village once he has slain|");
+    $text = append($text, "@str@Shaikahan. He appears to be having difficulty in the hunt.||");
+    $text = append($text, "@str@I have increased his agility to match the Shaikahan's.||");
+    $text = append($text, "@str@I have given him a stronger and Karambwan poisoned spear.||");
+    $text = append($text, "@str@Tamayu has slain the Shaikahan!||");
+
+    $text = append($text, "@str@Lubufu:|");
+    $text = append($text, "@str@Lubufu is a crochety old fisherman just south of|");
+    $text = append($text, "@str@Brimhaven.||");
+    $text = append($text, "@str@He appears to have a local monopoly over the sale of Karambwan.||");
+    $text = append($text, "@str@Lubufu has difficulty collecting bain, due to his age. I have|");
+    $text = append($text, "@str@offered to help collect bait. Lubufu has accepted.||");
+    $text = append($text, "@str@Apparently the bait is Karambwanji, which shoal in a Holy|");
+    $text = append($text, "@str@Lake south of Tai Bwo Wannai.||");
+    $text = append($text, "@str@I have given Lubufu 20 Karambwanji.||");
+    $text = append($text, "@str@Lubufu has offered to train me as his apprentice.||");
+    $text = append($text, "@str@I have accepted Lubufu's offer.||");
