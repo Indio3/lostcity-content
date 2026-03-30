@@ -170,6 +170,7 @@ if (map_clock > add(%musicstart, %musiclength)) {
 [if_button,music:moody] @music_playbybutton(music:moody);
 [if_button,music:morytania] @music_playbybutton(music:morytania);
 [if_button,music:natural] @music_playbybutton(music:natural);
+[if_button,music:the_navigator] @music_playbybutton(music:the_navigator);
 [if_button,music:neverland] @music_playbybutton(music:neverland);
 [if_button,music:newbie_melody] @music_playbybutton(music:newbie_melody);
 [if_button,music:nightfall] @music_playbybutton(music:nightfall);

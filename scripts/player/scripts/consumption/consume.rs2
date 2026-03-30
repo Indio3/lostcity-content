@@ -88,6 +88,8 @@ switch_obj(last_item) {
     case default : @player_consume_item(consume_effect_stat, null, null);
 }
 [opheld1,macro_triffidfruit]@player_consume_item(consume_effect_strange_fruit, 2, 3);
+
+[opheld1,keg_of_beer] @player_consume_item(consume_effect_keg_of_beer, null, null);
 // ************************* TRIGGERS **************************
 
 // all normal foods use %eat_delay
