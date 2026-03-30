@@ -1,6 +1,6 @@
 [oploc1,tbwt_bamboo_door]
 if (%tbwt_main < ^tbwt_complete) {
-    mes("You do not have permission to enter here");
+    mes("You do not have permission to enter here"); // Intentionally no period - https://imgur.com/a/1LTxz27
     return;
 }
 ~open_and_close_door(loc_param(next_loc_stage), ~check_axis(coord, loc_coord, loc_angle), false);
