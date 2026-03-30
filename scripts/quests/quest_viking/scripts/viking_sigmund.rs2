@@ -7,7 +7,7 @@ if(%viking = ^viking_not_started) {
     ~chatnpc("<p,neutral>In the longhall, outerlander.");
 } else if(%viking > ^viking_not_started) {
     ~chatplayer("<p,neutral>Hello there!");
-    if(inv_total(inv, viking_rare_flower) > 0) {
+    if(inv_total(inv, viking_rare_flower) > 0 & ~get_viking_sigmund_progress < ^sigmund_complete) {
         inv_del(inv, viking_rare_flower, ^max_32bit_int);
         inv_del(bank, viking_rare_flower, ^max_32bit_int);
         %viking = add(%viking, 1);

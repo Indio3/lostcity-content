@@ -141,16 +141,15 @@ switch_int(random(8)) {
         ~chatnpc("<p,happy>My door is always open should you ever need my help <~get_viking_name>.");
 }
 
-[ai_queue3,viking_man2] @viking_citizen_drops;
-[ai_queue3,viking_man3] @viking_citizen_drops;
-[ai_queue3,viking_man4] @viking_citizen_drops;
+[proc,viking_citizen_fail_say]
+switch_int(random(4)) {
+    case 0 : npc_say("You shame us, <~get_viking_name>!");
+    case 1 : npc_say("How can you steal from me, <~get_viking_name>?");
+    case 2 : npc_say("You have betrayed your heritage, <~get_viking_name>!");
+    case 3 : npc_say("Why would you try to steal from me, <~get_viking_name>?");
+}
 
-
-[ai_queue3,viking_woman] @viking_citizen_drops;
-[ai_queue3,viking_woman2] @viking_citizen_drops;
-[ai_queue3,viking_woman3] @viking_citizen_drops;
-
-[label,viking_citizen_drops]
+[ai_queue3,_viking_citizen]
 gosub(npc_death);
 if (npc_findhero = ^false) {
     return;

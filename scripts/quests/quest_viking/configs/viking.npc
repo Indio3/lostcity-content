@@ -1151,6 +1151,7 @@ head2=model_84_idk_head
 defaultmode=none
 wanderrange=0
 moverestrict=nomove
+category=viking_citizen
 
 [viking_man]
 name=Agnar
@@ -1198,6 +1199,7 @@ param=attack_anim,human_blunt_pound
 param=defend_anim,human_axe_def
 param=attack_sound,baxe_crush
 param=defend_sound,blade5
+category=viking_citizen
 
 [viking_man2]
 name=Freidir
@@ -1239,6 +1241,7 @@ defence=40
 param=strengthbonus,20
 param=damagetype,^crush_style
 param=defend_anim,human_unarmedblock
+category=viking_citizen
 
 [viking_man3]
 name=Borrokar
@@ -1285,6 +1288,7 @@ param=damagetype,^crush_style
 param=attack_anim,human_blunt_pound
 param=defend_anim,human_blunt_def
 param=attack_sound,baxe_crush
+category=viking_citizen
 
 [viking_man4]
 name=Lanzig
@@ -1329,6 +1333,7 @@ defence=40
 param=strengthbonus,20
 param=damagetype,^crush_style
 param=defend_anim,human_unarmedblock
+category=viking_citizen
 
 [viking_man5]
 name=Pontak
@@ -1375,6 +1380,7 @@ param=damagetype,^crush_style
 param=attack_anim,human_sword_slash
 param=defend_anim,human_sword_def
 param=attack_sound,hacksword_slash
+category=viking_citizen
 
 [viking_woman]
 name=Freygerd
@@ -1415,6 +1421,7 @@ param=damagetype,^crush_style
 param=defend_anim,human_unarmedblock
 param=defend_sound,female_hit
 param=death_sound,female_death
+category=viking_citizen
 
 [viking_woman2]
 name=Lensa
@@ -1455,6 +1462,7 @@ param=damagetype,^crush_style
 param=defend_anim,human_unarmedblock
 param=defend_sound,female_hit
 param=death_sound,female_death
+category=viking_citizen
 
 [viking_woman3]
 name=Jennella
@@ -1497,6 +1505,7 @@ param=damagetype,^crush_style
 param=defend_anim,human_unarmedblock
 param=defend_sound,female_hit
 param=death_sound,female_death
+category=viking_citizen
 
 [viking_woman4]
 name=Sassilik
@@ -1534,6 +1543,7 @@ param=damagetype,^crush_style
 param=defend_anim,human_unarmedblock
 param=defend_sound,female_hit
 param=death_sound,female_death
+category=viking_citizen
 
 [viking_woman_indoors]
 name=Inga
@@ -1575,6 +1585,7 @@ param=damagetype,^crush_style
 param=defend_anim,human_unarmedblock
 param=defend_sound,female_hit
 param=death_sound,female_death
+category=viking_citizen
 
 [viking_fish_monger]
 name=Fish monger

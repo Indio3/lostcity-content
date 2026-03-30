@@ -291,7 +291,8 @@ if(%viking = ^viking_complete) {
 switch_int(getbit_range(%viking_bits, ^viking_seerdoor_start, ^viking_seerdoor_end)) {
     case 0 :
         ~mesbox("My first is in mage, but not in wizard.|My second in goblin, and also in lizard.|My third in night, but not in the day.|My last is in fields, but not in the hay.");
-        ~mesbox("My whole is the most powerful tool you will possess.|What am I?");
+        // https://web.archive.org/web/20070103233159im_/http://www.runeweb.net/rathofdoom/quests/fremenniktrials/10.png
+        ~mesbox("My whole is the most powerful|tool you will possess.||What am I?");
     case 1 :
         ~mesbox("My first is in tar, but not in a swamp.|My second in fire, but not in a camp.|My third is in eagle, but never in air.|My last is in hate, but also in care.");
         ~mesbox("My whole wears more rings the older I get.|What am I?");
