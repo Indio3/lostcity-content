@@ -2,6 +2,8 @@
 if (gettimer(tbwt_lubufu_timer) > 0) {
     ~chatnpc("<p,angry>I said go away!");
     ~chatplayer("<p,neutral>Ok, I'm going...");
+    def_int $random = randominc(4);
+    if ($random > 0) ~forcewalk(movecoord(coord, sub(0, $random), 0, 0));
     ~tbwt_lubufu_settimer;
 } else {
     ~chatnpc("<p,angry>Watch where you're going, young whippersnapper!");

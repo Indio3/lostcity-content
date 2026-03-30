@@ -424,7 +424,7 @@ queue(junglepotion_quest_complete, 0, 0);
 if (%junglepotion = ^junglepotion_complete) {
     %junglepotion = ^junglepotion_complete_after_spoken;
 }
-~chatnpc("<p,neutral>You should deliver the good news to bwana Timfraku, chief of Tai Bwo Wannai. He lives in a raised hut not far from here.");
+~chatnpc("<p,neutral>You should deliver the good news to Bwana Timfraku, Chief of Tai Bwo Wannai. He lives in a raised hut not far from here.");
 
 [label,trufitus_post_quest]
 if(inv_total(inv, mosol_wampum_belt) > 0) {

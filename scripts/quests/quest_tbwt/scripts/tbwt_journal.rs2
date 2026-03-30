@@ -28,7 +28,7 @@ if (%tbwt_main = ^tbwt_complete) {
     return;
 }
 
-if (%tbwt_main = ^tbwt_started) {
+if (%tbwt_main = ^tbwt_spoke_to_timfraku) {
     $text = append($text, "@dbl@I need to find the three sons of @dre@Timfraku@dbl@:|");
     $text = append($text, "@dre@Tamayu|");
     $text = append($text, "@dre@Tinsay|");
