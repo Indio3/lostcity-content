@@ -5,7 +5,7 @@ if(%viking = ^viking_not_started) {
     ~chatnpc("<p,neutral>Hello outerlander. By the laws of our tribe, I am afraid I may not speak to you without the express permission of the chieftain.");
     ~chatplayer("<p,quiz>Where would I find him?");
     ~chatnpc("<p,neutral>In the longhall, outerlander.");
-} else if(%viking > ^viking_not_started) {
+} else if(%viking < ^viking_complete) {
     ~chatplayer("<p,neutral>Hello there!");
     if(inv_total(inv, viking_rare_flower) > 0 & ~get_viking_sigmund_progress < ^sigmund_complete) {
         inv_del(inv, viking_rare_flower, ^max_32bit_int);
