@@ -69,3 +69,4 @@ if(%viking < ^viking_complete) {
     mes("Only Fremenniks may buy clothes here.");
     return;
 }
+~openshop_activenpc;

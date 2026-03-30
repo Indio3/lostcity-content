@@ -98,13 +98,13 @@ if(npc_find(coord, viking_lalli_troll, 5, 0) = true) {
 }
 
 [oploc1,viking_trollcave_entrance]
-if(npc_find(coord, viking_lalli_troll, 5, 0) = true) {
+if(npc_find(coord, viking_lalli_troll, 7, 0) = true) {
     ~chatnpc("<p,angry>Hey human! You not go in my house! It where me keep all my stuff!");
 }
 
 [oplocu,viking_troll_cauldron]
 if(%viking = ^viking_complete) {
-    if(npc_find(coord, viking_lalli_troll, 5, 0) = true) {
+    if(npc_find(coord, viking_lalli_troll, 7, 0) = true) {
         ~chatnpc("<p,angry>Hey human! You not go back on deal! Me know you stupid at trades but that stone mine now! All soup mine!");
     }
     return;
@@ -137,6 +137,6 @@ if(%viking > ^viking_not_started) {
     ~displaymessage(^dm_default);
     return;
 }
-if(npc_find(coord, viking_lalli_troll, 5, 0) = true) {
+if(npc_find(coord, viking_lalli_troll, 7, 0) = true) {
     ~chatnpc("<p,angry>Hey human! You not put things in Lalli's food unless Lalli ask you to! It am very impolite, even for human!");
 }
