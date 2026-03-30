@@ -11,7 +11,7 @@ if(%viking = ^viking_not_started) {
     ~chatplayer("<p,neutral>Hi. Are you a member of the council?");
     ~chatnpc("<p,neutral>Nope. I'm just a sailor.");
     ~chatplayer("<p,neutral>Fair enough.");
-} else if(%viking = ^viking_not_started) {
+} else if(%viking = ^viking_complete) {
     // total guess... changes with miscellania
     ~chatplayer("<p,neutral>Hello. Can I get a ride on your ship?");
     ~chatnpc("<p,happy>Hello again, <~get_viking_name>. I still need to fix this longboat.");
