@@ -103,7 +103,13 @@ if(npc_find(coord, viking_lalli_troll, 5, 0) = true) {
 }
 
 [oplocu,viking_troll_cauldron]
-if(~get_viking_olaf_progress > ^olaf_not_started) {
+if(%viking = ^viking_complete) {
+    if(npc_find(coord, viking_lalli_troll, 5, 0) = true) {
+        ~chatnpc("<p,angry>Hey human! You not go back on deal! Me know you stupid at trades but that stone mine now! All soup mine!");
+    }
+    return;
+}
+if(%viking > ^viking_not_started) {
     if(last_useitem = vt_useless_rock) {
         mes("You put your pet rock into the cauldron.");
         inv_del(inv, vt_useless_rock, 1);
