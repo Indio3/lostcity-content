@@ -16,6 +16,12 @@ param=productmessage,You catch a sardine.
 param=success_low,32
 param=success_high,192
 
+[fishing_struct_karambwanji]
+param=productexp,50
+param=productmessage,You catch a Karambwanji.
+param=success_low,100
+param=success_high,250
+
 [fishing_struct_herring]
 param=productexp,300
 param=productmessage,You catch a herring.

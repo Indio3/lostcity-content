@@ -1,0 +1,67 @@
+[opnpc1,_category_632] 
+@attempt_fish_karambwanji;
+[opnpc4,_category_632] 
+@fish_karambwanji;
+
+
+[opnpcu,_category_632]
+switch_obj(last_useitem) {
+    case net : p_opnpc(1);
+    case default : @fishing_wrong_spot_message(last_useitem);
+}
+
+[label,attempt_fish_karambwanji]
+// check if they have fishing equipment
+if (~check_fish_equipment(net) = false) {
+    return;
+}
+// check if inv is full
+if (inv_freespace(inv) < 1) {
+    anim(null, 0);
+    ~mesbox("You can't carry any more fish.");
+    return;
+}
+if (%action_delay < map_clock) {
+    %action_delay = calc(map_clock + 4);
+    p_opnpc(1);
+    return;
+} 
+if (%action_delay = calc(map_clock + 3)) {
+    mes("You cast out your net...");
+    anim(human_smallnet, 0);
+    sound_synth(net, 0, 0);
+    p_opnpc(4);
+} else if (%action_delay = map_clock) {
+    if (stat(fishing) >= 5) {
+        ~fish_roll(raw_shrimp, tbwt_raw_karambwanji, net, null);
+    } else {
+        ~fish_roll(raw_shrimp, null, net, null);
+    }
+}
+
+if (afk_event = ^true & npc_param(is_whirlpool) = ^false) {
+    @macro_event_fishing(net);
+}
+
+[label,fish_karambwanji]
+// check if they have fishing equipment
+if (~check_fish_equipment(net) = false) {
+    return;
+}
+// check if inv is full again
+if (inv_freespace(inv) < 1) {
+    anim(null, 0);
+    ~mesbox("You can't carry any more fish.");
+    return;
+}
+if (%action_delay < map_clock) {
+    %action_delay = calc(map_clock + 5);
+} else if (%action_delay = map_clock) {
+    anim(human_smallnet, 0);
+    if (stat(fishing) >= 5) {
+        ~fish_roll(raw_shrimp, tbwt_raw_karambwanji, net, null);
+    } else {
+        ~fish_roll(raw_shrimp, null, net, null);
+    }
+}
+p_opnpc(4);

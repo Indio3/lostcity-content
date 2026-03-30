@@ -1,16 +1,3 @@
-[tbwt_raw_karambwan]
-name=Raw karambwan
-desc=A raw green octopus.
-cost=200
-members=yes
-model=obj_3142
-2dyof=7
-2dzoom=1800
-2dyan=56
-2dxan=388
-weight=700g
-category=category_57
-
 [tbwt_cooked_karambwan]
 name=Cooked karambwan
 recol1s=6436
@@ -60,21 +47,6 @@ model=obj_3142
 weight=600g
 category=category_116
 tradeable=no
-
-[tbwt_raw_karambwanji]
-name=Raw karambwanji
-desc=Small brightly coloured tropical fish.
-cost=10
-members=yes
-model=obj_3150
-2dxof=6
-2dyof=6
-2dzoom=1000
-2dxan=464
-weight=170g
-category=category_57
-tradeable=no
-// weight guesses.
 
 [tbwt_cooked_karambwanji]
 name=Karambwanji

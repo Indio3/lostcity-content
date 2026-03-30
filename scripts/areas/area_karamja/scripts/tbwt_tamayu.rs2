@@ -1,0 +1,9 @@
+[opnpc1,tbwt_tamayu]
+switch_int(random(3)) {
+    case 0 :
+        ~chatnpc("<p,angry>Die! Die!!");
+    case 1 :
+        ~chatnpc("<p,angry>Move, lest I slay not the beast but you!");
+    case 2 : 
+        ~chatnpc("<p,angry>Get out of my way! Argh! I'm hunting!");
+}

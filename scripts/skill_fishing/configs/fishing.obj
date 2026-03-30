@@ -190,6 +190,35 @@ cost=1
 weight=80g
 category=category_116
 
+[tbwt_raw_karambwan]
+name=Raw karambwan
+desc=A raw green octopus.
+cost=200
+members=yes
+model=obj_3142
+2dyof=7
+2dzoom=1800
+2dyan=56
+2dxan=388
+weight=700g
+category=category_57
+param=fishing_struct,fishing_struct_anchovies
+
+[tbwt_raw_karambwanji]
+name=Raw karambwanji
+desc=Small brightly coloured tropical fish.
+cost=10
+members=yes
+model=obj_3150
+2dxof=6
+2dyof=6
+2dzoom=1000
+2dxan=464
+weight=140g
+category=category_57
+tradeable=no
+param=fishing_struct,fishing_struct_karambwanji
+
 [sardine]
 name=Sardine
 desc=Some nicely cooked fish.

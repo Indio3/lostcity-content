@@ -1,0 +1,9 @@
+[opnpc1,tbwt_tiadeche]
+switch_int(random(3)) {
+    case 0 :
+        ~chatnpc("<p,neutral>Just leave a depressed fish hunter alone...");
+    case 1 :
+        ~chatnpc("<p,neutral>I'll never be able to catch a Karambwan...");
+    case 2 : 
+        ~chatnpc("<p,angry>Go away! Can't you see I'm concentrating?");
+}

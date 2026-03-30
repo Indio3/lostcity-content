@@ -1,0 +1,11 @@
+[oploc1,tbwt_bamboo_door]
+if (%tbwt_main < ^tbwt_complete) {
+    mes("You do not have permission to enter here");
+    return;
+}
+~open_and_close_door(loc_param(next_loc_stage), ~check_axis(coord, loc_coord, loc_angle), false);
+
+[debugproc,settbwt](int $var)
+if (p_finduid(uid) = true)
+%tbwt_main = $var;
+mes("Set TBWT Main to: <tostring($var)>.");

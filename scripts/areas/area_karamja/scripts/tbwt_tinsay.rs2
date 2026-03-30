@@ -1,0 +1,9 @@
+[opnpc1,tbwt_tinsay]
+switch_int(random(3)) {
+    case 0 :
+        ~chatnpc("<p,neutral>Braaar! Jogres!");
+    case 1 :
+        ~chatnpc("<p,neutral>mmm ... Jogre bones ...");
+    case 2 : 
+        ~chatnpc("<p,angry>Leave me alone! Can't you see I'm a mad priest?");
+}

@@ -1,0 +1,36 @@
+[opnpc1,tbwt_lubufu]
+if (gettimer(tbwt_lubufu_timer) > 0) {
+    ~chatnpc("<p,angry>I said go away!");
+    ~chatplayer("<p,neutral>Ok, I'm going...");
+    ~tbwt_lubufu_settimer;
+} else {
+    ~chatnpc("<p,angry>Watch where you're going, young whippersnapper!");
+    @multi3("I wasn't going anywhere...", tbwt_lubufu_wasntgoinganywhere, 
+            "What's a whippersnapper?", tbwt_lubufu_whatsawhippersnapper, 
+            "Who are you?", tbwt_lubufu_whoareyou
+            );
+}
+
+
+[label,tbwt_lubufu_wasntgoinganywhere]
+~chatplayer("<p,neutral>I wasn't going anywhere...");
+~chatnpc("<p,angry>Well then go away from here!");
+~tbwt_lubufu_settimer;
+
+[label,tbwt_lubufu_whatsawhippersnapper]
+~chatplayer("<p,quiz>What's a whippersnapper?");
+~chatnpc("<p,angry>It's a whip. Which snaps. Like me. Now leave!");
+~tbwt_lubufu_settimer;
+
+[label,tbwt_lubufu_whoareyou]
+~chatplayer("<p,quiz>Who are you?");
+~chatnpc("<p,neutral>I am Lubufu - the only fisherman who knows the secret of the Karambwan!");
+~chatplayer("<p,quiz>What's a Karambwan?");
+~chatnpc("<p,angry>What a foolish question! Now leave!");
+~tbwt_lubufu_settimer;
+
+[timer,tbwt_lubufu_timer]
+cleartimer(tbwt_lubufu_timer);
+
+[proc,tbwt_lubufu_settimer]
+settimer(tbwt_lubufu_timer, 10);
