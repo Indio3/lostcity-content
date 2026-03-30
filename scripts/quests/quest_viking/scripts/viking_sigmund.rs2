@@ -73,6 +73,7 @@ if(%viking = ^viking_not_started) {
     }
     ~chatplayer("<p,quiz>Can I see your wares?");
     ~chatnpc("<p,happy>Certainly, <~get_viking_name>.");
+    ~openshop_activenpc;
 }
 
 [proc,merchant_question_text]()(string)
