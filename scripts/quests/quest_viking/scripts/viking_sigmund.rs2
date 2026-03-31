@@ -7,7 +7,7 @@ if(%viking = ^viking_not_started) {
     ~chatnpc("<p,neutral>In the longhall, outerlander.");
 } else if(%viking < ^viking_complete) {
     ~chatplayer("<p,neutral>Hello there!");
-    if(inv_total(inv, viking_rare_flower) > 0 & ~get_viking_sigmund_progress < ^sigmund_complete) {
+    if(inv_total(inv, viking_rare_flower) > 0) {
         inv_del(inv, viking_rare_flower, ^max_32bit_int);
         inv_del(bank, viking_rare_flower, ^max_32bit_int);
         %viking = add(%viking, 1);
@@ -92,6 +92,12 @@ switch_int(~get_viking_sigmund_progress) {
     case ^sigmund_spoke_sailor : return ("<p,quiz>I don't suppose you have any idea where I could find a love ballad, do you?");
     case ^sigmund_started : return("<p,quiz>I don't suppose you have any idea where I could find a rare flower from across the sea, do you?");
 }
+
+[opheld5,viking_rare_flower]
+inv_delslot(inv, last_slot);
+sound_synth(put_down, 0, 0);
+// osrs destroy mes
+mes("You will have to start the trading sequence again to get another!");
 
 [opnpc3,viking_sigmund]
 if(%viking < ^viking_complete) {

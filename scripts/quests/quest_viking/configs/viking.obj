@@ -178,6 +178,7 @@ model=model_1781_obj
 members=yes
 weight=1oz
 tradeable=no
+param=destroy_drop,^true
 
 [viking_song]
 name=Fremennik ballad
