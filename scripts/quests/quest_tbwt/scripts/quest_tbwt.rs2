@@ -1,3 +1,14 @@
+[debugproc,settbwt](int $var)
+if (p_finduid(uid) = true)
+%tbwt_main = $var;
+mes("Set TBWT Main to: <tostring($var)>.");
+
+[debugproc,settbwtt](int $var)
+if (p_finduid(uid) = true)
+%tbwt_tiadeche = $var;
+mes("Set TBWT Tiadeche to: <tostring($var)>.");
+
+
 [oploc1,tbwt_bamboo_door]
 if (%tbwt_main < ^tbwt_complete) {
     mes("You do not have permission to enter here"); // Intentionally no period - https://imgur.com/a/1LTxz27
@@ -5,7 +16,15 @@ if (%tbwt_main < ^tbwt_complete) {
 }
 ~open_and_close_door(loc_param(next_loc_stage), ~check_axis(coord, loc_coord, loc_angle), false);
 
-[debugproc,settbwt](int $var)
-if (p_finduid(uid) = true)
-%tbwt_main = $var;
-mes("Set TBWT Main to: <tostring($var)>.");
+[opnpcu,lubufu_karambwan]
+p_opnpc(1);
+
+[opnpc1,lubufu_karambwan]
+@tbwt_fish_lubufu_karambwan;
+
+[label,tbwt_fish_lubufu_karambwan]
+if (%tbwt_main < ^tbwt_complete) {
+    if (npc_find(coord, tbwt_lubufu, 20, 0) = true) {
+        ~chatnpc("<p,angry>Keep off my fishing spot, whippersnapper!");
+    }
+}

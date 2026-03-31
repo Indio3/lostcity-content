@@ -3,7 +3,7 @@ def_string $text;
 
 mes("<tostring(%tbwt_main)>");
 
-if (%tbwt_main = ^tbwt_not_started) {
+if (%tbwt_main < ^tbwt_started) {
     if (%junglepotion = ^junglepotion_complete_after_spoken) {
         $text = append($text, "@dbl@In @dre@Jungle Potion@dbl@, @dre@Trufitus@dbl@ found @dre@Tai Bwo Wannai Village@dbl@ was|");
         $text = append($text, "@dbl@safe to inhabit. To start this quest I must deliver the news|");
@@ -15,7 +15,7 @@ if (%tbwt_main = ^tbwt_not_started) {
         $text = append($text, "@dbl@High level Agility and Herblore is a distinct advantage.|");
         $text = append($text, "@dbl@I also need to be able to defeat @dre@level 48 Jogres@dbl@|");
     } else {
-         $text = append($text, "@dbl@I can start this quest by speaking to @dre@Timfraku@dbl@, the Chief of|");
+        $text = append($text, "@dbl@I can start this quest by speaking to @dre@Timfraku@dbl@, the Chief of|");
         $text = append($text, "@dre@Tai Bwo Wannai Village@dbl@, after completing @dre@Jungle Potion@dbl@.");
     }
     ~quest_journal("Tai Bwo Wannai Trio", $text);
@@ -28,7 +28,7 @@ if (%tbwt_main = ^tbwt_complete) {
     return;
 }
 
-if (%tbwt_main = ^tbwt_spoke_to_timfraku) {
+if (%tbwt_main = ^tbwt_started) {
     $text = append($text, "@dbl@I need to find the three sons of @dre@Timfraku@dbl@:|");
     $text = append($text, "@dre@Tamayu|");
     $text = append($text, "@dre@Tinsay|");

@@ -11,6 +11,9 @@ switch_int(%tbwt_main) {
         @tbwt_timfraku_trufitussentme;
     case ^tbwt_timfraku_asked_for_help :
         @tbwt_timfraku_readytohelp;
+    case ^tbwt_started :
+        ~chatnpc("<p,angry>Welcome back, adventurer/wayfarer/nobody."); // To re-check on OSRS
+        @tbwt_timfraku_startedops;
 }
 
 [label,tbwt_timfraku_rovingadventurer]
@@ -103,15 +106,17 @@ p_delay(4);
 @multi2_header("Yes", tbwt_timfraku_starttbwt, "No", tbwt_timfraku_declinetbwt, "Start Tai Bwo Wannai Trio?");
 
 [label,tbwt_timfraku_starttbwt]
+%tbwt_main = ^tbwt_started;
+~send_quest_progress(questlist:tbwt, %tbwt_main, ^tbwt_complete);
 ~chatplayer("<p,happy>Ok, I'll do it.");
 ~chatnpc("<p,neutral>Thank you very much. I shall reward you greatly if you succeed.");
 ~chatplayer("<p,happy>If I succeed? How hard can it be?");
 ~chatnpc("<p,neutral>We shall see, Bwana.");
 
 [label,tbwt_timfraku_declinetbwt]
+~tbwt_set_spoke_to_timfraku;
 ~chatplayer("<p,neutral>No, I've had quite enough of the jungle already.");
 ~chatnpc("<p,neutral>Very well. Return when you are ready.");
-~tbwt_set_spoke_to_timfraku;
 
 [label,tbwt_timfraku_readytohelp]
 ~chatnpc("<p,quiz>Are you ready to help me?");
@@ -146,3 +151,56 @@ p_delay(4);
 [label,tbwt_timfraku_wherepeoplefledto]
 ~chatplayer("<p,quiz>Where have your people fled to?");
 ~chatnpc("<p,angry>You ask too many questions. Now begone!");
+
+[label,tbwt_timfraku_startedops]
+@multi5("Can you tell me more about your sons?", tbwt_timfraku_moreaboutyoursons, 
+        "Where can I find your sons?", tbwt_timfraku_wherecanIfind, 
+        "Is there something I need?", tbwt_timfraku_somethingIneed, 
+        "I'll be back later.", tbwt_timfraku_backlater, 
+        "Ask about Village.", tbwt_timfraku_village
+        );
+
+[label,tbwt_timfraku_moreaboutyoursons]
+~chatplayer("<p,neutral>Can you tell me more about your sons?");
+~chatnpc("<p,neutral>My first son is Tamayu. After him was born Tinsay. And after him was born Tiadeche.");
+@tbwt_timfraku_sonops;
+
+[label,tbwt_timfraku_sonops]
+@multi4("Can you tell me more about Tamayu?", tbwt_timfraku_telltamayu, 
+        "Can you tell me more about Tinsay?", tbwt_timfraku_telltinsay, 
+        "Can you tell me more about Tiadeche?", tbwt_timfraku_telltiadeche, 
+        "Return to previous menu", tbwt_timfraku_startedops
+        );
+
+[label,tbwt_timfraku_wherecanIfind]
+~chatplayer("<p,quiz>Where can I find your sons?");
+~chatnpc("<p,neutral>On our island of Karamja. They will not have fled far.");
+@tbwt_timfraku_startedops;
+
+[label,tbwt_timfraku_somethingIneed]
+~chatplayer("<p,quiz>Is there anything I need?");
+~chatnpc("<p,neutral>Patience, Bwana, patience.");
+~chatnpc("<p,neutral>And good conversation skills.");
+@tbwt_timfraku_startedops;
+
+[label,tbwt_timfraku_backlater]
+~chatplayer("<p,neutral>I'll be back later.");
+
+[label,tbwt_timfraku_telltamayu]
+~chatplayer("<p,quiz>Can you tell me more about Tamayu?");
+~chatnpc("<p,angry>Tamayu was a natural born hunter. He killed his first monkey at the age of three!");
+@tbwt_timfraku_sonops;
+
+[label,tbwt_timfraku_telltinsay]
+~chatplayer("<p,quiz>Can you tell me more about Tinsay?");
+~chatnpc("<p,shifty>Tinsay was brought up to be a priest. Be careful with him - he has acted strange since the accident.");
+~chatplayer("<p,quiz>What accident?");
+~chatnpc("<p,shifty>It involved Jogres. We don't talk about it.");
+@tbwt_timfraku_sonops;
+
+[label,tbwt_timfraku_telltiadeche]
+~chatplayer("<p,quiz>Can you tell me more about Tiadeche?");
+~chatnpc("<p,sad>Tiadeche always wanted to hunt fish. However, he has not had much success.");
+~chatplayer("<p,quiz>How come?");
+~chatnpc("<p,neutral>He needs to improve his technique - but he does not heed my advice.");
+@tbwt_timfraku_sonops;
