@@ -6,15 +6,21 @@
 ^tbwt_something2 = 5
 ^tbwt_complete = 6
 
+^tbwt_tiadeche_timfraku_title_start = 0
+^tbwt_tiadeche_timfraku_title_end = 1
+^tbwt_tiadeche_tiadeche_start = 2
+^tbwt_tiadeche_tiadeche_end = 3
+^tbwt_tiadeche_tamayu_start = 4
+^tbwt_tiadeche_tamayu_end = 5
+^tbwt_tiadeche_tinsay_start = 6
+^tbwt_tiadeche_tinsay_end = 7
+^tbwt_tiadeche_lubufu_start = 8
+^tbwt_tiadeche_lubufu_end = 9
 
-^tbwt_tiadeche_tiadeche_start = 0
-^tbwt_tiadeche_tiadeche_end = 1
-^tbwt_tiadeche_tamayu_start = 2
-^tbwt_tiadeche_tamayu_end = 3
-^tbwt_tiadeche_tinsay_start = 4
-^tbwt_tiadeche_tinsay_end = 5
-^tbwt_tiadeche_lubufu_start = 6
-^tbwt_tiadeche_lubufu_end = 7
+^tbwt_timfraku_rovingadventurer = 0
+^tbwt_timfraku_travellingexplorer = 1
+^tbwt_timfraku_wanderingwayfarer = 2
+^tbwt_timfraku_nobody = 3
 
 ^tbwt_tiadeche_unknown = 0
 ^tbwt_tiadeche_intro = 1

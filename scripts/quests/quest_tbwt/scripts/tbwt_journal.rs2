@@ -2,6 +2,7 @@
 def_string $text;
 
 mes("Get TBWT Main: <tostring(~get_tbwt_main_progress())>");
+mes("Get TBWT Timfraku Title: <tostring(~get_tbwt_timfraku_title())>");
 mes("Get TBWT Tiadeche: <tostring(~get_tbwt_tiadeche_progress())>");
 mes("Get TBWT Tamayu: <tostring(~get_tbwt_tamayu_progress())>");
 mes("Get TBWT Tinsay: <tostring(~get_tbwt_tinsay_progress())>");

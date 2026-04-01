@@ -12,26 +12,30 @@ switch_int(~get_tbwt_main_progress()) {
     case ^tbwt_timfraku_asked_for_help :
         @tbwt_timfraku_readytohelp;
     case ^tbwt_started :
-        ~chatnpc("<p,angry>Welcome back, adventurer/wayfarer/nobody."); // To re-check on OSRS
+        ~chatnpc("<p,angry>Welcome back, <~tbwt_get_timfraku_title>.");
         @tbwt_timfraku_startedops;
 }
 
 [label,tbwt_timfraku_rovingadventurer]
+~set_tbwt_timfraku_title(^tbwt_timfraku_rovingadventurer);
 ~chatplayer("<p,neutral>I am a roving adventurer.");
 ~chatnpc("<p,neutral>Well then adventurer, you would do better to rove elsewhere.");
 @tbwt_timfraku_unstarted_options;
 
 [label,tbwt_timfraku_travellingexplorer]
+~set_tbwt_timfraku_title(^tbwt_timfraku_travellingexplorer);
 ~chatplayer("<p,neutral>I am a travelling explorer.");
 ~chatnpc("<p,neutral>Well then explorer, you would do better to travel elsewhere.");
 @tbwt_timfraku_unstarted_options;
 
 [label,tbwt_timfraku_wanderingwayfarer]
+~set_tbwt_timfraku_title(^tbwt_timfraku_wanderingwayfarer);
 ~chatplayer("<p,neutral>I am a wandering wayfarer.");
 ~chatnpc("<p,neutral>Well then wayfarer, you would do better to wander elsewhere.");
 @tbwt_timfraku_unstarted_options;
 
 [label,tbwt_timfraku_nobody]
+~set_tbwt_timfraku_title(^tbwt_timfraku_nobody);
 ~chatplayer("<p,neutral>Who me? Oh I'm just a nobody.");
 ~chatnpc("<p,neutral>Well then NoBody, you would do better to go elsewhere.");
 @tbwt_timfraku_unstarted_options;
@@ -169,7 +173,7 @@ p_delay(4);
 @multi4("Can you tell me more about Tamayu?", tbwt_timfraku_telltamayu, 
         "Can you tell me more about Tinsay?", tbwt_timfraku_telltinsay, 
         "Can you tell me more about Tiadeche?", tbwt_timfraku_telltiadeche, 
-        "Return to previous menu", tbwt_timfraku_startedops
+        "@blu@Return to previous menu", tbwt_timfraku_startedops
         );
 
 [label,tbwt_timfraku_wherecanIfind]

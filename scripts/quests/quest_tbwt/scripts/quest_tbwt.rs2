@@ -2,19 +2,42 @@
 if (p_finduid(uid) = true)
 %tbwt_main = $var;
 mes("Set TBWT Main to: <tostring($var)>.");
+~send_quest_progress(questlist:tbwt, %tbwt_main, ^tbwt_complete);
 
-[debugproc,settbwtt](int $var)
-if (p_finduid(uid) = true)
-%tbwt_tiadeche = $var;
-mes("Set TBWT Tiadeche to: <tostring($var)>.");
-
-
+[debugproc,settbwtt](int $var, int $var2)
+if (p_finduid(uid) = true) {
+    if ($var2 = 1) { // Set Timfraku title
+        %tbwt_tiadeche = setbit_range_toint(%tbwt_tiadeche, $var, ^tbwt_tiadeche_timfraku_title_start, ^tbwt_tiadeche_timfraku_title_end);
+        mes("Set TBWT Timfraku title to: <tostring($var)>.");
+    } else if ($var2 = 2) { // Set Tiadeche progress
+        %tbwt_tiadeche = setbit_range_toint(%tbwt_tiadeche, $var, ^tbwt_tiadeche_tiadeche_start, ^tbwt_tiadeche_tiadeche_end);
+        mes("Set TBWT Tiadeche progress to: <tostring($var)>.");
+    } else if ($var2 = 3) { // Set Tamayu progress
+        %tbwt_tiadeche = setbit_range_toint(%tbwt_tiadeche, $var, ^tbwt_tiadeche_tamayu_start, ^tbwt_tiadeche_tamayu_end);
+        mes("Set TBWT Tamayu progress to: <tostring($var)>.");
+    } else if ($var2 = 4) { // Set Tinsay progress
+        %tbwt_tiadeche = setbit_range_toint(%tbwt_tiadeche, $var, ^tbwt_tiadeche_tinsay_start, ^tbwt_tiadeche_tinsay_end);
+        mes("Set TBWT Tinsay progress to: <tostring($var)>.");
+    } else if ($var2 = 5) { // Set Lubufu progress
+        %tbwt_tiadeche = setbit_range_toint(%tbwt_tiadeche, $var, ^tbwt_tiadeche_lubufu_start, ^tbwt_tiadeche_lubufu_end);
+        mes("Set TBWT Lubufu progress to: <tostring($var)>.");
+    } else {
+        %tbwt_tiadeche = $var;
+        mes("Set entire TBWT Tiadeche varp to: <tostring($var)>.");
+    }
+}
 
 [proc,get_tbwt_main_progress]()(int)
 return (getbit_range(%tbwt_main, ^tbwt_not_started, ^tbwt_complete));
 
 [proc,set_tbwt_main_progress](int $prog)
 %tbwt_main = setbit_range_toint(%tbwt_main, $prog, ^tbwt_not_started, ^tbwt_complete);
+
+[proc,get_tbwt_timfraku_title]()(int)
+return (getbit_range(%tbwt_tiadeche, ^tbwt_tiadeche_timfraku_title_start, ^tbwt_tiadeche_timfraku_title_end));
+
+[proc,set_tbwt_timfraku_title](int $title)
+%tbwt_tiadeche = setbit_range_toint(%tbwt_tiadeche, $title, ^tbwt_tiadeche_timfraku_title_start, ^tbwt_tiadeche_timfraku_title_end);
 
 [proc,get_tbwt_tiadeche_progress]()(int)
 return (getbit_range(%tbwt_tiadeche, ^tbwt_tiadeche_tiadeche_start, ^tbwt_tiadeche_tiadeche_end));
@@ -40,6 +63,15 @@ return (getbit_range(%tbwt_tiadeche, ^tbwt_tiadeche_lubufu_start, ^tbwt_tiadeche
 [proc,set_tbwt_lubufu_progress](int $prog)
 %tbwt_tiadeche = setbit_range_toint(%tbwt_tiadeche, $prog, ^tbwt_tiadeche_lubufu_start, ^tbwt_tiadeche_lubufu_end);
 
+[proc,tbwt_get_timfraku_title]()(string)
+def_string $title = "adventurer";
+switch_int(getbit_range(%tbwt_tiadeche, ^tbwt_tiadeche_timfraku_title_start, ^tbwt_tiadeche_timfraku_title_end)) {
+    case 0 : $title = "adventurer";
+    case 1 : $title = "explorer";
+    case 2 : $title = "wayfarer";
+    case 3 : $title = "nobody";
+}
+return ($title);
 
 [oploc1,tbwt_bamboo_door]
 if (~get_tbwt_main_progress() < ^tbwt_complete) {
