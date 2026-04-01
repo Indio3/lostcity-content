@@ -32,8 +32,16 @@ if (%tbwt_main = ^tbwt_started) {
     $text = append($text, "@dbl@I need to find the three sons of @dre@Timfraku@dbl@:|");
     $text = append($text, "@dre@Tamayu|");
     $text = append($text, "@dre@Tinsay|");
-    $text = append($text, "@dre@Tiadeche||");
-    $text = append($text, "@dbl@I need to convince them to return to the village.|");
+    if (%tbwt_tiadeche < ^tbwt_tiadeche_intro) {
+        $text = append($text, "@dre@Tiadeche||");
+    } else {
+        $text = append($text, "@str@Tiadeche||");
+    }
+    $text = append($text, "@dbl@I need to convince them to return to the village.||");
+    if (%tbwt_tiadeche = ^tbwt_tiadeche_intro) {
+        $text = append($text, "@dre@Tiadeche:|");
+        $text = append($text, "@dbl@Nothing of interest.||");
+    }
     ~quest_journal("Tai Bwo Wannai Trio", $text);
     return;
 }
