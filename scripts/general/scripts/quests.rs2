@@ -227,7 +227,7 @@ if (%death_equiproom = ^death_complete) {
 if (%troll_quest = ^troll_complete) {
     $questpoints = add($questpoints, ^troll_questpoints); 
 }
-if (%tbwt_main = ^tbwt_complete) {
+if (~get_tbwt_main_progress() = ^tbwt_complete) {
     $questpoints = add($questpoints, ^tbwt_questpoints); 
 }
 if (%morttonquest = ^mortton_quest_complete) {

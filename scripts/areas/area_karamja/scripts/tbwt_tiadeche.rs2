@@ -1,5 +1,5 @@
 [opnpc1,tbwt_tiadeche]
-if (%tbwt_main < ^tbwt_started) {
+if (~get_tbwt_main_progress() < ^tbwt_started) {
     switch_int(random(3)) {
         case 0 :
             ~chatnpc("<p,neutral>Just leave a depressed fish hunter alone...");
@@ -9,7 +9,7 @@ if (%tbwt_main < ^tbwt_started) {
             ~chatnpc("<p,angry>Go away! Can't you see I'm concentrating?");
     }
 } else {
-    switch_int(%tbwt_tiadeche) {
+    switch_int(~get_tbwt_tiadeche_progress()) {
         case ^tbwt_tiadeche_unknown :
             @tbwt_tiadeche_intro;
         case ^tbwt_tiadeche_intro :
@@ -18,13 +18,13 @@ if (%tbwt_main < ^tbwt_started) {
 }
 
 [label,tbwt_tiadeche_intro]
-%tbwt_tiadeche = ^tbwt_tiadeche_intro;
+~set_tbwt_tiadeche_progress(^tbwt_tiadeche_intro);
 ~chatplayer("<p,quiz>Are you Tiadeche?"); // ToDo: Re-check mesanim on OSRS
 ~chatnpc("<p,neutral>I am."); // ToDo: Re-check mesanim on OSRS
 @tbwt_tiadeche_bringgoodnews;
 
 [label,tbwt_tiadeche_bringgoodnews]
-%tbwt_tiadeche = ^tbwt_tiadeche_intro;
+~set_tbwt_tiadeche_progress(^tbwt_tiadeche_intro);
 ~chatplayer("<p,neutral>Tiadeche, I bring good news. Trufitus has communed with the gods -  your village is once again safe."); // Double space after hyphen is intentional - https://imgur.com/a/d1K0ei0
 ~chatplayer("<p,neutral>Your father requests that you return to the village.");
 ~chatnpc("<p,neutral>I will return only when I have caught a Karambwan.");

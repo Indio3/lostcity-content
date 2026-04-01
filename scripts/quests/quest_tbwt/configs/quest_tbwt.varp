@@ -5,12 +5,3 @@ transmit=yes
 [tbwt_tiadeche]
 scope=perm
 transmit=yes
-
-[tbwt_tamayu]
-scope=perm
-
-[tbwt_tinsay]
-scope=perm
-
-[tbwt_lubufu]
-scope=perm

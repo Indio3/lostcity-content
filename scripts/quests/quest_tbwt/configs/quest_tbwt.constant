@@ -7,9 +7,24 @@
 ^tbwt_complete = 6
 
 
+^tbwt_tiadeche_tiadeche_start = 0
+^tbwt_tiadeche_tiadeche_end = 1
+^tbwt_tiadeche_tamayu_start = 2
+^tbwt_tiadeche_tamayu_end = 3
+^tbwt_tiadeche_tinsay_start = 4
+^tbwt_tiadeche_tinsay_end = 5
+^tbwt_tiadeche_lubufu_start = 6
+^tbwt_tiadeche_lubufu_end = 7
+
 ^tbwt_tiadeche_unknown = 0
 ^tbwt_tiadeche_intro = 1
 
 ^tbwt_tamayu_unknown = 0
 ^tbwt_tamayu_intro = 1
 ^tbwt_tamayu_slay_shaikahan = 2
+
+^tbwt_tinsay_unknown = 0
+^tbwt_tinsay_intro = 1
+
+^tbwt_lubufu_unknown = 0
+^tbwt_lubufu_intro = 1

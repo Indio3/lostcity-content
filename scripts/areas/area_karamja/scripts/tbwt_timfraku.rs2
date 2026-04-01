@@ -1,5 +1,5 @@
 [opnpc1,tbwt_timfraku]
-switch_int(%tbwt_main) {
+switch_int(~get_tbwt_main_progress()) {
     case ^tbwt_not_started :
         ~chatnpc("<p,angry>I am the Chief of Tai Bwo Wannai Village! Who dares set foot in my hut?");
         @multi4("I am a roving adventurer.", tbwt_timfraku_rovingadventurer, 
@@ -44,11 +44,11 @@ switch_int(%tbwt_main) {
         );
 
 [proc,tbwt_set_spoke_to_timfraku]
-switch_int(%tbwt_main) {
+switch_int(~get_tbwt_main_progress()) {
     case ^tbwt_not_started :
-        %tbwt_main = ^tbwt_spoke_to_timfraku;
+        ~set_tbwt_main_progress(^tbwt_spoke_to_timfraku);
     case ^tbwt_spoke_to_timfraku :
-        %tbwt_main = ^tbwt_timfraku_asked_for_help;
+        ~set_tbwt_main_progress(^tbwt_timfraku_asked_for_help);
 }
 
 [label,tbwt_timfraku_whyshouldileave]
@@ -106,7 +106,7 @@ p_delay(4);
 @multi2_header("Yes", tbwt_timfraku_starttbwt, "No", tbwt_timfraku_declinetbwt, "Start Tai Bwo Wannai Trio?");
 
 [label,tbwt_timfraku_starttbwt]
-%tbwt_main = ^tbwt_started;
+~set_tbwt_main_progress(^tbwt_started);
 ~send_quest_progress(questlist:tbwt, %tbwt_main, ^tbwt_complete);
 ~chatplayer("<p,happy>Ok, I'll do it.");
 ~chatnpc("<p,neutral>Thank you very much. I shall reward you greatly if you succeed.");

@@ -1,9 +1,13 @@
 [if_button,questlist:tbwt]
 def_string $text;
 
-mes("<tostring(%tbwt_main)>");
+mes("Get TBWT Main: <tostring(~get_tbwt_main_progress())>");
+mes("Get TBWT Tiadeche: <tostring(~get_tbwt_tiadeche_progress())>");
+mes("Get TBWT Tamayu: <tostring(~get_tbwt_tamayu_progress())>");
+mes("Get TBWT Tinsay: <tostring(~get_tbwt_tinsay_progress())>");
+mes("Get TBWT Lubufu: <tostring(~get_tbwt_lubufu_progress())>");
 
-if (%tbwt_main < ^tbwt_started) {
+if (~get_tbwt_main_progress() < ^tbwt_started) {
     if (%junglepotion = ^junglepotion_complete_after_spoken) {
         $text = append($text, "@dbl@In @dre@Jungle Potion@dbl@, @dre@Trufitus@dbl@ found @dre@Tai Bwo Wannai Village@dbl@ was|");
         $text = append($text, "@dbl@safe to inhabit. To start this quest I must deliver the news|");
@@ -22,16 +26,16 @@ if (%tbwt_main < ^tbwt_started) {
     return;
 }
 
-if (%tbwt_main = ^tbwt_complete) {
+if (~get_tbwt_main_progress() = ^tbwt_complete) {
     $text = append($text, "@dbl@Completed it m8.|");
     ~quest_journal("Tai Bwo Wannai Trio", $text);
     return;
 }
 
-if (%tbwt_main = ^tbwt_started) {
+if (~get_tbwt_main_progress() = ^tbwt_started) {
     $text = append($text, "@dbl@I need to find the three sons of @dre@Timfraku@dbl@:|");
 
-    if (%tbwt_tamayu < ^tbwt_tamayu_intro) {
+    if (~get_tbwt_tamayu_progress() < ^tbwt_tamayu_intro) {
         $text = append($text, "@dre@Tamayu|");
     } else {
         $text = append($text, "@str@Tamayu|");
@@ -39,7 +43,7 @@ if (%tbwt_main = ^tbwt_started) {
 
     $text = append($text, "@dre@Tinsay|");
 
-    if (%tbwt_tiadeche < ^tbwt_tiadeche_intro) {
+    if (~get_tbwt_tiadeche_progress() < ^tbwt_tiadeche_intro) {
         $text = append($text, "@dre@Tiadeche||");
     } else {
         $text = append($text, "@str@Tiadeche||");
@@ -47,14 +51,14 @@ if (%tbwt_main = ^tbwt_started) {
 
     $text = append($text, "@dbl@I need to convince them to return to the village.||");
 
-    if (%tbwt_tiadeche > ^tbwt_tiadeche_unknown) {
+    if (~get_tbwt_tiadeche_progress() > ^tbwt_tiadeche_unknown) {
         $text = append($text, "@dre@Tiadeche:|");
         $text = append($text, "Nothing of interest.||");
     }
 
-    if (%tbwt_tamayu > ^tbwt_tamayu_unknown) {
+    if (~get_tbwt_tamayu_progress() > ^tbwt_tamayu_unknown) {
         $text = append($text, "@dre@Tamayu:|");
-        switch_int(%tbwt_tamayu) {
+        switch_int(~get_tbwt_tamayu_progress()) {
             case ^tbwt_tamayu_intro :
                 $text = append($text, "Nothing of interest.||");
             case ^tbwt_tamayu_slay_shaikahan :
