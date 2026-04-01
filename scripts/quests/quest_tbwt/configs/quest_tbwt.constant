@@ -9,3 +9,7 @@
 
 ^tbwt_tiadeche_unknown = 0
 ^tbwt_tiadeche_intro = 1
+
+^tbwt_tamayu_unknown = 0
+^tbwt_tamayu_intro = 1
+^tbwt_tamayu_slay_shaikahan = 2

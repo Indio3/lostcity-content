@@ -30,18 +30,38 @@ if (%tbwt_main = ^tbwt_complete) {
 
 if (%tbwt_main = ^tbwt_started) {
     $text = append($text, "@dbl@I need to find the three sons of @dre@Timfraku@dbl@:|");
-    $text = append($text, "@dre@Tamayu|");
+
+    if (%tbwt_tamayu < ^tbwt_tamayu_intro) {
+        $text = append($text, "@dre@Tamayu|");
+    } else {
+        $text = append($text, "@str@Tamayu|");
+    }
+
     $text = append($text, "@dre@Tinsay|");
+
     if (%tbwt_tiadeche < ^tbwt_tiadeche_intro) {
         $text = append($text, "@dre@Tiadeche||");
     } else {
         $text = append($text, "@str@Tiadeche||");
     }
+
     $text = append($text, "@dbl@I need to convince them to return to the village.||");
-    if (%tbwt_tiadeche = ^tbwt_tiadeche_intro) {
+
+    if (%tbwt_tiadeche > ^tbwt_tiadeche_unknown) {
         $text = append($text, "@dre@Tiadeche:|");
-        $text = append($text, "@dbl@Nothing of interest.||");
+        $text = append($text, "Nothing of interest.||");
     }
+
+    if (%tbwt_tamayu > ^tbwt_tamayu_unknown) {
+        $text = append($text, "@dre@Tamayu:|");
+        switch_int(%tbwt_tamayu) {
+            case ^tbwt_tamayu_intro :
+                $text = append($text, "Nothing of interest.||");
+            case ^tbwt_tamayu_slay_shaikahan :
+                $text = append($text, "@dbl@He will only return to the village once he has slain @dre@Shaikahan@dbl@.||");
+        }
+    }
+
     ~quest_journal("Tai Bwo Wannai Trio", $text);
     return;
 }

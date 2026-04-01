@@ -1,9 +1,32 @@
 [opnpc1,tbwt_tamayu]
-switch_int(random(3)) {
-    case 0 :
-        ~chatnpc("<p,angry>Die! Die!!");
-    case 1 :
-        ~chatnpc("<p,angry>Move, lest I slay not the beast but you!");
-    case 2 : 
-        ~chatnpc("<p,angry>Get out of my way! Argh! I'm hunting!");
+if (%tbwt_main < ^tbwt_started) {
+    switch_int(random(3)) {
+        case 0 :
+            ~chatnpc("<p,angry>Die! Die!!");
+        case 1 :
+            ~chatnpc("<p,angry>Move, lest I slay not the beast but you!");
+        case 2 : 
+            ~chatnpc("<p,angry>Get out of my way! Argh! I'm hunting!");
+    }
+} else {
+    switch_int(%tbwt_tamayu) {
+        case ^tbwt_tamayu_unknown :
+            @tbwt_tamayu_intro;
+        case ^tbwt_tamayu_intro :
+            @tbwt_tamayu_bringgoodnews;
+    }
 }
+
+[label,tbwt_tamayu_intro]
+%tbwt_tamayu = ^tbwt_tamayu_intro;
+~chatplayer("<p,angry>Tamayu, first son of Timfraku!"); // Angry mesanim is intentional
+~chatnpc("<p,neutral>I am."); // ToDo: Re-check mesanim on OSRS
+@tbwt_tamayu_bringgoodnews;
+
+[label,tbwt_tamayu_bringgoodnews]
+%tbwt_tamayu = ^tbwt_tamayu_intro;
+~chatplayer("<p,neutral>Tamayu, I bring good news. Trufitus has communed with the gods -  your village is once again safe."); // Double space after hyphen is intentional
+~chatplayer("<p,neutral>Your father requests that you return to the village.");
+~chatnpc("<p,angry>Then know this, stranger.");
+%tbwt_tamayu = ^tbwt_tamayu_slay_shaikahan;
+~chatnpc("<p,angry>I vow upon the blood of my fallen kin that I shall not set foot in that godforsaken village till I have slain the Shaikahan.");
