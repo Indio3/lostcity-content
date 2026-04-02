@@ -1,7 +1,7 @@
 [opnpc1,viking_clothing_shopkeeper]
 def_int $op;
 if(%viking = ^viking_complete) {
-    ~chatplayer("<p,neutral>Hi. You wanted to buy some clothes? Or did you want to makeover your shoes?");
+    ~chatnpc("<p,neutral>Hi. You wanted to buy some clothes? Or did you want to makeover your shoes?");
     $op = ~p_choice3("I'd like to buy some clothes", 1, "I'd like to change my shoes", 2, "Neither thanks", 3);
     switch_int($op) {
         case 1 : ~openshop_activenpc;
@@ -13,8 +13,14 @@ if(%viking = ^viking_complete) {
                 ~chatnpc("<p,neutral>That's ok! Just come back when you do have it!");
                 return;
             }
-            // TODO: implement, need a new command for getting idkit I think...
+            %if1 = 0;
             if_openmain(shoestore);
+            if_setobject(shoestore:shoe1, dummy_shoe1, 200);
+            if_setobject(shoestore:shoe2, dummy_shoe2, 200);
+            if_setobject(shoestore:shoe3, dummy_shoe3, 200);
+            if_setobject(shoestore:shoe4, dummy_shoe4, 200);
+            if_setobject(shoestore:shoe5, dummy_shoe5, 200);
+            if_setobject(shoestore:shoe6, dummy_shoe6, 200);
         case 3 :
             ~chatplayer("<p,neutral>Neither thanks.");
             ~chatnpc("<p,neutral>As you wish.");
@@ -70,3 +76,45 @@ if(%viking < ^viking_complete) {
     return;
 }
 ~openshop_activenpc;
+
+[if_button,shoestore:brown]
+%if1 = 1;
+
+[if_button,shoestore:khaki]
+%if1 = 2;
+
+[if_button,shoestore:ashen]
+%if1 = 3;
+
+[if_button,shoestore:dark]
+%if1 = 4;
+
+[if_button,shoestore:terracotta]
+%if1 = 5;
+
+[if_button,shoestore:grey]
+%if1 = 6;
+
+[if_button,shoestore:confirm]
+if (%if1 = 0) {
+    mes("You must make a selection."); // guess based of thessalia
+    return;
+}
+if_close;
+def_int $color = calc(%if1 - 1);
+setidkcolour(^idk_colour_boots, $color);
+buildappearance(worn);
+inv_del(inv, coins, 500);
+def_int $rand = random(4);
+if (npc_find(coord, viking_clothing_shopkeeper, 5, 0) = true) {
+    if ($rand = 0) {
+        ~chatnpc("<p,neutral>I think they suit you!");
+    } else if ($rand = 1) {
+        ~chatnpc("<p,neutral>Hey! They look great!");
+    } else if ($rand = 2) {
+        ~chatnpc("<p,neutral>Nice choice!");
+    } else if ($rand = 3) {
+        ~chatnpc("<p,neutral>Good call!");
+    }
+}
+~chatplayer("<p,happy>Thanks!");

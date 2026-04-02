@@ -6,13 +6,8 @@ npc_setmode(opplayer2);
 npc_changetype(horror_rockcrab_small, 1000);
 npc_setmode(opplayer2);
 
-[ai_opplayer2,horror_rockcrab_inactive]
-npc_changetype(horror_rockcrab, 1000);
-npc_setmode(opplayer2);
-
-[ai_opplayer2,horror_rockcrab_small_inactive]
-npc_changetype(horror_rockcrab_small, 1000);
-npc_setmode(opplayer2);
+[ai_queue1,horror_rockcrab_inactive] ~npc_default_retaliate_ap;
+[ai_queue1,horror_rockcrab_small_inactive] ~npc_default_retaliate_ap;
 
 [ai_queue3,horror_rockcrab] @rockcrab_drops;
 [ai_queue3,horror_rockcrab_small] @rockcrab_drops;
