@@ -11,19 +11,16 @@ if (~get_tbwt_main_progress() < ^tbwt_started) {
 } else {
     switch_int(~get_tbwt_tamayu_progress) {
         case ^tbwt_tamayu_unknown :
-            @tbwt_tamayu_intro;
+            ~set_tbwt_tamayu_progress(^tbwt_tamayu_intro);
+            ~chatplayer("<p,angry>Tamayu, first son of Timfraku!"); // Angry mesanim is intentional
+            ~chatnpc("<p,neutral>I am."); // ToDo: Re-check mesanim on OSRS
+            @tbwt_tamayu_bringgoodnews;
         case ^tbwt_tamayu_intro :
             @tbwt_tamayu_bringgoodnews;
         case ^tbwt_tamayu_slay_shaikahan :
             @tbwt_tamayu_shaikahanops;
     }
 }
-
-[label,tbwt_tamayu_intro]
-~set_tbwt_tamayu_progress(^tbwt_tamayu_intro);
-~chatplayer("<p,angry>Tamayu, first son of Timfraku!"); // Angry mesanim is intentional
-~chatnpc("<p,neutral>I am."); // ToDo: Re-check mesanim on OSRS
-@tbwt_tamayu_bringgoodnews;
 
 [label,tbwt_tamayu_bringgoodnews]
 ~set_tbwt_tamayu_progress(^tbwt_tamayu_intro);

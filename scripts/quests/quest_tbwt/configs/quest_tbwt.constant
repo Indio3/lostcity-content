@@ -13,9 +13,9 @@
 ^tbwt_tiadeche_tamayu_start = 4
 ^tbwt_tiadeche_tamayu_end = 5
 ^tbwt_tiadeche_tinsay_start = 6
-^tbwt_tiadeche_tinsay_end = 7
-^tbwt_tiadeche_lubufu_start = 8
-^tbwt_tiadeche_lubufu_end = 9
+^tbwt_tiadeche_tinsay_end = 8
+^tbwt_tiadeche_lubufu_start = 9
+^tbwt_tiadeche_lubufu_end = 10
 
 ^tbwt_timfraku_rovingadventurer = 0
 ^tbwt_timfraku_travellingexplorer = 1
@@ -31,6 +31,12 @@
 
 ^tbwt_tinsay_unknown = 0
 ^tbwt_tinsay_intro = 1
+^tbwt_tinsay_fetch_bananarum = 2
+^tbwt_tinsay_given_bananarum = 3
+^tbwt_tinsay_fetch_seaweedsandwich = 4
+^tbwt_tinsay_given_seaweedsandwich = 5
+^tbwt_tinsay_fetch_marinatedbones = 6
+^tbwt_tinsay_given_marinatedbones = 7
 
 ^tbwt_lubufu_unknown = 0
 ^tbwt_lubufu_intro = 1

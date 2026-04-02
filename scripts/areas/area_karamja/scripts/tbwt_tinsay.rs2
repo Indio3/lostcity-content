@@ -1,9 +1,279 @@
 [opnpc1,tbwt_tinsay]
-switch_int(random(3)) {
-    case 0 :
-        ~chatnpc("<p,neutral>Braaar! Jogres!");
-    case 1 :
-        ~chatnpc("<p,neutral>mmm ... Jogre bones ...");
-    case 2 : 
-        ~chatnpc("<p,angry>Leave me alone! Can't you see I'm a mad priest?");
+if (~get_tbwt_main_progress() < ^tbwt_started) {
+    switch_int(random(3)) {
+        case 0 :
+            ~chatnpc("<p,neutral>Braaar! Jogres!");
+        case 1 :
+            ~chatnpc("<p,neutral>mmm ... Jogre bones ...");
+        case 2 : 
+            ~chatnpc("<p,angry>Leave me alone! Can't you see I'm a mad priest?");
+    }
+} else {
+    switch_int(~get_tbwt_tinsay_progress()) {
+        case ^tbwt_tinsay_unknown :
+            ~set_tbwt_tinsay_progress(^tbwt_tinsay_intro);
+            ~chatnpc("<p,laugh>Braaar! Tinsay's the name!");
+            @tbwt_tinsay_bringgoodnews;
+        case ^tbwt_tinsay_intro :
+            @tbwt_tinsay_bringgoodnews;
+        case ^tbwt_tinsay_fetch_bananarum : 
+            @tbwt_tinsay_bananarum;
+        case ^tbwt_tinsay_given_bananarum : 
+            @tbwt_tinsay_given_bananarum;
+        case ^tbwt_tinsay_fetch_seaweedsandwich : 
+            @tbwt_tinsay_seaweedsandwich;
+    }
 }
+
+[opnpcu,tbwt_tinsay]
+if(last_useitem = tbwt_karambwan_vessel_loaded_with_karambwanji) {
+    ~chatplayer("<p,quiz>Your brother Tiadeche has sent me. He asks you to study this vessel and produce crafting instructions.");
+    ~chatnpc("<p,neutral>You first help me, then I'll help you.");
+} else if (last_useitem = tbwt_sliced_banana_in_karamja_rum) {
+    if (~get_tbwt_tinsay_progress() = ^tbwt_tinsay_fetch_bananarum) {
+        @tbwt_tinsay_give_bananarum;
+    }
+} else if (last_useitem = tbwt_banana_in_karamja_rum) {
+    if (~get_tbwt_tinsay_progress() = ^tbwt_tinsay_fetch_bananarum) {
+        @tbwt_tinsay_ihavethis;
+    }
+} else if (last_useitem = tbwt_seaweed_in_monkey_skin_sandwich) {
+    if (~get_tbwt_tinsay_progress() = ^tbwt_tinsay_fetch_seaweedsandwich) {
+        @tbwt_tinsay_give_seaweedsandwich;
+    }
+} else if (last_useitem = tbwt_seaweed_in_monkey_corpse) {
+    if (~get_tbwt_tinsay_progress() = ^tbwt_tinsay_fetch_seaweedsandwich) {
+        @tbwt_tinsay_ihavethis;
+    }
+}
+
+[label,tbwt_tinsay_bringgoodnews]
+~chatplayer("<p,neutral>Tinsay, I bring good news. Trufitus has communed with the gods -  your village is once again safe."); // Double space after hyphen is intentional
+~chatplayer("<p,neutral>Your father requests that you return to the village.");
+~chatnpc("<p,neutral>I will return only once I have repaired the tribal statue. Bones!!");
+~chatplayer("<p,quiz>Where is the tribal statue?");
+~chatnpc("<p,neutral>Just near my father's hut.");
+~chatplayer("<p,angry>But that's @dre@in @bla@the village!");
+~chatnpc("<p,shifty>I know.");
+~chatplayer("<p,quiz>So what are you doing here?");
+~chatnpc("<p,shifty>I'm ... er ... collecting materials to repair the statue with.");
+~chatplayer("<p,neutral>And I suppose you want me to fetch them for you?");
+~chatnpc("<p,happy>Good idea! Yes!");
+~chatplayer("<p,shifty>You mean you were just sitting here waiting for people to bring you things you need?");
+~chatnpc("<p,neutral>Yes...");
+~chatplayer("<p,quiz>And you don't see anything wrong with that?");
+~chatnpc("<p,neutral>No...");
+~chatplayer("<p,neutral>Right ... what do you need?");
+if_close;
+mes("Tinsay pauses and then mutters to himself.");
+p_delay(4);
+~set_tbwt_tinsay_progress(^tbwt_tinsay_fetch_bananarum);
+~chatnpc("<p,neutral>Hmm ... I think I need banana in Karamjan rum.");
+~chatplayer("<p,quiz>I see. And you're going to use this to repair the statue?");
+~chatnpc("<p,neutral>But of course! Bwahaha!");
+~chatplayer("<p,neutral>... I'll be back later.");
+
+[label,tbwt_tinsay_bananarum]
+~chatnpc("<p,quiz>Have you found my banana in Karamjan rum yet?");
+def_int $option = ~p_choice2("Yes.", 1, "No.", 2);
+if ($option = 1) {
+    @tbwt_tinsay_yes;
+} else if ($option = 2) {
+    ~chatplayer("<p,neutral>No, I'm still looking.");
+    @tbwt_tinsay_noops;
+}
+
+[label,tbwt_tinsay_noops]
+def_int $option = ~p_choice4("How do I ...", 1, "Just how insane are you?", 2, "I've heard something about an accident.", 3, "I'll be back later.", 4);
+if ($option = 1) {
+    if (~get_tbwt_tinsay_progress() = ^tbwt_tinsay_fetch_bananarum) {
+        def_int $option2 = ~p_choice3("... find Karamjan rum?", 1, "... find bananas?", 2, "... convince you to return to the village?", 3);
+        if ($option2 = 1) {
+            ~chatplayer("<p,quiz>How do I find Karamjan rum?");
+            ~chatnpc("<p,neutral>It's available in any respectable drinking establishment.");
+            @tbwt_tinsay_noops;
+        } else if ($option2 = 2) {
+            ~chatplayer("<p,quiz>How do I find bananas?");
+            ~chatnpc("<p,neutral>They grow everywhere!");
+            @tbwt_tinsay_noops;
+        } else if ($option2 = 3) {
+            ~chatplayer("<p,quiz>How do I convince you to return to the village?");
+            ~chatnpc("<p,neutral>Oblige me by fetching my drink.");
+            @tbwt_tinsay_noops;
+        }
+    } else if (~get_tbwt_tinsay_progress() = ^tbwt_tinsay_fetch_seaweedsandwich) {
+        def_int $option2 = ~p_choice3("... find seaweed?", 1, "... skin a monkey?", 2, "... stuff a monkey with seaweed?", 3);
+        if ($option2 = 1) {
+            ~chatplayer("<p,quiz>How do I find seaweed?");
+            ~chatnpc("<p,neutral>Try weeding the sea!");
+            @tbwt_tinsay_noops;
+        } else if ($option2 = 2) {
+            ~chatplayer("<p,quiz>How do I skin a monkey?");
+            ~chatnpc("<p,neutral>Look for the zip.");
+            ~chatplayer("<p,angry>I'm serious!");
+            ~chatnpc("<p,neutral>Well find somebody who knows how. I certainly don't.");
+            @tbwt_tinsay_noops;
+        } else if ($option2 = 3) {
+            ~chatplayer("<p,quiz>How do I stuff a monkey with seaweed?");
+            ~chatnpc("<p,neutral>You ask a monkey.");
+            @tbwt_tinsay_noops;
+        }
+    }
+} else if ($option = 2) {
+    ~chatplayer("<p,quiz>Just how insane are you?");
+    switch_int(random(11)) {
+        case 0 :
+            ~chatnpc("<p,neutral>On a scale of 1 to barmy , I'm about <tostring(add(1, random(9)))>.");
+        case 1 :
+            ~chatnpc("<p,neutral>On a scale of 1 to kooky , I'm about <tostring(add(1, random(9)))>.");
+        case 2 : 
+            ~chatnpc("<p,angry>On a scale of 1 to mad , I'm about <tostring(add(1, random(9)))>.");
+        case 3 :
+            ~chatnpc("<p,neutral>On a scale of 1 to loopy , I'm about <tostring(add(1, random(9)))>.");
+        case 4 :
+            ~chatnpc("<p,neutral>On a scale of 1 to demented , I'm about <tostring(add(1, random(9)))>.");
+        case 5 : 
+            ~chatnpc("<p,neutral>On a scale of 1 to nuts , I'm about <tostring(add(1, random(9)))>.");
+        case 6 : 
+            ~chatnpc("<p,neutral>On a scale of 1 to daft , I'm about <tostring(add(1, random(9)))>.");
+        case 7 : 
+            ~chatnpc("<p,neutral>On a scale of 1 to harebrained , I'm about <tostring(add(1, random(9)))>.");
+        case 8 : 
+            ~chatnpc("<p,neutral>On a scale of 1 to crackers , I'm about <tostring(add(1, random(9)))>.");
+        case 9 : 
+            ~chatnpc("<p,neutral>On a scale of 1 to bonkers , I'm about <tostring(add(1, random(9)))>.");
+        case 10 : 
+            ~chatnpc("<p,neutral>On a scale of 1 to loony , I'm about <tostring(add(1, random(9)))>.");
+    }
+    @tbwt_tinsay_noops;
+} else if ($option = 3) {
+    ~chatplayer("<p,quiz>I've heard something about an accident.");
+    npc_anim(emote_dance, 0);
+    ~chatnpc("<p,neutral>Maurhah!! Jooooogre bones!");
+    ~chatnpc("<p,neutral>Ahem. Sorry. We don't usually talk about it.");
+    @tbwt_tinsay_noops;
+} else if ($option = 4) {
+    ~chatplayer("<p,neutral>I'll be back later.");
+}
+
+[label,tbwt_tinsay_ihavethis]
+if (~get_tbwt_tinsay_progress = ^tbwt_tinsay_fetch_bananarum) {
+    inv_del(inv, tbwt_banana_in_karamja_rum, 1);
+    ~objbox(tbwt_banana_in_karamja_rum, "You hand Tinsay the banana stuffed into Karamjan rum.", 250, 0, ^objbox_height);
+    ~chatnpc("<p,angry>I can't use this - there is a banana blocking the bottle!");
+    ~chatnpc("<p,neutral>Find some way of actually getting the banana inside the bottle.");
+    inv_add(inv, tbwt_banana_in_karamja_rum, 1);
+    mes("Tinsay hands you back the Karamjan rum.");
+} else if (~get_tbwt_tinsay_progress = ^tbwt_tinsay_fetch_seaweedsandwich) {
+    inv_del(inv, tbwt_seaweed_in_monkey_corpse, 1);
+    ~objbox(tbwt_seaweed_in_monkey_corpse, "You hand Tinsay the stuffed monkey.", 250, 0, ^objbox_height);
+    ~chatnpc("<p,angry>I can't use this - there is far too much monkey flesh in it.");
+    ~chatnpc("<p,neutral>Try to find some way of removing the monkey flesh.");
+    inv_add(inv, tbwt_seaweed_in_monkey_corpse, 1);
+    mes("Tinsay hands you back the stuffed monkey.");
+}
+
+[label,tbwt_tinsay_give_bananarum]
+~set_tbwt_tinsay_progress(^tbwt_tinsay_given_bananarum);
+~objbox(tbwt_sliced_banana_in_karamja_rum, "You hand Tinsay the sliced bananas in Karamjan rum.", 250, 0, ^objbox_height);
+if_close;
+npc_anim(human_eat, 0);
+p_delay(3);
+~chatnpc("<p,happy>Yes ... that's it! Hits just the spot!");
+~chatplayer("<p,angry>What? I thought you needed that for tribal statue repair!");
+~chatnpc("<p,shifty>I did!");
+@tbwt_tinsay_given_bananarum;
+
+[label,tbwt_tinsay_given_bananarum]
+~chatplayer("<p,quiz>Can we return to the village now?");
+~chatnpc("<p,neutral>Not yet. I need one more thing...");
+~chatplayer("<p,quiz>What is it?");
+~chatnpc("<p,neutral>I'm thinking...");
+if_close;
+p_delay(4);
+~chatnpc("<p,neutral>Seaweed ... Yes - a seaweed sandwich will do the trick.");
+~chatnpc("<p,happy>Aha! A seaweed in monkey skin sandwich!");
+~set_tbwt_tinsay_progress(^tbwt_tinsay_fetch_seaweedsandwich);
+~chatplayer("<p,quiz>Is this really necessary?");
+~chatnpc("<p,neutral>Yes. Essential.");
+~chatplayer("<p,neutral>I'll be back later.");
+
+[label,tbwt_tinsay_seaweedsandwich]
+~chatnpc("<p,quiz>Have you found my seaweed in monkey skin sandwich yet?");
+def_int $option = ~p_choice2("Yes.", 1, "No.", 2);
+if ($option = 1) {
+    @tbwt_tinsay_yes;
+} else if ($option = 2) {
+    ~chatplayer("<p,neutral>No, I'm still looking.");
+    @tbwt_tinsay_noops;
+}
+
+[label,tbwt_tinsay_yes]
+~chatplayer("<p,neutral>Yes, I have it right here.");
+~chatnpc("<p,neutral>Well, hand it here then.");
+if (~get_tbwt_tinsay_progress = ^tbwt_tinsay_fetch_bananarum) {
+    if(~obj_gettotal(tbwt_sliced_banana_in_karamja_rum) > 0) {
+        @tbwt_tinsay_give_bananarum;
+    } else if(inv_total(inv, tbwt_banana_in_karamja_rum) > 0) {
+        ~chatplayer("<p,neutral>Well, I have this.");
+        @tbwt_tinsay_ihavethis;
+    } else {
+        switch_int(random(3)) {
+            case 0 :
+                ~chatplayer("<p,neutral>Uh ... I think I left it in my other trousers.");
+            case 1 :
+                ~chatplayer("<p,neutral>Erm ... I think I lost it in the wash.");
+            case 2 : 
+                ~chatplayer("<p,neutral>Actually, my pet monkey ate it.");
+        }
+        @tbwt_tinsay_noops;
+    }
+} else if (~get_tbwt_tinsay_progress = ^tbwt_tinsay_fetch_seaweedsandwich) {
+    if(~obj_gettotal(tbwt_seaweed_in_monkey_skin_sandwich) > 0) {
+        @tbwt_tinsay_give_seaweedsandwich;
+    } else if(inv_total(inv, tbwt_seaweed_in_monkey_corpse) > 0) {
+        ~chatplayer("<p,neutral>Well, I have this.");
+        @tbwt_tinsay_ihavethis;
+    } else {
+        switch_int(random(3)) {
+            case 0 :
+                ~chatplayer("<p,neutral>Uh ... I think I left it in my other trousers.");
+            case 1 :
+                ~chatplayer("<p,neutral>Erm ... I think I lost it in the wash.");
+            case 2 : 
+                ~chatplayer("<p,neutral>Actually, my pet monkey ate it.");
+        }
+        @tbwt_tinsay_noops;
+    }
+}
+
+[label,tbwt_tinsay_give_seaweedsandwich]
+~set_tbwt_tinsay_progress(^tbwt_tinsay_given_seaweedsandwich);
+~objbox(tbwt_seaweed_in_monkey_skin_sandwich, "You hand Tinsay the seaweed in monkey skin sandwich.", 250, 0, ^objbox_height);
+if_close;
+npc_anim(human_eat, 0);
+p_delay(3);
+~chatnpc("<p,happy>Yes ... perfect! You really do not understand how necessary that was.");
+~chatplayer("<p,angry>Can we go now?");
+~chatnpc("<p,shifty>Erm...");
+~chatplayer("<p,angry>...");
+~chatnpc("<p,shifty>...");
+~chatplayer("<p,angry>...");
+~chatnpc("<p,shifty>...");
+~chatplayer("<p,angry>Say something!");
+~chatnpc("<p,shifty>No!");
+~chatplayer("<p,angry>Does that mean you're not coming or not saying anything?");
+~chatnpc("<p,shifty>I'm not coming.");
+~chatplayer("<p,angry>Why?");
+~chatnpc("<p,shifty>I need one more thing... I need ... Jogre bones ...");
+~chatplayer("<p,angry>Jogre bones? Why do you keep-");
+~chatnpc("<p,shifty>Yes ... burnt Jogre bones.");
+~chatplayer("<p,angry>... burnt Jogre bones?? How am I-");
+~chatnpc("<p,shifty>Indeed. Burnt Jogre bones marinated in... Marinated in...");
+~chatplayer("<p,angry>Marinated???");
+~chatnpc("<p,shifty>Marinated in Karambwanji!");
+~chatplayer("<p,angry>...");
+~chatnpc("<p,shifty>Mmm ... Yes ... That will be good ...");
+~chatplayer("<p,angry>You're just going to eat it, aren't you?");
+~chatnpc("<p,shifty>No! Burnt Jogre bones marinated in Karambwanji are in fact essential in the trade of tribal statue repair!");
+~chatplayer("<p,angry>I'll be back ... eventually.");

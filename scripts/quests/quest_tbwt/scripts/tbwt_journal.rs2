@@ -7,6 +7,7 @@ mes("Get TBWT Tiadeche: <tostring(~get_tbwt_tiadeche_progress())>");
 mes("Get TBWT Tamayu: <tostring(~get_tbwt_tamayu_progress())>");
 mes("Get TBWT Tinsay: <tostring(~get_tbwt_tinsay_progress())>");
 mes("Get TBWT Lubufu: <tostring(~get_tbwt_lubufu_progress())>");
+mes("Raw TBWT Tiadeche varp: <tostring(%tbwt_tiadeche)>");
 
 if (~get_tbwt_main_progress() < ^tbwt_started) {
     if (%junglepotion = ^junglepotion_complete_after_spoken) {
@@ -34,7 +35,12 @@ if (~get_tbwt_main_progress() = ^tbwt_complete) {
 }
 
 if (~get_tbwt_main_progress() = ^tbwt_started) {
-    $text = append($text, "@dbl@I need to find the three sons of @dre@Timfraku@dbl@:|");
+
+    if (~get_tbwt_tamayu_progress() > ^tbwt_tamayu_unknown & ~get_tbwt_tinsay_progress() > ^tbwt_tinsay_unknown & ~get_tbwt_tiadeche_progress() > ^tbwt_tiadeche_unknown) {
+        $text = append($text, "@str@I need to find the three sons of Timfraku:|");
+    } else {
+        $text = append($text, "@dbl@I need to find the three sons of @dre@Timfraku@dbl@:|");
+    }
 
     if (~get_tbwt_tamayu_progress() < ^tbwt_tamayu_intro) {
         $text = append($text, "@dre@Tamayu|");
@@ -42,7 +48,11 @@ if (~get_tbwt_main_progress() = ^tbwt_started) {
         $text = append($text, "@str@Tamayu|");
     }
 
-    $text = append($text, "@dre@Tinsay|");
+    if (~get_tbwt_tinsay_progress() < ^tbwt_tinsay_intro) {
+        $text = append($text, "@dre@Tinsay|");
+    } else {
+        $text = append($text, "@str@Tinsay|");
+    }
 
     if (~get_tbwt_tiadeche_progress() < ^tbwt_tiadeche_intro) {
         $text = append($text, "@dre@Tiadeche||");
@@ -57,13 +67,40 @@ if (~get_tbwt_main_progress() = ^tbwt_started) {
         $text = append($text, "Nothing of interest.||");
     }
 
+    if (~get_tbwt_tinsay_progress() > ^tbwt_tinsay_unknown) {
+        $text = append($text, "@dre@Tinsay:|");
+        switch_int(~get_tbwt_tinsay_progress()) {
+            case ^tbwt_tinsay_intro :
+                $text = append($text, "Nothing of interest.||");
+            case ^tbwt_tinsay_fetch_bananarum :
+                $text = append($text, "@dbl@He requires @dre@banana in Karamja rum@dbl@ to repair the tribal|@dbl@statue||");
+            case ^tbwt_tinsay_given_bananarum :
+                $text = append($text, "@str@I have given him sliced banana in Karamja rum.||");
+            case ^tbwt_tinsay_fetch_seaweedsandwich :
+                $text = append($text, "@str@I have given him sliced banana in Karamja rum.||");
+                $text = append($text, "@dbl@He requires a @dre@seaweed in monkey skin sandwich to repair|@dre@the tribal statue with.||");
+            case ^tbwt_tinsay_given_seaweedsandwich :
+                $text = append($text, "@str@I have given him sliced banana in Karamja rum.||");
+                $text = append($text, "@str@I have given him a seaweed in monkey skin sandwich.||");
+                $text = append($text, "@dbl@He requires a @dre@something else to repair|@dre@the tribal statue with.||");
+        }
+    }
+
     if (~get_tbwt_tamayu_progress() > ^tbwt_tamayu_unknown) {
         $text = append($text, "@dre@Tamayu:|");
         switch_int(~get_tbwt_tamayu_progress()) {
             case ^tbwt_tamayu_intro :
                 $text = append($text, "Nothing of interest.||");
             case ^tbwt_tamayu_slay_shaikahan :
-                $text = append($text, "@dbl@He will only return to the village once he has slain @dre@Shaikahan@dbl@.||");
+                $text = append($text, "@dbl@He will only return to the village once he has slain|@dre@Shaikahan@dbl@.||");
+        }
+    }
+
+    if (~get_tbwt_lubufu_progress() > ^tbwt_lubufu_unknown) {
+        $text = append($text, "@dre@Lubufu:|");
+        switch_int(~get_tbwt_lubufu_progress()) {
+            case ^tbwt_lubufu_intro :
+                $text = append($text, "Nothing of interest.||");
         }
     }
 
