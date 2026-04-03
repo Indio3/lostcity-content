@@ -9,13 +9,13 @@
 ^tbwt_tiadeche_timfraku_title_start = 0
 ^tbwt_tiadeche_timfraku_title_end = 1
 ^tbwt_tiadeche_tiadeche_start = 2
-^tbwt_tiadeche_tiadeche_end = 3
-^tbwt_tiadeche_tamayu_start = 4
-^tbwt_tiadeche_tamayu_end = 5
-^tbwt_tiadeche_tinsay_start = 6
-^tbwt_tiadeche_tinsay_end = 8
-^tbwt_tiadeche_lubufu_start = 9
-^tbwt_tiadeche_lubufu_end = 10
+^tbwt_tiadeche_tiadeche_end = 4
+^tbwt_tiadeche_tamayu_start = 5
+^tbwt_tiadeche_tamayu_end = 7
+^tbwt_tiadeche_tinsay_start = 8
+^tbwt_tiadeche_tinsay_end = 10
+^tbwt_tiadeche_lubufu_start = 11
+^tbwt_tiadeche_lubufu_end = 13
 
 ^tbwt_timfraku_rovingadventurer = 0
 ^tbwt_timfraku_travellingexplorer = 1
