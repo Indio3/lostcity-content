@@ -7,6 +7,7 @@ mes("Get TBWT Tiadeche: <tostring(~get_tbwt_tiadeche_progress())>");
 mes("Get TBWT Tamayu: <tostring(~get_tbwt_tamayu_progress())>");
 mes("Get TBWT Tinsay: <tostring(~get_tbwt_tinsay_progress())>");
 mes("Get TBWT Lubufu: <tostring(~get_tbwt_lubufu_progress())>");
+mes("Get TBWT Lubufu Karambwanji Count: <tostring(~get_tbwt_lubufu_karambwanji())>");
 mes("Raw TBWT Tiadeche varp: <tostring(%tbwt_tiadeche)>");
 
 if (~get_tbwt_main_progress() < ^tbwt_started) {
@@ -96,11 +97,31 @@ if (~get_tbwt_main_progress() = ^tbwt_started) {
         }
     }
 
-    if (~get_tbwt_lubufu_progress() > ^tbwt_lubufu_unknown) {
+    if (~get_tbwt_lubufu_progress() > ^tbwt_lubufu_intro) {
         $text = append($text, "@dre@Lubufu:|");
         switch_int(~get_tbwt_lubufu_progress()) {
-            case ^tbwt_lubufu_intro :
-                $text = append($text, "Nothing of interest.||");
+            case ^tbwt_lubufu_initialops, ^tbwt_lubufu_asked_what_do :
+                $text = append($text, "@str@Lubufu is a crochety old fisherman just south of|@str@Brimhaven.||");
+                $text = append($text, "@str@He appears to have a local monopoly over the sale of|@str@Karambwan.||");
+
+            case ^tbwt_lubufu_offered_to_help :
+                $text = append($text, "@str@Lubufu is a crochety old fisherman just south of|@str@Brimhaven.||");
+                $text = append($text, "@str@He appears to have a local monopoly over the sale of|@str@Karambwan.||");
+                $text = append($text, "@dbl@Lubufu has difficulty collecting bait, due to his age. I have|@dbl@offered to help collect bait.||");
+
+            case ^tbwt_lubufu_fetch_karambwanji :
+                $text = append($text, "@str@Lubufu is a crochety old fisherman just south of|@str@Brimhaven.||");
+                $text = append($text, "@str@He appears to have a local monopoly over the sale of|@str@Karambwan.||");
+                $text = append($text, "@str@Lubufu has difficulty collecting bait, due to his age. I have|@str@offered to help collect bait. Lubufu has accepted.||");
+                $text = append($text, "@dbl@Apparently the bait is Karambwanji, which shoal in a Holy|@dbl@Lake south of Tai Bwo Wannai.||");
+                $text = append($text, "@dbl@I need to give Lubufu 20 Karambwanji.||");
+            
+            case ^tbwt_lubufu_given_karambwanji :
+                $text = append($text, "@str@Lubufu is a crochety old fisherman just south of|@str@Brimhaven.||");
+                $text = append($text, "@str@He appears to have a local monopoly over the sale of|@str@Karambwan.||");
+                $text = append($text, "@str@Lubufu has difficulty collecting bait, due to his age. I have|@str@offered to help collect bait. Lubufu has accepted.||");
+                $text = append($text, "@str@Apparently the bait is Karambwanji, which shoal in a Holy|@str@Lake south of Tai Bwo Wannai.||");
+                $text = append($text, "@str@I have given Lubufu 20 Karambwanji.||");
         }
     }
 

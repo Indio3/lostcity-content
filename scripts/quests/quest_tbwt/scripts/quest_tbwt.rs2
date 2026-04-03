@@ -21,13 +21,15 @@ if (p_finduid(uid) = true) {
     } else if ($var2 = 5) { // Set Lubufu progress
         %tbwt_tiadeche = setbit_range_toint(%tbwt_tiadeche, $var, ^tbwt_tiadeche_lubufu_start, ^tbwt_tiadeche_lubufu_end);
         mes("Set TBWT Lubufu progress to: <tostring($var)>.");
+    } else if ($var2 = 6) { // Set Lubufu Karambwanji Count
+        %tbwt_tiadeche = setbit_range_toint(%tbwt_tiadeche, $var, ^tbwt_tiadeche_lubufu_karambwanji_count_start, ^tbwt_tiadeche_lubufu_karambwanji_count_end);
+        mes("Set TBWT Lubufu Karambwanji Count to: <tostring($var)>.");
     } else {
         %tbwt_tiadeche = $var;
         mes("Set entire TBWT Tiadeche varp to: <tostring($var)>.");
     }
 
     mes("After set - raw varp: <tostring(%tbwt_tiadeche)>");
-    mes("Tinsay extracted: <tostring(getbit_range(%tbwt_tiadeche, ^tbwt_tiadeche_tinsay_start, ^tbwt_tiadeche_tinsay_end))>");
 }
 
 [proc,get_tbwt_main_progress]()(int)
@@ -65,6 +67,12 @@ return (getbit_range(%tbwt_tiadeche, ^tbwt_tiadeche_lubufu_start, ^tbwt_tiadeche
 
 [proc,set_tbwt_lubufu_progress](int $prog)
 %tbwt_tiadeche = setbit_range_toint(%tbwt_tiadeche, $prog, ^tbwt_tiadeche_lubufu_start, ^tbwt_tiadeche_lubufu_end);
+
+[proc,get_tbwt_lubufu_karambwanji]()(int)
+return (getbit_range(%tbwt_tiadeche, ^tbwt_tiadeche_lubufu_karambwanji_count_start, ^tbwt_tiadeche_lubufu_karambwanji_count_end));
+
+[proc,set_tbwt_lubufu_karambwanji](int $prog)
+%tbwt_tiadeche = setbit_range_toint(%tbwt_tiadeche, $prog, ^tbwt_tiadeche_lubufu_karambwanji_count_start, ^tbwt_tiadeche_lubufu_karambwanji_count_end);
 
 [proc,tbwt_get_timfraku_title]()(string)
 def_string $title = "adventurer";
