@@ -54,6 +54,6 @@ transmit=yes
 protect=no
 
 [musicmulti_8]
-scope=perm
 transmit=yes
+scope=perm
 protect=no

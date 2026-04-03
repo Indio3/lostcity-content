@@ -15,7 +15,7 @@ if (~in_duel_arena(coord) = true & %duelstatus < ^duelstatus_lost) {
         .queue(duel_finish, 0, 0);
     }
     // ur able to get double mes if opponent kills u with knives: https://youtu.be/KRDZJKa1whI?list=PLn23LiLYLb1bQ7Hwp77KoNBjKvpZQTfJT&t=12
-    midi_jingle("death2");
+    midi_jingle(death2);
 }
 
 // https://storage.googleapis.com/tannerdino/images/6543.jpg

@@ -12397,6 +12397,7 @@ name=Pillar
 desc=An old crumbled pillar.
 model=model_loc_2506
 
+// [sic] "ol45" (typo of old5?)
 [runetemple_pillar_ol45]
 name=Pillar
 desc=An old crumbled pillar.
@@ -12776,7 +12777,7 @@ model=model_loc_2668
 op1=Look at
 op2=Use
 
-[shantay_pass]
+[shantay_pass_henge_doorway]
 name=Shantay pass
 desc=Looks like a stone doorway to me.
 model=model_loc_407
