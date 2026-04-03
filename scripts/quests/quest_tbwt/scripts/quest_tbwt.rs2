@@ -107,7 +107,7 @@ p_opnpc(1);
 @tbwt_fish_lubufu_karambwan;
 
 [label,tbwt_fish_lubufu_karambwan]
-if (~get_tbwt_lubufu_progress() < ^tbwt_lubufu_became_apprentice) {
+if (~get_tbwt_lubufu_progress() < ^tbwt_lubufu_learned_karambwan_fishing & ~get_tbwt_main_progress() < ^tbwt_complete) {
     if (npc_find(coord, tbwt_lubufu, 20, 0) = true) {
         ~chatnpc("<p,angry>Keep off my fishing spot, whippersnapper!");
     }
@@ -145,3 +145,13 @@ if ((oc_category($item) = weapon_polearm) | (oc_category($item) = weapon_spear) 
 
 [opheld1,tbwt_seaweed_in_monkey_skin_sandwich]
 mes("You really, really do not want to eat that.");
+
+[opheldu,tbwt_karambwan_vessel]
+if (last_useitem = tbwt_raw_karambwanji) {
+    inv_del(inv, tbwt_karambwan_vessel, 1);
+    inv_del(inv, tbwt_raw_karambwanji, 1);
+    inv_add(inv, tbwt_karambwan_vessel_loaded_with_karambwanji, 1);
+    return;
+} else {
+    ~displaymessage(^dm_default);
+}

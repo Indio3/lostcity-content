@@ -100,7 +100,7 @@ if (~get_tbwt_main_progress() = ^tbwt_started) {
 
 if (~get_tbwt_lubufu_progress() > ^tbwt_lubufu_intro) {
 
-    if (~get_tbwt_lubufu_progress() = ^tbwt_lubufu_became_apprentice) {
+    if (~get_tbwt_lubufu_progress() = ^tbwt_lubufu_learned_karambwan_fishing) {
         $text = append($text, "@str@Lubufu:|");
     } else {
         $text = append($text, "@dre@Lubufu:|");
