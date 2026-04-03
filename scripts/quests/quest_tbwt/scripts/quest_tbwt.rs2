@@ -111,6 +111,8 @@ if (~get_tbwt_lubufu_progress() < ^tbwt_lubufu_learned_karambwan_fishing & ~get_
     if (npc_find(coord, tbwt_lubufu, 20, 0) = true) {
         ~chatnpc("<p,angry>Keep off my fishing spot, whippersnapper!");
     }
+} else {
+    // "You need to be at least level 65 Fishing to catch Karambwan."
 }
 
 [opheldu,karamja_rum]

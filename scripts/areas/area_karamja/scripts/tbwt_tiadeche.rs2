@@ -17,24 +17,78 @@ if (~get_tbwt_main_progress() < ^tbwt_started) {
             @tbwt_tiadeche_bringgoodnews;
         case ^tbwt_tiadeche_intro :
             @tbwt_tiadeche_bringgoodnews;
+        case ^tbwt_tiadeche_return_when_caught_karambwan :
+            @tbwt_tiadeche_initial_ops;
     }
 }
+
+[opnpcu,tbwt_tiadeche]
+if (~get_tbwt_tiadeche_progress >= ^tbwt_tiadeche_return_when_caught_karambwan) {
+    if(last_useitem = tbwt_raw_karambwan | last_useitem = tbwt_cooked_karambwan | last_useitem = tbwt_poorly_cooked_karambwan) {
+        ~chatnpc("<p,angry>I refuse to take your offerings. I must catch this Karambwan myself.");
+    } else if (last_useitem = tbwt_karambwan_vessel) {
+        ~chatplayer("<p,neutral>Tiadeche, instead of using your net, try using this vessel.");
+        inv_del(inv, tbwt_karambwan_vessel, 1);
+        ~objbox(tbwt_karambwan_vessel, "You hand over the Karambwan vessel to Tiadeche.", 250, 0, ^objbox_height);
+        ~chatnpc("<p,quiz>What is it?");
+        ~chatplayer("<p,neutral>It has been specially constructed to catch Karambwan. Once they enter it, they cannot return..");
+        ~chatnpc("<p,neutral>As you say, Bwana.");
+        if_close;
+        npc_queue(5, 0, 0);
+        mes("Tiadeche attempts to use the Karambwan vessel.");
+        p_delay(4);
+        ~chatnpc("<p,angry>This vessel is useless! The Karambwan are not even interested in entering it!");
+        inv_add(inv, tbwt_karambwan_vessel, 1);
+    } else {
+        ~displaymessage(^dm_default);
+    }
+} else {
+    ~displaymessage(^dm_default);
+}
+
+[ai_queue5,tbwt_tiadeche]
+npc_setmode(none);
+npc_walk(0_45_48_30_45);
+npc_facesquare(movecoord(npc_coord, 0, 0, 1));
+//0_45_48_33_45
+//0_45_48_32_46
+npc_anim(human_octopus_pot, 0);
+npc_delay(0);
 
 [label,tbwt_tiadeche_bringgoodnews]
 ~set_tbwt_tiadeche_progress(^tbwt_tiadeche_intro);
 ~chatplayer("<p,neutral>Tiadeche, I bring good news. Trufitus has communed with the gods -  your village is once again safe."); // Double space after hyphen is intentional - https://imgur.com/a/d1K0ei0
 ~chatplayer("<p,neutral>Your father requests that you return to the village.");
+~set_tbwt_tiadeche_progress(^tbwt_tiadeche_return_when_caught_karambwan);
 ~chatnpc("<p,neutral>I will return only when I have caught a Karambwan.");
-@multi4("What is a Karambwan?", tbwt_tiadeche_whatiskarambwan,
-        "When will you be finished?", tbwt_tiadeche_whenfinished,
-        "Is there anything I can do to help?", tbwt_tiadeche_help,
-        "How are you fishing for the Karambwan?", tbwt_tiadeche_howfishing
+@tbwt_tiadeche_initial_ops;
+
+[label,tbwt_tiadeche_initial_ops]
+@multi4("What is a Karambwan?", tbwt_tiadeche_what_is_a_karambwan,
+        "When will you be finished?", tbwt_tiadeche_when_will_you_be_finished,
+        "Is there anything I can do to help?", tbwt_tiadeche_anything_i_can_do_to_help,
+        "How are you fishing for the Karambwan?", tbwt_tiadeche_how_are_you_fishing
         );
 
-[label,tbwt_tiadeche_whatiskarambwan]
+[label,tbwt_tiadeche_what_is_a_karambwan]
+~chatplayer("<p,quiz>What is a Karambwan?");
+~chatnpc("<p,neutral>You don't know? The Karambwan is a species of octopus native to these waters.");
+~chatnpc("<p,neutral>They have a monopoly on its sale in the pirate town of Brimhaven.");
 
-[label,tbwt_tiadeche_whenfinished]
+[label,tbwt_tiadeche_when_will_you_be_finished]
+~chatplayer("<p,quiz>When will you be finished?");
+~chatnpc("<p,neutral>At this rate, it could take forever.");
+~chatplayer("<p,neutral>We don't have forever.");
+~chatnpc("<p,neutral>Sometimes, oblivion is all I crave...");
 
-[label,tbwt_tiadeche_help]
+[label,tbwt_tiadeche_anything_i_can_do_to_help]
+~chatplayer("<p,quiz>Is there anything I can do to help?");
+~chatnpc("<p,neutral>I just don't know. You can try.");
+~chatplayer("<p,quiz>What would you have me do?");
+~chatnpc("<p,neutral>Something ... helpful?");
 
-[label,tbwt_tiadeche_howfishing]
+[label,tbwt_tiadeche_how_are_you_fishing]
+~chatplayer("<p,quiz>How are you fishing for the Karambwan?");
+~chatnpc("<p,neutral>I'm trying to catch them with a net as they swim by.");
+~chatplayer("<p,quiz>And ... ?");
+~chatnpc("<p,neutral>They keep fighting loose of the twining.");

@@ -28,6 +28,8 @@
 
 ^tbwt_tiadeche_unknown = 0
 ^tbwt_tiadeche_intro = 1
+^tbwt_tiadeche_return_when_caught_karambwan = 2
+^tbwt_tiadeche_complete = 9
 
 ^tbwt_tamayu_unknown = 0
 ^tbwt_tamayu_intro = 1
