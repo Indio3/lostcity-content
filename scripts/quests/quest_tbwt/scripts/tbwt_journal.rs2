@@ -98,33 +98,39 @@ if (~get_tbwt_main_progress() = ^tbwt_started) {
         }
     }
 
-    if (~get_tbwt_lubufu_progress() > ^tbwt_lubufu_intro) {
+if (~get_tbwt_lubufu_progress() > ^tbwt_lubufu_intro) {
+
+    if (~get_tbwt_lubufu_progress() = ^tbwt_lubufu_became_apprentice) {
+        $text = append($text, "@str@Lubufu:|");
+    } else {
         $text = append($text, "@dre@Lubufu:|");
-        switch_int(~get_tbwt_lubufu_progress()) {
-            case ^tbwt_lubufu_initialops, ^tbwt_lubufu_asked_what_do :
-                $text = append($text, "@str@Lubufu is a crochety old fisherman just south of|@str@Brimhaven.||");
-                $text = append($text, "@str@He appears to have a local monopoly over the sale of|@str@Karambwan.||");
-
-            case ^tbwt_lubufu_offered_to_help :
-                $text = append($text, "@str@Lubufu is a crochety old fisherman just south of|@str@Brimhaven.||");
-                $text = append($text, "@str@He appears to have a local monopoly over the sale of|@str@Karambwan.||");
-                $text = append($text, "@dbl@Lubufu has difficulty collecting bait, due to his age. I have|@dbl@offered to help collect bait.||");
-
-            case ^tbwt_lubufu_fetch_karambwanji :
-                $text = append($text, "@str@Lubufu is a crochety old fisherman just south of|@str@Brimhaven.||");
-                $text = append($text, "@str@He appears to have a local monopoly over the sale of|@str@Karambwan.||");
-                $text = append($text, "@str@Lubufu has difficulty collecting bait, due to his age. I have|@str@offered to help collect bait. Lubufu has accepted.||");
-                $text = append($text, "@dbl@Apparently the bait is Karambwanji, which shoal in a Holy|@dbl@Lake south of Tai Bwo Wannai.||");
-                $text = append($text, "@dbl@I need to give Lubufu 20 Karambwanji.||");
-            
-            case ^tbwt_lubufu_given_karambwanji :
-                $text = append($text, "@str@Lubufu is a crochety old fisherman just south of|@str@Brimhaven.||");
-                $text = append($text, "@str@He appears to have a local monopoly over the sale of|@str@Karambwan.||");
-                $text = append($text, "@str@Lubufu has difficulty collecting bait, due to his age. I have|@str@offered to help collect bait. Lubufu has accepted.||");
-                $text = append($text, "@str@Apparently the bait is Karambwanji, which shoal in a Holy|@str@Lake south of Tai Bwo Wannai.||");
-                $text = append($text, "@str@I have given Lubufu 20 Karambwanji.||");
-        }
     }
+
+    // Base description (always shown once we’ve met him)
+    $text = append($text, "@str@Lubufu is a crochety old fisherman just south of|@str@Brimhaven.||");
+    $text = append($text, "@str@He appears to have a local monopoly over the sale of|@str@Karambwan.||");
+
+    // === Progress stages ===
+    if (~get_tbwt_lubufu_progress() > ^tbwt_lubufu_offered_to_help) {
+        $text = append($text, "@str@Lubufu has difficulty collecting bait, due to his age. I have|@str@offered to help collect bait. Lubufu has accepted.||");
+        $text = append($text, "@str@Apparently the bait is Karambwanji, which shoal in a Holy|@str@Lake south of Tai Bwo Wannai.||");
+    } else if (~get_tbwt_lubufu_progress() = ^tbwt_lubufu_offered_to_help) {
+        $text = append($text, "@dbl@Lubufu has difficulty collecting bait, due to his age. I have|@dbl@offered to help collect bait.||");
+    }
+
+    if (~get_tbwt_lubufu_progress() > ^tbwt_lubufu_fetch_karambwanji) {
+        $text = append($text, "@str@I have given Lubufu 20 Karambwanji.||");
+    } else if (~get_tbwt_lubufu_progress() = ^tbwt_lubufu_fetch_karambwanji) {
+        $text = append($text, "@dbl@I need to give Lubufu 20 Karambwanji.||");
+    }
+
+    if (~get_tbwt_lubufu_progress() > ^tbwt_lubufu_offered_apprentice) {
+        $text = append($text, "@str@Lubufu has offered to train me as his apprentice.||");
+        $text = append($text, "@str@I have accepted Lubufu's offer.||");
+    } else if (~get_tbwt_lubufu_progress() = ^tbwt_lubufu_offered_apprentice) {
+        $text = append($text, "@dbl@Lubufu has offered to train me as his apprentice.||");
+    }
+}
 
     ~quest_journal("Tai Bwo Wannai Trio", $text);
     return;

@@ -280,12 +280,10 @@ if ($current > 0 & $current < 20 & inv_total(inv, tbwt_raw_karambwanji) > 0) {
 
 if (inv_total(inv, tbwt_raw_karambwanji) > 0) {
     ~chatplayer("<p,neutral>Yes, I have some here.");
-
     def_int $amount = min(inv_total(inv, tbwt_raw_karambwanji), $needed);
     ~set_tbwt_lubufu_karambwanji(add($current, $amount));
     inv_del(inv, tbwt_raw_karambwanji, $amount);
     ~objbox(tbwt_raw_karambwanji, "You hand Lubufu <tostring($amount)> raw Karambwanji.", 250, 0, 0);
-
     if (~get_tbwt_lubufu_karambwanji >= 20) {
         ~set_tbwt_lubufu_progress(^tbwt_lubufu_given_karambwanji);
         ~chatnpc("<p,neutral>Thank you! This should tide me over for the next month.");
@@ -293,7 +291,6 @@ if (inv_total(inv, tbwt_raw_karambwanji) > 0) {
         def_int $still_needed = sub(20, ~get_tbwt_lubufu_karambwanji);
         ~chatnpc("<p,neutral>Hurry along now. I still need <tostring($still_needed)> more.");
     }
-
 } else {
     ~chatplayer("<p,neutral>No, I'm still fishing for them.");
     ~chatnpc("<p,neutral>Well hurry! My reserves are beginning to run low.");
@@ -329,9 +326,38 @@ if_close;
 p_delay(2);
 ~set_tbwt_lubufu_progress(^tbwt_lubufu_offered_apprentice);
 ~chatnpc("<p,quiz>How would you feel about becoming my apprentice?");
+~chatplayer("<p,quiz>That's a slight change in attitude...");
+~chatnpc("<p,neutral>As much as I need to protect the secret, I should not carry it to the grave.");
+~chatnpc("<p,neutral>You seem a trustworthy type of person. Do you want to train as my apprentice?");
+@tbwt_lubufu_become_apprentice_ops;
+
+[label,tbwt_lubufu_become_apprentice_ops]
+def_int $initialops = ~p_choice2("Yes!", 1, "No.", 2);
+if ($initialops = 1) { // Yes!
+    ~chatplayer("<p,neutral>Yes!");
+    ~chatnpc("<p,neutral>I'm glad to hear it. I'm sure the secrets of the Karambwan will be safe with you.");
+    ~objbox(tbwt_raw_karambwanji, "Lubufu teaches you a new fishing technique.", 250, 0, 0);
+    ~chatnpc("<p,neutral>In our language, Karambwan literally means 'Friend of Karamja.' As a friend of mine I will now show you how to fish for them.");
+    ~chatnpc("<p,neutral>There are two aspects to fishing for Karambwan. Firstly, you must have the correct bait. Secondly, you must have the correct equipment.");
+    ~chatnpc("<p,neutral>You already know of the Karambwanji, which shoal in the Holy Lake to the south. As I have explained, the Karambwan feed only on the Karambwanji, which are therefore the perfect bait.");
+    ~chatplayer("<p,quiz>But what kind of equipment do you use?");
+    ~chatnpc("<p,neutral>It is futile to attempt to catch Karambwan with something as basic as a net. They are too strong and vicious to be caught in such a fashion.");
+    ~chatnpc("<p,neutral>I have spent many years designing a specially shaped vessel, into which Karambwan may pass but from which they may not return.");
+    ~chatnpc("<p,neutral>If this vessel is loaded with Karambwanji, and then repeatedly lowered into a Karambwan shoal, then you should shortly find a Karambwan octopus trapped inside.");
+    ~chatnpc("<p,neutral>I will now give you a Karambwan fishing vessel with which you can practise. Make sure you do not lose it. Under no circumstance may you give or show this to anybody. Do you understand?");
+    ~chatplayer("<p,neutral>Yes, I understand.");
+    inv_add(inv, tbwt_karambwan_vessel, 1);
+    stat_advance(fishing, 15000);
+    ~set_tbwt_lubufu_progress(^tbwt_lubufu_became_apprentice);
+    ~objbox(tbwt_karambwan_vessel, "Lubufu hands you a Karambwan vessel.", 250, 0, 0);
+    ~chatnpc("<p,neutral>Feel free to practise on my fishing spot.");
+} else if ($initialops = 2) { // No.
+    @tbwt_lubufu_reject_apprentice;
+}
 
 [label,tbwt_lubufu_offered_apprentice]
 ~chatnpc("<p,neutral>Ah ... you again. Have you changed your mind yet? Do you want to train as my apprentice?");
+@tbwt_lubufu_become_apprentice_ops;
 
 [label,tbwt_lubufu_reject_apprentice]
 ~chatplayer("<p,neutral>No.");

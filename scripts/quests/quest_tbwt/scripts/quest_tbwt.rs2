@@ -107,7 +107,7 @@ p_opnpc(1);
 @tbwt_fish_lubufu_karambwan;
 
 [label,tbwt_fish_lubufu_karambwan]
-if (~get_tbwt_main_progress() < ^tbwt_complete) {
+if (~get_tbwt_lubufu_progress() < ^tbwt_lubufu_became_apprentice) {
     if (npc_find(coord, tbwt_lubufu, 20, 0) = true) {
         ~chatnpc("<p,angry>Keep off my fishing spot, whippersnapper!");
     }
