@@ -22,6 +22,10 @@ if (~get_tbwt_lubufu_progress < ^tbwt_lubufu_intro) {
     @tbwt_lubufu_offered_to_help;
 } else if (~get_tbwt_lubufu_progress = ^tbwt_lubufu_fetch_karambwanji) {
     @tbwt_lubufu_retrieved_karambwanji;
+} else if (~get_tbwt_lubufu_progress = ^tbwt_lubufu_given_karambwanji) {
+    @tbwt_lubufu_given_karambwanji_ops;
+} else if (~get_tbwt_lubufu_progress = ^tbwt_lubufu_offered_apprentice) {
+    @tbwt_lubufu_offered_apprentice;
 } else {
     @tbwt_lubufu_initialops;
 }
@@ -92,19 +96,13 @@ if ($initialops = 1) { // Talk about him...
     }
     def_int $karambwanops = ~p_choice4("What is a Karambwan?", 1, "What do you do with your Karambwan?", 2, "What do you use for bait?", 3, "What does Karambwan taste like?", 4);
     if ($karambwanops = 1) { // What is a Karambwan?
-        ~chatplayer("<p,quiz>What is a Karambwan?");
-        ~chatnpc("<p,neutral>A species of octopus native to the island which I and I alone know how to catch.");
-        @tbwt_lubufu_initialops;
+        @tbwt_lubufu_what_is_karambwan;
     } else if ($karambwanops = 2) { // What do you do with your Karambwan?
         @tbwt_lubufu_what_do_with_karambwan;
     } else if ($karambwanops = 3) { // What do you use for bait?
         @tbwt_lubufu_what_use_for_bait;
     } else if ($karambwanops = 4) { // What does Karambwan taste like?
-        ~chatplayer("<p,quiz>What does Karambwan taste like?");
-        ~chatnpc("<p,neutral>That depends entirely on how it is cooked...");
-        ~chatplayer("<p,quiz>What do you mean?");
-        ~chatnpc("<p,neutral>Novicely cooked Karambwan is often poisonous to large mammals such as humans. If you buy some and cook it, be careful.");
-        @tbwt_lubufu_initialops;
+        @tbwt_lubufu_what_karambwan_taste_like;
     }
 } else if ($initialops = 3) { // Talk about something else...
     if (~get_tbwt_lubufu_progress = ^tbwt_lubufu_intro) {
@@ -174,17 +172,52 @@ cleartimer(tbwt_lubufu_timer);
 [proc,tbwt_lubufu_settimer]
 settimer(tbwt_lubufu_timer, 10);
 
+[label,tbwt_lubufu_what_is_karambwan]
+~chatplayer("<p,quiz>What is a Karambwan?");
+~chatnpc("<p,neutral>A species of octopus native to the island which I and I alone know how to catch.");
+if (~get_tbwt_lubufu_progress = ^tbwt_lubufu_given_karambwanji) {
+    ~chatnpc("<p,shifty>You should really ought to know that by now.");
+    ~set_tbwt_lubufu_questioning(add(1, ~get_tbwt_lubufu_questioning));
+    if (~get_tbwt_lubufu_questioning >= 3) {
+        @tbwt_lubufu_offer_apprentice;
+    }
+} else {
+    @tbwt_lubufu_initialops;
+}
+
 [label,tbwt_lubufu_what_do_with_karambwan]
 ~chatplayer("<p,quiz>What do you do with your Karambwan?");
 ~chatnpc("<p,neutral>I eat what I need and sell the rest to the Shrimp and Parrot restaurant.");
-~chatplayer("<p,quiz>Where is the Shrimp and Parrot?");
-~chatnpc("<p,angry>You don't know anything do you? Just north of here, in Brimhaven!");
-@tbwt_lubufu_initialops;
+if (~get_tbwt_lubufu_progress = ^tbwt_lubufu_given_karambwanji) {
+    ~chatnpc("<p,neutral>Before you ask, the Shrimp and Parrot is just north of here, in Brimhaven.");
+    ~set_tbwt_lubufu_questioning(add(1, ~get_tbwt_lubufu_questioning));
+    if (~get_tbwt_lubufu_questioning >= 3) {
+        @tbwt_lubufu_offer_apprentice;
+    }
+} else {
+    ~chatplayer("<p,quiz>Where is the Shrimp and Parrot?");
+    ~chatnpc("<p,angry>You don't know anything do you? Just north of here, in Brimhaven!");
+    @tbwt_lubufu_initialops;
+}
 
 [label,tbwt_lubufu_what_use_for_bait]
 ~chatplayer("<p,quiz>What do you use for bait?");
 ~chatnpc("<p,angry>That is part of the secret! Why would I tell you?");
 @tbwt_lubufu_initialops;
+
+[label,tbwt_lubufu_what_karambwan_taste_like]
+~chatplayer("<p,quiz>What does Karambwan taste like?");
+~chatnpc("<p,neutral>That depends entirely on how it is cooked...");
+~chatplayer("<p,quiz>What do you mean?");
+~chatnpc("<p,neutral>Novicely cooked Karambwan is often poisonous to large mammals such as humans. If you buy some and cook it, be careful.");
+if (~get_tbwt_lubufu_progress = ^tbwt_lubufu_given_karambwanji) {
+    ~set_tbwt_lubufu_questioning(add(1, ~get_tbwt_lubufu_questioning));
+    if (~get_tbwt_lubufu_questioning >= 3) {
+        @tbwt_lubufu_offer_apprentice;
+    }
+} else {
+    @tbwt_lubufu_initialops;
+}
 
 [label,tbwt_lubufu_how_old_are_you]
 ~chatplayer("<p,quiz>How old are you?");
@@ -265,4 +298,42 @@ if (inv_total(inv, tbwt_raw_karambwanji) > 0) {
     ~chatplayer("<p,neutral>No, I'm still fishing for them.");
     ~chatnpc("<p,neutral>Well hurry! My reserves are beginning to run low.");
 }
-mes("Got <tostring(inv_total(inv, tbwt_raw_karambwanji))>");
+
+[label,tbwt_lubufu_given_karambwanji_ops]
+def_int $initialops = ~p_choice4("What is a Karambwan?", 1, "What do you do with your Karambwan?", 2, "What do you use to catch Karambwan?", 3, "What does Karambwan taste like?", 4);
+if ($initialops = 1) { // What is a Karambwan?
+    @tbwt_lubufu_what_is_karambwan;
+} else if ($initialops = 2) { // What do you do with your Karambwan?
+    @tbwt_lubufu_what_do_with_karambwan;
+} else if ($initialops = 3) { // What do you use to catch Karambwan?
+    @tbwt_lubufu_what_do_you_use;
+} else if ($initialops = 4) { // What does Karambwan taste like?
+    @tbwt_lubufu_what_karambwan_taste_like;
+}
+
+[label,tbwt_lubufu_what_do_you_use]
+~chatplayer("<p,quiz>What do you use to catch Karambwan?");
+~chatnpc("<p,neutral>Well ... since you ask, a specially constructed octopus pot. But don't tell anybody - that's part of the secret!");
+if (~get_tbwt_lubufu_progress = ^tbwt_lubufu_given_karambwanji) {
+    ~set_tbwt_lubufu_questioning(add(1, ~get_tbwt_lubufu_questioning));
+    if (~get_tbwt_lubufu_questioning >= 3) {
+        @tbwt_lubufu_offer_apprentice;
+    }
+}
+
+[label,tbwt_lubufu_offer_apprentice]
+~chatnpc("<p,neutral>My, you're keen aren't you?");
+mes("Lubufu appears to think for a moment.");
+npc_anim(emote_think, 0);
+if_close;
+p_delay(2);
+~set_tbwt_lubufu_progress(^tbwt_lubufu_offered_apprentice);
+~chatnpc("<p,quiz>How would you feel about becoming my apprentice?");
+
+[label,tbwt_lubufu_offered_apprentice]
+~chatnpc("<p,neutral>Ah ... you again. Have you changed your mind yet? Do you want to train as my apprentice?");
+
+[label,tbwt_lubufu_reject_apprentice]
+~chatplayer("<p,neutral>No.");
+~chatnpc("<p,neutral>Well the offer remains open. You're the most trustworthy person I have met in a long time.");
+~chatnpc("<p,neutral>Let me know if you change your mind.");

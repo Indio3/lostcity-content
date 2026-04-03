@@ -18,6 +18,8 @@
 ^tbwt_tiadeche_lubufu_end = 13
 ^tbwt_tiadeche_lubufu_karambwanji_count_start = 14
 ^tbwt_tiadeche_lubufu_karambwanji_count_end = 18
+^tbwt_tiadeche_lubufu_questioning_count_start = 19
+^tbwt_tiadeche_lubufu_questioning_count_end = 20
 
 ^tbwt_timfraku_rovingadventurer = 0
 ^tbwt_timfraku_travellingexplorer = 1
@@ -48,3 +50,5 @@
 ^tbwt_lubufu_offered_to_help = 4
 ^tbwt_lubufu_fetch_karambwanji = 5
 ^tbwt_lubufu_given_karambwanji = 6
+^tbwt_lubufu_offered_apprentice = 7
+^tbwt_lubufu_became_apprentice = 8
