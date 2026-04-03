@@ -1,42 +1,47 @@
 [opnpc2,monkey]
 if (%tbwt_main >= ^tbwt_started & %tbwt_main < ^tbwt_complete) {
-    if (~player_in_combat_check = false) {
-        return;
+    if ((inv_getobj(worn, ^wearpos_rhand) = null) | (oc_category(inv_getobj(worn, ^wearpos_rhand)) ! weapon_polearm)) {
+        @monkey_dodge;
+    } else {
+        @player_combat_start;
     }
-    mes("The monkey deftly avoids your melee attack! You aren't going to score a hit in");
-    mes("hand-to-hand combat.");
-    anim(%com_attackanim, 0);
-    sound_synth(%com_attacksound, 0, 0);
-    npc_setmode(playerescape);
-    p_delay(0);
-    npc_setmode(null);
-    switch_int(random(4)) {
-        case 0 :
-            npc_say("Ook! Ook! Oook!");
-        case 1 :
-            npc_say("Can't hit! Can't hit!");
-        case 2 : 
-            npc_say("Ook! Ah Ah Ah! Ook!");
-        case 3 : 
-            npc_say("Ook! Ook! Ah Ah AH!");
-        case 4 : 
-            npc_say("I won't say!");
-        case 5 : 
-            npc_say("Joooogre bones! Ook!");
-        case 6 : 
-            npc_say("Ook! Ah Ah Ah!");
-        case 7 : 
-            npc_say("Ah Ah Ah! Ook! Ook!");
-        case 8 : 
-            npc_say("Ah Ah Ah! Ook!");
-        case 9 :
-            npc_say("Ook! Ook! Oook!");
-    }
-    return;
 } else {
     @player_combat_start;
 }
 
+[label,monkey_dodge]
+if (~player_in_combat_check = false) {
+    return;
+}
+mes("The monkey deftly avoids your melee attack! You aren't going to score a hit in");
+mes("hand-to-hand combat.");
+anim(%com_attackanim, 0);
+sound_synth(%com_attacksound, 0, 0);
+npc_setmode(playerescape);
+world_delay(2);
+npc_setmode(null);
+switch_int(random(10)) {
+    case 0 :
+        npc_say("Ook! Ook! Oook!");
+    case 1 :
+        npc_say("Can't hit! Can't hit!");
+    case 2 : 
+        npc_say("Ook! Ah Ah Ah! Ook!");
+    case 3 : 
+        npc_say("Ook! Ook! Ah Ah AH!");
+    case 4 : 
+        npc_say("I won't say!");
+    case 5 : 
+        npc_say("Joooogre bones! Ook!");
+    case 6 : 
+        npc_say("Ook! Ah Ah Ah!");
+    case 7 : 
+        npc_say("Ah Ah Ah! Ook! Ook!");
+    case 8 : 
+        npc_say("Ah Ah Ah! Ook!");
+    case 9 :
+        npc_say("Ook! Ook! Oook!");
+}
 
 [ai_queue3,monkey]
 gosub(npc_death);
