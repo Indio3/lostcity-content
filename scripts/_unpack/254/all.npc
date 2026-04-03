@@ -49,7 +49,7 @@ recol6s=7298
 recol6d=20083
 vislevel=hide
 desc=A member of the audience.
-readyanim=seq_1137
+readyanim=human_sitting_chair
 minimap=no
 
 [macro_theatre_guthix]
@@ -72,7 +72,7 @@ recol5s=7298
 recol5d=3168
 vislevel=hide
 desc=A member of the audience.
-readyanim=seq_1137
+readyanim=human_sitting_chair
 minimap=no
 
 [macro_theatre_zamorak]
@@ -96,5 +96,5 @@ recol6s=10570
 recol6d=10272
 vislevel=hide
 desc=A member of the audience.
-readyanim=seq_1137
+readyanim=human_sitting_chair
 minimap=no

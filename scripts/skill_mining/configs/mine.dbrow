@@ -1,6 +1,6 @@
 [rune_essence_table]
 table=mining_table
-data=rock,loc_2491
+data=rock,blankrunestone
 data=ore_name,rune stones
 data=rock_output,blankrune
 data=rock_level,1

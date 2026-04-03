@@ -3,6 +3,8 @@ transmit=yes
 scope=temp
 protect=no
 
+[musicloop]
+
 [musicmulti_1]
 transmit=yes
 scope=perm
@@ -38,7 +40,7 @@ type=midi
 scope=temp
 protect=no
 
-[varp_296]
+[musicstart]
 scope=temp
 protect=no
 
@@ -47,6 +49,11 @@ scope=temp
 protect=no
 
 [musicmulti_7]
+scope=perm
+transmit=yes
+protect=no
+
+[musicmulti_8]
 scope=perm
 transmit=yes
 protect=no
