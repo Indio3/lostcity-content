@@ -22,6 +22,11 @@ if (~get_tbwt_main_progress() < ^tbwt_started) {
     }
 }
 
+[opnpcu,tbwt_tamayu]
+if(last_useitem = tbwt_monkey_corpse & ~get_tbwt_tamayu_progress() < ^tbwt_tamayu_slayed_shaikahan) {
+    ~chatnpc("<p,angry>I'm not going to skin that! In the jungle, we help only those who help us.");
+}
+
 [label,tbwt_tamayu_bringgoodnews]
 ~set_tbwt_tamayu_progress(^tbwt_tamayu_intro);
 ~chatplayer("<p,neutral>Tamayu, I bring good news. Trufitus has communed with the gods -  your village is once again safe."); // Double space after hyphen is intentional

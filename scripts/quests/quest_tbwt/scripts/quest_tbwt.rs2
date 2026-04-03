@@ -110,3 +110,12 @@ if(last_useitem = banana) {
 } else {
     ~displaymessage(^dm_default);
 }
+
+[opheldu,tbwt_monkey_corpse]
+def_obj $item = last_useitem;
+if ((oc_category($item) = weapon_polearm) | (oc_category($item) = weapon_spear) | (oc_category($item) = weapon_slash) | (oc_category($item) = weapon_stab) | ($item = knife)) {
+    mes("You don't know how to skin a monkey ... yet.");
+    return;
+} else {
+    ~displaymessage(^dm_default);
+}
