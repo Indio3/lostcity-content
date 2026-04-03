@@ -116,6 +116,15 @@ def_obj $item = last_useitem;
 if ((oc_category($item) = weapon_polearm) | (oc_category($item) = weapon_spear) | (oc_category($item) = weapon_slash) | (oc_category($item) = weapon_stab) | ($item = knife)) {
     mes("You don't know how to skin a monkey ... yet.");
     return;
+} else if ($item = seaweed) {
+    inv_del(inv, tbwt_monkey_corpse, 1);
+    inv_del(inv, seaweed, 1);
+    inv_add(inv, tbwt_seaweed_in_monkey_corpse, 1);
+    mes("You stuff the seaweed into the monkey corpse, creating a stuffed monkey.");
+    return;
 } else {
     ~displaymessage(^dm_default);
 }
+
+[opheld1,tbwt_seaweed_in_monkey_skin_sandwich]
+mes("You really, really do not want to eat that.");

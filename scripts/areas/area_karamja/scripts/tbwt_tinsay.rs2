@@ -45,6 +45,8 @@ if(last_useitem = tbwt_karambwan_vessel_loaded_with_karambwanji) {
     if (~get_tbwt_tinsay_progress() = ^tbwt_tinsay_fetch_seaweedsandwich) {
         @tbwt_tinsay_ihavethis;
     }
+} else {
+    ~displaymessage(^dm_default);
 }
 
 [label,tbwt_tinsay_bringgoodnews]
