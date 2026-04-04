@@ -6,6 +6,10 @@ Recheck MesAnims for:
 @tbwt_tiadeche_intro;
 @tbwt_tamayu_intro;
 
+Check whether you can add a banana to karamja rum before talking to Tinsay
+Check whether you can slice banana before talking to Tinsay
+Check whether you can burn Jogre bones before starting quest
+
 Recheck Tinsay dialogue for: Player - "Right ... what do you need?"
 Find Varp setting
 
@@ -21,7 +25,10 @@ If give 10 karambwanji, and have 5 more, what message does he give?
 Recheck Lubufu/player mesanim for: "That's a slight change in attitude..."
 
 Check whether you can load a Karambwan Vessel with Raw Karambwanji prior to learning from Lubufu, and note any messages.
+Check whether you can use a karambwan vessel on Lubufu's fishing spot priot to learning from Lubufu, and note any messages.
 
 Check whether you can give a Karambwan Vessel / Karambwan to Tiadeche prior to speaking to him.
+
+Check mesanims for "Accept Tiadeche's offer?"
 
 */

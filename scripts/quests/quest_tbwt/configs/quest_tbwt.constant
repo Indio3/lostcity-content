@@ -20,6 +20,7 @@
 ^tbwt_tiadeche_lubufu_karambwanji_count_end = 19
 ^tbwt_tiadeche_lubufu_questioning_count_start = 20
 ^tbwt_tiadeche_lubufu_questioning_count_end = 21
+^tbwt_tiadeche_tiadeche_received_karambwan = 22
 
 ^tbwt_timfraku_rovingadventurer = 0
 ^tbwt_timfraku_travellingexplorer = 1
@@ -29,6 +30,8 @@
 ^tbwt_tiadeche_unknown = 0
 ^tbwt_tiadeche_intro = 1
 ^tbwt_tiadeche_return_when_caught_karambwan = 2
+^tbwt_tiadeche_caught_karambwan = 3
+^tbwt_tiadeche_request_manual = 4
 ^tbwt_tiadeche_complete = 9
 
 ^tbwt_tamayu_unknown = 0

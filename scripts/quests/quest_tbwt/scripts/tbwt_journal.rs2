@@ -77,8 +77,16 @@ if (~get_tbwt_main_progress() = ^tbwt_started) {
             $text = append($text, "Nothing of interest.||");
         }
 
-        if (~get_tbwt_tiadeche_progress = ^tbwt_tiadeche_return_when_caught_karambwan) {
+        if (~get_tbwt_tiadeche_progress > ^tbwt_tiadeche_return_when_caught_karambwan) {
+            $text = append($text, "@str@He has successfully caught a Karambwan.||");
+        } else if (~get_tbwt_tiadeche_progress() = ^tbwt_tiadeche_return_when_caught_karambwan) {
             $text = append($text, "@dbl@He will only return to the village once he has caught a|@dre@Karambwan@dbl@.||");
+        }
+
+        if (~get_tbwt_tiadeche_progress > ^tbwt_tiadeche_request_manual) {
+            $text = append($text, "@str@Blah2||");
+        } else if (~get_tbwt_tiadeche_progress() = ^tbwt_tiadeche_request_manual) {
+            $text = append($text, "@dbl@I must take a @dre@Karambwan vessel@dbl@ to @dre@Tinsay@dbl@ and retrieve|@dre@crafting instructions@dbl@ for @dre@Tiadeche@dbl@.||");
         }
         
     }

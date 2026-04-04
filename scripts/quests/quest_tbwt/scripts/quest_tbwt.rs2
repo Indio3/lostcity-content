@@ -11,6 +11,7 @@ if (p_finduid(uid) = true) {
         mes("Set TBWT Timfraku title to: <tostring($var)>.");
     } else if ($var2 = 2) { // Set Tiadeche progress
         %tbwt_tiadeche = setbit_range_toint(%tbwt_tiadeche, $var, ^tbwt_tiadeche_tiadeche_start, ^tbwt_tiadeche_tiadeche_end);
+        %tbwt_tiadeche = clearbit(%tbwt_tiadeche, ^tbwt_tiadeche_tiadeche_received_karambwan);
         mes("Set TBWT Tiadeche progress to: <tostring($var)>.");
     } else if ($var2 = 3) { // Set Tamayu progress
         %tbwt_tiadeche = setbit_range_toint(%tbwt_tiadeche, $var, ^tbwt_tiadeche_tamayu_start, ^tbwt_tiadeche_tamayu_end);
@@ -101,6 +102,14 @@ if (~get_tbwt_main_progress() < ^tbwt_complete) {
 ~open_and_close_door(loc_param(next_loc_stage), ~check_axis(coord, loc_coord, loc_angle), false);
 
 [opnpcu,lubufu_karambwan]
+if(last_useitem = tbwt_karambwan_vessel) {
+    if (npc_find(coord, tbwt_lubufu, 20, 0) = true) {
+        ~chatnpc("<p,neutral>You'll first have to bait that pot with Karambwanji.");
+        return;
+    }
+} else if (last_useitem = tbwt_karambwan_vessel_loaded_with_karambwanji) {
+    p_opnpc(1);
+}
 p_opnpc(1);
 
 [opnpc1,lubufu_karambwan]
@@ -148,7 +157,7 @@ if ((oc_category($item) = weapon_polearm) | (oc_category($item) = weapon_spear) 
 [opheld1,tbwt_seaweed_in_monkey_skin_sandwich]
 mes("You really, really do not want to eat that.");
 
-[opheldu,tbwt_karambwan_vessel]
+[opheldu,tbwt_karambwan_vessel] // Can this be done prior to quest start?
 if (last_useitem = tbwt_raw_karambwanji) {
     inv_del(inv, tbwt_karambwan_vessel, 1);
     inv_del(inv, tbwt_raw_karambwanji, 1);
@@ -157,3 +166,5 @@ if (last_useitem = tbwt_raw_karambwanji) {
 } else {
     ~displaymessage(^dm_default);
 }
+
+// Jogre bones take 45 ticks to burn, according to OSRS via RSProx
