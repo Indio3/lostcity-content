@@ -21,6 +21,8 @@
 ^tbwt_tiadeche_lubufu_questioning_count_start = 20
 ^tbwt_tiadeche_lubufu_questioning_count_end = 21
 ^tbwt_tiadeche_tiadeche_received_karambwan = 22
+^tbwt_tiadeche_tamayu_agility_count_start = 23
+^tbwt_tiadeche_tamayu_agility_count_end = 25
 
 ^tbwt_timfraku_rovingadventurer = 0
 ^tbwt_timfraku_travellingexplorer = 1
@@ -59,3 +61,10 @@
 ^tbwt_lubufu_offered_apprentice = 7
 ^tbwt_lubufu_became_apprentice = 8
 ^tbwt_lubufu_learned_karambwan_fishing = 9
+
+^tbwt_tamayu_spawn = 0_44_47_28_34
+^tbwt_player_cutscene_spawn = 0_39_71_24_24
+^tbwt_tamayu_hunter_cutscene_spawn = 0_39_71_27_23
+^tbwt_shaikahan_cutscene_spawn = 0_39_71_28_23
+^tbwt_tamayu_hunter_cutscene_final_spawn = 0_39_71_27_23
+^tbwt_shaikahan_cutscene_final_spawn = 0_39_71_28_23

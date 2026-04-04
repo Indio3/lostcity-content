@@ -9,6 +9,7 @@ mes("Get TBWT Tinsay: <tostring(~get_tbwt_tinsay_progress())>");
 mes("Get TBWT Lubufu: <tostring(~get_tbwt_lubufu_progress())>");
 mes("Get TBWT Lubufu Karambwanji Count: <tostring(~get_tbwt_lubufu_karambwanji())>");
 mes("Get TBWT Lubufu Questioning Count: <tostring(~get_tbwt_lubufu_questioning())>");
+mes("Get TBWT Tamayu Agility Count: <tostring(~get_tbwt_tamayu_agility_count())>");
 mes("Raw TBWT Tiadeche varp: <tostring(%tbwt_tiadeche)>");
 
 if (~get_tbwt_main_progress() < ^tbwt_started) {

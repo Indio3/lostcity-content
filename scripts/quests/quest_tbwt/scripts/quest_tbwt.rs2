@@ -28,27 +28,15 @@ if (p_finduid(uid) = true) {
     } else if ($var2 = 7) { // Set Lubufu Karambwanji Count
         %tbwt_tiadeche = setbit_range_toint(%tbwt_tiadeche, $var, ^tbwt_tiadeche_lubufu_questioning_count_start, ^tbwt_tiadeche_lubufu_questioning_count_end);
         mes("Set TBWT Lubufu Questioning Count to: <tostring($var)>.");
+    } else if ($var2 = 8) { // Set Tamayu Agility Count
+        %tbwt_tiadeche = setbit_range_toint(%tbwt_tiadeche, $var, ^tbwt_tiadeche_tamayu_agility_count_start, ^tbwt_tiadeche_tamayu_agility_count_end);
+        mes("Set TBWT Tamayu Agility Count to: <tostring($var)>.");
     } else {
         %tbwt_tiadeche = $var;
         mes("Set entire TBWT Tiadeche varp to: <tostring($var)>.");
     }
 
     mes("After set - raw varp: <tostring(%tbwt_tiadeche)>");
-}
-
-[debugproc,ts]
-if (p_finduid(uid) = true) {
-
-        sound_synth(human_hit2, 0, 0);
-        world_delay(1);
-        sound_synth(human_hit3, 0, 0);
-        world_delay(1);
-        sound_synth(human_hit4, 0, 0);
-        world_delay(1);
-        sound_synth(human_hit_7, 0, 0);
-        world_delay(1);
-        mes("fin");
-
 }
 
 [proc,get_tbwt_main_progress]()(int)
@@ -99,6 +87,12 @@ return (getbit_range(%tbwt_tiadeche, ^tbwt_tiadeche_lubufu_questioning_count_sta
 [proc,set_tbwt_lubufu_questioning](int $prog)
 %tbwt_tiadeche = setbit_range_toint(%tbwt_tiadeche, $prog, ^tbwt_tiadeche_lubufu_questioning_count_start, ^tbwt_tiadeche_lubufu_questioning_count_end);
 
+[proc,get_tbwt_tamayu_agility_count]()(int)
+return (getbit_range(%tbwt_tiadeche, ^tbwt_tiadeche_tamayu_agility_count_start, ^tbwt_tiadeche_tamayu_agility_count_end));
+
+[proc,set_tbwt_tamayu_agility_count](int $prog)
+%tbwt_tiadeche = setbit_range_toint(%tbwt_tiadeche, $prog, ^tbwt_tiadeche_tamayu_agility_count_start, ^tbwt_tiadeche_tamayu_agility_count_end);
+
 [proc,tbwt_get_timfraku_title]()(string)
 def_string $title = "adventurer";
 switch_int(getbit_range(%tbwt_tiadeche, ^tbwt_tiadeche_timfraku_title_start, ^tbwt_tiadeche_timfraku_title_end)) {
@@ -141,6 +135,7 @@ if (~get_tbwt_lubufu_progress() < ^tbwt_lubufu_learned_karambwan_fishing & ~get_
 
 [opheldu,karamja_rum]
 if(last_useitem = banana) {
+    anim(rum_stuffing, 0);
     inv_del(inv, banana, 1);
     inv_del(inv, karamja_rum, 1);
     inv_add(inv, tbwt_banana_in_karamja_rum, 1);
@@ -169,6 +164,17 @@ if ((oc_category($item) = weapon_polearm) | (oc_category($item) = weapon_spear) 
     ~displaymessage(^dm_default);
 }
 
+[opheldu,banana]
+def_obj $item = last_useitem;
+if ((oc_category($item) = weapon_polearm) | (oc_category($item) = weapon_spear) | (oc_category($item) = weapon_slash) | (oc_category($item) = weapon_stab) | ($item = knife)) {
+    anim(banana_slicing, 0);
+    mes("You deftly chop the bananas into slices.");
+    inv_del(inv, banana, 1);
+    inv_add(inv, tbwt_sliced_banana, 1);
+} else {
+    ~displaymessage(^dm_default);
+}
+
 [opheld1,tbwt_seaweed_in_monkey_skin_sandwich]
 mes("You really, really do not want to eat that.");
 
@@ -183,15 +189,3 @@ if (last_useitem = tbwt_raw_karambwanji) {
 }
 
 // Jogre bones take 45 ticks to burn, according to OSRS via RSProx
-
-[label,shaikahan_attack]
-npc_anim(human_spear_block, 0);
-.npc_anim(lion_attack, 0);
-sound_synth(beast_attack, 0, 0);
-sound_synth(human_hit4, 0, 0);
-
-[label,shaikahan_defend]
-npc_anim(human_spear_spike, 0);
-.npc_anim(lion_block, 0);
-sound_synth(beast_hit, 0, 0);
-sound_synth(staff_stab, 0, 0);
