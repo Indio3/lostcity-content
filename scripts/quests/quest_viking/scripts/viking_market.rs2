@@ -15,7 +15,7 @@ if (getqueue(stolen_from_stall_vikingfur) > 0) {
     }
     return;
 }
-~chatnpc("<p,neutral>Welcome back Raklim! Have you seen the furs I have today?");
+~chatnpc("<p,neutral>Welcome back <~get_viking_name>! Have you seen the furs I have today?");
 ~openshop_activenpc;
 
 [opnpc1,viking_fish_monger]

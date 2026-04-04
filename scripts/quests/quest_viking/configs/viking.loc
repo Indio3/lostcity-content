@@ -1355,12 +1355,14 @@ desc=A wooden crate for storage.
 model=model_loc_63
 op1=Search
 blockrange=no
+category=empty_crate
 
 [viking_crate_2]
 name=Crate
 desc=An old crate for storage.
 model=model_loc_355
 op1=Search
+category=empty_crate
 
 [viking_steps_side]
 model=loc_4302
@@ -1402,6 +1404,7 @@ recol3d=9479
 forceapproach=east
 sharelight=yes
 op2=Smelt
+category=smithing_furnace
 
 [viking_blacksmithtools]
 name=Blacksmith's tools

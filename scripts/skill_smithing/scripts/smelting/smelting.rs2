@@ -1,5 +1,5 @@
 [oplocu,_smithing_furnace]
-if(loc_type = viking_furnace) {
+if(loc_type = viking_furnace | loc_type = viking_furnace2) {
     if(%viking < ^viking_complete) {
         mes("Only Fremenniks may use this furnace.");
         return;
@@ -23,9 +23,8 @@ switch_obj (last_useitem)
         ~displaymessage(^dm_default);
 }
 
-[oploc2,furnace1] @smelting_interface;
-[oploc2,viking_furnace]
-if(loc_type = viking_furnace) {
+[oploc2,_smithing_furnace]
+if(loc_type = viking_furnace | loc_type = viking_furnace2) {
     if(%viking < ^viking_complete) {
         mes("Only Fremenniks may use this furnace.");
         return;

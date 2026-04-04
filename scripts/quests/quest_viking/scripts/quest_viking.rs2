@@ -21,7 +21,27 @@ if(coordz(coord) > coordz($loc_coord)) {
 } else {
     p_teleport(movecoord($loc_coord, 0, 0, 1));
 }
- 
+
+[oploc1,viking_chest_closed]
+~open_chest(viking_chest_open);
+
+[oploc1,viking_chest_open]
+~close_chest(viking_chest_closed);
+
+[oploc2,viking_chest_open]
+mes("You search the chest...");
+p_delay(3);
+def_int $rand = random(128);
+// 151 atttempts on osrs, 18 on outcome 1, 133 for outcome 2, 1 for outcome 3
+if($rand < 16) {
+    mes("You don't find anything interesting.");
+} else if($rand < 127) {
+    mes("You find nothing inside.");
+} else {
+    mes("You think you find something nice...");
+    mes("But it turns out to be nothing.");
+}
+
 [proc,get_viking_swensen_progress]()(int)
 return (getbit_range(%viking_bits, ^viking_swensen_start, ^viking_swensen_end));
 

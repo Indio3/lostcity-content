@@ -89,7 +89,7 @@ if(%viking = ^viking_not_started) {
     }
 } else if(%viking = ^viking_complete) {
     ~chatplayer("<p,neutral>Howdy!");
-    ~chatnpc("<p,quiz>Hey! It's Raklim! Let me buy you a drink!");
+    ~chatnpc("<p,quiz>Hey! It's <~get_viking_name>! Let me buy you a drink!");
     inv_add(inv, beer, 1);
     ~chatnpc("<p,neutral>There ya go! Anyone who can drink like you earns my respect!");
 }
