@@ -36,6 +36,21 @@ if (p_finduid(uid) = true) {
     mes("After set - raw varp: <tostring(%tbwt_tiadeche)>");
 }
 
+[debugproc,ts]
+if (p_finduid(uid) = true) {
+
+        sound_synth(human_hit2, 0, 0);
+        world_delay(1);
+        sound_synth(human_hit3, 0, 0);
+        world_delay(1);
+        sound_synth(human_hit4, 0, 0);
+        world_delay(1);
+        sound_synth(human_hit_7, 0, 0);
+        world_delay(1);
+        mes("fin");
+
+}
+
 [proc,get_tbwt_main_progress]()(int)
 return (getbit_range(%tbwt_main, ^tbwt_not_started, ^tbwt_complete));
 
@@ -168,3 +183,15 @@ if (last_useitem = tbwt_raw_karambwanji) {
 }
 
 // Jogre bones take 45 ticks to burn, according to OSRS via RSProx
+
+[label,shaikahan_attack]
+npc_anim(human_spear_block, 0);
+.npc_anim(lion_attack, 0);
+sound_synth(beast_attack, 0, 0);
+sound_synth(human_hit4, 0, 0);
+
+[label,shaikahan_defend]
+npc_anim(human_spear_spike, 0);
+.npc_anim(lion_block, 0);
+sound_synth(beast_hit, 0, 0);
+sound_synth(staff_stab, 0, 0);

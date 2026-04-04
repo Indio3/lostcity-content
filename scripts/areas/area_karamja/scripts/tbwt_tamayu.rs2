@@ -17,7 +17,7 @@ if (~get_tbwt_main_progress() < ^tbwt_started) {
             @tbwt_tamayu_bringgoodnews;
         case ^tbwt_tamayu_intro :
             @tbwt_tamayu_bringgoodnews;
-        case ^tbwt_tamayu_slay_shaikahan :
+        case ^tbwt_tamayu_slay_shaikahan, ^tbwt_tamayu_watched_cutscene :
             @tbwt_tamayu_shaikahanops;
     }
 }
@@ -63,7 +63,104 @@ switch_int(random(2)) {
 [label,tbwt_tamayu_whensucceed]
 ~chatplayer("<p,neutral>When will you succeed?");
 ~chatnpc("<p,angry>When the gods bless me with success. You may join me on my next hunt, but you may not take part.");
+def_int $choice = ~p_choice2_header("Yes", 1, "No", 2, "Follow Tamayu on the next hunt?");
+if ($choice = 1) { // Yes
+    ~chatplayer("<p,neutral>Lead the way.");
+    if_close;
+    @tbwt_tamayu_cutscene1;
+} else if ($choice = 2) { // No
+    ~chatplayer("<p,neutral>Perhaps later, Tamayu, first son of Timfraku.");
+}
 
 [label,tbwt_tamayu_slayforyou]
 ~chatplayer("<p,neutral>I could slay the Shaikahan for you.");
 ~chatnpc("<p,angry>You offer to kill the beast for me? Stop this nonsense, lest I kill you first. It is I who must avenge the death of my kin.");
+
+[label,tbwt_tamayu_cutscene1]
+if (p_finduid(uid) = true) {
+    ~set_tbwt_tamayu_progress(^tbwt_tamayu_watched_cutscene);
+    def_coord $return_coord = 0_44_47_22_29;
+    p_teleport(0_39_71_24_24);
+    def_coord $tamayu_spawn = 0_39_71_27_23;
+    def_coord $shaikahan_spawn = 0_39_71_28_23;
+    if (npc_find($tamayu_spawn, tbwt_tamayu_hunter, 10, 0) = true & .npc_find($shaikahan_spawn, tbwt_beast_cutscene, 10, 0) = true) {
+        if(npc_getmode = none | .npc_getmode = none) {
+            //mes("npcs busy");
+            //return;
+        } else {
+            mes("npcs free, playing cutscene");
+        }
+        npc_setmode(none);
+        .npc_setmode(none);
+        npc_facesquare(.npc_coord);
+        .npc_facesquare(npc_coord);
+        facesquare($tamayu_spawn);
+        cam_lookat(0_39_71_27_23, 160, 232, 232);
+        cam_moveto(0_39_71_22_27, 350, 232, 232);
+        p_delay(0);
+
+        npc_anim(human_spear_block, 0);
+        .npc_anim(lion_attack, 0);
+        sound_synth(beast_attack, 0, 0);
+        sound_synth(human_hit_7, 0, 0);
+        p_delay(2);
+
+        npc_anim(human_spear_spike, 0);
+        .npc_anim(lion_block, 0);
+        sound_synth(beast_hit, 0, 0);
+        sound_synth(staff_stab, 0, 0);
+        cam_moveto(0_39_71_28_31, 350, 232, 232);
+        p_delay(2);
+
+        npc_anim(human_spear_spike, 0);
+        .npc_anim(lion_block, 0);
+        sound_synth(beast_hit, 0, 0);
+        sound_synth(staff_stab, 0, 0);
+        cam_moveto(0_39_71_29_19, 350, 232, 232);
+        p_delay(2);
+
+        npc_anim(human_spear_spike, 0);
+        .npc_anim(lion_block, 0);
+        sound_synth(beast_hit, 0, 0);
+        sound_synth(staff_stab, 0, 0);
+        cam_moveto(0_39_71_33_23, 350, 232, 232);
+        p_delay(1);
+
+        npc_anim(human_spear_block, 0);
+        .npc_anim(lion_attack, 0);
+        sound_synth(beast_attack, 0, 0);
+        sound_synth(human_hit4, 0, 0);
+        p_delay(3);
+
+        npc_anim(human_spear_spike, 0);
+        .npc_anim(lion_block, 0);
+        sound_synth(beast_hit, 0, 0);
+        sound_synth(staff_stab, 0, 0);
+        cam_moveto(0_39_71_34_27, 350, 232, 232);
+        p_delay(3);
+
+        npc_anim(human_spear_block, 0);
+        .npc_anim(lion_attack, 0);
+        sound_synth(beast_attack, 0, 0);
+        sound_synth(human_hit2, 0, 0);
+        p_delay(1);
+
+        cam_moveto(0_39_71_32_20, 350, 232, 232);
+        p_delay(1);
+
+        npc_anim(human_spear_block, 0);
+        .npc_anim(lion_attack, 0);
+        sound_synth(beast_attack, 0, 0);
+        sound_synth(human_hit_7, 0, 0);
+        p_delay(1);
+
+        cam_reset;
+        mes("Fin.");
+        if (p_finduid(uid) = true) {
+        p_teleport(0_44_47_22_29);
+        }
+    } else {
+        mes("npcs not found");
+    }
+    
+}

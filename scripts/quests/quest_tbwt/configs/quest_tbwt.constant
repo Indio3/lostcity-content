@@ -37,7 +37,8 @@
 ^tbwt_tamayu_unknown = 0
 ^tbwt_tamayu_intro = 1
 ^tbwt_tamayu_slay_shaikahan = 2
-^tbwt_tamayu_slayed_shaikahan = 3
+^tbwt_tamayu_watched_cutscene = 3
+^tbwt_tamayu_slayed_shaikahan = 9
 
 ^tbwt_tinsay_unknown = 0
 ^tbwt_tinsay_intro = 1
