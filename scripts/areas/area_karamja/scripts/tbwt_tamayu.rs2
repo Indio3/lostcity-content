@@ -67,6 +67,58 @@ if ((last_useitem = tbwt_monkey_corpse) | (last_useitem = tbwt_seaweed_in_monkey
     } else {
         ~chatnpc("<p,neutral>I have no interest in your potions right now. Only slaying the Shaikahan.");
     }
+} else if (oc_category(last_useitem) = weapon_spear) {
+    def_obj $spear = last_useitem;
+    db_find(shaikahan_spears:spear, $spear);
+    def_dbrow $data = db_findnext;
+
+    if ($data = null) {
+        ~displaymessage(^dm_default);
+        return;
+    }
+
+    mes("Debug: Spear = <oc_debugname($spear)>");
+    mes("Debug: correct_tier = <tostring(db_getfield($data, shaikahan_spears:correct_tier, 0))>");
+    mes("Debug: poisoned = <tostring(db_getfield($data, shaikahan_spears:poisoned, 0))>");
+    mes("Debug: karambwan_poisoned = <tostring(db_getfield($data, shaikahan_spears:karambwan_poisoned, 0))>");
+
+    if (db_getfield($data, shaikahan_spears:correct_tier, 0) = ^false) {
+        // Bronze spear
+        %tbwt_tiadeche = clearbit(%tbwt_tiadeche, ^tbwt_tiadeche_tamayu_received_acceptable_spear);
+
+        if (db_getfield($data, shaikahan_spears:poisoned, 0) = ^true) {
+            %tbwt_tiadeche = setbit(%tbwt_tiadeche, ^tbwt_tiadeche_tamayu_received_poisoned_spear);
+            %tbwt_tiadeche = clearbit(%tbwt_tiadeche, ^tbwt_tiadeche_tamayu_received_kp_spear);
+        } else {
+            %tbwt_tiadeche = clearbit(%tbwt_tiadeche, ^tbwt_tiadeche_tamayu_received_poisoned_spear);
+            %tbwt_tiadeche = clearbit(%tbwt_tiadeche, ^tbwt_tiadeche_tamayu_received_kp_spear);
+        }
+        
+        if (db_getfield($data, shaikahan_spears:karambwan_poisoned, 0) = ^true) {
+            %tbwt_tiadeche = setbit(%tbwt_tiadeche, ^tbwt_tiadeche_tamayu_received_kp_spear);
+        } else {
+            %tbwt_tiadeche = clearbit(%tbwt_tiadeche, ^tbwt_tiadeche_tamayu_received_kp_spear);
+        }
+    } else {
+        // Iron or better spear
+        %tbwt_tiadeche = setbit(%tbwt_tiadeche, ^tbwt_tiadeche_tamayu_received_acceptable_spear);
+
+        if (db_getfield($data, shaikahan_spears:poisoned, 0) = ^true) {
+            %tbwt_tiadeche = setbit(%tbwt_tiadeche, ^tbwt_tiadeche_tamayu_received_poisoned_spear);
+        } else {
+            %tbwt_tiadeche = clearbit(%tbwt_tiadeche, ^tbwt_tiadeche_tamayu_received_poisoned_spear);
+        }
+
+        if (db_getfield($data, shaikahan_spears:karambwan_poisoned, 0) = ^true) {
+            %tbwt_tiadeche = setbit(%tbwt_tiadeche, ^tbwt_tiadeche_tamayu_received_kp_spear);
+        } else {
+            %tbwt_tiadeche = clearbit(%tbwt_tiadeche, ^tbwt_tiadeche_tamayu_received_kp_spear);
+        }
+    }
+    inv_del(inv, $spear, 1);
+    ~chatplayer("<p,neutral>Tamayu, try using this weapon.");
+    ~objbox($spear, "You hand the spear to Tamayu.", 250, 0, 10);
+    ~chatnpc("<p,neutral>Thank you Bwana. Now I must prepare for my next hunt.");
 } else {
     ~displaymessage(^dm_default);
 }
@@ -146,7 +198,6 @@ if (p_finduid(uid) = true) {
         npc_facesquare(.npc_coord);
         .npc_facesquare(npc_coord);
         facesquare(^tbwt_tamayu_hunter_cutscene_spawn);
-        mes("facesquare: <tostring(map_clock)>");
 
         p_delay(0);
         cam_lookat(0_39_71_27_23, 160, 232, 232);
@@ -204,8 +255,97 @@ if (p_finduid(uid) = true) {
         mes("Fin. <tostring(map_clock)>");
 
         if (p_finduid(uid) = true) {
-            p_teleport(map_findsquare(^tbwt_tamayu_spawn, 2, 4, ^map_findsquare_lineofwalk));
             if (npc_find(^tbwt_tamayu_spawn, tbwt_tamayu, 5, 0) = true) {
+                p_teleport(map_findsquare(npc_coord, 2, 4, ^map_findsquare_lineofwalk));
+                facesquare(npc_coord);
+                @tbwt_tamayu_assess_agility;
+            } else { // Safety to make sure player returns if Tamayu not found
+                mes("Can't find");
+                p_teleport(map_findsquare(^tbwt_tamayu_spawn, 2, 4, ^map_findsquare_lineofwalk));
+                facesquare(npc_coord);
+                @tbwt_tamayu_assess_agility;
+            }
+        }
+    }
+}
+
+[label,tbwt_tamayu_final_cutscene]
+if (p_finduid(uid) = true) {
+    p_teleport(0_39_71_24_24);
+    mes("teleport: <tostring(map_clock)>");
+
+    if (npc_find(^tbwt_tamayu_hunter_cutscene_spawn, tbwt_tamayu_hunter, 10, 0) = true & 
+        .npc_find(^tbwt_shaikahan_cutscene_spawn, tbwt_beast_cutscene, 10, 0) = true) {
+
+        npc_facesquare(.npc_coord);
+        .npc_facesquare(npc_coord);
+        facesquare(^tbwt_tamayu_hunter_cutscene_spawn);
+
+        p_delay(0);
+        cam_lookat(0_39_71_27_23, 160, 232, 232);
+        cam_moveto(0_39_71_22_27, 350, 232, 232);
+        mes("camera: <tostring(map_clock)>");
+        p_delay(1);
+
+        def_int $since_last = sub(map_clock, %npc_lastcombat);
+        if ($since_last < 3 & $since_last > 0) {
+            p_delay(sub(3, $since_last));
+        }
+
+        ~tbwt_roll_attack_or_defend;
+        mes("1 attack: <tostring(map_clock)>");
+        p_delay(2);
+
+        ~tbwt_roll_attack_or_defend;
+        mes("2 attack: <tostring(map_clock)>");
+        cam_moveto(0_39_71_28_31, 350, 232, 232);
+        p_delay(2);
+
+        ~tbwt_roll_attack_or_defend;
+        mes("3 attack: <tostring(map_clock)>");
+        cam_moveto(0_39_71_29_19, 350, 232, 232);
+        p_delay(2);
+
+        ~tbwt_roll_attack_or_defend;
+        mes("4 attack: <tostring(map_clock)>");
+        cam_moveto(0_39_71_33_23, 350, 232, 232);
+        p_delay(2);
+
+        ~tbwt_roll_attack_or_defend;
+        mes("5 attack: <tostring(map_clock)>");
+        p_delay(2);
+
+        ~tbwt_roll_attack_or_defend;
+        mes("6 attack: <tostring(map_clock)>");
+        cam_moveto(0_39_71_34_27, 350, 232, 232);
+        p_delay(2);
+
+        ~tbwt_roll_attack_or_defend;
+        mes("7 attack: <tostring(map_clock)>");
+        p_delay(1);
+
+        cam_moveto(0_39_71_32_20, 350, 232, 232);
+
+        p_delay(0);
+
+        ~tbwt_roll_attack_or_defend;
+        mes("8 attack: <tostring(map_clock)>");
+
+        p_delay(0);
+
+        cam_reset;
+        mes("Fin. <tostring(map_clock)>");
+
+        ~set_tbwt_tamayu_progress(^tbwt_tamayu_slayed_shaikahan);
+
+        if (p_finduid(uid) = true) {
+            if (npc_find(^tbwt_tamayu_spawn, tbwt_tamayu, 5, 0) = true) {
+                p_teleport(map_findsquare(npc_coord, 2, 4, ^map_findsquare_lineofwalk));
+                facesquare(npc_coord);
+                @tbwt_tamayu_assess_agility;
+            } else { // Safety to make sure player returns if Tamayu not found
+                mes("Can't find");
+                p_teleport(map_findsquare(^tbwt_tamayu_spawn, 2, 4, ^map_findsquare_lineofwalk));
                 facesquare(npc_coord);
                 @tbwt_tamayu_assess_agility;
             }
@@ -247,9 +387,24 @@ if (~get_tbwt_tamayu_agility_count < 1) {
 @tbwt_tamayu_assess_damage;
 
 [label,tbwt_tamayu_assess_damage]
-~chatnpc("<p,neutral>I cannot do enough damage with this spear...");
+if (testbit(%tbwt_tiadeche, ^tbwt_tiadeche_tamayu_received_acceptable_spear) = ^true) {
+    ~chatnpc("<p,neutral>I can do enough damage...");
+} else {
+    ~chatnpc("<p,neutral>I cannot do enough damage with this spear...");
+}
 @tbwt_tamayu_assess_health;
 
 [label,tbwt_tamayu_assess_health]
-~chatnpc("<p,neutral>... and  it seems to be healing too quickly!");
-~chatnpc("<p,neutral>... but it does seem quite sick! Perhaps another poison would be more effective?"); // If using a (p) spear
+if (testbit(%tbwt_tiadeche, ^tbwt_tiadeche_tamayu_received_poisoned_spear) = ^true) {
+    if (testbit(%tbwt_tiadeche, ^tbwt_tiadeche_tamayu_received_acceptable_spear) = ^true) {
+        ~chatnpc("<p,neutral>... and  it does seem quite sick! Perhaps another poison would be more effective?");
+    } else {
+        ~chatnpc("<p,neutral>... but  it does seem quite sick! Perhaps another poison would be more effective?");
+    }
+} else {
+    if (testbit(%tbwt_tiadeche, ^tbwt_tiadeche_tamayu_received_acceptable_spear) = ^true) {
+        ~chatnpc("<p,neutral>... but  it seems to be healing too quickly!");
+    } else {
+        ~chatnpc("<p,neutral>... and  it seems to be healing too quickly!");
+    }
+}

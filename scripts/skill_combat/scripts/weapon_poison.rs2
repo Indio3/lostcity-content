@@ -4,6 +4,12 @@ if (oc_param(last_useitem, weapon_poisoned) ! null) {
 }
 ~displaymessage(^dm_default);
 
+[opheldu,tbwt_poisonous_karambwan_paste]
+if (oc_param(last_useitem, tbwt_weapon_poisoned) ! null) {
+    @make_tbwt_poisoned_weapon(last_useslot, last_slot);
+}
+~displaymessage(^dm_default);
+
 [opheldu,_weapon_stab]
 switch_obj(last_useitem) {
     case weapon_poison : @make_weapon_poisoned(last_slot, last_useslot);
@@ -77,3 +83,17 @@ mes(oc_param($weapon, weapon_poisoned_message));
 // - You poison some darts.
 // - You poison the javelins.
 // - You poison some knives.
+
+[label,make_tbwt_poisoned_weapon](int $weapon_slot, int $poison_slot)
+def_obj $weapon = inv_getobj(inv, $weapon_slot);
+if (oc_param($weapon, tbwt_weapon_poisoned) = null) {
+    ~displaymessage(^dm_default);
+    return;
+}
+if (oc_category($weapon) = weapon_spear) {
+    inv_del(inv, inv_getobj(inv, $poison_slot), 1);
+    inv_del(inv, $weapon, 1);
+    inv_add(inv, oc_param($weapon, tbwt_weapon_poisoned), 1);
+}
+
+mes(oc_param($weapon, tbwt_weapon_poisoned_message));

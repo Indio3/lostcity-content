@@ -1,0 +1,5 @@
+[shaikahan_spears]
+column=spear,obj,INDEXED,REQUIRED
+column=correct_tier,int
+column=poisoned,int
+column=karambwan_poisoned,int

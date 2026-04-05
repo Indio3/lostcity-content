@@ -202,7 +202,8 @@ model=obj_3142
 2dxan=388
 weight=700g
 category=category_57
-param=fishing_struct,fishing_struct_anchovies
+param=grindable_ingredient_refined,tbwt_raw_karambwan_paste
+param=grindable_ingredient_message,You grind the raw Karambwan to form a sticky paste.
 
 [tbwt_raw_karambwanji]
 name=Raw karambwanji

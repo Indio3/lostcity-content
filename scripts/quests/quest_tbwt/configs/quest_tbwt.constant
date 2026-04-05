@@ -23,6 +23,9 @@
 ^tbwt_tiadeche_tiadeche_received_karambwan = 22
 ^tbwt_tiadeche_tamayu_agility_count_start = 23
 ^tbwt_tiadeche_tamayu_agility_count_end = 25
+^tbwt_tiadeche_tamayu_received_acceptable_spear = 26
+^tbwt_tiadeche_tamayu_received_poisoned_spear = 27
+^tbwt_tiadeche_tamayu_received_kp_spear = 28
 
 ^tbwt_timfraku_rovingadventurer = 0
 ^tbwt_timfraku_travellingexplorer = 1
@@ -40,7 +43,7 @@
 ^tbwt_tamayu_intro = 1
 ^tbwt_tamayu_slay_shaikahan = 2
 ^tbwt_tamayu_watched_cutscene = 3
-^tbwt_tamayu_slayed_shaikahan = 9
+^tbwt_tamayu_slayed_shaikahan = 4
 
 ^tbwt_tinsay_unknown = 0
 ^tbwt_tinsay_intro = 1
