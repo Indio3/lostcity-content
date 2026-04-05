@@ -28,7 +28,7 @@ if (~get_tbwt_lubufu_progress < ^tbwt_lubufu_intro) {
     @tbwt_lubufu_offered_apprentice;
 } else if (~get_tbwt_lubufu_progress = ^tbwt_lubufu_became_apprentice) {
     @tbwt_lubufu_learn_karambwan_fishing;
-} else if (~get_tbwt_lubufu_progress = ^tbwt_lubufu_learned_karambwan_fishing) {
+} else if (~get_tbwt_lubufu_progress = ^tbwt_lubufu_complete) {
     @tbwt_lubufu_apprentice_dialogue;
 } else {
     @tbwt_lubufu_initialops;
@@ -358,7 +358,7 @@ if ($initialops = 1) { // Yes!
 ~chatplayer("<p,neutral>Yes, I understand.");
 inv_add(inv, tbwt_karambwan_vessel, 1);
 stat_advance(fishing, 15000);
-~set_tbwt_lubufu_progress(^tbwt_lubufu_learned_karambwan_fishing);
+~set_tbwt_lubufu_progress(^tbwt_lubufu_complete);
 ~objbox(tbwt_karambwan_vessel, "Lubufu hands you a Karambwan vessel.", 250, 0, ^objbox_height);
 ~chatnpc("<p,neutral>Feel free to practise on my fishing spot.");
 

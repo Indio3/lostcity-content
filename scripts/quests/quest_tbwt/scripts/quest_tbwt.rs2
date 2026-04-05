@@ -43,6 +43,10 @@ if (p_finduid(uid) = true) {
 if (p_finduid(uid) = true) {
     @tbwt_tamayu_final_cutscene;
 }
+[debugproc,tbwt]
+if (p_finduid(uid) = true) {
+    p_teleport(0_44_47_27_32);
+}
 
 [proc,get_tbwt_main_progress]()(int)
 return (getbit_range(%tbwt_main, ^tbwt_not_started, ^tbwt_complete));
@@ -130,7 +134,7 @@ p_opnpc(1);
 @tbwt_fish_lubufu_karambwan;
 
 [label,tbwt_fish_lubufu_karambwan]
-if (~get_tbwt_lubufu_progress() < ^tbwt_lubufu_learned_karambwan_fishing & ~get_tbwt_main_progress() < ^tbwt_complete) {
+if (~get_tbwt_lubufu_progress() < ^tbwt_lubufu_complete & ~get_tbwt_main_progress() < ^tbwt_complete) {
     if (npc_find(coord, tbwt_lubufu, 20, 0) = true) {
         ~chatnpc("<p,angry>Keep off my fishing spot, whippersnapper!");
     }

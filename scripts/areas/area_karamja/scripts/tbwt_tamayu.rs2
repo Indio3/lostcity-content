@@ -19,11 +19,13 @@ if (~get_tbwt_main_progress() < ^tbwt_started) {
             @tbwt_tamayu_bringgoodnews;
         case ^tbwt_tamayu_slay_shaikahan, ^tbwt_tamayu_watched_cutscene :
             @tbwt_tamayu_shaikahanops;
+        case ^tbwt_tamayu_complete :
+            @tbwt_tamayu_slayed_shaikahan;
     }
 }
 
 [opnpcu,tbwt_tamayu]
-if ((last_useitem = tbwt_monkey_corpse) | (last_useitem = tbwt_seaweed_in_monkey_corpse) & (~get_tbwt_tamayu_progress() < ^tbwt_tamayu_slayed_shaikahan)) {
+if ((last_useitem = tbwt_monkey_corpse) | (last_useitem = tbwt_seaweed_in_monkey_corpse) & (~get_tbwt_tamayu_progress() < ^tbwt_tamayu_complete)) {
     ~chatnpc("<p,angry>I'm not going to skin that! In the jungle, we help only those who help us.");
 } else if (last_useitem = 1dose1agility |
            last_useitem = 2dose1agility |
@@ -67,35 +69,39 @@ if ((last_useitem = tbwt_monkey_corpse) | (last_useitem = tbwt_seaweed_in_monkey
         ~chatnpc("<p,neutral>I have no interest in your potions right now. Only slaying the Shaikahan.");
     }
 } else if (oc_category(last_useitem) = weapon_spear) {
-    def_obj $spear = last_useitem;
+    if (~get_tbwt_tamayu_progress = ^tbwt_tamayu_watched_cutscene) {
+        def_obj $spear = last_useitem;
 
-    %tbwt_tiadeche = clearbit(%tbwt_tiadeche, ^tbwt_tiadeche_tamayu_received_acceptable_spear);
-    %tbwt_tiadeche = clearbit(%tbwt_tiadeche, ^tbwt_tiadeche_tamayu_received_poisoned_spear);
-    %tbwt_tiadeche = clearbit(%tbwt_tiadeche, ^tbwt_tiadeche_tamayu_received_kp_spear);
+        %tbwt_tiadeche = clearbit(%tbwt_tiadeche, ^tbwt_tiadeche_tamayu_received_acceptable_spear);
+        %tbwt_tiadeche = clearbit(%tbwt_tiadeche, ^tbwt_tiadeche_tamayu_received_poisoned_spear);
+        %tbwt_tiadeche = clearbit(%tbwt_tiadeche, ^tbwt_tiadeche_tamayu_received_kp_spear);
 
-    // Interestingly, in OSRS as of Apr 2026, Bronze Spear (p+) & (p++) sets '^tbwt_tiadeche_tamayu_received_acceptable_spear' too
-    // We don't have (p+, or p++) variants yet in 274 though, so no action taken.
-    // Leaf-bladed spear & Guthan's Warspear are also considered 'acceptable_spears' (due to the oc_category of weapon_spear)
-    if ($spear = bronze_spear_p) {
-        %tbwt_tiadeche = setbit(%tbwt_tiadeche, ^tbwt_tiadeche_tamayu_received_poisoned_spear);
-    } else if ($spear = tbwt_bronze_spear_kp) {
-        %tbwt_tiadeche = setbit(%tbwt_tiadeche, ^tbwt_tiadeche_tamayu_received_kp_spear);
-    } else {
-        %tbwt_tiadeche = setbit(%tbwt_tiadeche, ^tbwt_tiadeche_tamayu_received_acceptable_spear);
-
-        if (oc_param($spear, poison_severity) > 0) {
+        // Interestingly, in OSRS as of Apr 2026, Bronze Spear (p+) & (p++) sets '^tbwt_tiadeche_tamayu_received_acceptable_spear' too
+        // We don't have (p+, or p++) variants yet in 274 though, so no action taken.
+        // Leaf-bladed spear & Guthan's Warspear are also considered 'acceptable_spears' (due to the oc_category of weapon_spear)
+        if ($spear = bronze_spear_p) {
             %tbwt_tiadeche = setbit(%tbwt_tiadeche, ^tbwt_tiadeche_tamayu_received_poisoned_spear);
-        }
-
-        if (oc_param($spear, tbwt_karambwan_poison) = ^true) {
+        } else if ($spear = tbwt_bronze_spear_kp) {
             %tbwt_tiadeche = setbit(%tbwt_tiadeche, ^tbwt_tiadeche_tamayu_received_kp_spear);
-        }
-    }
+        } else {
+            %tbwt_tiadeche = setbit(%tbwt_tiadeche, ^tbwt_tiadeche_tamayu_received_acceptable_spear);
 
-    inv_del(inv, $spear, 1);
-    ~chatplayer("<p,neutral>Tamayu, try using this weapon.");
-    ~objbox($spear, "You hand the spear to Tamayu.", 250, 0, 10);
-    ~chatnpc("<p,neutral>Thank you Bwana. Now I must prepare for my next hunt.");
+            if (oc_param($spear, poison_severity) > 0) {
+                %tbwt_tiadeche = setbit(%tbwt_tiadeche, ^tbwt_tiadeche_tamayu_received_poisoned_spear);
+            }
+
+            if (oc_param($spear, tbwt_karambwan_poison) = ^true) {
+                %tbwt_tiadeche = setbit(%tbwt_tiadeche, ^tbwt_tiadeche_tamayu_received_kp_spear);
+            }
+        }
+
+        inv_del(inv, $spear, 1);
+        ~chatplayer("<p,neutral>Tamayu, try using this weapon.");
+        ~objbox($spear, "You hand the spear to Tamayu.", 250, 0, 10);
+        ~chatnpc("<p,neutral>Thank you Bwana. Now I must prepare for my next hunt.");
+    } else {
+        ~chatnpc("<p,neutral>I have no interest in your weapons right now. Only slaying the Shaikahan.");
+    }
 } else {
     ~displaymessage(^dm_default);
 }
@@ -163,193 +169,169 @@ if_close;
 ~chatnpc("<p,angry>You offer to kill the beast for me? Stop this nonsense, lest I kill you first. It is I who must avenge the death of my kin.");
 
 [label,tbwt_tamayu_cutscene]
-if (p_finduid(uid) = true) {
-    ~set_tbwt_tamayu_progress(^tbwt_tamayu_watched_cutscene);
-    p_teleport(^tbwt_player_cutscene_spawn);
-    mes("teleport: <tostring(map_clock)>");
+def_boolean $killing_hunt = false;
+def_int $delay = 3;
+if (testbit(%tbwt_tiadeche, ^tbwt_tiadeche_tamayu_received_acceptable_spear) = ^true & testbit(%tbwt_tiadeche, ^tbwt_tiadeche_tamayu_received_kp_spear) = ^true) {
+    $killing_hunt = true;
+}
+~set_tbwt_tamayu_progress(^tbwt_tamayu_watched_cutscene);
+p_teleport(^tbwt_player_cutscene_spawn);
 
-    if (npc_find(^tbwt_tamayu_hunter_cutscene_spawn, tbwt_tamayu_hunter, 10, 0) = true & 
-        .npc_find(^tbwt_shaikahan_cutscene_spawn, tbwt_beast_cutscene, 10, 0) = true) {
+if (npc_find(^tbwt_tamayu_hunter_cutscene_spawn, tbwt_tamayu_hunter, 5, 0) = true &
+    .npc_find(^tbwt_shaikahan_cutscene_spawn, tbwt_beast_cutscene, 5, 0) = true) {
+    npc_facesquare(.npc_coord);
+    .npc_facesquare(npc_coord);
+    facesquare(^tbwt_tamayu_hunter_cutscene_spawn);
 
-        npc_facesquare(.npc_coord);
-        .npc_facesquare(npc_coord);
-        facesquare(^tbwt_tamayu_hunter_cutscene_spawn);
-
-        p_delay(0);
-        cam_lookat(0_39_71_27_23, 160, 232, 232);
-        cam_moveto(0_39_71_22_27, 350, 232, 232);
-        mes("camera: <tostring(map_clock)>");
-        p_delay(1);
-
+    if ($killing_hunt = true) { // Setup to sync first camera moveto & lookat on first attack, if doing a killing hunt
+        $delay = 2;
         def_int $since_last = sub(map_clock, %npc_lastcombat);
-        if ($since_last < 3 & $since_last > 0) {
-            p_delay(sub(3, $since_last));
+        def_int $delay_ticks = 0;
+
+        if ($since_last <= 1) {
+            $delay_ticks = 2;
+        } else if ($since_last = 2) {
+            $delay_ticks = 1;
         }
 
-        ~tbwt_roll_attack_or_defend;
-        mes("1 attack: <tostring(map_clock)>");
-        p_delay(2);
-
-        ~tbwt_roll_attack_or_defend;
-        mes("2 attack: <tostring(map_clock)>");
-        cam_moveto(0_39_71_28_31, 350, 232, 232);
-        p_delay(2);
-
-        ~tbwt_roll_attack_or_defend;
-        mes("3 attack: <tostring(map_clock)>");
-        cam_moveto(0_39_71_29_19, 350, 232, 232);
-        p_delay(2);
-
-        // If correct items, break into final_cutscene here
-        if (testbit(%tbwt_tiadeche, ^tbwt_tiadeche_tamayu_received_acceptable_spear) = ^true &
-        testbit(%tbwt_tiadeche, ^tbwt_tiadeche_tamayu_received_kp_spear) = ^true) {
-            @tbwt_tamayu_final_cutscene;
+        if ($delay_ticks > 0) {
+            p_delay(sub($delay_ticks, 1));
         }
+    } else {
+        p_delay(0); // 1 tick after entering if not a killing hunt
+    }
+    cam_lookat(0_39_71_27_23, 160, 232, 232);
+    cam_moveto(0_39_71_22_27, 350, 232, 232);
 
-        ~tbwt_roll_attack_or_defend;
-        mes("4 attack: <tostring(map_clock)>");
-        cam_moveto(0_39_71_33_23, 350, 232, 232);
-        p_delay(2);
+    p_delay($delay);
+    if (%npc_int = 0 & $killing_hunt = true) @tbwt_tamayu_final_cutscene;
+    cam_moveto(0_39_71_28_31, 350, 232, 232);
+    
+    p_delay($delay);
+    if (%npc_int = 0 & $killing_hunt = true) @tbwt_tamayu_final_cutscene;
+    cam_moveto(0_39_71_29_19, 350, 232, 232);
 
-        ~tbwt_roll_attack_or_defend;
-        mes("5 attack: <tostring(map_clock)>");
-        p_delay(2);
+    p_delay($delay);
+    if (%npc_int = 0 & $killing_hunt = true) @tbwt_tamayu_final_cutscene;
+    cam_moveto(0_39_71_33_23, 350, 232, 232);
 
-        ~tbwt_roll_attack_or_defend;
-        mes("6 attack: <tostring(map_clock)>");
-        cam_moveto(0_39_71_34_27, 350, 232, 232);
-        p_delay(2);
+    p_delay($delay);
+    if (%npc_int = 0 & $killing_hunt = true) @tbwt_tamayu_final_cutscene;
+    cam_moveto(0_39_71_34_27, 350, 232, 232);
 
-        ~tbwt_roll_attack_or_defend;
-        mes("7 attack: <tostring(map_clock)>");
-        p_delay(1);
+    p_delay($delay);
+    if (%npc_int = 0 & $killing_hunt = true) @tbwt_tamayu_final_cutscene;
+    cam_moveto(0_39_71_32_20, 350, 232, 232);
 
-        cam_moveto(0_39_71_32_20, 350, 232, 232);
+    p_delay($delay);
+    cam_reset;
 
-        p_delay(0);
-
-        ~tbwt_roll_attack_or_defend;
-        mes("8 attack: <tostring(map_clock)>");
-
-        p_delay(0);
-
-        cam_reset;
-        mes("Fin. <tostring(map_clock)>");
-
-        if (p_finduid(uid) = true) {
-            if (npc_find(^tbwt_tamayu_spawn, tbwt_tamayu, 5, 0) = true) {
-                p_teleport(map_findsquare(npc_coord, 2, 4, ^map_findsquare_lineofwalk));
-                facesquare(npc_coord);
-                @tbwt_tamayu_assess_agility;
-            } else { // Safety to make sure player returns if Tamayu not found
-                mes("Can't find");
-                p_teleport(map_findsquare(^tbwt_tamayu_spawn, 2, 4, ^map_findsquare_lineofwalk));
-                facesquare(npc_coord);
-                @tbwt_tamayu_assess_agility;
-            }
-        }
+    if (npc_find(^tbwt_tamayu_spawn, tbwt_tamayu, 5, 0) = true) {
+        p_teleport(map_findsquare(npc_coord, 2, 4, ^map_findsquare_lineofwalk));
+        facesquare(npc_coord);
+        @tbwt_tamayu_assess_agility;
+    } else { // Safety to make sure player returns if Tamayu not found
+        mes("Can't find");
+        p_teleport(map_findsquare(^tbwt_tamayu_spawn, 2, 4, ^map_findsquare_lineofwalk));
+        facesquare(npc_coord);
+        @tbwt_tamayu_assess_agility;
     }
 }
 
 [label,tbwt_tamayu_final_cutscene]
-if (p_finduid(uid) = true) {
-    p_teleport(^tbwt_player_cutscene_final_spawn);
-    mes("teleport: <tostring(map_clock)>");
+p_teleport(^tbwt_player_cutscene_final_spawn);
 
-    if (npc_find(^tbwt_tamayu_hunter_cutscene_final_spawn, tbwt_tamayu_final_hunter, 10, 0) = true & 
-        .npc_find(^tbwt_shaikahan_cutscene_final_spawn, tbwt_beast_cutscene, 10, 0) = true) {
+// In OSRS, previous cutscene cam packets are sent when starting final cutscene too, resulting in a little camera shake
+cam_lookat(0_39_71_27_23, 160, 232, 232);
+cam_moveto(0_39_71_33_23, 350, 232, 232);
+cam_lookat(0_39_71_45_21, 320, 232, 232);
+cam_moveto(0_39_71_56_22, 700, 232, 232);
 
-        npc_facesquare(movecoord(npc_coord, 0, 0, 1));
-        .npc_facesquare(npc_coord);
-        facesquare(^tbwt_tamayu_hunter_cutscene_final_spawn);
+if (npc_find(^tbwt_tamayu_hunter_cutscene_final_spawn, tbwt_tamayu_final_hunter, 5, 0) = true & 
+    .npc_find(^tbwt_shaikahan_cutscene_final_spawn, tbwt_beast_cutscene, 5, 0) = true) {
 
-        cam_lookat(0_39_71_45_21, 320, 232, 232);
-        cam_moveto(0_39_71_56_22, 700, 232, 232);
-        mes("camera: <tostring(map_clock)>");
-        
+    .npc_facesquare(movecoord(.npc_coord, 0, 0, -8));
 
-        def_int $since_last = sub(map_clock, %npc_lastcombat);
-        if ($since_last < 3 & $since_last > 0) {
-            p_delay(sub(3, $since_last));
-        }
-
-        ~tbwt_roll_attack_or_defend;
-        mes("1 attack: <tostring(map_clock)>");
-        npc_say("The end approaches, Shaikahan!");
-        p_delay(2);
-
-        ~tbwt_roll_attack_or_defend;
-        mes("2 attack: <tostring(map_clock)>");
-        //cam_moveto(0_39_71_28_31, 350, 232, 232);
-        p_delay(2);
-
-        ~tbwt_roll_attack_or_defend;
-        mes("3 attack: <tostring(map_clock)>");
-        npc_say("Gods! Witness this triumph!");
-        //cam_moveto(0_39_71_29_19, 350, 232, 232);
-        p_delay(2);
-
-        npc_anim(human_spear_spike, 0);
-        .npc_anim(lion_death_hold_last_frame, 0);
-        ~sound_area(beast_death, 0, coord, 0);
-        ~sound_area(staff_stab, 0, coord, 0);
-        ~tbwt_roll_attack_or_defend;
-        mes("4 attack: <tostring(map_clock)>");
-        //cam_moveto(0_39_71_33_23, 350, 232, 232);
-        p_delay(2);
-
-        p_delay(0);
-
-        cam_reset;
-        mes("Fin. <tostring(map_clock)>");
-
-        //~set_tbwt_tamayu_progress(^tbwt_tamayu_slayed_shaikahan);
-
-        if (p_finduid(uid) = true) {
-            if (npc_find(^tbwt_tamayu_spawn, tbwt_tamayu, 5, 0) = true) {
-                p_teleport(map_findsquare(npc_coord, 2, 4, ^map_findsquare_lineofwalk));
-                facesquare(npc_coord);
-                @tbwt_tamayu_assess_agility;
-            } else { // Safety to make sure player returns if Tamayu not found
-                mes("Can't find");
-                p_teleport(map_findsquare(^tbwt_tamayu_spawn, 2, 4, ^map_findsquare_lineofwalk));
-                facesquare(npc_coord);
-                @tbwt_tamayu_assess_agility;
-            }
-        }
+     if(%npc_int > map_clock) {
+        p_delay(5);
+        ~music_jingle("tamayu_slays_the_shaikahan");
+        p_delay(6);
+        ~set_tbwt_tamayu_progress(^tbwt_tamayu_complete);
+        p_teleport(0_44_47_32_31);
+        return;
     }
-}
+    %npc_int = add(map_clock, 13);
 
-[proc,tbwt_roll_attack_or_defend]
-if (add(%npc_lastcombat, 3) > map_clock) { 
-    mes("clock: <tostring(map_clock)>");
-    return;
-}
-if (testbit(%tbwt_tiadeche, ^tbwt_tiadeche_tamayu_received_acceptable_spear) = ^true &
-    testbit(%tbwt_tiadeche, ^tbwt_tiadeche_tamayu_received_kp_spear) = ^true) {
-    
+    npc_facesquare(movecoord(npc_coord, 0, 0, 1));
+    .npc_facesquare(npc_coord);
+    facesquare(^tbwt_tamayu_hunter_cutscene_final_spawn);
+
     npc_anim(human_spear_spike, 0);
     .npc_anim(lion_block, 0);
     ~sound_area(beast_hit, 0, coord, 0);
     ~sound_area(staff_stab, 0, coord, 0);
-    
-} else {
-    switch_int(random(2)) {
-        case 0 : 
-            npc_anim(human_spear_block, 0);
-            .npc_anim(lion_attack, 0);
-            ~sound_area(beast_attack, 0, coord, 0);
+    npc_say("The end approaches, Shaikahan!");
+    p_delay(2);
+
+    npc_anim(human_spear_spike, 0);
+    .npc_anim(lion_block, 0);
+    ~sound_area(beast_hit, 0, coord, 0);
+    ~sound_area(staff_stab, 0, coord, 0);
+    p_delay(2);
+
+    ~music_jingle("tamayu_slays_the_shaikahan");
+    npc_anim(human_spear_spike, 0);
+    .npc_anim(lion_block, 0);
+    ~sound_area(beast_hit, 0, coord, 0);
+    ~sound_area(staff_stab, 0, coord, 0);
+    npc_say("Gods! Witness this triumph!");
+    p_delay(2);
+
+    npc_anim(human_spear_spike, 0);
+    .npc_anim(lion_death_hold_last_frame, 0);
+    ~sound_area(beast_death, 0, coord, 0);
+    ~sound_area(staff_stab, 0, coord, 0);
+    p_delay(2);
+
+    p_delay(0);
+}
+cam_reset;
+~set_tbwt_tamayu_progress(^tbwt_tamayu_complete);
+p_teleport(0_44_47_32_31);
+
+[ai_timer,tbwt_tamayu_hunter]
+%npc_int = sub(%npc_int, 1);
+if (.npc_find(^tbwt_shaikahan_cutscene_spawn, tbwt_beast_cutscene, 10, 0) = true) {
+    npc_facesquare(.npc_coord);
+    .npc_facesquare(npc_coord);
+    ~tbwt_roll_attack_or_defend;
+}
+if (%npc_int < 0) {
+    %npc_int = 4;
+}
+
+[proc,tbwt_roll_attack_or_defend]
+switch_int(random(2)) {
+    case 0 : 
+        npc_anim(human_spear_block, 0);
+        .npc_anim(lion_attack, 0);
+        huntall(npc_coord, 3, 0);
+        while (huntnext = true) {
+            sound_synth(beast_attack, 0, 0);
             switch_int(random(3)){
-                case 0 : ~sound_area(human_hit2, 0, coord, 0);
-                case 1 : ~sound_area(human_hit4, 0, coord, 0);
-                case 2 : ~sound_area(human_hit_7, 0, coord, 0);
+                case 0 : sound_synth(human_hit2, 0, 0);
+                case 1 : sound_synth(human_hit4, 0, 0);
+                case 2 : sound_synth(human_hit_7, 0, 0);
             }
-        case 1 : 
-            npc_anim(human_spear_spike, 0);
-            .npc_anim(lion_block, 0);
-            ~sound_area(beast_hit, 0, coord, 0);
-            ~sound_area(staff_stab, 0, coord, 0);
-    }
+        }
+    case 1 : 
+        npc_anim(human_spear_spike, 0);
+        .npc_anim(lion_block, 0);
+        huntall(npc_coord, 3, 0);
+        while (huntnext = true) {
+            sound_synth(beast_hit, 0, 0);
+            sound_synth(staff_stab, 0, 0);
+        }
 }
 %npc_lastcombat = map_clock;
 
@@ -391,3 +373,10 @@ if (testbit(%tbwt_tiadeche, ^tbwt_tiadeche_tamayu_received_kp_spear) = ^true) {
         ~chatnpc("<p,neutral>... and  it seems to be healing too quickly!");
     }
 }
+
+[label,tbwt_tamayu_slayed_shaikahan]
+~chatnpc("<p,neutral>I did it! I, Tamayu, first son of Timfraku, did slay the Shaikahan!");
+~chatnpc("<p,neutral>The deaths of my kin have been avenged. You are my witness.");
+~chatplayer("<p,quiz>Worry not - I am your witness. Shall we return to the village now?");
+~chatnpc("<p,neutral>Yes. Go on ahead without me. I have further matters to attend to here.");
+~chatnpc("<p,neutral>I will meet you in the village once you have helped my brothers and spoken to my father.");

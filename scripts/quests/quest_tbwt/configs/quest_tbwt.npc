@@ -236,6 +236,7 @@ head2=model_43_obj_wear
 defaultmode=none
 wanderrange=0
 moverestrict=nomove
+timer=3
 
 [tbwt_tamayu_final_hunter]
 name=Tamayu
