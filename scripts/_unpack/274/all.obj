@@ -13,6 +13,8 @@ model=obj_3142
 iop1=Eat
 weight=650g
 category=58
+param=grindable_ingredient_refined,tbwt_cooked_karambwan_paste
+param=grindable_ingredient_message,You grind the cooked Karambwan to form a sticky paste.
 // param=param_1564,1001
 
 [tbwt_poorly_cooked_karambwan]
@@ -69,6 +71,8 @@ model=obj_3150
 iop1=Eat
 weight=120g
 category=category_15
+param=grindable_ingredient_refined,tbwt_cooked_karambwanji_paste
+param=grindable_ingredient_message,You grind the cooked Karambwanji to form a sticky paste.
 // param=param_59,1
 
 [tbwt_raw_karambwan_paste]

@@ -219,6 +219,8 @@ weight=140g
 category=category_57
 tradeable=no
 param=fishing_struct,fishing_struct_karambwanji
+param=grindable_ingredient_refined,tbwt_raw_karambwanji_paste
+param=grindable_ingredient_message,You grind the raw Karambwanji to form a sticky paste.
 
 [sardine]
 name=Sardine
