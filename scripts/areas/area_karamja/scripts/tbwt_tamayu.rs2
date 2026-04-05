@@ -73,8 +73,10 @@ if ((last_useitem = tbwt_monkey_corpse) | (last_useitem = tbwt_seaweed_in_monkey
     %tbwt_tiadeche = clearbit(%tbwt_tiadeche, ^tbwt_tiadeche_tamayu_received_poisoned_spear);
     %tbwt_tiadeche = clearbit(%tbwt_tiadeche, ^tbwt_tiadeche_tamayu_received_kp_spear);
 
-    if ($spear = bronze_spear) {
-    } else if ($spear = bronze_spear_p) {
+    // Interestingly, in OSRS as of Apr 2026, Bronze Spear (p+) & (p++) sets '^tbwt_tiadeche_tamayu_received_acceptable_spear' too
+    // We don't have (p+, or p++) variants yet in 274 though, so no action taken.
+    // Leaf-bladed spear & Guthan's Warspear are also considered 'acceptable_spears' (due to the oc_category of weapon_spear)
+    if ($spear = bronze_spear_p) {
         %tbwt_tiadeche = setbit(%tbwt_tiadeche, ^tbwt_tiadeche_tamayu_received_poisoned_spear);
     } else if ($spear = tbwt_bronze_spear_kp) {
         %tbwt_tiadeche = setbit(%tbwt_tiadeche, ^tbwt_tiadeche_tamayu_received_kp_spear);
@@ -261,12 +263,10 @@ if (p_finduid(uid) = true) {
         .npc_facesquare(npc_coord);
         facesquare(^tbwt_tamayu_hunter_cutscene_final_spawn);
 
-        p_delay(0);
-        cam_reset;
-        //cam_lookat(0_39_71_27_23, 160, 232, 232);
-        //cam_moveto(0_39_71_22_27, 350, 232, 232);
+        cam_lookat(0_39_71_45_21, 320, 232, 232);
+        cam_moveto(0_39_71_56_22, 700, 232, 232);
         mes("camera: <tostring(map_clock)>");
-        p_delay(1);
+        
 
         def_int $since_last = sub(map_clock, %npc_lastcombat);
         if ($since_last < 3 & $since_last > 0) {
@@ -289,6 +289,10 @@ if (p_finduid(uid) = true) {
         //cam_moveto(0_39_71_29_19, 350, 232, 232);
         p_delay(2);
 
+        npc_anim(human_spear_spike, 0);
+        .npc_anim(lion_death_hold_last_frame, 0);
+        ~sound_area(beast_death, 0, coord, 0);
+        ~sound_area(staff_stab, 0, coord, 0);
         ~tbwt_roll_attack_or_defend;
         mes("4 attack: <tostring(map_clock)>");
         //cam_moveto(0_39_71_33_23, 350, 232, 232);

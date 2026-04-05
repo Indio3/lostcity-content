@@ -37,7 +37,7 @@
 ^tbwt_tiadeche_return_when_caught_karambwan = 2
 ^tbwt_tiadeche_caught_karambwan = 3
 ^tbwt_tiadeche_request_manual = 4
-^tbwt_tiadeche_complete = 9
+^tbwt_tiadeche_complete = 5
 
 ^tbwt_tamayu_unknown = 0
 ^tbwt_tamayu_intro = 1
@@ -71,6 +71,6 @@
 ^tbwt_tamayu_hunter_cutscene_spawn = 0_39_71_27_23
 ^tbwt_shaikahan_cutscene_spawn = 0_39_71_28_23
 
-^tbwt_player_cutscene_final_spawn = 0_39_71_41_23
+^tbwt_player_cutscene_final_spawn = 0_39_71_41_24
 ^tbwt_tamayu_hunter_cutscene_final_spawn = 0_39_71_45_21
 ^tbwt_shaikahan_cutscene_final_spawn = 0_39_71_44_22
