@@ -9,6 +9,7 @@ Recheck MesAnims for:
 CONFIRMED: You can add a banana to karamja rum before talking to Tinsay
 CONFIRMED: Check whether you can slice banana before talking to Tinsay
 CONFIRMED: Check whether you can burn Jogre bones before starting quest
+CONFIRMED: You cannot cook raw Karambwanji until after TBWT, with type=gamemessage, message="You don't feel that would be useful now."
 
 Can you use items (Iron spear, etc) on Tamayu before talking to him for the first time?
 
@@ -33,11 +34,14 @@ Check whether you can give a Karambwan Vessel / Karambwan to Tiadeche prior to s
 
 Check mesanims for "Accept Tiadeche's offer?"
 
+-----------------------------------------------------------------------------------------
+
 Actual ToDos for completion:
+Finish main quest line... *sigh*
+Make marinated jogre bones (and burnt)
 Finish monkey combat (No melee during TBWT quest)
 Making & using cleaning cloths
 Fishing & cooking Karambwan (including poisonous ones)
-Messages for grinding cooked karambwan
 Implement shops for the 3 brothers in Tai Bwo Wannai
 
 */

@@ -169,6 +169,32 @@ if ((oc_category($item) = weapon_polearm) | (oc_category($item) = weapon_spear) 
     inv_add(inv, tbwt_sliced_banana, 1);
 }
 
+[opheldu,tbwt_raw_karambwanji_paste]
+if (last_useitem = tbwt_jogre_bones) {
+    inv_del(inv, tbwt_jogre_bones, 1);
+    inv_del(inv, tbwt_raw_karambwanji_paste, 1);
+    inv_add(inv, tbwt_jogre_bones_in_raw_karambwanji_paste, 1);
+    mes("You smother the raw Karambwanji paste over the Jogre bones.");
+} else if(last_useitem = tbwt_burnt_jogre_bones) {
+    inv_del(inv, tbwt_burnt_jogre_bones, 1);
+    inv_del(inv, tbwt_raw_karambwanji_paste, 1);
+    inv_add(inv, tbwt_burnt_jogre_bones_in_raw_karambwanji_paste, 1);
+    mes("You smother the raw Karambwanji paste over the burnt Jogre bones.");
+}
+
+[opheldu,tbwt_cooked_karambwanji_paste]
+if (last_useitem = tbwt_jogre_bones) {
+    inv_del(inv, tbwt_jogre_bones, 1);
+    inv_del(inv, tbwt_cooked_karambwanji_paste, 1);
+    inv_add(inv, tbwt_jogre_bones_in_cooked_karambwanji_paste, 1);
+    mes("You smother the cooked Karambwanji paste over the Jogre bones.");
+} else if(last_useitem = tbwt_burnt_jogre_bones) {
+    inv_del(inv, tbwt_burnt_jogre_bones, 1);
+    inv_del(inv, tbwt_cooked_karambwanji_paste, 1);
+    inv_add(inv, tbwt_burnt_jogre_bones_in_cooked_karambwanji_paste, 1);
+    mes("You smother the cooked Karambwanji paste over the burnt Jogre bones.");
+}
+
 [opheld1,tbwt_seaweed_in_monkey_skin_sandwich]
 mes("You really, really do not want to eat that.");
 
