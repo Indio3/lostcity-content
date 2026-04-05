@@ -40,7 +40,6 @@ param=weapon_poisoned,bronze_spear_p
 param=weapon_poisoned_message,You poison a spear.
 param=tbwt_weapon_poisoned,tbwt_bronze_spear_kp
 param=tbwt_weapon_poisoned_message,You smear the poisonous Karambwan paste over the spear.
-param=tbwt_acceptable_spear,^false
 // osrs slash sound staff_crush / crush sound newstaff
 
 [iron_spear]
@@ -83,7 +82,6 @@ param=weapon_poisoned,iron_spear_p
 param=weapon_poisoned_message,You poison a spear.
 param=tbwt_weapon_poisoned,tbwt_iron_spear_kp
 param=tbwt_weapon_poisoned_message,You smear the poisonous Karambwan paste over the spear.
-param=tbwt_acceptable_spear,^true
 // osrs slash sound staff_crush / crush sound newstaff
 
 [steel_spear]
@@ -128,7 +126,6 @@ param=weapon_poisoned,steel_spear_p
 param=weapon_poisoned_message,You poison a spear.
 param=tbwt_weapon_poisoned,tbwt_steel_spear_kp
 param=tbwt_weapon_poisoned_message,You smear the poisonous Karambwan paste over the spear.
-param=tbwt_acceptable_spear,^true
 // osrs slash sound staff_crush / crush sound newstaff
 
 [mithril_spear]
@@ -173,7 +170,6 @@ param=weapon_poisoned,mithril_spear_p
 param=weapon_poisoned_message,You poison a spear.
 param=tbwt_weapon_poisoned,tbwt_mithril_spear_kp
 param=tbwt_weapon_poisoned_message,You smear the poisonous Karambwan paste over the spear.
-param=tbwt_acceptable_spear,^true
 // osrs slash sound staff_crush / crush sound newstaff
 
 [adamant_spear]
@@ -218,7 +214,6 @@ param=weapon_poisoned,adamant_spear_p
 param=weapon_poisoned_message,You poison a spear.
 param=tbwt_weapon_poisoned,tbwt_adamant_spear_kp
 param=tbwt_weapon_poisoned_message,You smear the poisonous Karambwan paste over the spear.
-param=tbwt_acceptable_spear,^true
 // osrs slash sound staff_crush / crush sound newstaff
 
 [rune_spear]
@@ -263,7 +258,6 @@ param=weapon_poisoned,rune_spear_p
 param=weapon_poisoned_message,You poison a spear.
 param=tbwt_weapon_poisoned,tbwt_rune_spear_kp
 param=tbwt_weapon_poisoned_message,You smear the poisonous Karambwan paste over the spear.
-param=tbwt_acceptable_spear,^true
 // osrs slash sound staff_crush / crush sound newstaff
 
 [dragon_spear]
@@ -311,7 +305,6 @@ param=tbwt_weapon_poisoned,tbwt_dragon_spear_kp
 param=tbwt_weapon_poisoned_message,You smear the poisonous Karambwan paste over the spear.
 param=specwep,^true
 param=sa_energy,250
-param=tbwt_acceptable_spear,^true
 // osrs slash sound staff_crush / crush sound newstaff
 
 [bronze_spear_p]
@@ -352,8 +345,6 @@ param=stab_sound,staff_stab
 param=slash_sound,staff_hit
 param=crush_sound,staff_hit
 param=poison_severity,20
-param=tbwt_acceptable_spear,^false
-param=tbwt_effective_poison,^false
 // osrs slash sound staff_crush / crush sound newstaff
 
 [iron_spear_p]
@@ -393,8 +384,6 @@ param=stab_sound,staff_stab
 param=slash_sound,staff_hit
 param=crush_sound,staff_hit
 param=poison_severity,20
-param=tbwt_acceptable_spear,^true
-param=tbwt_effective_poison,^false
 // osrs slash sound staff_crush / crush sound newstaff
 
 [steel_spear_p]
@@ -436,8 +425,6 @@ param=stab_sound,staff_stab
 param=slash_sound,staff_hit
 param=crush_sound,staff_hit
 param=poison_severity,20
-param=tbwt_acceptable_spear,^true
-param=tbwt_effective_poison,^false
 // osrs slash sound staff_crush / crush sound newstaff
 
 [mithril_spear_p]
@@ -479,8 +466,6 @@ param=stab_sound,staff_stab
 param=slash_sound,staff_hit
 param=crush_sound,staff_hit
 param=poison_severity,20
-param=tbwt_acceptable_spear,^true
-param=tbwt_effective_poison,^false
 // osrs slash sound staff_crush / crush sound newstaff
 
 [adamant_spear_p]
@@ -522,8 +507,6 @@ param=stab_sound,staff_stab
 param=slash_sound,staff_hit
 param=crush_sound,staff_hit
 param=poison_severity,20
-param=tbwt_acceptable_spear,^true
-param=tbwt_effective_poison,^false
 // osrs slash sound staff_crush / crush sound newstaff
 
 [rune_spear_p]
@@ -565,8 +548,6 @@ param=stab_sound,staff_stab
 param=slash_sound,staff_hit
 param=crush_sound,staff_hit
 param=poison_severity,20
-param=tbwt_acceptable_spear,^true
-param=tbwt_effective_poison,^false
 // osrs slash sound staff_crush / crush sound newstaff
 
 [dragon_spear_p]
@@ -611,8 +592,6 @@ param=crush_sound,staff_hit
 param=poison_severity,20
 param=specwep,^true
 param=sa_energy,250
-param=tbwt_acceptable_spear,^true
-param=tbwt_effective_poison,^false
 // osrs slash sound staff_crush / crush sound newstaff
 
 [tbwt_bronze_spear_kp]
@@ -655,8 +634,7 @@ param=stab_sound,staff_stab
 param=slash_sound,staff_hit
 param=crush_sound,staff_hit
 // param=poison_severity, TODO
-param=tbwt_acceptable_spear,^true
-param=tbwt_effective_poison,^true
+param=tbwt_karambwan_poison,^true
 // osrs slash sound staff_crush / crush sound newstaff
 
 [tbwt_iron_spear_kp]
@@ -699,8 +677,7 @@ param=stab_sound,staff_stab
 param=slash_sound,staff_hit
 param=crush_sound,staff_hit
 // param=poison_severity, TODO
-param=tbwt_acceptable_spear,^true
-param=tbwt_effective_poison,^true
+param=tbwt_karambwan_poison,^true
 // osrs slash sound staff_crush / crush sound newstaff
 
 [tbwt_steel_spear_kp]
@@ -743,8 +720,7 @@ param=stab_sound,staff_stab
 param=slash_sound,staff_hit
 param=crush_sound,staff_hit
 // param=poison_severity, TODO
-param=tbwt_acceptable_spear,^true
-param=tbwt_effective_poison,^true
+param=tbwt_karambwan_poison,^true
 // osrs slash sound staff_crush / crush sound newstaff
 
 [tbwt_mithril_spear_kp]
@@ -787,8 +763,7 @@ param=stab_sound,staff_stab
 param=slash_sound,staff_hit
 param=crush_sound,staff_hit
 // param=poison_severity, TODO
-param=tbwt_acceptable_spear,^true
-param=tbwt_effective_poison,^true
+param=tbwt_karambwan_poison,^true
 // osrs slash sound staff_crush / crush sound newstaff
 
 [tbwt_adamant_spear_kp]
@@ -831,8 +806,7 @@ param=stab_sound,staff_stab
 param=slash_sound,staff_hit
 param=crush_sound,staff_hit
 // param=poison_severity, TODO
-param=tbwt_acceptable_spear,^true
-param=tbwt_effective_poison,^true
+param=tbwt_karambwan_poison,^true
 // osrs slash sound staff_crush / crush sound newstaff
 
 [tbwt_rune_spear_kp]
@@ -875,8 +849,7 @@ param=stab_sound,staff_stab
 param=slash_sound,staff_hit
 param=crush_sound,staff_hit
 // param=poison_severity, TODO
-param=tbwt_acceptable_spear,^true
-param=tbwt_effective_poison,^true
+param=tbwt_karambwan_poison,^true
 // osrs slash sound staff_crush / crush sound newstaff
 
 [tbwt_dragon_spear_kp]
@@ -920,6 +893,5 @@ param=stab_sound,staff_stab
 param=slash_sound,staff_hit
 param=crush_sound,staff_hit
 // param=poison_severity, TODO
-param=tbwt_acceptable_spear,^true
-param=tbwt_effective_poison,^true
+param=tbwt_karambwan_poison,^true
 // osrs slash sound staff_crush / crush sound newstaff

@@ -39,6 +39,11 @@ if (p_finduid(uid) = true) {
     mes("After set - raw varp: <tostring(%tbwt_tiadeche)>");
 }
 
+[debugproc,tbwtcs2]
+if (p_finduid(uid) = true) {
+    @tbwt_tamayu_final_cutscene;
+}
+
 [proc,get_tbwt_main_progress]()(int)
 return (getbit_range(%tbwt_main, ^tbwt_not_started, ^tbwt_complete));
 

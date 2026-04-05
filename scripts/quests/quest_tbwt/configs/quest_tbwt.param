@@ -1,7 +1,3 @@
-[tbwt_acceptable_spear]
-type=int
-default=0
-
-[tbwt_effective_poison]
+[tbwt_karambwan_poison]
 type=int
 default=0
