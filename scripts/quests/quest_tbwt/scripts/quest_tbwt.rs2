@@ -172,6 +172,16 @@ if ((oc_category($item) = weapon_polearm) | (oc_category($item) = weapon_spear) 
     return;
 }
 
+[opheldu,tbwt_monkey_skin]
+def_obj $item = last_useitem;
+if ($item = seaweed) {
+    inv_del(inv, tbwt_monkey_skin, 1);
+    inv_del(inv, seaweed, 1);
+    inv_add(inv, tbwt_seaweed_in_monkey_skin_sandwich, 1);
+    mes("You sandwich the seaweed into the monkey skin.");
+    return;
+}
+
 [opheldu,banana]
 def_obj $item = last_useitem;
 if ((oc_category($item) = weapon_polearm) | (oc_category($item) = weapon_spear) | (oc_category($item) = weapon_slash) | (oc_category($item) = weapon_stab) | ($item = knife)) {
@@ -218,4 +228,7 @@ if (last_useitem = tbwt_raw_karambwanji) {
     return;
 }
 
+// If you don't have 30 Firemaking, and try to use tinderbox on Jogre bones, message "You need a firemaking level of 30 to burn Jogre bones. You could find some other way of burning them."
+// Can superheat Jogre bones to burn them, for 53 magic xp & 25 cook xp
 // Jogre bones take 45 ticks to burn, according to OSRS via RSProx
+// Cooking Jogre bones on a range or fire gives message, "You heat the bones, but they don't look any different."

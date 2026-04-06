@@ -95,7 +95,14 @@ if (~get_tbwt_main_progress() = ^tbwt_started) {
 
     // Tinsay Journal
     if (~get_tbwt_tinsay_progress() > ^tbwt_tinsay_unknown) {
-        $text = append($text, "@dre@Tinsay:|");
+
+        if (~get_tbwt_tinsay_progress() = ^tbwt_tinsay_complete) {
+            $text = append($text, "@str@Tinsay:|");
+        } else {
+            $text = append($text, "@dre@Tinsay:|");
+        }
+
+        // === Progress stages ===
         switch_int(~get_tbwt_tinsay_progress()) {
             case ^tbwt_tinsay_intro :
                 $text = append($text, "Nothing of interest.||");
@@ -109,7 +116,10 @@ if (~get_tbwt_main_progress() = ^tbwt_started) {
             case ^tbwt_tinsay_given_seaweedsandwich :
                 $text = append($text, "@str@I have given him sliced banana in Karamja rum.||");
                 $text = append($text, "@str@I have given him a seaweed in monkey skin sandwich.||");
-                $text = append($text, "@dbl@He requires a @dre@something else to repair|@dre@the tribal statue with.||");
+            case ^tbwt_tinsay_fetch_marinatedbones :
+                $text = append($text, "@str@I have given him sliced banana in Karamja rum.||");
+                $text = append($text, "@str@I have given him a seaweed in monkey skin sandwich.||");
+                $text = append($text, "@dbl@He requires @dre@burnt Jogre bones marinated in Karambwanji|@dbl@to ... repair the tribal statue with?||");
         }
     }
 
@@ -199,10 +209,3 @@ if (~get_tbwt_main_progress() = ^tbwt_started) {
     $text = append($text, "@str@I have given him a seaweed in monkey skin sandwich.||");
     $text = append($text, "@str@I have given him a burnt Jogre bones marinated in|");
     $text = append($text, "@str@Karambwanji paste.||");
-
-    $text = append($text, "@str@Tamayu:|");
-    $text = append($text, "@str@He will only return to the village once he has slain|");
-    $text = append($text, "@str@Shaikahan. He appears to be having difficulty in the hunt.||");
-    $text = append($text, "@str@I have increased his agility to match the Shaikahan's.||");
-    $text = append($text, "@str@I have given him a stronger and Karambwan poisoned spear.||");
-    $text = append($text, "@str@Tamayu has slain the Shaikahan!||");

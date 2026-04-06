@@ -52,7 +52,7 @@
 ^tbwt_tinsay_fetch_seaweedsandwich = 4
 ^tbwt_tinsay_given_seaweedsandwich = 5
 ^tbwt_tinsay_fetch_marinatedbones = 6
-^tbwt_tinsay_given_marinatedbones = 7
+^tbwt_tinsay_complete = 7
 
 ^tbwt_lubufu_unknown = 0
 ^tbwt_lubufu_intro = 1
