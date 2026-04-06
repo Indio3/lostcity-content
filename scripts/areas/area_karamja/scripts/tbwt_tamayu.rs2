@@ -25,14 +25,40 @@ if (~get_tbwt_main_progress() < ^tbwt_started) {
 }
 
 [opnpcu,tbwt_tamayu]
-if ((last_useitem = tbwt_monkey_corpse) | (last_useitem = tbwt_seaweed_in_monkey_corpse) & (~get_tbwt_tamayu_progress() < ^tbwt_tamayu_complete)) {
-    ~chatnpc("<p,angry>I'm not going to skin that! In the jungle, we help only those who help us.");
-} else if (last_useitem = 1dose1agility |
-           last_useitem = 2dose1agility |
-           last_useitem = 3dose1agility |
-           last_useitem = 4dose1agility) {
-
-    if (~get_tbwt_tamayu_progress = ^tbwt_tamayu_watched_cutscene) {
+if ((last_useitem = tbwt_monkey_corpse) | (last_useitem = tbwt_seaweed_in_monkey_corpse)) {
+    def_obj $corpse = last_useitem;;
+    if (~get_tbwt_tamayu_progress() < ^tbwt_tamayu_complete) {
+        ~chatnpc("<p,angry>I'm not going to skin that! In the jungle, we help only those who help us.");
+    } else {
+        ~chatnpc("<p,angry>Let me guess - you want me to skin that monkey. Very well: I shall, since you have assisted me.");
+        inv_del(inv, $corpse, 1);
+        if ($corpse = tbwt_monkey_corpse) {
+            ~objbox($corpse, "You hand over the monkey corpse to Tamayu.", 250, 0, ^objbox_height);
+        } else {
+            ~objbox($corpse, "You hand over the stuffed monkey corpse to Tamayu.", 250, 0, ^objbox_height);
+        }
+        npc_anim(human_cooking, 0);
+        if_close;
+        p_delay(3);
+        if ($corpse = tbwt_monkey_corpse) {
+            inv_add(inv, tbwt_monkey_skin, 1);
+            inv_add(inv, mm_normal_monkey_bones, 1);
+            ~objbox(tbwt_monkey_skin, "Tamayu hands you some monkey skin and bones.", 250, 0, 0);
+        } else {
+            inv_add(inv, tbwt_monkey_skin, 1);
+            inv_add(inv, seaweed, 1);
+            inv_add(inv, mm_normal_monkey_bones, 1);
+            ~objbox(tbwt_monkey_skin, "Tamayu hands you some monkey skin, seaweed and bones.", 250, 0, 0);
+        }
+    }
+} else if (last_useitem = 1dose1agility | last_useitem = 2dose1agility | last_useitem = 3dose1agility | last_useitem = 4dose1agility) {
+    if (~get_tbwt_tamayu_progress = ^tbwt_tamayu_complete) {
+        ~chatnpc("<p,neutral>I have no need for that now.");
+        return;
+    } else if (~get_tbwt_tamayu_progress ! ^tbwt_tamayu_watched_cutscene) {
+        ~chatnpc("<p,neutral>I have no interest in your potions right now. Only slaying the Shaikahan.");
+        return;
+    } else {
         if (~get_tbwt_tamayu_agility_count >= 4) {
             ~chatnpc("<p,neutral>Bwana, I feel more than agile enough to slay the Shaikahan.");
         } else {
@@ -65,11 +91,15 @@ if ((last_useitem = tbwt_monkey_corpse) | (last_useitem = tbwt_seaweed_in_monkey
                 ~chatnpc("<p,neutral>I feel agile enough to finally match the Shaikahan!");
             }
         }
-    } else {
-        ~chatnpc("<p,neutral>I have no interest in your potions right now. Only slaying the Shaikahan.");
     }
 } else if (oc_category(last_useitem) = weapon_spear) {
-    if (~get_tbwt_tamayu_progress = ^tbwt_tamayu_watched_cutscene) {
+    if (~get_tbwt_tamayu_progress = ^tbwt_tamayu_complete) {
+        ~chatnpc("<p,neutral>I have no need for that now.");
+        return;
+    } else if (~get_tbwt_tamayu_progress ! ^tbwt_tamayu_watched_cutscene) {
+        ~chatnpc("<p,neutral>I have no interest in your weapons right now. Only slaying the Shaikahan.");
+        return;
+    } else {
         def_obj $spear = last_useitem;
 
         %tbwt_tiadeche = clearbit(%tbwt_tiadeche, ^tbwt_tiadeche_tamayu_received_acceptable_spear);
@@ -99,8 +129,6 @@ if ((last_useitem = tbwt_monkey_corpse) | (last_useitem = tbwt_seaweed_in_monkey
         ~chatplayer("<p,neutral>Tamayu, try using this weapon.");
         ~objbox($spear, "You hand the spear to Tamayu.", 250, 0, 10);
         ~chatnpc("<p,neutral>Thank you Bwana. Now I must prepare for my next hunt.");
-    } else {
-        ~chatnpc("<p,neutral>I have no interest in your weapons right now. Only slaying the Shaikahan.");
     }
 } else {
     ~displaymessage(^dm_default);

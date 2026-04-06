@@ -15,6 +15,9 @@ if (p_finduid(uid) = true) {
         mes("Set TBWT Tiadeche progress to: <tostring($var)>.");
     } else if ($var2 = 3) { // Set Tamayu progress
         %tbwt_tiadeche = setbit_range_toint(%tbwt_tiadeche, $var, ^tbwt_tiadeche_tamayu_start, ^tbwt_tiadeche_tamayu_end);
+        %tbwt_tiadeche = clearbit(%tbwt_tiadeche, ^tbwt_tiadeche_tamayu_received_acceptable_spear);
+        %tbwt_tiadeche = clearbit(%tbwt_tiadeche, ^tbwt_tiadeche_tamayu_received_poisoned_spear);
+        %tbwt_tiadeche = clearbit(%tbwt_tiadeche, ^tbwt_tiadeche_tamayu_received_kp_spear);
         mes("Set TBWT Tamayu progress to: <tostring($var)>.");
     } else if ($var2 = 4) { // Set Tinsay progress
         %tbwt_tiadeche = setbit_range_toint(%tbwt_tiadeche, $var, ^tbwt_tiadeche_tinsay_start, ^tbwt_tiadeche_tinsay_end);
