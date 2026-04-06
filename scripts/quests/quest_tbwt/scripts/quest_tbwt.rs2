@@ -254,7 +254,7 @@ if (last_useitem = tbwt_raw_karambwanji) {
 session_log(^log_adventure, "Quest complete: Tai Bwo Wannai Trio");
 ~set_tbwt_main_progress(^tbwt_complete);
 ~send_quest_complete(questlist:tbwt, tbwt_raw_karambwan, 250, ^tbwt_questpoints, "You have completed\\nTai Bwo Wannai Trio!");
-
+queue(tbwt_timfraku_talk_to_sons, 0, 0);
 
 /*
 If you don't have 30 Firemaking, and try to use tinderbox on Jogre bones, message "You need a firemaking level of 30 to burn Jogre bones. You could find some other way of burning them."

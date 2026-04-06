@@ -268,4 +268,8 @@ inv_add(inv, coins, 2000);
 
 [label,tbwt_timfraku_complete_quest]
 queue(twbt_quest_complete, 0, 0);
-~chatnpc("<p,neutral>You should go and see my sons in the village. I think they have something for you.");
+
+[queue,tbwt_timfraku_talk_to_sons]
+if(npc_find(coord, tbwt_timfraku, 10, 0) = true) {
+    ~chatnpc("<p,neutral>You should go and see my sons in the village. I think they have something for you.");
+}
