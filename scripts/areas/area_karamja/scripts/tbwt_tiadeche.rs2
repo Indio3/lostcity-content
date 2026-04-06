@@ -12,8 +12,8 @@ if (~get_tbwt_main_progress() < ^tbwt_started) {
     switch_int(~get_tbwt_tiadeche_progress()) {
         case ^tbwt_tiadeche_unknown :
             ~set_tbwt_tiadeche_progress(^tbwt_tiadeche_intro);
-            ~chatplayer("<p,quiz>Are you Tiadeche?"); // ToDo: Re-check mesanim on OSRS
-            ~chatnpc("<p,neutral>I am."); // ToDo: Re-check mesanim on OSRS
+            ~chatplayer("<p,quiz>Are you Tiadeche?");
+            ~chatnpc("<p,neutral>I am.");
             @tbwt_tiadeche_bringgoodnews;
         case ^tbwt_tiadeche_intro :
             @tbwt_tiadeche_bringgoodnews;
@@ -23,6 +23,8 @@ if (~get_tbwt_main_progress() < ^tbwt_started) {
             @tbwt_tiadeche_can_we_return;
         case ^tbwt_tiadeche_request_manual : 
             @tbwt_tiadeche_have_you_retrieved_manual;
+        case ^tbwt_tiadeche_complete :
+            @tbwt_tiadeche_complete;
     }
 }
 

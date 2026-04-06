@@ -14,6 +14,8 @@ switch_int(~get_tbwt_main_progress()) {
     case ^tbwt_started :
         ~chatnpc("<p,angry>Welcome back, <~tbwt_get_timfraku_title>.");
         @tbwt_timfraku_startedops;
+    case ^tbwt_completed_all_brothers :
+        @tbwt_timfraku_completed_brother_tasks;
 }
 
 [label,tbwt_timfraku_rovingadventurer]
@@ -208,3 +210,16 @@ p_delay(4);
 ~chatplayer("<p,quiz>How come?");
 ~chatnpc("<p,neutral>He needs to improve his technique - but he does not heed my advice.");
 @tbwt_timfraku_sonops;
+
+[label,tbwt_timfraku_completed_brother_tasks]
+~chatnpc("<p,neutral>My sons have returned to the village!");
+~chatnpc("<p,neutral><~tbwt_get_completed_timfraku_title>, please accept my eternal gratitude!");
+def_int $choice = ~p_choice5("Oh it was nothing really.", 1, "I'd rather have some gold please.", 2, "You know your sons have serious issues...", 3, "Eternal gratitude accepted.", 4, "Ask about Village.", 5);
+if ($choice = 1) { // Oh it was nothing really.
+} else if ($choice = 2) { // I'd rather have some gold please.
+} else if ($choice = 3) { // You know your sons have serious issues...
+} else if ($choice = 4) { // Eternal gratitude accepted.
+
+} else if ($choice = 5) { // Ask about Village.
+    @tbwt_timfraku_village;
+}
