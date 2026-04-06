@@ -8,7 +8,7 @@ switch_int(~get_tbwt_main_progress()) {
                 "Who me? Oh I'm just a nobody.", tbwt_timfraku_nobody
                 );
     case ^tbwt_spoke_to_timfraku :
-        @tbwt_timfraku_trufitussentme;
+        @tbwt_timfraku_spoke_to_timfraku;
     case ^tbwt_timfraku_asked_for_help :
         @tbwt_timfraku_readytohelp;
     case ^tbwt_started :
@@ -45,18 +45,25 @@ switch_int(~get_tbwt_main_progress()) {
 @tbwt_timfraku_unstarted_options;
 
 [label,tbwt_timfraku_unstarted_options]
-@multi4("Why should I leave?", tbwt_timfraku_whyshouldileave, 
+if (%junglepotion >= ^junglepotion_complete) {
+    @multi4("Why should I leave?", tbwt_timfraku_whyshouldileave, 
         "Right, I'm going then.", tbwt_timfraku_goingthen, 
-        "Trufitus sent me.", tbwt_timfraku_trufitussentme, 
+        "Trufitus sent me.", tbwt_timfraku_spoke_to_timfraku, 
         "Ask about Village.", tbwt_timfraku_village
         );
+} else {
+    @multi2("Why should I leave?", tbwt_timfraku_whyshouldileave, 
+        "Right, I'm going then.", tbwt_timfraku_goingthen
+        );
+}
+
 
 [proc,tbwt_set_spoke_to_timfraku]
 switch_int(~get_tbwt_main_progress()) {
     case ^tbwt_not_started :
         ~set_tbwt_main_progress(^tbwt_spoke_to_timfraku);
     case ^tbwt_spoke_to_timfraku :
-        ~set_tbwt_main_progress(^tbwt_timfraku_asked_for_help);
+        if(%junglepotion >= ^junglepotion_complete) ~set_tbwt_main_progress(^tbwt_timfraku_asked_for_help);
 }
 
 [label,tbwt_timfraku_whyshouldileave]
@@ -72,23 +79,38 @@ switch_int(~get_tbwt_main_progress()) {
 ~tbwt_set_spoke_to_timfraku;
 ~chatplayer("<p,neutral>Right, I'm going then.");
 
-[label,tbwt_timfraku_trufitussentme]
-~tbwt_set_spoke_to_timfraku;
-~chatplayer("<p,happy>Trufitus sent me.");
-~chatnpc("<p,neutral>Trufitus Shakaya? What news does he send?");
-~chatplayer("<p,happy>Trufitus has communed with the gods. Your village was never cursed and your people are free to return.");
-~chatnpc("<p,neutral>Bwana, do you speak the truth?");
-~chatplayer("<p,happy>Yes, I helped Trufitus gather ingredients for a commune potion.");
-~chatnpc("<p,neutral>Then it must be true.");
-if_close;
-mes("Timfraku appears to concentrate very deeply.");
-p_delay(4);
-~chatnpc("<p,happy>I cannot thank you enough for what you have done so far.");
-@multi4("Your gratitude is all I deserve.", tbwt_timfraku_gratitude, 
-        "Well, some gold would be nice.", tbwt_timfraku_gold, 
-        "So far??", tbwt_timfraku_sofar,
-        "Ask about Village.", tbwt_timfraku_village
-        );
+[label,tbwt_timfraku_spoke_to_timfraku]
+if (%junglepotion < ^junglepotion_complete) {
+    ~chatnpc("<p,angry>You again! Only a fool would ignore my instructions.");
+    def_int $choice = ~p_choice3("Well there's a simple explanation for that...", 1, "Not so much ignore as disregard...", 2, "What instructions??", 3);
+    if ($choice = 1) { // Well there's a simple explanation for that...
+        ~chatplayer("<p,neutral>Well there's a simple explanation for that...");
+        ~chatnpc("<p,angry>I said: begone!");
+    } else if ($choice = 2) { // Not so much ignore as disregard...
+        ~chatplayer("<p,neutral>Not so much ignore as disregard...");
+        ~chatnpc("<p,angry>I said: begone!");
+    } else if ($choice = 3) { // What instructions??
+        ~chatplayer("<p,neutral>What instructions??");
+        ~chatnpc("<p,angry>I said: begone!");
+    }
+} else {
+    ~tbwt_set_spoke_to_timfraku;
+    ~chatplayer("<p,happy>Trufitus sent me.");
+    ~chatnpc("<p,neutral>Trufitus Shakaya? What news does he send?");
+    ~chatplayer("<p,happy>Trufitus has communed with the gods. Your village was never cursed and your people are free to return.");
+    ~chatnpc("<p,neutral>Bwana, do you speak the truth?");
+    ~chatplayer("<p,happy>Yes, I helped Trufitus gather ingredients for a commune potion.");
+    ~chatnpc("<p,neutral>Then it must be true.");
+    if_close;
+    mes("Timfraku appears to concentrate very deeply.");
+    p_delay(4);
+    ~chatnpc("<p,happy>I cannot thank you enough for what you have done so far.");
+    @multi4("Your gratitude is all I deserve.", tbwt_timfraku_gratitude, 
+            "Well, some gold would be nice.", tbwt_timfraku_gold, 
+            "So far??", tbwt_timfraku_sofar,
+            "Ask about Village.", tbwt_timfraku_village
+            );
+}
 
 [label,tbwt_timfraku_gratitude]
 ~chatplayer("<p,happy>Your gratitude is all I deserve.");
