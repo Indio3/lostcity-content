@@ -29,10 +29,12 @@ Recheck Lubufu/player mesanim for: "That's a slight change in attitude..."
 
 Check whether you can load a Karambwan Vessel with Raw Karambwanji prior to learning from Lubufu, and note any messages.
 Check whether you can use a karambwan vessel on Lubufu's fishing spot priot to learning from Lubufu, and note any messages.
-
-Check whether you can give a Karambwan Vessel / Karambwan to Tiadeche prior to speaking to him.
+Can you fish for Karambwan in east Karamja prior to learning from Lubufu?
+Check whether you can give a Karambwan Vessel / Karambwan to Tiadeche prior to speaking to him. (bought from GE/players)
 
 Check mesanims for "Accept Tiadeche's offer?"
+
+Figure out mesanims for dialogue with Tinsay after: ~chatnpc("<p,neutral>Marinated in Karambwanji!");
 
 -----------------------------------------------------------------------------------------
 

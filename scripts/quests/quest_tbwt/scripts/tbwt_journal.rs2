@@ -120,6 +120,10 @@ if (~get_tbwt_main_progress() = ^tbwt_started) {
                 $text = append($text, "@str@I have given him sliced banana in Karamja rum.||");
                 $text = append($text, "@str@I have given him a seaweed in monkey skin sandwich.||");
                 $text = append($text, "@dbl@He requires @dre@burnt Jogre bones marinated in Karambwanji|@dbl@to ... repair the tribal statue with?||");
+            case ^tbwt_tinsay_complete :
+                $text = append($text, "@str@I have given him sliced banana in Karamja rum.||");
+                $text = append($text, "@str@I have given him a seaweed in monkey skin sandwich.||");
+                $text = append($text, "@str@I have given him a burnt Jogre bones marinated in|@str@Karambwanji paste.||"); // Intentionally 'a burnt Jogre bones'
         }
     }
 

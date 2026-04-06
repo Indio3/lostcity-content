@@ -43,46 +43,27 @@ switch_obj(last_useitem) {
             ~chatnpc("<p,neutral>Very well - hand it over.");
             inv_del(inv, $vessel, 1);
             ~objbox($vessel, "You hand over the Karambwan vessel to Tinsay.", 250, 0, ^objbox_height);
-            npc_anim(human_cooking, 0);
             if_close;
             mes("Tinsay studies it for a moment then quickly sketches some crafting instructions.");
             p_delay(3);
-            inv_del(inv, tbwt_crafting_manual, 1);
-            ~objbox(tbwt_crafting_manual, "Tinsay hands you a Karambwan vessel crafting manual.", 250, 0, ^objbox_height);
+            inv_add(inv, tbwt_crafting_manual, 1);
+            ~objbox(tbwt_crafting_manual, "Tinsay hands you a Karambwan vessel crafting manual.", 250, 0, 0);
             ~chatnpc("<p,neutral>I hope that's what he wanted.");
         }
 
-    case tbwt_sliced_banana_in_karamja_rum :
-        if (~get_tbwt_tinsay_progress() = ^tbwt_tinsay_fetch_bananarum) {
-            @tbwt_tinsay_give_bananarum;
-        }
+    case tbwt_sliced_banana_in_karamja_rum : if (~get_tbwt_tinsay_progress() = ^tbwt_tinsay_fetch_bananarum) @tbwt_tinsay_give_bananarum;
+    case tbwt_banana_in_karamja_rum : if (~get_tbwt_tinsay_progress() = ^tbwt_tinsay_fetch_bananarum) @tbwt_tinsay_i_have_this;
+    case tbwt_seaweed_in_monkey_skin_sandwich : if (~get_tbwt_tinsay_progress() = ^tbwt_tinsay_fetch_seaweedsandwich) @tbwt_tinsay_give_seaweedsandwich;
+    case tbwt_seaweed_in_monkey_corpse : if (~get_tbwt_tinsay_progress() = ^tbwt_tinsay_fetch_seaweedsandwich) @tbwt_tinsay_i_have_this;
 
-    case tbwt_banana_in_karamja_rum :
-        if (~get_tbwt_tinsay_progress() = ^tbwt_tinsay_fetch_bananarum) {
-            @tbwt_tinsay_i_have_this;
-        }
-
-    case tbwt_seaweed_in_monkey_skin_sandwich :
-        if (~get_tbwt_tinsay_progress() = ^tbwt_tinsay_fetch_seaweedsandwich) {
-            @tbwt_tinsay_give_seaweedsandwich;
-        }
-
-    case tbwt_seaweed_in_monkey_corpse :
-        if (~get_tbwt_tinsay_progress() = ^tbwt_tinsay_fetch_seaweedsandwich) {
-            @tbwt_tinsay_i_have_this;
-        }
-
-    case tbwt_jogre_bones, 
-        tbwt_jogre_bones_in_cooked_karambwanji_paste, 
-        tbwt_jogre_bones_in_raw_karambwanji_paste,
-        tbwt_jogre_bones_marinated_in_karambwanji,
-        tbwt_burnt_jogre_bones,
-        tbwt_burnt_jogre_bones_in_raw_karambwanji_paste,
-        tbwt_burnt_jogre_bones_in_cooked_karambwanji_paste :
-        if (~get_tbwt_tinsay_progress() = ^tbwt_tinsay_fetch_marinatedbones) {
-            @tbwt_tinsay_i_have_this;
-        }
-        
+    case tbwt_jogre_bones : if (~get_tbwt_tinsay_progress() = ^tbwt_tinsay_fetch_marinatedbones) @tbwt_tinsay_i_have_this_jogre_bones;
+    case tbwt_jogre_bones_in_cooked_karambwanji_paste : if (~get_tbwt_tinsay_progress() = ^tbwt_tinsay_fetch_marinatedbones) @tbwt_tinsay_i_have_this_jogre_bones_in_cooked_karambwanji_paste;
+    case tbwt_jogre_bones_in_raw_karambwanji_paste : if (~get_tbwt_tinsay_progress() = ^tbwt_tinsay_fetch_marinatedbones) @tbwt_tinsay_i_have_this_jogre_bones_in_raw_karambwanji_paste;
+    case tbwt_jogre_bones_marinated_in_karambwanji : if (~get_tbwt_tinsay_progress() = ^tbwt_tinsay_fetch_marinatedbones) @tbwt_tinsay_i_have_this_jogre_bones_marinated_in_karambwanji;
+    case tbwt_burnt_jogre_bones : if (~get_tbwt_tinsay_progress() = ^tbwt_tinsay_fetch_marinatedbones) @tbwt_tinsay_i_have_this_burnt_jogre_bones;
+    case tbwt_burnt_jogre_bones_in_raw_karambwanji_paste : if (~get_tbwt_tinsay_progress() = ^tbwt_tinsay_fetch_marinatedbones) @tbwt_tinsay_i_have_this_burnt_jogre_bones_in_raw_karambwanji_paste;
+    case tbwt_burnt_jogre_bones_in_cooked_karambwanji_paste : if (~get_tbwt_tinsay_progress() = ^tbwt_tinsay_fetch_marinatedbones) @tbwt_tinsay_i_have_this_burnt_jogre_bones_in_cooked_karambwanji_paste;
+    case tbwt_burnt_jogre_bones_marinated_in_karambwanji : if (~get_tbwt_tinsay_progress() = ^tbwt_tinsay_fetch_marinatedbones) @tbwt_tinsay_give_marinatedbones;
     case default : ~displaymessage(^dm_default);
 }
 
@@ -219,16 +200,6 @@ if (~get_tbwt_tinsay_progress = ^tbwt_tinsay_fetch_bananarum) {
     ~chatnpc("<p,neutral>Try to find some way of removing the monkey flesh.");
     inv_add(inv, tbwt_seaweed_in_monkey_corpse, 1);
     mes("Tinsay hands you back the stuffed monkey.");
-} else if (~get_tbwt_tinsay_progress = ^tbwt_tinsay_fetch_marinatedbones) {
-    if(inv_total(inv, tbwt_jogre_bones) > 0 |
-            inv_total(inv, tbwt_jogre_bones_in_cooked_karambwanji_paste) > 0 |
-            inv_total(inv, tbwt_jogre_bones_in_raw_karambwanji_paste) > 0 |
-            inv_total(inv, tbwt_jogre_bones_marinated_in_karambwanji) > 0 |
-            inv_total(inv, tbwt_burnt_jogre_bones) > 0 |
-            inv_total(inv, tbwt_burnt_jogre_bones_in_raw_karambwanji_paste) > 0 |
-            inv_total(inv, tbwt_burnt_jogre_bones_in_cooked_karambwanji_paste) > 0) {
-        // TODO
-    }
 }
 
 [label,tbwt_tinsay_give_bananarum]
@@ -260,7 +231,6 @@ p_delay(4);
 if (~get_tbwt_tinsay_progress = ^tbwt_tinsay_fetch_bananarum) {
     if(~obj_gettotal(tbwt_sliced_banana_in_karamja_rum) > 0) {
         ~chatplayer("<p,neutral>Yes, I have it right here.");
-        ~chatnpc("<p,neutral>Well, hand it here then.");
         @tbwt_tinsay_give_bananarum;
     } else if(inv_total(inv, tbwt_banana_in_karamja_rum) > 0) {
         ~chatplayer("<p,neutral>Well, I have this.");
@@ -279,7 +249,6 @@ if (~get_tbwt_tinsay_progress = ^tbwt_tinsay_fetch_bananarum) {
 } else if (~get_tbwt_tinsay_progress = ^tbwt_tinsay_fetch_seaweedsandwich) {
     if(~obj_gettotal(tbwt_seaweed_in_monkey_skin_sandwich) > 0) {
         ~chatplayer("<p,neutral>Yes, I have it right here.");
-        ~chatnpc("<p,neutral>Well, hand it here then.");
         @tbwt_tinsay_give_seaweedsandwich;
     } else if(inv_total(inv, tbwt_seaweed_in_monkey_corpse) > 0) {
         ~chatplayer("<p,neutral>Well, I have this.");
@@ -298,17 +267,29 @@ if (~get_tbwt_tinsay_progress = ^tbwt_tinsay_fetch_bananarum) {
 } else if (~get_tbwt_tinsay_progress = ^tbwt_tinsay_fetch_marinatedbones) {
     if(~obj_gettotal(tbwt_burnt_jogre_bones_marinated_in_karambwanji) > 0) {
         ~chatplayer("<p,neutral>Yes, I have it right here.");
-        ~chatnpc("<p,neutral>Well, hand it here then.");
-        //@tbwt_tinsay_give_marinatedbones; TODO
-    } else if(inv_total(inv, tbwt_jogre_bones) > 0 |
-            inv_total(inv, tbwt_jogre_bones_in_cooked_karambwanji_paste) > 0 |
-            inv_total(inv, tbwt_jogre_bones_in_raw_karambwanji_paste) > 0 |
-            inv_total(inv, tbwt_jogre_bones_marinated_in_karambwanji) > 0 |
-            inv_total(inv, tbwt_burnt_jogre_bones) > 0 |
-            inv_total(inv, tbwt_burnt_jogre_bones_in_raw_karambwanji_paste) > 0 |
-            inv_total(inv, tbwt_burnt_jogre_bones_in_cooked_karambwanji_paste) > 0) {
+        @tbwt_tinsay_give_marinatedbones;
+
+    } else if(inv_total(inv, tbwt_jogre_bones) > 0) {
         ~chatplayer("<p,neutral>Well, I have this.");
-        @tbwt_tinsay_i_have_this;
+        @tbwt_tinsay_i_have_this_jogre_bones;
+    } else if(inv_total(inv, tbwt_jogre_bones_in_cooked_karambwanji_paste) > 0) {
+        ~chatplayer("<p,neutral>Well, I have this.");
+        @tbwt_tinsay_i_have_this_jogre_bones_in_cooked_karambwanji_paste;
+    } else if(inv_total(inv, tbwt_jogre_bones_in_raw_karambwanji_paste) > 0) {
+        ~chatplayer("<p,neutral>Well, I have this.");
+        @tbwt_tinsay_i_have_this_jogre_bones_in_raw_karambwanji_paste;
+    } else if(inv_total(inv, tbwt_jogre_bones_marinated_in_karambwanji) > 0) {
+        ~chatplayer("<p,neutral>Well, I have this.");
+        @tbwt_tinsay_i_have_this_jogre_bones_marinated_in_karambwanji;
+    } else if(inv_total(inv, tbwt_burnt_jogre_bones) > 0) {
+        ~chatplayer("<p,neutral>Well, I have this.");
+        @tbwt_tinsay_i_have_this_burnt_jogre_bones;
+    } else if(inv_total(inv, tbwt_burnt_jogre_bones_in_raw_karambwanji_paste) > 0) {
+        ~chatplayer("<p,neutral>Well, I have this.");
+        @tbwt_tinsay_i_have_this_burnt_jogre_bones_in_raw_karambwanji_paste;
+    } else if(inv_total(inv, tbwt_burnt_jogre_bones_in_cooked_karambwanji_paste) > 0) {
+        ~chatplayer("<p,neutral>Well, I have this.");
+        @tbwt_tinsay_i_have_this_burnt_jogre_bones_in_cooked_karambwanji_paste;
     } else {
         switch_int(random(3)) {
             case 0 :
@@ -392,12 +373,85 @@ switch_int(~get_tbwt_tinsay_progress) {
 [label,tbwt_tinsay_give_marinatedbones]
 ~set_tbwt_tinsay_progress(^tbwt_tinsay_complete);
 inv_del(inv, tbwt_burnt_jogre_bones_marinated_in_karambwanji, 1);
-~objbox(tbwt_burnt_jogre_bones_marinated_in_karambwanji, "You hand Tinsay the seaweed in monkey skin sandwich.", 250, 0, 0);
+~objbox(tbwt_burnt_jogre_bones_marinated_in_karambwanji, "You hand Tinsay the burnt Jogre bones marinated in Karambwanji.", 250, 0, 0);
 if_close;
 npc_anim(human_eat, 0);
-p_delay(3);
-~chatnpc("<p,happy>Yes ... perfect! You really do not understand how necessary that was.");
+~music_jingle("tinsay satisfied");
+p_delay(1);
+npc_anim(human_wretch, 0);
+p_delay(6);
+~chatnpc("<p,happy>Finally! A near lifetime of craving satisfied!");
+~chatplayer("<p,neutral>I assume you're now able to repair the statue...");
+~chatnpc("<p,happy>Perfectly able, my friend, thanks to your ministrations!");
+~chatnpc("<p,neutral>Probably best you don't go cooking any more Karambwanji from now on, they can be a bit volatile!");
 @tbwt_tinsay_complete;
 
 [label,tbwt_tinsay_complete]
-~chatplayer("<p,neutral>Can we go now?");
+~chatplayer("<p,quiz>Will you return to the village now?");
+~chatnpc("<p,shifty>Must I ... ?");
+~chatplayer("<p,neutral>I insist - and so does your father.");
+~chatnpc("<p,shifty>He will not be pleased with me...");
+~chatplayer("<p,quiz>Why?");
+~chatnpc("<p,neutral>It's complicated - we don't really talk about it.");
+~chatnpc("<p,neutral>Very well. I will meet you in the village once you have helped my brothers and spoken to my father.");
+
+[label,tbwt_tinsay_i_have_this_jogre_bones]
+inv_del(inv, tbwt_jogre_bones, 1);
+~objbox(tbwt_jogre_bones, "You hand Tinsay the Jogre Bones", 250, 0, 0); // Intentionally no period at the end
+~chatnpc("<p,neutral>I think this needs a bit of Karambwanji. They also don't seem quite burnt enough.");
+inv_add(inv, tbwt_jogre_bones, 1);
+mes("Tinsay hands you back the Jogre bones.");
+
+[label,tbwt_tinsay_i_have_this_jogre_bones_in_cooked_karambwanji_paste]
+inv_del(inv, tbwt_jogre_bones_in_cooked_karambwanji_paste, 1);
+~objbox(tbwt_jogre_bones_in_cooked_karambwanji_paste, "You hand Tinsay the Jogre Bones in cooked Karambwanji paste.", 250, 0, 0);
+if_close;
+npc_anim(human_eat, 0);
+p_delay(3);
+~chatnpc("<p,angry>That was awful! The Jogre bones were not nearly burnt enough.");
+~chatnpc("<p,angry>And the Jogre bones were hardly even marinated!");
+~chatnpc("<p,neutral>You'll have to make it again. Remember to burn the Jogre bones!");
+
+[label,tbwt_tinsay_i_have_this_jogre_bones_in_raw_karambwanji_paste]
+inv_del(inv, tbwt_jogre_bones_in_raw_karambwanji_paste, 1);
+~objbox(tbwt_jogre_bones_in_raw_karambwanji_paste, "You hand Tinsay the Jogre Bones in raw Karambwanji paste.", 250, 0, 0);
+if_close;
+npc_anim(human_eat, 0);
+p_delay(3);
+~chatnpc("<p,angry>That was awful! The Jogre bones were not nearly burnt enough.");
+~chatnpc("<p,angry>And the Jogre bones were hardly even marinated!");
+~chatnpc("<p,neutral>You'll have to make it again. Remember to burn the Jogre bones!");
+
+[label,tbwt_tinsay_i_have_this_burnt_jogre_bones]
+inv_del(inv, tbwt_burnt_jogre_bones, 1);
+~objbox(tbwt_burnt_jogre_bones, "You hand Tinsay the burnt Jogre Bones", 250, 0, 0); // Intentionally no period at the end
+~chatnpc("<p,neutral>I think this needs a bit of Karambwanji.");
+inv_add(inv, tbwt_burnt_jogre_bones, 1);
+mes("Tinsay hands you back the burnt Jogre bones.");
+
+[label,tbwt_tinsay_i_have_this_burnt_jogre_bones_in_raw_karambwanji_paste]
+inv_del(inv, tbwt_burnt_jogre_bones_in_raw_karambwanji_paste, 1);
+~objbox(tbwt_burnt_jogre_bones_in_raw_karambwanji_paste, "You hand Tinsay the burnt Jogre Bones in raw Karambwanji paste.", 250, 0, 0);
+if_close;
+npc_anim(human_eat, 0);
+p_delay(3);
+~chatnpc("<p,angry>That was awful! The Jogre bones were hardly even marinated!");
+~chatnpc("<p,neutral>You'll have to make it again. Remember to marinate the Jogre bones!");
+
+[label,tbwt_tinsay_i_have_this_burnt_jogre_bones_in_cooked_karambwanji_paste]
+inv_del(inv, tbwt_burnt_jogre_bones_in_cooked_karambwanji_paste, 1);
+~objbox(tbwt_burnt_jogre_bones_in_cooked_karambwanji_paste, "You hand Tinsay the Jogre Bones marinated in Karambwanji.", 250, 0, 0);
+if_close;
+npc_anim(human_eat, 0);
+p_delay(3);
+~chatnpc("<p,angry>That was awful! The Jogre bones were not nearly burnt enough.");
+~chatnpc("<p,neutral>You'll have to make it again. Remember to burn the Jogre bones!");
+
+[label,tbwt_tinsay_i_have_this_jogre_bones_marinated_in_karambwanji]
+inv_del(inv, tbwt_jogre_bones_marinated_in_karambwanji, 1);
+~objbox(tbwt_jogre_bones_marinated_in_karambwanji, "You hand Tinsay the Jogre Bones marinated in Karambwanji.", 250, 0, 0);
+if_close;
+npc_anim(human_eat, 0);
+p_delay(3);
+~chatnpc("<p,angry>That was awful! The Jogre bones were not nearly burnt enough.");
+~chatnpc("<p,neutral>You'll have to make it again. Remember to burn the Jogre bones!");
