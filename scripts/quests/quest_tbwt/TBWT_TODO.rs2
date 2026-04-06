@@ -36,11 +36,12 @@ Find out when tbwt_tiadeche varp value changes from 4 to 5.
 
 Actual ToDos for completion:
 Finish main quest line... *sigh*
+Timfraku pre-Jungle Potion dialogue
 Make marinated jogre bones (and burnt)
 Finish monkey combat (No melee during TBWT quest, ranged/magic has no auto-retaliate on monkeys; they go about their business)
-Making & using cleaning cloths
+Using cleaning cloths to remove poison from spears
 Fishing & cooking Karambwan (including poisonous ones)
-Implement shops for the 3 brothers in Tai Bwo Wannai
+Implement shops for the 3 brothers in Tai Bwo Wannai Village
 Shaikahan (tbwt_beast) combat (splashes mage, range hit 0, melee requires a kp spear. Poison and recoil are acceptable forms of damage)
 
 */
