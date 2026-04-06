@@ -405,3 +405,6 @@ if (testbit(%tbwt_tiadeche, ^tbwt_tiadeche_tamayu_received_kp_spear) = ^true) {
 ~chatplayer("<p,quiz>Worry not - I am your witness. Shall we return to the village now?");
 ~chatnpc("<p,neutral>Yes. Go on ahead without me. I have further matters to attend to here.");
 ~chatnpc("<p,neutral>I will meet you in the village once you have helped my brothers and spoken to my father.");
+if (~get_tbwt_main_progress = ^tbwt_started & ~tbwt_get_brother_completion = true) {
+    ~set_tbwt_main_progress(^tbwt_completed_all_brothers);
+}

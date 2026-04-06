@@ -36,6 +36,8 @@ Check mesanims for "Accept Tiadeche's offer?"
 
 Figure out mesanims for dialogue with Tinsay after: ~chatnpc("<p,neutral>Marinated in Karambwanji!");
 
+Find out when tbwt_tiadeche varp value changes from 4 to 5.
+
 -----------------------------------------------------------------------------------------
 
 Actual ToDos for completion:

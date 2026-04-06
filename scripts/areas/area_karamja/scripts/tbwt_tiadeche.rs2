@@ -164,5 +164,32 @@ if (testbit(%tbwt_tiadeche, ^tbwt_tiadeche_tiadeche_received_karambwan) = ^false
     %tbwt_tiadeche = setbit(%tbwt_tiadeche, ^tbwt_tiadeche_tiadeche_received_karambwan);
 }
 ~chatnpc("<p,quiz>Have you taken the Karambwan vessel to Tinsay?");
-~chatplayer("<p,neutral>No, not yet.");
-~chatnpc("<p,neutral>Please hurry! Time is of the essence!");
+if (testbit(%tbwt_tiadeche, ^tbwt_tiadeche_tinsay_received_manual) = ^true ) {
+    ~chatplayer("<p,neutral>Yes, I have.");
+    ~chatnpc("<p,neutral>Did you ask for crafting instructions as I said?");
+    if (inv_total(inv, tbwt_crafting_manual) > 0) {
+        ~chatplayer("<p,neutral>Yes. He gave me this.");
+        inv_del(inv, tbwt_crafting_manual, 1);
+        ~set_tbwt_tiadeche_progress(^tbwt_tiadeche_complete);
+        ~objbox(tbwt_crafting_manual, "You hand over the crafting manual to Tiadeche.", 250, 0, 0);
+        ~music_jingle("tiadeche thankful");
+        ~chatnpc("<p,happy>Thank you so much. You cannot understand what all of this means to me and our people.");
+        @tbwt_tiadeche_complete;
+    } else {
+        ~chatplayer("<p,neutral>I did, but I think I've lost them...");
+        ~chatnpc("<p,angry>Well go back and ask him to make another copy!");
+    }
+} else {
+    ~chatplayer("<p,neutral>No, not yet.");
+    ~chatnpc("<p,neutral>Please hurry! Time is of the essence!");
+}
+
+[label,tbwt_tiadeche_complete]
+~chatplayer("<p,quiz>Will you return to the village now?");
+~chatnpc("<p,neutral>Yes. I will do as I promised.");
+~chatplayer("<p,neutral>I am glad to hear this. Let us go.");
+~chatnpc("<p,neutral>Not yet. I will stay here a while to catch more Karambwan.");
+~chatnpc("<p,neutral>I will meet you in the village once you have helped my brothers and spoken to my father.");
+if (~get_tbwt_main_progress = ^tbwt_started & ~tbwt_get_brother_completion = true) {
+    ~set_tbwt_main_progress(^tbwt_completed_all_brothers);
+}

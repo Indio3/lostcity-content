@@ -116,6 +116,13 @@ switch_int(getbit_range(%tbwt_tiadeche, ^tbwt_tiadeche_timfraku_title_start, ^tb
 }
 return ($title);
 
+[proc,tbwt_get_brother_completion]()(boolean)
+if (~get_tbwt_tinsay_progress = ^tbwt_tinsay_complete & ~get_tbwt_tamayu_progress = ^tbwt_tamayu_complete & ~get_tbwt_tiadeche_progress = ^tbwt_tiadeche_complete & ~get_tbwt_lubufu_progress = ^tbwt_lubufu_complete) {
+    return (true);
+} else {
+    return (false);
+}
+
 [oploc1,tbwt_bamboo_door]
 if (~get_tbwt_main_progress() < ^tbwt_complete) {
     mes("You do not have permission to enter here"); // Intentionally no period - https://imgur.com/a/1LTxz27
@@ -235,7 +242,7 @@ Can superheat Jogre bones to burn them, for 53 magic xp & 25 cook xp
 Jogre bones take 45 ticks to burn, according to OSRS via RSProx
 Cooking Jogre bones on a range or fire gives message, "You heat the bones, but they don't look any different."
 
-You cannot cook raw karambwanji after ^tbwt_tinsay_complete
+You cannot cook raw karambwanji after ^tbwt_tinsay_complete (Message: "You don't feel that would be useful now.")
 
 According to wiki, jogre bones made from cooked karambwanji paste will explode, dealing 2 damage, when cooked. Players will receive the message: "The cooked karambwanji paste catches fire and explodes."
 Items: tbwt_jogre_bones_in_cooked_karambwanji_paste & tbwt_burnt_jogre_bones_in_cooked_karambwanji_paste
