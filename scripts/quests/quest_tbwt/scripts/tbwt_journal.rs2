@@ -40,7 +40,7 @@ if (~get_tbwt_main_progress() = ^tbwt_complete) {
 if (~get_tbwt_main_progress() = ^tbwt_started) {
 
     if (~get_tbwt_tamayu_progress() > ^tbwt_tamayu_unknown & ~get_tbwt_tinsay_progress() > ^tbwt_tinsay_unknown & ~get_tbwt_tiadeche_progress() > ^tbwt_tiadeche_unknown) {
-        $text = append($text, "@str@I need to find the three sons of Timfraku:|");
+        $text = append($text, "@str@I have found the three sons of Timfraku:|");
     } else {
         $text = append($text, "@dbl@I need to find the three sons of @dre@Timfraku@dbl@:|");
     }

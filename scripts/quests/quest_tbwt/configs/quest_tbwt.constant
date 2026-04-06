@@ -26,6 +26,7 @@
 ^tbwt_tiadeche_tamayu_received_acceptable_spear = 26
 ^tbwt_tiadeche_tamayu_received_poisoned_spear = 27
 ^tbwt_tiadeche_tamayu_received_kp_spear = 28
+^tbwt_tiadeche_tinsay_received_manual = 29
 
 ^tbwt_timfraku_rovingadventurer = 0
 ^tbwt_timfraku_travellingexplorer = 1

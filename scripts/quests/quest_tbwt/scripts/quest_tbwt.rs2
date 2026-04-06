@@ -21,6 +21,7 @@ if (p_finduid(uid) = true) {
         mes("Set TBWT Tamayu progress to: <tostring($var)>.");
     } else if ($var2 = 4) { // Set Tinsay progress
         %tbwt_tiadeche = setbit_range_toint(%tbwt_tiadeche, $var, ^tbwt_tiadeche_tinsay_start, ^tbwt_tiadeche_tinsay_end);
+        %tbwt_tiadeche = clearbit(%tbwt_tiadeche, ^tbwt_tiadeche_tinsay_received_manual);
         mes("Set TBWT Tinsay progress to: <tostring($var)>.");
     } else if ($var2 = 5) { // Set Lubufu progress
         %tbwt_tiadeche = setbit_range_toint(%tbwt_tiadeche, $var, ^tbwt_tiadeche_lubufu_start, ^tbwt_tiadeche_lubufu_end);
@@ -228,7 +229,15 @@ if (last_useitem = tbwt_raw_karambwanji) {
     return;
 }
 
-// If you don't have 30 Firemaking, and try to use tinderbox on Jogre bones, message "You need a firemaking level of 30 to burn Jogre bones. You could find some other way of burning them."
-// Can superheat Jogre bones to burn them, for 53 magic xp & 25 cook xp
-// Jogre bones take 45 ticks to burn, according to OSRS via RSProx
-// Cooking Jogre bones on a range or fire gives message, "You heat the bones, but they don't look any different."
+/*
+If you don't have 30 Firemaking, and try to use tinderbox on Jogre bones, message "You need a firemaking level of 30 to burn Jogre bones. You could find some other way of burning them."
+Can superheat Jogre bones to burn them, for 53 magic xp & 25 cook xp
+Jogre bones take 45 ticks to burn, according to OSRS via RSProx
+Cooking Jogre bones on a range or fire gives message, "You heat the bones, but they don't look any different."
+
+You cannot cook raw karambwanji after ^tbwt_tinsay_complete
+
+According to wiki, jogre bones made from cooked karambwanji paste will explode, dealing 2 damage, when cooked. Players will receive the message: "The cooked karambwanji paste catches fire and explodes."
+Items: tbwt_jogre_bones_in_cooked_karambwanji_paste & tbwt_burnt_jogre_bones_in_cooked_karambwanji_paste
+
+*/
