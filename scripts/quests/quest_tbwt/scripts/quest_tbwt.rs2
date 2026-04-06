@@ -238,13 +238,19 @@ if (last_useitem = tbwt_jogre_bones) {
 [opheld1,tbwt_seaweed_in_monkey_skin_sandwich]
 mes("You really, really do not want to eat that.");
 
-[opheldu,tbwt_karambwan_vessel] // Can this be done prior to quest start?
+[opheldu,tbwt_karambwan_vessel]
 if (last_useitem = tbwt_raw_karambwanji) {
     inv_del(inv, tbwt_karambwan_vessel, 1);
     inv_del(inv, tbwt_raw_karambwanji, 1);
     inv_add(inv, tbwt_karambwan_vessel_loaded_with_karambwanji, 1);
     return;
 }
+
+[queue,twbt_quest_complete]
+session_log(^log_adventure, "Quest complete: Tai Bwo Wannai Trio");
+~set_tbwt_main_progress(^tbwt_complete);
+~send_quest_complete(questlist:tbwt, tbwt_raw_karambwan, 250, ^tbwt_questpoints, "You have completed\\nTai Bwo Wannai Trio!");
+
 
 /*
 If you don't have 30 Firemaking, and try to use tinderbox on Jogre bones, message "You need a firemaking level of 30 to burn Jogre bones. You could find some other way of burning them."
@@ -258,4 +264,9 @@ According to wiki, jogre bones made from cooked karambwanji paste will explode, 
 Items: tbwt_jogre_bones_in_cooked_karambwanji_paste & tbwt_burnt_jogre_bones_in_cooked_karambwanji_paste
 
 Making cleaning cloth gives: "You pour some of the Karamjan rum over the silk."
+
+Cooking a raw karambwan: "You cook the karambwan. It looks very dodgy."
+Eating a poison karambwan: Hit for 5 health, with poison hitsplat (no poison applied). "You eat the Karambwan." NEW LINE: "It tastes ... painful."
+Burning karambwan: "You accidentally burn the karambwan."
+Cannot cook a poison karambwan: message box: "You cannot cook that again; it's already cooked."
 */

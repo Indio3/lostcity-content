@@ -296,7 +296,7 @@ op2=Attack
 vislevel=83
 wanderrange=12
 maxrange=64
-// respawnrate= TODO
+respawnrate=50
 hitpoints=100
 attack=80
 defence=80
@@ -311,8 +311,8 @@ param=attack_sound,beast_attack
 param=defend_sound,beast_hit
 param=death_sound,beast_death
 param=death_drop,tbwt_beast_bones
-huntmode=cowardly
-// huntrange= TODO
+huntmode=aggressive_melee
+huntrange=8
 // wanderrange is quesses
 
 [tbwt_beast_cutscene]

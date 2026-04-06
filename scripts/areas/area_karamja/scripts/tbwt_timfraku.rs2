@@ -16,6 +16,8 @@ switch_int(~get_tbwt_main_progress()) {
         @tbwt_timfraku_startedops;
     case ^tbwt_completed_all_brothers :
         @tbwt_timfraku_completed_brother_tasks;
+    case ^tbwt_received_gold_reward :
+        @tbwt_timfraku_complete_quest;
 }
 
 [label,tbwt_timfraku_rovingadventurer]
@@ -216,10 +218,32 @@ p_delay(4);
 ~chatnpc("<p,neutral><~tbwt_get_completed_timfraku_title>, please accept my eternal gratitude!");
 def_int $choice = ~p_choice5("Oh it was nothing really.", 1, "I'd rather have some gold please.", 2, "You know your sons have serious issues...", 3, "Eternal gratitude accepted.", 4, "Ask about Village.", 5);
 if ($choice = 1) { // Oh it was nothing really.
+    ~chatplayer("<p,neutral>Oh it was nothing really.");
+    ~chatnpc("<p,neutral>It was? Very well. I still would that you accept my reward.");
+    ~chatplayer("<p,neutral>Of course.");
+    @tbwt_timfraku_give_coin_reward;
 } else if ($choice = 2) { // I'd rather have some gold please.
+    ~chatplayer("<p,neutral>I'd rather have some gold please.");
+    ~chatnpc("<p,neutral>Of course. That is in your nature.");
+    @tbwt_timfraku_give_coin_reward;
 } else if ($choice = 3) { // You know your sons have serious issues...
+    ~chatplayer("<p,neutral>You know your sons have serious issues...");
+    ~chatnpc("<p,neutral>Of course. I sometimes wonder if they know they have issues. Anyway, please accept also my reward.");
+    @tbwt_timfraku_give_coin_reward;
 } else if ($choice = 4) { // Eternal gratitude accepted.
-
+    ~chatplayer("<p,neutral>Eternal gratitude accepted.");
+    ~chatnpc("<p,neutral>Very good. The spirits of my family will watch over you. And now, I would that you also accept a small token of my appreciation.");
+    @tbwt_timfraku_give_coin_reward;
 } else if ($choice = 5) { // Ask about Village.
     @tbwt_timfraku_village;
 }
+
+[label,tbwt_timfraku_give_coin_reward]
+~set_tbwt_main_progress(^tbwt_received_gold_reward);
+inv_add(inv, coins, 2000);
+~objbox(coins_1000, "Timfraku hands you a big stack of gold coins.", 200, 0, ^objbox_height);
+@tbwt_timfraku_complete_quest;
+
+[label,tbwt_timfraku_complete_quest]
+queue(twbt_quest_complete, 0, 0);
+~chatnpc("<p,neutral>You should go and see my sons in the village. I think they have something for you.");

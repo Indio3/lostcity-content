@@ -36,8 +36,19 @@ if (~get_tbwt_main_progress() < ^tbwt_started) {
     return;
 }
 
-if (~get_tbwt_main_progress() = ^tbwt_complete) {
-    $text = append($text, "@dbl@Completed it m8.|");
+if (~get_tbwt_main_progress() = ^tbwt_received_gold_reward | ~get_tbwt_main_progress() = ^tbwt_complete) {
+    $text = append($text, "@str@Trufitus communed with the gods to determine Tai Bwo|");
+    $text = append($text, "@str@Wannai Village is safe. I delivered the news to Timfraku,|");
+    $text = append($text, "@str@who requested that I seek out his sons and return them to|");
+    $text = append($text, "@str@the village.||");
+    $text = append($text, "@str@I had to help a depressed fisherman, betray another,|");
+    $text = append($text, "@str@assist in destroying an insurmountable beast and do|");
+    $text = append($text, "@str@unspeakable things to Jogre bones.||");
+    $text = append($text, "@str@Mention was also made of a strange accident involving|");
+    $text = append($text, "@str@these people, but they seem somewhat reluctant to|");
+    $text = append($text, "@str@discuss it.||");
+    $text = append($text, "@str@As a reward Timfraku gave me a stack of gold coins.||");
+    $text = append($text, "@red@QUEST COMPLETE!");
     ~quest_journal("Tai Bwo Wannai Trio", $text);
     return;
 }
