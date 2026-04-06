@@ -633,7 +633,7 @@ param=defend_anim,human_spear_block
 param=stab_sound,staff_stab
 param=slash_sound,staff_hit
 param=crush_sound,staff_hit
-// param=poison_severity, TODO
+param=poison_severity,30
 param=tbwt_karambwan_poison,^true
 // osrs slash sound staff_crush / crush sound newstaff
 
@@ -676,7 +676,7 @@ param=defend_anim,human_spear_block
 param=stab_sound,staff_stab
 param=slash_sound,staff_hit
 param=crush_sound,staff_hit
-// param=poison_severity, TODO
+param=poison_severity,30
 param=tbwt_karambwan_poison,^true
 // osrs slash sound staff_crush / crush sound newstaff
 
@@ -719,7 +719,7 @@ param=defend_anim,human_spear_block
 param=stab_sound,staff_stab
 param=slash_sound,staff_hit
 param=crush_sound,staff_hit
-// param=poison_severity, TODO
+param=poison_severity,30
 param=tbwt_karambwan_poison,^true
 // osrs slash sound staff_crush / crush sound newstaff
 
@@ -762,7 +762,7 @@ param=defend_anim,human_spear_block
 param=stab_sound,staff_stab
 param=slash_sound,staff_hit
 param=crush_sound,staff_hit
-// param=poison_severity, TODO
+param=poison_severity,30
 param=tbwt_karambwan_poison,^true
 // osrs slash sound staff_crush / crush sound newstaff
 
@@ -805,7 +805,7 @@ param=defend_anim,human_spear_block
 param=stab_sound,staff_stab
 param=slash_sound,staff_hit
 param=crush_sound,staff_hit
-// param=poison_severity, TODO
+param=poison_severity,30
 param=tbwt_karambwan_poison,^true
 // osrs slash sound staff_crush / crush sound newstaff
 
@@ -848,7 +848,7 @@ param=defend_anim,human_spear_block
 param=stab_sound,staff_stab
 param=slash_sound,staff_hit
 param=crush_sound,staff_hit
-// param=poison_severity, TODO
+param=poison_severity,30
 param=tbwt_karambwan_poison,^true
 // osrs slash sound staff_crush / crush sound newstaff
 
@@ -892,6 +892,6 @@ param=defend_anim,human_dspear_block
 param=stab_sound,staff_stab
 param=slash_sound,staff_hit
 param=crush_sound,staff_hit
-// param=poison_severity, TODO
+param=poison_severity,30
 param=tbwt_karambwan_poison,^true
 // osrs slash sound staff_crush / crush sound newstaff

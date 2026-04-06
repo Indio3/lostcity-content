@@ -175,6 +175,10 @@ if(last_useitem = banana) {
     inv_del(inv, karamja_rum, 1);
     inv_add(inv, tbwt_sliced_banana_in_karamja_rum, 1);
     mes("You add the banana slices to the Karamjan rum.");
+} else if (last_useitem = silk) {
+    inv_del(inv, silk, 1);
+    inv_add(inv, tbwt_cleaning_cloth, 1);
+    mes("You pour some of the Karamjan rum over the silk.");
 }
 
 [opheldu,tbwt_monkey_corpse]
@@ -263,10 +267,12 @@ You cannot cook raw karambwanji after ^tbwt_tinsay_complete (Message: "You don't
 According to wiki, jogre bones made from cooked karambwanji paste will explode, dealing 2 damage, when cooked. Players will receive the message: "The cooked karambwanji paste catches fire and explodes."
 Items: tbwt_jogre_bones_in_cooked_karambwanji_paste & tbwt_burnt_jogre_bones_in_cooked_karambwanji_paste
 
-Making cleaning cloth gives: "You pour some of the Karamjan rum over the silk."
-
 Cooking a raw karambwan: "You cook the karambwan. It looks very dodgy."
 Eating a poison karambwan: Hit for 5 health, with poison hitsplat (no poison applied). "You eat the Karambwan." NEW LINE: "It tastes ... painful."
 Burning karambwan: "You accidentally burn the karambwan."
 Cannot cook a poison karambwan: message box: "You cannot cook that again; it's already cooked."
+
+Using cleaning cloth on a poisoned spear: "You gingerly wipe the poison off the spear."
+
+Using a poison karambwan on a spear yields: ~chatplayer("<p,neutral>This blasted Karambwan just falls off the spear! My life is becoming such a grind...");
 */
