@@ -1,0 +1,31 @@
+[label,mm_shipyardworker_dialogue]
+~chatplayer("<p,angry>I am on a special mission for King Narnode of the Gnomes.");
+~chatnpc("<p,quiz>Narnode? I don't believe you. He wouldn't send a human!");
+~chatplayer("<p,confused>Well, he did...");
+~chatnpc("<p,angry>Tough.");
+if(inv_total(inv, mm_gnome_royal_seal) > 0) {
+    %mm_main = ^mm_shown_seal;
+    ~chatplayer("<p,angry>Look, I have the Gnome Royal Seal.");
+    ~objbox(mm_gnome_royal_seal, "You show the shipyard worker the Royal Seal.", 250, 0, 0);
+    ~chatnpc("<p,shifty>Wow. I haven't seen one of these since...");
+    ~chatplayer("<p,neutral>Since when?");
+    ~chatnpc("<p,shifty>... since Glough used to visit.");
+    ~chatnpc("<p,neutral>Anyway. Please step inside, <text_gender("Sir", "Miss")>.");
+    if_close;
+    p_delay(5); // 6t2p[]
+    @open_shipyard_gate;
+}
+
+[label,mm_foreman_dialogue]
+if(testbit(%mm_bits, ^mm_spoke_foreman) = ^true) @mm_foreman_p2;
+~chatnpc("<p,quiz>Hello. Do I know you? You seem remarkably familiar...");
+~chatplayer("<p,neutral>Erm, no you don't know me.");
+~chatnpc("<p,quiz>If you say so. Anyway, what do you want?");
+%mm_bits = setbit(%mm_bits, ^mm_spoke_foreman);
+@mm_foreman_p2;
+
+[label,mm_foreman_p2]
+~chatplayer("<p,quiz>Have you seen any of King Narnode's Royal Guard recently? They were meant to be doing ... some work in the area.");
+~chatnpc("<p,neutral>I wouldn't know anything about that. You should see Caranock.");
+~chatplayer("<p,quiz>Who is Caranock?");
+~chatnpc("<p,neutral>Our Gnome Liaison Officer.");

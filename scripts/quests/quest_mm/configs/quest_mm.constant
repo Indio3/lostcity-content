@@ -1,0 +1,8 @@
+^mm_not_started = 0
+^mm_started = 1
+^mm_shown_seal = 2
+
+// mm_narnode
+^narnode_worried = 1
+^narnode_spoken = 2
+^narnode_given_seal = 3

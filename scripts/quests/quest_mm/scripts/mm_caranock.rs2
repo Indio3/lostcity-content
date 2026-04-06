@@ -1,0 +1,5 @@
+[opnpc1,mm_caranock]
+switch_int(%mm_main) {
+    case default :
+        ~mesbox("Caranock seems too busy to talk.");
+}

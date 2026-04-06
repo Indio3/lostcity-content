@@ -277,3 +277,62 @@ if (npc_find(coord, kalphite_queen, 20, 0) = true) {
 if (npc_find(coord, kalphite_queen, 20, 0) = true) {
     npc_tele(movecoord(coord, 0, 0, 1));
 }
+
+[label,tbwt_tamayu_final_cutscene]
+p_teleport(^tbwt_player_cutscene_final_spawn);
+mes("teleport: <tostring(map_clock)>");
+
+if (npc_find(^tbwt_tamayu_hunter_cutscene_final_spawn, tbwt_tamayu_final_hunter, 10, 0) = true & 
+    .npc_find(^tbwt_shaikahan_cutscene_final_spawn, tbwt_beast_cutscene, 10, 0) = true) {
+
+    if(%npc_int > map_clock) {
+        p_delay(12);
+        p_teleport(0_44_47_32_31);
+        return;
+    }
+    %npc_int = add(map_clock, 13);
+
+    mes("hi");
+
+    npc_facesquare(movecoord(npc_coord, 0, 0, 1));
+    ,npc_facesquare(npc_coord);
+    facesquare(^tbwt_tamayu_hunter_cutscene_final_spawn);
+
+    cam_lookat(0_39_71_27_23, 160, 232, 232);
+    cam_moveto(0_39_71_33_23, 350, 232, 232);
+    cam_lookat(0_39_71_45_21, 320, 232, 232);
+    cam_moveto(0_39_71_56_22, 700, 232, 232);
+
+    npc_anim(human_spear_spike, 0);
+    .npc_anim(lion_block, 0);
+    ~sound_area(beast_hit, 0, coord, 0);
+    ~sound_area(staff_stab, 0, coord, 0);
+    npc_say("The end approaches, Shaikahan!");
+    p_delay(2);
+
+    npc_anim(human_spear_spike, 0);
+    .npc_anim(lion_block, 0);
+    ~sound_area(beast_hit, 0, coord, 0);
+    ~sound_area(staff_stab, 0, coord, 0);
+    p_delay(2);
+
+    npc_anim(human_spear_spike, 0);
+    .npc_anim(lion_block, 0);
+    ~sound_area(beast_hit, 0, coord, 0);
+    ~sound_area(staff_stab, 0, coord, 0);
+    npc_say("Gods! Witness this triumph!");
+    p_delay(2);
+
+    npc_anim(human_spear_spike, 0);
+    .npc_anim(lion_death_hold_last_frame, 0);
+    ~sound_area(beast_death, 0, coord, 0);
+    ~sound_area(staff_stab, 0, coord, 0);
+    p_delay(2);
+
+    p_delay(0);
+}
+cam_reset;
+mes("Fin. <tostring(map_clock)>");
+
+//~set_tbwt_tamayu_progress(^tbwt_tamayu_slayed_shaikahan);
+p_teleport(0_44_47_32_31);

@@ -1,0 +1,25 @@
+[if_button,questlist:mm]
+def_string $text;
+if(%mm_main = ^mm_not_started) {
+    $text = "@dbl@I can start this quest by speaking to @dre@Denulth@dbl@ in his tent at|@dbl@the @dre@Imperial Guard Camp@dbl@ in @dre@Burthorpe@dbl@ after completing the|@dre@Death Plateau Quest";
+    $text = append($text, "||@dbl@To complete this quest I need:|@dre@Level 15 Agility|@dbl@I also need to be able to defeat a @dre@level 113 Troll|@dre@Level 30 Thieving@dbl@ might be useful.");
+    ~quest_journal("Monkey Madness", $text);
+    return;
+}
+
+$text = append($text, "@dre@Chapter 1:||");
+$text = append($text, "@dre@King Narnode Shareen:||");
+$text = append($text, "@str@The 10th squad of Narnode's Royal Guard went missing during");
+$text = append($text, "@str@a mission to decommission Glough's ship building facilities");
+$text = append($text, "@str@in Karamja.||");
+$text = append($text, "@str@Narnode has asked if I would find out if the 10th squad ever|");
+$text = append($text, "@str@reached the shipyard.||");
+
+// recheck, this should rely on mm_narnode = 3
+$text = append($text, "@str@Narnode has given me a copy of the Royal Seal so that I may");
+$text = append($text, "@str@identify myself as his envoy.||");
+
+
+$text = append($text, "@dbl@I have agreed to investigate the @dre@Karamjan@dbl@ shipyard.");
+
+~quest_journal("Monkey Madness", $text);

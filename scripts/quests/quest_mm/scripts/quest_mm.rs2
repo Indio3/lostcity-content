@@ -1,0 +1,18 @@
+[label,mm_ch1]
+midi_jingle("new chapter", 14000);
+if_settext(inter_212:com_2, ^string_empty);
+if_settext(inter_212:com_3, ^string_empty);
+if_settext(inter_212:com_4, "Monkey Madness: Chapter I");
+if_settext(inter_212:com_5, ^string_empty);
+if_settext(inter_212:com_6, ^string_empty);
+if_settext(inter_212:com_7, "In which our hero finds <text_gender("him", "her")>self drawn back into Glough's web");
+if_settext(inter_212:com_8, "of deception and deceit.");
+if_settext(inter_212:com_9, ^string_empty);
+if_settext(inter_212:com_10, ^string_empty);
+if_settext(inter_212:com_11, ^string_empty);
+if_settext(inter_212:com_12, ^string_empty);
+if_settext(inter_212:com_13, ^string_empty);
+if_openmain(inter_212);
+
+[debugproc,t]
+if(p_finduid(uid) = true) @mm_ch1;

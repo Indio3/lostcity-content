@@ -1,0 +1,5 @@
+[opnpc1,mm_daero]
+switch_int(%mm_main) {
+    case ^mm_not_started, ^mm_started :
+        ~mesbox("Daero seems like he is enjoying himself too much to talk.");
+}
