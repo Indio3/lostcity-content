@@ -9,22 +9,10 @@ CONFIRMED: You cannot use a karambwan vessel on Lubufu's fishing spot priot to l
 
 Can you use items (Iron spear, etc) on Tamayu before talking to him for the first time?
 
-Recheck Tinsay dialogue for: Player - "Right ... what do you need?"
+Can you fish for Karambwan in east Karamja prior to learning from Lubufu? (Need 65 fishing, so can't check). Note any messages.
+Check whether you can give a Karambwan Vessel / Karambwan to Tiadeche prior to speaking to him initially for quest. (bought from GE/players)
 
-Check Lubufu:
-If give 10 karambwanji, and have 0 more, what message does he give?
-If give 10 karambwanji, and have 5 more, what message does he give?
-
-Recheck Lubufu/player mesanim for: "That's a slight change in attitude..."
-
-Can you fish for Karambwan in east Karamja prior to learning from Lubufu? (Need 65 fishing, so can't check)
-Check whether you can give a Karambwan Vessel / Karambwan to Tiadeche prior to speaking to him. (bought from GE/players)
-
-Check mesanims for "Accept Tiadeche's offer?"
-
-Figure out mesanims for dialogue with Tinsay after: ~chatnpc("<p,neutral>Marinated in Karambwanji!");
-
-Find out when tbwt_tiadeche varp value changes from 4 to 5.
+Find out when tbwt_tiadeche varp value changes from 4 to 5 (when talking to Tiadeche during quest)
 
 -----------------------------------------------------------------------------------------
 
@@ -34,6 +22,6 @@ Finish monkey combat (No melee during TBWT quest, ranged/magic has no auto-retal
 Using cleaning cloths to remove poison from spears
 Cooking Karambwan (including poisonous ones) - https://youtu.be/vVAfKCvmrz4?si=ZFE4Nt55M9YE0nLj&t=138
 Recheck shop stats for the 3 brothers in Tai Bwo Wannai Village
-Shaikahan (tbwt_beast) combat (splashes mage, range hit 0, melee requires a kp spear. Poison and recoil are acceptable forms of damage)
+Shaikahan (tbwt_beast) combat (splashes mage, range hit 0, melee requires a kp spear. Poison and recoil are acceptable forms of damage). Need to check combat code, etc...
 
 */
