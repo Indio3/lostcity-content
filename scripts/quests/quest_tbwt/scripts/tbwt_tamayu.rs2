@@ -19,7 +19,7 @@ if (~get_tbwt_main_progress() < ^tbwt_started) {
             @tbwt_tamayu_bringgoodnews;
         case ^tbwt_tamayu_slay_shaikahan, ^tbwt_tamayu_watched_cutscene :
             @tbwt_tamayu_shaikahanops;
-        case ^tbwt_tamayu_complete :
+        case ^tbwt_tamayu_complete, ^tbwt_tamayu_claimed_final_reward :
             @tbwt_tamayu_slayed_shaikahan;
     }
 }
@@ -121,7 +121,7 @@ if ((last_useitem = tbwt_monkey_corpse) | (last_useitem = tbwt_seaweed_in_monkey
 
         inv_del(inv, $spear, 1);
         ~chatplayer("<p,neutral>Tamayu, try using this weapon.");
-        ~objbox($spear, "You hand the spear to Tamayu.", 250, 0, 10);
+        ~objbox($spear, "You hand the spear to Tamayu.", 250, 0, 0);
         ~chatnpc("<p,neutral>Thank you Bwana. Now I must prepare for my next hunt.");
     }
 } else {

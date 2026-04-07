@@ -18,6 +18,8 @@ switch_int(~get_tbwt_main_progress()) {
         @tbwt_timfraku_completed_brother_tasks;
     case ^tbwt_received_gold_reward :
         @tbwt_timfraku_complete_quest;
+    case ^tbwt_complete :
+        @tbwt_timfraku_post_tbwt;
 }
 
 [label,tbwt_timfraku_rovingadventurer]
@@ -160,15 +162,19 @@ if (%junglepotion < ^junglepotion_complete) {
 @multi2("What do you do here?", tbwt_timfraku_whatdoyoudo, 
         //"Is there anything interesting to do here?", tbwt_timfraku_interesting,
         //"I've been doing some work around the village.", tbwt_timfraku_workaroundvillage,
-        "Ok, thanks.", tbwt_timfraku_okthanks
+        "Ok, thanks.", tbwt_timfraku_end_conversation
         );
 
 [label,tbwt_timfraku_whatdoyoudo]
 ~chatplayer("<p,neutral>What do you do here?");
 ~chatnpc("<p,neutral>It should be clear to anyone that I am the chief of Tai Bwo Wannai. I ensure that things run smoothly in this village.");
 
-[label,tbwt_timfraku_okthanks]
-~chatplayer("<p,neutral>Ok, thanks.");
+[label,tbwt_timfraku_end_conversation]
+if (~get_tbwt_main_progress < ^tbwt_complete) {
+    ~chatplayer("<p,neutral>Ok, thanks.");
+} else {
+    ~chatplayer("<p,neutral>I'm just passing through.");
+}
 
 [label,tbwt_timfraku_whereisthisplace]
 ~chatplayer("<p,quiz>Where is this place?");
@@ -273,3 +279,11 @@ queue(twbt_quest_complete, 0, 0);
 if(npc_find(coord, tbwt_timfraku, 10, 0) = true) {
     ~chatnpc("<p,neutral>You should go and see my sons in the village. I think they have something for you.");
 }
+
+[label,tbwt_timfraku_post_tbwt]
+~chatnpc("<p,neutral>Ah, <~tbwt_get_timfraku_title>, welcome back to Tai Bwo Wannai.");
+@multi2("What do you do here?", tbwt_timfraku_whatdoyoudo, 
+        //"Is there anything interesting to do here?", tbwt_timfraku_interesting,
+        //"I've been doing some work around the village.", tbwt_timfraku_workaroundvillage,
+        "I'm just passing through.", tbwt_timfraku_end_conversation
+        );

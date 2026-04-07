@@ -90,6 +90,12 @@ vislevel=hide
 head1=model_64_npc_head
 head2=model_43_obj_wear
 wanderrange=5
+category=shop_keeper
+param=owned_shop,tbwt_tiadeche_final_inventory
+param=shop_sell_multiplier,550
+param=shop_buy_multiplier,450
+param=shop_delta,10
+param=shop_title,Tiadeche's Karambwan Stall
 
 [tbwt_tinsay]
 name=Tinsay
@@ -209,6 +215,12 @@ vislevel=hide
 head1=model_64_npc_head
 head2=model_43_obj_wear
 wanderrange=5
+category=shop_keeper
+param=owned_shop,tbwt_tamayu_final_inventory
+param=shop_sell_multiplier,1000
+param=shop_buy_multiplier,750
+param=shop_delta,10
+param=shop_title,Tamayu's Spear Stall
 
 [tbwt_tamayu_hunter]
 name=Tamayu

@@ -50,7 +50,7 @@ if (npc_findhero = ^false) {
 }
 
 // Drop monkey corpse only if TBWT is started, otherwise bones
-if (%tbwt_main >= ^tbwt_started & map_members = ^true) {
+if (%tbwt_main >= ^tbwt_started & %tbwt_main < ^tbwt_complete & map_members = ^true) {
     obj_add(npc_coord, tbwt_monkey_corpse, 1, ^lootdrop_duration);
 } else {
     obj_add(npc_coord, mm_normal_monkey_bones, 1, ^lootdrop_duration);

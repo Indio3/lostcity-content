@@ -23,7 +23,7 @@ if (~get_tbwt_main_progress() < ^tbwt_started) {
             @tbwt_tiadeche_can_we_return;
         case ^tbwt_tiadeche_request_manual : 
             @tbwt_tiadeche_have_you_retrieved_manual;
-        case ^tbwt_tiadeche_complete :
+        case ^tbwt_tiadeche_complete, ^tbwt_tiadeche_claimed_final_reward :
             @tbwt_tiadeche_complete;
     }
 }

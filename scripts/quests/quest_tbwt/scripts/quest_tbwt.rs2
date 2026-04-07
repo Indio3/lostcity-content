@@ -8,33 +8,33 @@ mes("Set TBWT Main to: <tostring($var)>.");
 if (p_finduid(uid) = true) {
     if ($var2 = 1) { // Set Timfraku title
         %tbwt_tiadeche = setbit_range_toint(%tbwt_tiadeche, $var, ^tbwt_tiadeche_timfraku_title_start, ^tbwt_tiadeche_timfraku_title_end);
-        mes("Set TBWT Timfraku title to: <tostring($var)>.");
+        mes("Set TBWT Timfraku Title(1) to: <tostring($var)>.");
     } else if ($var2 = 2) { // Set Tiadeche progress
         %tbwt_tiadeche = setbit_range_toint(%tbwt_tiadeche, $var, ^tbwt_tiadeche_tiadeche_start, ^tbwt_tiadeche_tiadeche_end);
         %tbwt_tiadeche = clearbit(%tbwt_tiadeche, ^tbwt_tiadeche_tiadeche_received_karambwan);
-        mes("Set TBWT Tiadeche progress to: <tostring($var)>.");
+        mes("Set TBWT Tiadeche(2) progress to: <tostring($var)>.");
     } else if ($var2 = 3) { // Set Tamayu progress
         %tbwt_tiadeche = setbit_range_toint(%tbwt_tiadeche, $var, ^tbwt_tiadeche_tamayu_start, ^tbwt_tiadeche_tamayu_end);
         %tbwt_tiadeche = clearbit(%tbwt_tiadeche, ^tbwt_tiadeche_tamayu_received_acceptable_spear);
         %tbwt_tiadeche = clearbit(%tbwt_tiadeche, ^tbwt_tiadeche_tamayu_received_poisoned_spear);
         %tbwt_tiadeche = clearbit(%tbwt_tiadeche, ^tbwt_tiadeche_tamayu_received_kp_spear);
-        mes("Set TBWT Tamayu progress to: <tostring($var)>.");
+        mes("Set TBWT Tamayu(3) progress to: <tostring($var)>.");
     } else if ($var2 = 4) { // Set Tinsay progress
         %tbwt_tiadeche = setbit_range_toint(%tbwt_tiadeche, $var, ^tbwt_tiadeche_tinsay_start, ^tbwt_tiadeche_tinsay_end);
         %tbwt_tiadeche = clearbit(%tbwt_tiadeche, ^tbwt_tiadeche_tinsay_received_manual);
-        mes("Set TBWT Tinsay progress to: <tostring($var)>.");
+        mes("Set TBWT Tinsay(4) progress to: <tostring($var)>.");
     } else if ($var2 = 5) { // Set Lubufu progress
         %tbwt_tiadeche = setbit_range_toint(%tbwt_tiadeche, $var, ^tbwt_tiadeche_lubufu_start, ^tbwt_tiadeche_lubufu_end);
-        mes("Set TBWT Lubufu progress to: <tostring($var)>.");
+        mes("Set TBWT Lubufu(5) progress to: <tostring($var)>.");
     } else if ($var2 = 6) { // Set Lubufu Karambwanji Count
         %tbwt_tiadeche = setbit_range_toint(%tbwt_tiadeche, $var, ^tbwt_tiadeche_lubufu_karambwanji_count_start, ^tbwt_tiadeche_lubufu_karambwanji_count_end);
-        mes("Set TBWT Lubufu Karambwanji Count to: <tostring($var)>.");
+        mes("Set TBWT Lubufu Karambwanji Count(6) to: <tostring($var)>.");
     } else if ($var2 = 7) { // Set Lubufu Karambwanji Count
         %tbwt_tiadeche = setbit_range_toint(%tbwt_tiadeche, $var, ^tbwt_tiadeche_lubufu_questioning_count_start, ^tbwt_tiadeche_lubufu_questioning_count_end);
-        mes("Set TBWT Lubufu Questioning Count to: <tostring($var)>.");
+        mes("Set TBWT Lubufu Questioning Count(7) to: <tostring($var)>.");
     } else if ($var2 = 8) { // Set Tamayu Agility Count
         %tbwt_tiadeche = setbit_range_toint(%tbwt_tiadeche, $var, ^tbwt_tiadeche_tamayu_agility_count_start, ^tbwt_tiadeche_tamayu_agility_count_end);
-        mes("Set TBWT Tamayu Agility Count to: <tostring($var)>.");
+        mes("Set TBWT Tamayu Agility Count(8) to: <tostring($var)>.");
     } else {
         %tbwt_tiadeche = $var;
         mes("Set entire TBWT Tiadeche varp to: <tostring($var)>.");
@@ -285,7 +285,7 @@ mes("You load the Karambwan vessel with the raw Karambwanji.");
 [queue,twbt_quest_complete]
 session_log(^log_adventure, "Quest complete: Tai Bwo Wannai Trio");
 ~set_tbwt_main_progress(^tbwt_complete);
-~send_quest_complete(questlist:tbwt, tbwt_raw_karambwan, 250, ^tbwt_questpoints, "You have completed\\nTai Bwo Wannai Trio!");
+~send_quest_complete(questlist:tbwt, tbwt_raw_karambwan, 250, ^tbwt_questpoints, "You have completed the\\n'Tai Bwo Wannai Trio' Quest!"); // https://web.archive.org/web/20051228165555/http://runescape.salmoneus.net/quests/TaiBwoTrio/taibwocomplt.png
 queue(tbwt_timfraku_talk_to_sons, 0, 0);
 
 /*

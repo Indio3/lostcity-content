@@ -349,7 +349,8 @@ model=model_2674_obj
 2dxan=400
 iop1=Bury
 weight=500g
-category=6
+category=bones
+param=bone_exp,50
 
 [mm_small_zombie_monkey_bones]
 name=Monkey bones

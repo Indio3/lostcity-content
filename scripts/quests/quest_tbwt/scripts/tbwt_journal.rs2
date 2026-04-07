@@ -7,14 +7,14 @@
 def_string $text;
 
 mes("Get TBWT Main: <tostring(~get_tbwt_main_progress())>");
-mes("Get TBWT Timfraku Title: <tostring(~get_tbwt_timfraku_title())>");
-mes("Get TBWT Tiadeche: <tostring(~get_tbwt_tiadeche_progress())>");
-mes("Get TBWT Tamayu: <tostring(~get_tbwt_tamayu_progress())>");
-mes("Get TBWT Tinsay: <tostring(~get_tbwt_tinsay_progress())>");
-mes("Get TBWT Lubufu: <tostring(~get_tbwt_lubufu_progress())>");
-mes("Get TBWT Lubufu Karambwanji Count: <tostring(~get_tbwt_lubufu_karambwanji())>");
-mes("Get TBWT Lubufu Questioning Count: <tostring(~get_tbwt_lubufu_questioning())>");
-mes("Get TBWT Tamayu Agility Count: <tostring(~get_tbwt_tamayu_agility_count())>");
+mes("Get TBWT Timfraku Title(1): <tostring(~get_tbwt_timfraku_title())>");
+mes("Get TBWT Tiadeche(2): <tostring(~get_tbwt_tiadeche_progress())>");
+mes("Get TBWT Tamayu(3): <tostring(~get_tbwt_tamayu_progress())>");
+mes("Get TBWT Tinsay(4): <tostring(~get_tbwt_tinsay_progress())>");
+mes("Get TBWT Lubufu(5): <tostring(~get_tbwt_lubufu_progress())>");
+mes("Get TBWT Lubufu Karambwanji Count(6): <tostring(~get_tbwt_lubufu_karambwanji())>");
+mes("Get TBWT Lubufu Questioning Count(7): <tostring(~get_tbwt_lubufu_questioning())>");
+mes("Get TBWT Tamayu Agility Count(8): <tostring(~get_tbwt_tamayu_agility_count())>");
 mes("Raw TBWT Tiadeche varp: <tostring(%tbwt_tiadeche)>");
 
 if (~get_tbwt_main_progress() < ^tbwt_started) {
@@ -48,6 +48,27 @@ if (~get_tbwt_main_progress() = ^tbwt_received_gold_reward | ~get_tbwt_main_prog
     $text = append($text, "@str@these people, but they seem somewhat reluctant to|");
     $text = append($text, "@str@discuss it.||");
     $text = append($text, "@str@As a reward Timfraku gave me a stack of gold coins.||");
+    
+    // Tamayu
+    if (~get_tbwt_tamayu_progress > ^tbwt_tamayu_complete) {
+        $text = append($text, "@str@Tamayu has given me a Karambwan poisoned rune spear|");
+        $text = append($text, "@str@and has trained me in combat technique.||");
+    }
+
+    // Tinsay
+    if (~get_tbwt_tinsay_progress > ^tbwt_tinsay_complete) {
+        $text = append($text, "@str@Tinsay has shown me how to properly cook Karambwan,|");
+        $text = append($text, "@str@and has trained me in cooking technique. He also said he'd|");
+        $text = append($text, "@str@done something to the tribal statue, though he didn't say|");
+        $text = append($text, "@str@what.||");
+    }
+
+    // Tiadeche
+    if (~get_tbwt_tiadeche_progress > ^tbwt_tiadeche_complete) {
+        $text = append($text, "@str@Tiadeche is willing to sell Karambwan at a low price, and|");
+        $text = append($text, "@str@has trained me in fishing technique.||");
+    }
+
     $text = append($text, "@red@QUEST COMPLETE!");
     ~quest_journal("Tai Bwo Wannai Trio", $text);
     return;
@@ -60,31 +81,28 @@ if (~get_tbwt_main_progress() > ^tbwt_timfraku_asked_for_help & ~get_tbwt_main_p
     } else {
         $text = append($text, "@dbl@I need to find the three sons of @dre@Timfraku@dbl@:|");
     }
-
     if (~get_tbwt_tamayu_progress() < ^tbwt_tamayu_intro) {
         $text = append($text, "@dre@Tamayu|");
     } else {
         $text = append($text, "@str@Tamayu|");
     }
-
     if (~get_tbwt_tinsay_progress() < ^tbwt_tinsay_intro) {
         $text = append($text, "@dre@Tinsay|");
     } else {
         $text = append($text, "@str@Tinsay|");
     }
-
     if (~get_tbwt_tiadeche_progress() < ^tbwt_tiadeche_intro) {
         $text = append($text, "@dre@Tiadeche|");
     } else {
         $text = append($text, "@str@Tiadeche|");
     }
-
     if (~get_tbwt_main_progress = ^tbwt_completed_all_brothers) {
         $text = append($text, "@str@I have convinced them to return to the village.|");
         $text = append($text, "@dbl@I must speak with @dre@Timfraku@dbl@.||");
     } else {
         $text = append($text, "@dbl@I need to convince them to return to the village.||");
     }
+
 
     // Tiadeche Journal
     if (~get_tbwt_tiadeche_progress() > ^tbwt_tiadeche_unknown) {
@@ -115,8 +133,8 @@ if (~get_tbwt_main_progress() > ^tbwt_timfraku_asked_for_help & ~get_tbwt_main_p
             $text = append($text, "@str@He has successfully caught a Karambwan.|");
             $text = append($text, "@dbl@I must take a @dre@Karambwan vessel@dbl@ to @dre@Tinsay@dbl@ and retrieve|@dre@crafting instructions@dbl@ for @dre@Tiadeche@dbl@.||");
         }
-        
     }
+
 
     // Tinsay Journal
     if (~get_tbwt_tinsay_progress() > ^tbwt_tinsay_unknown) {
@@ -151,6 +169,7 @@ if (~get_tbwt_main_progress() > ^tbwt_timfraku_asked_for_help & ~get_tbwt_main_p
                 $text = append($text, "@str@I have given him a burnt Jogre bones marinated in|@str@Karambwanji paste.||"); // Intentionally 'a burnt Jogre bones'
         }
     }
+
 
     // Tamayu Journal
     if (~get_tbwt_tamayu_progress() > ^tbwt_tamayu_unknown) {
@@ -187,6 +206,7 @@ if (~get_tbwt_main_progress() > ^tbwt_timfraku_asked_for_help & ~get_tbwt_main_p
             $text = append($text, "@str@Tamayu has slain the Shaikahan!||");
         }
     }
+
 
     // Lubufu Journal
     if (~get_tbwt_lubufu_progress() > ^tbwt_lubufu_intro) {

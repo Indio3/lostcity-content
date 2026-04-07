@@ -26,7 +26,7 @@ if (~get_tbwt_main_progress() < ^tbwt_started) {
             @tbwt_tinsay_given_seaweedsandwich;
         case ^tbwt_tinsay_fetch_marinatedbones : 
             @tbwt_tinsay_have_you_found;
-        case ^tbwt_tinsay_complete : 
+        case ^tbwt_tinsay_complete, ^tbwt_tinsay_claimed_final_reward : 
             @tbwt_tinsay_complete;
     }
 }

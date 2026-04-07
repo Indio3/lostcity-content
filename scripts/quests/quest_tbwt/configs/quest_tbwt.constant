@@ -13,20 +13,20 @@
 ^tbwt_tiadeche_tamayu_start = 5
 ^tbwt_tiadeche_tamayu_end = 7
 ^tbwt_tiadeche_tinsay_start = 8
-^tbwt_tiadeche_tinsay_end = 10
-^tbwt_tiadeche_lubufu_start = 11
-^tbwt_tiadeche_lubufu_end = 14
-^tbwt_tiadeche_lubufu_karambwanji_count_start = 15
-^tbwt_tiadeche_lubufu_karambwanji_count_end = 19
-^tbwt_tiadeche_lubufu_questioning_count_start = 20
-^tbwt_tiadeche_lubufu_questioning_count_end = 21
-^tbwt_tiadeche_tiadeche_received_karambwan = 22
-^tbwt_tiadeche_tamayu_agility_count_start = 23
-^tbwt_tiadeche_tamayu_agility_count_end = 25
-^tbwt_tiadeche_tamayu_received_acceptable_spear = 26
-^tbwt_tiadeche_tamayu_received_poisoned_spear = 27
-^tbwt_tiadeche_tamayu_received_kp_spear = 28
-^tbwt_tiadeche_tinsay_received_manual = 29
+^tbwt_tiadeche_tinsay_end = 11
+^tbwt_tiadeche_lubufu_start = 12
+^tbwt_tiadeche_lubufu_end = 15
+^tbwt_tiadeche_lubufu_karambwanji_count_start = 16
+^tbwt_tiadeche_lubufu_karambwanji_count_end = 20
+^tbwt_tiadeche_lubufu_questioning_count_start = 21
+^tbwt_tiadeche_lubufu_questioning_count_end = 22
+^tbwt_tiadeche_tiadeche_received_karambwan = 23
+^tbwt_tiadeche_tamayu_agility_count_start = 24
+^tbwt_tiadeche_tamayu_agility_count_end = 26
+^tbwt_tiadeche_tamayu_received_acceptable_spear = 27
+^tbwt_tiadeche_tamayu_received_poisoned_spear = 28
+^tbwt_tiadeche_tamayu_received_kp_spear = 29
+^tbwt_tiadeche_tinsay_received_manual = 30
 
 ^tbwt_timfraku_rovingadventurer = 0
 ^tbwt_timfraku_travellingexplorer = 1
@@ -40,12 +40,14 @@
 ^tbwt_tiadeche_request_manual = 4
 ^tbwt_tiadeche_unknownvarp = 5
 ^tbwt_tiadeche_complete = 6
+^tbwt_tiadeche_claimed_final_reward = 7
 
 ^tbwt_tamayu_unknown = 0
 ^tbwt_tamayu_intro = 1
 ^tbwt_tamayu_slay_shaikahan = 2
 ^tbwt_tamayu_watched_cutscene = 3
 ^tbwt_tamayu_complete = 4
+^tbwt_tamayu_claimed_final_reward = 5
 
 ^tbwt_tinsay_unknown = 0
 ^tbwt_tinsay_intro = 1
@@ -55,6 +57,7 @@
 ^tbwt_tinsay_given_seaweedsandwich = 5
 ^tbwt_tinsay_fetch_marinatedbones = 6
 ^tbwt_tinsay_complete = 7
+^tbwt_tinsay_claimed_final_reward = 8
 
 ^tbwt_lubufu_unknown = 0
 ^tbwt_lubufu_intro = 1
