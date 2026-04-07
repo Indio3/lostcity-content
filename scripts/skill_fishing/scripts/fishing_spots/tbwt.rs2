@@ -11,12 +11,11 @@ switch_obj(last_useitem) {
 
 [opnpc1,_category_633] 
 @attempt_fish_karambwan;
-[opnpc4,_category_633] 
-@fish_karambwan;
 
 [opnpcu,_category_633]
 switch_obj(last_useitem) {
     case tbwt_karambwan_vessel_loaded_with_karambwanji : p_opnpc(1);
+    case tbwt_karambwan_vessel : ~mesbox("You need to load your vessel with a karambwanji to fish here.");
     case default : @fishing_wrong_spot_message(last_useitem);
 }
 
@@ -77,49 +76,40 @@ if (%action_delay < map_clock) {
 p_opnpc(4);
 
 [label,attempt_fish_karambwan]
-// check if they have fishing equipment
+if (stat(fishing) < 65) {
+    anim(null, 0);
+    mes("You need to be at least level 65 Fishing to catch Karambwan.");
+    return;
+}
+if (inv_total(inv, tbwt_karambwan_vessel) > 0 & inv_total(inv, tbwt_karambwan_vessel_loaded_with_karambwanji) = 0) {
+    ~mesbox("You need to load your vessel with a karambwanji to fish here.");
+    return;
+}
 if (~check_fish_equipment(tbwt_karambwan_vessel_loaded_with_karambwanji) = false) {
     return;
 }
-// check if inv is full
 if (inv_freespace(inv) < 1) {
     anim(null, 0);
     ~mesbox("You can't carry any more fish.");
     return;
 }
+
+anim(human_octopus_pot, 0);
+
 if (%action_delay < map_clock) {
     %action_delay = calc(map_clock + 4);
+    mes("You lower the Karambwan vessel.");
+    sound_synth(fishing_cast, 0, 0);
     p_opnpc(1);
     return;
 } 
-if (%action_delay = calc(map_clock + 3)) {
-    mes("You lower the Karambwan vessel.");
-    anim(human_octopus_pot, 0);
-    sound_synth(fishing_cast, 0, 0);
-    p_opnpc(4);
-} else if (%action_delay = map_clock) {
+if (%action_delay <= map_clock) {
+    mes("Rolling - map_clock: <tostring(map_clock)>");
     ~fish_roll(tbwt_raw_karambwan, null, tbwt_karambwan_vessel_loaded_with_karambwanji, null);
+    %action_delay = calc(map_clock + 4);
 }
+p_opnpc(1);
 
 if (afk_event = ^true & npc_param(is_whirlpool) = ^false) {
     @macro_event_fishing(tbwt_karambwan_vessel_loaded_with_karambwanji);
 }
-
-[label,fish_karambwan]
-// check if they have fishing equipment
-if (~check_fish_equipment(tbwt_karambwan_vessel_loaded_with_karambwanji) = false) {
-    return;
-}
-// check if inv is full again
-if (inv_freespace(inv) < 1) {
-    anim(null, 0);
-    ~mesbox("You can't carry any more fish.");
-    return;
-}
-if (%action_delay < map_clock) {
-    %action_delay = calc(map_clock + 5);
-} else if (%action_delay = map_clock) {
-    anim(human_octopus_pot, 0);
-    ~fish_roll(tbwt_raw_karambwan, null, tbwt_karambwan_vessel_loaded_with_karambwanji, null);
-}
-p_opnpc(4);

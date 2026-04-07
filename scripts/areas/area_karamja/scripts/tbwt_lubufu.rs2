@@ -372,19 +372,24 @@ stat_advance(fishing, 15000);
 ~chatnpc("<p,neutral>Let me know if you change your mind.");
 
 [label,tbwt_lubufu_apprentice_dialogue]
-~chatnpc("<p,quiz>How fares my apprentice?");
-if (inv_total(inv, tbwt_karambwan_vessel) > 0 | inv_total(inv, tbwt_karambwan_vessel_loaded_with_karambwanji) > 0) {
-    @multi3("I'm fine thanks.", tbwt_lubufu_finethanks,
-            "I've been catching a whole load of Karambwan!", tbwt_lubufu_catching_karambwan,
-            "Awful!", tbwt_lubufu_awful
-    );
+if (~get_tbwt_main_progress < ^tbwt_complete) {
+    ~chatnpc("<p,quiz>How fares my apprentice?");
+    if (inv_total(inv, tbwt_karambwan_vessel) > 0 | inv_total(inv, tbwt_karambwan_vessel_loaded_with_karambwanji) > 0) {
+        @multi3("I'm fine thanks.", tbwt_lubufu_finethanks,
+                "I've been catching a whole load of Karambwan!", tbwt_lubufu_catching_karambwan,
+                "Awful!", tbwt_lubufu_awful
+        );
+    } else {
+        @multi4("I'm fine thanks.", tbwt_lubufu_finethanks,
+                "I've been catching a whole load of Karambwan!", tbwt_lubufu_catching_karambwan,
+                "Actually, I've lost my Karambwan vessel.", tbwt_lubufu_recover_karambwan_vessel,
+                "Awful!", tbwt_lubufu_awful
+        );
+    }
 } else {
-    @multi4("I'm fine thanks.", tbwt_lubufu_finethanks,
-            "I've been catching a whole load of Karambwan!", tbwt_lubufu_catching_karambwan,
-            "Actually, I've lost my Karambwan vessel.", tbwt_lubufu_recover_karambwan_vessel,
-            "Awful!", tbwt_lubufu_awful
-    );
+    ~chatnpc("<p,angry>You deceived me you confoundering dolt! Because of you, my entire business is ruined! Get out of my sight!");
 }
+
 
 [label,tbwt_lubufu_finethanks]
 ~chatplayer("<p,neutral>I'm fine thanks.");

@@ -141,26 +141,43 @@ if (~get_tbwt_main_progress() < ^tbwt_complete) {
 ~open_and_close_door(loc_param(next_loc_stage), ~check_axis(coord, loc_coord, loc_angle), false);
 
 [opnpcu,lubufu_karambwan]
-if(last_useitem = tbwt_karambwan_vessel) {
+def_int $lubufu_progress = ~get_tbwt_lubufu_progress();
+def_int $main_progress = ~get_tbwt_main_progress();
+if ($main_progress >= ^tbwt_complete) {
     if (npc_find(coord, tbwt_lubufu, 20, 0) = true) {
-        ~chatnpc("<p,neutral>You'll first have to bait that pot with Karambwanji.");
-        return;
+        ~chatnpc("<p,angry>You deceived me you confoundering dolt! Because of you, my entire business is ruined! Don't you dare touch my fishing spot!");
     }
-} else if (last_useitem = tbwt_karambwan_vessel_loaded_with_karambwanji) {
-    p_opnpc(1);
+    return;
 }
-p_opnpc(1);
+if ($lubufu_progress >= ^tbwt_lubufu_complete) {
+    if (last_useitem = tbwt_karambwan_vessel) {
+        if (npc_find(coord, tbwt_lubufu, 20, 0) = true) {
+            ~chatnpc("<p,neutral>You'll first have to bait that pot with Karambwanji.");
+        }
+    } else if (last_useitem = tbwt_karambwan_vessel_loaded_with_karambwanji) {
+        p_opnpc(1);
+    } else {
+        ~displaymessage(^dm_default);
+    }
+    return;
+}
+if (npc_find(coord, tbwt_lubufu, 20, 0) = true) {
+    ~chatnpc("<p,angry>Keep off my fishing spot, whippersnapper!");
+}
 
 [opnpc1,lubufu_karambwan]
-@tbwt_fish_lubufu_karambwan;
-
-[label,tbwt_fish_lubufu_karambwan]
 if (~get_tbwt_lubufu_progress() < ^tbwt_lubufu_complete & ~get_tbwt_main_progress() < ^tbwt_complete) {
     if (npc_find(coord, tbwt_lubufu, 20, 0) = true) {
         ~chatnpc("<p,angry>Keep off my fishing spot, whippersnapper!");
     }
 } else {
-    // "You need to be at least level 65 Fishing to catch Karambwan."
+    if (~get_tbwt_main_progress() >= ^tbwt_complete) {
+        if (npc_find(coord, tbwt_lubufu, 20, 0) = true) {
+            ~chatnpc("<p,angry>You deceived me you confoundering dolt! Because of you, my entire business is ruined! Don't you dare touch my fishing spot!");
+        }
+    } else {
+        @attempt_fish_karambwan;
+    }
 }
 
 [opheldu,karamja_rum]
@@ -242,13 +259,28 @@ if (last_useitem = tbwt_jogre_bones) {
 [opheld1,tbwt_seaweed_in_monkey_skin_sandwich]
 mes("You really, really do not want to eat that.");
 
+[opheldu,tbwt_raw_karambwanji]
+if (last_useitem = pestle_and_mortar) ~attempt_grind_ingredient(last_useslot, last_slot);
+else if (last_useitem = tbwt_karambwan_vessel) ~tbwt_load_karambwan_vessel(last_useslot, last_slot);
+
 [opheldu,tbwt_karambwan_vessel]
-if (last_useitem = tbwt_raw_karambwanji) {
-    inv_del(inv, tbwt_karambwan_vessel, 1);
-    inv_del(inv, tbwt_raw_karambwanji, 1);
-    inv_add(inv, tbwt_karambwan_vessel_loaded_with_karambwanji, 1);
-    return;
+if (last_useitem = tbwt_raw_karambwanji) ~tbwt_load_karambwan_vessel(last_useslot, last_slot);
+
+[proc,tbwt_load_karambwan_vessel](int $use_slot, int $last_slot)
+def_obj $used_on = inv_getobj(inv, $last_slot);
+def_obj $used_with = inv_getobj(inv, $use_slot);
+if ($used_on = tbwt_raw_karambwanji) {
+    inv_delslot(inv, $last_slot);
+} else {
+    inv_delslot(inv, $use_slot);
 }
+if ($used_on = tbwt_karambwan_vessel) {
+        inv_delslot(inv, $last_slot);
+    } else {
+        inv_delslot(inv, $use_slot);
+    }
+inv_add(inv, tbwt_karambwan_vessel_loaded_with_karambwanji, 1);
+mes("You load the Karambwan vessel with the raw Karambwanji.");
 
 [queue,twbt_quest_complete]
 session_log(^log_adventure, "Quest complete: Tai Bwo Wannai Trio");
