@@ -107,7 +107,6 @@ if (%action_delay < map_clock) {
     return;
 } 
 if (%action_delay <= map_clock) {
-    mes("Rolling - map_clock: <tostring(map_clock)>");
     ~fish_roll(tbwt_raw_karambwan, null, tbwt_karambwan_vessel_loaded_with_karambwanji, null);
     %action_delay = calc(map_clock + 4);
 }
