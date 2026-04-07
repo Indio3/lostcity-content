@@ -82,7 +82,10 @@ if (stat(fishing) < 65) {
     return;
 }
 if (inv_total(inv, tbwt_karambwan_vessel) > 0 & inv_total(inv, tbwt_karambwan_vessel_loaded_with_karambwanji) = 0) {
-    ~mesbox("You need to load your vessel with a karambwanji to fish here.");
+    // Only show message on the initial click (not during the loop)
+    if (%action_delay < map_clock) {
+        ~mesbox("You need to load your vessel with a karambwanji to fish here.");
+    }
     return;
 }
 if (~check_fish_equipment(tbwt_karambwan_vessel_loaded_with_karambwanji) = false) {
@@ -90,7 +93,7 @@ if (~check_fish_equipment(tbwt_karambwan_vessel_loaded_with_karambwanji) = false
 }
 if (inv_freespace(inv) < 1) {
     anim(null, 0);
-    ~mesbox("You can't carry any more fish.");
+    ~mesbox("You can't carry any more Karambwan.");
     return;
 }
 
