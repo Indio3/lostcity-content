@@ -376,15 +376,28 @@ if (npc_stat(hitpoints) = 0) {
 if ($check_protect_prayer = true & ~check_protect_prayer(^melee_style) = true) { 
     $damage = 0;
 }
-if(sub(stat(hitpoints), $damage) = 0) {
-    npc_setmode(none);
-    queue*(viking_honour_death, 0)(npc_uid);
-    return;
-}
-queue(combat_damage_player, 0, $damage);
+queue*(combat_viking_damage_player, 0)($damage, npc_uid);
 queue*(playerhit_n_retaliate, 0)(npc_uid);
 
-[queue,viking_honour_death](npc_uid $uid)
+//  this should be strong queued. Some damage is queued, some isnt
+[queue,combat_viking_damage_player](int $damage, npc_uid $uid)
+if (inv_getobj(worn, ^wearpos_ring) = ring_of_recoil & map_members = ^true & npc_finduid(%aggressive_npc) = true & npc_hasop(2) = true & %npc_attacking_uid = uid & $damage > 0 & stat(hitpoints) > 0) {
+    // https://oldschool.runescape.wiki/w/Update:Clue_Scroll_Step_Counter
+    // - "Recoil damage will now always target the entity that caused the initial damage, rather than the most recent entity to deal damage."
+    def_int $recoil_damage = add(scale(10, 100, $damage), 1);
+    $recoil_damage = min($recoil_damage, npc_stat(hitpoints));
+    npc_queue(2, $recoil_damage, 0);
+    ~ring_of_recoil_lose_charge($recoil_damage);
+}
+if(sub(stat(hitpoints), $damage) = 0) {
+    if(npc_finduid($uid) = true & inzone(2_41_157_0_0, 2_41_157_63_63, coord) = true) {
+        npc_setmode(none);
+        @viking_honour_death(npc_uid);
+    }
+}
+~damage_self($damage);
+
+[label,viking_honour_death](npc_uid $uid)
 p_stopaction;
 if(~get_viking_thorvald_progress < ^thorvald_complete) {
     %viking = add(%viking, 1);
@@ -393,6 +406,7 @@ if(~get_viking_thorvald_progress < ^thorvald_complete) {
 p_delay(1);
 anim(viking_drop_to_knee, 0);
 p_delay(3);
+~combat_clearqueue;
 mes("Oh dear you are...");
 p_teleport(1_41_57_43_44);
 p_delay(4);
