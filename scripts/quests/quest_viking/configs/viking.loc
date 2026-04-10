@@ -1,3 +1,10 @@
+[viking_doublebed]
+name=Bed
+desc=A wooden double bed.  For sleeping in...
+model=model_4409
+width=3
+length=3
+
 [viking_lake_shrine_altar]
 name=Strange altar
 desc=This seems to be some kind of shrine.

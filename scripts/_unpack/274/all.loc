@@ -762,27 +762,6 @@ offsetx=0
 offsety=0
 offsetz=20
 
-[loc_4139]
-name=Gate
-desc=Entrance to the Duel Arena.
-model=model_loc_47
-recol1s=12480
-recol1d=12580
-active=yes
-op1=Close
-blockrange=no
-
-[loc_4140]
-name=Gate
-desc=Entrance to the Duel Arena.
-model=model_loc_47
-recol1s=12480
-recol1d=12580
-active=yes
-op1=Close
-mirror=yes
-blockrange=no
-
 [death_cavewall_face1_nominimap]
 model=model_loc_1417
 recol1s=12580
