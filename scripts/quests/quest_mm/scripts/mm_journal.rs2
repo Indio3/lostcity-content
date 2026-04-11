@@ -8,18 +8,44 @@ if(%mm_main = ^mm_not_started) {
 }
 
 $text = append($text, "@dre@Chapter 1:||");
-$text = append($text, "@dre@King Narnode Shareen:||");
-$text = append($text, "@str@The 10th squad of Narnode's Royal Guard went missing during");
-$text = append($text, "@str@a mission to decommission Glough's ship building facilities");
-$text = append($text, "@str@in Karamja.||");
-$text = append($text, "@str@Narnode has asked if I would find out if the 10th squad ever|");
-$text = append($text, "@str@reached the shipyard.||");
 
-// recheck, this should rely on mm_narnode = 3
-$text = append($text, "@str@Narnode has given me a copy of the Royal Seal so that I may");
-$text = append($text, "@str@identify myself as his envoy.||");
+if(%mm_narnode > 0) {
+    $text = append($text, "@dre@King Narnode Shareen:||");
+    $text = append($text, "@str@The 10th squad of Narnode's Royal Guard went missing during|");
+    $text = append($text, "@str@a mission to decommission Glough's ship building facilities|");
+    $text = append($text, "@str@in Karamja.||");
+    $text = append($text, "@str@Narnode has asked if I would find out if the 10th squad ever|");
+    $text = append($text, "@str@reached the shipyard.||");
+
+    // recheck, this should rely on mm_narnode = 3 though
+    if(%mm_narnode >= ^narnode_given_seal) {
+        $text = append($text, "@str@Narnode has given me a copy of the Royal Seal so that I may|");
+        $text = append($text, "@str@identify myself as his envoy.||");
+    }
 
 
-$text = append($text, "@dbl@I have agreed to investigate the @dre@Karamjan@dbl@ shipyard.");
+    if(%mm_caranock > ^mm_caranock_p2) $text = append($text, "@str@I have investigated the Karamjan shipyard.||");
+    else $text = append($text, "@dbl@I have agreed to investigate the @dre@Karamjan@dbl@ shipyard.||");
+
+    if(%mm_narnode >= ^narnode_received_orders) append($text, "@str@Narnode has given me some handwritten orders.||");
+
+    if(%mm_daero > 0) $text = append($text, "@str@I have investigated the Karamjan shipyard.||");
+    else $text = append($text, "@dbl@I must take the orders to the new High Tree|@dbl@Guardian, @dre@Daero@dbl@, @dbl@who works on the @dre@Grand Tree@dbl@.||");
+}
+
+if(%mm_caranock > 0) {
+    $text = append($text, "@dre@G.L.O. Caranock:||");
+    if(testbit(%mm_bits, ^mm_spoke_foreman) = ^true) $text = append($text, "@str@The foreman told me that Caranock is the Gnome Liason|Officer at the shipyard.||");
+    $text = append($text, "@str@I have told Caranock that the 10th squad are missing.||");
+    if(%mm_caranock > ^mm_asked_caranock) { // recheck this stage
+        $text = append($text, "@str@Caranock said that the 10th squad never made it to the|");
+        $text = append($text, "@str@shipyard. He mentioned something about seriously strong|");
+        $text = append($text, "@str@southern winds.||");
+    }
+    if(%mm_caranock > ^mm_caranock_p2) {
+        if(%mm_narnode >= ^narnode_returned_shipyard) $text = append($text, "@str@I have reported back to King Narnode.");
+        else $text = append($text, "@dbl@I should report back to @dre@King Narnode@dbl@.");
+    }
+}
 
 ~quest_journal("Monkey Madness", $text);

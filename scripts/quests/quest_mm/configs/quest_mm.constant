@@ -6,3 +6,15 @@
 ^narnode_worried = 1
 ^narnode_spoken = 2
 ^narnode_given_seal = 3
+^narnode_returned_shipyard = 4
+^narnode_mentioned_caranock = 5
+^narnode_southern_winds = 6
+^narnode_received_orders = 7
+
+// mm_caranock
+^mm_asked_caranock = 1
+^mm_caranock_p2 = 2
+^mm_caranock_p3 = 3
+
+// mm_bits
+^mm_spoke_foreman = 0

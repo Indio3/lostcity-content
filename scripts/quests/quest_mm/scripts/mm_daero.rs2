@@ -1,5 +1,13 @@
 [opnpc1,mm_daero]
-switch_int(%mm_main) {
-    case ^mm_not_started, ^mm_started :
-        ~mesbox("Daero seems like he is enjoying himself too much to talk.");
+if(%mm_narnode < ^narnode_received_orders) {
+    ~mesbox("Daero seems like he is enjoying himself too much to talk.");
+    return;
 }
+
+[debugproc,test]
+runanim(null);
+walktrigger(reset_run);
+if(p_finduid(uid) = true) p_walk(movecoord(coord, 5, 0, 0));
+
+[walktrigger,reset_run]
+~update_bas;
