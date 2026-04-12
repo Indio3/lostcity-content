@@ -362,7 +362,7 @@ switch_int($op) {
             say("A fight begun, when the cause is just,");
             p_delay(1);
             say("will prevail over all others.");
-        } else if ($rand = 4) {
+        } else {
             say("The currency of goodness is honour;");
             p_delay(1);
             say("It retains its value through scarcity.");
@@ -426,7 +426,7 @@ switch_int($op) {
             say("Those who fight, then run away,");
             p_delay(1);
             say("shame Zamorak with their cowardice.");
-        } else if ($rand = 4) {
+        } else {
             say("Battles are not lost and won;");
             p_delay(1);
             say("They simply remove the weak from the equation.");
@@ -490,7 +490,7 @@ switch_int($op) {
             say("The river flows, the sun ignites,");
             p_delay(1);
             say("May you stand with Guthix in thy fights.");
-        } else if ($rand = 4) {
+        } else {
             say("A journey of a single step,");
             p_delay(1);
             say("May take thee over a thousand miles.");
