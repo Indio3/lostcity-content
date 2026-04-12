@@ -264,7 +264,7 @@ npc_walk(movecoord($start, 3, 0, 0));
 if(inzone(0_39_72_0_0, 0_39_72_63_63, coord) = true) cam_lookat(movecoord($start, 3, 0, 0), 10, 50, 10);
 p_delay(1);
 if(inzone(0_39_72_0_0, 0_39_72_63_63, coord) = true) { 
-    npc_tele(map_findsquare(coord, 2, 5, ^vis_lineofwalk));
+    npc_tele(map_findsquare(coord, 2, 5, ^map_findsquare_lineofwalk));
     cam_lookat(movecoord($start, 4, 0, 0), 10, 50, 10);
 }
 p_delay(0);
