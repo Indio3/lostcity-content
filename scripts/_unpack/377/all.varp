@@ -570,8 +570,10 @@ transmit=yes
 [varp_364]
 
 [mm_main]
+scope=perm
 
 [mm_bits]
+scope=perm
 
 [varp_367]
 
@@ -584,6 +586,7 @@ transmit=yes
 [varp_371]
 
 [mm_gnomes]
+scope=perm
 
 [varp_373]
 

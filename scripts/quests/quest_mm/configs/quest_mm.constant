@@ -16,5 +16,14 @@
 ^mm_caranock_p2 = 2
 ^mm_caranock_p3 = 3
 
+// mm_daero
+^daero_found = 1
+^daero_given_orders = 2
+^daero_learnt_mission = 3
+^daero_left_grandtree = 4
+
 // mm_bits
 ^mm_spoke_foreman = 0
+^mm_daero_read_1st_menu = 1
+^mm_daero_read_2nd_menu = 2
+^mm_daero_read_3rd_menu = 3

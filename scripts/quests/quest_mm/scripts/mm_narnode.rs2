@@ -1,6 +1,6 @@
 [label,mm_narnode]
 if(%mm_narnode = ^narnode_received_orders) {
-    if(inv_total(inv, mm_narnode_orders) = 0) {
+    if(%mm_daero < ^daero_given_orders & inv_total(inv, mm_narnode_orders) = 0) {
         ~chatplayer("<p,shifty>Excuse me...");
         ~chatnpc("<p,quiz>Yes, adventurer?");
         ~chatplayer("<p,shifty>You know those orders you gave me -");

@@ -27,15 +27,16 @@ if(%mm_narnode > 0) {
     if(%mm_caranock > ^mm_caranock_p2) $text = append($text, "@str@I have investigated the Karamjan shipyard.||");
     else $text = append($text, "@dbl@I have agreed to investigate the @dre@Karamjan@dbl@ shipyard.||");
 
-    if(%mm_narnode >= ^narnode_received_orders) append($text, "@str@Narnode has given me some handwritten orders.||");
-
-    if(%mm_daero > 0) $text = append($text, "@str@I have investigated the Karamjan shipyard.||");
-    else $text = append($text, "@dbl@I must take the orders to the new High Tree|@dbl@Guardian, @dre@Daero@dbl@, @dbl@who works on the @dre@Grand Tree@dbl@.||");
+    if(%mm_narnode >= ^narnode_received_orders) {
+        $text = append($text, "@str@Narnode has given me some handwritten orders.||");
+        if(%mm_daero > 0) $text = append($text, "@str@I have taken the orders to Daero.||");
+        else $text = append($text, "@dbl@I must take the orders to the new High Tree @dbl@Guardian,|@dre@Daero@dbl@, @dbl@who works on the @dre@Grand Tree@dbl@.||");
+    }
 }
 
 if(%mm_caranock > 0) {
     $text = append($text, "@dre@G.L.O. Caranock:||");
-    if(testbit(%mm_bits, ^mm_spoke_foreman) = ^true) $text = append($text, "@str@The foreman told me that Caranock is the Gnome Liason|Officer at the shipyard.||");
+    if(testbit(%mm_bits, ^mm_spoke_foreman) = ^true) $text = append($text, "@str@The foreman told me that Caranock is the Gnome Liason|@str@Officer at the shipyard.||");
     $text = append($text, "@str@I have told Caranock that the 10th squad are missing.||");
     if(%mm_caranock > ^mm_asked_caranock) { // recheck this stage
         $text = append($text, "@str@Caranock said that the 10th squad never made it to the|");
@@ -43,8 +44,24 @@ if(%mm_caranock > 0) {
         $text = append($text, "@str@southern winds.||");
     }
     if(%mm_caranock > ^mm_caranock_p2) {
-        if(%mm_narnode >= ^narnode_returned_shipyard) $text = append($text, "@str@I have reported back to King Narnode.");
-        else $text = append($text, "@dbl@I should report back to @dre@King Narnode@dbl@.");
+        if(%mm_narnode >= ^narnode_returned_shipyard) $text = append($text, "@str@I have reported back to King Narnode.||");
+        else $text = append($text, "@dbl@I should report back to @dre@King Narnode@dbl@.||");
+    }
+}
+
+if(%mm_daero > 0) {
+    $text = append($text, "@dre@High Tree Guardian Daero:||");
+    $text = append($text, "@str@I found Daero 'working' in the Grand Tree Bar.");
+    if(%mm_daero > ^daero_found) {
+        $text = append($text, "||@str@I have given Narnode's orders to Daero.");
+    }
+    if(%mm_daero > ^daero_given_orders) {
+        $text = append($text, "||@str@The orders say I am to undertake a reconnaisance mission far|");
+        $text = append($text, "@str@to the south of Karamja to investigate Caranock's claim that|");
+        $text = append($text, "@str@Garkor's squad were blown off course.");
+    }
+    if(%mm_daero > ^daero_learnt_mission) {
+        $text = append($text, "||@str@I have been taken to the Underground Military Glider @str@Hangar.");
     }
 }
 
