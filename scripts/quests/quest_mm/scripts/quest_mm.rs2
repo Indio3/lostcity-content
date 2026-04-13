@@ -1,20 +1,28 @@
 [label,mm_ch1]
-midi_jingle("new chapter", 14000);
+midi_jingle("new chapter", 13523);
+sound_synth(ooks, 0, 0);
 if_settext(inter_212:com_2, ^string_empty);
 if_settext(inter_212:com_3, ^string_empty);
-if_settext(inter_212:com_4, "@whi@Monkey Madness: Chapter 1");
+if_settext(inter_212:com_4, "Monkey Madness: Chapter 1");
+if_setcolour(inter_212:com_4, ^white_rgb);
 if_settext(inter_212:com_5, ^string_empty);
 if_settext(inter_212:com_6, ^string_empty);
-if_settext(inter_212:com_7, "@whi@In which our hero finds <text_gender("him", "her")>self drawn back into Glough's web");
-if_settext(inter_212:com_8, "@whi@of deception and deceit.");
+if_setcolour(inter_212:com_6, ^white_rgb);
+if_settext(inter_212:com_7, "In which our hero finds <text_gender("him", "her")>self drawn back into Glough's web");
+if_setcolour(inter_212:com_7, ^white_rgb);
+if_settext(inter_212:com_8, "of deception and deceit.");
+if_setcolour(inter_212:com_8, ^white_rgb);
 if_settext(inter_212:com_9, ^string_empty);
 if_settext(inter_212:com_10, ^string_empty);
 if_settext(inter_212:com_11, ^string_empty);
 if_settext(inter_212:com_12, ^string_empty);
 if_settext(inter_212:com_13, ^string_empty);
+if_setcolour(scroll:com_3, ^yellow_rgb);
+if_setcolour(scroll:com_3, ^yellow_rgb);
 if_openmain(inter_212);
 
 [oploc1,bunker_controlpanal]
+if(%mm_daero = ^daero_started_reinit) @mm_open_puzzle;
 ~mesbox("You do not know what you are doing.");
 
 [oploc1,mm_reinitialisation_crate]

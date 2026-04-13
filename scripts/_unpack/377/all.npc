@@ -34205,6 +34205,7 @@ readyanim=midget_ready
 op1=Talk-to
 vislevel=hide
 head1=npc_commander_montai_head
+attackrange=14
 
 [mm_waydar]
 name=Waydar
@@ -34217,6 +34218,7 @@ readyanim=midget_ready
 op1=Talk-to
 vislevel=hide
 head1=npc_gnomepilot_head
+attackrange=14
 
 [mm_cutscene_waydar]
 name=Waydar

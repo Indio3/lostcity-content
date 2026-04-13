@@ -17,7 +17,6 @@ if(%mm_narnode > 0) {
     $text = append($text, "@str@Narnode has asked if I would find out if the 10th squad ever|");
     $text = append($text, "@str@reached the shipyard.||");
 
-    // recheck, this should rely on mm_narnode = 3 though
     if(%mm_narnode >= ^narnode_given_seal) {
         $text = append($text, "@str@Narnode has given me a copy of the Royal Seal so that I may|");
         $text = append($text, "@str@identify myself as his envoy.||");
@@ -42,8 +41,7 @@ if(%mm_caranock > 0) {
         $text = append($text, "@str@Caranock said that the 10th squad never made it to the|");
         $text = append($text, "@str@shipyard. He mentioned something about seriously strong|");
         $text = append($text, "@str@southern winds.||");
-    }
-    if(%mm_caranock > ^mm_caranock_p2) {
+        // doesnt check for next stage, confirmed on osrs
         if(%mm_narnode >= ^narnode_returned_shipyard) $text = append($text, "@str@I have reported back to King Narnode.||");
         else $text = append($text, "@dbl@I should report back to @dre@King Narnode@dbl@.||");
     }
@@ -62,6 +60,9 @@ if(%mm_daero > 0) {
     }
     if(%mm_daero > ^daero_learnt_mission) {
         $text = append($text, "||@str@I have been taken to the Underground Military Glider @str@Hangar.");
+    }
+    if(%mm_daero > ^daero_left_grandtree) {
+        $text = append($text, "||@dbl@I cannot go on the mission until reinitialisation has been|@dbl@completed.");
     }
 }
 

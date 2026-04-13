@@ -50,7 +50,7 @@ if(inv_total(inv, mm_gnome_royal_seal) > 0) {
     ~chatnpc("<p,shifty>Wow. I haven't seen one of these since...");
     ~chatplayer("<p,neutral>Since when?");
     ~chatnpc("<p,shifty>... since Glough used to visit.");
-    ~chatnpc("<p,neutral>Anyway. Please step inside, <text_gender("Sir", "Miss")>.");
+    ~chatnpc("<p,neutral>Anyway. Please step inside, <text_gender("Sir", "madam")>.");
     if_close;
     p_delay(5); // 6t
     @open_shipyard_gate;

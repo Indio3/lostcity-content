@@ -1,0 +1,20 @@
+[opnpc1,mm_waydar]
+if(%mm_daero = ^daero_started_reinit) {
+    switch_int(~p_choice4("What are military gliders?", 1, "Why are the gliders folded against the wall?", 2, "When will reinitialisation be completed?", 3, "Where is the reinitialisation code?", 4)) {
+        case 1 :
+            ~chatplayer("<p,quiz>What are military gliders?");
+            ~chatnpc("<p,neutral>As Daero said, they are a prototype for a new version of glider. They are reinforced yet are built out of lighter materials. They can fly much faster and for longer.");
+        case 2 :
+            ~chatplayer("<p,quiz>Why are the gliders folded against the wall?");
+            ~chatnpc("<p,neutral>It is the most compact way to store them. Unfortunately, they will remain like that until they are powered. We can only fully power the hangar when reinitialisation has been completed.");
+        case 3 :
+            ~chatplayer("<p,quiz>When will reinitialisation be completed?");
+            ~chatnpc("<p,neutral>I cannot be sure. It is a difficult code; it may happen the next instant - then again it may not.");
+            ~chatnpc("<p,neutral>You could even have a go at solving the code yourself.");
+        case 4 :
+            ~chatplayer("<p,quiz>Where is the reinitialisation code?");
+            ~chatnpc("<p,neutral>The code must be entered at the red control panel just by the wall over there.");
+    }
+    return;
+}
+~chatnpc("<p,neutral>Sorry, I am not authorised to talk to you.");

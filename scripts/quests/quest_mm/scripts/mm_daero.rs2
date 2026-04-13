@@ -1,4 +1,7 @@
 [opnpc1,mm_daero]
+if(inzone(0_37_154_0_0, 0_37_154_63_63, npc_coord) = true) {
+    @daero_hangar_dialogue;
+}
 if(%mm_narnode < ^narnode_received_orders) {
     ~mesbox("Daero seems like he is enjoying himself too much to talk.");
     return;
@@ -18,6 +21,54 @@ if(%mm_daero = ^daero_learnt_mission) {
 %mm_daero = ^daero_found;
 ~chatnpc("<p,happy>I see. You must be the individual who helped defeat my predecessor Glough. I hope you'll find me a more honest replacement.");
 @mm_daero_p2;
+
+[label,daero_hangar_dialogue]
+switch_int(%mm_daero) {
+    case ^daero_started_reinit :
+        switch_int(~p_choice4("Where is the hangar?", 1, "How do I leave?", 2, "How do I return here later?", 3, "What is reinitialisation?", 4)) {
+            case 1 :
+                ~chatplayer("<p,quiz>Where is the hangar?");
+                ~chatnpc("<p,neutral>We try to ensure the location of the hangar remains a secret. If you must know something, then know that it lies directly beneath the Gnomeball pitch. However, I cannot reveal the location of its entrance.");
+            case 2 :
+                ~chatplayer("<p,quiz>How do I leave?");
+                ~chatnpc("<p,neutral>There is a teleporter round the corner. You must use this.");
+            case 3 :
+                ~chatplayer("<p,quiz>How do I return later?");
+                ~chatnpc("<p,neutral>Come and find me on the Grand Tree. I will probably be at the bar.");
+            case 4 :
+                ~chatplayer("<p,quiz>What is reinitialisation?");
+                ~chatnpc("<p,neutral>Glough left a code on the facility which periodically needs to be entered if we wish to maintain the supply of power.");
+                ~chatnpc("<p,neutral>Without going through this process of reinitiliasation, we cannot power the mechanism which deploys the millitary gliders.");
+        }
+    case ^daero_left_grandtree :
+        ~chatnpc("<p,neutral>Welcome, adventurer, to the Underground Military Glider Hangar.");
+        ~chatplayer("<p,neutral>Wow! Why would Gnomes need such a place?");
+        ~chatnpc("<p,neutral>We do not, if the truth be told. This hangar was part of Glough's contingency planning. Had the attacks by land and sea failed, he would have turned to air.");
+        ~chatnpc("<p,neutral>It is fortunate indeed that you managed to expose him. The military gliders in this hangar are a prototype for a much refined version of the standard variety we currently use.");
+        ~chatnpc("<p,neutral>Let me introduce you to Flight Commander Waydar.");
+        if(.npc_find(coord, mm_waydar, 14, 0) = true) {
+            npc_setmode(apnpc1); // maybe npcface or something...
+            .npc_setmode(apnpc1);
+            facesquare(.npc_coord);
+            ~chatnpc_specific(nc_name(mm_daero), mm_daero, "<p,neutral>Flight Commander Waydar, I would like you to meet <displayname()>.");
+            ~chatnpc_specific(nc_name(mm_waydar), mm_waydar, "<p,neutral>Greetings High Tree Guardian.");
+            ~.chatnpcrange("<p,neutral>And greetings to you too, visitor.");
+            facesquare(npc_coord);
+            .npc_setmode(apnpc1);
+            ~chatnpc_specific(nc_name(mm_daero), mm_daero, "<p,neutral>Not just any old visitor Waydar; this is the person who exposed Glough and defeated his demon.");
+            ~chatnpc_specific(nc_name(mm_waydar), mm_waydar, "<p,neutral>I see. Well, there are no more demons left here.");
+            ~chatnpc_specific(nc_name(mm_daero), mm_daero, "<p,neutral>Quite. He is now on a secret mission for the King.");
+            ~chatnpc_specific(nc_name(mm_daero), mm_daero, "<p,neutral>We still do not know what happened, but evidence suggests they were blown far off course to the south.");
+            ~chatnpc_specific(nc_name(mm_waydar), mm_waydar, "<p,neutral>Their standard gliders must have fallen prey to the tropical weather.");
+            ~chatnpcnoturn("<p,neutral>When reinitialisation has been completed, you are to fly to the south of Karamja with <displayname()> and accompany <text_gender("him", "her")> on the mission.");
+            ~chatnpc_specific(nc_name(mm_waydar), mm_waydar, "<p,shifty>We are no closer to reinitialising sir - the code is too hard. It is likely the only person who could do it is Glough.");
+            ~chatnpcnoturn("<p,angry>That Gnome is never stepping foot in this hangar again. He always was and still is a menace. Do you understand me?");
+            ~chatnpc_specific(nc_name(mm_waydar), mm_waydar, "<p,scared>Yes sir.");
+            ~chatnpcnoturn("<p,neutral>Very well. Notify me when you have managed to reinitialise.");
+            %mm_daero = ^daero_started_reinit;
+            ~chatnpcnoturn("<p,neutral><displayname()>, you will have to wait till reinitialisation is complete.");
+        }
+}
 
 [label,mm_daero_p2]
 ~chatplayer("<p,neutral>I have been asked to give you orders from King Narnode.");

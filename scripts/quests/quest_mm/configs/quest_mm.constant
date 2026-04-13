@@ -21,9 +21,12 @@
 ^daero_given_orders = 2
 ^daero_learnt_mission = 3
 ^daero_left_grandtree = 4
+^daero_started_reinit = 5
+^daero_reinit_complete = 6
 
 // mm_bits
 ^mm_spoke_foreman = 0
 ^mm_daero_read_1st_menu = 1
 ^mm_daero_read_2nd_menu = 2
 ^mm_daero_read_3rd_menu = 3
+^mm_paid_glough = 30

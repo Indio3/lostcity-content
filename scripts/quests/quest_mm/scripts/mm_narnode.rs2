@@ -86,7 +86,7 @@ switch_int(~p_choice2_header("Yes", 1, "No", 2, "Start Monkey Madness?")) {
 
 [label,mm_narnode_returned]
 ~chatnpc("<p,neutral>Welcome back, adventurer.");
-if(%mm_caranock > ^mm_caranock_p2) {
+if(%mm_caranock > ^mm_asked_caranock) { // dont need to go through full caranock dialogue
     ~chatplayer("<p,neutral>Hello. I investigated the shipyard.");
     %mm_narnode = ^narnode_returned_shipyard;
     ~chatnpc("<p,neutral>Thank you for doing this. What did you find?");
