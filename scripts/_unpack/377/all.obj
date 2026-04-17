@@ -46999,6 +46999,13 @@ model=obj_mm_monkey_talisman
 iop2=Hold
 weight=3oz
 wearpos=righthand
+param=ready_baseanim,m_monkey_ready
+param=turnonspot_baseanim,m_monkey_walk
+param=walk_f_baseanim,m_monkey_walk
+param=walk_b_baseanim,m_monkey_walk
+param=walk_l_baseanim,m_monkey_walk
+param=walk_r_baseanim,m_monkey_walk
+param=running_baseanim,m_monkey_run
 
 [mm_monkey_greegree_for_medium_ninja_monkey]
 name=Monkey greegree
@@ -47139,6 +47146,14 @@ model=obj_mm_monkey_talisman
 iop2=Hold
 weight=3oz
 wearpos=righthand
+param=ready_baseanim,monkey_ready
+param=turnonspot_baseanim,monkey_walk
+param=walk_f_baseanim,monkey_walk
+param=walk_b_baseanim,monkey_walk
+param=walk_l_baseanim,monkey_walk
+param=walk_r_baseanim,monkey_walk
+param=running_baseanim,m_normalmonkey_run
+category=mm_greegree
 
 [fade_to_black_inv]
 name=Dummy

@@ -1,0 +1,10 @@
+[oploc1,mm_jail_door]
+mes("You attempt to pick the lock.");
+p_delay(2);
+mes("You manage to pick the lock.");
+if(stat_random(thieving, 96, 250) = false) { // TODO: actual rate
+    mes("You fail to pick the lock.");
+    return;
+}
+sound_synth(locked, 0, 0);
+~open_and_close_door2(mm_jail_door_inactive, ~check_axis(coord, loc_coord, loc_angle), iron_door_open);

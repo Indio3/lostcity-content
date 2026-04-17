@@ -1,0 +1,25 @@
+[ai_queue1,mm_ravine_archer] ~npc_default_retaliate_ap;
+[ai_opplayer2,mm_ravine_archer] npc_setmode(applayer2);
+[ai_applayer2,mm_ravine_archer]
+queue(aa_knockout, 5, 0);
+~npc_rangeattack;
+
+[walktrigger,clear_seq]
+anim(null, 0);
+
+[queue,aa_knockout]
+p_stopaction;
+~update_bas;
+anim(human_death, 0);
+p_delay(2);
+if_openoverlay(eadgar_fade_to_black);
+p_delay(3);
+walktrigger(clear_seq);
+~combat_clearqueue;
+clearqueue(aa_knockout);
+p_teleport(0_43_43_18_42);
+if_setanim(eadgar_fade_to_black:com_0, seq_1254);
+p_delay(4);
+%mm_jail_counter = add(%mm_jail_counter, 1);
+if_openoverlay(null);
+@lumo_jailed_dialogue;

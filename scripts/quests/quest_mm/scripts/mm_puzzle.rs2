@@ -140,6 +140,7 @@ if($open_slot ! -1) {
 
 if(~reinit_puzzle_complete = true) {
     if_close;
+    if_settab(null, ^tab_magic);
     mes("As you slide the final piece into place you begin to hear a low rumbling");
     mes("sound...");
     cam_shake(0, 10, 0, 0);
@@ -161,7 +162,7 @@ if(loc_find(0_40_70_16_34, mm_glider) = true) loc_anim(m_glider_unfold);
 if(loc_find(0_40_70_16_38, mm_glider) = true) loc_anim(m_glider_unfold);
 if(loc_find(0_40_70_16_46, mm_glider) = true) loc_anim(m_glider_unfold);
 sound_synth(wing_unfold, 0, 0);
-p_delay(8);
+if_settab(magic, ^tab_magic);
 cam_reset;
 p_teleport(0_41_70_25_27);
 %mm_daero = ^daero_reinit_complete;

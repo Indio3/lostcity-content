@@ -8,10 +8,51 @@ if_setcolour(inter_212:com_4, ^white_rgb);
 if_settext(inter_212:com_5, ^string_empty);
 if_settext(inter_212:com_6, ^string_empty);
 if_setcolour(inter_212:com_6, ^white_rgb);
-if_settext(inter_212:com_7, "In which our hero finds <text_gender("him", "her")>self drawn back into Glough's web");
+if_settext(inter_212:com_7, "In which our <text_gender("hero", "heroine")> finds <text_gender("him", "her")>self drawn back into");
 if_setcolour(inter_212:com_7, ^white_rgb);
-if_settext(inter_212:com_8, "of deception and deceit.");
+if_settext(inter_212:com_8, "Glough's web of deception and deceit.");
 if_setcolour(inter_212:com_8, ^white_rgb);
+if_settext(inter_212:com_9, ^string_empty);
+if_settext(inter_212:com_10, ^string_empty);
+if_settext(inter_212:com_11, ^string_empty);
+if_settext(inter_212:com_12, ^string_empty);
+if_settext(inter_212:com_13, ^string_empty);
+if_openmain(inter_212);
+
+[label,mm_ch2]
+midi_jingle("new chapter", 13523);
+sound_synth(ooks, 0, 0);
+if_settext(inter_212:com_2, ^string_empty);
+if_settext(inter_212:com_3, ^string_empty);
+if_settext(inter_212:com_4, "Monkey Madness: Chapter 2");
+if_setcolour(inter_212:com_4, ^white_rgb);
+if_settext(inter_212:com_5, ^string_empty);
+if_settext(inter_212:com_6, ^string_empty);
+if_setcolour(inter_212:com_6, ^white_rgb);
+if_settext(inter_212:com_7, "In which our <text_gender("hero", "heroine")> finds <text_gender("him", "her")>self engaging in");
+if_setcolour(inter_212:com_7, ^white_rgb);
+if_settext(inter_212:com_8, "severe quantities of monkey business.");
+if_setcolour(inter_212:com_8, ^white_rgb);
+if_settext(inter_212:com_9, ^string_empty);
+if_settext(inter_212:com_10, ^string_empty);
+if_settext(inter_212:com_11, ^string_empty);
+if_settext(inter_212:com_12, ^string_empty);
+if_settext(inter_212:com_13, ^string_empty);
+if_openmain(inter_212);
+
+[label,mm_ch2_cutscene]
+if_close;
+p_delay(0);
+midi_jingle("meanwhile", 7083);
+if_settext(inter_212:com_2, ^string_empty);
+if_settext(inter_212:com_3, ^string_empty);
+if_settext(inter_212:com_4, ^string_empty);
+if_settext(inter_212:com_5, ^string_empty);
+if_settext(inter_212:com_6, ^string_empty);
+if_setcolour(inter_212:com_6, ^white_rgb);
+if_settext(inter_212:com_7, "Meanwhile, far away in Karamja...");
+if_setcolour(inter_212:com_7, ^white_rgb);
+if_settext(inter_212:com_8, ^string_empty);
 if_settext(inter_212:com_9, ^string_empty);
 if_settext(inter_212:com_10, ^string_empty);
 if_settext(inter_212:com_11, ^string_empty);
@@ -20,10 +61,123 @@ if_settext(inter_212:com_13, ^string_empty);
 if_setcolour(scroll:com_3, ^yellow_rgb);
 if_setcolour(scroll:com_3, ^yellow_rgb);
 if_openmain(inter_212);
+if_openoverlay(eadgar_fade_to_black);
+p_delay(4);
+if_close;
+p_teleport(0_40_71_36_37);
+if(npc_findexact(0_40_71_43_38, mm_cutscene_foreman) = true & .npc_findexact(0_40_71_43_36, mm_cutscene_caranock) = true) {
+    .npc_facesquare(movecoord(.npc_coord, 0, 0, 2));
+    npc_facesquare(movecoord(npc_coord, 0, 0, -2));
+    p_delay(0);
+    walktrigger(mm_ch2_walktrigger);
+    if_settext(music:com_177, "Suspicious");
+    midi_song("suspicious");
+    cam_moveto(0_40_71_39_37, 400, 232, 232);
+    cam_lookat(0_40_71_49_37, 160, 232, 232);
+    if_setanim(eadgar_fade_to_black:com_0, seq_1254);
+    if_settab(null, ^tab_magic);
+    @mm_ch2_cutscene_dialogue;
+}
+
+[walktrigger,mm_ch2_walktrigger]
+if(inzone(0_40_71_0_0, 0_40_71_63_63, coord) = false) {
+    cam_reset;
+    if_settab(magic, ^tab_magic);
+    return;
+}
+p_walk(coord);
+%mm_cutscene_part = add(%mm_cutscene_part, 1);
+if(npc_findexact(0_40_71_43_38, mm_cutscene_foreman) = true & .npc_findexact(0_40_71_43_36, mm_cutscene_caranock) = true) {
+    walktrigger(mm_ch2_walktrigger);
+    npc_say("<tostring(%mm_cutscene_part)>");
+    @mm_ch2_cutscene_dialogue;
+}
+
+[label,mm_ch2_cutscene_dialogue]
+if(inzone(0_40_71_0_0, 0_40_71_63_63, coord) = false) {
+    cam_reset;
+    if_settab(magic, ^tab_magic);
+    return;
+}
+if(%mm_cutscene_part = 0) {
+    %mm_cutscene_part = add(%mm_cutscene_part, 1);
+    ~chatnpcnoturn("<p,shifty>The workers are getting restless, Caranock.");
+}
+if(%mm_cutscene_part = 1) {
+    %mm_cutscene_part = add(%mm_cutscene_part, 1);
+    if_openoverlay(null);
+    ~.chatnpc("<p,shifty>I know...");
+}
+if(%mm_cutscene_part = 2) {
+    %mm_cutscene_part = add(%mm_cutscene_part, 1);
+    ~chatnpc("<p,shifty>All this talk of Glough being replaced doesn't bode well for ... how shall I put this ... their morale.");
+}
+if(%mm_cutscene_part = 3) {
+    %mm_cutscene_part = add(%mm_cutscene_part, 1);
+    ~.chatnpc("<p,angry>Look, I know.");
+}
+if(%mm_cutscene_part = 4) {
+    %mm_cutscene_part = add(%mm_cutscene_part, 1);
+    ~chatnpc("<p,angry>Those are all men with children to feed. Famished families. Worried wives. All of us rely on this shipyard.");
+}
+if(%mm_cutscene_part = 5) {
+    %mm_cutscene_part = add(%mm_cutscene_part, 1);
+    ~chatnpc("<p,angry>If something isn't done soon, there'll be revolt. And I won't be able to stop it.");
+}
+if(%mm_cutscene_part = 6) {
+    %mm_cutscene_part = add(%mm_cutscene_part, 1);
+    ~.chatnpc("<p,angry>Stop worrying. I'm working on something -");
+}
+if(%mm_cutscene_part = 7) {
+    %mm_cutscene_part = add(%mm_cutscene_part, 1);
+    ~chatnpc("<p,angry>What something? You're always working on something. All we ever hear is bad news.");
+}
+if(%mm_cutscene_part = 8) {
+    %mm_cutscene_part = add(%mm_cutscene_part, 1);
+    ~chatnpc("<p,angry>First, Glough disappears. Then news of a missing squad of the Royal Guard in our area. And what about that human sent by the King?");
+}
+if(%mm_cutscene_part = 9) {
+    %mm_cutscene_part = add(%mm_cutscene_part, 1);
+    ~.chatnpc("<p,angry>The human means nothing. If it becomes too much trouble, I will simply have it ... removed. In the meantime, let it continue to search for that blasted 10th squad.");
+}
+if(%mm_cutscene_part = 10) {
+    %mm_cutscene_part = add(%mm_cutscene_part, 1);
+    ~chatnpc("<p,neutral>I am still worried. What am I meant to tell the men?");
+}
+if(%mm_cutscene_part = 11) {
+    %mm_cutscene_part = add(%mm_cutscene_part, 1);
+    ~.chatnpc("<p,angry>Stop worrying. I'm working on something - Glough left a few of his agents in the Gnome airforce.");
+}
+if(%mm_cutscene_part = 12) {
+    %mm_cutscene_part = add(%mm_cutscene_part, 1);
+    ~.chatnpc("<p,neutral>For now, tell your men to continue work on the battleships. Give me some time.");
+}
+if(%mm_cutscene_part = 13) {
+    %mm_cutscene_part = add(%mm_cutscene_part, 1);
+    ~chatnpc("<p,neutral>I hope you're right, Caranock, for your sake. My sake. For all of our sakes...");
+}
+if(%mm_cutscene_part > 13) {
+    npc_say("test");
+    %mm_cutscene_part = 0;
+    if_close;
+    if_openoverlay(eadgar_fade_to_black);
+    p_delay(4);
+    walktrigger(null);
+    if_settab(magic, ^tab_magic);
+    cam_reset;
+    p_teleport(0_43_42_49_19);
+    %mm_main = ^mm_arrived_atoll;
+    %mm_lumdo = ^lumdo_travelled;
+    if_setanim(eadgar_fade_to_black:com_0, seq_1254);
+    p_delay(4);
+    if_openoverlay(null);
+    @mm_ch2;
+}
 
 [oploc1,bunker_controlpanal]
-if(%mm_daero = ^daero_started_reinit) @mm_open_puzzle;
-~mesbox("You do not know what you are doing.");
+if(%mm_daero > ^daero_started_reinit) ~mesbox("You have already completed reinitialisation.");
+else if(%mm_daero = ^daero_started_reinit) @mm_open_puzzle;
+else ~mesbox("You do not know what you are doing.");
 
 [oploc1,mm_reinitialisation_crate]
 mes("You search the crate.");
@@ -48,6 +202,15 @@ if_setanim(eadgar_fade_to_black:com_0, seq_1254);
 p_delay(0);
 anim(null, 0);
 queue(fade_clear, 2, 0);
+
+[proc,mm_greegree_transmogrify](obj $obj)
+if($obj = mm_monkey_greegree_for_normal_monkey) {
+    p_transmogrify(mm_transmogrification_normal_monkey);
+    if_settab(null, ^tab_magic);
+} else if($obj = mm_monkey_greegree_for_small_ninja_monkey) {
+    p_transmogrify(mm_transmogrification_small_ninja_monkey);
+    if_settab(null, ^tab_magic);
+}
 
 [queue,fade_clear]
 if_openoverlay(null);

@@ -1,6 +1,7 @@
 ^mm_not_started = 0
 ^mm_started = 1
 ^mm_shown_seal = 2
+^mm_arrived_atoll = 3
 
 // mm_narnode
 ^narnode_worried = 1
@@ -23,6 +24,20 @@
 ^daero_left_grandtree = 4
 ^daero_started_reinit = 5
 ^daero_reinit_complete = 6
+^daero_complete = 7
+
+// mm_waydar
+^waydar_arrived_island = 1
+
+// mm_lumdo
+^lumdo_proof = 1
+^lumdo_wont_take = 2
+^lumdo_travelled = 3
+
+// mm_zooknock
+^zooknock_found = 1
+^zooknock_told_story = 2
+^zooknock_learned_story = 3
 
 // mm_bits
 ^mm_spoke_foreman = 0

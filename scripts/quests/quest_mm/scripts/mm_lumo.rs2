@@ -1,0 +1,15 @@
+[label,lumo_jailed_dialogue]
+if(%mm_jail_counter = 1) {
+    ~chatnpc_specific(nc_name(mm_lumo_aa), mm_lumo_aa, "<p,neutral>Look - a newcomer. I'd say let me be the first to welcome you to Ape Atoll, but I see you've already met the welcoming party...");
+} else {
+    switch_int(random(15)) {
+        case 0 :
+            ~chatnpc_specific(nc_name(mm_lumo_aa), mm_lumo_aa, "<p,neutral>Bunkdo?");
+            ~chatnpc_specific(nc_name(mm_bunkdo_aa), mm_bunkdo_aa, "<p,neutral>Yeah?");
+            ~chatnpc_specific(nc_name(mm_lumo_aa), mm_lumo_aa, "<p,neutral>Don't you ever get tired of, you know, wandering around?");
+            ~chatnpc_specific(nc_name(mm_bunkdo_aa), mm_bunkdo_aa, "<p,neutral>No. I for one happen to like standing bolt upright all of the time.");
+            ~chatnpc_specific(nc_name(mm_lumo_aa), mm_lumo_aa, "<p,neutral>*sigh*");
+        case default :
+            ~chatnpc_specific(nc_name(mm_lumo_aa), mm_lumo_aa, "<p,neutral>Look at that Bunkdo, <text_gender("he", "she")> almost looks like <text_gender("he's", "she's")> praying.");
+    }
+}

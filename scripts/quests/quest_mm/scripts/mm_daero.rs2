@@ -1,5 +1,5 @@
 [opnpc1,mm_daero]
-if(inzone(0_37_154_0_0, 0_37_154_63_63, npc_coord) = true) {
+if(inzone(0_37_154_0_0, 0_37_154_63_63, npc_coord) = true | inzone(0_40_70_0_0, 0_41_71_63_63, npc_coord) = true) {
     @daero_hangar_dialogue;
 }
 if(%mm_narnode < ^narnode_received_orders) {
@@ -24,6 +24,21 @@ if(%mm_daero = ^daero_learnt_mission) {
 
 [label,daero_hangar_dialogue]
 switch_int(%mm_daero) {
+    case ^daero_complete : ~chatnpc("<p,neutral>Speak to Waydar when you are ready to leave.");
+    case ^daero_reinit_complete :
+        ~chatnpc("<p,neutral>Well done, adventurer. You have managed to break Glough's code. Now the process of reinitialisation is complete, you can truly begin your journey into the unknown.");
+        ~chatplayer("<p,neutral>I've had some practice in the past.");
+        // https://youtu.be/Qr9nNWqN6Y8?si=rL7GlY8Qu--4FHes&t=599, https://youtu.be/qMJyd1UJjlI?si=7hcKIoox36HuDkso&t=833
+        ~chatnpc("<p,neutral>You are clearly a <text_gender("man", "woman")> of many talents.");
+        if(.npc_find(coord, mm_waydar, 14, 0) = true) {
+            %mm_daero = ^daero_complete;
+            ~chatnpc("<p,neutral>Flight Commander Waydar, now that reinitialisation is complete, I order you to fly to the south of Karamja with <displayname()>.");
+            ~.chatnpc("<p,neutral>Yes sir.");
+            ~chatnpc("<p,neutral>You are to safeguard <text_gender("him", "her")> on this potentially dangerous mission.");
+            ~.chatnpc("<p,neutral>Understood.");
+            ~chatnpc("<p,neutral><displayname()>, speak to Waydar when you are ready to leave.");
+            ~chatnpc("<p,neutral>And ... good luck.");
+        }
     case ^daero_started_reinit :
         switch_int(~p_choice4("Where is the hangar?", 1, "How do I leave?", 2, "How do I return here later?", 3, "What is reinitialisation?", 4)) {
             case 1 :
@@ -186,7 +201,7 @@ switch_int(~p_choice2("Who is it?", 1, "I work better on my own...", 2)) {
 ~chatnpc("<p,neutral>We must go now and meet Waydar. For security reasons I must ask you to wear a blindfold.");
 ~objbox(eye_patch, "You wear the blindfold Daero hands you.", 250, 0, 0);
 %mm_daero = ^daero_left_grandtree;
-~mm_fadeteleport(0_37_154_25_36);
+~daero_move_hangar;
 
 [label,daero_return_hangar]
 ~chatnpc("<p,neutral>Hello again, adventurer. Would you like to return to the hangar?");
@@ -194,16 +209,17 @@ switch_int(~p_choice2("Yes", 1, "No", 2)) {
     case 1 :
         ~chatplayer("<p,neutral>Yes please.");
         ~objbox(eye_patch, "You wear the blindfold Daero hands you.", 250, 0, 0);
-        ~mm_fadeteleport(0_37_154_25_36);
+        ~daero_move_hangar;
     case 2 :
         ~chatplayer("<p,neutral>Not right now, thanks.");
         ~chatnpc("<p,neutral>Very well. Return to me when you do.");
 }
 
-[proc,mm_fadeteleport](coord $coord)
+[proc,daero_move_hangar]
 if_openmain(eadgar_fade_to_black);
 p_delay(4);
-p_teleport($coord);
+if(%mm_daero < ^daero_reinit_complete) p_teleport(0_37_154_25_36);
+else p_teleport(0_41_70_25_36);
 if_setanim(eadgar_fade_to_black:com_0, seq_1254);
 p_delay(4);
 if_close;

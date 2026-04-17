@@ -562,6 +562,12 @@ data=mapsquare,2_42_76_0_0
 data=name,Throne of the Demon
 data=musicdata,music_Throne_of_the_Demon
 
+[musicregion_42_142]
+table=musicregion
+data=mapsquare,0_42_142_0_0
+data=name,Find My Way
+data=musicdata,music_Find_My_Way
+
 [musicregion_43_42]
 table=musicregion
 data=mapsquare,0_43_42_0_0
@@ -669,6 +675,12 @@ table=musicregion
 data=mapsquare,0_43_60_0_0
 data=name,Romancing The Crone
 data=musicdata,music_Romancing_The_Crone
+
+[musicregion_43_142]
+table=musicregion
+data=mapsquare,0_43_142_0_0
+data=name,Find My Way
+data=musicdata,music_Find_My_Way
 
 [musicregion_44_45]
 table=musicregion

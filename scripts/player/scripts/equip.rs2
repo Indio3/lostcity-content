@@ -62,8 +62,10 @@ if (p_finduid(uid) = true) {
     } else if($obj = ibanstaff) {
         // https://youtu.be/n_ip_vEDbCA?si=0uESoOC98Fvl7HqS&t=2333
         mes("You equip the staff of Iban.");
+    } else if($obj = mm_monkey_greegree_for_normal_monkey) {
+        spotanim_pl(windwave_impact, 124, 0);
+        sound_synth(human_into_monkey, 0, 0);
     }
-
     ~update_all($previous_weapon);
 }
 
@@ -98,6 +100,12 @@ if (p_finduid(uid) = true) {
 // handling unequipping effects
 [proc,on_unequip](obj $obj)
 ~runecraft_unset_no_tally($obj);
+if($obj = mm_monkey_greegree_for_normal_monkey | $obj = mm_monkey_greegree_for_small_ninja_monkey) {
+    p_transmogrify(null);
+    spotanim_pl(windwave_impact, 124, 0);
+    sound_synth(monkey_into_human, 0, 0);
+    if_settab(magic, ^tab_magic);
+}
 
 // used for duel arena, no weapon/no armour
 [proc,try_unequip](int $slot)
