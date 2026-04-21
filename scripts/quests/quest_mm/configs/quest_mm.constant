@@ -39,6 +39,9 @@
 ^zooknock_told_story = 2
 ^zooknock_learned_story = 3
 
+// mm_lumo
+^lumo_spoken = 1
+
 // mm_bits
 ^mm_spoke_foreman = 0
 ^mm_daero_read_1st_menu = 1

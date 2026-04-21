@@ -13,7 +13,7 @@ if(%mm_main > ^mm_shown_seal) {
     $text = append($text, "@str@I have found that the 10th squad were indeed blown off|");
     $text = append($text, "@str@course and never reached the shipyard. I am currently on a|");
     $text = append($text, "@str@mission for King Narnode Shareen to investigate their|");
-    $text = append($text, "@strwhereabouts.||");
+    $text = append($text, "@str@whereabouts.");
 } else {
     if(%mm_narnode > 0) {
         $text = append($text, "@dre@King Narnode Shareen:||");
@@ -118,7 +118,7 @@ if(%mm_main > ^mm_shown_seal) {
 
         if(%mm_zooknock > ^zooknock_told_story) {
             $text = append($text, "||@str@Zooknock and the sappers are attempting to tunnel their way|");
-            $text = append($text, "||@str@beneath the jail. However, progress is slow.");
+            $text = append($text, "@str@beneath the jail. However, progress is slow.");
         }
     }
 
