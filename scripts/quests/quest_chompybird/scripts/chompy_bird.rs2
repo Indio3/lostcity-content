@@ -3,10 +3,10 @@
     def_coord $spawn_coord = map_findsquare($coord, 3, 10, ^map_findsquare_lineofsight);
     
     npc_add($spawn_coord, chompy_bird, 100); // no seq for flying away at end, prob just despawned?
-    %quest_chompybird_baiter = $baiter_uid;
+    %npc_attacking_uid = $baiter_uid;
     npc_anim(chompy_landing, 0);
     npc_say("Sqwirk!");
-    if(finduid(%quest_chompybird_baiter) = true) {
+    if(finduid(%npc_attacking_uid) = true) {
         if (%chompybird >= ^chompybird_chompy_ate_toad & %chompybird < ^chompybird_rantz_gave_player_bow) {
             npc_queue(11, 0, ~random_range(15, 30));
         }
@@ -50,7 +50,7 @@ if (.npc_finduid(%chompy_attacking_toad) = true & distance(npc_coord, .npc_coord
     .npc_delay(1);
     .npc_del;
     npc_setmode(null);
-    if (p_finduid(%quest_chompybird_baiter) = true) {
+    if (p_finduid(%npc_attacking_uid) = true) {
         if (%chompybird = ^chompybird_dropped_toad) {
             %chompybird = ^chompybird_chompy_ate_toad;
         }
@@ -107,7 +107,7 @@ if ($rhand ! ogre_bow) {
     return;
 }
 
-if(%quest_chompybird_baiter ! uid) {
+if(%npc_attacking_uid ! uid) {
     mes("This is not your Chompy Bird to shoot.");
     return;
 }
@@ -216,7 +216,7 @@ if(%chompybird_kills = 4000) {
 
 [ai_queue11,chompy_bird]
 if (.npc_find(0_41_46_6_37, rantz, 5, 0) = true) {
-    if (finduid(%quest_chompybird_baiter) = true & distance(coord, .npc_coord) < 20) {
+    if (finduid(%npc_attacking_uid) = true & distance(coord, .npc_coord) < 20) {
         %rantz_attacking_chompy = .npc_uid;
         mes("Rantz: Hey, dere's da chompy, I's gonna shoot it.");
         .npc_say("Hey, dere's da chompy, I's gonna shoot it.");
@@ -239,7 +239,7 @@ if (.npc_finduid(%rantz_attacking_chompy) = true) {
 
 [ai_queue13,chompy_bird]
 if (.npc_finduid(%rantz_attacking_chompy) = true) {
-    if (finduid(%quest_chompybird_baiter) = true & distance(coord, .npc_coord) < 20) {
+    if (finduid(%npc_attacking_uid) = true & distance(coord, .npc_coord) < 20) {
         .npc_setmode(null);
         queue(rantz_shot_chompy, 0, 0);
         mes("Rantz keeps missing the chompy bird...");
