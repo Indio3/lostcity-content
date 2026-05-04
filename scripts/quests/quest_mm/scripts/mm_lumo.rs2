@@ -24,6 +24,8 @@ if(%mm_jail_counter = 1) {
     ~chatnpc_specific(nc_name(mm_lumo_aa), mm_lumo_aa, "<p,neutral>You're right. I know just the thing.");
     ~chatnpc_specific(nc_name(mm_lumo_aa), mm_lumo_aa, "<p,neutral>No... not the..");
     ~chatnpc_specific(nc_name(mm_carado_aa), mm_carado_aa, "<p,neutral>Monkey corpse stuffed with seaweed!?");
+    inv_add(inv, tbwt_seaweed_in_monkey_corpse, 1);
+    ~objbox(tbwt_seaweed_in_monkey_corpse, "Lumo throws you a seaweed stuffed monkey corpse.", 250, 0, 0);
 } else {
     switch_int(random(20)) {
         case 0 :
@@ -64,7 +66,7 @@ if(%mm_jail_counter = 1) {
             ~chatnpc_specific(nc_name(mm_bunkdo_aa), mm_bunkdo_aa, "<p,neutral>That has to be the worst joke I've ever heard...");
         case 11 :
             ~chatnpc_specific(nc_name(mm_lumo_aa), mm_lumo_aa, "<p,neutral>Darn you, Carado - you always get the large jail cells.");
-            ~chatnpc_specific(nc_name(mm_carado_aa), mm_carado_aa, "<p,neutral>That is so not true. What about the time in Draynor?");
+            ~chatnpc_specific(nc_name(mm_carado_aa), mm_carado_aa, "<p,quiz>That is so not true. What about the time in Draynor?");
             ~chatnpc_specific(nc_name(mm_lumo_aa), mm_lumo_aa, "<p,neutral>The Prince Ali thing? We all shared a cell that time.");
             ~chatnpc_specific(nc_name(mm_bunkdo_aa), mm_bunkdo_aa, "<p,neutral>And that time in Varrock?");
             ~chatnpc_specific(nc_name(mm_lumo_aa), mm_lumo_aa, "<p,neutral>Yeah yeah, OK.");
@@ -110,6 +112,15 @@ if (npc_range(coord) > 5) {
     p_aprange(5);
     return;
 }
+jump(mm_lumo_talk);
+
+[opnpc1,mm_lumo_aa] jump(mm_lumo_talk);
+
+[label,mm_lumo_talk]
+if(%mm_main = 0) {
+    ~mesbox("Lumo seems too busy to talk.");
+    return;
+}
 switch_int(%mm_lumo) {
     case ^lumo_spoken :
         ~chatnpc("<p,quiz>What can I do for you, human?");
@@ -152,12 +163,30 @@ if (npc_range(coord) > 5) {
     p_aprange(5);
     return;
 }
+jump(mm_bunkdo_talk);
+
+[opnpc1,mm_bunkdo_aa] jump(mm_bunkdo_talk);
+
+[label,mm_bunkdo_talk]
+if(%mm_main = 0) {
+    ~mesbox("Bunkdo seems too busy to talk.");
+    return;
+}
 ~chatnpc("<p,neutral>What are you looking at then? Never seen a Gnome in a Monkey jail before?");
 ~chatplayer("<p,neutral>Not before I came here, no...");
 
 [apnpc1,mm_carado_aa]
 if (npc_range(coord) > 5) {
     p_aprange(5);
+    return;
+}
+jump(mm_carado_talk);
+
+[opnpc1,mm_carado_aa] jump(mm_carado_talk);
+
+[label,mm_carado_talk]
+if(%mm_main = 0) {
+    ~mesbox("Carado seems too busy to talk.");
     return;
 }
 ~chatnpc("<p,neutral>Well I'm not complaining - this jail cell is larger than my room in the Grand Tree! It is a little sparse however...");

@@ -1,5 +1,5 @@
 [opnpc1,mm_caranock]
-if(%mm_main < ^mm_shown_seal) {
+if(%mm_main = ^mm_not_started) {
     ~mesbox("Caranock seems too busy to talk.");
     return;
 }

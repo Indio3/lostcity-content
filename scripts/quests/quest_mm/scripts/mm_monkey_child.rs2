@@ -1,0 +1,4 @@
+[opnpc1,mm_monkey_child]
+~chatplayer("<p,neutral>Hello there little monkey.");
+~mm_monkeyspeak;
+~mesbox("You cannot understand what he is saying.");

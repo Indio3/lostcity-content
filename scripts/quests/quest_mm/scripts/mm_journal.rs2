@@ -101,16 +101,34 @@ if(%mm_main > ^mm_shown_seal) {
 }
 
 if(%mm_main > ^mm_shown_seal) {
+    // https://youtu.be/Qr9nNWqN6Y8?si=IqgynfD_0FE87fSR&t=950
     $text = append($text, "||@dre@Chapter 2:");
 
     if(%mm_jail_counter > 0) {
-        $text = append($text, "||@str@I have made my rather painful way to a large village populated|");
-        $text = append($text, "@str@by various types of monkey.");
+        $text = append($text, "||@str@I have made my rather painful way to a large village|");
+        $text = append($text, "@str@populated by various types of monkey.");
 
         if(%mm_jail_counter > 1) {
             $text = append($text, "||@str@I have been caught and jailed <tostring(%mm_jail_counter)> times.");
         }
     }
+
+    if(%mm_garkor > 0) {
+        $text = append($text, "||@dre@Sergeant Garkor:||");
+        $text = append($text, "@str@I found Sergeant Gakor hiding towards the east of the village.|");
+        $text = append($text, "@str@Having eavesdropped on Awowogei's plans, he has come to|");
+        $text = append($text, "@str@the conclusion that they need a monkey on the inside.|");
+        
+        if(%mm_garkor = ^garkor_speak_zooknock) {
+            if(%mm_zooknock > ^zooknock_learned_story) {
+                $text = append($text, "||@str@I have seen Zooknock about the so called monkey 'disguise'.");
+            } else {
+                $text = append($text, "||@dbl@I must see the squad mage, @dre@Zooknock@dbl@, about obtaining a|");
+                $text = append($text, "@dbl@monkey disguise.|");
+            }
+        }
+    }
+
     if(%mm_zooknock > 0) {
         $text = append($text, "||@dre@High Mage Zooknock:||");
         $text = append($text, "@str@I found Zooknock and the sappers Waymottin and Bunkwicket|");
@@ -119,6 +137,52 @@ if(%mm_main > ^mm_shown_seal) {
         if(%mm_zooknock > ^zooknock_told_story) {
             $text = append($text, "||@str@Zooknock and the sappers are attempting to tunnel their way|");
             $text = append($text, "@str@beneath the jail. However, progress is slow.");
+        }
+
+        if(%mm_zooknock > ^zooknock_learned_story) {
+            $text = append($text, "||@str@Zooknock is capable of transforming my body into that of a|");
+            $text = append($text, "@str@monkey. He can also help me communicate with the monkeys.");
+        }
+
+        if(%mm_zooknock = ^zooknock_need_items) {
+            $text = append($text, "||@dbl@I am collecting items for @dre@Zooknock@dbl@ so that he may cast his|@dbl@spells.");
+
+            if(testbit(%mm_bits, ^mm_made_amulet) = ^false) {
+                $text = append($text, "||@dbl@For the monkey amulet I still need to give him:");
+            } else {
+                $text = append($text, "||@str@For the monkey amulet I needed to give him:");
+            }
+            if(testbit(%mm_bits, ^mm_given_gold_bar) = ^true) {
+                $text = append($text, "|@str@ - A gold bar.");
+            } else {
+                $text = append($text, "|@dre@ - A gold bar.");
+            }
+
+            if(testbit(%mm_bits, ^mm_given_mould) = ^true) {
+                $text = append($text, "|@str@ - A monkey amulet mould.");
+            } else {
+                $text = append($text, "|@dre@ - A monkey amulet mould.");
+            }
+
+            if(testbit(%mm_bits, ^mm_given_dentures) = ^true) {
+                $text = append($text, "|@str@ - Something to do with monkey speech.");
+            } else {
+                $text = append($text, "|@dre@ - Something to do with monkey speech.");
+            }
+
+            $text = append($text, "||@dbl@For the monkey talisman I still need:");
+
+            if(testbit(%mm_bits, ^mm_given_talisman) = ^true) {
+                $text = append($text, "|@str@ - An authentic magical monkey talisman.");
+            } else {
+                $text = append($text, "|@dre@ - An authentic magical monkey talisman.");
+            }
+
+            if(testbit(%mm_bits, ^mm_given_remains) = ^true) {
+                $text = append($text, "|@str@ - Some kind of monkey remains.");
+            } else {
+                $text = append($text, "|@dre@ - Some kind of monkey remains.");
+            }
         }
     }
 

@@ -38,13 +38,29 @@
 ^zooknock_found = 1
 ^zooknock_told_story = 2
 ^zooknock_learned_story = 3
+^zooknock_told_mission = 4
+^zooknock_need_items = 5
 
 // mm_lumo
 ^lumo_spoken = 1
+
+// mm_karam
+^karam_spoken = 1
+
+// mm_garkor
+^garkor_spoken = 1
+^garkor_speak_zooknock = 2
 
 // mm_bits
 ^mm_spoke_foreman = 0
 ^mm_daero_read_1st_menu = 1
 ^mm_daero_read_2nd_menu = 2
 ^mm_daero_read_3rd_menu = 3
+^mm_given_gold_bar = 4
+^mm_given_mould = 5
+^mm_given_dentures = 6
+^mm_given_talisman = 7
+^mm_given_remains = 8
+^mm_made_amulet = 9
+^mm_made_talisman = 10
 ^mm_paid_glough = 30

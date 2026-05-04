@@ -34548,6 +34548,9 @@ resizev=180
 op1=Talk-to
 vislevel=hide
 head1=npc_1429_head
+huntmode=dugopul
+huntrange=10
+attackrange=10
 
 [mm_salenab]
 name=Salenab
