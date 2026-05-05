@@ -493,6 +493,16 @@ p_teleport(0_43_42_51_36);
 [opobj1,mm_enchanted_gold_bar]
 ~objbox(mm_enchanted_gold_bar, "The enchanted gold bar says:|@dbl@<~monkeyspeak_text>", 250, 0, 0);
 
+[oplocu,mm_pyre]
+if(last_useitem = mm_enchanted_gold_bar) {
+    anim(human_furnace, 0);
+    sound_synth(furnace, 0, 0);
+    p_delay(2);
+    mes("It becomes hot and a bit gloopy, but not much else happens.");
+    return;
+}
+~displaymessage(^dm_default);
+
 [timer,mm_guards_check]
 if(inzone(0_43_43_10_15, 0_43_43_15_20, coord) = true) {
     ~aa_summon_guards(^false);
