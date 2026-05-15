@@ -186,5 +186,13 @@ if(%mm_main > ^mm_shown_seal) {
         }
     }
 
+    if(%mm_monkey_child > 0) {
+        $text = append($text, "||@dre@The Monkey Child:||");
+        $text = append($text, "@str@I have found a monkey child in a banana grove to the|@str@west of");
+        $text = append($text, " the village. For some reason, it does not|@str@seem afraid of me. I");
+        $text = append($text, " must be careful when talking to it,|@str@however, as its Aunt keeps");
+        $text = append($text, " a close watch.");
+    }
+
 }
 ~quest_journal("Monkey Madness", $text);

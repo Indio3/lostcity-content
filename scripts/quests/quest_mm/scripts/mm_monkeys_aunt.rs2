@@ -1,0 +1,8 @@
+[opnpc1,mm_monkeys_aunt]
+// as human
+~aa_summon_guards(^false);
+if(inv_total(worn, mm_amulet_of_monkey_speak) > 0) {
+    ~chatnpcnoturn("<~monkeyspeak_text><~monkeyspeak_text><~monkeyspeak_text>");
+} else {
+    ~chatnpcnoturn("<p,neutral>Guards! Here's a human!");
+}

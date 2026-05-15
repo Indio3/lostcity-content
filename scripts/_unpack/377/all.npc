@@ -34914,6 +34914,15 @@ resizev=160
 op1=Talk-to
 vislevel=hide
 head1=npc_1437_head
+defaultmode=patrol
+patrol1=0_42_43_54_42,15
+patrol2=0_42_43_55_40,30
+patrol3=0_42_43_55_35,5
+patrol4=0_42_43_53_34,5
+patrol5=0_42_43_49_34,5
+patrol6=0_42_43_48_40,5
+patrol7=0_42_43_45_40,15
+patrol8=0_42_43_49_42,15
 
 [mm_monkey_guard]
 name=Monkey Guard

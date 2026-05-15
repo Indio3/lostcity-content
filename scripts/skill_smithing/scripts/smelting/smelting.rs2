@@ -1,4 +1,6 @@
-[oplocu,_smithing_furnace]
+[oplocu,_smithing_furnace] @furnace_use;
+
+[label,furnace_use]
 switch_obj (last_useitem)
 {
     case gold_bar, perfect_gold_bar : @craft_gold_interface;

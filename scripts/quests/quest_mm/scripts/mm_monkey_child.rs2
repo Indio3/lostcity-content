@@ -1,4 +1,20 @@
 [opnpc1,mm_monkey_child]
-~chatplayer("<p,neutral>Hello there little monkey.");
-~mm_monkeyspeak;
-~mesbox("You cannot understand what he is saying.");
+if(%mm_monkey_child = ^mm_not_started) {
+    ~chatplayer("<p,neutral>Hello there little monkey.");
+} else if(%mm_monkey_child = ^monkey_child_spoke) {
+    ~chatplayer("<p,neutral>Hello again little monkey.");
+}
+if(inv_total(worn, mm_amulet_of_monkey_speak) = 0) {
+    ~mm_monkeyspeak;
+    ~mesbox("You cannot understand what he is saying.");
+    return;
+}
+
+if(%mm_monkey_child = ^mm_not_started) {
+    ~chatnpc("<p,neutral>Hello big-big. Aunty told me not to talk to strangers.");
+    ~chatplayer("<p,shifty>Oh I'm not a stranger...");
+    %mm_monkey_child = ^monkey_child_spoke; // todo: confirm where this is set
+    ~chatnpc("<p,neutral>You look strange to me!");
+} else if(%mm_monkey_child = ^monkey_child_spoke) {
+    ~chatnpc("<p,neutral>You're strange! Go away!");
+}

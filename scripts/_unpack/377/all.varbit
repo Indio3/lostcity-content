@@ -554,22 +554,22 @@ startbit=17
 endbit=17
 
 [varbit_117]
-basevar=varp_373
+basevar=mm_monkeys
 startbit=0
 endbit=1
 
-[varbit_118]
-basevar=varp_373
+[mm_monkey_child]
+basevar=mm_monkeys
 startbit=2
 endbit=4
 
 [varbit_119]
-basevar=varp_373
+basevar=mm_monkeys
 startbit=5
 endbit=8
 
 [varbit_120]
-basevar=varp_373
+basevar=mm_monkeys
 startbit=9
 endbit=10
 

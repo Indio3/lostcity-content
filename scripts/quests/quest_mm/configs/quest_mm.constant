@@ -51,6 +51,9 @@
 ^garkor_spoken = 1
 ^garkor_speak_zooknock = 2
 
+// mm_monkey_child
+^monkey_child_spoke = 1
+
 // mm_bits
 ^mm_spoke_foreman = 0
 ^mm_daero_read_1st_menu = 1
