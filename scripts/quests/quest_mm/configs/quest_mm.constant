@@ -53,6 +53,12 @@
 
 // mm_monkey_child
 ^monkey_child_spoke = 1
+^monkey_child_asked_who = 2
+^monkey_child_told_uncle = 3
+^monkey_child_learned_toy = 4
+^monkey_child_finding_bananas = 5
+^monkey_child_given_bananas = 6
+^monkey_child_received_talisman = 7
 
 // mm_bits
 ^mm_spoke_foreman = 0
@@ -66,4 +72,7 @@
 ^mm_given_remains = 8
 ^mm_made_amulet = 9
 ^mm_made_talisman = 10
+^mm_child_has_toy = 11
+^mm_lost_toy = 12
+^mm_child_done_crying = 13
 ^mm_paid_glough = 30

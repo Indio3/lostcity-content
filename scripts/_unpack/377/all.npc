@@ -34886,6 +34886,7 @@ resizev=100
 op1=Talk-to
 vislevel=hide
 head1=npc_1452_head
+wanderrange=2
 
 [mm_monkeys_uncle]
 name=The Monkey's Uncle
@@ -34914,6 +34915,7 @@ resizev=160
 op1=Talk-to
 vislevel=hide
 head1=npc_1437_head
+timer=5
 defaultmode=patrol
 patrol1=0_42_43_54_42,15
 patrol2=0_42_43_55_40,30

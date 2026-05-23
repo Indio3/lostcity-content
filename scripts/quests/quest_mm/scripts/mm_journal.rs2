@@ -192,6 +192,26 @@ if(%mm_main > ^mm_shown_seal) {
         $text = append($text, " the village. For some reason, it does not|@str@seem afraid of me. I");
         $text = append($text, " must be careful when talking to it,|@str@however, as its Aunt keeps");
         $text = append($text, " a close watch.");
+
+        if(%mm_monkey_child > ^monkey_child_asked_who) {
+            $text = append($text, "||@str@I have somehow managed to convince the monkey child @str@that I am its uncle.");
+        }
+
+        if(%mm_monkey_child > ^monkey_child_learned_toy) {
+            $text = append($text, "||@str@The monkey child said its Aunt would give it a new toy if @str@it picked 'loads' of bananas.");
+        } else if(%mm_monkey_child > ^monkey_child_told_uncle) {
+            $text = append($text, "||@dbl@The monkey child said its Aunt would give it a new toy if @dbl@it picked 'loads' of bananas.");
+        }
+
+        if(%mm_monkey_child = ^monkey_child_given_bananas) {
+            $text = append($text, "@str@I have given the monkey child some bananas.");
+        } else if(%mm_monkey_child > ^monkey_child_learned_toy) {
+            $text = append($text, "@dbl@I have offered to get the @dre@bananas@dbl@.");
+        }
+
+        if(%mm_monkey_child = ^monkey_child_received_talisman) {
+            $text = append($text, "@str@I have borrowed a magical monkey talisman from the monkey child.");
+        }
     }
 
 }

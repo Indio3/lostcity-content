@@ -1,8 +1,35 @@
 [opnpc1,mm_monkeys_aunt]
 // as human
-~aa_summon_guards(^false);
 if(inv_total(worn, mm_amulet_of_monkey_speak) > 0) {
-    ~chatnpcnoturn("<~monkeyspeak_text><~monkeyspeak_text><~monkeyspeak_text>");
+    queue*(mm_aunt_caught, 0)(npc_uid);
 } else {
     ~chatnpcnoturn("<p,neutral>Guards! Here's a human!");
+}
+
+[ai_timer,mm_monkeys_aunt]
+if(%npc_action_delay > map_clock) {
+    return;
+}
+huntall(npc_coord, 5, 0);
+while(huntnext = true) {
+    if_close;
+    if(p_finduid(uid) = false) {
+        return;
+    }
+    if(~mm_wearing_greegree = true) {
+        return;
+    }
+    // strongqueue in osrs
+    %npc_action_delay = add(map_clock, 80);
+    queue*(mm_aunt_caught, 0)(npc_uid);
+}
+
+[queue,mm_aunt_caught](npc_uid $uid)
+// strongqueue osrs
+if(getqueue(mm_aunt_caught) > 0) {
+    return;
+}
+if(npc_finduid($uid) = true) {
+    queue(aa_guards_queue, 6, 0); // 6t
+    ~chatnpcnoturn("<~monkeyspeak_text><~monkeyspeak_text><~monkeyspeak_text>");
 }

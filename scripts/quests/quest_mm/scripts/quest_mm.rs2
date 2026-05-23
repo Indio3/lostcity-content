@@ -1,3 +1,9 @@
+[proc,mm_login]
+if(%mm_monkey_child = ^monkey_child_given_bananas 
+    | (%mm_monkey_child = ^monkey_child_received_talisman & testbit(%mm_bits, ^mm_lost_toy) = ^true)) {
+    %mm_bits = setbit(%mm_bits, ^mm_child_has_toy);
+}
+
 [label,mm_ch1]
 midi_jingle("new chapter", 13523);
 sound_synth(ooks, 0, 0);
@@ -241,6 +247,9 @@ return ($dialogue);
 ~chatnpc("<p,neutral><~monkeyspeak_text>");
 
 [queue,aa_guards_queue]
+if(getqueue(aa_guards_queue) > 0) {
+    return;
+}
 ~aa_summon_guards(^false);
 
 [proc,aa_summon_guards](int $dialogue)(boolean)
@@ -551,6 +560,12 @@ if($obj = mm_monkey_greegree_for_normal_monkey) {
     p_transmogrify(mm_transmogrification_small_ninja_monkey);
     if_settab(null, ^tab_magic);
 }
+
+[proc,mm_wearing_greegree]()(boolean)
+if(inv_total(worn, mm_monkey_greegree_for_normal_monkey) > 0) {
+    return (true);
+}
+return (false);
 
 [queue,fade_clear]
 if_openoverlay(null);
