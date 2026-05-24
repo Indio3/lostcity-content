@@ -1,7 +1,11 @@
 [proc,mm_login]
-if(%mm_monkey_child = ^monkey_child_given_bananas 
-    | (%mm_monkey_child = ^monkey_child_received_talisman & testbit(%mm_bits, ^mm_lost_toy) = ^true)) {
+if(%mm_monkey_child = ^monkey_child_given_bananas & testbit(%mm_bits, ^mm_child_has_toy) = ^false) {
     %mm_bits = setbit(%mm_bits, ^mm_child_has_toy);
+}
+
+if(%mm_monkey_child = ^monkey_child_received_talisman & testbit(%mm_bits, ^mm_lost_toy) = ^true) {
+    %mm_bits = setbit(%mm_bits, ^mm_child_has_toy);
+    %mm_bits = setbit(%mm_bits, ^mm_child_done_crying);
 }
 
 [label,mm_ch1]
@@ -84,6 +88,46 @@ if(npc_findexact(0_40_71_43_38, mm_cutscene_foreman) = true & .npc_findexact(0_4
     if_settab(null, ^tab_magic);
     @mm_ch2_cutscene_dialogue;
 }
+
+[label,mm_ch3_cutscene]
+if_close;
+p_delay(0);
+midi_jingle("meanwhile", 7083);
+if_settext(inter_212:com_2, ^string_empty);
+if_settext(inter_212:com_3, ^string_empty);
+if_settext(inter_212:com_4, ^string_empty);
+if_settext(inter_212:com_5, ^string_empty);
+if_settext(inter_212:com_6, ^string_empty);
+if_setcolour(inter_212:com_6, ^white_rgb);
+if_settext(inter_212:com_7, "Meanwhile, somewhere far below the Ape Atoll...");
+if_setcolour(inter_212:com_7, ^white_rgb);
+if_settext(inter_212:com_8, ^string_empty);
+if_settext(inter_212:com_9, ^string_empty);
+if_settext(inter_212:com_10, ^string_empty);
+if_settext(inter_212:com_11, ^string_empty);
+if_settext(inter_212:com_12, ^string_empty);
+if_settext(inter_212:com_13, ^string_empty);
+if_setcolour(scroll:com_3, ^yellow_rgb);
+if_setcolour(scroll:com_3, ^yellow_rgb);
+if_openmain(inter_212);
+if_openoverlay(eadgar_fade_to_black);
+p_delay(4);
+if_close;
+p_teleport(0_40_71_36_37);
+if(npc_findexact(0_40_71_43_38, mm_cutscene_foreman) = true & .npc_findexact(0_40_71_43_36, mm_cutscene_caranock) = true) {
+    .npc_facesquare(movecoord(.npc_coord, 0, 0, 2));
+    npc_facesquare(movecoord(npc_coord, 0, 0, -2));
+    p_delay(0);
+    walktrigger(mm_ch2_walktrigger);
+    if_settext(music:com_177, "Suspicious");
+    midi_song("suspicious");
+    cam_moveto(0_40_71_39_37, 400, 232, 232);
+    cam_lookat(0_40_71_49_37, 160, 232, 232);
+    if_setanim(eadgar_fade_to_black:com_0, seq_1254);
+    if_settab(null, ^tab_magic);
+    @mm_ch2_cutscene_dialogue;
+}
+
 
 [walktrigger,mm_ch2_walktrigger]
 if(inzone(0_40_71_0_0, 0_40_71_63_63, coord) = false) {
@@ -517,6 +561,10 @@ if(last_useitem = mm_enchanted_gold_bar) {
 [label,opu_mm_firewall]
 def_int $slot = last_useslot;
 if(last_useitem = mm_enchanted_gold_bar) {
+    if(inv_total(inv, mm_monkey_amulet_mould) = 0) {
+        ~mesbox("You do not have anything suitable for smithing an enchanted gold bar.");
+        return;
+    }
     anim(human_furnace, 0);
     sound_synth(furnace, 0, 0);
     inv_delslot(inv, $slot);

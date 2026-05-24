@@ -34573,11 +34573,13 @@ op1=Talk-to
 vislevel=hide
 head1=npc_1431_head
 attackrange=1
+maxrange=1
 wanderrange=2
 maxrange=20
 moverestrict=indoors
 timer=2
 blockwalk=all
+param=next_npc_type,mm_aberab
 
 [mm_aberab]
 name=Aberab
@@ -34591,11 +34593,13 @@ op1=Talk-to
 vislevel=hide
 head1=npc_1431_head
 attackrange=1
+maxrange=1
 wanderrange=2
 maxrange=20
 moverestrict=indoors
 timer=2
 blockwalk=all
+param=next_npc_type,mm_trefaji
 
 [mm_solihib]
 name=Solihib

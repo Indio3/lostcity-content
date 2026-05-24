@@ -203,14 +203,14 @@ if(%mm_main > ^mm_shown_seal) {
             $text = append($text, "||@dbl@The monkey child said its Aunt would give it a new toy if @dbl@it picked 'loads' of bananas.");
         }
 
-        if(%mm_monkey_child = ^monkey_child_given_bananas) {
-            $text = append($text, "@str@I have given the monkey child some bananas.");
+        if(%mm_monkey_child >= ^monkey_child_given_bananas) {
+            $text = append($text, "||@str@I have given the monkey child some bananas.");
         } else if(%mm_monkey_child > ^monkey_child_learned_toy) {
-            $text = append($text, "@dbl@I have offered to get the @dre@bananas@dbl@.");
+            $text = append($text, "||@dbl@I have offered to get the @dre@bananas@dbl@.");
         }
 
         if(%mm_monkey_child = ^monkey_child_received_talisman) {
-            $text = append($text, "@str@I have borrowed a magical monkey talisman from the monkey child.");
+            $text = append($text, "||@str@I have borrowed a magical monkey talisman from the @str@monkey child.");
         }
     }
 

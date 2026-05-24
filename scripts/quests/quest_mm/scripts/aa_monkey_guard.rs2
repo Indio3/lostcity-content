@@ -3,4 +3,8 @@
 [ai_opplayer2,mm_uyoro] queue(aa_knockout, 0, 0);
 [ai_opplayer2,mm_ouhai] queue(aa_knockout, 0, 0);
 [ai_opplayer2,mm_uodai] queue(aa_knockout, 0, 0);
-[ai_opplayer2,mm_monkey_guard] queue(aa_knockout, 0, 0);
+
+
+[ai_opplayer2,mm_monkey_guard]
+if(random(4) = 0) queue(aa_knockout, 0, 0);
+else gosub(npc_default_attack);

@@ -36539,6 +36539,7 @@ model=obj_tbwt_monkey_corpse
 2dyan=188
 2dxan=112
 weight=1kg
+param=mm_bones_type,8
 
 [tbwt_monkey_skin]
 name=Monkey skin
@@ -36575,6 +36576,7 @@ model=obj_tbwt_seaweed_in_monkey_corpse
 2dyan=188
 2dxan=112
 weight=1200g
+param=mm_bones_type,9
 
 [tbwt_bronze_spear_kp]
 name=Bronze spear(kp)
@@ -36767,6 +36769,7 @@ model=obj_sheepbonesa
 iop1=Bury
 weight=500g
 category=bones
+param=mm_bones_type,1
 
 [mm_medium_ninja_monkey_bones]
 name=Monkey bones
@@ -36780,6 +36783,7 @@ model=obj_sheepbonesa
 iop1=Bury
 weight=500g
 category=bones
+param=mm_bones_type,2
 
 [mm_normal_gorilla_monkey_bones]
 name=Monkey bones
@@ -36792,6 +36796,7 @@ model=obj_big_bones
 iop1=Bury
 weight=800g
 category=bones
+param=mm_bones_type,3
 
 [mm_bearded_gorilla_monkey_bones]
 name=Monkey bones
@@ -36804,6 +36809,7 @@ model=obj_big_bones
 iop1=Bury
 weight=800g
 category=bones
+param=mm_bones_type,4
 
 [mm_normal_monkey_bones]
 name=Monkey bones
@@ -36816,6 +36822,7 @@ model=obj_sheepbonesa
 iop1=Bury
 weight=500g
 category=bones
+param=mm_bones_type,5
 
 [cert_mm_normal_monkey_bones]
 certlink=mm_normal_monkey_bones
@@ -36833,6 +36840,7 @@ model=obj_sheepbonesa
 iop1=Bury
 weight=500g
 category=bones
+param=mm_bones_type,6
 
 [mm_large_zombie_monkey_bones]
 name=Monkey bones
@@ -36845,6 +36853,7 @@ model=obj_sheepbonesa
 iop1=Bury
 weight=500g
 category=bones
+param=mm_bones_type,7
 
 [mm_skeleton_bones]
 name=Bones

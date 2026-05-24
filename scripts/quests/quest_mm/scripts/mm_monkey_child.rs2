@@ -98,7 +98,7 @@ if(%mm_monkey_child = ^mm_not_started) {
         case 2 :
             ~chatplayer("<p,shifty>I've lost that toy you gave me...");
             ~chatnpc("<p,sad>You lost it!? What am I going to play with now?");
-            %mm_bits = ^mm_lost_toy;
+            %mm_bits = setbit(%mm_bits, ^mm_lost_toy);
             %mm_bits = clearbit(%mm_bits, ^mm_child_has_toy);
             %mm_bits = clearbit(%mm_bits, ^mm_child_done_crying);
             settimer(mm_child_donecrying, 100);
@@ -107,6 +107,7 @@ if(%mm_monkey_child = ^mm_not_started) {
 }
 
 [opnpcu,mm_monkey_child]
+def_obj $last_useitem = last_useitem;
 if(inv_total(worn, mm_amulet_of_monkey_speak) = 0) {
     ~mm_monkeyspeak;
     ~mesbox("You cannot understand what he is saying.");
@@ -114,9 +115,9 @@ if(inv_total(worn, mm_amulet_of_monkey_speak) = 0) {
 }
 if(%mm_monkey_child > ^monkey_child_asked_who) {
     ~chatnpc("<p,happy>Hello there, uncle!");
-    if(last_useitem = banana & %mm_monkey_child = ^monkey_child_finding_bananas) {
+    if($last_useitem = banana & %mm_monkey_child = ^monkey_child_finding_bananas) {
         @mm_child_give_bananas;
-    } else if(last_useitem = mm_monkey_talisman) {
+    } else if($last_useitem = mm_monkey_talisman) {
         inv_del(inv, mm_monkey_talisman, 1);
         %mm_bits = setbit(%mm_bits, ^mm_child_has_toy);
         ~chatnpc("<p,happy>Thank you uncle - I love you!");
@@ -124,11 +125,6 @@ if(%mm_monkey_child > ^monkey_child_asked_who) {
         return;
     }
     ~chatnpc("<p,neutral>I have no use for that.");
-    inv_del(inv, banana, ^max_32bit_int);
-    %mm_monkey_child = ^monkey_child_given_bananas;
-    settimer(mm_give_child_toy, 100);
-    ~objbox(banana, "You give the monkey child your bananas.", 250, 0, 0);
-    ~chatnpc("<p,happy>Aunty will be so happy!");
     return;
 }
 ~chatnpc("<p,neutral>I don't know you - go away!");
@@ -136,15 +132,20 @@ if(%mm_monkey_child > ^monkey_child_asked_who) {
 [timer,mm_give_child_toy]
 %mm_bits = setbit(%mm_bits, ^mm_child_has_toy);
 
-
 [timer,mm_child_donecrying]
 %mm_bits = setbit(%mm_bits, ^mm_child_has_toy);
+%mm_bits = setbit(%mm_bits, ^mm_child_done_crying);
 
 [label,mm_child_give_bananas]
 if(inv_total(inv, banana) > 4) {
     ~chatnpc("<p,happy>Wow that's a lot of bananas! Are there twenty?");
     ~chatplayer("<p,shifty>Yes, of course there are.");
-
+    inv_del(inv, banana, ^max_32bit_int);
+    %mm_monkey_child = ^monkey_child_given_bananas;
+    settimer(mm_give_child_toy, 100);
+    ~objbox(banana, "You give the monkey child your bananas.", 250, 0, 0);
+    ~chatnpc("<p,happy>Aunty will be so happy!");
+    return;
 }
 ~chatnpc("<p,sad>That doesn't look like 20 bananas Uncle! Aunty will be so angry with me!");
 ~chatplayer("<p,neutral>Don't worry, I'll get some more.");

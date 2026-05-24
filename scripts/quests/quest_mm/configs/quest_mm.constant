@@ -69,10 +69,11 @@
 ^mm_given_mould = 5
 ^mm_given_dentures = 6
 ^mm_given_talisman = 7
-^mm_given_remains = 8
 ^mm_made_amulet = 9
 ^mm_made_talisman = 10
 ^mm_child_has_toy = 11
 ^mm_lost_toy = 12
 ^mm_child_done_crying = 13
+^mm_bones_type_low = 14
+^mm_bones_type_high = 17
 ^mm_paid_glough = 30
