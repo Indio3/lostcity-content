@@ -3741,7 +3741,7 @@ param=attack_sound,cow_attack
 param=defend_sound,horse_hit
 huntmode=cowardly
 huntrange=2
-// param=retreat, TODO
+param=retreat,7
 category=unicorn
 // osrs stats and Vislvl match 1:1
 // https://raw.githubusercontent.com/Joshua-F/osrs-dumps/refs/heads/master/config/dump.npc npc_2849
