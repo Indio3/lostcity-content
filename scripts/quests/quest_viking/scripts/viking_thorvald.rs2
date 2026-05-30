@@ -181,7 +181,7 @@ if(inzone(2_41_157_0_0, 2_41_157_63_63, coord) = false) {
 npc_add(map_findsquare(coord, 1, 2, ^map_findsquare_lineofwalk), viking_enemy1, 1000);
 ~viking_enemy_randomsay;
 spotanim_map(smokepuff, npc_coord, 0, 0);
-~sound_area(smokepuff, 0, npc_coord, 10);
+~.sound_area(smokepuff, 0, npc_coord, 10);
 hint_npc;
 // this prevents other players from attacking w/manual cast, this might've been a later change
 %npc_lastcombat = sub(^max_32bit_int, 8);
@@ -331,7 +331,7 @@ if(~get_viking_thorvald_progress < ^thorvald_complete) {
 inv_add(inv, viking_sword, 1);
 if(npc_finduid($uid) = true) {
     spotanim_map(smokepuff, npc_coord, 0, 0);
-    ~sound_area(smokepuff, 0, npc_coord, 10);
+    ~.sound_area(smokepuff, 0, npc_coord, 10);
     npc_del;
 }
 
@@ -412,7 +412,7 @@ p_teleport(1_41_57_43_44);
 p_delay(4);
 if(npc_finduid($uid) = true) {
     spotanim_map(smokepuff, npc_coord, 0, 0);
-    ~sound_area(smokepuff, 0, npc_coord, 10);
+    ~.sound_area(smokepuff, 0, npc_coord, 10);
     npc_del;
 }
 stat_heal(hitpoints, 0, 100);
