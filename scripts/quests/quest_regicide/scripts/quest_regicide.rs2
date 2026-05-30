@@ -814,6 +814,7 @@ if(%regicide_quest = ^regicide_reported_iorwerth & inv_total(inv, regicide_iorwe
 [opheld1,regicide_iorwerth_message]
 if(%regicide_quest > ^regicide_reported_iorwerth) {
     ~regicide_iowerth_message_scroll;
+    return;
 }
 mes("You try to open the message...");
 mes("The seal on the scroll is unbreakable.");
