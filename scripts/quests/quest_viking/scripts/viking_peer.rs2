@@ -318,7 +318,7 @@ def_int $solved = ^false;
 def_int $riddle_id = getbit_range(%viking_bits, ^viking_seerdoor_start, ^viking_seerdoor_end);
 if(~get_viking_peer_progress < ^peer_completed_riddle) {
     if($riddle_id = 0) {
-        if(~get_viking_door_lock(1) = 12 & ~get_viking_door_lock(2) = 8 & ~get_viking_door_lock(3) = 13 & ~get_viking_door_lock(4) = 13) { // MIND
+        if(~get_viking_door_lock(1) = 12 & ~get_viking_door_lock(2) = 8 & ~get_viking_door_lock(3) = 13 & ~get_viking_door_lock(4) = 3) { // MIND
             $solved = ^true;
         }
     } else if($riddle_id = 1) {
