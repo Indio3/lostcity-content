@@ -282,7 +282,7 @@ if(inzone(0_35_49_33_37, 0_35_49_35_37, coord) = true) {
 } else if(inzone(0_35_50_37_61, 0_35_50_37_63, coord) = true) {
     p_teleport(movecoord(0_36_150_50_43, random(1), 0, random(1)));
 } else if(inzone(0_35_50_38_61, 0_35_50_38_63, coord) = true) {
-    p_teleport(movecoord(0_36_150_50_56, 1, 0, random(1)));
+    p_teleport(movecoord(0_36_150_50_43, 1, 0, random(1)));
 } else if(inzone(0_34_50_32_2, 0_34_50_34_2, coord) = true) {
     p_teleport(movecoord(0_36_150_9_56, random(1), 0, 0));
 } else if(inzone(0_34_50_32_3, 0_34_50_34_3, coord) = true) {
@@ -309,7 +309,7 @@ if(inzone(0_36_150_50_56, 0_36_150_51_56, coord) = true) {
 } else if(inzone(0_36_150_50_43, 0_36_150_50_44, coord) = true) {
     p_teleport(0_35_50_35_62);
 } else if(inzone(0_36_150_51_43, 0_36_150_51_44, coord) = true) {
-    p_teleport(0_35_50_38_62);
+    p_teleport(0_35_50_39_62);
 } else if(inzone(0_36_150_9_56, 0_36_150_10_56, coord) = true) {
     p_teleport(0_34_50_33_1);
 } else if(inzone(0_36_150_9_57, 0_36_150_10_57, coord) = true) {

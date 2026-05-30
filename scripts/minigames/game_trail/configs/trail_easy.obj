@@ -833,7 +833,7 @@ iop1=Read
 weight=20g
 category=trail_clue_easy
 param=trail_desc,Search the drawers upstairs|of houses in the eastern|part of Falador.
-param=trail_coord,1_45_52_27_19
+param=trail_coord,1_47_52_27_19
 param=trail_loc,^true
 tradeable=no
 
