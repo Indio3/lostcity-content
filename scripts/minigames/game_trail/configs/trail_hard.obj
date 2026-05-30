@@ -647,7 +647,7 @@ model=model_3374_obj
 iop1=Read
 weight=20g
 category=trail_clue_hard
-param=trail_coord,0_38_49_25_46
+param=trail_coord,0_38_49_27_43
 param=trail_loc,^true
 tradeable=no
 
