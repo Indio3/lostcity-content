@@ -8,7 +8,7 @@
     npc_say("Sqwirk!");
     if(finduid(%npc_attacking_uid) = true) {
         if (%chompybird < ^chompybird_rantz_gave_player_bow) {
-            queue(chompy_bird_spawned, 0);
+            queue(chompy_bird_spawned, 0, 0);
             npc_queue(11, 0, add(15, random(10)));
         }
         hint_npc;
