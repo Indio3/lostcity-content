@@ -30,7 +30,6 @@ p_teleport(0_36_50_8_16);
 
 [oploc1,regicide_trap_woodspring]
 if(stat_random(agility, 30, 155) = false) {
-    mes("FAIL");
     weakqueue*(regicide_move_trap_woodspring, 0)(loc_type, loc_coord, coord);
     return;
 }
@@ -79,32 +78,32 @@ mes("You manage to skillfully pass the trap.");
 
 [queue,regicide_move_trap_woodspring](loc $loc_type, coord $loc_coord, coord $coord)
 if(loc_find($loc_coord, $loc_type) = true & coord = $coord) {
-switch_int(loc_angle) {
-    case ^loc_east :
-        if (coordx(coord) <= coordx(loc_coord)) {
-            p_walk(loc_coord);
-        } else {
-            p_walk(movecoord(loc_coord, 1, 0, 0));
-        }
-    case ^loc_west :
-        if (coordx(movecoord(coord, -1, 0, 0)) <= coordx(loc_coord)) {
-            p_walk(movecoord(loc_coord, 1, 0, 0));
-        } else {
-            p_walk(movecoord(loc_coord, 2, 0, 0));
-        }
-    case ^loc_north :
-        if (coordz(coord) <= coordz(loc_coord)) {
-            p_walk(loc_coord);
-        } else {
-            p_walk(movecoord(loc_coord, 0, 0, 1));
-        }
-    case ^loc_south :
-        if (coordz(coord) > coordz(loc_coord)) {
-            p_walk(movecoord(loc_coord, 0, 0, 2));
-        } else {
-            p_walk(movecoord(loc_coord, 0, 0, 1));
-        }
-}
+    switch_int(loc_angle) {
+        case ^loc_east :
+            if (coordx(coord) <= coordx(loc_coord)) {
+                p_walk(loc_coord);
+            } else {
+                p_walk(movecoord(loc_coord, 1, 0, 0));
+            }
+        case ^loc_west :
+            if (coordx(movecoord(coord, -1, 0, 0)) <= coordx(loc_coord)) {
+                p_walk(movecoord(loc_coord, 1, 0, 0));
+            } else {
+                p_walk(movecoord(loc_coord, 2, 0, 0));
+            }
+        case ^loc_north :
+            if (coordz(coord) <= coordz(loc_coord)) {
+                p_walk(loc_coord);
+            } else {
+                p_walk(movecoord(loc_coord, 0, 0, 1));
+            }
+        case ^loc_south :
+            if (coordz(coord) > coordz(loc_coord)) {
+                p_walk(movecoord(loc_coord, 0, 0, 2));
+            } else {
+                p_walk(movecoord(loc_coord, 0, 0, 1));
+            }
+    }
 }
 
 [label,regicide_fail_trap_woodspring]
