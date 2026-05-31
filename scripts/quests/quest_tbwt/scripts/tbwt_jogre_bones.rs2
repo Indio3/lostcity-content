@@ -57,6 +57,9 @@ if(obj_find(coord, tbwt_jogre_bones) = true) {
         cleartimer(light_jogre_bones);
         ~push_player(obj_coord);
         ~firemaking_jogre_bones_success(obj_coord);
+    } else { // replay anim + sound on fail
+        anim(human_createfire, 0);
+        sound_synth(tinderbox_strike, 0, 0);
     }
     return;
 }
