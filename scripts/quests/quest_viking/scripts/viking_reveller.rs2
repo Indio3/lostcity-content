@@ -251,6 +251,7 @@ longqueue(firecracker_explode, ~random_range(140, 200), 0, ^discard);
 // fuse_light
 
 [queue,firecracker_explode]
+clearqueue(firecracker_explode);
 def_int $count = inv_total(inv, viking_firecracker_lit);
 if($count = 0) {
     return;
