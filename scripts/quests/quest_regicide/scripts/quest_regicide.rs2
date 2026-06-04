@@ -263,6 +263,10 @@ switch_int(loc_angle) {
             $dir = ^exact_east;
         }
 }
+def_coord $dest = movecoord(loc_coord, multiply(3,$dx), 0, multiply(3,$dz));
+if(map_blocked($start) = true | map_blocked($dest) = true) {
+    return;
+}
 if(coord ! $start) {
     p_teleport($start);
     p_delay(1);
@@ -273,7 +277,7 @@ if(stat_random(agility, 160, 300) = false) {
     ~agility_exactmove(agilityarena_dive_player, 20, 1, coord, movecoord(loc_coord, multiply(1,$dx), 0, multiply(1,$dz)), 30, 49, $dir, false);
     @regicide_pitfall_falldown;
 }
-~agility_exactmove(agilityarena_dive_player, 20, 1, coord, movecoord(loc_coord, multiply(3,$dx), 0, multiply(3,$dz)), 30, 49, $dir, false);
+~agility_exactmove(agilityarena_dive_player, 20, 1, coord, $dest, 30, 49, $dir, false);
 mes("... you manage to cross safely.");
 
 [label,regicide_pitfall_falldown]
