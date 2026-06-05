@@ -22,7 +22,7 @@ switch_int(%horrorquest) {
 [opnpc1,horror_lighthousekeeeper_well]
 if(%horror_claimed_holybook = ^true | %horror_claimed_unholybook = ^true | %horror_claimed_guthixbook = ^true) {
     ~chatnpc("<p,happy>Hello again, adventurer.|What brings you this way?");
-    switch_int(~p_choice2("Can I see your wares?", 1, "Have you found any more prayerbooks?", 2)) {
+    switch_int(~p_choice2("Can I see your wares?", 1, "Have you found any new prayerbooks?", 2)) {
         case 1 :
             ~chatplayer("<p,quiz>Can I see your wares?");
             ~chatnpc("<p,happy>Sure thing|I think you'll find my prices are remarkable!");
@@ -57,7 +57,7 @@ if(inv_total(inv, horror_casket) > 0) {
 }
 
 [label,horror_morebooks]
-~chatplayer("<p,quiz>Have you found any more prayerbooks?");
+~chatplayer("<p,quiz>Have you found any new prayerbooks?");
 def_int $reclaim_count = 0;
 def_int $reclaim_z = 0;
 def_int $reclaim_s = 0;
@@ -150,7 +150,7 @@ if(%horror_claimed_holybook = ^true) {
 }
 
 if($eligible_to_buy = ^false) {
-    ~chatnpc("<p,happy>Well...");
+    ~chatnpc("<p,happy>Well....");
     ~chatnpc("<p,happy>No...|Sorry adventurer, I haven't.");
     return;
 }
