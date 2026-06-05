@@ -110,13 +110,3 @@ if(sub($process_count, 1) < 1) {
 }
 %action_delay = add(map_clock, 2);
 @process_glassblowing($item, $name, $level, $exp, sub($process_count, 1));
-
-
-[debugproc,twq]
-weakqueue(test, 1, 0);
-mes("<tostring(map_clock)>");
-
-
-[queue,test]
-mes("<tostring(map_clock)>");
-weakqueue(test, 1, 0);
