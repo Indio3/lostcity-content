@@ -92,7 +92,7 @@ switch_int ($damagetype) {
 }
 
 [proc,player_in_combat_check]()(boolean)
-if (map_multiway(npc_coord) = false) {
+if (map_multiway(npc_coord) = false & nc_param(npc_type, npc_forcemulti) = ^false) {
     // player has been attacked in the last 8 ticks, and not by the current npc
     // or player has been attacked in the last 8 ticks, and %aggressive_npc is null (for pvp)
     // "I'm already under attack!" probably existed for op2'ing an npc
@@ -122,7 +122,7 @@ return(true);
 
 // version of this has no period, used for crumble undead?
 [proc,player_in_combat_check2]()(boolean)
-if (map_multiway(npc_coord) = false) {
+if (map_multiway(npc_coord) = false & nc_param(npc_type, npc_forcemulti) = ^false) {
     // "I'm already under attack" with no period:
     // - 2004: https://web.archive.org/web/20130303093547/http://img86.exs.cx/img86/271/80mage.jpg
     if (add(%lastcombat_pvp, 8) > map_clock) {

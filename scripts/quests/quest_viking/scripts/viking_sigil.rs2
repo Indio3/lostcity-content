@@ -149,14 +149,14 @@ if (%npc_aggressive_player ! uid) {
     mes("That is someone else's prey...");
     return;
 }
-@player_combat_start_nomulti; // will ignore multi, tested on osrs
+@player_combat_start; // will ignore multi, tested on osrs
 
 [apnpc2,viking_draugen] 
 if (%npc_aggressive_player ! uid) {
     mes("That is someone else's prey...");
     return;
 }
-@player_combat_start_ap_nomulti;
+@player_combat_start;
 
 [ai_queue3,viking_draugen]
 if(finduid(%npc_aggressive_player) = true) {

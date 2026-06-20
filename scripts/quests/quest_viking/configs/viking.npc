@@ -298,6 +298,7 @@ param=attack_anim,human_sword_slash
 param=defend_anim,human_sword_def
 param=attack_sound,unarmed_punch
 param=defend_sound,ghost_hit
+param=npc_forcemulti,^true
 
 [viking_draugen_safe]
 name=Butterfly
