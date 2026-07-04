@@ -138,8 +138,8 @@ p_teleport($dest);
 ~climb_ladder(0_48_152_44_26, false);
 
 [oploc1,puzzle_ladder]
-~reset_haunted_levers;
 ~climb_ladder(0_48_52_20_33, true);
+mes("You climb up the ladder.");
 
 [proc,reset_haunted_levers]
 %ernestlever = clearbit_range(%ernestlever, 0, 5);
