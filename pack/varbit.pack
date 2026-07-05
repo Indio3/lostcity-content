@@ -67,5 +67,5 @@
 66=boardgames_closereason
 67=boardgames_numturns
 68=boardgames_rankedgame
-69=varbit_69
-70=varbit_70
+69=boardgames_rankchange_win
+70=boardgames_rankchange_lose

@@ -1076,7 +1076,7 @@ else {
 
 [oplocu,tall_reeds]
 if (last_useitem = knife) {
-    anim(human_knife_slash, 0);
+    anim(human_knife_chop, 0);
     p_delay(0);
     mes("You use your knife to cut down a reed.");
     inv_add(inv, reed_hollow, 1);

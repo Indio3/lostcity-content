@@ -1,14 +1,14 @@
 [horror_lighthousekeeeper_well]
 name=Jossik
-model1=model_206_idk
-model2=model_292_idk
-model3=model_162_idk
-model4=npc_1269
-model5=model_253_idk
-model6=npc_1269i2
-model7=obj_3767_manwear3
-model8=model_176_idk
-model9=model_194_npc
+model1=man_head_spikeyhair
+model2=man_torso_basic
+model3=man_arms_longsleeves2
+model4=man_legs_viking
+model5=man_jaw_short2
+model6=man_feet_viking_boots
+model7=man_torsoextra_shirt2
+model8=man_hands_basic
+model9=man_hat_birdseye
 recol1s=6273
 recol1d=8323
 recol2s=2340
@@ -27,9 +27,9 @@ readyanim=human_ready
 op1=Talk-to
 op3=Trade
 vislevel=hide
-head1=model_46_idk_head
-head2=model_85_idk_head
-head3=model_37_npc_head
+head1=chat_male_head_spikeyhair
+head2=chat_male_jaw_short2
+head3=chat_male_model_37
 wanderrange=5
 category=shop_keeper
 param=owned_shop,lighthouseshop
@@ -40,14 +40,14 @@ param=shop_title,The Lighthouse Store
 
 [horror_lighthousekeeeper_injured]
 name=Jossik
-model1=model_206_idk
-model2=model_292_idk
-model3=model_162_idk
-model4=npc_1335
-model5=model_253_idk
-model6=obj_3767_manwear3
-model7=model_176_idk
-model8=model_194_npc
+model1=man_head_spikeyhair
+model2=man_torso_basic
+model3=man_arms_longsleeves2
+model4=man_legs_viking_wounded
+model5=man_jaw_short2
+model6=man_torsoextra_shirt2
+model7=man_hands_basic
+model8=man_hat_birdseye
 recol1s=6273
 recol1d=8323
 recol2s=2340
@@ -66,9 +66,9 @@ walkanim=wounded_sitting,wounded_sitting,wounded_sitting,wounded_sitting
 readyanim=wounded_sitting
 vislevel=hide
 op1=Talk-to
-head1=model_46_idk_head
-head2=model_85_idk_head
-head3=model_37_npc_head
+head1=chat_male_head_spikeyhair
+head2=chat_male_jaw_short2
+head3=chat_male_model_37
 defaultmode=none
 wanderrange=0
 moverestrict=nomove
@@ -76,16 +76,16 @@ timer=30
 
 [horror_girlfriend_prequest]
 name=Larrissa
-model1=model_390_idk
-model2=model_343_idk
-model3=model_470_idk
-model4=model_421_idk
-model5=model_483_npc
-model6=model_479_npc
-model7=model_353_idk
-model8=model_361_obj_wear
-model9=model_417_npc
-model10=model_376_obj_wear
+model1=woman_head_longhair
+model2=woman_arms_longsleeves2
+model3=woman_torso_basic3
+model4=woman_legs_longskirt_narrow
+model5=woman_torsoextra_buttons2
+model6=woman_torsoextra_cloak_plain
+model7=woman_hands_basic
+model8=woman_feet_boots
+model9=woman_headextra_ponytail
+model10=woman_hat_headband
 recol1s=2340
 recol1d=12417
 recol2s=14724
@@ -105,23 +105,23 @@ readyanim=human_ready
 walkanim=human_walk_f,human_walk_b,human_walk_l,human_walk_r
 readyanim=human_ready
 op1=Talk-to
-head1=model_115_idk_head
+head1=chat_female_head_mediumhair
 head2=model_136_npc_head
-head3=model_101_obj_wear
+head3=chat_female_headband
 wanderrange=5
 
 [horror_girlfriend_postquest]
 name=Larrissa
-model1=model_390_idk
-model2=model_343_idk
-model3=model_470_idk
-model4=model_421_idk
-model5=model_483_npc
-model6=model_479_npc
-model7=model_353_idk
-model8=model_361_obj_wear
-model9=model_417_npc
-model10=model_376_obj_wear
+model1=woman_head_longhair
+model2=woman_arms_longsleeves2
+model3=woman_torso_basic3
+model4=woman_legs_longskirt_narrow
+model5=woman_torsoextra_buttons2
+model6=woman_torsoextra_cloak_plain
+model7=woman_hands_basic
+model8=woman_feet_boots
+model9=woman_headextra_ponytail
+model10=woman_hat_headband
 recol1s=2340
 recol1d=12417
 recol2s=14724
@@ -139,14 +139,14 @@ desc=A fremennik girl.
 walkanim=human_walk_f,human_walk_b,human_walk_l,human_walk_r
 readyanim=human_ready
 op1=Talk-to
-head1=model_113_idk_head
-head2=model_101_obj_wear
+head1=chat_female_head_longhair
+head2=chat_female_headband
 head3=model_136_npc_head
 wanderrange=5
 
 [horror_dagganoth_jr]
 name=Dagannoth
-model1=npc_1338
+model1=quest_horror_npc_dagannoth
 desc=A horror from the ocean depths...
 resizeh=64
 resizev=64
@@ -176,7 +176,7 @@ huntrange=1
 
 [horror_dagganoth_jr_darker]
 name=Dagannoth
-model1=npc_1338
+model1=quest_horror_npc_dagannoth
 recol1s=13740
 recol1d=12650
 recol2s=12683
@@ -214,7 +214,7 @@ huntrange=1
 
 [horror_dagganoth_jr_lighter]
 name=Dagannoth
-model1=npc_1338
+model1=quest_horror_npc_dagannoth
 recol1s=13740
 recol1d=14796
 recol2s=12683
@@ -252,7 +252,7 @@ huntrange=1
 
 [horror_dagannoth_medium]
 name=Dagannoth
-model1=npc_1338
+model1=quest_horror_npc_dagannoth
 desc=A horror from the ocean depths...
 size=2
 resizeh=85
@@ -282,7 +282,7 @@ huntrange=1
 
 [horror_dagannoth_medium_darker]
 name=Dagannoth
-model1=npc_1338
+model1=quest_horror_npc_dagannoth
 recol1s=13740
 recol1d=12650
 recol2s=12683
@@ -320,7 +320,7 @@ huntrange=1
 
 [horror_dagannoth_medium_lighter]
 name=Dagannoth
-model1=npc_1338
+model1=quest_horror_npc_dagannoth
 recol1s=13740
 recol1d=14796
 recol2s=12683
@@ -358,7 +358,7 @@ huntrange=1
 
 [horror_dagannoth_jr1]
 name=Dagannoth
-model1=npc_1338
+model1=quest_horror_npc_dagannoth
 recol1s=13740
 recol1d=14796
 recol2s=12683
@@ -398,7 +398,7 @@ param=death_sound,dagganoth_death
 
 [horror_dagannoth_jr2]
 name=Dagannoth
-model1=npc_1338
+model1=quest_horror_npc_dagannoth
 recol1s=13740
 recol1d=14796
 recol2s=12683
@@ -439,7 +439,7 @@ param=death_sound,dagganoth_death
 
 [horror_dagannoth_jr3]
 name=Dagannoth
-model1=npc_1338
+model1=quest_horror_npc_dagannoth
 recol1s=13740
 recol1d=14796
 recol2s=12683
@@ -479,7 +479,7 @@ param=death_sound,dagganoth_death
 
 [horror_dagannoth_jr4]
 name=Dagannoth
-model1=npc_1338
+model1=quest_horror_npc_dagannoth
 recol1s=13740
 recol1d=14796
 recol2s=12683
@@ -514,7 +514,7 @@ param=death_sound,dagganoth_death
 
 [horror_dagganoth_aira]
 name=Dagannoth mother
-model1=npc_1338
+model1=quest_horror_npc_dagannoth
 recol1s=13740
 recol1d=21140
 recol2s=12683
@@ -555,7 +555,7 @@ param=death_sound,dagganoth_death
 
 [horror_dagganoth_airb]
 name=Dagannoth mother
-model1=npc_1338
+model1=quest_horror_npc_dagannoth
 recol1s=13740
 recol1d=21140
 recol2s=12683
@@ -596,7 +596,7 @@ param=death_sound,dagganoth_death
 
 [horror_dagganoth_airc]
 name=Dagannoth mother
-model1=npc_1338
+model1=quest_horror_npc_dagannoth
 recol1s=13740
 recol1d=21140
 recol2s=12683
@@ -637,7 +637,7 @@ param=death_sound,dagganoth_death
 
 [horror_dagganoth_air]
 name=Dagannoth mother
-model1=npc_1338
+model1=quest_horror_npc_dagannoth
 recol1s=13740
 recol1d=21140
 recol2s=12683
@@ -679,7 +679,7 @@ param=death_sound,dagganoth_death
 
 [horror_dagganoth_water]
 name=Dagannoth mother
-model1=npc_1338
+model1=quest_horror_npc_dagannoth
 recol1s=13740
 recol1d=15857
 recol2s=12683
@@ -721,7 +721,7 @@ param=death_sound,dagganoth_death
 
 [horror_dagganoth_fire]
 name=Dagannoth mother
-model1=npc_1338
+model1=quest_horror_npc_dagannoth
 recol1s=13740
 recol1d=15723
 recol2s=12683
@@ -763,7 +763,7 @@ param=death_sound,dagganoth_death
 
 [horror_dagganoth_earth]
 name=Dagannoth mother
-model1=npc_1338
+model1=quest_horror_npc_dagannoth
 recol1s=13740
 recol1d=19947
 recol2s=12683
@@ -805,7 +805,7 @@ param=death_sound,dagganoth_death
 
 [horror_dagganoth_ranged]
 name=Dagannoth mother
-model1=npc_1338
+model1=quest_horror_npc_dagannoth
 recol1s=13740
 recol1d=9801
 recol2s=12683
@@ -847,7 +847,7 @@ param=death_sound,dagganoth_death
 
 [horror_dagganoth_melee]
 name=Dagannoth mother
-model1=npc_1338
+model1=quest_horror_npc_dagannoth
 recol1s=13740
 recol1d=20075
 recol2s=12683

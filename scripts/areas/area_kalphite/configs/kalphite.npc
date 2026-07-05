@@ -1,12 +1,12 @@
 [kalphite_oldman]
 name=Weird Old Man
-model1=model_230_idk
-model2=model_250_idk
-model3=model_310_idk
-model4=model_168_npc
-model5=model_176_idk
-model6=model_275_idk
-model7=model_181_idk
+model1=man_head_bald
+model2=man_jaw_long
+model3=man_torso_tatty
+model4=man_arms_model_168
+model5=man_hands_basic
+model6=man_legs_tatty
+model7=man_feet_basic
 recol1s=6273
 recol1d=23250
 recol2s=14724
@@ -24,8 +24,8 @@ desc=What's he mumbling about?
 walkanim=human_walk_f,human_walk_b,human_walk_l,human_walk_r
 readyanim=human_ready
 op1=Talk-to
-head1=model_63_idk_head
-head2=model_82_idk_head
+head1=chat_male_head_bald
+head2=chat_male_jaw_long
 
 [kalphite_worker]
 name=Kalphite Worker

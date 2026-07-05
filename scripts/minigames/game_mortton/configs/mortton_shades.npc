@@ -1,6 +1,6 @@
 [shadeshadow_level1]
 name=Loar Shadow
-model1=npc_1240
+model1=quest_shades_npc_hadow
 recol1s=0
 recol1d=160
 desc=A shadowy sort of entity, kind of creepy looking.
@@ -39,7 +39,7 @@ category=shade
 
 [shade_level1]
 name=Loar Shade
-model1=npc_1241
+model1=quest_shades_npc
 recol1s=0
 recol1d=160
 recol2s=10240
@@ -79,7 +79,7 @@ category=shade
 
 [shade_heaven]
 name=Shade Spirit
-model1=npc_1241
+model1=quest_shades_npc
 recol1s=10240
 recol1d=992
 recol2s=0
@@ -95,7 +95,7 @@ moverestrict=nomove
 
 [shadeshadow_level2]
 name=Phrin Shadow
-model1=npc_1240
+model1=quest_shades_npc_hadow
 recol1s=0
 recol1d=3137
 desc=A shadowy sort of entity, kind of creepy looking.
@@ -134,7 +134,7 @@ category=shade
 
 [shade_level2]
 name=Phrin Shade
-model1=npc_1241
+model1=quest_shades_npc
 recol1s=0
 recol1d=3137
 recol2s=10240
@@ -174,7 +174,7 @@ category=shade
 
 [shadeshadow_level3]
 name=Riyl Shadow
-model1=npc_1240
+model1=quest_shades_npc_hadow
 recol1s=0
 recol1d=5120
 desc=A shadowy sort of entity, kind of creepy looking.
@@ -213,7 +213,7 @@ category=shade
 
 [shade_level3]
 name=Riyl Shade
-model1=npc_1241
+model1=quest_shades_npc
 recol1s=0
 recol1d=5120
 recol2s=10240
@@ -253,7 +253,7 @@ category=shade
 
 [shadeshadow_level4]
 name=Asyn Shadow
-model1=npc_1240
+model1=quest_shades_npc_hadow
 recol1s=0
 recol1d=5
 desc=A shadowy sort of entity, kind of creepy looking.
@@ -293,7 +293,7 @@ category=shade
 
 [shade_level4]
 name=Asyn Shade
-model1=npc_1241
+model1=quest_shades_npc
 recol1s=0
 recol1d=5
 recol2s=10240
@@ -333,7 +333,7 @@ category=shade
 
 [shadeshadow_level5]
 name=Fiyr Shadow
-model1=npc_1240
+model1=quest_shades_npc_hadow
 desc=A shadowy sort of entity, kind of creepy looking.
 readyanim=shadeshadow_ready
 walkanim=shadeshadow_walk
@@ -370,7 +370,7 @@ category=shade
 
 [shade_level5]
 name=Fiyr Shade
-model1=npc_1241
+model1=quest_shades_npc
 recol1s=10240
 recol1d=32767
 desc=The shadowy remains of a long departed soul.

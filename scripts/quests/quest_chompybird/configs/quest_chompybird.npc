@@ -65,7 +65,7 @@ name=Swamp toad
 desc=A green skinned croaker, loves the swamp.
 readyanim=chompy_toad_ready
 walkanim=chompy_toad_walk
-model1=model_3447_obj
+model1=ogre_area_npc_chompy_toad
 timer=30
 
 [bloated_toad]
@@ -74,7 +74,7 @@ name=Bloated Toad
 desc=A green skinned croaker.
 readyanim=bloated_toad_stay
 walkanim=bloated_toad_stay
-model1=model_3447_obj
+model1=ogre_area_npc_chompy_toad
 wanderrange=0
 moverestrict=nomove
 
@@ -87,7 +87,7 @@ resizeh=180
 resizev=180
 op5=Attack
 vislevel=6
-model1=model_3445_obj
+model1=chompy_bird
 wanderrange=3
 hitpoints=10
 attack=5
@@ -115,7 +115,7 @@ readyanim=pog_terror_bird_attack
 op4=Pluck
 resizeh=180
 resizev=180
-model1=model_3445_obj
+model1=chompy_bird
 defaultmode=none
 wanderrange=0
 moverestrict=nomove

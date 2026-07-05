@@ -301,7 +301,7 @@
 300=sa_energy
 301=sa_attack
 302=priestperil
-303=priestperil_mausoleum
+303=priestperilvar
 304=bankinsert
 305=ghast_delay
 306=mortmyre
@@ -323,7 +323,7 @@
 322=tbwt_tinsay
 323=tbwt_tamayu
 324=tbwt_lubufu
-325=tbwt_bits
+325=tbwt_flags
 326=varp_326
 327=varp_327
 328=regicide_quest
@@ -355,5 +355,5 @@
 354=boardgames_draughts_rank
 355=boardgames_varbit
 356=boardgames_varbit2
-357=varp_357
-358=varp_358
+357=boardgames_varbit3
+358=boardgames_varbit4

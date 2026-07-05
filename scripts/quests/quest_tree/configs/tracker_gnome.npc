@@ -12,7 +12,7 @@ recol2d=14626
 model1=model_2909_npc
 model2=model_2890_npc
 model3=model_2915_npc
-head1=model_21_npc_head
+head1=gnome_chat_head
 param=death_anim,midget_death
 param=death_sound,gnome_death
 
@@ -30,7 +30,7 @@ recol2d=14626
 model1=model_2909_npc
 model2=model_2890_npc
 model3=model_2915_npc
-head1=model_21_npc_head
+head1=gnome_chat_head
 param=death_anim,midget_death
 param=death_sound,gnome_death
 
@@ -48,6 +48,6 @@ recol2d=14626
 model1=model_2909_npc
 model2=model_2890_npc
 model3=model_2915_npc
-head1=model_21_npc_head
+head1=gnome_chat_head
 param=death_anim,midget_death
 param=death_sound,gnome_death

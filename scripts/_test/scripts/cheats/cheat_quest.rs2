@@ -292,7 +292,7 @@ if (p_finduid(uid) = true) {
                     %druidspirit_bits = null;
                 case 54 :
                     %priestperil = 0;
-                    %priestperil_mausoleum = null;
+                    %priestperilvar = null;
                 case 55 :
                     %death_equiproom = 0;
                     %death_map = 0;
@@ -306,7 +306,7 @@ if (p_finduid(uid) = true) {
                     %tbwt_tinsay = 0;
                     %tbwt_tamayu = 0;
                     %tbwt_lubufu = 0;
-                    %tbwt_bits = null;
+                    %tbwt_flags = null;
                 case 58 :
                     %regicide_quest = 0;
                     %regicide_bits = null;
@@ -537,7 +537,7 @@ return;
 %ballquest = 0;
 %elemental_workshop_bits = 0;
 %priestperil = 0;
-%priestperil_mausoleum = null;
+%priestperilvar = null;
 %druidspirit = 0; 
 %druidspirit_bits = null;
 %priestperil = 0;
@@ -551,7 +551,7 @@ return;
 %tbwt_tinsay = 0;
 %tbwt_tamayu = 0;
 %tbwt_lubufu = 0;
-%tbwt_bits = null;
+%tbwt_flags = null;
 %regicide_quest = 0;
 %regicide_bits = null;
 %eadgar_quest = 0;

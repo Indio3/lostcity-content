@@ -634,8 +634,8 @@
 633=entrana_sarim
 634=sarim_karamja
 635=karamja_sarim
-636=seq_636
-637=seq_637
+636=ardougne_brimhaven
+637=brimhaven_ardougne
 638=cairn_khazzard
 639=khazzard_trawler
 640=trawler_khazzard
@@ -783,8 +783,8 @@
 782=human_catch
 783=human_throw_gnomeball
 784=partyroom_dance
-785=human_blown_end_getup_priority
-786=seq_786
+785=pilot_varrock
+786=pilot_mountain
 787=poweringcrystal
 788=glowingorb
 789=glowingorbs
@@ -909,7 +909,7 @@
 908=human_bullroarer
 909=human_mapping
 910=human_machette_chop
-911=human_knife_slash
+911=human_knife_chop
 912=flower_growing
 913=levelup_anim
 914=watersplash_small
@@ -922,7 +922,7 @@
 921=human_playhorsey_grey
 922=dwarf_stone_throw_launch
 923=impale
-924=seq_924
+924=sp_attack_impale_spotanim
 925=troll_ready_sword
 926=troll_ready_shield
 927=troll_ready_sword+shield
@@ -1022,7 +1022,7 @@
 1021=chompy_toad_walk
 1022=chompy_toad_death
 1023=chompy_toad_explode
-1024=ogre_bellows_use
+1024=human_ogre_bellow
 1025=ogre_longbow
 1026=human_chompybird_ogrebellows
 1027=elemental_fire_ready
@@ -1065,7 +1065,7 @@
 1064=shove
 1065=sp_attack_shove_spotanim
 1066=stunned_shove
-1067=claws_punch
+1067=d_claws_punch
 1068=chainhit
 1069=sp_attack_chainhit_launch_spotanim
 1070=sp_attack_chainhit_travel_spotanim
@@ -1102,7 +1102,7 @@
 1101=druidicspirit_bloom_player_spotanim
 1102=druidicspirit_druidsshield_spotanim
 1103=agilityarena_timedblades_spin2
-1104=screaming_banshee_walk
+1104=agilityarena_plank_break
 1105=human_ropeswing_long_miss
 1106=human_lowwall_fail
 1107=agilityarena_sawblades_twist
@@ -1253,7 +1253,7 @@
 1252=human_lowwall
 1253=dwarf_drunkdeath
 1254=seq_1254
-1255=seq_1255
+1255=eadgar_fade_to_black
 1256=seq_1256
 1257=eadgar_stunned
 1258=eadgar_knockout

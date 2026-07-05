@@ -418,8 +418,8 @@ name=Ghoul
 model1=npc_1218
 model2=npc_1218i2
 model3=npc_1218i3
-model4=model_275_idk
-model5=model_181_idk
+model4=man_legs_tatty
+model5=man_feet_basic
 recol1s=7298
 recol1d=26420
 recol2s=24075
@@ -449,7 +449,7 @@ param=retreat,10
 
 [vampire_leech]
 name=Leech
-model1=npc_1219
+model1=quest_vampires_npc_leech
 desc=Yuk! Its all slimey!
 walkanim=leechwalk
 readyanim=leechready
@@ -477,10 +477,10 @@ huntrange=3
 [vampire_flyer]
 name=Vampire
 model1=npc_1220
-model2=npc_1220i2
+model2=man_torso_vampire
 model3=npc_1220i3
-model4=model_275_idk
-model5=model_181_idk
+model4=man_legs_tatty
+model5=man_feet_basic
 recol1s=24075
 recol1d=31573
 recol2s=18991
@@ -534,7 +534,7 @@ timer=1
 
 [vampire_misty]
 name=vampire_misty
-model1=loc_4047_8
+model1=loc_4047
 size=2
 walkanim=misty
 readyanim=misty
@@ -543,11 +543,11 @@ vislevel=1
 [vampire_juve]
 name=Vampire
 model1=npc_1220
-model2=model_310_idk
-model3=model_151_idk
+model2=man_torso_tatty
+model3=man_arms_basic
 model4=npc_1220i3
-model5=model_275_idk
-model6=model_181_idk
+model5=man_legs_tatty
+model6=man_feet_basic
 recol1s=24075
 recol1d=31573
 recol2s=18991
@@ -607,11 +607,11 @@ param=death_sound,null
 [vampire_count]
 name=vampire_count
 model1=npc_1220
-model2=model_306_obj_wear
+model2=man_torso_platemail
 model3=model_174_npc
-model4=model_176_idk
-model5=model_265_obj_wear
-model6=model_546_obj_wear
+model4=man_hands_basic
+model5=man_legs_robe
+model6=human_weapons_dh-sword
 recol1s=15855
 recol1d=7202
 recol2s=10570
@@ -637,7 +637,7 @@ param=death_sound,vampire_death
 
 [nasty_tree_swamp]
 name=Tree
-model1=model_3014_npc
+model1=npc_deadtree
 recol1s=7296
 recol1d=7428
 recol2s=6240

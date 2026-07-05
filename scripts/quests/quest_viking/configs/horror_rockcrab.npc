@@ -1,7 +1,7 @@
 [horror_rockcrab]
 name=Rock Crab
-model1=npc_1265
-model2=npc_1265i2
+model1=quest_horror_npc_rock_crab_body
+model2=quest_horror_npc_rock_crab
 desc=No one likes crabs...
 walkanim=horror_crab_walk
 readyanim=horror_crab_ready
@@ -25,8 +25,8 @@ param=death_sound,insect_death
 
 [horror_rockcrab_inactive]
 name=Rocks
-model1=npc_1265
-model2=npc_1265i2
+model1=quest_horror_npc_rock_crab_body
+model2=quest_horror_npc_rock_crab
 vislevel=hide
 desc=A rocky outcrop.
 walkanim=horror_crab_walk
@@ -51,8 +51,8 @@ huntmode=aggressive_ranged
 
 [horror_rockcrab_small]
 name=Rock Crab
-model1=npc_1265
-model2=npc_1265i2
+model1=quest_horror_npc_rock_crab_body
+model2=quest_horror_npc_rock_crab
 desc=No one likes crabs...
 walkanim=horror_crab_walk
 readyanim=horror_crab_ready
@@ -78,8 +78,8 @@ param=death_sound,insect_death
 
 [horror_rockcrab_small_inactive]
 name=Rocks
-model1=npc_1265
-model2=npc_1265i2
+model1=quest_horror_npc_rock_crab_body
+model2=quest_horror_npc_rock_crab
 vislevel=hide
 desc=A rocky outcrop.
 walkanim=horror_crab_walk

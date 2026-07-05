@@ -1,7 +1,7 @@
 [eadgar_troll_chief_cook]
 name=Burntmeat
 model1=npc_1096
-model2=npc_1096i2
+model2=quest_death_npc_troll_head
 model3=npc_1095i3
 model4=npc_1099i2
 model5=npc_1100
@@ -27,7 +27,7 @@ moverestrict=nomove
 [troll_sguard1]
 name=Guard
 model1=npc_1095
-model2=npc_1096i2
+model2=quest_death_npc_troll_head
 model3=npc_1095i3
 model4=npc_1096i4
 recol1s=15855
@@ -81,7 +81,7 @@ patrol4=0_44_157_39_41,0
 [troll_sguard3]
 name=Guard
 model1=npc_1095
-model2=npc_1096i2
+model2=quest_death_npc_troll_head
 model3=npc_1095i3
 model4=npc_1096i4
 model5=npc_1096i3
@@ -109,7 +109,7 @@ patrol4=0_44_157_43_41,0
 [troll_sguard4]
 name=Guard
 model1=npc_1095
-model2=npc_1096i2
+model2=quest_death_npc_troll_head
 model3=npc_1099
 model4=npc_1096i4
 recol1s=15855
@@ -138,7 +138,7 @@ patrol6=0_44_157_34_30,0
 [troll_sguard5]
 name=Guard
 model1=npc_1095
-model2=npc_1096i2
+model2=quest_death_npc_troll_head
 model3=npc_1095i3
 model4=npc_1096i4
 recol1s=15855
@@ -168,7 +168,7 @@ patrol7=0_44_157_45_37,0
 [troll_sguard6]
 name=Guard
 model1=npc_1096
-model2=npc_1096i2
+model2=quest_death_npc_troll_head
 model3=npc_1099
 model4=npc_1096i4
 recol1s=15855
@@ -197,7 +197,7 @@ patrol8=0_44_157_39_29,0
 [troll_sguard7]
 name=Guard
 model1=npc_1095
-model2=npc_1096i2
+model2=quest_death_npc_troll_head
 model3=npc_1095i3
 model4=npc_1096i4
 recol1s=15855
@@ -224,7 +224,7 @@ patrol4=0_44_157_39_28,0
 [troll_sguard8]
 name=Guard
 model1=npc_1095
-model2=npc_1096i2
+model2=quest_death_npc_troll_head
 model3=npc_1095i3
 model4=npc_1096i4
 recol1s=15855
@@ -254,7 +254,7 @@ patrol7=0_44_157_45_37,0
 [eadgar_storeroom_guard]
 name=Guard
 model1=npc_1095
-model2=npc_1096i2
+model2=quest_death_npc_troll_head
 model3=npc_1095i3
 model4=npc_1096i4
 recol1s=15855

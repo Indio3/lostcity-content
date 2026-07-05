@@ -1,13 +1,13 @@
 [troll_eadgar]
 name=Eadgar
-model1=model_230_idk
-model2=model_250_idk
-model3=model_310_idk
-model4=model_168_npc
-model5=model_176_idk
-model6=model_275_idk
-model7=model_181_idk
-model8=model_326_idk
+model1=man_head_bald
+model2=man_jaw_long
+model3=man_torso_tatty
+model4=man_arms_model_168
+model5=man_hands_basic
+model6=man_legs_tatty
+model7=man_feet_basic
+model8=man_torsoextra_buttons2
 recol1s=14801
 recol1d=24075
 recol2s=6273
@@ -25,18 +25,18 @@ resizeh=128
 resizev=128
 op1=Talk-to
 vislevel=hide
-head1=model_63_idk_head
-head2=model_82_idk_head
+head1=chat_male_head_bald
+head2=chat_male_jaw_long
 wanderrange=5
 
 [troll_godric]
 name=Godric
-model1=model_215_idk
-model2=model_295_obj_wear
-model3=model_150_obj_wear
-model4=model_254_idk
-model5=model_185_obj_wear
-model6=model_246_idk
+model1=man_head_shorthair
+model2=man_torso_plaguesuit
+model3=man_arms_plaguesuit
+model4=man_legs_basic
+model5=man_feet_boots
+model6=man_jaw_none
 recol1s=13600
 recol1d=0
 recol2s=15855
@@ -56,7 +56,7 @@ op1=Talk-to
 vislevel=hide
 resizeh=118
 resizev=118
-head1=model_67_idk_head
+head1=chat_male_head_shorthair2
 wanderrange=2
 
 [troll_general]
@@ -230,7 +230,7 @@ huntrange=1
 [troll_spectator1]
 name=Troll Spectator
 model1=npc_1095
-model2=npc_1096i2
+model2=quest_death_npc_troll_head
 model3=npc_1095i3
 model4=npc_1097
 recol1s=15855
@@ -322,7 +322,7 @@ timer=10
 [troll_spectator3]
 name=Troll Spectator
 model1=npc_1095
-model2=npc_1096i2
+model2=quest_death_npc_troll_head
 model3=npc_1095i3
 model4=npc_1097
 model5=npc_1096i3
@@ -369,7 +369,7 @@ timer=10
 [troll_spectator4]
 name=Troll Spectator
 model1=npc_1095
-model2=npc_1096i2
+model2=quest_death_npc_troll_head
 model3=npc_1099
 model4=npc_1096i4
 recol1s=15855
@@ -462,7 +462,7 @@ timer=10
 [troll_spectator6]
 name=Troll Spectator
 model1=npc_1096
-model2=npc_1096i2
+model2=quest_death_npc_troll_head
 model3=npc_1099
 model4=npc_1096i4
 recol1s=15855
@@ -604,7 +604,7 @@ timer=1
 [troll_prison_guard1_awake]
 name=Twig
 model1=npc_1096
-model2=npc_1096i2
+model2=quest_death_npc_troll_head
 model3=npc_1095i3
 model4=npc_1116
 model5=npc_1126
@@ -656,7 +656,7 @@ timer=1
 [troll_prison_guard2_awake]
 name=Berry
 model1=npc_1096
-model2=npc_1096i2
+model2=quest_death_npc_troll_head
 model3=npc_1095i3
 model4=npc_1096i4
 model5=npc_1126
@@ -708,7 +708,7 @@ timer=1
 [troll_prison_guard1]
 name=Twig
 model1=npc_1096
-model2=npc_1096i2
+model2=quest_death_npc_troll_head
 model3=npc_1095i3
 model4=npc_1116
 model5=npc_1126
@@ -761,7 +761,7 @@ timer=1
 [troll_prison_guard2]
 name=Berry
 model1=npc_1096
-model2=npc_1096i2
+model2=quest_death_npc_troll_head
 model3=npc_1095i3
 model4=npc_1096i4
 model5=npc_1126
@@ -814,7 +814,7 @@ timer=1
 [troll_thrower1]
 name=Thrower Troll
 model1=npc_1095
-model2=npc_1096i2
+model2=quest_death_npc_troll_head
 model3=npc_1099
 model4=npc_1101
 recol1s=15855
@@ -904,7 +904,7 @@ huntrange=8
 [troll_thrower3]
 name=Thrower Troll
 model1=npc_1095
-model2=npc_1096i2
+model2=quest_death_npc_troll_head
 model3=npc_1095i3
 model4=npc_1101
 recol1s=15855
@@ -949,7 +949,7 @@ huntrange=8
 [troll_thrower4]
 name=Thrower Troll
 model1=npc_1096
-model2=npc_1096i2
+model2=quest_death_npc_troll_head
 model3=npc_1099
 model4=npc_1101
 recol1s=15855
@@ -1039,7 +1039,7 @@ huntrange=8
 [troll_cook]
 name=Cook
 model1=npc_1096
-model2=npc_1096i2
+model2=quest_death_npc_troll_head
 model3=npc_1095i3
 model4=npc_1099i2
 model5=npc_1100
@@ -1061,7 +1061,7 @@ wanderrange=3
 [troll_cook2]
 name=Cook
 model1=npc_1096
-model2=npc_1096i2
+model2=quest_death_npc_troll_head
 model3=npc_1099
 model4=npc_1099i2
 model5=npc_1099i3
@@ -1150,7 +1150,7 @@ huntrange=1
 [troll_stronghold_camp_guard]
 name=Mushroom
 model1=npc_1096
-model2=npc_1096i2
+model2=quest_death_npc_troll_head
 model3=npc_1095i3
 model4=npc_1116
 recol1s=15855

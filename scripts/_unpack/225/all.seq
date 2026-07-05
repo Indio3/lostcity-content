@@ -7700,7 +7700,7 @@ frame45=anim_5908
 frame46=anim_5848
 delay46=20000
 
-[seq_636]
+[ardougne_brimhaven]
 frame1=anim_5813
 frame2=anim_5870
 frame3=anim_5930
@@ -7719,7 +7719,7 @@ frame15=anim_5861
 frame16=anim_5924
 delay16=20000
 
-[seq_637]
+[brimhaven_ardougne]
 frame1=anim_5924
 frame2=anim_5861
 frame3=anim_5805
@@ -10580,7 +10580,7 @@ frame119=anim_1687
 frame120=anim_1396
 delay120=15
 
-[human_blown_end_getup_priority]
+[pilot_varrock]
 frame1=anim_5745
 frame2=anim_5751
 frame3=anim_5757
@@ -10599,7 +10599,7 @@ frame15=anim_5748
 frame16=anim_5754
 delay16=20000
 
-[seq_786]
+[pilot_mountain]
 frame1=anim_5750
 frame2=anim_5756
 frame3=anim_5761
@@ -12234,7 +12234,7 @@ frame6=anim_1474
 frame7=anim_1774
 frame8=anim_2072
 
-[human_knife_slash]
+[human_knife_chop]
 walkmerge=label_1,label_2,label_9,label_11,label_13,label_15,label_17,label_19,label_37,label_39,label_41,label_43,label_45
 priority=6
 replaceheldright=iron_knife
@@ -12531,7 +12531,7 @@ frame7=anim_4581
 frame8=anim_4606
 frame9=anim_4664
 
-[seq_924]
+[sp_attack_impale_spotanim]
 frame1=anim_8732
 frame2=anim_8733
 frame3=anim_8734
@@ -13095,7 +13095,7 @@ frame7=anim_4071
 frame8=anim_4073
 frame9=anim_4075
 
-[ogre_bellows_use]
+[human_ogre_bellow]
 stretches=yes
 frame1=anim_3964
 frame2=anim_3967

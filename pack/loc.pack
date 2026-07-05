@@ -460,8 +460,8 @@
 459=basalt_step_2
 460=basalt_step_3
 461=basalt_step_4
-462=moss_covered_rock_1
-463=moss_covered_rock_2
+462=mossyboulder1
+463=mossyboulder2
 464=rockcolumn1
 465=rockcolumn2
 466=rockcolumn3
@@ -475,12 +475,12 @@
 474=rockslide4
 475=rockslide5
 476=rockslide6
-477=swamp_moss_covered_rock_1
-478=swamp_moss_covered_rock_2
-479=loc_479
-480=loc_480
+477=mossyboulder1_swamp
+478=mossyboulder2_swamp
+479=rockslide_grey1
+480=rockslide_grey2
 481=rockslide_grey3
-482=loc_482
+482=rockslide_grey4
 483=rockslide_lightgrey1
 484=rockslide_lightgrey2
 485=rockslide_lightgrey3
@@ -1724,7 +1724,7 @@
 1723=stairstop
 1724=loc_1724
 1725=woodenstairs
-1726=loc_1726
+1726=woodenstairstop
 1727=loc_1727
 1728=yanillestairsdown
 1729=yanillestairsup

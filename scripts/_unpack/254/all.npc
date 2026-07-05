@@ -29,15 +29,15 @@ param=death_drop,bat_bones
 
 [macro_mime]
 name=Mime
-model1=model_3598
-model2=obj_3058_manwear3
-model3=model_292_idk
-model4=model_163_idk
-model5=model_179_obj_wear
-model6=model_254_idk
-model7=model_185_obj_wear
-model8=model_198_obj_wear
-model9=model_230_idk
+model1=man_headextra_mime_mask
+model2=man_torsoextra_stripes
+model3=man_torso_basic
+model4=man_arms_longsleeves3
+model5=man_hands_gloves
+model6=man_legs_basic
+model7=man_feet_boots
+model8=man_hat_berret
+model9=man_head_bald
 recol1s=8384
 recol1d=23263
 recol2s=2340
@@ -58,12 +58,12 @@ timer=5
 
 [macro_theatre_saradomin]
 name=Strange watcher
-model1=model_223_idk
-model2=model_250_idk
-model3=model_292_idk
-model4=model_170_idk
-model5=model_176_idk
-model6=model_3599
+model1=man_head_priest
+model2=man_jaw_long
+model3=man_torso_basic
+model4=man_arms_longsleeves
+model5=man_hands_basic
+model6=man_legs_sitting_chair
 recol1s=14724
 recol1d=20083
 recol2s=2340
@@ -83,12 +83,12 @@ minimap=no
 
 [macro_theatre_guthix]
 name=Strange watcher
-model1=model_206_idk
-model2=model_252_idk
-model3=model_315_npc
-model4=model_173_npc
-model5=model_176_idk
-model6=model_3599
+model1=man_head_spikeyhair
+model2=man_jaw_split
+model3=man_torso_bare
+model4=man_arms_bare
+model5=man_hands_basic
+model6=man_legs_sitting_chair
 recol1s=24075
 recol1d=7552
 recol2s=6273
@@ -106,11 +106,11 @@ minimap=no
 
 [macro_theatre_zamorak]
 name=Strange watcher
-model1=model_209_npc
-model2=model_306_obj_wear
-model3=model_156_npc
-model4=model_176_idk
-model5=model_3599
+model1=man_head_skull
+model2=man_torso_platemail
+model3=man_arms_basicforplate
+model4=man_hands_basic
+model5=man_legs_sitting_chair
 recol1s=29562
 recol1d=16711
 recol2s=14801
