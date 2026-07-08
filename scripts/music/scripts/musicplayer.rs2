@@ -113,6 +113,7 @@ if (map_clock > add(%musicstart, %musiclength)) {
 [if_button,music:fanfare] @music_playbybutton(music:fanfare);
 [if_button,music:fanfare2] @music_playbybutton(music:fanfare2);
 [if_button,music:fanfare3] @music_playbybutton(music:fanfare3);
+[if_button,music:com_284] @music_playbybutton(music:com_284);
 [if_button,music:fishing] @music_playbybutton(music:fishing);
 [if_button,music:flute_salad] @music_playbybutton(music:flute_salad);
 [if_button,music:forbidden] @music_playbybutton(music:forbidden);

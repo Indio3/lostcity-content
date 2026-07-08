@@ -1,4 +1,7 @@
 [opnpc1,grandtree_glough]
+if(%mm_daero = ^daero_started_reinit) {
+    @glough_reinit_dialogue;
+}
 switch_int(%grandtree) {
     // https://youtu.be/LFvLBRCxFwk?si=IKRtVRjysWWM9U4u&t=482, fixed at some point?
     case ^grandtree_spoken_glough, ^grandtree_unlocked_trapdoor, ^grandtree_defeated_black_demon, ^grandtree_searching_daconia, ^grandtree_complete :

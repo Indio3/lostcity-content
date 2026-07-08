@@ -122,6 +122,7 @@ model=obj_3902
 2dxan=520
 iop5=Move
 desc=It's a sliding button of some kind.
+category=mm_reinit
 
 [cert_reinitialisation_01]
 certlink=reinitialisation_01
@@ -136,6 +137,7 @@ model=obj_3906
 2dxan=520
 iop5=Move
 desc=It's a sliding button of some kind.
+category=mm_reinit
 
 [obj_3907]
 certlink=reinitialisation_02
@@ -150,6 +152,7 @@ model=obj_3908
 2dxan=520
 iop5=Move
 desc=It's a sliding button of some kind.
+category=mm_reinit
 
 [obj_3909]
 certlink=reinitialisation_03
@@ -164,6 +167,7 @@ model=obj_3910
 2dxan=520
 iop5=Move
 desc=It's a sliding button of some kind.
+category=mm_reinit
 
 [obj_3911]
 certlink=reinitialisation_04
@@ -178,6 +182,7 @@ model=obj_3912
 2dxan=520
 iop5=Move
 desc=It's a sliding button of some kind.
+category=mm_reinit
 
 [obj_3913]
 certlink=reinitialisation_05
@@ -192,6 +197,7 @@ model=obj_3914
 2dxan=520
 iop5=Move
 desc=It's a sliding button of some kind.
+category=mm_reinit
 
 [obj_3915]
 certlink=reinitialisation_06
@@ -206,6 +212,7 @@ model=obj_3916
 2dxan=520
 iop5=Move
 desc=It's a sliding button of some kind.
+category=mm_reinit
 
 [obj_3917]
 certlink=reinitialisation_07
@@ -220,6 +227,7 @@ model=obj_3918
 2dxan=520
 iop5=Move
 desc=It's a sliding button of some kind.
+category=mm_reinit
 
 [obj_3919]
 certlink=reinitialisation_08
@@ -234,6 +242,7 @@ model=obj_3920
 2dxan=520
 iop5=Move
 desc=It's a sliding button of some kind.
+category=mm_reinit
 
 [obj_3921]
 certlink=reinitialisation_09
@@ -248,6 +257,7 @@ model=obj_3922
 2dxan=520
 iop5=Move
 desc=It's a sliding button of some kind.
+category=mm_reinit
 
 [obj_3923]
 certlink=reinitialisation_10
@@ -262,6 +272,7 @@ model=obj_3924
 2dxan=520
 iop5=Move
 desc=It's a sliding button of some kind.
+category=mm_reinit
 
 [obj_3925]
 certlink=reinitialisation_11
@@ -276,6 +287,7 @@ model=obj_3926
 2dxan=520
 iop5=Move
 desc=It's a sliding button of some kind.
+category=mm_reinit
 
 [obj_3927]
 certlink=reinitialisation_12
@@ -290,6 +302,7 @@ model=obj_3928
 2dxan=520
 iop5=Move
 desc=It's a sliding button of some kind.
+category=mm_reinit
 
 [obj_3929]
 certlink=reinitialisation_13
@@ -304,6 +317,7 @@ model=obj_3930
 2dxan=520
 iop5=Move
 desc=It's a sliding button of some kind.
+category=mm_reinit
 
 [obj_3931]
 certlink=reinitialisation_14
@@ -318,6 +332,7 @@ model=obj_3932
 2dxan=520
 iop5=Move
 desc=It's a sliding button of some kind.
+category=mm_reinit
 
 [obj_3933]
 certlink=reinitialisation_15
@@ -332,6 +347,7 @@ model=obj_3934
 2dxan=520
 iop5=Move
 desc=It's a sliding button of some kind.
+category=mm_reinit
 
 [obj_3935]
 certlink=reinitialisation_16
@@ -346,6 +362,7 @@ model=obj_3936
 2dxan=520
 iop5=Move
 desc=It's a sliding button of some kind.
+category=mm_reinit
 
 [obj_3937]
 certlink=reinitialisation_17
@@ -360,6 +377,7 @@ model=obj_3938
 2dxan=520
 iop5=Move
 desc=It's a sliding button of some kind.
+category=mm_reinit
 
 [obj_3939]
 certlink=reinitialisation_18
@@ -374,6 +392,7 @@ model=obj_3940
 2dxan=520
 iop5=Move
 desc=It's a sliding button of some kind.
+category=mm_reinit
 
 [obj_3941]
 certlink=reinitialisation_19
@@ -388,6 +407,7 @@ model=obj_3942
 2dxan=520
 iop5=Move
 desc=It's a sliding button of some kind.
+category=mm_reinit
 
 [obj_3943]
 certlink=reinitialisation_20
@@ -402,6 +422,7 @@ model=obj_3944
 2dxan=520
 iop5=Move
 desc=It's a sliding button of some kind.
+category=mm_reinit
 
 [obj_3945]
 certlink=reinitialisation_21
@@ -416,6 +437,7 @@ model=obj_3946
 2dxan=520
 iop5=Move
 desc=It's a sliding button of some kind.
+category=mm_reinit
 
 [obj_3947]
 certlink=reinitialisation_22
@@ -430,6 +452,7 @@ model=obj_3948
 2dxan=520
 iop5=Move
 desc=It's a sliding button of some kind.
+category=mm_reinit
 
 [obj_3949]
 certlink=reinitialisation_23
@@ -444,6 +467,7 @@ model=obj_3950
 2dxan=520
 iop5=Move
 desc=It's a sliding button of some kind.
+category=mm_reinit
 
 [obj_3951]
 certlink=reinitialisation_24
@@ -458,6 +482,7 @@ model=obj_3902
 2dzoom=2180
 2dxan=520
 iop5=Move
+category=mm_reinit_inactive
 
 [obj_3953]
 certlink=reinitialisation_01_inactive
@@ -472,6 +497,7 @@ model=obj_3906
 2dzoom=2180
 2dxan=520
 iop5=Move
+category=mm_reinit_inactive
 
 [obj_3955]
 certlink=reinitialisation_02_inactive
@@ -486,6 +512,7 @@ model=obj_3908
 2dzoom=2180
 2dxan=520
 iop5=Move
+category=mm_reinit_inactive
 
 [obj_3957]
 certlink=reinitialisation_03_inactive
@@ -500,6 +527,7 @@ model=obj_3910
 2dzoom=2180
 2dxan=520
 iop5=Move
+category=mm_reinit_inactive
 
 [obj_3959]
 certlink=reinitialisation_04_inactive
@@ -514,6 +542,7 @@ model=obj_3912
 2dzoom=2180
 2dxan=520
 iop5=Move
+category=mm_reinit_inactive
 
 [obj_3961]
 certlink=reinitialisation_05_inactive
@@ -528,6 +557,7 @@ model=obj_3914
 2dzoom=2180
 2dxan=520
 iop5=Move
+category=mm_reinit_inactive
 
 [obj_3963]
 certlink=reinitialisation_06_inactive
@@ -542,6 +572,7 @@ model=obj_3916
 2dzoom=2180
 2dxan=520
 iop5=Move
+category=mm_reinit_inactive
 
 [obj_3965]
 certlink=reinitialisation_07_inactive
@@ -556,6 +587,7 @@ model=obj_3918
 2dzoom=2180
 2dxan=520
 iop5=Move
+category=mm_reinit_inactive
 
 [obj_3967]
 certlink=reinitialisation_08_inactive
@@ -570,6 +602,7 @@ model=obj_3920
 2dzoom=2180
 2dxan=520
 iop5=Move
+category=mm_reinit_inactive
 
 [obj_3969]
 certlink=reinitialisation_09_inactive
@@ -584,6 +617,7 @@ model=obj_3922
 2dzoom=2180
 2dxan=520
 iop5=Move
+category=mm_reinit_inactive
 
 [obj_3971]
 certlink=reinitialisation_10_inactive
@@ -598,6 +632,7 @@ model=obj_3924
 2dzoom=2180
 2dxan=520
 iop5=Move
+category=mm_reinit_inactive
 
 [obj_3973]
 certlink=reinitialisation_11_inactive
@@ -612,6 +647,7 @@ model=obj_3926
 2dzoom=2180
 2dxan=520
 iop5=Move
+category=mm_reinit_inactive
 
 [obj_3975]
 certlink=reinitialisation_12_inactive
@@ -626,6 +662,7 @@ model=obj_3928
 2dzoom=2180
 2dxan=520
 iop5=Move
+category=mm_reinit_inactive
 
 [obj_3977]
 certlink=reinitialisation_13_inactive
@@ -640,6 +677,7 @@ model=obj_3930
 2dzoom=2180
 2dxan=520
 iop5=Move
+category=mm_reinit_inactive
 
 [obj_3979]
 certlink=reinitialisation_14_inactive
@@ -654,6 +692,7 @@ model=obj_3932
 2dzoom=2180
 2dxan=520
 iop5=Move
+category=mm_reinit_inactive
 
 [obj_3981]
 certlink=reinitialisation_15_inactive
@@ -668,6 +707,7 @@ model=obj_3934
 2dzoom=2180
 2dxan=520
 iop5=Move
+category=mm_reinit_inactive
 
 [obj_3983]
 certlink=reinitialisation_16_inactive
@@ -682,6 +722,7 @@ model=obj_3936
 2dzoom=2180
 2dxan=520
 iop5=Move
+category=mm_reinit_inactive
 
 [obj_3985]
 certlink=reinitialisation_17_inactive
@@ -696,6 +737,7 @@ model=obj_3938
 2dzoom=2180
 2dxan=520
 iop5=Move
+category=mm_reinit_inactive
 
 [obj_3987]
 certlink=reinitialisation_18_inactive
@@ -710,6 +752,7 @@ model=obj_3940
 2dzoom=2180
 2dxan=520
 iop5=Move
+category=mm_reinit_inactive
 
 [obj_3989]
 certlink=reinitialisation_19_inactive
@@ -724,6 +767,7 @@ model=obj_3942
 2dzoom=2180
 2dxan=520
 iop5=Move
+category=mm_reinit_inactive
 
 [obj_3991]
 certlink=reinitialisation_20_inactive
@@ -738,6 +782,7 @@ model=obj_3944
 2dzoom=2180
 2dxan=520
 iop5=Move
+category=mm_reinit_inactive
 
 [obj_3993]
 certlink=reinitialisation_21_inactive
@@ -752,6 +797,7 @@ model=obj_3946
 2dzoom=2180
 2dxan=520
 iop5=Move
+category=mm_reinit_inactive
 
 [obj_3995]
 certlink=reinitialisation_22_inactive
@@ -766,6 +812,7 @@ model=obj_3948
 2dzoom=2180
 2dxan=520
 iop5=Move
+category=mm_reinit_inactive
 
 [obj_3997]
 certlink=reinitialisation_23_inactive
@@ -780,6 +827,7 @@ model=obj_3950
 2dzoom=2180
 2dxan=520
 iop5=Move
+category=mm_reinit_inactive
 
 [obj_3999]
 certlink=reinitialisation_24_inactive

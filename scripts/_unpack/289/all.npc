@@ -1305,7 +1305,7 @@ op3=Harpoon
 op4=hidden
 op5=hidden
 
-[mm_waydar_multi]
+[mm_daero]
 name=Daero
 model1=model_2909_npc
 model2=model_2903_npc
@@ -1319,7 +1319,7 @@ op1=Talk-to
 vislevel=hide
 head1=gnome_chat_model_22
 
-[mm_lumdo_multi]
+[mm_waydar]
 name=Waydar
 model1=model_2909_npc
 model2=model_2908_npc
@@ -1484,7 +1484,7 @@ readyanim=midget_ready
 vislevel=hide
 head1=gnome_chat_head
 
-[npc_1419]
+[mm_lumdo]
 name=Lumdo
 model1=model_2914_npc
 model2=npc_1414
@@ -1511,6 +1511,7 @@ readyanim=m_assassin_ready
 op1=Talk-to
 vislevel=hide
 head1=npc_1420_head
+timer=1
 
 [mm_karam_final_battle]
 name=Karam
@@ -1550,6 +1551,9 @@ readyanim=midget_ready
 op1=Talk-to
 vislevel=hide
 head1=gnome_chat_head
+defaultmode=none
+wanderrange=0
+timer=30
 
 [mm_waymottin]
 name=Waymottin
@@ -1566,6 +1570,9 @@ readyanim=midget_ready
 op1=Talk-to
 vislevel=hide
 head1=gnome_chat_head
+defaultmode=none
+wanderrange=0
+timer=30
 
 [mm_zooknock]
 name=Zooknock
@@ -1586,6 +1593,7 @@ readyanim=midget_ready
 op1=Talk-to
 vislevel=hide
 head1=npc_1425_head
+timer=30
 
 [mm_zooknock_final_battle]
 name=Zooknock
@@ -1652,6 +1660,9 @@ resizev=180
 op1=Talk-to
 vislevel=hide
 head1=npc_1429_head
+huntmode=dugopul
+huntrange=10
+attackrange=10
 
 [npc_1430]
 name=Salenab
@@ -1673,6 +1684,14 @@ readyanim=m_gorilla_ready
 op1=Talk-to
 vislevel=hide
 head1=npc_1431_head
+attackrange=1
+maxrange=1
+wanderrange=2
+maxrange=20
+moverestrict=indoors
+timer=2
+blockwalk=all
+param=next_npc_type,mm_aberab
 
 [mm_aberab]
 name=Aberab
@@ -1685,6 +1704,14 @@ readyanim=m_gorilla_ready
 op1=Talk-to
 vislevel=hide
 head1=npc_1431_head
+attackrange=1
+maxrange=1
+wanderrange=2
+maxrange=20
+moverestrict=indoors
+timer=2
+blockwalk=all
+param=next_npc_type,mm_trefaji
 
 [mm_solihib]
 name=Solihib

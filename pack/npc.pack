@@ -1405,8 +1405,8 @@
 1404=misc_rabbit
 1405=0_43_42_memberfish
 1406=0_42_42_memberfish
-1407=mm_waydar_multi
-1408=mm_lumdo_multi
+1407=mm_daero
+1408=mm_waydar
 1409=mm_waydar_cutscene
 1410=npc_1410
 1411=mm_garkor
@@ -1417,7 +1417,7 @@
 1416=mm_bunkdo_final_battle
 1417=mm_carado
 1418=mm_carado_final_battle
-1419=npc_1419
+1419=mm_lumdo
 1420=mm_karam
 1421=mm_karam_final_battle
 1422=mm_karam_talker

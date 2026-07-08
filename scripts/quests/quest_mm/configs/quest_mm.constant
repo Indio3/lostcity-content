@@ -1,0 +1,79 @@
+^mm_not_started = 0
+^mm_started = 1
+^mm_shown_seal = 2
+^mm_arrived_atoll = 3
+
+// mm_narnode
+^narnode_worried = 1
+^narnode_spoken = 2
+^narnode_given_seal = 3
+^narnode_returned_shipyard = 4
+^narnode_mentioned_caranock = 5
+^narnode_southern_winds = 6
+^narnode_received_orders = 7
+
+// mm_caranock
+^mm_asked_caranock = 1
+^mm_caranock_p2 = 2
+^mm_caranock_p3 = 3
+
+// mm_daero
+^daero_found = 1
+^daero_given_orders = 2
+^daero_learnt_mission = 3
+^daero_left_grandtree = 4
+^daero_started_reinit = 5
+^daero_reinit_complete = 6
+^daero_complete = 7
+
+// mm_waydar
+^waydar_arrived_island = 1
+
+// mm_lumdo
+^lumdo_proof = 1
+^lumdo_wont_take = 2
+^lumdo_travelled = 3
+
+// mm_zooknock
+^zooknock_found = 1
+^zooknock_told_story = 2
+^zooknock_learned_story = 3
+^zooknock_told_mission = 4
+^zooknock_need_items = 5
+
+// mm_lumo
+^lumo_spoken = 1
+
+// mm_karam
+^karam_spoken = 1
+
+// mm_garkor
+^garkor_spoken = 1
+^garkor_speak_zooknock = 2
+
+// mm_monkey_child
+^monkey_child_spoke = 1
+^monkey_child_asked_who = 2
+^monkey_child_told_uncle = 3
+^monkey_child_learned_toy = 4
+^monkey_child_finding_bananas = 5
+^monkey_child_given_bananas = 6
+^monkey_child_received_talisman = 7
+
+// mm_bits
+^mm_spoke_foreman = 0
+^mm_daero_read_1st_menu = 1
+^mm_daero_read_2nd_menu = 2
+^mm_daero_read_3rd_menu = 3
+^mm_given_gold_bar = 4
+^mm_given_mould = 5
+^mm_given_dentures = 6
+^mm_given_talisman = 7
+^mm_made_amulet = 9
+^mm_made_talisman = 10
+^mm_child_has_toy = 11
+^mm_lost_toy = 12
+^mm_child_done_crying = 13
+^mm_bones_type_low = 14
+^mm_bones_type_high = 17
+^mm_paid_glough = 30

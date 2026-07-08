@@ -1,0 +1,144 @@
+[label,mm_narnode]
+if(%mm_narnode = ^narnode_received_orders) {
+    if(%mm_daero < ^daero_given_orders & inv_total(inv, mm_narnode_orders) = 0) {
+        ~chatplayer("<p,shifty>Excuse me...");
+        ~chatnpc("<p,quiz>Yes, adventurer?");
+        ~chatplayer("<p,shifty>You know those orders you gave me -");
+        ~chatnpc("<p,neutral>You've lost them?");
+        ~chatplayer("<p,shifty>Yes - how did you know?");
+        ~chatnpc("<p,neutral>Oh, it often happens. Luckily I had the foresight to write in a secret code on self-destructing paper.");
+        ~chatnpc("<p,neutral>Here, take a another.");
+        if_close;
+        mes("Narnode begins to write strange glyphs on a scroll of paper.");
+        p_delay(3);
+        %mm_narnode = ^narnode_received_orders;
+        inv_add(inv, mm_narnode_orders, 1);
+        ~objbox(mm_narnode_orders, "Narnode hands you some handwritten orders.", 250, 0, 0);
+        return;
+    }
+    ~chatnpc("<p,quiz>How goes the mission?");
+    ~chatplayer("<p,neutral>I'm still working on it...");
+    return;
+}
+if(%mm_narnode = ^narnode_southern_winds) {
+    ~chatnpc("<p,neutral>Welcome back, adventurer.");
+    ~chatnpc("<p,neutral>Do you believe Caranock's information about the southerly winds?");
+    @mm_narnode_p5;
+} else if(%mm_narnode = ^narnode_mentioned_caranock) {
+    ~chatnpc("<p,neutral>Welcome back, adventurer.");
+    ~chatnpc("<p,neutral>Did you find out anything about my 10th squad?");
+    @mm_narnode_p5;
+} else if(%mm_narnode = ^narnode_returned_shipyard) {
+    ~chatnpc("<p,neutral>Welcome back, adventurer.");
+    ~chatnpc("<p,neutral>What did you find at the shipyard?");
+    @mm_narnode_p4;
+}
+else if(%mm_narnode = ^narnode_worried) @mm_narnode_worried;
+else if(%mm_narnode = ^narnode_spoken) @mm_narnode_respeak;
+else if(%mm_narnode = ^narnode_given_seal) @mm_narnode_returned;
+~chatnpc("<p,happy>Adventurer! It is good to see you again.");
+~chatplayer("<p,neutral>And you too, King. How fares the tree?");
+~chatnpc("<p,shifty>The tree? It is fine, as it has always been since we foiled Glough's plans.");
+~chatplayer("<p,quiz>Good. What ever did happen to Glough?");
+~chatnpc("<p,shifty>Oh, I forced him to resign. I have now appointed a new Head Tree Guardian, Daero. He is learning quickly and serves me well.");
+%mm_narnode = ^narnode_worried;
+@mm_narnode_worried;
+
+[label,mm_narnode_worried]
+~chatplayer("<p,quiz>King, you look worried. Is anything the matter?");
+~update_bas; // bas update here??
+~chatnpc("<p,shifty>Nothing in particular ... Well actually, yes - there is.");
+~chatplayer("<p,quiz>What is it?");
+~chatnpc("<p,shifty>Well, do you remember Glough's ship building facilities in Karamja?");
+~chatplayer("<p,quiz>Yes, they were on the eastern coast. What of them?");
+~chatnpc("<p,neutral>After you defeated Glough's demon I sent an envoy of my Royal Guard, the 10th squad, to oversee the decommission of the shipyard. They were ordered to use force if necessary.");
+~chatplayer("<p,quiz>I see ... Were they successful?");
+~chatnpc("<p,neutral>I ... I don't know. I have heard nothing from them. I do not even know if they reached the shipyard!");
+~chatplayer("<p,neutral>It is a long way...");
+~chatnpc("<p,neutral>But I need to know what happened. These are elite soldiers - their disappearance cannot simply be ignored. I cannot wait any longer.");
+%mm_narnode = ^narnode_spoken;
+~chatnpc("<p,quiz>And so I ask you: would you visit Glough's old shipyard in Karamja and find out if the 10th squad ever managed to reach?");
+@mm_narnode_start_mm;
+
+[label,mm_narnode_respeak]
+~chatnpc("<p,quiz>Are you ready to investigate the shipyard for me?");
+~chatplayer("<p,neutral>What do I have to do?");
+~chatnpc("<p,neutral>As I said, they were sent to oversee the decommission of the ship building facilities, but I have heard nothing from them.");
+@mm_narnode_start_mm;
+
+[label,mm_narnode_start_mm]
+switch_int(~p_choice2_header("Yes", 1, "No", 2, "Start Monkey Madness?")) {
+    case 1 :
+        %mm_main = ^mm_started;
+        ~chatplayer("<p,neutral>Ok, I'll do it.");
+        %mm_narnode = ^narnode_given_seal;
+        inv_add(inv, mm_gnome_royal_seal, 1);
+        ~objbox(mm_gnome_royal_seal, "Narnode hands you a copy of the Royal Seal.", 250, 0, 0);
+        ~chatnpc("<p,neutral>Thank you very much. You may need this Royal Seal to identify yourself as my envoy.");
+        ~chatnpc("<p,neutral>Please report to me as soon as you have any information.");
+        if_close;
+        p_delay(0);
+        @mm_ch1;
+    case 2 :
+        ~chatplayer("<p,neutral>I'm afraid I am too busy right now.");
+        ~chatnpc("<p,neutral>As you wish. Return to me when you have the time.");
+}
+
+[label,mm_narnode_returned]
+~chatnpc("<p,neutral>Welcome back, adventurer.");
+if(%mm_caranock > ^mm_asked_caranock) { // dont need to go through full caranock dialogue
+    ~chatplayer("<p,neutral>Hello. I investigated the shipyard.");
+    %mm_narnode = ^narnode_returned_shipyard;
+    ~chatnpc("<p,neutral>Thank you for doing this. What did you find?");
+    @mm_narnode_p4;
+}
+def_int $op;
+if(~obj_gettotal(mm_gnome_royal_seal) = 0) $op = ~p_choice4("What am I meant to do?", 1, "How did the 10th squad travel?", 2, "I've lost my copy of the Royal Seal...", 4, "I'll be back later.", 3);
+else $op = ~p_choice3("What am I meant to do?", 1, "How did the 10th squad travel?", 2, "I'll be back later.", 3);
+
+while($op ! null) {
+    if($op = 1) {
+        ~chatplayer("<p,quiz>What am I meant to do?");
+        ~chatnpc("<p,neutral>Go to Glough's old shipyard on the eastern coast of Karamja. Find out what happened to the 10th squad of my Royal Guard.");
+        ~chatnpc("<p,neutral>As I said, they were sent to oversee the decommission of the ship building facilities, but I have heard nothing from them.");
+    } else if($op = 2) {
+        ~chatplayer("<p,quiz>How did the 10th squad travel?");
+        ~chatnpc("<p,neutral>They would have each flown a Gnome Glider.");
+    } else if ($op = 4) {
+        ~chatplayer("<p,quiz>I've lost my copy of the Royal Seal...");
+        ~chatnpc("<p,angry>What?! Do you realise the consequences if it falls into the wrong hands?");
+        ~chatnpc("<p,neutral>However, this mission is of paramount importance. I shall give you a spare in the meantime.");
+        inv_add(inv, mm_gnome_royal_seal, 1);
+        ~objbox(mm_gnome_royal_seal, "Narnode hands you a copy of the Royal Seal.", 250, 0, 0);
+    } else if($op = 3) {
+        ~chatplayer("<p,neutral>I'll be back later.");
+        return;
+    }
+    // doesnt check bank
+    if(inv_total(inv, mm_gnome_royal_seal) = 0) $op = ~p_choice4("What am I meant to do?", 1, "How did the 10th squad travel?", 2, "I've lost my copy of the Royal Seal...", 4, "I'll be back later.", 3);
+    else $op = ~p_choice3("What am I meant to do?", 1, "How did the 10th squad travel?", 2, "I'll be back later.", 3);
+}
+
+[label,mm_narnode_p4]
+~chatplayer("<p,neutral>I met a Gnome who goes by the name of Caranock. Do you recognise it?");
+~chatnpc("<p,neutral>The name sounds a little familiar, but it is nobody I know personally.");
+%mm_narnode = ^narnode_mentioned_caranock;
+~chatplayer("<p,neutral>He calls himself a Gnome Liaison Officer. He seemed a little ... odd");
+~chatnpc("<p,neutral>Never mind that - did you find anything out about my 10th squad?");
+@mm_narnode_p5;
+
+[label,mm_narnode_p5]
+%mm_narnode = ^narnode_southern_winds;
+~chatplayer("<p,neutral>Caranock suggested they were blown off course by extreme southern winds.");
+~chatnpc("<p,neutral>Do you believe him?");
+@mm_narnode_p6;
+
+[label,mm_narnode_p6]
+~chatplayer("<p,neutral>I don't have any other information right now.");
+~chatnpc("<p,neutral>Very well. I will now prepare some orders. You must convey them to my new High Tree Guardian, Daero.");
+if_close;
+mes("Narnode begins to write strange glyphs on a scroll of paper.");
+p_delay(3);
+%mm_narnode = ^narnode_received_orders;
+inv_add(inv, mm_narnode_orders, 1);
+~objbox(mm_narnode_orders, "Narnode hands you some handwritten orders.", 250, 0, 0);

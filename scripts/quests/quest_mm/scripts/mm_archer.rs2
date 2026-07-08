@@ -1,0 +1,37 @@
+[ai_queue1,mm_posted_archer] ~npc_default_retaliate_ap;
+[ai_opplayer2,mm_posted_archer] npc_setmode(applayer2);
+[ai_applayer2,mm_posted_archer]
+// archers can not attack you in the long grass, they will still try to though
+if(loc_find(coord, mm_long_jungle_grass1) = true | loc_find(coord, mm_long_jungle_grass2) = true | loc_find(coord, mm_long_jungle_grass3) = true) {
+    return;
+}
+~npc_rangeattack;
+
+[ai_queue1,mm_ravine_archer] ~npc_default_retaliate_ap;
+[ai_opplayer2,mm_ravine_archer] npc_setmode(applayer2);
+[ai_applayer2,mm_ravine_archer]
+if(random(11) = 0) {
+    queue(aa_knockout, 1, 0);
+} else {
+    ~npc_rangeattack;
+}
+
+[walktrigger,clear_seq]
+anim(null, 0);
+
+[queue,aa_knockout]
+p_stopaction;
+~update_bas;
+anim(human_death, 0);
+p_delay(2);
+~fade_out;
+p_delay(3);
+walktrigger(clear_seq);
+~combat_clearqueue;
+clearqueue(aa_knockout);
+p_teleport(0_43_43_18_42);
+~fade_in;
+p_delay(4);
+%mm_jail_counter = add(%mm_jail_counter, 1);
+if_openoverlay(null);
+@lumo_jailed_dialogue;

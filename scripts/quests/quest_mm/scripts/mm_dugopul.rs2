@@ -1,0 +1,15 @@
+[ai_applayer2,mm_dugopul]
+if(%npc_action_delay > map_clock) {
+    return;
+}
+%npc_action_delay = add(map_clock, 50);
+queue(aa_guards_queue, 6, 0);
+if(p_finduid(uid) = true) {
+    if(inv_total(inv, mm_amulet_of_monkey_speak) > 0) {
+        ~chatnpc("<p,neutral>Guards! I've found a human!");
+    } else {
+        ~mm_monkeyspeak;
+    }
+}
+
+[ai_opplayer2,mm_dugopul] npc_setmode(applayer2);
