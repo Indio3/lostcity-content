@@ -459,9 +459,6 @@ data=stat_change,attack,-1,-10
 data=continue_by_autocast,false
 
 [magic_spell_crumble_undead]
-// damage was increased, xp was decreased in dec 2004 https://oldschool.runescape.wiki/w/Update:Various_Small_Changes.
-// fansites say it had a base xp of 49
-// only one fansite has the maxhit (8), it seems credible: https://web.archive.org/web/20050416144009/http://www.trillionareguild.com/runescape/magic.php
 table=magic_spell_table
 data=spell,^crumble_undead
 data=spellcom,magic:crumble_undead
