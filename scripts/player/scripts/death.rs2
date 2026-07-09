@@ -138,7 +138,7 @@ while ($i < $size) {
             inv_delslot(inv, $i);
         } else {
             if($currentitem = ikov_bootsoflightnessworn) {
-                inv_setslot(worn, oc_wearpos(ikov_bootsoflightnessworn), ikov_bootsoflightness, 1);
+                inv_setslot(inv, oc_wearpos(ikov_bootsoflightnessworn), ikov_bootsoflightness, 1);
             }
             both_dropslot(inv, coord, $i, ^lootdrop_duration);
         }
