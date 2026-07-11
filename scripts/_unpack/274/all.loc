@@ -225,15 +225,13 @@ active=no
 forcedecor=yes
 
 [mist]
-name=mist
-model=loc_4046
+model=mist
 length=2
 width=2
 anim=mist
 
 [misty]
-name=misty
-model=loc_4047
+model=misty
 length=2
 width=2
 anim=misty
@@ -1178,13 +1176,13 @@ sharelight=yes
 [castlewars_barricade]
 name=Barricade
 desc=A spiky barricade.
-model=loc_4421
+model=game_castlewars_barricade
 blockrange=no
 
 [castlewars_barricade_burning]
 name=Barricade
 desc=A spiky barricade.
-model=loc_4421
+model=game_castlewars_barricade
 model2=loc_4422
 recol1s=14628
 recol1d=11458

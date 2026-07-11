@@ -120,7 +120,7 @@ name=Moldof
 model1=man_head_dredlocks
 model2=man_jaw_long
 model3=man_torso_apron
-model4=man_arms_model_168
+model4=man_arms_thin
 model5=man_hands_basic
 model6=man_legs_viking
 model7=man_feet_viking_boots
@@ -696,7 +696,7 @@ readyanim=human_ready
 op1=Talk-to
 op2=Attack
 vislevel=1
-head1=chat_female_head_model_107
+head1=chat_female_head_hood2
 
 [misc_woman_2]
 name=Halla
@@ -732,8 +732,8 @@ model1=woman_head_dredlocks
 model2=woman_torso_thin
 model3=woman_arms_longsleeves2
 model4=woman_hands_basic
-model5=model_3332
-model6=model_439
+model5=woman_headextra_model_3332
+model6=woman_legs_model_439
 model7=woman_feet_basic
 recol1s=2340
 recol1d=8420
@@ -780,7 +780,7 @@ desc=He's strong to the finish, because he eats cabbage.
 walkanim=human_walk_f,human_walk_b,human_walk_l,human_walk_r
 readyanim=human_ready
 op1=Talk-to
-head1=chat_male_head_model_48
+head1=chat_male_head_hood2
 head2=chat_male_jaw_split
 
 [misc_woman_4]
@@ -1004,7 +1004,7 @@ readyanim=human_staffready
 op1=Talk-to
 op2=Attack
 vislevel=2
-head1=chat_male_head_model_48
+head1=chat_male_head_hood2
 head2=chat_male_jaw_split
 
 [misc_fish_monger]
@@ -1106,7 +1106,7 @@ name=Miner Magnus
 model1=man_head_shorthair
 model2=man_jaw_moustache
 model3=man_torso_fat
-model4=man_arms_model_168
+model4=man_arms_thin
 model5=man_hands_gloves
 model6=man_legs_viking
 model7=man_feet_viking_boots
@@ -1305,7 +1305,7 @@ op3=Harpoon
 op4=hidden
 op5=hidden
 
-[mm_waydar_multi]
+[mm_waydar]
 name=Daero
 model1=model_2909_npc
 model2=model_2903_npc
@@ -1319,7 +1319,7 @@ op1=Talk-to
 vislevel=hide
 head1=gnome_chat_model_22
 
-[mm_lumdo_multi]
+[mm_lumdo]
 name=Waydar
 model1=model_2909_npc
 model2=model_2908_npc
@@ -1655,7 +1655,7 @@ head1=npc_1429_head
 
 [npc_1430]
 name=Salenab
-model1=model_3004_npc
+model1=npc_monkey
 desc=It's Salenab the monkey.
 walkanim=monkey_walk
 readyanim=monkey_ready
@@ -1664,27 +1664,27 @@ vislevel=hide
 
 [mm_trefaji]
 name=Trefaji
-model1=npc_1431
-model2=npc_1431i2
+model1=quest_mm_npc_gorilla_body_basic
+model2=quest_mm_npc_gorilla_head_basic
 desc=A huge brutish gorilla. He looks like a jail guard.
 size=2
 walkanim=m_gorilla_walk
 readyanim=m_gorilla_ready
 op1=Talk-to
 vislevel=hide
-head1=npc_1431_head
+head1=chat_main_gorilla_basic
 
 [mm_aberab]
 name=Aberab
-model1=npc_1431
-model2=npc_1431i2
+model1=quest_mm_npc_gorilla_body_basic
+model2=quest_mm_npc_gorilla_head_basic
 desc=A huge brutish gorilla. He looks like a jail guard.
 size=2
 walkanim=m_gorilla_walk
 readyanim=m_gorilla_ready
 op1=Talk-to
 vislevel=hide
-head1=npc_1431_head
+head1=chat_main_gorilla_basic
 
 [mm_solihib]
 name=Solihib
@@ -1724,7 +1724,7 @@ head1=npc_1429_head
 
 [mm_tutab]
 name=Tutab
-model1=npc_1435
+model1=quest_mm_npc_monkey_body_basic
 model2=npc_1429i2
 recol1s=5285
 recol1d=11627
@@ -1775,7 +1775,7 @@ head1=npc_1437_head
 [mm_hafuba]
 name=Hafuba
 model1=npc_1438
-model2=npc_1438i2
+model2=quest_mm_npc_gorilla_head_beard
 model3=npc_1438i3
 desc=A huge and well-dressed gorilla. He looks like the head priest.
 size=2
@@ -1790,7 +1790,7 @@ head1=npc_1438_head
 [mm_denadu]
 name=Denadu
 model1=npc_1439
-model2=npc_1439i2
+model2=quest_mm_npc_monkey_head_basic
 model3=npc_1439i3
 desc=A small well dressed monkey clasping a mace. He looks like a priest.
 walkanim=m_monkey_walk
@@ -1799,12 +1799,12 @@ resizeh=180
 resizev=180
 op1=Talk-to
 vislevel=hide
-head1=npc_1439_head
+head1=chat_main_monkey_basic
 
 [mm_lofu]
 name=Lofu
 model1=npc_1439
-model2=npc_1439i2
+model2=quest_mm_npc_monkey_head_basic
 model3=npc_1439i3
 desc=A small well dressed monkey clasping a mace. He looks like a priest.
 walkanim=m_monkey_walk
@@ -1813,12 +1813,12 @@ resizeh=180
 resizev=180
 op1=Talk-to
 vislevel=hide
-head1=npc_1439_head
+head1=chat_main_monkey_basic
 
 [mm_kruk]
 name=Kruk
-model1=npc_1441
-model2=npc_1441i2
+model1=quest_mm_npc_monkey_body_ninja
+model2=quest_mm_npc_monkey_head_ninja
 model3=npc_1441i3
 desc=A large ninja monkey wielding two scimitars.
 walkanim=m_monkey_dh_walk
@@ -1827,12 +1827,12 @@ resizeh=180
 resizev=180
 op1=Talk-to
 vislevel=149
-head1=npc_1441_head
+head1=chat_main_monkey_ninja
 
 [mm_duke]
 name=Duke
-model1=npc_1441
-model2=npc_1441i2
+model1=quest_mm_npc_monkey_body_ninja
+model2=quest_mm_npc_monkey_head_ninja
 model3=npc_1441i3
 desc=A large ninja monkey wielding two scimitars.
 walkanim=m_monkey_dh_walk
@@ -1841,12 +1841,12 @@ resizeh=180
 resizev=180
 op2=Attack
 vislevel=149
-head1=npc_1441_head
+head1=chat_main_monkey_ninja
 
 [mm_oipuis]
 name=Oipuis
-model1=npc_1441
-model2=npc_1441i2
+model1=quest_mm_npc_monkey_body_ninja
+model2=quest_mm_npc_monkey_head_ninja
 model3=npc_1441i3
 desc=A large ninja monkey wielding two scimitars.
 walkanim=m_monkey_dh_walk
@@ -1855,12 +1855,12 @@ resizeh=180
 resizev=180
 op2=Attack
 vislevel=149
-head1=npc_1441_head
+head1=chat_main_monkey_ninja
 
 [mm_uyoro]
 name=Uyoro
-model1=npc_1441
-model2=npc_1441i2
+model1=quest_mm_npc_monkey_body_ninja
+model2=quest_mm_npc_monkey_head_ninja
 model3=npc_1441i3
 desc=A large ninja monkey wielding two scimitars.
 walkanim=m_monkey_dh_walk
@@ -1869,12 +1869,12 @@ resizeh=180
 resizev=180
 op2=Attack
 vislevel=149
-head1=npc_1441_head
+head1=chat_main_monkey_ninja
 
 [mm_ouhai]
 name=Ouhai
-model1=npc_1441
-model2=npc_1441i2
+model1=quest_mm_npc_monkey_body_ninja
+model2=quest_mm_npc_monkey_head_ninja
 model3=npc_1441i3
 desc=A large ninja monkey wielding two scimitars.
 walkanim=m_monkey_dh_walk
@@ -1883,12 +1883,12 @@ resizeh=180
 resizev=180
 op2=Attack
 vislevel=149
-head1=npc_1441_head
+head1=chat_main_monkey_ninja
 
 [mm_uodai]
 name=Uodai
-model1=npc_1441
-model2=npc_1441i2
+model1=quest_mm_npc_monkey_body_ninja
+model2=quest_mm_npc_monkey_head_ninja
 model3=npc_1441i3
 desc=A large ninja monkey wielding two scimitars.
 walkanim=m_monkey_dh_walk
@@ -1897,12 +1897,12 @@ resizeh=180
 resizev=180
 op2=Attack
 vislevel=149
-head1=npc_1441_head
+head1=chat_main_monkey_ninja
 
 [mm_padulah]
 name=Padulah
-model1=npc_1441
-model2=npc_1441i2
+model1=quest_mm_npc_monkey_body_ninja
+model2=quest_mm_npc_monkey_head_ninja
 model3=npc_1447
 desc=A scimitar wielding ninja monkey. He looks like he is guarding something.
 walkanim=m_monkey_walk
@@ -1910,7 +1910,7 @@ readyanim=m_monkey_ready
 op1=Talk-to
 op2=Attack
 vislevel=149
-head1=npc_1441_head
+head1=chat_main_monkey_ninja
 
 [mm_awowogei_cutscene]
 name=Awowogei
@@ -1926,7 +1926,7 @@ head1=npc_1448_head
 [mm_uwogo]
 name=Uwogo
 model1=npc_1434
-model2=npc_1439i2
+model2=quest_mm_npc_monkey_head_basic
 desc=A smartly clothed large monkey.
 walkanim=m_monkey_walk
 readyanim=m_monkey_ready
@@ -1934,12 +1934,12 @@ resizeh=180
 resizev=180
 op1=Talk-to
 vislevel=hide
-head1=npc_1439_head
+head1=chat_main_monkey_basic
 
 [mm_murowoi]
 name=Muruwoi
 model1=npc_1434
-model2=npc_1439i2
+model2=quest_mm_npc_monkey_head_basic
 desc=A smartly clothed large monkey.
 walkanim=m_monkey_walk
 readyanim=m_monkey_ready
@@ -1947,11 +1947,11 @@ resizeh=180
 resizev=180
 op1=Talk-to
 vislevel=hide
-head1=npc_1439_head
+head1=chat_main_monkey_basic
 
 [mm_sleeping_monkey_guard]
 name=Sleeping Monkey
-model1=npc_1435
+model1=quest_mm_npc_monkey_body_basic
 model2=npc_1429i2
 model3=npc_1451
 desc=A rather sleepy looking guard, wielding some kind of bat.
@@ -2006,124 +2006,124 @@ head1=npc_1437_head
 
 [mm_monkey_guard]
 name=Monkey Guard
-model1=npc_1441
-model2=npc_1441i2
+model1=quest_mm_npc_monkey_body_ninja
+model2=quest_mm_npc_monkey_head_ninja
 model3=npc_1447
 desc=A scimitar wielding ninja monkey.
 walkanim=m_monkey_walk
 readyanim=m_monkey_ready
 op2=Attack
 vislevel=149
-head1=npc_1441_head
+head1=chat_main_monkey_ninja
 
 [mm_monkey_archer]
 name=Monkey Archer
-model1=npc_1441
-model2=npc_1441i2
+model1=quest_mm_npc_monkey_body_ninja
+model2=quest_mm_npc_monkey_head_ninja
 model3=npc_1456
 desc=A bow wielding ninja monkey.
 walkanim=m_monkey_walk
 readyanim=m_monkey_ready
 op2=Attack
 vislevel=86
-head1=npc_1441_head
+head1=chat_main_monkey_ninja
 
 [mm_ravine_archer]
 name=Monkey Archer
-model1=npc_1441
-model2=npc_1441i2
+model1=quest_mm_npc_monkey_body_ninja
+model2=quest_mm_npc_monkey_head_ninja
 model3=npc_1456
 desc=A bow wielding ninja monkey. It looks particularly dangerous.
 walkanim=m_monkey_walk
 readyanim=m_monkey_ready
 op2=Attack
 vislevel=86
-head1=npc_1441_head
+head1=chat_main_monkey_ninja
 
 [mm_posted_archer]
 name=Monkey Archer
-model1=npc_1441
-model2=npc_1441i2
+model1=quest_mm_npc_monkey_body_ninja
+model2=quest_mm_npc_monkey_head_ninja
 model3=npc_1456
 desc=A bow wielding ninja monkey.
 walkanim=m_monkey_walk
 readyanim=m_monkey_ready
 op2=Attack
 vislevel=86
-head1=npc_1441_head
+head1=chat_main_monkey_ninja
 
 [mm_religious_guard]
 name=Monkey Guard
-model1=npc_1459
-model2=npc_1431i2
+model1=quest_mm_npc_gorilla_body_guard
+model2=quest_mm_npc_gorilla_head_basic
 desc=A huge brutish gorilla armoured with dangerous looking vambraces.
 size=2
 walkanim=m_gorilla_walk
 readyanim=m_gorilla_ready
 op2=Attack
 vislevel=167
-head1=npc_1431_head
+head1=chat_main_gorilla_basic
 
 [mm_religious_trapdoor_guard]
 name=Monkey Guard
-model1=npc_1459
-model2=npc_1438i2
+model1=quest_mm_npc_gorilla_body_guard
+model2=quest_mm_npc_gorilla_head_beard
 desc=A huge brutish gorilla armoured with dangerous looking vambraces.
 size=2
 walkanim=m_gorilla_walk
 readyanim=m_gorilla_ready
 op2=Attack
 vislevel=167
-head1=npc_1460_head
+head1=chat_main_gorilla_beard
 
 [mm_elder_guard_1]
 name=Elder Guard
-model1=npc_1431
-model2=npc_1438i2
+model1=quest_mm_npc_gorilla_body_basic
+model2=quest_mm_npc_gorilla_head_beard
 desc=A huge brutish gorilla stands here, blocking the way.
 size=2
 walkanim=m_gorilla_walk
 readyanim=m_gorilla_ready
 op1=Talk-to
 vislevel=hide
-head1=npc_1460_head
+head1=chat_main_gorilla_beard
 
 [mm_elder_guard_2]
 name=Elder Guard
-model1=npc_1431
-model2=npc_1438i2
+model1=quest_mm_npc_gorilla_body_basic
+model2=quest_mm_npc_gorilla_head_beard
 desc=A huge brutish gorilla stands here, blocking the way.
 size=2
 walkanim=m_gorilla_walk
 readyanim=m_gorilla_ready
 op1=Talk-to
 vislevel=hide
-head1=npc_1460_head
+head1=chat_main_gorilla_beard
 
 [mm_zoo_monkey]
 name=Monkey
-model1=model_3004_npc
+model1=npc_monkey
 desc=This monkey seems like it might want to talk!
 walkanim=monkey_walk
 readyanim=monkey_ready
 op1=Talk-to
 vislevel=3
-head1=npc_1463_head
+head1=chat_main_monkey_original
 
 [mm_freed_zoo_monkey]
 name=Monkey
-model1=model_3004_npc
+model1=npc_monkey
 desc=This poor pet monkey looks very lost.
 walkanim=monkey_walk
 readyanim=monkey_ready
 op1=Talk-to
 vislevel=3
-head1=npc_1463_head
+head1=chat_main_monkey_original
 
 [mm_zombie_monkey_large]
 name=Monkey Zombie
-model1=npc_1435
-model2=npc_1439i2
+model1=quest_mm_npc_monkey_body_basic
+model2=quest_mm_npc_monkey_head_basic
 recol1s=5285
 recol1d=7592
 recol2s=15749
@@ -2141,8 +2141,8 @@ vislevel=98
 
 [mm_zombie_monkey_large_guard]
 name=Monkey Zombie
-model1=npc_1435
-model2=npc_1439i2
+model1=quest_mm_npc_monkey_body_basic
+model2=quest_mm_npc_monkey_head_basic
 recol1s=5285
 recol1d=7592
 recol2s=15749
@@ -2160,8 +2160,8 @@ vislevel=129
 
 [mm_zombie_monkey_small]
 name=Monkey Zombie
-model1=npc_1435
-model2=npc_1439i2
+model1=quest_mm_npc_monkey_body_basic
+model2=quest_mm_npc_monkey_head_basic
 recol1s=5285
 recol1d=7592
 recol2s=15749
@@ -2178,7 +2178,7 @@ vislevel=82
 [mm_bonzara]
 name=Bonzara
 model1=npc_1439
-model2=npc_1439i2
+model2=quest_mm_npc_monkey_head_basic
 model3=npc_1439i3
 recol1s=24276
 recol1d=13646
@@ -2191,7 +2191,7 @@ resizeh=180
 resizev=180
 op1=Talk-to
 vislevel=hide
-head1=npc_1439_head
+head1=chat_main_monkey_basic
 
 [mm_monkey_minder]
 name=Monkey Minder
@@ -2353,7 +2353,7 @@ vislevel=38
 
 [mm_jungle_spider]
 name=Jungle spider
-model1=model_2884_npc
+model1=npc_giantspider
 recol1s=31393
 recol1d=19586
 recol2s=5284
@@ -2380,47 +2380,42 @@ op2=Attack
 vislevel=24
 
 [mm_transmogrification_small_ninja_monkey]
-name=mm_transmogrification_small_ninja_monkey
-model1=npc_1441
-model2=npc_1441i2
+model1=quest_mm_npc_monkey_body_ninja
+model2=quest_mm_npc_monkey_head_ninja
 walkanim=m_monkey_walk
 readyanim=m_monkey_ready
 vislevel=1
-head1=npc_1441_head
+head1=chat_main_monkey_ninja
 
 [mm_transmogrification_medium_ninja_monkey]
-name=mm_transmogrification_medium_ninja_monkey
-model1=npc_1441
-model2=npc_1441i2
+model1=quest_mm_npc_monkey_body_ninja
+model2=quest_mm_npc_monkey_head_ninja
 walkanim=m_monkey_walk
 readyanim=m_monkey_ready
 resizeh=180
 resizev=180
 vislevel=1
-head1=npc_1441_head
+head1=chat_main_monkey_ninja
 
 [mm_transmogrification_normal_gorilla]
-name=mm_transmogrification_normal_gorilla
-model1=npc_1459
-model2=npc_1431i2
+model1=quest_mm_npc_gorilla_body_guard
+model2=quest_mm_npc_gorilla_head_basic
 walkanim=m_gorilla_walk
 readyanim=m_gorilla_ready
 vislevel=1
-head1=npc_1431_head
+head1=chat_main_gorilla_basic
 
 [mm_transmogrification_bearded_gorilla]
-name=mm_transmogrification_bearded_gorilla
-model1=npc_1459
-model2=npc_1438i2
+model1=quest_mm_npc_gorilla_body_guard
+model2=quest_mm_npc_gorilla_head_beard
 walkanim=m_gorilla_walk
 readyanim=m_gorilla_ready
 vislevel=1
-head1=npc_1460_head
+head1=chat_main_gorilla_beard
 
 [mm_transmogrification_ancient_monkey]
-name=mm_transmogrification_ancient_monkey
-model1=npc_1431
-model2=npc_1438i2
+model1=quest_mm_npc_gorilla_body_basic
+model2=quest_mm_npc_gorilla_head_beard
 recol1s=9513
 recol1d=31
 recol2s=11627
@@ -2428,12 +2423,11 @@ recol2d=9513
 walkanim=m_gorilla_walk
 readyanim=m_gorilla_ready
 vislevel=1
-head1=npc_1460_head
+head1=chat_main_gorilla_beard
 
 [mm_transmogrification_small_zombie_monkey]
-name=mm_transmogrification_small_zombie_monkey
-model1=npc_1435
-model2=npc_1439i2
+model1=quest_mm_npc_monkey_body_basic
+model2=quest_mm_npc_monkey_head_basic
 recol1s=5285
 recol1d=7592
 recol2s=15749
@@ -2443,12 +2437,11 @@ recol3d=22562
 walkanim=m_zombie_walk
 readyanim=m_monkey_ready
 vislevel=1
-head1=npc_1439_head
+head1=chat_main_monkey_basic
 
 [mm_transmogrification_large_zombie_monkey]
-name=mm_transmogrification_large_zombie_monkey
-model1=npc_1435
-model2=npc_1439i2
+model1=quest_mm_npc_monkey_body_basic
+model2=quest_mm_npc_monkey_head_basic
 recol1s=5285
 recol1d=7592
 recol2s=15749
@@ -2460,18 +2453,16 @@ resizev=190
 walkanim=m_zombie_walk
 readyanim=m_monkey_ready
 vislevel=1
-head1=npc_1439_head
+head1=chat_main_monkey_basic
 
 [mm_transmogrification_normal_monkey]
-name=mm_transmogrification_normal_monkey
-model1=model_3004_npc
+model1=npc_monkey
 walkanim=monkey_walk
 readyanim=monkey_ready
 vislevel=1
-head1=npc_1463_head
+head1=chat_main_monkey_original
 
 [toms_food_monkey]
-name=toms_food_monkey
 model1=npc_1429
 model2=npc_1429i2
 recol1s=14728
@@ -2485,7 +2476,6 @@ resizev=150
 vislevel=1
 
 [toms__general_store_monkey]
-name=toms__general_store_monkey
 model1=npc_1434
 model2=npc_1429i2
 recol1s=14728
@@ -2497,7 +2487,6 @@ readyanim=m_monkey_ready
 vislevel=1
 
 [toms_sword_monkey]
-name=toms_sword_monkey
 model1=npc_1434
 model2=npc_1429i2
 recol1s=14728
@@ -2511,8 +2500,7 @@ resizev=160
 vislevel=1
 
 [toms_magic_monkey]
-name=toms_magic_monkey
-model1=npc_1435
+model1=quest_mm_npc_monkey_body_basic
 model2=npc_1429i2
 recol1s=5285
 recol1d=11627
@@ -2525,7 +2513,6 @@ resizev=160
 vislevel=1
 
 [toms_crafting_monkey]
-name=toms_crafting_monkey
 model1=npc_1437
 model2=npc_1437i2
 recol1s=14728
@@ -2537,17 +2524,15 @@ resizev=140
 vislevel=1
 
 [toms_basic_monkey]
-name=toms_basic_monkey
-model1=npc_1435
-model2=npc_1439i2
+model1=quest_mm_npc_monkey_body_basic
+model2=quest_mm_npc_monkey_head_basic
 walkanim=m_monkey_walk
 readyanim=m_monkey_ready
 vislevel=1
 
 [toms_zombie_monkey]
-name=toms_zombie_monkey
-model1=npc_1435
-model2=npc_1439i2
+model1=quest_mm_npc_monkey_body_basic
+model2=quest_mm_npc_monkey_head_basic
 recol1s=5285
 recol1d=13935
 recol2s=15749
@@ -2562,9 +2547,8 @@ resizev=190
 vislevel=1
 
 [toms_zombie_monkey_small]
-name=toms_zombie_monkey_small
-model1=npc_1435
-model2=npc_1439i2
+model1=quest_mm_npc_monkey_body_basic
+model2=quest_mm_npc_monkey_head_basic
 recol1s=5285
 recol1d=13935
 recol2s=15749
@@ -2577,7 +2561,6 @@ readyanim=m_monkey_ready
 vislevel=1
 
 [toms_female_monkey]
-name=toms_female_monkey
 model1=npc_1437
 model2=npc_1437i2
 walkanim=m_monkey_walk
@@ -2587,7 +2570,6 @@ resizev=160
 vislevel=1
 
 [toms_uncle_monkey]
-name=toms_uncle_monkey
 model1=npc_1429
 model2=npc_1429i2
 recol1s=6342
@@ -2599,7 +2581,6 @@ resizev=180
 vislevel=1
 
 [toms_caretaker]
-name=toms_caretaker
 model1=npc_1429
 model2=npc_1429i2
 model3=npc_1429i3
@@ -2610,8 +2591,7 @@ resizev=180
 vislevel=1
 
 [toms_jail guard]
-name=toms_jail guard
-model1=npc_1435
+model1=quest_mm_npc_monkey_body_basic
 model2=npc_1429i2
 model3=npc_1451
 walkanim=m_monkey_walk
@@ -2621,9 +2601,8 @@ resizev=180
 vislevel=1
 
 [toms_adviser]
-name=toms_adviser
 model1=npc_1434
-model2=npc_1439i2
+model2=quest_mm_npc_monkey_head_basic
 walkanim=m_monkey_walk
 readyanim=m_monkey_ready
 resizeh=180
@@ -2631,7 +2610,6 @@ resizev=180
 vislevel=1
 
 [toms_child]
-name=toms_child
 model1=npc_1452
 model2=npc_1452i2
 walkanim=m_monkey_walk
@@ -2641,9 +2619,8 @@ resizev=100
 vislevel=1
 
 [toms_ninja_guard]
-name=toms_ninja_guard
-model1=npc_1441
-model2=npc_1441i2
+model1=quest_mm_npc_monkey_body_ninja
+model2=quest_mm_npc_monkey_head_ninja
 model3=npc_1447
 walkanim=m_monkey_walk
 readyanim=m_monkey_ready
@@ -2653,9 +2630,8 @@ resizev=180
 vislevel=35
 
 [toms_monkey_archer]
-name=toms_monkey_archer
-model1=npc_1441
-model2=npc_1441i2
+model1=quest_mm_npc_monkey_body_ninja
+model2=quest_mm_npc_monkey_head_ninja
 model3=npc_1456
 walkanim=m_monkey_walk
 readyanim=m_monkey_ready
@@ -2665,9 +2641,8 @@ resizev=180
 vislevel=61
 
 [toms_ninja_guard_captin]
-name=toms_ninja_guard_captin
-model1=npc_1441
-model2=npc_1441i2
+model1=quest_mm_npc_monkey_body_ninja
+model2=quest_mm_npc_monkey_head_ninja
 model3=npc_1441i3
 walkanim=m_monkey_dh_walk
 readyanim=m_monkey_ready
@@ -2677,9 +2652,8 @@ resizev=180
 vislevel=35
 
 [toms_gorilla]
-name=toms_gorilla
-model1=npc_1431
-model2=npc_1431i2
+model1=quest_mm_npc_gorilla_body_basic
+model2=quest_mm_npc_gorilla_head_basic
 size=2
 readyanim=m_gorilla_ready
 walkanim=m_gorilla_walk
@@ -2687,9 +2661,8 @@ op2=Attack
 vislevel=35
 
 [toms_gorilla_pound]
-name=toms_gorilla_pound
-model1=npc_1431
-model2=npc_1431i2
+model1=quest_mm_npc_gorilla_body_basic
+model2=quest_mm_npc_gorilla_head_basic
 size=2
 readyanim=m_gorilla_poundchest
 walkanim=m_gorilla_walk
@@ -2699,9 +2672,8 @@ resizev=160
 vislevel=35
 
 [toms_gorilla_beard]
-name=toms_gorilla_beard
-model1=npc_1431
-model2=npc_1438i2
+model1=quest_mm_npc_gorilla_body_basic
+model2=quest_mm_npc_gorilla_head_beard
 size=2
 readyanim=m_gorilla_poundchest
 walkanim=m_gorilla_walk
@@ -2711,9 +2683,8 @@ resizev=160
 vislevel=35
 
 [toms_gorilla_priest]
-name=toms_gorilla_priest
 model1=npc_1438
-model2=npc_1438i2
+model2=quest_mm_npc_gorilla_head_beard
 model3=npc_1438i3
 recol1s=11627
 recol1d=7399
@@ -2726,9 +2697,8 @@ resizev=180
 vislevel=35
 
 [toms_gorilla_guard]
-name=toms_gorilla_guard
-model1=npc_1459
-model2=npc_1431i2
+model1=quest_mm_npc_gorilla_body_guard
+model2=quest_mm_npc_gorilla_head_basic
 size=2
 readyanim=m_gorilla_ready
 walkanim=m_gorilla_walk
@@ -2738,9 +2708,8 @@ resizev=130
 vislevel=35
 
 [toms_acolyte]
-name=toms_acolyte
 model1=npc_1439
-model2=npc_1439i2
+model2=quest_mm_npc_monkey_head_basic
 model3=npc_1439i3
 walkanim=m_monkey_walk
 readyanim=m_monkey_acolyte_ready
@@ -2749,7 +2718,6 @@ resizev=180
 vislevel=1
 
 [toms_gnome_assassin]
-name=toms_gnome_assassin
 model1=npc_1420
 model2=npc_1420i2
 model3=npc_1420i3
@@ -2759,7 +2727,6 @@ readyanim=m_assassin_ready
 vislevel=9
 
 [toms_gnome_sapper]
-name=toms_gnome_sapper
 model1=model_2909_npc
 model2=model_2915_npc
 model3=npc_1423
@@ -2772,7 +2739,6 @@ readyanim=m_sapper_wallwipe
 vislevel=1
 
 [toms_gnome_mage]
-name=toms_gnome_mage
 model1=model_2909_npc
 model2=model_2915_npc
 model3=npc_1425
@@ -2789,7 +2755,6 @@ readyanim=m_mage_attack
 vislevel=1
 
 [toms_ape_ruler]
-name=toms_ape_ruler
 model1=npc_1448
 model2=npc_1448i2
 walkanim=m_monkey_walk
@@ -2797,7 +2762,6 @@ readyanim=m_monkey_ready
 vislevel=1
 
 [toms skeleton]
-name=toms skeleton
 model1=model_2944_npc
 desc=Could do with gaining a few pounds.
 walkanim=skeleton_walk
@@ -2808,7 +2772,6 @@ resizev=40
 vislevel=18
 
 [demo]
-name=demo
 model1=model_2942_npc
 recol1s=11264
 recol1d=7460
@@ -2828,7 +2791,6 @@ resizev=120
 vislevel=1
 
 [toms_gnome_troop1]
-name=toms_gnome_troop1
 model1=model_2914_npc
 model2=npc_1413
 model3=model_2919_npc
@@ -2844,7 +2806,6 @@ vislevel=1
 head1=gnome_chat_head
 
 [toms_gnome_troop2]
-name=toms_gnome_troop2
 model1=model_2914_npc
 model2=npc_1413
 model3=model_2919_npc
@@ -2858,7 +2819,6 @@ vislevel=1
 head1=gnome_chat_head
 
 [toms_gnome_troop3]
-name=toms_gnome_troop3
 model1=model_2914_npc
 model2=npc_1413
 model3=model_2919_npc
@@ -2872,7 +2832,6 @@ vislevel=1
 head1=gnome_chat_head
 
 [toms_gnome_troop4]
-name=toms_gnome_troop4
 model1=model_2914_npc
 model2=npc_1413
 model3=model_2919_npc
@@ -2931,7 +2890,7 @@ vislevel=1
 
 [npc_1524]
 name=Jungle spider
-model1=model_2884_npc
+model1=npc_giantspider
 recol1s=31393
 recol1d=19586
 recol2s=5284
@@ -2941,7 +2900,6 @@ readyanim=giantspider_ready
 vislevel=1
 
 [toms_jungle_snake]
-name=toms_jungle_snake
 model1=inv_tomato
 recol1s=20033
 recol1d=16967
@@ -2980,12 +2938,12 @@ readyanim=human_ready
 op1=Talk-to
 op4=Trade-with
 head1=chat_male_head_shorthair2
-head2=model_70_npc_head
+head2=chat_male_headextra_monacle
 head3=chat_male_jaw_long
 
 [puzzle_cart]
 name=Mine cart
-model1=npc_1527
+model1=quest_hauntedmine_hauntedcart
 desc=Big, metal, and wheeled.
 turnspeed=1024
 vislevel=hide
@@ -3075,7 +3033,7 @@ vislevel=1
 
 [castlewars_barricade_saradomin]
 name=Barricade
-model1=loc_4421
+model1=game_castlewars_barricade
 minimap=no
 vislevel=hide
 desc=A spiky barricade.
@@ -3083,7 +3041,7 @@ op2=Attack
 
 [castlewars_barricade_burning_saradomin]
 name=Barricade
-model1=loc_4421
+model1=game_castlewars_barricade
 model2=loc_4422
 recol1s=14628
 recol1d=11458
@@ -3097,7 +3055,7 @@ op2=Attack
 
 [castlewars_barricade_zamorak]
 name=Barricade
-model1=loc_4421
+model1=game_castlewars_barricade
 minimap=no
 vislevel=hide
 desc=A spiky barricade.
@@ -3105,7 +3063,7 @@ op2=Attack
 
 [castlewars_barricade_burning_zamorak]
 name=Barricade
-model1=loc_4421
+model1=game_castlewars_barricade
 model2=loc_4422
 recol1s=14628
 recol1d=11458
@@ -3126,7 +3084,7 @@ desc=How does it move of its own accord?
 op2=Attack
 vislevel=50
 
-[hauntedmine_suprise_ghost_hidden]
+[npc_1537]
 name=Bronze pickaxe
 model1=spot_spotanim_307
 op1=Take
@@ -3176,7 +3134,7 @@ op2=Attack
 alwaysontop=yes
 vislevel=95
 head1=chat_male_head_model_62
-head2=model_73_npc_head
+head2=chat_male_headextra_model_73
 
 [hauntedmine_boss_ghost_faded]
 name=Ghost
@@ -3196,11 +3154,11 @@ walkanim=seq_1436
 readyanim=seq_1436
 vislevel=99
 head1=chat_male_head_model_62
-head2=model_73_npc_head
+head2=chat_male_headextra_model_73
 
 [crane_posessed_mine]
 name=Loading crane
-model1=npc_1542
+model1=quest_hauntedmine_crane_mining
 desc=Those are some of the biggest teeth I've ever seen.
 size=3
 vislevel=hide
@@ -3208,7 +3166,7 @@ minimap=no
 
 [hauntedmine_boss_key]
 name=Innocent looking key
-model1=npc_1543
+model1=quest_hauntedmine_possessed_key
 desc=A shiny key sitting quietly on a crate.
 minimap=no
 vislevel=hide
@@ -3219,7 +3177,7 @@ walkanim=possessed_key_drifting
 
 [hauntedmine_boss_cart]
 name=Mine cart
-model1=npc_1527
+model1=quest_hauntedmine_hauntedcart
 desc=Big, metal, and wheeled.
 minimap=no
 vislevel=hide
@@ -3228,7 +3186,7 @@ turnspeed=1024
 
 [hauntedmine_cart1]
 name=Mine cart
-model1=npc_1527
+model1=quest_hauntedmine_hauntedcart
 desc=Big, metal, and wheeled.
 vislevel=hide
 alwaysontop=yes
@@ -3236,7 +3194,7 @@ turnspeed=1024
 
 [hauntedmine_cart2]
 name=Mine cart
-model1=npc_1527
+model1=quest_hauntedmine_hauntedcart
 desc=Big, metal, and wheeled.
 vislevel=hide
 alwaysontop=yes
@@ -3244,7 +3202,7 @@ turnspeed=1024
 
 [hauntedmine_cart3]
 name=Mine cart
-model1=npc_1527
+model1=quest_hauntedmine_hauntedcart
 desc=Big, metal, and wheeled.
 vislevel=hide
 alwaysontop=yes
@@ -3252,7 +3210,7 @@ turnspeed=1024
 
 [hauntedmine_cart4]
 name=Mine cart
-model1=npc_1527
+model1=quest_hauntedmine_hauntedcart
 desc=Big, metal, and wheeled.
 vislevel=hide
 alwaysontop=yes
@@ -3269,7 +3227,7 @@ readyanim=ghost_ready
 op2=Attack
 vislevel=29
 
-[npc_1550]
+[hauntedmine_suprise_ghost_hidden]
 name=Haze
 model1=model_2961_npc
 model2=model_2964_npc
@@ -3298,9 +3256,9 @@ model3=man_torso_fat
 model4=man_legs_viking
 model5=man_feet_viking_boots
 model6=man_arms_longsleeves2
-model7=npc_1552
-model8=npc_1552i2
-model9=npc_1552i3
+model7=man_hands_largeblackgloves
+model8=man_jaw_santa
+model9=man_torsoextra_buttonsfat
 recol1s=6273
 recol1d=22197
 recol2s=7328
@@ -3322,7 +3280,7 @@ alwaysontop=yes
 op1=Talk-to
 head1=chat_male_head_bald
 head2=chat_male_jaw_long
-head3=chat_male_santa
+head3=chat_male_headextra_santa
 
 [trollromance_ug]
 name=Ug
@@ -3436,7 +3394,7 @@ readyanim=dog_ready
 op2=Attack
 vislevel=96
 
-[npc_1559]
+[trollromance_ice_wolf_2]
 name=Ice wolf
 model1=model_2937_npc
 recol1s=15855
@@ -3614,7 +3572,7 @@ desc=A tall and imposing man who's more than familiar with boating.
 vislevel=hide
 walkanim=human_walk_f,human_walk_b,human_walk_l,human_walk_r
 op1=Talk-to
-head1=chat_male_head_model_48
+head1=chat_male_head_hood2
 head2=chat_male_jaw_long
 
 [route_curpile_fyod]
@@ -3746,7 +3704,7 @@ model1=man_head_longhair
 model2=man_headextra_ponytail
 model3=man_necklaces_basic
 model4=man_torso_leather
-model5=man_arms_model_168
+model5=man_arms_thin
 model6=man_hands_gloves
 model7=man_legs_tatty
 model8=man_feet_boots
@@ -3832,7 +3790,7 @@ desc=A member of the Myreque and an aspiring young priest.
 walkanim=human_walk_f,human_walk_b,human_walk_l,human_walk_r
 readyanim=human_ready
 op1=Talk-to
-head1=chat_male_head_model_47
+head1=chat_male_head_hood1
 
 [skeleton_hellhound]
 name=Skeleton Hellhound
@@ -3867,9 +3825,9 @@ desc=A typical villager of Canafis.
 walkanim=human_walk_f,human_walk_b,human_walk_l,human_walk_r
 readyanim=human_ready
 op1=Talk-to
-head1=chat_male_head_model_48
+head1=chat_male_head_hood2
 head2=chat_male_jaw_long
-head3=npc_1024_head
+head3=chat_male_head_werewolf_features
 
 [route_vanstrom_klause_sitting]
 name=Vanstrom Klause
@@ -3889,11 +3847,11 @@ desc=A curious fellow.
 walkanim=human_walk_f,human_walk_b,human_walk_l,human_walk_r
 readyanim=human_ready
 op1=Talk-to
-head1=chat_male_head_model_61
+head1=chat_male_head_hoodnobeard
 
 [route_vanstrom_vampire_misty]
 name=Mist
-model1=loc_4047
+model1=misty
 desc=A billowing cloud of fine mist...it looks creepy.
 vislevel=hide
 size=3
@@ -3920,7 +3878,7 @@ desc=A curious fellow.
 walkanim=human_walk_f,human_walk_b,human_walk_l,human_walk_r
 readyanim=human_ready
 op1=Talk-to
-head1=chat_male_head_model_61
+head1=chat_male_head_hoodnobeard
 
 [route_vanstrom_klause_vamp_wingsgrow]
 name=Vanstrom Klause

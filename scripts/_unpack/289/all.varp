@@ -1,16 +1,21 @@
 [misc_quest]
+scope=perm
+
+[varp_360]
 
 [misc_varbit_1]
+scope=perm
 
 [misc_varbit_2]
+scope=perm
 
 [misc_varbit_3]
-
-[varp_363]
+scope=perm
 
 [varp_364]
 
 [mm_main]
+scope=perm
 
 [varp_366]
 
@@ -22,15 +27,20 @@
 
 [varp_370]
 
-[varp_371]
+[mm_flags]
+scope=perm
 
 [mm_gnomes]
+scope=perm
 
-[varp_373]
+[mm_monkeys]
+scope=perm
 
-[varp_374]
+[mm_misc]
+scope=perm
 
-[armourhitsound]
+// todo: osrs has "armourhitsound" here?
+[varp_375]
 
 [varp_376]
 
@@ -45,18 +55,23 @@
 [varp_381]
 
 [hauntedmine]
+scope=perm
 
 [hauntedmine_bits]
+scope=perm
 
 [varp_384]
 
 [troll_love]
+scope=perm
 
 [varp_386]
 
 [routequest]
+scope=perm
 
 [routequestmulti]
+scope=perm
 
 [varp_389]
 
@@ -65,4 +80,3 @@
 [trawler_water_overlay]
 
 [varp_392]
-

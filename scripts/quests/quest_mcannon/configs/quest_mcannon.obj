@@ -134,7 +134,7 @@ members=yes
 [mcannonrailing1_obj]
 name=Railing
 desc=A metal railing replacement.
-model=model_4877
+model=inv_single_railing
 members=yes
 2dxof=4
 2dyof=-3

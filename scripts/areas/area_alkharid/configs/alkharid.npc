@@ -151,7 +151,7 @@ model4=man_arms_longsleeves
 model5=man_hands_basic
 model6=man_feet_basic
 model7=man_torso_basic
-head1=chat_male_head_model_48
+head1=chat_male_head_hood2
 head2=chat_male_jaw_goaty
 
 [generalshopkeeper3]
@@ -284,7 +284,7 @@ model4=man_arms_longsleeves
 model5=man_hands_basic
 model6=man_feet_boots
 model7=man_torso_basic
-head1=chat_male_head_model_47
+head1=chat_male_head_hood1
 head2=chat_male_jaw_goaty
 category=shop_keeper
 param=owned_shop,legsshop

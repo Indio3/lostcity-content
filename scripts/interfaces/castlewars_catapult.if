@@ -733,7 +733,7 @@ x=138
 y=168
 width=32
 height=32
-model=model_4854
+model=if_game_castlewars_catapult_map
 zoom=286
 xan=512
 
@@ -1364,7 +1364,7 @@ x=201
 y=223
 width=32
 height=32
-model=model_4853
+model=if_game_castlewars_catapult_icon
 zoom=1485
 xan=512
 
@@ -1374,7 +1374,7 @@ x=73
 y=101
 width=32
 height=32
-model=model_4853
+model=if_game_castlewars_catapult_icon
 zoom=1485
 xan=512
 

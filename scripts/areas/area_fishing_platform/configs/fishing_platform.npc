@@ -20,7 +20,7 @@ model8=man_headextra_ponytail2
 model9=man_torsoextra_cloak
 head1=chat_male_head_bald
 head2=chat_male_jaw_long
-head3=model_73_npc_head
+head3=chat_male_headextra_model_73
 moverestrict=indoors
 
 [kennith]
@@ -61,7 +61,7 @@ model6=man_legs_flares
 model7=man_feet_basic
 model8=human_weapons_staff
 model9=man_torsoextra_buttons2
-head1=chat_male_head_model_58
+head1=chat_male_head_rangerhood
 head2=chat_male_jaw_long
 wanderrange=2
 
@@ -85,7 +85,7 @@ model6=man_legs_flares
 model7=man_feet_basic
 model8=human_weapons_staff
 model9=man_torsoextra_buttons2
-head1=chat_male_head_model_58
+head1=chat_male_head_rangerhood
 head2=chat_male_jaw_long
 
 [kent]
@@ -131,7 +131,7 @@ model5=man_hands_basic
 model6=man_legs_robe
 model7=man_feet_basic
 model8=human_weapons_fishingrod
-head1=chat_male_head_model_48
+head1=chat_male_head_hood2
 head2=chat_male_jaw_long
 category=fisherman_platform
 
@@ -154,7 +154,7 @@ model5=man_hands_basic
 model6=man_legs_robe
 model7=man_feet_basic
 model8=human_weapons_fishingrod
-head1=chat_male_head_model_48
+head1=chat_male_head_hood2
 head2=chat_male_jaw_long
 category=fisherman_platform
 

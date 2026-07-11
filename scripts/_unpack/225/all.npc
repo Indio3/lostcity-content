@@ -459,7 +459,7 @@ model8=man_feet_boots
 model9=human_weapons_axe
 head1=chat_male_head_mediumhelmet
 head2=chat_male_jaw_split
-head3=model_75_npc_head
+head3=chat_male_headextra_model_75
 wanderrange=10
 maxrange=12
 respawnrate=50
@@ -1163,12 +1163,14 @@ param=crushdefence,-42
 param=magicdefence,-42
 param=rangedefence,-42
 param=damagetype,^stab_style
+param=attack_anim,null
 param=defend_anim,duck_defend
 param=death_anim,duck_death
 param=attack_sound,quack
 param=defend_sound,duck_hit
 param=death_sound,duck_death
 param=death_drop,null
+param=retreat,1
 category=duck
 // osrs stats and Vislvl match 1:1
 // https://raw.githubusercontent.com/Joshua-F/osrs-dumps/refs/heads/master/config/dump.npc npc_1838
@@ -1203,12 +1205,14 @@ param=crushdefence,-42
 param=magicdefence,-42
 param=rangedefence,-42
 param=damagetype,^stab_style
+param=attack_anim,null
 param=defend_anim,duck_defend
 param=death_anim,duck_death
 param=attack_sound,quack
 param=defend_sound,duck_hit
 param=death_sound,duck_death
 param=death_drop,null
+param=retreat,1
 category=duck
 // osrs stats and Vislvl match 1:1
 // https://raw.githubusercontent.com/Joshua-F/osrs-dumps/refs/heads/master/config/dump.npc npc_1839
@@ -1245,6 +1249,7 @@ param=crushdefence,-42
 param=magicdefence,-42
 param=rangedefence,-42
 param=damagetype,^stab_style
+param=attack_anim,null
 param=defend_anim,duck_defend
 param=death_anim,duck_death
 param=attack_sound,quack
@@ -1253,6 +1258,7 @@ param=death_sound,duck_death
 param=death_drop,null
 category=duckling
 huntmode=duck_hunt
+param=retreat,1
 huntrange=2
 // osrs stats and Vislvl match 1:1
 // https://raw.githubusercontent.com/Joshua-F/osrs-dumps/refs/heads/master/config/dump.npc npc_2001
@@ -1553,7 +1559,7 @@ name=Shadow spider
 desc=Is it a spider or is it a shadow?
 op2=Attack
 vislevel=52
-model1=model_2884_npc
+model1=npc_giantspider
 wanderrange=10
 maxrange=12
 respawnrate=60
@@ -1588,7 +1594,7 @@ op2=Attack
 vislevel=2
 recol1s=5284
 recol1d=10464
-model1=model_2884_npc
+model1=npc_giantspider
 wanderrange=10
 maxrange=12
 respawnrate=60
@@ -1622,7 +1628,7 @@ op2=Attack
 vislevel=27
 recol1s=5284
 recol1d=10464
-model1=model_2884_npc
+model1=npc_giantspider
 wanderrange=10
 maxrange=12
 respawnrate=60
@@ -1683,7 +1689,7 @@ op2=Attack
 vislevel=44
 recol1s=5284
 recol1d=11846
-model1=model_2884_npc
+model1=npc_giantspider
 wanderrange=10
 maxrange=12
 respawnrate=60
@@ -1719,7 +1725,7 @@ op2=Attack
 vislevel=34
 recol1s=5284
 recol1d=15362
-model1=model_2884_npc
+model1=npc_giantspider
 wanderrange=10
 maxrange=12
 respawnrate=60
@@ -2396,7 +2402,7 @@ category=unicorn
 // osrs stats and Vislvl match 1:1
 // https://raw.githubusercontent.com/Joshua-F/osrs-dumps/refs/heads/master/config/dump.npc npc_2837
 
-[skeleton_unagressive]
+[skeleton_unarmed]
 name=Skeleton
 desc=Could do with gaining a few pounds.
 walkanim=skeleton_walk
@@ -2430,7 +2436,7 @@ huntrange=1
 // https://www.youtube.com/watch?v=fqNKyRfgElw (late 2004 this skeleton is level 21.)
 // https://raw.githubusercontent.com/Joshua-F/osrs-dumps/refs/heads/master/config/dump.npc npc_74
 
-[skeleton_unarmed]
+[skeleton_unagressive]
 name=Skeleton
 desc=Could do with gaining a few pounds.
 walkanim=skeleton_walk
@@ -3365,7 +3371,7 @@ param=death_sound,dwarf_death
 // osrs stats and Vislvl match 1:1
 // https://raw.githubusercontent.com/Joshua-F/osrs-dumps/refs/heads/master/config/dump.npc npc_292
 
-[dwarf_mountain2]
+[dwarf_tunnel]
 walkanim=dwarf_walk
 readyanim=dwarf_ready
 name=Dwarf
@@ -3710,7 +3716,7 @@ walkanim=monkey_walk
 readyanim=monkey_ready
 op2=Attack
 vislevel=3
-model1=model_3004_npc
+model1=npc_monkey
 wanderrange=11
 maxrange=13
 respawnrate=74
@@ -4652,7 +4658,7 @@ model6=man_legs_basic2
 model7=man_feet_basic
 model8=human_weapons_scimitar
 model9=man_headextra_eyepatch
-head1=chat_male_head_model_50
+head1=chat_male_head_pirate
 head2=chat_male_headextra_eyepatch
 respawnrate=50
 hitpoints=20
@@ -4783,7 +4789,7 @@ model5=woman_legs_model_434
 model6=woman_headextra_ponytail
 model7=woman_headextra_eyepatch
 model8=human_weapons_scimitar
-head1=chat_female_head_model_111
+head1=chat_female_head_pirate
 head2=model_136_npc_head
 head3=chat_female_headextra_eyepatch
 respawnrate=50
@@ -5134,7 +5140,7 @@ model9=human_weapons_axe
 model10=human_weapons_roundshield4
 head1=chat_male_head_mediumhelmet
 head2=chat_male_jaw_medium
-head3=model_75_npc_head
+head3=chat_male_headextra_model_75
 respawnrate=100
 hitpoints=35
 attack=22
@@ -5565,7 +5571,7 @@ model7=man_feet_boots
 model8=man_torsoextra_cloak
 model9=man_torsoextra_pattern1
 model10=human_weapons_machette
-head1=chat_male_head_model_47
+head1=chat_male_head_hood1
 head2=chat_male_jaw_long
 wanderrange=3
 param=damagetype,^slash_style
@@ -5595,7 +5601,7 @@ model6=woman_feet_boots
 model7=woman_torsoextra_cloak
 model8=woman_torsoextra_pattern1
 model9=human_weapons_machette
-head1=chat_female_head_model_107
+head1=chat_female_head_hood2
 wanderrange=3
 param=damagetype,^slash_style
 // https://raw.githubusercontent.com/Joshua-F/osrs-dumps/refs/heads/master/config/dump.npc npc_3955

@@ -49,7 +49,7 @@ desc=For making a giant pen.
 cost=1
 members=yes
 cost=1
-model=obj_3897
+model=quest_misc_inv_giantpen_nib
 2dxof=2
 2dyof=5
 2dzoom=460
@@ -62,7 +62,7 @@ desc=The King should be able to use this.
 cost=1
 members=yes
 cost=1
-model=obj_3898
+model=quest_misc_inv_giantpen
 2dxof=1
 2dyof=27
 2dzoom=1830
@@ -106,7 +106,7 @@ members=yes
 
 [reinit]
 name=Reinit
-model=obj_3902
+model=if_mm_slidepuzzle_slide01
 2dxof=-1
 2dyof=1
 2dzoom=2180
@@ -115,678 +115,487 @@ iop1=Open
 
 [reinitialisation_01]
 name=Sliding button
-model=obj_3902
+model=if_mm_slidepuzzle_slide01
 2dxof=-1
 2dyof=1
 2dzoom=2180
 2dxan=520
 iop5=Move
 desc=It's a sliding button of some kind.
-
-[cert_reinitialisation_01]
-certlink=reinitialisation_01
-certtemplate=template_for_cert
 
 [reinitialisation_02]
 name=Sliding button
-model=obj_3906
+model=if_mm_slidepuzzle_slide02
 2dxof=-1
 2dyof=1
 2dzoom=2180
 2dxan=520
 iop5=Move
 desc=It's a sliding button of some kind.
-
-[obj_3907]
-certlink=reinitialisation_02
-certtemplate=template_for_cert
 
 [reinitialisation_03]
 name=Sliding button
-model=obj_3908
+model=if_mm_slidepuzzle_slide03
 2dxof=-1
 2dyof=1
 2dzoom=2180
 2dxan=520
 iop5=Move
 desc=It's a sliding button of some kind.
-
-[obj_3909]
-certlink=reinitialisation_03
-certtemplate=template_for_cert
 
 [reinitialisation_04]
 name=Sliding button
-model=obj_3910
+model=if_mm_slidepuzzle_slide04
 2dxof=-1
 2dyof=1
 2dzoom=2180
 2dxan=520
 iop5=Move
 desc=It's a sliding button of some kind.
-
-[obj_3911]
-certlink=reinitialisation_04
-certtemplate=template_for_cert
 
 [reinitialisation_05]
 name=Sliding button
-model=obj_3912
+model=if_mm_slidepuzzle_slide05
 2dxof=-1
 2dyof=1
 2dzoom=2180
 2dxan=520
 iop5=Move
 desc=It's a sliding button of some kind.
-
-[obj_3913]
-certlink=reinitialisation_05
-certtemplate=template_for_cert
 
 [reinitialisation_06]
 name=Sliding button
-model=obj_3914
+model=if_mm_slidepuzzle_slide06
 2dxof=-1
 2dyof=1
 2dzoom=2180
 2dxan=520
 iop5=Move
 desc=It's a sliding button of some kind.
-
-[obj_3915]
-certlink=reinitialisation_06
-certtemplate=template_for_cert
 
 [reinitialisation_07]
 name=Sliding button
-model=obj_3916
+model=if_mm_slidepuzzle_slide07
 2dxof=-1
 2dyof=1
 2dzoom=2180
 2dxan=520
 iop5=Move
 desc=It's a sliding button of some kind.
-
-[obj_3917]
-certlink=reinitialisation_07
-certtemplate=template_for_cert
 
 [reinitialisation_08]
 name=Sliding button
-model=obj_3918
+model=if_mm_slidepuzzle_slide08
 2dxof=-1
 2dyof=1
 2dzoom=2180
 2dxan=520
 iop5=Move
 desc=It's a sliding button of some kind.
-
-[obj_3919]
-certlink=reinitialisation_08
-certtemplate=template_for_cert
 
 [reinitialisation_09]
 name=Sliding button
-model=obj_3920
+model=if_mm_slidepuzzle_slide09
 2dxof=-1
 2dyof=1
 2dzoom=2180
 2dxan=520
 iop5=Move
 desc=It's a sliding button of some kind.
-
-[obj_3921]
-certlink=reinitialisation_09
-certtemplate=template_for_cert
 
 [reinitialisation_10]
 name=Sliding button
-model=obj_3922
+model=if_mm_slidepuzzle_slide10
 2dxof=-1
 2dyof=1
 2dzoom=2180
 2dxan=520
 iop5=Move
 desc=It's a sliding button of some kind.
-
-[obj_3923]
-certlink=reinitialisation_10
-certtemplate=template_for_cert
 
 [reinitialisation_11]
 name=Sliding button
-model=obj_3924
+model=if_mm_slidepuzzle_slide11
 2dxof=-1
 2dyof=1
 2dzoom=2180
 2dxan=520
 iop5=Move
 desc=It's a sliding button of some kind.
-
-[obj_3925]
-certlink=reinitialisation_11
-certtemplate=template_for_cert
 
 [reinitialisation_12]
 name=Sliding button
-model=obj_3926
+model=if_mm_slidepuzzle_slide12
 2dxof=-1
 2dyof=1
 2dzoom=2180
 2dxan=520
 iop5=Move
 desc=It's a sliding button of some kind.
-
-[obj_3927]
-certlink=reinitialisation_12
-certtemplate=template_for_cert
 
 [reinitialisation_13]
 name=Sliding button
-model=obj_3928
+model=if_mm_slidepuzzle_slide13
 2dxof=-1
 2dyof=1
 2dzoom=2180
 2dxan=520
 iop5=Move
 desc=It's a sliding button of some kind.
-
-[obj_3929]
-certlink=reinitialisation_13
-certtemplate=template_for_cert
 
 [reinitialisation_14]
 name=Sliding button
-model=obj_3930
+model=if_mm_slidepuzzle_slide14
 2dxof=-1
 2dyof=1
 2dzoom=2180
 2dxan=520
 iop5=Move
 desc=It's a sliding button of some kind.
-
-[obj_3931]
-certlink=reinitialisation_14
-certtemplate=template_for_cert
 
 [reinitialisation_15]
 name=Sliding button
-model=obj_3932
+model=if_mm_slidepuzzle_slide15
 2dxof=-1
 2dyof=1
 2dzoom=2180
 2dxan=520
 iop5=Move
 desc=It's a sliding button of some kind.
-
-[obj_3933]
-certlink=reinitialisation_15
-certtemplate=template_for_cert
 
 [reinitialisation_16]
 name=Sliding button
-model=obj_3934
+model=if_mm_slidepuzzle_slide16
 2dxof=-1
 2dyof=1
 2dzoom=2180
 2dxan=520
 iop5=Move
 desc=It's a sliding button of some kind.
-
-[obj_3935]
-certlink=reinitialisation_16
-certtemplate=template_for_cert
 
 [reinitialisation_17]
 name=Sliding button
-model=obj_3936
+model=if_mm_slidepuzzle_slide17
 2dxof=-1
 2dyof=1
 2dzoom=2180
 2dxan=520
 iop5=Move
 desc=It's a sliding button of some kind.
-
-[obj_3937]
-certlink=reinitialisation_17
-certtemplate=template_for_cert
 
 [reinitialisation_18]
 name=Sliding button
-model=obj_3938
+model=if_mm_slidepuzzle_slide18
 2dxof=-1
 2dyof=1
 2dzoom=2180
 2dxan=520
 iop5=Move
 desc=It's a sliding button of some kind.
-
-[obj_3939]
-certlink=reinitialisation_18
-certtemplate=template_for_cert
 
 [reinitialisation_19]
 name=Sliding button
-model=obj_3940
+model=if_mm_slidepuzzle_slide19
 2dxof=-1
 2dyof=1
 2dzoom=2180
 2dxan=520
 iop5=Move
 desc=It's a sliding button of some kind.
-
-[obj_3941]
-certlink=reinitialisation_19
-certtemplate=template_for_cert
 
 [reinitialisation_20]
 name=Sliding button
-model=obj_3942
+model=if_mm_slidepuzzle_slide20
 2dxof=-1
 2dyof=1
 2dzoom=2180
 2dxan=520
 iop5=Move
 desc=It's a sliding button of some kind.
-
-[obj_3943]
-certlink=reinitialisation_20
-certtemplate=template_for_cert
 
 [reinitialisation_21]
 name=Sliding button
-model=obj_3944
+model=if_mm_slidepuzzle_slide21
 2dxof=-1
 2dyof=1
 2dzoom=2180
 2dxan=520
 iop5=Move
 desc=It's a sliding button of some kind.
-
-[obj_3945]
-certlink=reinitialisation_21
-certtemplate=template_for_cert
 
 [reinitialisation_22]
 name=Sliding button
-model=obj_3946
+model=if_mm_slidepuzzle_slide22
 2dxof=-1
 2dyof=1
 2dzoom=2180
 2dxan=520
 iop5=Move
 desc=It's a sliding button of some kind.
-
-[obj_3947]
-certlink=reinitialisation_22
-certtemplate=template_for_cert
 
 [reinitialisation_23]
 name=Sliding button
-model=obj_3948
+model=if_mm_slidepuzzle_slide23
 2dxof=-1
 2dyof=1
 2dzoom=2180
 2dxan=520
 iop5=Move
 desc=It's a sliding button of some kind.
-
-[obj_3949]
-certlink=reinitialisation_23
-certtemplate=template_for_cert
 
 [reinitialisation_24]
 name=Sliding button
-model=obj_3950
+model=if_mm_slidepuzzle_slide24
 2dxof=-1
 2dyof=1
 2dzoom=2180
 2dxan=520
 iop5=Move
 desc=It's a sliding button of some kind.
-
-[obj_3951]
-certlink=reinitialisation_24
-certtemplate=template_for_cert
 
 [reinitialisation_01_inactive]
 name=Sliding button
 desc=It's a sliding button of some kind.
-model=obj_3902
+model=if_mm_slidepuzzle_slide01
 2dxof=-1
 2dyof=1
 2dzoom=2180
 2dxan=520
 iop5=Move
-
-[obj_3953]
-certlink=reinitialisation_01_inactive
-certtemplate=template_for_cert
 
 [reinitialisation_02_inactive]
 name=Sliding button
 desc=It's a sliding button of some kind.
-model=obj_3906
+model=if_mm_slidepuzzle_slide02
 2dxof=-1
 2dyof=1
 2dzoom=2180
 2dxan=520
 iop5=Move
-
-[obj_3955]
-certlink=reinitialisation_02_inactive
-certtemplate=template_for_cert
 
 [reinitialisation_03_inactive]
 name=Sliding button
 desc=It's a sliding button of some kind.
-model=obj_3908
+model=if_mm_slidepuzzle_slide03
 2dxof=-1
 2dyof=1
 2dzoom=2180
 2dxan=520
 iop5=Move
-
-[obj_3957]
-certlink=reinitialisation_03_inactive
-certtemplate=template_for_cert
 
 [reinitialisation_04_inactive]
 name=Sliding button
 desc=It's a sliding button of some kind.
-model=obj_3910
+model=if_mm_slidepuzzle_slide04
 2dxof=-1
 2dyof=1
 2dzoom=2180
 2dxan=520
 iop5=Move
-
-[obj_3959]
-certlink=reinitialisation_04_inactive
-certtemplate=template_for_cert
 
 [reinitialisation_05_inactive]
 name=Sliding button
 desc=It's a sliding button of some kind.
-model=obj_3912
+model=if_mm_slidepuzzle_slide05
 2dxof=-1
 2dyof=1
 2dzoom=2180
 2dxan=520
 iop5=Move
-
-[obj_3961]
-certlink=reinitialisation_05_inactive
-certtemplate=template_for_cert
 
 [reinitialisation_06_inactive]
 name=Sliding button
 desc=It's a sliding button of some kind.
-model=obj_3914
+model=if_mm_slidepuzzle_slide06
 2dxof=-1
 2dyof=1
 2dzoom=2180
 2dxan=520
 iop5=Move
-
-[obj_3963]
-certlink=reinitialisation_06_inactive
-certtemplate=template_for_cert
 
 [reinitialisation_07_inactive]
 name=Sliding button
 desc=It's a sliding button of some kind.
-model=obj_3916
+model=if_mm_slidepuzzle_slide07
 2dxof=-1
 2dyof=1
 2dzoom=2180
 2dxan=520
 iop5=Move
-
-[obj_3965]
-certlink=reinitialisation_07_inactive
-certtemplate=template_for_cert
 
 [reinitialisation_08_inactive]
 name=Sliding button
 desc=It's a sliding button of some kind.
-model=obj_3918
+model=if_mm_slidepuzzle_slide08
 2dxof=-1
 2dyof=1
 2dzoom=2180
 2dxan=520
 iop5=Move
-
-[obj_3967]
-certlink=reinitialisation_08_inactive
-certtemplate=template_for_cert
 
 [reinitialisation_09_inactive]
 name=Sliding button
 desc=It's a sliding button of some kind.
-model=obj_3920
+model=if_mm_slidepuzzle_slide09
 2dxof=-1
 2dyof=1
 2dzoom=2180
 2dxan=520
 iop5=Move
-
-[obj_3969]
-certlink=reinitialisation_09_inactive
-certtemplate=template_for_cert
 
 [reinitialisation_10_inactive]
 name=Sliding button
 desc=It's a sliding button of some kind.
-model=obj_3922
+model=if_mm_slidepuzzle_slide10
 2dxof=-1
 2dyof=1
 2dzoom=2180
 2dxan=520
 iop5=Move
-
-[obj_3971]
-certlink=reinitialisation_10_inactive
-certtemplate=template_for_cert
 
 [reinitialisation_11_inactive]
 name=Sliding button
 desc=It's a sliding button of some kind.
-model=obj_3924
+model=if_mm_slidepuzzle_slide11
 2dxof=-1
 2dyof=1
 2dzoom=2180
 2dxan=520
 iop5=Move
-
-[obj_3973]
-certlink=reinitialisation_11_inactive
-certtemplate=template_for_cert
 
 [reinitialisation_12_inactive]
 name=Sliding button
 desc=It's a sliding button of some kind.
-model=obj_3926
+model=if_mm_slidepuzzle_slide12
 2dxof=-1
 2dyof=1
 2dzoom=2180
 2dxan=520
 iop5=Move
-
-[obj_3975]
-certlink=reinitialisation_12_inactive
-certtemplate=template_for_cert
 
 [reinitialisation_13_inactive]
 name=Sliding button
 desc=It's a sliding button of some kind.
-model=obj_3928
+model=if_mm_slidepuzzle_slide13
 2dxof=-1
 2dyof=1
 2dzoom=2180
 2dxan=520
 iop5=Move
-
-[obj_3977]
-certlink=reinitialisation_13_inactive
-certtemplate=template_for_cert
 
 [reinitialisation_14_inactive]
 name=Sliding button
 desc=It's a sliding button of some kind.
-model=obj_3930
+model=if_mm_slidepuzzle_slide14
 2dxof=-1
 2dyof=1
 2dzoom=2180
 2dxan=520
 iop5=Move
-
-[obj_3979]
-certlink=reinitialisation_14_inactive
-certtemplate=template_for_cert
 
 [reinitialisation_15_inactive]
 name=Sliding button
 desc=It's a sliding button of some kind.
-model=obj_3932
+model=if_mm_slidepuzzle_slide15
 2dxof=-1
 2dyof=1
 2dzoom=2180
 2dxan=520
 iop5=Move
-
-[obj_3981]
-certlink=reinitialisation_15_inactive
-certtemplate=template_for_cert
 
 [reinitialisation_16_inactive]
 name=Sliding button
 desc=It's a sliding button of some kind.
-model=obj_3934
+model=if_mm_slidepuzzle_slide16
 2dxof=-1
 2dyof=1
 2dzoom=2180
 2dxan=520
 iop5=Move
-
-[obj_3983]
-certlink=reinitialisation_16_inactive
-certtemplate=template_for_cert
 
 [reinitialisation_17_inactive]
 name=Sliding button
 desc=It's a sliding button of some kind.
-model=obj_3936
+model=if_mm_slidepuzzle_slide17
 2dxof=-1
 2dyof=1
 2dzoom=2180
 2dxan=520
 iop5=Move
-
-[obj_3985]
-certlink=reinitialisation_17_inactive
-certtemplate=template_for_cert
 
 [reinitialisation_18_inactive]
 name=Sliding button
 desc=It's a sliding button of some kind.
-model=obj_3938
+model=if_mm_slidepuzzle_slide18
 2dxof=-1
 2dyof=1
 2dzoom=2180
 2dxan=520
 iop5=Move
-
-[obj_3987]
-certlink=reinitialisation_18_inactive
-certtemplate=template_for_cert
 
 [reinitialisation_19_inactive]
 name=Sliding button
 desc=It's a sliding button of some kind.
-model=obj_3940
+model=if_mm_slidepuzzle_slide19
 2dxof=-1
 2dyof=1
 2dzoom=2180
 2dxan=520
 iop5=Move
-
-[obj_3989]
-certlink=reinitialisation_19_inactive
-certtemplate=template_for_cert
 
 [reinitialisation_20_inactive]
 name=Sliding button
 desc=It's a sliding button of some kind.
-model=obj_3942
+model=if_mm_slidepuzzle_slide20
 2dxof=-1
 2dyof=1
 2dzoom=2180
 2dxan=520
 iop5=Move
-
-[obj_3991]
-certlink=reinitialisation_20_inactive
-certtemplate=template_for_cert
 
 [reinitialisation_21_inactive]
 name=Sliding button
 desc=It's a sliding button of some kind.
-model=obj_3944
+model=if_mm_slidepuzzle_slide21
 2dxof=-1
 2dyof=1
 2dzoom=2180
 2dxan=520
 iop5=Move
-
-[obj_3993]
-certlink=reinitialisation_21_inactive
-certtemplate=template_for_cert
 
 [reinitialisation_22_inactive]
 name=Sliding button
 desc=It's a sliding button of some kind.
-model=obj_3946
+model=if_mm_slidepuzzle_slide22
 2dxof=-1
 2dyof=1
 2dzoom=2180
 2dxan=520
 iop5=Move
-
-[obj_3995]
-certlink=reinitialisation_22_inactive
-certtemplate=template_for_cert
 
 [reinitialisation_23_inactive]
 name=Sliding button
 desc=It's a sliding button of some kind.
-model=obj_3948
+model=if_mm_slidepuzzle_slide23
 2dxof=-1
 2dyof=1
 2dzoom=2180
 2dxan=520
 iop5=Move
-
-[obj_3997]
-certlink=reinitialisation_23_inactive
-certtemplate=template_for_cert
 
 [reinitialisation_24_inactive]
 name=Sliding button
 desc=It's a sliding button of some kind.
-model=obj_3950
+model=if_mm_slidepuzzle_slide24
 2dxof=-1
 2dyof=1
 2dzoom=2180
 2dxan=520
 iop5=Move
 
-[obj_3999]
-certlink=reinitialisation_24_inactive
-certtemplate=template_for_cert
-
 [mm_helper]
 
+// todo: "cert_mm_helper"
 [obj_4001]
 
 [mm_reinitialisation_hint]
@@ -795,16 +604,12 @@ recol1s=15855
 recol1d=5250
 desc=It looks like some kind of control panel.
 members=yes
-model=obj_4002
+model=quest_mm_inv_monkey_control_panel
 2dxof=3
 2dyof=8
 2dzoom=1820
 2dxan=388
 iop1=View
-
-[obj_4003]
-certlink=mm_reinitialisation_hint
-certtemplate=template_for_cert
 
 [mm_gnome_royal_seal]
 name=Gnome royal seal
@@ -835,7 +640,7 @@ name=Monkey dentures
 desc=Magical monkey talking dentures! What more can we say? Ook!
 members=yes
 cost=500
-model=obj_4006
+model=quest_mm_inv_monkey_dentures
 2dxof=3
 2dyof=-22
 2dzoom=1250
@@ -869,10 +674,6 @@ model=inv_newtseye
 2dyan=256
 2dxan=364
 
-[obj_4009]
-certlink=mm_eye_of_gnome
-certtemplate=template_for_cert
-
 [mm_monkey_magic]
 name=Monkey magic
 desc=A small sample of monkey magic.
@@ -886,25 +687,17 @@ model=inv_newtseye
 2dyan=256
 2dxan=364
 
-[obj_4011]
-certlink=mm_monkey_magic
-certtemplate=template_for_cert
-
 [mm_monkey_nuts]
 name=Monkey nuts
 desc=These are monkey nuts. Yummy.
 members=yes
 cost=3
-model=obj_4012
+model=quest_mm_inv_monkey_nuts
 2dyof=-2
 2dzoom=910
 2dyan=484
 2dxan=384
 iop1=Eat
-
-[obj_4013]
-certlink=mm_monkey_nuts
-certtemplate=template_for_cert
 
 [mm_monkey_bar]
 name=Monkey bar
@@ -919,10 +712,6 @@ model=inv_chocolate
 2dxan=276
 iop1=Eat
 
-[obj_4015]
-certlink=mm_monkey_bar
-certtemplate=template_for_cert
-
 [mm_banana_stew]
 name=Banana stew
 recol1s=21119
@@ -936,10 +725,6 @@ model=inv_bowl-full
 2dxan=204
 iop1=Eat
 
-[obj_4017]
-certlink=mm_banana_stew
-certtemplate=template_for_cert
-
 [mm_monkey_wrench]
 name=Monkey wrench
 desc=For wrenching monkeys I'd guess.
@@ -952,16 +737,12 @@ model=inv_newtseye
 2dyan=256
 2dxan=364
 
-[obj_4019]
-certlink=mm_monkey_wrench
-certtemplate=template_for_cert
-
 [mm_monkey_amulet_mould]
 name=M'amulet mould
 desc=It's an amulet mould shaped like a monkey head.
 members=yes
 cost=10
-model=obj_4020
+model=quest_mm_inv_monkey_amulet_mould
 2dxof=4
 2dyof=3
 2dzoom=620
@@ -973,12 +754,12 @@ name=M'speak amulet
 desc=It's an Amulet of Monkey Speak. It makes vague chattering noises.
 members=yes
 cost=550
-model=obj_4021
+model=quest_mm_inv_monkey_amulet
 2dyof=37
 2dzoom=520
 2dxan=332
-manwear=obj_4021_manwear,0
-womanwear=obj_4021_womanwear,0
+manwear=man_necklaces_monkey_amulet,0
+womanwear=woman_necklaces_monkey_amulet,0
 iop2=Wear
 
 [mm_amulet_of_monkey_speak_without_string]
@@ -986,7 +767,7 @@ name=M'speak amulet
 desc=It's an unstrung Amulet of Monkey Speak. It makes vague chattering noises.
 members=yes
 cost=500
-model=obj_4022
+model=quest_mm_inv_monkey_amulet_unstrung
 2dyof=32
 2dzoom=330
 2dxan=448
@@ -996,7 +777,7 @@ name=Monkey talisman
 desc=A magical talisman in the shape of a monkey head.
 members=yes
 cost=1000
-model=obj_4023
+model=quest_mm_inv_monkey_talisman
 2dyof=13
 2dzoom=750
 2dyan=4
@@ -1014,7 +795,7 @@ recol3d=30753
 desc=A magical talisman in the shape of a monkey head. The eyes glow bright red!
 members=yes
 cost=3000
-model=obj_4023
+model=quest_mm_inv_monkey_talisman
 2dyof=13
 2dzoom=750
 2dyan=4
@@ -1032,7 +813,7 @@ recol3d=30753
 desc=A magical talisman in the shape of a monkey head. The eyes glow bright red!
 members=yes
 cost=6000
-model=obj_4023
+model=quest_mm_inv_monkey_talisman
 2dyof=13
 2dzoom=750
 2dyan=4
@@ -1050,7 +831,7 @@ recol3d=30753
 desc=A magical talisman in the shape of a monkey head. The eyes glow bright red!
 members=yes
 cost=1000
-model=obj_4023
+model=quest_mm_inv_monkey_talisman
 2dyof=13
 2dzoom=750
 2dyan=4
@@ -1068,7 +849,7 @@ recol3d=30753
 desc=A magical talisman in the shape of a monkey head. The eyes glow bright red!
 members=yes
 cost=1500
-model=obj_4023
+model=quest_mm_inv_monkey_talisman
 2dyof=13
 2dzoom=750
 2dyan=4
@@ -1086,7 +867,7 @@ recol3d=30753
 desc=A magical talisman in the shape of a monkey head. The eyes glow bright red!
 members=yes
 cost=10000
-model=obj_4023
+model=quest_mm_inv_monkey_talisman
 2dyof=13
 2dzoom=750
 2dyan=4
@@ -1104,7 +885,7 @@ recol3d=30753
 desc=A magical talisman in the shape of a monkey head. The eyes glow bright red!
 members=yes
 cost=500
-model=obj_4023
+model=quest_mm_inv_monkey_talisman
 2dyof=13
 2dzoom=750
 2dyan=4
@@ -1122,7 +903,7 @@ recol3d=30753
 desc=A magical talisman in the shape of a monkey head. The eyes glow bright red!
 members=yes
 cost=2000
-model=obj_4023
+model=quest_mm_inv_monkey_talisman
 2dyof=13
 2dzoom=750
 2dyan=4
@@ -1140,7 +921,7 @@ recol3d=30753
 desc=A magical talisman in the shape of a monkey head. The eyes glow bright red!
 members=yes
 cost=500
-model=obj_4023
+model=quest_mm_inv_monkey_talisman
 2dyof=13
 2dzoom=750
 2dyan=4
@@ -1149,7 +930,7 @@ iop2=Hold
 
 [fade_to_black_inv]
 name=Dummy
-model=obj_4032
+model=if_fadetoblack
 2dzoom=130
 2dxan=512
 
@@ -1157,7 +938,7 @@ model=obj_4032
 name=Monkey
 desc=It's a monkey in your backpack. As you look it pokes you.
 members=yes
-model=obj_4033
+model=quest_mm_inv_monkey_backpack
 2dxof=-3
 2dyof=7
 2dzoom=1590
@@ -1168,7 +949,7 @@ iop1=Poke
 name=Monkey skull
 desc=It's a very ancient skull from some kind of ape.
 members=yes
-model=obj_4034
+model=quest_mm_inv_monkey_skull_relic
 2dxof=1
 2dyof=-10
 2dzoom=820
@@ -1179,19 +960,15 @@ model=obj_4034
 name=10th squad sigil
 desc=It's the official sigil of the 10th squad of the Royal Guard.
 members=yes
-model=obj_4035
+model=quest_mm_inv_monkey_medal
 2dxof=1
 2dyof=7
 2dzoom=1040
 2dyan=120
 2dxan=380
-manwear=obj_4035_manwear,0
-womanwear=obj_4035_womanwear,0
+manwear=man_necklaces_monkey_medal,0
+womanwear=woman_necklaces_monkey_medal,0
 iop2=Wear
-
-[obj_4036]
-certlink=fade_to_black_inv
-certtemplate=template_for_cert
 
 [castlewars_saradomin_banner]
 name=Saradomin banner
@@ -1207,10 +984,6 @@ manwear=obj_4037_manwear,0
 womanwear=obj_4037_manwear,6
 members=yes
 
-[obj_4038]
-certlink=castlewars_saradomin_banner
-certtemplate=template_for_cert
-
 [castlewars_zamorak_banner]
 name=Zamorak banner
 desc=The Zamorak Team Standard.
@@ -1224,10 +997,6 @@ womanwear=obj_4039_manwear,6
 2dyan=44
 2dxan=112
 members=yes
-
-[obj_4040]
-certlink=castlewars_zamorak_banner
-certtemplate=template_for_cert
 
 [castlewars_cloak_saradomin]
 name=Hooded cloak
@@ -1248,9 +1017,9 @@ model=inv_cloak
 2dxan=400
 iop2=Wear
 manwear=man_torsoextra_cloak_for_hood2,0
-womanwear=obj_4041_womanwear,0
-manhead=chat_male_head_model_48
-womanhead=chat_female_head_model_107
+womanwear=woman_torsoextra_cloak_for_hood2,0
+manhead=chat_male_head_hood2
+womanhead=chat_female_head_hood2
 members=yes
 team=1
 
@@ -1273,26 +1042,22 @@ model=inv_cloak
 2dxan=400
 iop2=Wear
 manwear=man_torsoextra_cloak_for_hood2,0
-womanwear=obj_4041_womanwear,0
-manhead=chat_male_head_model_48
-womanhead=chat_female_head_model_107
+womanwear=woman_torsoextra_cloak_for_hood2,0
+manhead=chat_male_head_hood2
+womanhead=chat_female_head_hood2
 members=yes
 team=2
 
 [castlewars_catapult_rock]
 name=Rock
 desc=I can use this with the catapult.
-model=obj_4043
+model=castlewars_catapult_boulder
 2dxof=-1
 2dyof=-2
 2dzoom=1220
 2dyan=1788
 2dxan=52
 members=yes
-
-[obj_4044]
-certlink=castlewars_catapult_rock
-certtemplate=template_for_cert
 
 [castlewars_explosives_potion]
 name=Explosive potion
@@ -1305,10 +1070,6 @@ model=inv_vial
 2dyan=1996
 2dxan=84
 members=yes
-
-[obj_4046]
-certlink=castlewars_explosives_potion
-certtemplate=template_for_cert
 
 [castlewars_climbing_rope]
 name=Climbing rope
@@ -1323,14 +1084,10 @@ model=ship_pileofrope2
 2dxan=188
 members=yes
 
-[obj_4048]
-certlink=castlewars_climbing_rope
-certtemplate=template_for_cert
-
 [castlewars_bandages]
 name=Bandages
 desc=A box of bandages for healing.
-model=obj_4049
+model=game_castlewars_inv_bandages
 2dxof=-1
 2dzoom=1200
 2dyan=1884
@@ -1338,14 +1095,10 @@ model=obj_4049
 iop1=Heal
 members=yes
 
-[obj_4050]
-certlink=castlewars_bandages
-certtemplate=template_for_cert
-
 [castlewars_toolkit]
 name=Toolbox
 desc=I can use this to repair things.
-model=obj_4051
+model=game_castlewars_inv_toolbox
 2dxof=5
 2dyof=-5
 2dzoom=1310
@@ -1353,24 +1106,16 @@ model=obj_4051
 2dxan=136
 members=yes
 
-[obj_4052]
-certlink=castlewars_toolkit
-certtemplate=template_for_cert
-
 [castlewars_barricade]
 name=Barricade
 desc=Use these to block enemy team movement.
-model=loc_4421
+model=game_castlewars_barricade
 2dyof=-27
 2dzoom=2760
 2dyan=1816
 2dxan=104
 iop1=Set-up
 members=yes
-
-[obj_4054]
-certlink=castlewars_barricade
-certtemplate=template_for_cert
 
 [castlewars_manual]
 name=Castlewars manual
@@ -1629,14 +1374,10 @@ womanwear=model_488_obj_wear,0
 2dxan=196
 members=yes
 
-[obj_4074]
-certlink=damp_tinderbox
-certtemplate=template_for_cert
-
 [glowing_fungus]
 name=Glowing fungus
 desc=A bizarre fungus.  It glows with a pale blue light.
-model=obj_4075
+model=quest_hauntedmine_inv_mushroom
 2dyof=-15
 2dzoom=790
 2dyan=236
@@ -1674,7 +1415,7 @@ members=yes
 name=Yo-yo
 cost=10
 desc=A gift from Santa.
-model=obj_4079
+model=inv_yo
 iop1=Play
 iop2=Loop
 iop3=Walk
@@ -1687,30 +1428,30 @@ iop4=Crazy
 
 [xmas_yoyoworn]
 name=Xmas yoyoworn
-model=obj_4080
-manwear=obj_4080,0
-womanwear=obj_4080,6
+model=human_weapons_yo
+manwear=human_weapons_yo,0
+womanwear=human_weapons_yo,6
 
 [crystalshard_necklace]
 name=Salve amulet
 recol1s=13537
 recol1d=32767
 desc=Increases the wearer's strength and accuracy by 15% when fighting the undead.
-model=obj_4081
+model=quest_hauntedmine_inv_crystal_shard_necklace
 2dxof=2
 2dyof=-18
 2dzoom=440
 2dyan=72
 2dxan=172
 iop2=Wear
-manwear=obj_4081_manwear,0
-womanwear=obj_4081_womanwear,0
+manwear=man_necklaces_crystal_shard,0
+womanwear=woman_necklaces_crystal_shard,0
 members=yes
 
 [crystalshard_necklace_unstrung]
 name=Salve shard
 desc=An unstrung crystal imbued with the power of Saradomin.
-model=obj_4082
+model=quest_hauntedmine_inv_cyrstal_shard_unstrung
 2dyof=1
 2dzoom=180
 2dyan=2044
@@ -1719,12 +1460,12 @@ members=yes
 [trollromance_toboggon]
 name=Sled
 desc=It needs waxing before I can use it.
-model=obj_4083
+model=quest_trollromance_toboggan
 2dzoom=1960
 2dyan=160
 2dxan=136
-manwear=obj_4083_manwear,0
-womanwear=obj_4083_manwear,0
+manwear=human_weapons_toboggan,0
+womanwear=human_weapons_toboggan,0
 members=yes
 cost=150
 
@@ -1737,22 +1478,22 @@ recol2d=22951
 recol3s=16707
 recol3d=18723
 desc=A waxed sled.
-model=obj_4083
+model=quest_trollromance_toboggan
 2dzoom=1960
 2dyan=160
 2dxan=136
 iop2=Ride
-manwear=obj_4083_manwear,0
-womanwear=obj_4083_manwear,0
+manwear=human_weapons_toboggan,0
+womanwear=human_weapons_toboggan,0
 members=yes
 cost=175
 
 [trollromance_wax]
 name=Wax
 desc=I can use this to wax my sled.
-model=obj_4085
-manwear=obj_4085_manwear,0
-womanwear=obj_4085_manwear,0
+model=quest_trollromance_inv_wax
+manwear=human_weapons_sledwax,0
+womanwear=human_weapons_sledwax,0
 2dxof=1
 2dyof=-8
 2dzoom=520
@@ -1797,8 +1538,3 @@ iop2=Wear
 manwear=obj_4087_manwear,0
 womanwear=obj_4087_womanwear,0
 members=yes
-
-[obj_4088]
-certlink=dragon_platelegs
-certtemplate=template_for_cert
-

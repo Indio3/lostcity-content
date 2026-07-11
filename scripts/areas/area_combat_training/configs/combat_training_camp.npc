@@ -17,7 +17,7 @@ model7=man_legs_basic
 model8=man_legs_combats
 model9=human_weapons_mace
 model10=human_weapons_squareshield
-head1=chat_male_head_model_48
+head1=chat_male_head_hood2
 head2=chat_male_jaw_short
 wanderrange=1
 
@@ -39,7 +39,7 @@ model6=man_hands_gloves
 model7=man_legs_basic
 model8=man_legs_combats
 model9=human_weapons_crossbow
-head1=chat_male_head_model_48
+head1=chat_male_head_hood2
 head2=chat_male_jaw_short
 wanderrange=1
 
@@ -61,7 +61,7 @@ model6=man_hands_gloves
 model7=man_legs_basic
 model8=man_legs_combats
 model9=human_weapons_crossbow
-head1=chat_male_head_model_48
+head1=chat_male_head_hood2
 head2=chat_male_jaw_short
 
 [lathastrainingogre]
@@ -119,7 +119,7 @@ model5=man_hands_gloves
 model6=man_legs_basic
 model7=man_feet_basic
 model8=man_torsoextra_pattern1fat
-head1=chat_male_head_model_48
+head1=chat_male_head_hood2
 head2=chat_male_jaw_short2
 defaultmode=none
 wanderrange=0

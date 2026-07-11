@@ -13,8 +13,8 @@ recol1s=15855
 recol1d=30513
 
 [castlewars_catapult_impact]
-model=spot_spotanim_303
-anim=seq_1432
+model=castlewars_catapult_rock
+anim=castlewars_catapult_impact
 recol4s=13741
 recol4d=11560
 
@@ -54,7 +54,7 @@ model=spot_spotanim_307
 anim=pickaxe_projectile_travel
 
 [misty]
-model=loc_4047
+model=misty
 anim=misty
 contrast=30
 ambient=30

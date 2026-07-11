@@ -75,6 +75,7 @@ p_telejump($coord);
 cam_reset;
 anim(null, 0);
 // todo: ensure this proc is used for other teleports too
+~reset_haunted_levers;
 def_int $rum = inv_total(inv, karamja_rum);
 if ($rum > 0) {
     inv_del(inv, karamja_rum, $rum);

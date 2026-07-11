@@ -87,12 +87,12 @@ recol6d=15360
 model1=man_head_tribal
 model2=man_jaw_none
 model3=man_torso_thin
-model4=man_arms_model_168
+model4=man_arms_thin
 model5=man_hands_basic
 model6=man_legs_tatty
 model7=man_feet_basic
 model8=man_torsoextra_elfpriestdecor
-head1=chat_male_head_model_64
+head1=chat_male_head_tribal
 
 [oziach]
 vislevel=hide

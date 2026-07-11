@@ -61,7 +61,7 @@ model5=woman_hands_gloves
 model6=woman_legs_flares
 model7=woman_feet_boots
 model8=woman_torsoextra_pattern1
-head1=chat_female_head_model_108
+head1=chat_female_head_hood3
 wanderrange=2
 
 [newbie_combat_instructor]
@@ -95,7 +95,7 @@ model8=human_weapons_dh-sword
 model9=man_torsoextra_necromancerdecor
 model10=man_necklaces_amulet
 model11=man_hat_headband
-head1=chat_male_head_model_64
+head1=chat_male_head_tribal
 head2=chat_male_jaw_split
 wanderrange=2
 
@@ -228,7 +228,7 @@ model6=man_legs_basic2
 model7=man_feet_boots
 model8=man_necklaces_basic
 model9=man_hands_gloves
-head1=chat_male_head_model_50
+head1=chat_male_head_pirate
 head2=chat_male_jaw_goaty
 wanderrange=2
 
