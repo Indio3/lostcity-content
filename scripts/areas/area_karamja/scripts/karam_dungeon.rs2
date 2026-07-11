@@ -8,7 +8,7 @@
 ~chatplayer("<p,neutral>Ok, here's 875 coins.");
 inv_del(inv, coins, 875);
 %karam_dungeon_varbit = ^true;
-~objbox(coins_250, "You give Saniboch 875 coins.", 250, 0, 0);
+~objbox(coins_5, "You give Saniboch 875 coins.", 250, 0, 0);
 ~chatnpc("<p,happy>Many thanks. You may now pass the door. May your death be a glorious one!");
 
 [opnpc3,tribesman_doorman]
@@ -313,6 +313,7 @@ stat_advance(agility, 100);
 def_int $mod = -1;
 def_int $dir = ^exact_south;
 def_coord $next_pipe = 0_41_149_31_31;
+def_coord $start = 0_41_149_31_37;
 if(coordz(coord) <= coordz(loc_coord)) {
     if(stat(agility) < 22) {
         ~mesbox("You need an Agility level of 22 to squeeze through the pipe.");
@@ -320,8 +321,10 @@ if(coordz(coord) <= coordz(loc_coord)) {
     }
     $mod = 1;
     $dir = ^exact_north;
-    $next_pipe = 0_41_149_31_36;
+    $start = 0_41_149_31_30;
+    $next_pipe = 0_41_149_31_35;
 }
+~forcewalk2($start);
 if(%karam_dungeon_pipe_used >= map_clock) {
     mes("The pipe is being used"); // todo: confirm, using the same as gnome course
     return;
