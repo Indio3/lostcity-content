@@ -100,6 +100,5 @@ sound_synth(dragonbreath, 1, 30);
 def_int $damage = randominc(~metal_dragon_breath_maxhit);
 queue(combat_damage_player, 0, $damage);
 queue*(playerhit_n_retaliate, 0)(npc_uid);
-%npc_action_delay = add(map_clock, 4);
 ~npc_set_attack_vars;
 
