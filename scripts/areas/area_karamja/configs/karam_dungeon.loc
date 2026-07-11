@@ -1,18 +1,18 @@
 [skewsteps_diag_right1]
-model=loc_5067
+model=furniture_skewsteps_diag2
 hillskew=yes
 sharelight=yes
 forcedecor=yes
 
 [skewsteps_diag_left1]
-model=loc_5067
+model=furniture_skewsteps_diag2
 hillskew=yes
 sharelight=yes
 forcedecor=yes
 mirror=yes
 
 [skewsteps1_diag_right1_lbrown]
-model=loc_5067
+model=furniture_skewsteps_diag2
 recol1s=15855
 recol1d=15717
 hillskew=yes
@@ -20,7 +20,7 @@ sharelight=yes
 forcedecor=yes
 
 [skewsteps1_diag_left1_lbrown]
-model=loc_5067
+model=furniture_skewsteps_diag2
 recol1s=15855
 recol1d=15717
 hillskew=yes
@@ -368,7 +368,7 @@ op1=Chop-down
 op3=hidden
 
 [loc_5108]
-model=loc_5108
+model=skill_slayer_wall_cave_vine
 recol1s=6307
 recol1d=7296
 recol2s=7364
@@ -385,7 +385,7 @@ sharelight=yes
 hillskew=yes
 
 [loc_5109]
-model=loc_5109
+model=skill_slayer_wall_cave_lev2_vine
 recol1s=11592
 recol1d=12580
 recol2s=7364
@@ -450,7 +450,7 @@ blockrange=no
 [loc_5115]
 name=Fungus
 desc=I doubt that's edible.
-model=loc_5115
+model=plants_nastyfungus_small
 recol1s=31302
 recol1d=11555
 recol2s=30415
