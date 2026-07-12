@@ -1194,6 +1194,14 @@ model=obj_4023
 2dyan=4
 2dxan=456
 iop2=Hold
+wearpos=righthand
+param=ready_baseanim,monkey_ready
+param=turnonspot_baseanim,monkey_walk
+param=walk_f_baseanim,monkey_walk
+param=walk_b_baseanim,monkey_walk
+param=walk_l_baseanim,monkey_walk
+param=walk_r_baseanim,monkey_walk
+param=running_baseanim,m_normalmonkey_run
 
 [fade_to_black_inv]
 name=Dummy
