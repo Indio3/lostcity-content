@@ -101,7 +101,7 @@ if ($deposit > 0) {
     session_log(^log_moderator, "Deposited <oc_debugname($obj)> x<tostring($deposit)> into bank");
     inv_moveitem_uncert($inv, bank, $obj, $deposit);
     if($inv = worn) {
-        ~unequip_effect($obj);
+        ~unequip_effect($obj, ^true);
     }
 }
 return(true);
