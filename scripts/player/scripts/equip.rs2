@@ -53,6 +53,9 @@ if (p_finduid(uid) = true) {
     } else if($obj = ibanstaff) {
         // https://youtu.be/n_ip_vEDbCA?si=0uESoOC98Fvl7HqS&t=2333
         mes("You equip the staff of Iban.");
+    } else if($obj = mm_monkey_greegree_for_normal_monkey) {
+        spotanim_pl(windwave_impact, 124, 0);
+        sound_synth(human_into_monkey, 0, 0);
     }
 
     ~update_all($previous);
@@ -75,17 +78,24 @@ if (p_finduid(uid) = true) {
         return;
     }
     inv_moveitem(worn, inv, $obj, sub($count, $overflow));
-    ~unequip_effect($obj);
+    ~unequip_effect($obj, ^true);
 }
 
-[proc,unequip_effect](obj $obj)
+[proc,unequip_effect](obj $obj, int $update_all)
 if($obj = elemental_shield) {
     sound_synth(shield_appear, 1, 0);
 }
 if (oc_param($obj, specwep) = ^true) {
     %sa_attack = ^false;
 }
-~update_all($obj);
+if($obj = mm_monkey_greegree_for_normal_monkey | $obj = mm_monkey_greegree_for_small_ninja_monkey) {
+    p_transmogrify(null);
+    p_animprotect(^false);
+    spotanim_pl(windwave_impact, 124, 0);
+    sound_synth(monkey_into_human, 0, 0);
+    if_settab(magic, ^tab_magic);
+}
+if($update_all = ^true) ~update_all($obj);
 
 // used for duel arena, no weapon/no armour
 [proc,try_unequip](int $slot)
@@ -364,13 +374,16 @@ if (~unequip_conflicts_space($equip_obj) = false) { // check if enough space
     return(false);
 }
 
+def_obj $previous_equip = inv_getobj(worn, $worn_slot);
 inv_movetoslot(inv, worn, $inv_slot, $worn_slot); // equip item! this performs a swap
+
 if (inv_getobj(inv, $inv_slot) ! null) {
     // presumably, they added this as an easy way for stackable objs to stack in the inv (instead of directly swapping)
     // seems like in late 2006 they removed this line of code and it produced this bug: https://youtu.be/EYXp7GMFWEw, https://youtu.be/DwzDt3yw6k4
     inv_movefromslot(inv, inv, $inv_slot); // moves item to the first available slot in the inv...
 }
 ~unequip_conflicts($equip_obj);
+~unequip_effect($previous_equip, ^false);
 
 return(true);
 
