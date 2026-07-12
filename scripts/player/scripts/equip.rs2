@@ -413,9 +413,9 @@ while ($i < inv_size(worn)) {
     if ($worn_obj ! null & ~wearpos_conflicts($equip_obj, $worn_obj) = true) {
         if ($worn_obj ! $equip_obj) { // skip the obj we just equipped
             inv_moveitem(worn, inv, $worn_obj, $worn_num);
+            // run unequip effects on the conflicted obj
+            ~unequip_effect($worn_obj, ^false);
         }
-        // run unequip effects on the conflicted obj
-        ~unequip_effect($worn_obj, ^false);
     }
     $i = add($i, 1);
 }
