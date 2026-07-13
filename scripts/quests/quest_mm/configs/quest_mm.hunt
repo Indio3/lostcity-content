@@ -20,6 +20,16 @@ check_notbusy=off
 find_keephunting=off
 find_newmode=applayer2
 
+[mm_jail_guard]
+type=player
+check_vis=lineofsight
+check_nottoostrong=off
+check_notbusy=off
+check_afk=off
+check_inv=worn,mm_monkey_greegree_for_normal_monkey,<1
+find_keephunting=on
+find_newmode=applayer2
+
 [dugopul]
 type=player
 check_vis=lineofsight

@@ -123,22 +123,21 @@ if(inzone(0_42_142_0_0, 0_43_142_63_63, coord) = false) {
     cleartimer(mm_springtrap);
 }
 
-// [debugproc,monkey]
-// if(p_finduid(uid) = true) {
-//     p_transmogrify(mm_transmogrification_normal_monkey);
-//     readyanim(monkey_ready);
-//     turnanim(monkey_walk);
-//     walkanim(monkey_walk);
-//     walkanim_b(monkey_walk);
-//     walkanim_l(monkey_walk);
-//     walkanim_r(monkey_walk);
-//     runanim(m_normalmonkey_run);
-//     buildappearance(worn);
-// }
+[debugproc,monkey]
+if(p_finduid(uid) = true) {
+    p_transmogrify(mm_transmogrification_normal_monkey);
+    readyanim(monkey_ready);
+    turnanim(monkey_walk);
+    walkanim(monkey_walk);
+    walkanim_b(monkey_walk);
+    walkanim_l(monkey_walk);
+    walkanim_r(monkey_walk);
+    runanim(m_normalmonkey_run);
+    buildappearance(worn);
+}
 
-
-// [debugproc,transmogrify](npc $npc)
-// if(p_finduid(uid) = true) {
-//     p_transmogrify($npc);
-//     buildappearance(worn);
-// }
+[debugproc,transmogrify](npc $npc)
+if(p_finduid(uid) = true) {
+    p_transmogrify($npc);
+    buildappearance(worn);
+}

@@ -54,6 +54,7 @@ if_openmain(inter_199);
 if_close;
 p_delay(0);
 ~music_jingle("meanwhile");
+queue(restart_music, 0, 0);
 if_settext(inter_199:com_2, ^string_empty);
 if_settext(inter_199:com_3, ^string_empty);
 if_settext(inter_199:com_4, ^string_empty);
@@ -89,6 +90,9 @@ if(npc_findexact(0_40_71_43_38, mm_foreman_cutscene) = true & .npc_findexact(0_4
     if_settab(null, ^tab_magic);
     @mm_ch2_cutscene_dialogue;
 }
+
+[queue,restart_music]
+@music_play(%currentsong);
 
 [queue,mm_ch3_cutscene]
 if_close;

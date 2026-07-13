@@ -103,7 +103,7 @@ switch_obj(last_useitem) {
         if(testbit(%mm_bits, ^mm_given_talisman) = ^true) {
             ~chatnpc("<p,neutral>You have already given me a monkey talisman.");
         } else {
-            %mm_bits = setbit(%mm_bits, ^mm_given_gold_bar);
+            %mm_bits = setbit(%mm_bits, ^mm_given_talisman);
             inv_del(inv, last_useitem, 1);
             ~objbox(last_useitem, "You hand Zooknock the monkey talisman.", 250, 0, 0);
             ~chatnpc("<p,neutral>Well done, human.");

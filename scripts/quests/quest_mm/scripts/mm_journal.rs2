@@ -108,7 +108,9 @@ if(%mm_main > ^mm_shown_seal) {
         $text = append($text, "||@str@I have made my rather painful way to a large village|");
         $text = append($text, "@str@populated by various types of monkey.");
 
-        if(%mm_jail_counter > 1) {
+        if(%mm_jail_counter > 254) {
+            $text = append($text, "||@str@I have been caught and jailed far too many times to keep @str@count.");
+        } else if(%mm_jail_counter > 1) {
             $text = append($text, "||@str@I have been caught and jailed <tostring(%mm_jail_counter)> times.");
         }
     }

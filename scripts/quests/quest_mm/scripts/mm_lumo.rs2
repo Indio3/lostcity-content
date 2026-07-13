@@ -1,3 +1,6 @@
+[queue,lumo_jailed_dialogue]
+@lumo_jailed_dialogue;
+
 [label,lumo_jailed_dialogue]
 if(%mm_jail_counter = 1) {
     ~chatnpc_specific(nc_name(mm_lumo), mm_lumo, "<p,neutral>Look - a newcomer. I'd say let me be the first to welcome you to Ape Atoll, but I see you've already met the welcoming party...");
