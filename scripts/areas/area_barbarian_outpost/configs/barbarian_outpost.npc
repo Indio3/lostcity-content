@@ -78,7 +78,7 @@ model8=man_feet_boots
 model9=human_weapons_axe
 head1=chat_male_head_mediumhelmet
 head2=chat_male_jaw_split
-head3=model_75_npc_head
+head3=chat_male_headextra_model_75
 wanderrange=2
 
 [gunnjorn]
@@ -106,5 +106,5 @@ model7=man_headextra_vikinghorns
 model8=man_feet_boots
 model9=human_weapons_axe
 head1=chat_male_head_mediumhelmet
-head2=model_75_npc_head
+head2=chat_male_headextra_model_75
 head3=chat_male_jaw_short

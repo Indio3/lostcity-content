@@ -27,7 +27,7 @@ model7=man_legs_basic
 model8=man_feet_basic
 model9=man_torsoextra_jacket
 head1=chat_male_head_shorthair
-head2=model_70_npc_head
+head2=chat_male_headextra_monacle
 head3=chat_male_jaw_moustache
 wanderrange=3
 

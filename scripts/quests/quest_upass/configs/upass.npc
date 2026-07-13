@@ -13,7 +13,7 @@ model5=man_jaw_goaty
 model6=man_legs_turnups
 model7=man_torso_basic
 model8=man_torsoextra_buttons2
-head1=chat_male_head_model_48
+head1=chat_male_head_hood2
 head2=chat_male_jaw_goaty
 
 [caveguide2]
@@ -31,7 +31,7 @@ model5=man_jaw_goaty
 model6=man_legs_turnups
 model7=man_torso_basic
 model8=man_torsoextra_buttons2
-head1=chat_male_head_model_48
+head1=chat_male_head_hood2
 head2=chat_male_jaw_goaty
 
 [caveguide3]
@@ -49,7 +49,7 @@ model5=man_jaw_goaty
 model6=man_legs_turnups
 model7=man_torso_basic
 model8=man_torsoextra_buttons2
-head1=chat_male_head_model_48
+head1=chat_male_head_hood2
 head2=chat_male_jaw_goaty
 wanderrange=2
 
@@ -68,7 +68,7 @@ model5=man_jaw_goaty
 model6=man_legs_turnups
 model7=man_torso_basic
 model8=man_torsoextra_buttons2
-head1=chat_male_head_model_48
+head1=chat_male_head_hood2
 head2=chat_male_jaw_goaty
 
 [caveguide5]
@@ -86,7 +86,7 @@ model5=man_jaw_goaty
 model6=man_legs_turnups
 model7=man_torso_basic
 model8=man_torsoextra_buttons2
-head1=chat_male_head_model_48
+head1=chat_male_head_hood2
 head2=chat_male_jaw_goaty
 
 [blessed_spider]
@@ -96,7 +96,7 @@ name=Blessed spider
 desc=It's one of Iban's pets.
 op2=Attack
 vislevel=39
-model1=model_2884_npc
+model1=npc_giantspider
 wanderrange=10
 maxrange=12
 respawnrate=600
@@ -240,7 +240,7 @@ model4=man_jaw_short
 model5=man_arms_bare
 model6=man_feet_basic
 model7=man_hands_basic
-head1=chat_male_head_model_47
+head1=chat_male_head_hood1
 
 [cave_slave5]
 vislevel=hide
@@ -286,7 +286,7 @@ model4=man_jaw_goaty
 model5=man_arms_bare
 model6=man_feet_basic
 model7=man_hands_basic
-head1=chat_male_head_model_48
+head1=chat_male_head_hood2
 
 [cave_slave7]
 vislevel=hide
@@ -506,7 +506,7 @@ model1=man_head_bald
 model2=man_torso_tatty
 model3=man_legs_tatty
 model4=man_jaw_none
-model5=man_arms_model_168
+model5=man_arms_thin
 model6=man_feet_basic
 model7=man_hands_basic
 defaultmode=none
@@ -636,7 +636,7 @@ resizev=352
 size=3
 op2=Attack
 vislevel=89
-model1=model_2884_npc
+model1=npc_giantspider
 wanderrange=10
 maxrange=10
 respawnrate=100

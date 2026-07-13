@@ -533,8 +533,7 @@ attackrange=2
 timer=1
 
 [vampire_misty]
-name=vampire_misty
-model1=loc_4047
+model1=misty
 size=2
 walkanim=misty
 readyanim=misty
@@ -605,7 +604,6 @@ param=death_sound,null
 
 // unused
 [vampire_count]
-name=vampire_count
 model1=npc_1220
 model2=man_torso_platemail
 model3=model_174_npc

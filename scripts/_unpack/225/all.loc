@@ -616,7 +616,7 @@ recol1s=15716
 recol1d=5252
 
 [lantern]
-model=walldecor_loc_205
+model=walldecor_lantern
 ambient=50
 
 [skulltorch]
@@ -7766,7 +7766,7 @@ recol1d=9763
 [jungleplant2]
 name=Jungle plant
 desc=A type of jungle fern.
-model=plants_loc_1401
+model=plants_jungleplant2
 width=2
 length=2
 blockrange=no

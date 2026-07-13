@@ -114,7 +114,7 @@ model7=man_jaw_long
 model8=man_torsoextra_cloak
 model9=human_weapons_staffstraight
 model10=man_torsoextra_paladin_star
-head1=chat_male_head_model_48
+head1=chat_male_head_hood2
 head2=chat_male_jaw_long
 
 [dragon_bartender]

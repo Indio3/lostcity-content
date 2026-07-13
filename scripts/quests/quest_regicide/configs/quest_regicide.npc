@@ -731,7 +731,7 @@ desc=The cave guide.
 walkanim=human_walk_f,human_walk_b,human_walk_l,human_walk_r
 readyanim=human_ready
 op1=Talk-to
-head1=chat_male_head_model_48
+head1=chat_male_head_hood2
 head2=chat_male_jaw_goaty
 wanderrange=5
 
@@ -754,7 +754,7 @@ head2=chat_male_jaw_short2
 
 [regicide_willothewisp1]
 name=Willow the wisp
-model1=transilvania_area_priestperil_npc_willothewisp_willowthewisp
+model1=npc_willothewisp
 recol1s=31434
 recol1d=21471
 desc=Mysterious swamp lights...
@@ -770,7 +770,7 @@ wanderrange=5
 
 [regicide_willothewisp2]
 name=Willow the wisp
-model1=transilvania_area_priestperil_npc_willothewisp_willowthewisp
+model1=npc_willothewisp
 recol1s=31434
 recol1d=21471
 desc=Mysterious swamp lights...

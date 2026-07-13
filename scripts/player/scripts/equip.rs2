@@ -438,10 +438,17 @@ if(inv_total(worn, ikov_bootsoflightness) > 0 & map_members = ^true) { // conver
     inv_setslot(worn, ^wearpos_feet, ikov_bootsoflightness, 1);
 }
 
+def_int $count;
 if(inv_total(inv, ikov_bootsoflightnessworn) > 0) {
-    def_int $count = inv_total(inv, ikov_bootsoflightnessworn); // shouldnt ever be above 1?
+    $count = inv_total(inv, ikov_bootsoflightnessworn); // shouldnt ever be above 1?
     inv_del(inv, ikov_bootsoflightnessworn, $count); // should use inv_changeslot probably
     inv_add(inv, ikov_bootsoflightness, $count);
+}
+
+if(inv_total(bank, ikov_bootsoflightnessworn) > 0) {
+    $count = inv_total(bank, ikov_bootsoflightnessworn);
+    inv_del(bank, ikov_bootsoflightnessworn, $count);
+    inv_add(bank, ikov_bootsoflightness, $count);
 }
 
 // checks if two weapons have the same wearpos
