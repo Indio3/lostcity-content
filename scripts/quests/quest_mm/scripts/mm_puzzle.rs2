@@ -24,8 +24,8 @@ inv_setslot(reinitialisation_inv_inactive, 20, reinitialisation_21_inactive, 1);
 inv_setslot(reinitialisation_inv_inactive, 21, reinitialisation_22_inactive, 1); 
 inv_setslot(reinitialisation_inv_inactive, 22, reinitialisation_23_inactive, 1);
 inv_setslot(reinitialisation_inv_inactive, 23, reinitialisation_24_inactive, 1);
-inv_transmit(reinitialisation_inv_inactive, inter_201:com_3);
-if_openmain(inter_201);
+inv_transmit(reinitialisation_inv_inactive, reinitialisation_puzzle:com_3);
+if_openmain(reinitialisation_puzzle);
 
 [opheld5,_mm_reinit_inactive] // nothing
 
@@ -37,8 +37,8 @@ if(testbit(%mm_bits, ^mm_paid_glough) = ^true) { // force reset puzzle and do mo
     inv_clear(reinitialisation_inv); // prob shouldn't ever need this
     ~init_reinit_puzzle;
 }
-inv_transmit(reinitialisation_inv, inter_201:com_3);
-if_openmain(inter_201);
+inv_transmit(reinitialisation_inv, reinitialisation_puzzle:com_3);
+if_openmain(reinitialisation_puzzle);
 
 [proc,init_reinit_puzzle]
 inv_setslot(reinitialisation_inv, 0, reinitialisation_01, 1);

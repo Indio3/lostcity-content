@@ -1,7 +1,7 @@
 [opnpc1,mm_zooknock]
 switch_int(%mm_zooknock) {
     case ^zooknock_need_items :
-        if(testbit(%mm_bits, ^mm_made_amulet) = ^true & testbit(%mm_bits, ^mm_made_talisman) = ^false) {
+        if(%mm_zooknock_player_is_collecting_for_amulet = ^false & testbit(%mm_bits, ^mm_made_talisman) = ^false) {
             @multi2("I've lost the monkey amulet...", zooknock_amuletlost, "What do we need for the monkey talisman?", zooknock_talisman);
         }
         @multi2("What do we need for the monkey amulet?", zooknock_amulet, "What do we need for the monkey talisman?", zooknock_talisman);
@@ -40,42 +40,42 @@ if(%mm_zooknock < ^zooknock_need_items) {
 }
 switch_obj(last_useitem) {
     case mm_monkey_dentures :
-        if(testbit(%mm_bits, ^mm_made_amulet) = ^true) {
+        if(%mm_zooknock_player_is_collecting_for_amulet = ^false) {
             ~displaymessage(^dm_default);
             return;
         }
-        if(testbit(%mm_bits, ^mm_given_dentures) = ^true) {
+        if(%mm_zooknock_has_dentures = ^true) {
             ~chatnpc("<p,neutral>You have already given me some dentures.");
         } else {
-            %mm_bits = setbit(%mm_bits, ^mm_given_dentures);
+            %mm_zooknock_has_dentures = ^true;
             inv_del(inv, mm_monkey_dentures, 1);
             ~objbox(mm_monkey_dentures, "You hand Zooknock the magical monkey dentures.", 250, 0, ^objbox_height);
             ~chatnpc("<p,neutral>Nicely done.");
         }
         ~mm_zooknock_amulet_check;
     case gold_bar :
-        if(testbit(%mm_bits, ^mm_made_amulet) = ^true) {
+        if(%mm_zooknock_player_is_collecting_for_amulet = ^false) {
             ~displaymessage(^dm_default);
             return;
         }
-        if(testbit(%mm_bits, ^mm_given_gold_bar) = ^true) {
+        if(%mm_zooknock_has_gold_bar = ^true) {
             ~chatnpc("<p,neutral>You have already given me a gold bar.");
         } else {
-            %mm_bits = setbit(%mm_bits, ^mm_given_gold_bar);
+            %mm_zooknock_has_gold_bar = ^true;
             inv_del(inv, gold_bar, 1);
             ~objbox(gold_bar, "You hand Zooknock the gold bar.", 250, 0, 0);
             ~chatnpc("<p,neutral>Good work.");
         }
         ~mm_zooknock_amulet_check;
     case mm_monkey_amulet_mould :
-        if(testbit(%mm_bits, ^mm_made_amulet) = ^true) {
+        if(%mm_zooknock_player_is_collecting_for_amulet = ^false) {
             ~displaymessage(^dm_default);
             return;
         }
-        if(testbit(%mm_bits, ^mm_given_mould) = ^true) {
+        if(%mm_zooknock_has_amulet_mould = ^true) {
             ~chatnpc("<p,neutral>You have already given me the amulet mould.");
         } else {
-            %mm_bits = setbit(%mm_bits, ^mm_given_mould);
+            %mm_zooknock_has_amulet_mould = ^true;
             inv_del(inv, mm_monkey_amulet_mould, 1);
             ~objbox(mm_monkey_amulet_mould, "You hand Zooknock the monkey amulet mould.", 250, 0, divide(^objbox_height, 2));
             ~chatnpc("<p,neutral>Well done, human.");
@@ -86,10 +86,10 @@ switch_obj(last_useitem) {
             ~displaymessage(^dm_default);
             return;
         }
-        if(testbit(%mm_bits, ^mm_given_gold_bar) = ^true) {
+        if(%mm_zooknock_has_gold_bar = ^true) {
             ~chatnpc("<p,neutral>You have already given me a gold bar.");
         } else {
-            %mm_bits = setbit(%mm_bits, ^mm_given_gold_bar);
+            %mm_zooknock_has_gold_bar = ^true;
             inv_del(inv, last_useitem, 1);
             ~objbox(last_useitem, "You hand Zooknock the monkey remains.", 250, 0, 0);
             ~chatnpc("<p,neutral>Excellent.");
@@ -121,23 +121,23 @@ def_int $duration = ~coord_projectile(npc_coord, 0_43_142_52_60, fireblast_trave
 spotanim_map(fireblast_impact, 0_43_142_52_60, 124, $duration);
 
 [proc,mm_zooknock_amulet_check]
-if(testbit(%mm_bits, ^mm_given_gold_bar) = ^false & testbit(%mm_bits, ^mm_given_mould) = ^false & 
-    testbit(%mm_bits, ^mm_given_dentures) = ^false) {
+if(%mm_zooknock_has_gold_bar = ^false & %mm_zooknock_has_amulet_mould = ^false & 
+    %mm_zooknock_has_dentures = ^false) {
     ~chatnpc("<p,neutral>We need a gold bar, a monkey amulet mould and something to do monkey speech.");
     return;
 }
 def_string $text = "<p,neutral>We still need ";
 def_int $multiple = ^false;
-if(testbit(%mm_bits, ^mm_given_gold_bar) = ^false) {
+if(%mm_zooknock_has_gold_bar = ^false) {
     $multiple = ^true;
     $text = append($text, "the gold bar");
 }
-if(testbit(%mm_bits, ^mm_given_mould) = ^false) {
+if(%mm_zooknock_has_amulet_mould = ^false) {
     if($multiple = ^true) $text = append($text, " and ");
     $multiple = ^true;
     $text = append($text, "the monkey amulet mould");
 }
-if(testbit(%mm_bits, ^mm_given_dentures) = ^false) {
+if(%mm_zooknock_has_dentures = ^false) {
     if($multiple = ^true) $text = append($text, " and ");
     $multiple = ^true;
     $text = append($text, "something to do with monkey speech");
@@ -153,7 +153,7 @@ if($multiple = ^false) {
     spotanim_npc(windwave_impact, 80, 0);
     inv_add(inv, mm_enchanted_gold_bar, 1);
     inv_add(inv, mm_monkey_amulet_mould, 1);
-    if(testbit(%mm_bits, ^mm_made_amulet) = ^false) %mm_bits = setbit(%mm_bits, ^mm_made_amulet);
+    if(%mm_zooknock_player_is_collecting_for_amulet = ^true) %mm_zooknock_player_is_collecting_for_amulet = ^false;
     ~doubleobjbox(mm_enchanted_gold_bar, mm_monkey_amulet_mould, "Zooknock hands you back the gold bar and the monkey amulet mould.", 200);
     return;
 }
@@ -193,10 +193,10 @@ if($op = 2) {
     return;
 }
 ~chatplayer("<p,neutral>Yes.");
-%mm_bits = clearbit(%mm_bits, ^mm_given_gold_bar);
-%mm_bits = clearbit(%mm_bits, ^mm_given_dentures);
-%mm_bits = clearbit(%mm_bits, ^mm_given_mould);
-%mm_bits = clearbit(%mm_bits, ^mm_made_amulet);
+%mm_zooknock_has_gold_bar = ^false;
+%mm_zooknock_has_dentures = ^false;
+%mm_zooknock_has_amulet_mould = ^false;
+%mm_zooknock_player_is_collecting_for_amulet = ^true;
 ~chatnpcnoturn("<p,neutral>Careless human. No matter - bring me the same materials again and I will prepare for you another one.");
 
 [label,zooknock_amulet]
@@ -253,6 +253,7 @@ while($op ! null) {
 ~chatnpcnoturn("<p,neutral>I suggest that I invest the ability to communicate with the monkeys in an authentic monkey amulet.");
 ~chatnpcnoturn("<p,neutral>Similarly, the transformation spell should be stored in a monkey talisman of some kind.");
 %mm_zooknock = ^zooknock_need_items;
+%mm_zooknock_player_is_collecting_for_amulet = ^true;
 @multi2("What do we need for the monkey amulet?", zooknock_amulet, "What do we need for the monkey talisman?", zooknock_talisman);
 
 [label,mm_zooknock_p4]

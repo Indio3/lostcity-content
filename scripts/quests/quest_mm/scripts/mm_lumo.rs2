@@ -2,26 +2,26 @@
 @lumo_jailed_dialogue;
 
 [label,lumo_jailed_dialogue]
-if(%mm_jail_counter = 1) {
+if(%mm_jail_count = 1) {
     ~chatnpc_specific(nc_name(mm_lumo), mm_lumo, "<p,neutral>Look - a newcomer. I'd say let me be the first to welcome you to Ape Atoll, but I see you've already met the welcoming party...");
-} else if(%mm_jail_counter = 5) {
+} else if(%mm_jail_count = 5) {
     ~chatnpc_specific(nc_name(mm_lumo), mm_lumo, "<p,neutral>Wow. I swear we've seen <text_gender("him", "her")> five times already.");
-} else if(%mm_jail_counter = 10) {
+} else if(%mm_jail_count = 10) {
     ~chatnpc_specific(nc_name(mm_lumo), mm_lumo, "<p,neutral>Oh my god - <text_gender("he's", "she's")> been through here ten times now.");
     ~chatnpc_specific(nc_name(mm_bunkdo), mm_bunkdo, "<p,neutral>And which god would that be, eh?");
     ~chatnpc_specific(nc_name(mm_bunkdo), mm_bunkdo, "<p,neutral>You know what I mean...");
-} else if(%mm_jail_counter = 15) {
+} else if(%mm_jail_count = 15) {
     ~chatnpc_specific(nc_name(mm_bunkdo), mm_bunkdo, "<p,neutral>Fifteen times ... wait: is it fifteen?");
     ~chatnpc_specific(nc_name(mm_carado), mm_carado, "<p,neutral>Yup, it sure is.");
     ~chatnpc_specific(nc_name(mm_lumo), mm_lumo, "<p,neutral>I'm beginning to lose count now.");
-} else if(%mm_jail_counter = 20) {
+} else if(%mm_jail_count = 20) {
     ~chatnpc_specific(nc_name(mm_lumo), mm_lumo, "<p,neutral>Twenty times! Give this kid an applause!");
     ~chatnpc_specific(nc_name(mm_bunkdo), mm_bunkdo, "<p,neutral>Lumo, you're beginning to irritate me. Imagine what it's like for them.");
-} else if(%mm_jail_counter = 50) {
+} else if(%mm_jail_count = 50) {
     ~chatnpc_specific(nc_name(mm_lumo), mm_lumo, "<p,neutral>Fifty times a loser! I don't believe it!");
     ~chatnpc_specific(nc_name(mm_bunkdo), mm_bunkdo, "<p,neutral>Wahey - party hats all round!");
     ~chatnpc_specific(nc_name(mm_carado), mm_carado, "<p,neutral>I was only kidding...");
-} else if(%mm_jail_counter = 100) {
+} else if(%mm_jail_count = 100) {
     ~chatnpc_specific(nc_name(mm_lumo), mm_lumo, "<p,neutral>One hundred times... It's just not real anymore.");
     ~chatnpc_specific(nc_name(mm_bunkdo), mm_bunkdo, "<p,neutral>I think we should give him a prize.");
     ~chatnpc_specific(nc_name(mm_lumo), mm_lumo, "<p,neutral>You're right. I know just the thing.");

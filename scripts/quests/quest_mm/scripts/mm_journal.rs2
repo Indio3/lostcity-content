@@ -41,7 +41,7 @@ if(%mm_main > ^mm_shown_seal) {
 
     if(%mm_caranock > 0) {
         $text = append($text, "@dre@G.L.O. Caranock:||");
-        if(testbit(%mm_bits, ^mm_spoke_foreman) = ^true) $text = append($text, "@str@The foreman told me that Caranock is the Gnome Liason|@str@Officer at the shipyard.||");
+        if(%mm_foreman = ^true) $text = append($text, "@str@The foreman told me that Caranock is the Gnome Liason|@str@Officer at the shipyard.||");
         $text = append($text, "@str@I have told Caranock that the 10th squad are missing.||");
         if(%mm_caranock > ^mm_asked_caranock) { // recheck this stage
             $text = append($text, "@str@Caranock said that the 10th squad never made it to the|");
@@ -104,14 +104,14 @@ if(%mm_main > ^mm_shown_seal) {
     // https://youtu.be/Qr9nNWqN6Y8?si=IqgynfD_0FE87fSR&t=950
     $text = append($text, "||@dre@Chapter 2:");
 
-    if(%mm_jail_counter > 0) {
+    if(%mm_jail_count > 0) {
         $text = append($text, "||@str@I have made my rather painful way to a large village|");
         $text = append($text, "@str@populated by various types of monkey.");
 
-        if(%mm_jail_counter > 254) {
+        if(%mm_jail_count > 254) {
             $text = append($text, "||@str@I have been caught and jailed far too many times to keep @str@count.");
-        } else if(%mm_jail_counter > 1) {
-            $text = append($text, "||@str@I have been caught and jailed <tostring(%mm_jail_counter)> times.");
+        } else if(%mm_jail_count > 1) {
+            $text = append($text, "||@str@I have been caught and jailed <tostring(%mm_jail_count)> times.");
         }
     }
 
@@ -149,24 +149,24 @@ if(%mm_main > ^mm_shown_seal) {
         if(%mm_zooknock = ^zooknock_need_items) {
             $text = append($text, "||@dbl@I am collecting items for @dre@Zooknock@dbl@ so that he may cast his|@dbl@spells.");
 
-            if(testbit(%mm_bits, ^mm_made_amulet) = ^false) {
+            if(%mm_zooknock_player_is_collecting_for_amulet = ^true) {
                 $text = append($text, "||@dbl@For the monkey amulet I still need to give him:");
             } else {
                 $text = append($text, "||@str@For the monkey amulet I needed to give him:");
             }
-            if(testbit(%mm_bits, ^mm_given_gold_bar) = ^true) {
+            if(%mm_zooknock_has_gold_bar = ^true) {
                 $text = append($text, "|@str@ - A gold bar.");
             } else {
                 $text = append($text, "|@dre@ - A gold bar.");
             }
 
-            if(testbit(%mm_bits, ^mm_given_mould) = ^true) {
+            if(%mm_zooknock_has_amulet_mould = ^true) {
                 $text = append($text, "|@str@ - A monkey amulet mould.");
             } else {
                 $text = append($text, "|@dre@ - A monkey amulet mould.");
             }
 
-            if(testbit(%mm_bits, ^mm_given_dentures) = ^true) {
+            if(%mm_zooknock_has_dentures = ^true) {
                 $text = append($text, "|@str@ - Something to do with monkey speech.");
             } else {
                 $text = append($text, "|@dre@ - Something to do with monkey speech.");

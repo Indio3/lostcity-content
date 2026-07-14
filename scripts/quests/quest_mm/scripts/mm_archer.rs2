@@ -32,6 +32,6 @@ clearqueue(aa_knockout);
 p_teleport(0_43_43_18_42);
 ~fade_in;
 p_delay(4);
-if(%mm_jail_counter < 255) %mm_jail_counter = add(%mm_jail_counter, 1);
+if(%mm_jail_count < 255) %mm_jail_count = add(%mm_jail_count, 1);
 if_openoverlay(null);
 @lumo_jailed_dialogue;

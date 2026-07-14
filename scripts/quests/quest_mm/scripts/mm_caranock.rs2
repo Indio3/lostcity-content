@@ -57,11 +57,11 @@ if(inv_total(inv, mm_gnome_royal_seal) > 0) {
 }
 
 [label,mm_foreman_dialogue]
-if(testbit(%mm_bits, ^mm_spoke_foreman) = ^true) @mm_foreman_p2;
+if(%mm_foreman = ^true) @mm_foreman_p2;
 ~chatnpc("<p,quiz>Hello. Do I know you? You seem remarkably familiar...");
 ~chatplayer("<p,neutral>Erm, no you don't know me.");
 ~chatnpc("<p,quiz>If you say so. Anyway, what do you want?");
-%mm_bits = setbit(%mm_bits, ^mm_spoke_foreman);
+%mm_foreman = ^true;
 @mm_foreman_p2;
 
 [label,mm_foreman_p2]

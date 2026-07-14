@@ -115,21 +115,21 @@ p_delay(3);
 @daero_p4_menu;
 
 [label,daero_p4_menu]
-if(testbit(%mm_bits, ^mm_daero_read_1st_menu) = ^true & testbit(%mm_bits, ^mm_daero_read_2nd_menu) = ^true & testbit(%mm_bits, ^mm_daero_read_3rd_menu) = ^true) {
+if(%mm_daero_option_bit_one = ^true & %mm_daero_option_bit_two = ^true & %mm_daero_option_bit_three = ^true) {
     @multi4("Talk about the journey...", daero_journey, "Talk about the 10th squad...", daero_10squad, "Talk about Caranock...", daero_caranock, "Leave...", daero_leave);
 }
 @multi3("Talk about the journey...", daero_journey, "Talk about the 10th squad...", daero_10squad, "Talk about Caranock...", daero_caranock);
 
 [label,daero_journey]
-if(testbit(%mm_bits, ^mm_daero_read_1st_menu) = ^false) %mm_bits = setbit(%mm_bits, ^mm_daero_read_1st_menu);
+if(%mm_daero_option_bit_one = ^false) %mm_daero_option_bit_one = ^true;
 @multi4("What lies to the south of Karamja?", daero_southkara, "How will I travel?", daero_howtravel, "Are you coming with me?", daero_comingwith, "@blu@Return to previous menu", daero_p4_menu);
 
 [label,daero_10squad]
-if(testbit(%mm_bits, ^mm_daero_read_2nd_menu) = ^false) %mm_bits = setbit(%mm_bits, ^mm_daero_read_2nd_menu);
+if(%mm_daero_option_bit_two = ^false) %mm_daero_option_bit_two = ^true;
 @multi4("Why did the King send a squad of the Royal Guard?", daero_royalguard, "Who is Garkor?", daero_garkor, "Why are the 10th squad so famous?", daero_10famous, "@blu@Return to previous menu", daero_p4_menu);
 
 [label,daero_caranock]
-if(testbit(%mm_bits, ^mm_daero_read_3rd_menu) = ^false) %mm_bits = setbit(%mm_bits, ^mm_daero_read_3rd_menu);
+if(%mm_daero_option_bit_two = ^false) %mm_daero_option_bit_three = ^true;
 @multi4("Who is Caranock?", daero_whocara, "What is a Gnome Liaison Officer?", daero_glo, "I'm not so sure about Caranock...", daero_surecara, "@blu@Return to previous menu", daero_p4_menu);
 
 [label,daero_southkara]
@@ -216,12 +216,12 @@ switch_int(~p_choice2("Yes", 1, "No", 2)) {
 }
 
 [proc,daero_move_hangar]
-if_openmain(inter_200);
-if_setobject(inter_200:com_0, fade_to_black_inv, 1000);
-if_setanim(inter_200:com_0, fade_in);
+if_openmain(castlewars_shopside);
+if_setobject(castlewars_shopside:com_0, fade_to_black_inv, 1000);
+if_setanim(castlewars_shopside:com_0, fade_in);
 p_delay(4);
 if(%mm_daero < ^daero_reinit_complete) p_teleport(0_37_154_25_36);
 else p_teleport(0_41_70_25_36);
-if_setanim(inter_200:com_0, fade_out);
+if_setanim(castlewars_shopside:com_0, fade_out);
 p_delay(4);
 if_close;

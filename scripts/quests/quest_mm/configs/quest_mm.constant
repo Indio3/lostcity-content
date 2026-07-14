@@ -61,15 +61,7 @@
 ^monkey_child_received_talisman = 7
 
 // mm_bits
-^mm_spoke_foreman = 0
-^mm_daero_read_1st_menu = 1
-^mm_daero_read_2nd_menu = 2
-^mm_daero_read_3rd_menu = 3
-^mm_given_gold_bar = 4
-^mm_given_mould = 5
-^mm_given_dentures = 6
 ^mm_given_talisman = 7
-^mm_made_amulet = 9
 ^mm_made_talisman = 10
 ^mm_child_has_toy = 11
 ^mm_lost_toy = 12

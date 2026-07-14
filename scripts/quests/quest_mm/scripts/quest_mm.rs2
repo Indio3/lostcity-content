@@ -741,13 +741,13 @@ if(p_finduid(uid) = true) ~fade_out;
 if(p_finduid(uid) = true) ~fade_in;
 
 [proc,fade_out]
-if_setanim(inter_200:com_0, null);
-if_openoverlay(inter_200);
-if_setobject(inter_200:com_0, fade_to_black_inv, 1000);
-if_setanim(inter_200:com_0, fade_out);
+if_setanim(castlewars_shopside:com_0, null);
+if_openoverlay(castlewars_shopside);
+if_setobject(castlewars_shopside:com_0, fade_to_black_inv, 1000);
+if_setanim(castlewars_shopside:com_0, fade_out);
 
 [proc,fade_in]
-if_setanim(inter_200:com_0, null);
-if_openoverlay(inter_200);
-if_setobject(inter_200:com_0, fade_to_black_inv, 1000);
-if_setanim(inter_200:com_0, fade_in);
+if_setanim(castlewars_shopside:com_0, null);
+if_openoverlay(castlewars_shopside);
+if_setobject(castlewars_shopside:com_0, fade_to_black_inv, 1000);
+if_setanim(castlewars_shopside:com_0, fade_in);
