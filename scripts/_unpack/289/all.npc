@@ -26,6 +26,7 @@ readyanim=human_ready
 vislevel=hide
 op1=Talk-to
 head1=chat_female_head_mediumhair
+wanderrange=5
 
 [misc_banker]
 name=Banker
@@ -55,6 +56,9 @@ op1=Talk-to
 op3=Bank
 head1=chat_male_head_bald
 head2=chat_male_jaw_moustache
+wanderrange=0
+moverestrict=nomove
+defaultmode=none
 
 [misc_etc_man_1]
 name=Arnor
@@ -84,6 +88,14 @@ op2=Attack
 vislevel=1
 head1=chat_male_head_viking_helmet_basic
 head2=chat_male_jaw_medium
+wanderrange=5
+// ---- ----
+// ---- ----
+// ---- ----
+// ---- ----
+// ---- ----
+// ---- ----
+// The NPC in question cannot be killed anymore after 2006, so the NPC information has been lost.
 
 [misc_etc_man_2]
 name=Haming
@@ -114,6 +126,14 @@ op1=Talk-to
 op2=Attack
 vislevel=1
 head1=chat_male_head_viking_helmet_basic
+wanderrange=5
+// ---- ----
+// ---- ----
+// ---- ----
+// ---- ----
+// ---- ----
+// ---- ----
+// The NPC in question cannot be killed anymore after 2006, so the NPC information has been lost.
 
 [misc_etc_man_3]
 name=Moldof
@@ -142,6 +162,14 @@ op2=Attack
 vislevel=1
 head1=chat_male_head_dredlocks
 head2=chat_male_jaw_long
+wanderrange=5
+// ---- ----
+// ---- ----
+// ---- ----
+// ---- ----
+// ---- ----
+// ---- ----
+// The NPC in question cannot be killed anymore after 2006, so the NPC information has been lost.
 
 [misc_etc_woman_1]
 name=Helga
@@ -171,6 +199,14 @@ op1=Talk-to
 op2=Attack
 vislevel=1
 head1=chat_female_head_mediumhair
+wanderrange=5
+// ---- ----
+// ---- ----
+// ---- ----
+// ---- ----
+param=defend_sound,female_hit
+param=death_sound,female_death
+// The NPC in question cannot be killed anymore after 2006, so the NPC information has been lost.
 
 [misc_etc_woman_2]
 name=Matilda
@@ -200,6 +236,14 @@ op1=Talk-to
 op2=Attack
 vislevel=1
 head1=chat_female_head_longhair
+wanderrange=5
+// ---- ----
+// ---- ----
+// ---- ----
+// ---- ----
+param=defend_sound,female_hit
+param=death_sound,female_death
+// The NPC in question cannot be killed anymore after 2006, so the NPC information has been lost.
 
 [misc_etc_woman_3]
 name=Ashild
@@ -228,6 +272,14 @@ op1=Talk-to
 op2=Attack
 vislevel=1
 head1=chat_female_head_shorthair
+wanderrange=5
+// ---- ----
+// ---- ----
+// ---- ----
+// ---- ----
+param=defend_sound,female_hit
+param=death_sound,female_death
+// The NPC in question cannot be killed anymore after 2006, so the NPC information has been lost.
 
 [etc_guard1]
 name=Skraeling
@@ -264,6 +316,25 @@ vislevel=2
 head1=chat_male_head_shorthair
 head2=chat_male_jaw_long
 head3=chat_male_head_viking_helmet_basic
+wanderrange=5
+maxrange=7
+// respawnrate=TODO
+attack=3
+strength=3
+defence=3
+param=attackrate,4
+param=stabdefence,-12
+param=slashdefence,-12
+param=crushdefence,-12
+param=magicdefence,-12
+param=rangedefence,-12
+param=damagetype,^crush_style
+param=attack_anim,human_unarmedpunch
+param=defend_anim,human_unarmed_def
+param=death_anim,human_death
+param=attack_sound,null
+param=defend_sound,null
+param=death_sound,null
 
 [etc_guard2]
 name=Skraeling
@@ -300,6 +371,25 @@ vislevel=2
 head1=chat_male_head_shorthair
 head2=chat_male_jaw_split
 head3=chat_male_head_viking_helmet_basic
+wanderrange=5
+maxrange=7
+// respawnrate=TODO
+attack=3
+strength=3
+defence=3
+param=attackrate,4
+param=stabdefence,-12
+param=slashdefence,-12
+param=crushdefence,-12
+param=magicdefence,-12
+param=rangedefence,-12
+param=damagetype,^crush_style
+param=attack_anim,human_unarmedpunch
+param=defend_anim,human_unarmed_def
+param=death_anim,human_death
+param=attack_sound,null
+param=defend_sound,null
+param=death_sound,null
 
 [etc_fish_monger]
 name=Fishmonger
@@ -332,6 +422,7 @@ vislevel=hide
 op1=Talk-to
 op3=Trade
 head1=chat_male_head_dredlocks
+wanderrange=2
 
 [etc_veg_monger]
 name=Greengrocer
@@ -363,6 +454,7 @@ op1=Talk-to
 op3=Trade
 head1=chat_male_head_spikeyhair
 head2=chat_male_jaw_goaty
+wanderrange=2
 
 [misc_prince_brand]
 name=Prince Brand
@@ -394,6 +486,7 @@ walkanim=human_walk_f,human_walk_b,human_walk_l,human_walk_r
 readyanim=viking_lyre_playing_loop
 op1=Talk-to
 head1=chat_male_head_shorthair2
+wanderrange=2
 
 [misc_princess_astrid]
 name=Princess Astrid
@@ -420,6 +513,7 @@ walkanim=human_walk_f,human_walk_b,human_walk_l,human_walk_r
 readyanim=human_ready
 op1=Talk-to
 head1=chat_female_head_bun
+wanderrange=2
 
 [glomem_king_vargas]
 name=King Vargas
@@ -433,6 +527,9 @@ size=2
 vislevel=hide
 op1=Talk-to
 head1=npc_1373_head
+wanderrange=0
+moverestrict=nomove
+defaultmode=none
 
 [misc_ulby_doorguard]
 name=Guard
@@ -463,6 +560,9 @@ op1=Talk-to
 head1=chat_male_head_viking_helmet_basic
 head2=chat_male_jaw_split
 head3=obj_3748_manhead2
+wanderrange=0
+moverestrict=nomove
+defaultmode=none
 
 [misc_advisor_ghrim]
 name=Advisor Ghrim
@@ -495,6 +595,9 @@ vislevel=hide
 op1=Talk-to
 head1=chat_male_head_bald
 head2=chat_male_jaw_long
+wanderrange=0
+moverestrict=nomove
+defaultmode=none
 
 [misc_smithy]
 name=Derrik
@@ -521,6 +624,8 @@ vislevel=hide
 op1=Talk-to
 head1=chat_male_head_longhair
 head2=chat_male_jaw_split
+wanderrange=5
+moverestrict=indoors
 
 [misc_farmer]
 name=Farmer
@@ -552,6 +657,7 @@ readyanim=human_scythe_sweep
 vislevel=hide
 head1=chat_male_head_shorthair
 head2=chat_male_jaw_short
+// Patrolling TODO
 
 [misc_flowergirl]
 name=Flower Girl
@@ -577,6 +683,7 @@ walkanim=human_walk_f,human_walk_b,human_walk_l,human_walk_r
 readyanim=human_ready
 op1=Talk-to
 head1=chat_female_head_longhair
+wanderrange=5
 
 [misc_man_1]
 name=Ragnar
@@ -608,6 +715,17 @@ op2=Attack
 vislevel=1
 head1=chat_male_head_viking_helmet_basic
 head2=chat_male_jaw_long
+wanderrange=5
+maxrange=7
+// respawnrate=TODO
+param=attackrate,4
+param=damagetype,^crush_style
+param=attack_anim,null
+param=defend_anim,null
+param=death_anim,human_death
+param=attack_sound,unarmed_punch
+param=defend_sound,human_hit
+param=death_sound,human_death
 
 [misc_man_2]
 name=Einar
@@ -637,6 +755,17 @@ op1=Talk-to
 op2=Attack
 vislevel=1
 head1=chat_male_head_viking_helmet_basic
+wanderrange=5
+maxrange=7
+// respawnrate=TODO
+param=attackrate,4
+param=damagetype,^crush_style
+param=attack_anim,null
+param=defend_anim,null
+param=death_anim,human_death
+param=attack_sound,unarmed_punch
+param=defend_sound,human_hit
+param=death_sound,human_death
 
 [misc_man_3]
 name=Alrik
@@ -669,6 +798,17 @@ vislevel=1
 head1=chat_male_head_shorthair
 head2=chat_male_jaw_split
 head3=npc_1071_head
+wanderrange=5
+maxrange=7
+// respawnrate=TODO
+param=attackrate,4
+param=damagetype,^crush_style
+param=attack_anim,null
+param=defend_anim,null
+param=death_anim,human_death
+param=attack_sound,unarmed_punch
+param=defend_sound,human_hit
+param=death_sound,human_death
 
 [misc_woman_1]
 name=Thorhild
@@ -697,6 +837,17 @@ op1=Talk-to
 op2=Attack
 vislevel=1
 head1=chat_female_head_hood2
+wanderrange=5
+maxrange=7
+// respawnrate=TODO
+param=attackrate,4
+param=damagetype,^crush_style
+param=attack_anim,null
+param=defend_anim,null
+param=death_anim,human_death
+param=attack_sound,unarmed_punch
+param=defend_sound,human_hit
+param=death_sound,human_death
 
 [misc_woman_2]
 name=Halla
@@ -725,6 +876,17 @@ op2=Attack
 vislevel=1
 head1=chat_female_head_mediumhair
 head2=model_131_npc_head
+wanderrange=5
+maxrange=7
+// respawnrate=TODO
+param=attackrate,4
+param=damagetype,^crush_style
+param=attack_anim,null
+param=defend_anim,null
+param=death_anim,human_death
+param=attack_sound,unarmed_punch
+param=defend_sound,female_hit
+param=death_sound,female_death
 
 [misc_woman_3]
 name=Yrsa
@@ -752,6 +914,17 @@ op1=Talk-to
 op2=Attack
 vislevel=1
 head1=chat_female_head_dredlocks
+wanderrange=5
+maxrange=7
+// respawnrate=TODO
+param=attackrate,4
+param=damagetype,^crush_style
+param=attack_anim,null
+param=defend_anim,null
+param=death_anim,human_death
+param=attack_sound,unarmed_punch
+param=defend_sound,female_hit
+param=death_sound,female_death
 
 [misc_sailor]
 name=Sailor
@@ -782,6 +955,7 @@ readyanim=human_ready
 op1=Talk-to
 head1=chat_male_head_hood2
 head2=chat_male_jaw_split
+wanderrange=8
 
 [misc_woman_4]
 name=Rannveig
@@ -811,6 +985,25 @@ op1=Talk-to
 op2=Attack
 vislevel=2
 head1=chat_female_head_dredlocks
+wanderrange=5
+maxrange=7
+// respawnrate=TODO
+attack=3
+strength=3
+defence=3
+param=stabdefence,-12
+param=slashdefence,-12
+param=crushdefence,-12
+param=magicdefence,-12
+param=rangedefence,-12
+param=attackrate,4
+param=damagetype,^crush_style
+param=attack_anim,human_unarmedpunch
+param=defend_anim,human_unarmed_def
+param=death_anim,human_death
+param=attack_sound,unarmed_punch
+param=defend_sound,female_hit
+param=death_sound,female_death
 
 [misc_woman_5]
 name=Thora
@@ -840,6 +1033,20 @@ op1=Talk-to
 op2=Attack
 vislevel=2
 head1=chat_female_head_spikeyhair
+wanderrange=5
+maxrange=7
+//respawnrate=
+attack=3
+strength=3
+defence=3
+param=stabdefence,-12
+param=slashdefence,-12
+param=crushdefence,-12
+param=magicdefence,-12
+param=rangedefence,-12
+param=damagetype,^crush_style
+param=defend_sound,female_hit
+param=death_sound,female_death
 
 [misc_woman_6]
 name=Valgerd
@@ -871,6 +1078,20 @@ op2=Attack
 vislevel=2
 head1=chat_female_head_longhair
 head2=model_136_npc_head
+wanderrange=5
+maxrange=7
+//respawnrate=
+attack=3
+strength=3
+defence=3
+param=stabdefence,-12
+param=slashdefence,-12
+param=crushdefence,-12
+param=magicdefence,-12
+param=rangedefence,-12
+param=damagetype,^crush_style
+param=defend_sound,female_hit
+param=death_sound,female_death
 
 [misc_man_4]
 name=Skraeling
@@ -907,6 +1128,25 @@ vislevel=2
 head1=chat_male_head_shorthair
 head2=chat_male_jaw_split
 head3=chat_male_head_viking_helmet_basic
+wanderrange=5
+maxrange=7
+// respawnrate=TODO
+attack=3
+strength=3
+defence=3
+param=attackrate,4
+param=stabdefence,-12
+param=slashdefence,-12
+param=crushdefence,-12
+param=magicdefence,-12
+param=rangedefence,-12
+param=damagetype,^crush_style
+param=attack_anim,human_unarmedpunch
+param=defend_anim,human_unarmed_def
+param=death_anim,human_death
+param=attack_sound,null
+param=defend_sound,null
+param=death_sound,null
 
 [misc_man_5]
 name=Broddi
@@ -938,6 +1178,25 @@ op2=Attack
 vislevel=2
 head1=chat_male_head_spikeyhair
 head2=chat_male_jaw_split
+wanderrange=5
+maxrange=7
+// respawnrate=TODO
+attack=3
+strength=3
+defence=3
+param=attackrate,4
+param=stabdefence,-12
+param=slashdefence,-12
+param=crushdefence,-12
+param=magicdefence,-12
+param=rangedefence,-12
+param=damagetype,^crush_style
+param=attack_anim,human_unarmedpunch
+param=defend_anim,human_unarmed_def
+param=death_anim,human_death
+param=attack_sound,unarmed_punch
+param=defend_sound,human_hit
+param=death_sound,human_death
 
 [misc_man_6]
 name=Skraeling
@@ -973,6 +1232,25 @@ vislevel=2
 head1=chat_male_head_shorthair
 head2=chat_male_jaw_split
 head3=chat_male_head_viking_helmet_basic
+wanderrange=5
+maxrange=7
+// respawnrate=TODO
+attack=3
+strength=3
+defence=3
+param=attackrate,4
+param=stabdefence,-12
+param=slashdefence,-12
+param=crushdefence,-12
+param=magicdefence,-12
+param=rangedefence,-12
+param=damagetype,^crush_style
+param=attack_anim,human_unarmedpunch
+param=defend_anim,human_unarmed_def
+param=death_anim,human_death
+param=attack_sound,unarmed_punch
+param=defend_sound,human_hit
+param=death_sound,human_death
 
 [misc_man_7]
 name=Ragnvald
@@ -1006,6 +1284,25 @@ op2=Attack
 vislevel=2
 head1=chat_male_head_hood2
 head2=chat_male_jaw_split
+wanderrange=5
+maxrange=7
+// respawnrate=TODO
+attack=3
+strength=3
+defence=3
+param=attackrate,4
+param=stabdefence,-12
+param=slashdefence,-12
+param=crushdefence,-12
+param=magicdefence,-12
+param=rangedefence,-12
+param=damagetype,^crush_style
+param=attack_anim,human_unarmedpunch
+param=defend_anim,human_unarmed_def
+param=death_anim,human_death
+param=attack_sound,unarmed_punch
+param=defend_sound,human_hit
+param=death_sound,human_death
 
 [misc_fish_monger]
 name=Fishmonger
@@ -1039,6 +1336,7 @@ op1=Talk-to
 op3=Trade
 head1=chat_male_head_bald
 head2=chat_male_jaw_split
+wanderrange=1
 
 [misc_veg_monger]
 name=Greengrocer
@@ -1070,6 +1368,7 @@ op1=Talk-to
 op3=Trade
 head1=chat_male_head_spikeyhair
 head2=chat_male_jaw_split
+wanderrange=2
 
 [misc_lumberjack]
 name=Lumberjack Leif
@@ -1100,6 +1399,9 @@ readyanim=seq_1365
 op1=Talk-to
 head1=chat_male_head_shorthair
 head2=chat_male_jaw_split
+wanderrange=0
+moverestrict=nomove
+defaultmode=none
 
 [misc_miner]
 name=Miner Magnus
@@ -1130,6 +1432,9 @@ readyanim=seq_1364
 op1=Talk-to
 head1=chat_male_head_shorthair
 head2=chat_male_jaw_moustache
+wanderrange=0
+moverestrict=nomove
+defaultmode=none
 
 [misc_fisherman]
 name=Fisherman Frodi
@@ -1162,6 +1467,9 @@ readyanim=seq_1363
 op1=Talk-to
 head1=chat_male_head_shorthair
 head2=chat_male_jaw_short
+wanderrange=0
+moverestrict=nomove
+defaultmode=none
 
 [misc_gardener]
 name=Gardener Gunnhild
@@ -1191,6 +1499,7 @@ walkanim=human_walk_f,human_walk_b,human_walk_l,human_walk_r
 readyanim=seq_1366
 op1=Talk-to
 head1=chat_female_head_longhair
+// patroll or no move? TODO
 
 [0_40_60_rarefish]
 name=Fishing spot
@@ -1204,6 +1513,9 @@ op1=Cage
 op3=Harpoon
 op4=hidden
 op5=hidden
+wanderrange=0
+moverestrict=nomove
+defaultmode=none
 
 [misc_seagull]
 name=Gull
@@ -1220,6 +1532,24 @@ readyanim=bird_ready
 op2=Attack
 vislevel=hide
 minimap=no
+wanderrange=8
+maxrange=10
+hitpoints=32
+attack=22
+strength=22
+defence=17
+param=stabdefence,12
+param=slashdefence,10
+param=crushdefence,16
+param=magicdefence,8
+param=damagetype,^stab_style
+param=attack_anim,bird_attack
+param=defend_anim,bird_block
+param=death_anim,bird_death
+param=attack_sound,bird_attack
+param=defend_sound,bird_hit
+param=death_sound,bird_death
+// stats anims sounds taken from other gull. wander/max guesses.
 
 [misc_chicken]
 name=Chicken
@@ -1229,6 +1559,28 @@ walkanim=chicken_walk
 readyanim=chicken_ready
 op2=Attack
 vislevel=1
+wanderrange=5
+maxrange=7
+// respawnrate=50
+hitpoints=3
+param=attackrate,4
+param=attackbonus,-47
+param=strengthbonus,-42
+param=stabdefence,-42
+param=slashdefence,-42
+param=crushdefence,-42
+param=magicdefence,-42
+param=rangedefence,-42
+param=damagetype,^stab_style
+param=attack_anim,chicken_attack
+param=defend_anim,chicken_block
+param=death_anim,chicken_death
+param=attack_sound,chicken_attack
+param=defend_sound,chicken_hit
+param=death_sound,chicken_death
+// param=retreat,1
+// category=chicken
+// param=retreat, TODO Find out if this NPC has this function?
 
 [misc_chicken_brown]
 name=Chicken
@@ -1246,6 +1598,28 @@ walkanim=chicken_walk
 readyanim=chicken_ready
 op2=Attack
 vislevel=1
+wanderrange=5
+maxrange=7
+// respawnrate=50
+hitpoints=3
+param=attackrate,4
+param=attackbonus,-47
+param=strengthbonus,-42
+param=stabdefence,-42
+param=slashdefence,-42
+param=crushdefence,-42
+param=magicdefence,-42
+param=rangedefence,-42
+param=damagetype,^stab_style
+param=attack_anim,chicken_attack
+param=defend_anim,chicken_block
+param=death_anim,chicken_death
+param=attack_sound,chicken_attack
+param=defend_sound,chicken_hit
+param=death_sound,chicken_death
+// param=retreat,1
+// category=chicken
+// param=retreat, TODO Find out if this NPC has this function?
 
 [misc_rooster]
 name=Rooster
@@ -1265,6 +1639,28 @@ op2=Attack
 resizeh=172
 resizev=172
 vislevel=2
+// category=category_444
+wanderrange=5
+maxrange=7
+hitpoints=5
+param=attackrate,4
+param=attackbonus,-47
+param=strengthbonus,-42
+param=stabdefence,-42
+param=slashdefence,-42
+param=crushdefence,-42
+param=magicdefence,-42
+param=rangedefence,-42
+param=damagetype,^stab_style
+param=attack_anim,chicken_attack
+param=defend_anim,chicken_block
+param=death_anim,chicken_death
+param=attack_sound,chicken_attack
+param=defend_sound,chicken_hit
+param=death_sound,chicken_death
+// param=retreat,1
+// category=chicken
+// param=retreat, TODO Find out if this NPC has this function?
 
 [misc_rabbit]
 name=Rabbit
@@ -1278,6 +1674,27 @@ resizeh=164
 resizev=164
 op2=Attack
 vislevel=2
+category=rabbit
+wanderrange=5
+maxrange=7
+respawnrate=50
+hitpoints=5
+param=attackrate,4
+param=attackbonus,-47
+param=strengthbonus,-42
+param=stabdefence,-42
+param=slashdefence,-42
+param=crushdefence,-42
+param=magicdefence,-42
+param=rangedefence,-42
+param=damagetype,^crush_style
+param=attack_anim,rabbit_attack
+param=defend_anim,rabbit_block
+param=death_anim,rabbit_death
+param=attack_sound,rabbit_attack
+param=defend_sound,rabbit_hit
+param=death_sound,rabbit_death
+// param=retreat, TODO Find out if this NPC has this function?
 
 [0_43_42_memberfish]
 name=Fishing spot
@@ -1291,6 +1708,9 @@ op1=Net
 op3=Harpoon
 op4=hidden
 op5=hidden
+wanderrange=0
+moverestrict=nomove
+defaultmode=none
 
 [0_42_42_memberfish]
 name=Fishing spot
@@ -1304,7 +1724,11 @@ op1=Net
 op3=Harpoon
 op4=hidden
 op5=hidden
+wanderrange=0
+moverestrict=nomove
+defaultmode=none
 
+[mm_daero]
 [mm_daero]
 name=Daero
 model1=model_2909_npc
@@ -1318,7 +1742,9 @@ readyanim=midget_ready
 op1=Talk-to
 vislevel=hide
 head1=gnome_chat_model_22
+wanderrange=2
 
+[mm_waydar]
 [mm_waydar]
 name=Waydar
 model1=model_2909_npc
@@ -1330,6 +1756,7 @@ readyanim=midget_ready
 op1=Talk-to
 vislevel=hide
 head1=gnome_chat_model_19
+wanderrange=2
 
 [mm_waydar_cutscene]
 name=Waydar
@@ -1342,6 +1769,9 @@ readyanim=midget_ready
 op1=Talk-to
 vislevel=hide
 head1=gnome_chat_model_19
+wanderrange=0
+moverestrict=nomove
+defaultmode=none
 
 [npc_1410]
 name=Waydar
@@ -1354,6 +1784,7 @@ readyanim=midget_ready
 op1=Talk-to
 vislevel=hide
 head1=gnome_chat_model_19
+// try to figure out where this would have been used or if it's really just unused.
 
 [mm_garkor]
 name=Garkor
@@ -1370,6 +1801,7 @@ resizev=150
 op1=Talk-to
 vislevel=hide
 head1=gnome_chat_model_22
+wanderrange=2
 
 [mm_garkor_final_battle]
 name=Garkor
@@ -1386,6 +1818,13 @@ resizev=150
 op1=Talk-to
 vislevel=hide
 head1=gnome_chat_model_22
+// category=category_355
+wanderrange=10
+// maxrange=
+// param=attack_anim,
+// param=defend_anim,
+// param=death_anim,
+// TODO
 
 [mm_lumo]
 name=Lumo
@@ -1404,6 +1843,7 @@ readyanim=midget_ready
 op1=Talk-to
 vislevel=hide
 head1=gnome_chat_head
+wanderrange=5
 
 [mm_lumo_final_battle]
 name=Lumo
@@ -1421,6 +1861,13 @@ walkanim=midget_walk
 readyanim=midget_ready
 vislevel=hide
 head1=gnome_chat_head
+// category=category_355
+wanderrange=10
+// maxrange=
+// param=attack_anim,
+// param=defend_anim,
+// param=death_anim,
+// TODO
 
 [mm_bunkdo]
 name=Bunkdo
@@ -1437,6 +1884,7 @@ readyanim=midget_ready
 op1=Talk-to
 vislevel=hide
 head1=gnome_chat_head
+wanderrange=5
 
 [mm_bunkdo_final_battle]
 name=Bunkdo
@@ -1452,6 +1900,13 @@ walkanim=midget_walk
 readyanim=midget_ready
 vislevel=hide
 head1=gnome_chat_head
+// category=category_355
+wanderrange=10
+// maxrange=
+// param=attack_anim,
+// param=defend_anim,
+// param=death_anim,
+// TODO
 
 [mm_carado]
 name=Carado
@@ -1468,6 +1923,7 @@ readyanim=midget_ready
 op1=Talk-to
 vislevel=hide
 head1=gnome_chat_head
+wanderrange=5
 
 [mm_carado_final_battle]
 name=Carado
@@ -1483,6 +1939,14 @@ walkanim=midget_walk
 readyanim=midget_ready
 vislevel=hide
 head1=gnome_chat_head
+// category=category_356
+wanderrange=10
+// maxrange=
+attackrange=5
+// param=attack_anim,
+// param=defend_anim,
+// param=death_anim,
+// TODO
 
 [mm_lumdo]
 name=Lumdo
@@ -1499,6 +1963,7 @@ readyanim=midget_ready
 op1=Talk-to
 vislevel=hide
 head1=gnome_chat_head
+wanderrange=2
 
 [mm_karam]
 name=Karam
@@ -1511,6 +1976,7 @@ readyanim=m_assassin_ready
 op1=Talk-to
 vislevel=hide
 head1=npc_1420_head
+wanderrange=2
 timer=1
 
 [mm_karam_final_battle]
@@ -1523,6 +1989,13 @@ walkanim=midget_walk
 readyanim=m_assassin_ready
 vislevel=hide
 head1=npc_1420_head
+// category=category_355
+wanderrange=10
+// maxrange=
+// param=attack_anim,
+// param=defend_anim,
+// param=death_anim,
+// TODO
 
 [mm_karam_talker]
 name=Karam
@@ -1535,6 +2008,7 @@ readyanim=m_assassin_ready
 op1=Talk-to
 vislevel=hide
 head1=npc_1420_head
+wanderrange=2
 
 [mm_bunkwicket]
 name=Bunkwicket
@@ -1554,6 +2028,9 @@ head1=gnome_chat_head
 defaultmode=none
 wanderrange=0
 timer=30
+wanderrange=0
+moverestrict=nomove
+defaultmode=none
 
 [mm_waymottin]
 name=Waymottin
@@ -1573,6 +2050,9 @@ head1=gnome_chat_head
 defaultmode=none
 wanderrange=0
 timer=30
+wanderrange=0
+moverestrict=nomove
+defaultmode=none
 
 [mm_zooknock]
 name=Zooknock
@@ -1593,6 +2073,7 @@ readyanim=midget_ready
 op1=Talk-to
 vislevel=hide
 head1=npc_1425_head
+wanderrange=2
 timer=30
 
 [mm_zooknock_final_battle]
@@ -1614,6 +2095,13 @@ readyanim=midget_ready
 op1=Talk-to
 vislevel=hide
 head1=npc_1425_head
+// category=category_358
+wanderrange=10
+// maxrange=
+// param=attack_anim,
+// param=defend_anim,
+// param=death_anim,
+// TODO
 
 [mm_caranock]
 name=G.L.O. Caranock
@@ -1630,6 +2118,7 @@ readyanim=midget_ready
 op1=Talk-to
 vislevel=hide
 head1=gnome_chat_head
+wanderrange=2
 
 [mm_caranock_cutscene]
 name=G.L.O. Caranock
@@ -1646,6 +2135,9 @@ readyanim=midget_ready
 op1=Talk-to
 vislevel=hide
 head1=gnome_chat_head
+wanderrange=0
+moverestrict=nomove
+defaultmode=none
 
 [mm_dugopul]
 name=Dugopul
@@ -1660,11 +2152,13 @@ resizev=180
 op1=Talk-to
 vislevel=hide
 head1=npc_1429_head
+// category=category_396
+wanderrange=5
 huntmode=dugopul
 huntrange=10
 attackrange=10
 
-[npc_1430]
+[mm_salenab]
 name=Salenab
 model1=npc_monkey
 desc=It's Salenab the monkey.
@@ -1672,6 +2166,7 @@ walkanim=monkey_walk
 readyanim=monkey_ready
 op1=Talk-to
 vislevel=hide
+// category=category_396
 
 [mm_trefaji]
 name=Trefaji
@@ -1684,6 +2179,8 @@ readyanim=m_gorilla_ready
 op1=Talk-to
 vislevel=hide
 head1=chat_main_gorilla_basic
+// category=category_673
+param=damagetype,^crush_style
 huntmode=mm_jail_guard
 huntrange=1
 attackrange=1
@@ -1706,6 +2203,8 @@ readyanim=m_gorilla_ready
 op1=Talk-to
 vislevel=hide
 head1=chat_main_gorilla_basic
+param=damagetype,^crush_style
+param=death_drop,mm_medium_ninja_monkey_bones
 huntmode=mm_jail_guard
 huntrange=1
 attackrange=1
@@ -1734,6 +2233,8 @@ op1=Talk-to
 op3=Trade
 vislevel=hide
 head1=npc_1429_head
+// category=category_396
+wanderrange=1
 
 [mm_daga]
 name=Daga
@@ -1752,6 +2253,8 @@ op1=Talk-to
 op3=Trade
 vislevel=hide
 head1=npc_1429_head
+// category=category_396
+wanderrange=1
 
 [mm_tutab]
 name=Tutab
@@ -1770,6 +2273,8 @@ op1=Talk-to
 op3=Trade
 vislevel=hide
 head1=npc_1429_head
+// category=category_396
+wanderrange=1
 
 [mm_ifaba]
 name=Ifaba
@@ -1786,6 +2291,8 @@ op1=Talk-to
 op3=Trade
 vislevel=hide
 head1=npc_1429_head
+// category=category_396
+wanderrange=1
 
 [mm_hamab]
 name=Hamab
@@ -1802,6 +2309,8 @@ op1=Talk-to
 op3=Trade
 vislevel=hide
 head1=npc_1437_head
+// category=category_396
+wanderrange=1
 
 [mm_hafuba]
 name=Hafuba
@@ -1817,6 +2326,8 @@ resizev=180
 op1=Talk-to
 vislevel=hide
 head1=npc_1438_head
+// category=category_673
+wanderrange=5
 
 [mm_denadu]
 name=Denadu
@@ -1831,6 +2342,8 @@ resizev=180
 op1=Talk-to
 vislevel=hide
 head1=chat_main_monkey_basic
+// category=category_396
+wanderrange=5
 
 [mm_lofu]
 name=Lofu
@@ -1845,6 +2358,8 @@ resizev=180
 op1=Talk-to
 vislevel=hide
 head1=chat_main_monkey_basic
+// category=category_396
+wanderrange=5
 
 [mm_kruk]
 name=Kruk
@@ -1859,6 +2374,25 @@ resizev=180
 op1=Talk-to
 vislevel=149
 head1=chat_main_monkey_ninja
+// category=category_396
+wanderrange=5
+// maxrange=TODO
+// respawnrate=TODO
+hitpoints=130
+attack=130
+strength=130
+defence=130
+magic=130
+param=attackbonus,50
+param=damagetype,^slash_style
+param=attack_anim,m_monkey_attack_scimitar
+param=defend_anim,m_monkey_block_scimitar
+param=death_anim,m_monkey_death
+param=attack_sound,stabsword_slash
+param=defend_sound,monkey_hit
+param=death_sound,monkey_death
+// huntmode=TODO
+// huntrange=TODO
 
 [mm_duke]
 name=Duke
@@ -1873,6 +2407,25 @@ resizev=180
 op2=Attack
 vislevel=149
 head1=chat_main_monkey_ninja
+// category=category_396
+wanderrange=5
+// maxrange=TODO
+// respawnrate=TODO
+hitpoints=130
+attack=130
+strength=130
+defence=130
+magic=130
+param=attackbonus,50
+param=damagetype,^slash_style
+param=attack_anim,m_monkey_attack_scimitar
+param=defend_anim,m_monkey_block_scimitar
+param=death_anim,m_monkey_death
+param=attack_sound,stabsword_slash
+param=defend_sound,monkey_hit
+param=death_sound,monkey_death
+// huntmode=TODO
+// huntrange=TODO
 
 [mm_oipuis]
 name=Oipuis
@@ -1887,6 +2440,25 @@ resizev=180
 op2=Attack
 vislevel=149
 head1=chat_main_monkey_ninja
+// category=category_396
+wanderrange=5
+// maxrange=TODO
+// respawnrate=TODO
+hitpoints=130
+attack=130
+strength=130
+defence=130
+magic=130
+param=attackbonus,50
+param=damagetype,^slash_style
+param=attack_anim,m_monkey_attack_scimitar
+param=defend_anim,m_monkey_block_scimitar
+param=death_anim,m_monkey_death
+param=attack_sound,stabsword_slash
+param=defend_sound,monkey_hit
+param=death_sound,monkey_death
+// huntmode=TODO
+// huntrange=TODO
 
 [mm_uyoro]
 name=Uyoro
@@ -1901,6 +2473,25 @@ resizev=180
 op2=Attack
 vislevel=149
 head1=chat_main_monkey_ninja
+// category=category_396
+wanderrange=5
+// maxrange=TODO
+// respawnrate=TODO
+hitpoints=130
+attack=130
+strength=130
+defence=130
+magic=130
+param=attackbonus,50
+param=damagetype,^slash_style
+param=attack_anim,m_monkey_attack_scimitar
+param=defend_anim,m_monkey_block_scimitar
+param=death_anim,m_monkey_death
+param=attack_sound,stabsword_slash
+param=defend_sound,monkey_hit
+param=death_sound,monkey_death
+// huntmode=TODO
+// huntrange=TODO
 
 [mm_ouhai]
 name=Ouhai
@@ -1915,6 +2506,25 @@ resizev=180
 op2=Attack
 vislevel=149
 head1=chat_main_monkey_ninja
+// category=category_396
+wanderrange=5
+// maxrange=TODO
+// respawnrate=TODO
+hitpoints=130
+attack=130
+strength=130
+defence=130
+magic=130
+param=attackbonus,50
+param=damagetype,^slash_style
+param=attack_anim,m_monkey_attack_scimitar
+param=defend_anim,m_monkey_block_scimitar
+param=death_anim,m_monkey_death
+param=attack_sound,stabsword_slash
+param=defend_sound,monkey_hit
+param=death_sound,monkey_death
+// huntmode=TODO
+// huntrange=TODO
 
 [mm_uodai]
 name=Uodai
@@ -1929,6 +2539,26 @@ resizev=180
 op2=Attack
 vislevel=149
 head1=chat_main_monkey_ninja
+// category=category_396
+wanderrange=5
+// maxrange=TODO
+// respawnrate=TODO
+hitpoints=130
+attack=130
+strength=130
+defence=130
+magic=130
+param=attackbonus,50
+param=damagetype,^slash_style
+param=attack_anim,m_monkey_attack_scimitar
+param=defend_anim,m_monkey_block_scimitar
+param=death_anim,m_monkey_death
+param=attack_sound,stabsword_slash
+param=defend_sound,monkey_hit
+param=death_sound,monkey_death
+param=death_drop,mm_medium_ninja_monkey_bones
+// huntmode=TODO
+// huntrange=TODO
 
 [mm_padulah]
 name=Padulah
@@ -1942,6 +2572,27 @@ op1=Talk-to
 op2=Attack
 vislevel=149
 head1=chat_main_monkey_ninja
+// category=category_396
+wanderrange=5
+maxrange=7
+// respawnrate=TODO
+hitpoints=130
+attack=130
+strength=130
+defence=130
+magic=130
+param=attackbonus,50
+param=damagetype,^slash_style
+param=attack_anim,m_monkey_attack_scimitar
+param=defend_anim,m_monkey_block_scimitar
+param=death_anim,m_monkey_death
+param=attack_sound,stabsword_slash
+param=defend_sound,monkey_hit
+param=death_sound,monkey_death
+param=death_drop,mm_medium_ninja_monkey_bones
+// huntmode=TODO
+// huntrange=TODO
+// Patrol TODO
 
 [mm_awowogei_cutscene]
 name=Awowogei
@@ -1953,6 +2604,10 @@ readyanim=m_monkey_ready
 op1=Talk-to
 vislevel=hide
 head1=npc_1448_head
+// category=category_396
+wanderrange=0
+moverestrict=nomove
+defaultmode=none
 
 [mm_uwogo]
 name=Uwogo
@@ -1966,6 +2621,8 @@ resizev=180
 op1=Talk-to
 vislevel=hide
 head1=chat_main_monkey_basic
+// category=category_396
+wanderrange=1
 
 [mm_murowoi]
 name=Muruwoi
@@ -1979,6 +2636,8 @@ resizev=180
 op1=Talk-to
 vislevel=hide
 head1=chat_main_monkey_basic
+// category=category_396
+wanderrange=1
 
 [mm_sleeping_monkey_guard]
 name=Sleeping Monkey
@@ -1993,6 +2652,9 @@ resizev=180
 op1=Talk-to
 vislevel=hide
 head1=npc_1429_head
+// category=category_396
+wanderrange=1
+//TODO
 
 [mm_monkey_child]
 name=Monkey Child
@@ -2006,6 +2668,8 @@ resizev=100
 op1=Talk-to
 vislevel=hide
 head1=npc_1452_head
+// category=category_396
+wanderrange=2
 
 [mm_monkeys_uncle]
 name=The Monkey's Uncle
@@ -2021,6 +2685,8 @@ resizev=180
 op1=Talk-to
 vislevel=hide
 head1=npc_1429_head
+// category=category_396
+wanderrange=5
 
 [mm_monkeys_aunt]
 name=The Monkey's Aunt
@@ -2034,6 +2700,8 @@ resizev=160
 op1=Talk-to
 vislevel=hide
 head1=npc_1437_head
+// category=category_396
+// patrolling TODO
 
 [mm_monkey_guard]
 name=Monkey Guard
@@ -2046,6 +2714,28 @@ readyanim=m_monkey_ready
 op2=Attack
 vislevel=149
 head1=chat_main_monkey_ninja
+// category=category_396
+wanderrange=5
+// maxrange=TODO
+// attackrange=TODO
+// respawnrate=TODO
+hitpoints=130
+attack=130
+strength=130
+defence=130
+magic=130
+param=attackrate,4
+param=attackbonus,50
+param=damagetype,^slash_style
+param=attack_anim,m_monkey_attack_scimitar
+param=defend_anim,m_monkey_block_scimitar
+param=death_anim,m_monkey_death
+param=attack_sound,stabsword_slash
+param=defend_sound,monkey_hit
+param=death_sound,monkey_death
+param=death_drop,mm_small_ninja_monkey_bones
+// huntmode=TODO
+// huntrange=TODO
 
 [mm_monkey_archer]
 name=Monkey Archer
@@ -2058,6 +2748,27 @@ readyanim=m_monkey_ready
 op2=Attack
 vislevel=86
 head1=chat_main_monkey_ninja
+// category=category_396
+wanderrange=2
+maxrange=20
+attackrange=10
+// respawnrate=TODO
+hitpoints=50
+attack=80
+strength=80
+defence=80
+ranged=110
+param=attackrate,4
+param=damagetype,^crush_style
+param=attack_anim,m_monkey_attack_bow
+param=defend_anim,m_monkey_block_bow
+param=death_anim,null
+param=attack_sound,arrowlaunch2
+param=defend_sound,monkey_hit
+param=death_sound,monkey_death
+param=death_drop,mm_small_ninja_monkey_bones
+// huntmode=TODO
+// huntrange=TODO
 
 [mm_ravine_archer]
 name=Monkey Archer
@@ -2070,6 +2781,26 @@ readyanim=m_monkey_ready
 op2=Attack
 vislevel=86
 head1=chat_main_monkey_ninja
+// category=category_396
+wanderrange=2
+maxrange=30
+attackrange=15
+// respawnrate=TODO
+hitpoints=50
+attack=80
+strength=80
+defence=80
+ranged=110
+param=damagetype,^crush_style
+param=attack_anim,m_monkey_attack_bow
+param=defend_anim,m_monkey_block_bow
+param=death_anim,null
+param=attack_sound,arrowlaunch2
+param=defend_sound,monkey_hit
+param=death_sound,monkey_death
+param=death_drop,mm_small_ninja_monkey_bones
+// huntmode=TODO
+// huntrange=TODO
 
 [mm_posted_archer]
 name=Monkey Archer
@@ -2082,6 +2813,29 @@ readyanim=m_monkey_ready
 op2=Attack
 vislevel=86
 head1=chat_main_monkey_ninja
+// category=category_396
+wanderrange=0
+moverestrict=nomove
+defaultmode=none
+maxrange=45
+attackrange=6
+// respawnrate=TODO
+hitpoints=50
+attack=80
+strength=80
+defence=80
+ranged=110
+param=attackrate,4
+param=damagetype,^crush_style
+param=attack_anim,m_monkey_attack_bow
+param=defend_anim,m_monkey_block_bow
+param=death_anim,null
+param=attack_sound,arrowlaunch2
+param=defend_sound,monkey_hit
+param=death_sound,monkey_death
+param=death_drop,mm_small_ninja_monkey_bones
+// huntmode=TODO
+// huntrange=TODO
 
 [mm_religious_guard]
 name=Monkey Guard
@@ -2094,6 +2848,27 @@ readyanim=m_gorilla_ready
 op2=Attack
 vislevel=167
 head1=chat_main_gorilla_basic
+// category=category_673
+wanderrange=5
+maxrange=100
+// respawnrate=TODO
+hitpoints=130
+attack=130
+strength=130
+defence=200
+magic=130
+param=attackrate,4
+param=attackbonus,50
+param=damagetype,^crush_style
+param=attack_anim,m_gorilla_attack
+param=defend_anim,m_gorilla_block
+param=death_anim,m_gorilla_death
+param=attack_sound,gorilla_attack
+param=defend_sound,gorilla_hit
+param=death_sound,gorilla_death
+param=death_drop,mm_normal_gorilla_monkey_bones
+// huntmode=TODO
+// huntrange=TODO
 
 [mm_religious_trapdoor_guard]
 name=Monkey Guard
@@ -2106,6 +2881,28 @@ readyanim=m_gorilla_ready
 op2=Attack
 vislevel=167
 head1=chat_main_gorilla_beard
+// category=category_673
+wanderrange=1
+maxrange=2
+blockwalk=all
+// respawnrate=TODO
+hitpoints=130
+attack=130
+strength=130
+defence=200
+magic=130
+param=attackrate,4
+param=attackbonus,50
+param=damagetype,^crush_style
+param=attack_anim,m_gorilla_attack
+param=defend_anim,m_gorilla_block
+param=death_anim,m_gorilla_death
+param=attack_sound,gorilla_attack
+param=defend_sound,gorilla_hit
+param=death_sound,gorilla_death
+param=death_drop,mm_bearded_gorilla_monkey_bones
+// huntmode=TODO
+// huntrange=TODO
 
 [mm_elder_guard_1]
 name=Elder Guard
@@ -2118,6 +2915,11 @@ readyanim=m_gorilla_ready
 op1=Talk-to
 vislevel=hide
 head1=chat_main_gorilla_beard
+// category=category_673
+wanderrange=0
+moverestrict=nomove
+defaultmode=none
+param=damagetype,^crush_style
 
 [mm_elder_guard_2]
 name=Elder Guard
@@ -2130,6 +2932,11 @@ readyanim=m_gorilla_ready
 op1=Talk-to
 vislevel=hide
 head1=chat_main_gorilla_beard
+// category=category_673
+wanderrange=0
+moverestrict=nomove
+defaultmode=none
+param=damagetype,^crush_style
 
 [mm_zoo_monkey]
 name=Monkey
@@ -2140,6 +2947,8 @@ readyanim=monkey_ready
 op1=Talk-to
 vislevel=3
 head1=chat_main_monkey_original
+// category=category_299
+wanderrange=5
 
 [mm_freed_zoo_monkey]
 name=Monkey
@@ -2150,6 +2959,8 @@ readyanim=monkey_ready
 op1=Talk-to
 vislevel=3
 head1=chat_main_monkey_original
+// category=category_299
+// wanderrange=5
 
 [mm_zombie_monkey_large]
 name=Monkey Zombie
@@ -2169,6 +2980,27 @@ resizev=190
 op2=Attack
 turnspeed=6
 vislevel=98
+// category=category_674
+wanderrange=5
+maxrange=5
+// respawnrate=TODO
+hitpoints=60
+attack=150
+strength=60
+defence=60
+magic=60
+param=attackbonus,35
+param=damagetype,^crush_style
+param=attack_anim,m_zombie_attack
+param=defend_anim,m_monkey_block_bow
+param=death_anim,m_monkey_death
+param=attack_sound,zombie_monkey_attack
+param=defend_sound,zombie_monkey_hit
+param=death_sound,zombie_monkey_death
+param=death_drop,mm_large_zombie_monkey_bones
+param=undead,^true
+// huntmode=TODO
+// huntrange=TODO
 
 [mm_zombie_monkey_large_guard]
 name=Monkey Zombie
@@ -2188,6 +3020,27 @@ resizev=200
 op2=Attack
 turnspeed=6
 vislevel=129
+// category=category_674
+wanderrange=1
+maxrange=1
+// respawnrate=TODO
+hitpoints=90
+attack=150
+strength=110
+defence=90
+magic=90
+param=attackbonus,35
+param=damagetype,^crush_style
+param=attack_anim,m_zombie_attack
+param=defend_anim,m_monkey_block_bow
+param=death_anim,m_monkey_death
+param=attack_sound,zombie_monkey_attack
+param=defend_sound,zombie_monkey_hit
+param=death_sound,zombie_monkey_death
+param=death_drop,mm_large_zombie_monkey_bones
+param=undead,^true
+// huntmode=TODO
+// huntrange=TODO
 
 [mm_zombie_monkey_small]
 name=Monkey Zombie
@@ -2205,6 +3058,27 @@ readyanim=m_monkey_ready
 turnspeed=10
 op2=Attack
 vislevel=82
+// category=category_674
+wanderrange=2
+maxrange=2
+// respawnrate=
+hitpoints=60
+attack=100
+strength=60
+defence=60
+magic=60
+param=attackbonus,15
+param=damagetype,^crush_style
+param=attack_anim,m_zombie_attack
+param=defend_anim,m_monkey_block_bow
+param=death_anim,m_monkey_death
+param=attack_sound,zombie_monkey_attack
+param=defend_sound,zombie_monkey_hit
+param=death_sound,zombie_monkey_death
+param=death_drop,mm_small_zombie_monkey_bones
+param=undead,^true
+// huntmode=TODO
+// huntrange=TODO
 
 [mm_bonzara]
 name=Bonzara
@@ -2223,6 +3097,8 @@ resizev=180
 op1=Talk-to
 vislevel=hide
 head1=chat_main_monkey_basic
+// category=category_396
+wanderrange=5
 
 [mm_monkey_minder]
 name=Monkey Minder
@@ -2252,6 +3128,7 @@ vislevel=hide
 head1=chat_male_head_shorthair
 head2=chat_male_jaw_long
 head3=chat_male_model_37
+wanderrange=5
 
 [mm_foreman_cutscene]
 name=Foreman
@@ -2274,6 +3151,9 @@ readyanim=human_ready
 vislevel=hide
 head1=chat_male_head_longhair
 head2=chat_male_jaw_moustache
+wanderrange=0
+moverestrict=nomove
+defaultmode=none
 
 [mm_skeleton]
 name=Skeleton
@@ -2286,6 +3166,30 @@ resizeh=100
 resizev=100
 op2=Attack
 vislevel=142
+// category=category_257
+wanderrange=10
+maxrange=16
+attackrange=15
+// respawnrate=TODO
+hitpoints=110
+attack=180
+strength=90
+defence=110
+magic=110
+param=attackrate,4
+param=attackbonus,50
+param=damagetype,^slash_style
+param=attack_anim,skeleton_attack
+param=defend_anim,skeleton_block
+param=death_anim,skeleton_death
+param=attack_sound,skeleton_attack
+param=defend_sound,skelly_hit
+param=death_sound,skeleton_death
+param=death_drop,mm_skeleton_bones
+param=undead,^true
+huntmode=cowardly
+huntrange=16
+// osrs sounds skeletal_gorilla_attack skeletal_gorilla_hit skeletal_gorilla_death
 
 [mm_demon]
 name=Jungle Demon
@@ -2311,6 +3215,33 @@ resizev=140
 turnspeed=16
 op2=Attack
 vislevel=195
+// category=category_275
+// wanderrange= TODO
+maxrange=64
+attackrange=10
+// melee attackrange 2 squares
+// respawnrate=TODO
+hitpoints=170
+attack=170
+strength=170
+defence=170
+magic=170
+param=attackrate,6
+param=attackbonus,50
+param=strengthbonus,50
+param=slashdefence,50
+param=magicdefence,50
+param=damagetype,^slash_style
+param=attack_anim,demon_attack
+param=defend_anim,demon_block
+param=death_anim,demon_death
+param=attack_sound,black_demon_attack
+param=defend_sound,black_demon_hit
+param=death_sound,black_demon_death
+param=death_drop,ashes
+// huntmode=TODO
+// huntrange=TODO
+// wanderrange/maxrage is guess.
 
 [mm_warehouse_spider]
 name=Spider
@@ -2324,6 +3255,27 @@ resizeh=64
 resizev=64
 op2=Attack
 vislevel=1
+// category=category_384
+wanderrange=4
+maxrange=5
+// respawnrate=TODO
+hitpoints=2
+param=attackrate,6
+param=attackbonus,1
+param=strengthbonus,1
+param=slashdefence,1
+param=magicdefence,1
+param=damagetype,^slash_style
+param=attack_anim,spider_attack
+param=defend_anim,spider_block
+param=death_anim,spider_death
+param=attack_sound,insect_attack
+param=defend_sound,insect_hit
+param=death_sound,insect_death
+param=death_drop,null
+// param=poison_severity,TODO
+// huntmode=TODO
+// huntrange=TODO
 
 [mm_cutscene_spider]
 name=Spider
@@ -2336,6 +3288,8 @@ minimap=no
 resizeh=64
 resizev=64
 vislevel=1
+// category=category_384
+wanderrange=5
 
 [mm_jungle_bird_green]
 name=Bird
@@ -2351,6 +3305,25 @@ resizev=64
 turnspeed=64
 op2=Attack
 vislevel=11
+// category=category_255
+wanderrange=14
+maxrange=16
+// respawnrate=TODO
+hitpoints=10
+attack=10
+strength=10
+defence=10
+magic=10
+param=attackrate,4
+param=damagetype,^stab_style
+param=attack_anim,bird_attack
+param=defend_anim,bird_block
+param=death_anim,bird_death
+param=attack_sound,bird_attack
+param=defend_sound,bird_hit
+param=death_sound,bird_death
+// huntmode=TODO
+// huntrange=TODO
 
 [mm_jungle_bird_blue]
 name=Bird
@@ -2366,6 +3339,26 @@ resizev=64
 turnspeed=64
 op2=Attack
 vislevel=5
+// category=category_255
+wanderrange=62
+maxrange=64
+// respawnrate=TODO
+hitpoints=5
+attack=5
+strength=5
+defence=5
+magic=5
+param=attackrate,4
+param=damagetype,^stab_style
+param=attack_anim,bird_attack
+param=defend_anim,bird_block
+param=death_anim,bird_death
+param=attack_sound,bird_attack
+param=defend_sound,bird_hit
+param=death_sound,bird_death
+// huntmode=TODO
+// huntrange=TODO
+// wanderrange is not confirmed
 
 [mm_jungle_scorpion]
 name=Scorpion
@@ -2381,6 +3374,30 @@ resizeh=32
 resizev=32
 op2=Attack
 vislevel=38
+// category=category_343
+wanderrange=5
+maxrange=5
+// respawnrate=TODO
+hitpoints=15
+attack=50
+strength=50
+defence=10
+magic=10
+param=attackrate,4
+param=attackbonus,100
+param=strengthbonus,100
+param=damagetype,^stab_style
+param=attack_anim,scorpion_attack
+param=defend_anim,scorpion_parry
+param=death_anim,scorpion_death
+param=attack_sound,insect_attack
+param=defend_sound,insect_hit
+param=death_sound,insect_death
+param=death_drop,null
+// param=poison_severity,TODO
+// huntmode=TODO
+// huntrange=TODO
+// osrs sounds scorpion_attack, scorpion_hit, scorpion_death
 
 [mm_jungle_spider]
 name=Jungle spider
@@ -2396,6 +3413,29 @@ resizeh=100
 resizev=100
 op2=Attack
 vislevel=37
+// category=category_384
+wanderrange=4
+maxrange=5
+// respawnrate=TODO
+hitpoints=35
+attack=50
+strength=30
+defence=10
+magic=10
+param=attackrate,4
+param=attackbonus,100
+param=strengthbonus,100
+param=damagetype,^stab_style
+param=attack_anim,giantspider_attack
+param=defend_anim,giantspider_block
+param=death_anim,giantspider_death
+param=attack_sound,insect_attack
+param=defend_sound,insect_hit
+param=death_sound,insect_death
+param=death_drop,null
+// param=poison_severity,TODO
+// huntmode=TODO
+// huntrange=TODO
 
 [mm_jungle_snake]
 name=Snake
@@ -2409,6 +3449,28 @@ walkanim=snake_walk
 minimap=no
 op2=Attack
 vislevel=24
+// category=category_383
+wanderrange=5
+maxrange=5
+// respawnrate=TODO
+hitpoints=35
+attack=15
+strength=25
+defence=10
+magic=10
+param=attackrate,4
+param=attackbonus,100
+param=strengthbonus,100
+param=damagetype,^crush_style
+param=attack_anim,snake_attack
+param=defend_anim,snake_block
+param=death_anim,snake_death
+param=attack_sound,snake_attack
+param=defend_sound,snake_hit
+param=death_sound,snake_death
+// param=poison_severity,TODO
+// huntmode=TODO
+// huntrange=TODO
 
 [mm_transmogrification_small_ninja_monkey]
 model1=quest_mm_npc_monkey_body_ninja
@@ -2417,6 +3479,7 @@ walkanim=m_monkey_walk
 readyanim=m_monkey_ready
 vislevel=1
 head1=chat_main_monkey_ninja
+// category=category_359
 
 [mm_transmogrification_medium_ninja_monkey]
 model1=quest_mm_npc_monkey_body_ninja
@@ -2427,6 +3490,7 @@ resizeh=180
 resizev=180
 vislevel=1
 head1=chat_main_monkey_ninja
+// category=category_359
 
 [mm_transmogrification_normal_gorilla]
 model1=quest_mm_npc_gorilla_body_guard
@@ -2435,6 +3499,7 @@ walkanim=m_gorilla_walk
 readyanim=m_gorilla_ready
 vislevel=1
 head1=chat_main_gorilla_basic
+// category=category_359
 
 [mm_transmogrification_bearded_gorilla]
 model1=quest_mm_npc_gorilla_body_guard
@@ -2443,6 +3508,7 @@ walkanim=m_gorilla_walk
 readyanim=m_gorilla_ready
 vislevel=1
 head1=chat_main_gorilla_beard
+// category=category_359
 
 [mm_transmogrification_ancient_monkey]
 model1=quest_mm_npc_gorilla_body_basic
@@ -2455,6 +3521,7 @@ walkanim=m_gorilla_walk
 readyanim=m_gorilla_ready
 vislevel=1
 head1=chat_main_gorilla_beard
+// category=category_359
 
 [mm_transmogrification_small_zombie_monkey]
 model1=quest_mm_npc_monkey_body_basic
@@ -2469,6 +3536,7 @@ walkanim=m_zombie_walk
 readyanim=m_monkey_ready
 vislevel=1
 head1=chat_main_monkey_basic
+// category=category_359
 
 [mm_transmogrification_large_zombie_monkey]
 model1=quest_mm_npc_monkey_body_basic
@@ -2485,6 +3553,7 @@ walkanim=m_zombie_walk
 readyanim=m_monkey_ready
 vislevel=1
 head1=chat_main_monkey_basic
+// category=category_359
 
 [mm_transmogrification_normal_monkey]
 model1=npc_monkey
@@ -2492,6 +3561,7 @@ walkanim=monkey_walk
 readyanim=monkey_ready
 vislevel=1
 head1=chat_main_monkey_original
+// category=category_359
 
 [toms_food_monkey]
 model1=npc_1429
@@ -2971,6 +4041,9 @@ op4=Trade-with
 head1=chat_male_head_shorthair2
 head2=chat_male_headextra_monacle
 head3=chat_male_jaw_long
+wanderrange=0
+moverestrict=nomove
+defaultmode=none
 
 [puzzle_cart]
 name=Mine cart
@@ -2978,6 +4051,10 @@ model1=quest_hauntedmine_hauntedcart
 desc=Big, metal, and wheeled.
 turnspeed=1024
 vislevel=hide
+wanderrange=0
+moverestrict=nomove
+defaultmode=none
+blockwalk=all
 
 [saradominist_zealot]
 name=Zealot
@@ -3012,6 +4089,7 @@ alwaysontop=yes
 vislevel=hide
 head1=chat_male_head_bald
 head2=chat_male_jaw_short
+wanderrange=5
 
 [castlewars_sheep]
 name=Sheep
@@ -3069,6 +4147,12 @@ minimap=no
 vislevel=hide
 desc=A spiky barricade.
 op2=Attack
+// category=category_697
+wanderrange=0
+moverestrict=nomove
+defaultmode=none
+blockwalk=all
+hitpoints=50
 
 [castlewars_barricade_burning_saradomin]
 name=Barricade
@@ -3083,6 +4167,12 @@ vislevel=hide
 desc=A spiky barricade.
 readyanim=fire
 op2=Attack
+// category=category_697
+wanderrange=0
+moverestrict=nomove
+defaultmode=none
+blockwalk=all
+hitpoints=50
 
 [castlewars_barricade_zamorak]
 name=Barricade
@@ -3091,6 +4181,12 @@ minimap=no
 vislevel=hide
 desc=A spiky barricade.
 op2=Attack
+// category=category_697
+wanderrange=0
+moverestrict=nomove
+defaultmode=none
+blockwalk=all
+hitpoints=50
 
 [castlewars_barricade_burning_zamorak]
 name=Barricade
@@ -3105,6 +4201,12 @@ vislevel=hide
 desc=A spiky barricade.
 readyanim=fire
 op2=Attack
+// category=category_697
+wanderrange=0
+moverestrict=nomove
+defaultmode=none
+blockwalk=all
+hitpoints=50
 
 [possessed_pickaxe]
 name=Possessed Pickaxe
@@ -3114,8 +4216,32 @@ readyanim=magicaxe_ready
 desc=How does it move of its own accord?
 op2=Attack
 vislevel=50
+// category=
+// wanderrange=TODO
+maxrange=12
+// respawnrate=TODO
+hitpoints=50
+attack=40
+strength=55
+defence=40
+param=attackrate,4
+param=stabdefence,15
+param=slashdefence,10
+param=crushdefence,5
+param=magicdefence,5
+param=rangedefence,10
+param=damagetype,^stab_style
+param=attack_anim,magicaxe_attack
+param=defend_anim,magicaxe_block
+param=death_anim,magicaxe_death
+param=attack_sound,baxe_slash
+param=defend_sound,brassclash
+param=death_sound,swordclash2
+param=death_drop,iron_pickaxe
+// huntmode=TODO
+// huntrange=TODO
 
-[npc_1537]
+[possessed_pickaxe_stationary]
 name=Bronze pickaxe
 model1=spot_spotanim_307
 op1=Take
@@ -3124,6 +4250,33 @@ readyanim=pickaxe_beforesummon
 desc=Useful for hitting rocks.
 vislevel=hide
 minimap=no
+// category=category_351
+wanderrange=0
+maxrange=12
+moverestrict=nomove
+defaultmode=none
+// respawnrate=TODO
+hitpoints=50
+attack=40
+strength=55
+defence=40
+param=attackrate,4
+param=stabdefence,15
+param=slashdefence,10
+param=crushdefence,5
+param=magicdefence,5
+param=rangedefence,10
+param=damagetype,^stab_style
+param=attack_anim,magicaxe_attack
+param=defend_anim,magicaxe_block
+param=death_anim,magicaxe_death
+param=attack_sound,baxe_slash
+param=defend_sound,brassclash
+param=death_sound,swordclash2
+// param=death_drop,null
+// huntmode=TODO
+// huntrange=TODO
+// Try to kill this NPC without the NPC changing form.
 
 [skeletal_miner_sitting]
 name=Corpse
@@ -3134,6 +4287,33 @@ readyanim=skeleton_beforesummon
 walkanim=skeleton_walk
 vislevel=hide
 minimap=no
+// category=category_257
+wanderrange=0
+maxrange=7
+moverestrict=nomove
+defaultmode=none
+// respawnrate=TODO
+hitpoints=39
+attack=35
+strength=38
+defence=37
+param=attackrate,4
+param=attackbonus,15
+param=strengthbonus,14
+param=stabdefence,9
+param=slashdefence,11
+param=crushdefence,-2
+param=magicdefence,1
+param=rangedefence,4
+param=damagetype,^stab_style
+param=attack_anim,skeleton_attack
+param=defend_anim,skeleton_block
+param=death_anim,skeleton_death
+param=attack_sound,baxe_slash
+param=defend_sound,skelly_hit
+param=death_sound,skeleton_death
+// huntmode=TODO
+// huntrange=TODO
 
 [skeletal_miner]
 name=Skeletal miner
@@ -3144,6 +4324,31 @@ walkanim=skeleton_walk
 readyanim=skeleton_ready
 op2=Attack
 vislevel=42
+// category=category_257
+wanderrange=5
+maxrange=7
+// respawnrate=TODO
+hitpoints=39
+attack=35
+strength=38
+defence=37
+param=attackrate,4
+param=attackbonus,15
+param=strengthbonus,14
+param=stabdefence,9
+param=slashdefence,11
+param=crushdefence,-2
+param=magicdefence,1
+param=rangedefence,4
+param=damagetype,^stab_style
+param=attack_anim,skeleton_attack
+param=defend_anim,skeleton_block
+param=death_anim,skeleton_death
+param=attack_sound,baxe_slash
+param=defend_sound,skelly_hit
+param=death_sound,skeleton_death
+// huntmode=TODO
+// huntrange=TODO
 
 [hauntedmine_boss_ghost]
 name=Treus Dayth
@@ -3166,6 +4371,34 @@ alwaysontop=yes
 vislevel=95
 head1=chat_male_head_model_62
 head2=chat_male_headextra_model_73
+// category=category_278
+// wanderrange=TODO
+// maxrange=TODO
+// attackrange=TODO
+// respawnrate=TODO
+hitpoints=100
+attack=70
+strength=70
+defence=100
+param=attackrate,4
+param=stabdefence,5
+param=slashdefence,5
+param=crushdefence,5
+param=magicdefence,-5
+param=rangedefence,5
+param=damagetype,^crush_style
+param=attack_anim,ghost_attack
+param=defend_anim,ghost_block
+param=death_anim,ghost_death
+param=attack_sound,bigghost_attack
+param=defend_sound,bigghost_hit
+param=death_sound,bigghost_death
+param=death_drop,null
+param=undead,^true
+// huntmode=TODO
+// huntrange=TODO
+// try to find out if we have separate animations
+// for this or if it just uses basic ghost data.
 
 [hauntedmine_boss_ghost_faded]
 name=Ghost
@@ -3186,6 +4419,32 @@ readyanim=seq_1436
 vislevel=99
 head1=chat_male_head_model_62
 head2=chat_male_headextra_model_73
+// category=category_278
+// wanderrange=TODO
+// maxrange=TODO
+// attackrange=TODO
+// respawnrate=TODO
+hitpoints=200
+defence=195
+param=attackrate,4
+param=stabdefence,5
+param=slashdefence,5
+param=crushdefence,5
+param=magicdefence,-5
+param=rangedefence,5
+param=damagetype,^crush_style
+param=attack_anim,ghost_attack
+param=defend_anim,ghost_block
+param=death_anim,ghost_death
+param=attack_sound,bigghost_attack
+param=defend_sound,bigghost_hit
+param=death_sound,bigghost_death
+param=death_drop,null
+param=undead,^true
+// huntmode=TODO
+// huntrange=TODO
+// try to find out if we have separate animations
+// for this or if it just uses basic ghost data.
 
 [crane_posessed_mine]
 name=Loading crane
@@ -3194,6 +4453,10 @@ desc=Those are some of the biggest teeth I've ever seen.
 size=3
 vislevel=hide
 minimap=no
+wanderrange=0
+moverestrict=nomove
+defaultmode=none
+blockwalk=all
 
 [hauntedmine_boss_key]
 name=Innocent looking key
@@ -3205,6 +4468,9 @@ alwaysontop=yes
 op1=Take
 readyanim=possessed_key_ready
 walkanim=possessed_key_drifting
+wanderrange=0
+moverestrict=nomove
+defaultmode=none
 
 [hauntedmine_boss_cart]
 name=Mine cart
@@ -3214,6 +4480,11 @@ minimap=no
 vislevel=hide
 alwaysontop=yes
 turnspeed=1024
+wanderrange=0
+moverestrict=nomove
+defaultmode=none
+blockwalk=all
+// TODO
 
 [hauntedmine_cart1]
 name=Mine cart
@@ -3222,6 +4493,11 @@ desc=Big, metal, and wheeled.
 vislevel=hide
 alwaysontop=yes
 turnspeed=1024
+wanderrange=0
+moverestrict=nomove
+blockwalk=all
+// defaultmode=patrol
+// TODO
 
 [hauntedmine_cart2]
 name=Mine cart
@@ -3230,6 +4506,11 @@ desc=Big, metal, and wheeled.
 vislevel=hide
 alwaysontop=yes
 turnspeed=1024
+wanderrange=0
+moverestrict=nomove
+blockwalk=all
+// defaultmode=patrol
+// TODO
 
 [hauntedmine_cart3]
 name=Mine cart
@@ -3238,6 +4519,11 @@ desc=Big, metal, and wheeled.
 vislevel=hide
 alwaysontop=yes
 turnspeed=1024
+wanderrange=0
+moverestrict=nomove
+blockwalk=all
+// defaultmode=patrol
+// TODO
 
 [hauntedmine_cart4]
 name=Mine cart
@@ -3246,6 +4532,11 @@ desc=Big, metal, and wheeled.
 vislevel=hide
 alwaysontop=yes
 turnspeed=1024
+wanderrange=0
+moverestrict=nomove
+blockwalk=all
+// defaultmode=patrol
+// TODO
 
 [hauntedmine_suprise_ghost]
 name=Ghost
@@ -3257,6 +4548,30 @@ walkanim=ghost_walk
 readyanim=ghost_ready
 op2=Attack
 vislevel=29
+category=category_278
+wanderrange=8
+maxrange=10
+// respawnrate=TODO
+hitpoints=30
+attack=23
+strength=23
+defence=28
+param=attackrate,4
+param=stabdefence,5
+param=slashdefence,5
+param=crushdefence,5
+param=magicdefence,-5
+param=rangedefence,5
+param=damagetype,^crush_style
+param=attack_anim,ghost_attack
+param=defend_anim,ghost_block
+param=death_anim,ghost_death
+param=attack_sound,ghost_attack
+param=defend_sound,ghost_hit
+param=death_sound,ghost_death
+param=death_drop,null
+// huntmode=TODO
+// huntrange=TODO
 
 [hauntedmine_suprise_ghost_hidden]
 name=Haze
@@ -3268,6 +4583,30 @@ walkanim=seq_1436
 readyanim=seq_1436
 vislevel=hide
 minimap=no
+// category=category_278
+wanderrange=8
+maxrange=10
+// respawnrate=TODO
+hitpoints=30
+attack=23
+strength=23
+defence=28
+param=attackrate,4
+param=stabdefence,5
+param=slashdefence,5
+param=crushdefence,5
+param=magicdefence,-5
+param=rangedefence,5
+param=damagetype,^crush_style
+param=attack_anim,ghost_attack
+param=defend_anim,ghost_block
+param=death_anim,ghost_death
+param=attack_sound,ghost_attack
+param=defend_sound,ghost_hit
+param=death_sound,ghost_death
+param=death_drop,null
+// huntmode=TODO
+// huntrange=TODO
 
 [hauntedmine_cheeky_ghost]
 name=Mischievous Ghost
@@ -3278,6 +4617,8 @@ desc=That ghost looks like he's up to something.
 walkanim=ghost_walk
 readyanim=ghost_ready
 vislevel=hide
+// category=category_278
+//TODO
 
 [santa_claus]
 name=Santa
@@ -3312,6 +4653,9 @@ op1=Talk-to
 head1=chat_male_head_bald
 head2=chat_male_jaw_long
 head3=chat_male_headextra_santa
+wanderrange=0
+moverestrict=nomove
+defaultmode=none
 
 [trollromance_ug]
 name=Ug
@@ -3331,6 +4675,10 @@ resizev=124
 vislevel=hide
 head1=model_3790
 head2=npc_1125_headi2
+// category=category_309
+wanderrange=0
+moverestrict=nomove
+defaultmode=none
 
 [trollromance_aga]
 name=Aga
@@ -3347,6 +4695,10 @@ readyanim=troll_ready
 op1=Talk-to
 vislevel=hide
 head1=npc_1554_head
+// category=category_309
+wanderrange=0
+moverestrict=nomove
+defaultmode=none
 
 [trollromance_arrg]
 name=Arrg
@@ -3369,6 +4721,35 @@ resizeh=150
 resizev=150
 vislevel=113
 head1=npc_1125_head
+// category=category_309
+wanderrange=0
+maxrange=20
+moverestrict=nomove
+defaultmode=none
+// respawnrate=TODO
+hitpoints=140
+attack=70
+strength=140
+defence=40
+magic=0
+ranged=70
+param=attackrate,4
+param=attackbonus,60
+param=strengthbonus,100
+param=stabdefence,35
+param=slashdefence,60
+param=crushdefence,35
+param=magicdefence,200
+param=rangedefence,200
+param=damagetype,^slash_style
+param=attack_anim,troll_attack
+param=defend_anim,troll_block
+param=death_anim,troll_death
+param=attack_sound,warhammer_crush
+param=defend_sound,troll_hit
+param=death_sound,troll_death
+// huntmode=TODO
+// huntrange=TODO
 
 [trollromance_arrg_attackable]
 name=Arrg
@@ -3391,8 +4772,36 @@ resizeh=150
 resizev=150
 vislevel=113
 head1=npc_1125_head
+// category=category_309
+wanderrange=0
+maxrange=20
+// respawnrate=TODO
+hitpoints=140
+attack=70
+strength=140
+defence=40
+magic=0
+ranged=70
+param=attackrate,4
+param=attackbonus,60
+param=strengthbonus,100
+param=stabdefence,35
+param=slashdefence,60
+param=crushdefence,35
+param=magicdefence,200
+param=rangedefence,200
+param=damagetype,^slash_style
+param=attack_anim,troll_attack
+param=defend_anim,troll_block
+param=death_anim,troll_death
+param=attack_sound,warhammer_crush
+param=defend_sound,troll_hit
+param=death_sound,troll_death
+// huntmode=TODO
+// huntrange=TODO
+// 1488 range attacks 870 troll_throw_rock and can kill with cannon.
 
-[npc_1557]
+[trollromance_eat_test]
 name=Ug
 model1=npc_1095
 model2=quest_death_npc_troll_head
@@ -3410,6 +4819,7 @@ resizev=124
 vislevel=1
 head1=model_3790
 head2=npc_1125_headi2
+// category=category_309
 
 [trollromance_ice_wolf_1]
 name=Ice wolf
@@ -3424,6 +4834,25 @@ walkanim=dog_walk
 readyanim=dog_ready
 op2=Attack
 vislevel=96
+// category=category_310
+wanderrange=6
+maxrange=8
+// respawnrate=TODO
+hitpoints=70
+attack=100
+strength=90
+defence=70
+param=attackrate,4
+param=damagetype,^stab_style
+param=attack_anim,dog_attack
+param=defend_anim,dog_block
+param=death_anim,dog_death
+param=attack_sound,wolf_attack
+param=defend_sound,wolf_hit
+param=death_sound,wolf_death
+param=death_drop,wolf_bones
+// huntmode=TODO
+// huntrange=TODO
 
 [trollromance_ice_wolf_2]
 name=Ice wolf
@@ -3440,6 +4869,25 @@ op2=Attack
 resizev=110
 resizeh=110
 vislevel=132
+// category=category_310
+wanderrange=6
+maxrange=8
+// respawnrate=TODO
+hitpoints=70
+attack=150
+strength=150
+defence=70
+param=attackrate,4
+param=damagetype,^stab_style
+param=attack_anim,dog_attack
+param=defend_anim,dog_block
+param=death_anim,dog_death
+param=attack_sound,wolf_attack
+param=defend_sound,wolf_hit
+param=death_sound,wolf_death
+param=death_drop,wolf_bones
+// huntmode=TODO
+// huntrange=TODO
 
 [trollromance_icetroll_melee1]
 name=Ice Troll
@@ -3458,6 +4906,30 @@ resizeh=134
 resizev=134
 op2=Attack
 vislevel=124
+// category=
+wanderrange=5
+maxrange=7
+// respawnrate=TODO
+hitpoints=80
+attack=140
+strength=120
+defence=80
+param=attackrate,4
+param=attackbonus,60
+param=strengthbonus,60
+param=stabdefence,30
+param=slashdefence,60
+param=crushdefence,30
+param=damagetype,^crush_style
+param=attack_anim,troll_attack
+param=defend_anim,troll_block
+param=death_anim,troll_death
+param=attack_sound,troll_attack
+param=defend_sound,troll_hit
+param=death_sound,troll_death
+param=death_drop,big_bones
+// huntmode=TODO
+// huntrange=TODO
 
 [trollromance_icetroll_melee2]
 name=Ice Troll
@@ -3478,6 +4950,30 @@ resizeh=128
 resizev=128
 op2=Attack
 vislevel=123
+// category=
+wanderrange=5
+maxrange=7
+// respawnrate=TODO
+hitpoints=80
+attack=120
+strength=120
+defence=100
+param=attackrate,4
+param=attackbonus,60
+param=strengthbonus,60
+param=stabdefence,30
+param=slashdefence,60
+param=crushdefence,30
+param=damagetype,^crush_style
+param=attack_anim,troll_attack
+param=defend_anim,troll_block
+param=death_anim,troll_death
+param=attack_sound,troll_attack
+param=defend_sound,troll_hit
+param=death_sound,troll_death
+param=death_drop,big_bones
+// huntmode=TODO
+// huntrange=TODO
 
 [trollromance_icetroll_melee3]
 name=Ice Troll
@@ -3497,6 +4993,30 @@ resizeh=139
 resizev=139
 op2=Attack
 vislevel=120
+// category=
+wanderrange=5
+maxrange=7
+// respawnrate=TODO
+hitpoints=100
+attack=100
+strength=100
+defence=120
+param=attackrate,4
+param=attackbonus,60
+param=strengthbonus,60
+param=stabdefence,30
+param=slashdefence,60
+param=crushdefence,30
+param=damagetype,^crush_style
+param=attack_anim,troll_attack
+param=defend_anim,troll_block
+param=death_anim,troll_death
+param=attack_sound,troll_attack
+param=defend_sound,crystal_armour_2
+param=death_sound,troll_death
+param=death_drop,big_bones
+// huntmode=TODO
+// huntrange=TODO
 
 [trollromance_icetroll_melee4]
 name=Ice Troll
@@ -3517,6 +5037,30 @@ resizeh=134
 resizev=134
 op2=Attack
 vislevel=121
+// category=
+wanderrange=5
+maxrange=7
+// respawnrate=TODO
+hitpoints=80
+attack=100
+strength=120
+defence=120
+param=attackrate,4
+param=attackbonus,60
+param=strengthbonus,60
+param=stabdefence,30
+param=slashdefence,60
+param=crushdefence,30
+param=damagetype,^crush_style
+param=attack_anim,troll_attack
+param=defend_anim,troll_block
+param=death_anim,troll_death
+param=attack_sound,mace_crush
+param=defend_sound,troll_hit
+param=death_sound,troll_death
+param=death_drop,big_bones
+// huntmode=TODO
+// huntrange=TODO
 
 [trollromance_icetroll_melee5]
 name=Ice Troll
@@ -3536,6 +5080,29 @@ resizeh=138
 resizev=138
 op2=Attack
 vislevel=120
+// category=
+wanderrange=5
+maxrange=7
+hitpoints=120
+attack=120
+strength=80
+defence=100
+param=attackrate,4
+param=attackbonus,60
+param=strengthbonus,60
+param=stabdefence,30
+param=slashdefence,60
+param=crushdefence,30
+param=damagetype,^crush_style
+param=attack_anim,troll_attack
+param=defend_anim,troll_block
+param=death_anim,troll_death
+param=attack_sound,mace_crush
+param=defend_sound,crystal_armour_2
+param=death_sound,troll_death
+param=death_drop,big_bones
+// huntmode=TODO
+// huntrange=TODO
 
 [trollromance_icetroll_melee6]
 name=Ice Troll
@@ -3556,6 +5123,30 @@ resizeh=125
 resizev=125
 op2=Attack
 vislevel=120
+// category=
+wanderrange=5
+maxrange=7
+// respawnrate=TODO
+hitpoints=80
+attack=80
+strength=120
+defence=140
+param=attackrate,4
+param=attackbonus,60
+param=strengthbonus,60
+param=stabdefence,30
+param=slashdefence,60
+param=crushdefence,30
+param=damagetype,^crush_style
+param=attack_anim,troll_attack
+param=defend_anim,troll_block
+param=death_anim,troll_death
+param=attack_sound,shard_attack
+param=defend_sound,troll_hit
+param=death_sound,troll_death
+param=death_drop,big_bones
+// huntmode=TODO
+// huntrange=TODO
 
 [trollromance_icetroll_melee7]
 name=Ice Troll
@@ -3574,6 +5165,30 @@ resizeh=134
 resizev=134
 op2=Attack
 vislevel=121
+// category=
+wanderrange=5
+maxrange=7
+// respawnrate=TODO
+hitpoints=80
+attack=100
+strength=120
+defence=120
+param=attackrate,4
+param=attackbonus,60
+param=strengthbonus,60
+param=stabdefence,30
+param=slashdefence,60
+param=crushdefence,30
+param=damagetype,^crush_style
+param=attack_anim,troll_attack
+param=defend_anim,troll_block
+param=death_anim,troll_death
+param=attack_sound,mace_crush
+param=defend_sound,troll_hit
+param=death_sound,troll_death
+param=death_drop,big_bones
+// huntmode=TODO
+// huntrange=TODO
 
 [route_cyreg_paddlehorn]
 name=Cyreg Paddlehorn
@@ -3605,6 +5220,7 @@ walkanim=human_walk_f,human_walk_b,human_walk_l,human_walk_r
 op1=Talk-to
 head1=chat_male_head_hood2
 head2=chat_male_jaw_long
+wanderrange=1
 
 [route_curpile_fyod]
 name=Curpile Fyod
@@ -3636,6 +5252,7 @@ readyanim=human_ready
 op1=Talk-to
 head1=chat_male_head_bald
 head2=chat_male_jaw_moustache
+// wanderrange=
 
 [route_veliaf_hurtz]
 name=Veliaf Hurtz
@@ -3668,6 +5285,7 @@ op1=Talk-to
 op3=hidden
 head1=chat_male_head_dredlocks
 head2=chat_male_jaw_moustache
+wanderrange=1
 
 [route_sani_piliu]
 name=Sani Piliu
@@ -3697,6 +5315,7 @@ walkanim=human_walk_f,human_walk_b,human_walk_l,human_walk_r
 readyanim=human_ready
 op1=Talk-to
 head1=chat_female_head_longhair
+// wanderrange=
 
 [route_harold_evans]
 name=Harold Evans
@@ -3728,6 +5347,7 @@ readyanim=human_ready
 op1=Talk-to
 head1=chat_male_head_bald
 head2=model_77_npc_head
+// wanderrange=
 
 [route_radigad_ponfit]
 name=Radigad Ponfit
@@ -3758,6 +5378,7 @@ walkanim=human_walk_f,human_walk_b,human_walk_l,human_walk_r
 readyanim=human_ready
 op1=Talk-to
 head1=chat_male_head_longhair
+// wanderrange=
 
 [route_polmafi_ferdygris]
 name=Polmafi Ferdygris
@@ -3791,6 +5412,7 @@ op1=Talk-to
 head1=chat_male_head_shorthair
 head2=model_78_npc_head
 head3=chat_male_jaw_goaty
+// wanderrange=
 
 [route_ivan_strom]
 name=Ivan Strom
@@ -3822,6 +5444,7 @@ walkanim=human_walk_f,human_walk_b,human_walk_l,human_walk_r
 readyanim=human_ready
 op1=Talk-to
 head1=chat_male_head_hood1
+// wanderrange=
 
 [skeleton_hellhound]
 name=Skeleton Hellhound
@@ -3836,6 +5459,33 @@ resizeh=256
 resizev=256
 op2=Attack
 vislevel=97
+// category=category_257
+// wanderrange=
+// maxrange=
+// respawnrate=TODO
+hitpoints=55
+attack=70
+strength=110
+defence=100
+// param=attackrate,
+// param=attackbonus,
+// param=strengthbonus,
+// param=stabdefence,
+// param=slashdefence,
+// param=crushdefence,
+// param=magicdefence,
+// param=rangedefence,
+param=damagetype,^crush_style
+// param=attack_anim,
+// param=defend_anim,
+// param=death_anim,
+param=attack_sound,skeletal_hellhound_attack
+param=defend_sound,skeletal_hellhound_hit
+param=death_sound,skeletal_hellhound_death
+param=death_drop,big_bones
+// huntmode=TODO
+// huntrange=TODO
+// TODO monster examine
 
 [canafis_stranger]
 name=Stranger
@@ -3859,6 +5509,9 @@ op1=Talk-to
 head1=chat_male_head_hood2
 head2=chat_male_jaw_long
 head3=chat_male_head_werewolf_features
+wanderrange=0
+moverestrict=nomove
+defaultmode=none
 
 [route_vanstrom_klause_sitting]
 name=Vanstrom Klause
@@ -3879,6 +5532,9 @@ walkanim=human_walk_f,human_walk_b,human_walk_l,human_walk_r
 readyanim=human_ready
 op1=Talk-to
 head1=chat_male_head_hoodnobeard
+wanderrange=0
+moverestrict=nomove
+defaultmode=none
 
 [route_vanstrom_vampire_misty]
 name=Mist
@@ -3889,6 +5545,7 @@ size=3
 walkanim=misty
 readyanim=misty
 alwaysontop=yes
+param=death_drop,null
 
 [route_vanstrom_klause_normal]
 name=Vanstrom Klause
@@ -3975,6 +5632,30 @@ resizev=150
 desc=A very large elemental adversary.
 op2=Attack
 vislevel=86
+// category=category_346
+wanderrange=3
+maxrange=5
+// respawnrate=60
+hitpoints=111
+attack=65
+strength=65
+defence=65
+param=attackrate,5
+param=attackbonus,29
+param=strengthbonus,31
+param=slashdefence,3
+param=crushdefence,2
+param=damagetype,^slash_style
+param=attack_anim,giant_attack
+param=defend_anim,giant_block
+param=death_anim,giant_death
+param=attack_sound,giant_attack
+param=defend_sound,giant_hit
+param=death_sound,giant_death
+param=death_drop,big_bones
+huntmode=cowardly
+// huntrange=2
+// TODO
 
 [firegiant_big2]
 name=Fire giant
@@ -3996,6 +5677,30 @@ resizev=150
 desc=A very large elemental adversary.
 op2=Attack
 vislevel=86
+// category=category_346
+wanderrange=3
+maxrange=5
+// respawnrate=60
+hitpoints=111
+attack=65
+strength=65
+defence=65
+param=attackrate,5
+param=attackbonus,29
+param=strengthbonus,31
+param=slashdefence,3
+param=crushdefence,2
+param=damagetype,^slash_style
+param=attack_anim,giant_attack
+param=defend_anim,giant_block
+param=death_anim,giant_death
+param=attack_sound,giant_attack
+param=defend_sound,giant_hit
+param=death_sound,giant_death
+param=death_drop,big_bones
+huntmode=cowardly
+// huntrange=2
+// TODO
 
 [firegiant_big3]
 name=Fire giant
@@ -4017,6 +5722,30 @@ resizev=150
 desc=A very large elemental adversary.
 op2=Attack
 vislevel=86
+// category=category_346
+wanderrange=3
+maxrange=5
+// respawnrate=60
+hitpoints=111
+attack=65
+strength=65
+defence=65
+param=attackrate,5
+param=attackbonus,29
+param=strengthbonus,31
+param=slashdefence,3
+param=crushdefence,2
+param=damagetype,^slash_style
+param=attack_anim,giant_attack
+param=defend_anim,giant_block
+param=death_anim,giant_death
+param=attack_sound,giant_attack
+param=defend_sound,giant_hit
+param=death_sound,giant_death
+param=death_drop,big_bones
+huntmode=cowardly
+// huntrange=2
+// TODO
 
 [firegiant2]
 name=Fire giant
@@ -4036,6 +5765,30 @@ resizev=120
 desc=A very large elemental adversary.
 op2=Attack
 vislevel=86
+// category=category_346
+wanderrange=3
+maxrange=5
+// respawnrate=60
+hitpoints=111
+attack=65
+strength=65
+defence=65
+param=attackrate,5
+param=attackbonus,29
+param=strengthbonus,31
+param=slashdefence,3
+param=crushdefence,2
+param=damagetype,^slash_style
+param=attack_anim,giant_attack
+param=defend_anim,giant_block
+param=death_anim,giant_death
+param=attack_sound,giant_attack
+param=defend_sound,giant_hit
+param=death_sound,giant_death
+param=death_drop,big_bones
+huntmode=cowardly
+// huntrange=2
+// TODO
 
 [firegiant3]
 name=Fire giant
@@ -4056,6 +5809,30 @@ resizev=120
 desc=A very large elemental adversary.
 op2=Attack
 vislevel=86
+// category=category_346
+wanderrange=3
+maxrange=5
+// respawnrate=60
+hitpoints=111
+attack=65
+strength=65
+defence=65
+param=attackrate,5
+param=attackbonus,29
+param=strengthbonus,31
+param=slashdefence,3
+param=crushdefence,2
+param=damagetype,^slash_style
+param=attack_anim,giant_attack
+param=defend_anim,giant_block
+param=death_anim,giant_death
+param=attack_sound,giant_attack
+param=defend_sound,giant_hit
+param=death_sound,giant_death
+param=death_drop,big_bones
+huntmode=cowardly
+// huntrange=2
+// TODO
 
 [mossgiant2]
 name=Moss giant
@@ -4077,6 +5854,28 @@ resizev=130
 desc=His beard seems to have a life of its own.
 op2=Attack
 vislevel=42
+// category=category_346
+wanderrange=3
+maxrange=5
+// respawnrate=60
+hitpoints=60
+attack=30
+strength=30
+defence=30
+param=attackrate,6
+param=attackbonus,33
+param=strengthbonus,31
+param=damagetype,^crush_style
+param=attack_anim,giant_attack
+param=defend_anim,giant_block
+param=death_anim,giant_death
+param=attack_sound,giant_attack
+param=defend_sound,giant_hit
+param=death_sound,giant_death
+param=death_drop,big_bones
+huntmode=cowardly
+// huntrange=2
+// TODO
 
 [mossgiant3]
 name=Moss giant
@@ -4098,6 +5897,28 @@ resizev=110
 desc=His beard seems to have a life of its own.
 op2=Attack
 vislevel=42
+// category=category_346
+wanderrange=3
+maxrange=5
+// respawnrate=60
+hitpoints=60
+attack=30
+strength=30
+defence=30
+param=attackrate,6
+param=attackbonus,33
+param=strengthbonus,31
+param=damagetype,^crush_style
+param=attack_anim,giant_attack
+param=defend_anim,giant_block
+param=death_anim,giant_death
+param=attack_sound,giant_attack
+param=defend_sound,giant_hit
+param=death_sound,giant_death
+param=death_drop,big_bones
+huntmode=cowardly
+// huntrange=2
+// TODO
 
 [babyreddragon]
 name=Baby red dragon
@@ -4110,6 +5931,31 @@ readyanim=bdrag_ready
 desc=Young but still dangerous.
 op2=Attack
 vislevel=65
+// category=category_361
+wanderrange=4
+maxrange=6
+// respawnrate=
+hitpoints=65
+attack=55
+strength=55
+defence=55
+param=stabdefence,30
+param=slashdefence,50
+param=crushdefence,50
+param=magicdefence,40
+param=rangedefence,30
+param=damagetype,^slash_style
+param=attack_anim,bdrag_attack
+param=defend_anim,bdrag_block
+param=death_anim,bdrag_death
+param=attack_sound,babydragon_attack
+param=defend_sound,babydragon_hit
+param=death_sound,babydragon_death
+param=death_drop,babydragon_bones
+huntmode=cowardly
+// huntrange=
+// Stats taken from poh_babyreddragon. // In OSRS, this NPC has the same stats as other baby dragons.
+// https://web.archive.org/web/20051105201903/http://www.tip.it/runescape/index.php?rs2monster_id=3
 
 [bronze_dragon]
 name=Bronze dragon
@@ -4128,7 +5974,12 @@ readyanim=dragon_ready
 desc=It's scales seem to be made of bronze.
 op2=Attack
 vislevel=131
-hitpoints=122
+// category=metal_dragon
+wanderrange=5
+maxrange=20
+attackrange=10
+// respawnrate=TODO
+hitpoints=112
 attack=112
 strength=112
 defence=112
@@ -4146,9 +5997,8 @@ param=attack_sound,dragon_attack
 param=defend_sound,dragon_hit
 param=death_sound,dragon_death
 param=death_drop,dragon_bones
-attackrange=15
-huntmode=ranged
-huntrange=3
+huntmode=cowardly
+// huntrange=
 
 [iron_dragon]
 name=Iron dragon
@@ -4167,6 +6017,11 @@ readyanim=dragon_ready
 desc=It's scales seem to be made of iron.
 op2=Attack
 vislevel=189
+// category=metal_dragon
+wanderrange=5
+maxrange=20
+attackrange=10
+// respawnrate=TODO
 hitpoints=165
 attack=165
 strength=165
@@ -4185,9 +6040,8 @@ param=attack_sound,dragon_attack
 param=defend_sound,dragon_hit
 param=death_sound,dragon_death
 param=death_drop,dragon_bones
-attackrange=15
-huntmode=ranged
-huntrange=3
+huntmode=cowardly
+// huntrange=
 
 [steel_dragon]
 name=Steel dragon
@@ -4206,6 +6060,11 @@ readyanim=dragon_ready
 desc=It's scales seem to be made of steel.
 op2=Attack
 vislevel=246
+// category=metal_dragon
+wanderrange=5
+maxrange=20
+attackrange=10
+// respawnrate=TODO
 hitpoints=210
 attack=215
 strength=215
@@ -4224,9 +6083,8 @@ param=attack_sound,dragon_attack
 param=defend_sound,dragon_hit
 param=death_sound,dragon_death
 param=death_drop,dragon_bones
-attackrange=15
-huntmode=ranged
-huntrange=3
+huntmode=cowardly
+// huntrange=
 
 [dog_wild]
 name=Wild Dog
@@ -4240,6 +6098,25 @@ walkanim=dog_walk
 readyanim=dog_ready
 op2=Attack
 vislevel=63
+// category=category_342
+wanderrange=10
+maxrange=12
+// respawnrate=TODO
+hitpoints=62
+attack=53
+strength=54
+defence=54
+param=damagetype,^stab_style
+param=attack_anim,dog_attack
+param=defend_anim,dog_block
+param=death_anim,dog_death
+param=attack_sound,wolf_attack
+param=defend_sound,wolf_hit
+param=death_sound,wolf_death
+huntmode=aggressive_melee
+// huntrange=
+// osrs sounds dog_attack dog_hit dog_death
+// sounds are guesses.
 
 [dog_wild_2]
 name=Wild dog
@@ -4253,6 +6130,25 @@ walkanim=dog_walk
 readyanim=dog_ready
 op2=Attack
 vislevel=63
+// category=category_342
+wanderrange=10
+maxrange=12
+// respawnrate=TODO
+hitpoints=62
+attack=53
+strength=54
+defence=54
+param=damagetype,^stab_style
+param=attack_anim,dog_attack
+param=defend_anim,dog_block
+param=death_anim,dog_death
+param=attack_sound,wolf_attack
+param=defend_sound,wolf_hit
+param=death_sound,wolf_death
+huntmode=aggressive_melee
+// huntrange=
+// osrs sounds dog_attack dog_hit dog_death
+// sounds are guesses.
 
 [tribesman_doorman]
 name=Saniboch
@@ -4278,4 +6174,4 @@ op1=Talk-to
 op3=Pay
 op3=Pay
 head1=chat_male_head_shorthair
-
+wanderrange=1
