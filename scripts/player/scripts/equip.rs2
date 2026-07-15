@@ -79,7 +79,6 @@ if (p_finduid(uid) = true) {
     }
     inv_moveitem(worn, inv, $obj, sub($count, $overflow));
     ~unequip_effect($obj, ^true);
-    ~unequip_effect($obj, ^true);
 }
 
 [proc,unequip_effect](obj $obj, int $update_all)
@@ -91,6 +90,7 @@ if (oc_param($obj, specwep) = ^true) {
 }
 if($obj = mm_monkey_greegree_for_normal_monkey | $obj = mm_monkey_greegree_for_small_ninja_monkey) {
     p_transmogrify(null);
+    cleartimer(mm_greegree_timer);
     p_animprotect(^false);
     spotanim_pl(windwave_impact, 124, 0);
     sound_synth(monkey_into_human, 0, 0);
@@ -427,7 +427,6 @@ while ($i < inv_size(worn)) {
             // run unequip effects on the conflicted obj
             ~unequip_effect($worn_obj, ^false);
         }
-        ~unequip_effect($worn_obj, ^false);
     }
     $i = add($i, 1);
 }

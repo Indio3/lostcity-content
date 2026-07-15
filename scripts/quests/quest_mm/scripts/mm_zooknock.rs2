@@ -1,7 +1,7 @@
 [opnpc1,mm_zooknock]
 switch_int(%mm_zooknock) {
     case ^zooknock_need_items :
-        if(%mm_zooknock_player_is_collecting_for_amulet = ^false & testbit(%mm_bits, ^mm_made_talisman) = ^false) {
+        if(%mm_zooknock_player_is_collecting_for_amulet = ^false & %mm_zooknock_player_is_collecting_for_talisman = ^true) {
             @multi2("I've lost the monkey amulet...", zooknock_amuletlost, "What do we need for the monkey talisman?", zooknock_talisman);
         }
         @multi2("What do we need for the monkey amulet?", zooknock_amulet, "What do we need for the monkey talisman?", zooknock_talisman);
@@ -38,6 +38,7 @@ if(%mm_zooknock < ^zooknock_need_items) {
     ~displaymessage(^dm_default);
     return;
 }
+def_obj $last_useitem = last_useitem;
 switch_obj(last_useitem) {
     case mm_monkey_dentures :
         if(%mm_zooknock_player_is_collecting_for_amulet = ^false) {
@@ -82,28 +83,38 @@ switch_obj(last_useitem) {
         }
         ~mm_zooknock_amulet_check;
     case mm_small_ninja_monkey_bones, mm_medium_ninja_monkey_bones, mm_normal_gorilla_monkey_bones, mm_bearded_gorilla_monkey_bones, mm_normal_monkey_bones, mm_small_zombie_monkey_bones, mm_large_zombie_monkey_bones :
-        if(testbit(%mm_bits, ^mm_made_talisman) = ^true) {
+        if(%mm_zooknock_player_is_collecting_for_talisman = ^false) {
             ~displaymessage(^dm_default);
             return;
         }
-        if(%mm_zooknock_has_gold_bar = ^true) {
-            ~chatnpc("<p,neutral>You have already given me a gold bar.");
+        if(%mm_zooknock_has_monkey_relic = ^true) {
+            ~chatnpc("<p,quiz>You have already given me some monkey remains. Would you like me to use these instead?");
+            switch_int(~p_choice2("Yes", 1, "No", 2)) {
+                case 1 :
+                    ~chatplayer("<p,neutral>Yes.");
+                    %mm_zooknock_has_monkey_relic = ^true;
+                    %mm_zooknock_monkey_relic = oc_param($last_useitem, mm_bones_type);
+                    ~objbox($last_useitem, "You hand Zooknock the monkey remains.", 250, 0, 0);
+                case 2 :
+                    ~chatplayer("<p,neutral>Actually, no.");
+            }
+            ~mm_zooknock_talisman_check;
         } else {
-            %mm_zooknock_has_gold_bar = ^true;
-            inv_del(inv, last_useitem, 1);
+            %mm_zooknock_has_monkey_relic = ^true;
+            %mm_zooknock_monkey_relic = oc_param($last_useitem, mm_bones_type);
             ~objbox(last_useitem, "You hand Zooknock the monkey remains.", 250, 0, 0);
             ~chatnpc("<p,neutral>Excellent.");
+            ~mm_zooknock_talisman_check;
         }
-        ~mm_zooknock_talisman_check;
     case mm_monkey_talisman :
-        if(testbit(%mm_bits, ^mm_made_talisman) = ^true) {
+        if(%mm_zooknock_player_is_collecting_for_talisman = ^false) {
             ~displaymessage(^dm_default);
             return;
         }
-        if(testbit(%mm_bits, ^mm_given_talisman) = ^true) {
+        if(%mm_zooknock_has_magical_talisman = ^true) {
             ~chatnpc("<p,neutral>You have already given me a monkey talisman.");
         } else {
-            %mm_bits = setbit(%mm_bits, ^mm_given_talisman);
+            %mm_zooknock_has_magical_talisman = ^true;
             inv_del(inv, last_useitem, 1);
             ~objbox(last_useitem, "You hand Zooknock the monkey talisman.", 250, 0, 0);
             ~chatnpc("<p,neutral>Well done, human.");
@@ -161,16 +172,15 @@ $text = append($text, ".");
 ~chatnpc($text);
 
 [proc,mm_zooknock_talisman_check]
-def_int $held_bones = ~get_zooknock_held_bones;
-if(testbit(%mm_bits, ^mm_given_talisman) = ^false & $held_bones = 0) {
+if(%mm_zooknock_has_magical_talisman = ^false & %mm_zooknock_has_monkey_relic = ^false) {
     ~chatnpc("<p,neutral>We need some kind of monkey remains as well as an authentic magical monkey talisman.");
     return;
 }
-if(testbit(%mm_bits, ^mm_given_talisman) = ^false) {
+if(%mm_zooknock_has_monkey_relic= ^false) {
     ~chatnpc("<p,neutral>We still need some kind of monkey remains.");
     return;
 }
-if($held_bones = 0) {
+if(%mm_zooknock_has_magical_talisman = ^false) {
     ~chatnpc("<p,neutral>We still need an authentic magical monkey talisman.");
     return;
 }
@@ -183,6 +193,9 @@ spotanim_npc(windwave_impact, 80, 0);
 inv_add(inv, $talisman, 1);
 queue(mm_ch3_cutscene, 0, 0);
 ~objbox($talisman, "Zooknock hands you back the talisman. It seems to glow slightly.", 200, 0, 0);
+~chatnpc("<p,neutral>I am afraid I have not been able to fully invest my powers in that talisman. You may use it, but it will continue to draw its energy directly from me.");
+~chatnpc("<p,neutral>The range at which I will be able to sustain it is limited. I cannot ensure it will be effective off the atoll.");
+~chatnpc("<p,neutral>Furthermore, you will not be able to attack whilst using this, so be careful. Perhaps when I refine my spells I could look into making this possible.");
 
 [label,zooknock_amuletlost]
 ~chatplayer("<p,shifty>I've lost the monkey amulet...");
@@ -307,13 +320,6 @@ if(%mm_garkor < 1) { // todo: actual check
     ~chatplayer("<p,neutral>I'll be back later.");
     return;
 }
-
-[proc,set_zooknock_held_bones](int $val)
-%mm_bits = setbit_range_toint(%mm_bits, $val, ^mm_bones_type_low, ^mm_bones_type_high);
-
-[proc,get_zooknock_held_bones]()(int)
-return (getbit_range(%mm_bits, ^mm_bones_type_low, ^mm_bones_type_high));
-
 
 [opnpc1,mm_bunkwicket] @mm_sapper_dialogue;
 [opnpc1,mm_waymottin] @mm_sapper_dialogue;

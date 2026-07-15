@@ -21,7 +21,9 @@ scope=perm
 
 [mm_cutscene_part]
 
-[varp_368]
+[mm_cutscene_coord]
+scope=perm
+type=coord
 
 [varp_369]
 

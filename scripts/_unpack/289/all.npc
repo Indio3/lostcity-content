@@ -1729,7 +1729,6 @@ moverestrict=nomove
 defaultmode=none
 
 [mm_daero]
-[mm_daero]
 name=Daero
 model1=model_2909_npc
 model2=model_2903_npc
@@ -1744,7 +1743,6 @@ vislevel=hide
 head1=gnome_chat_model_22
 wanderrange=2
 
-[mm_waydar]
 [mm_waydar]
 name=Waydar
 model1=model_2909_npc
@@ -2030,7 +2028,6 @@ wanderrange=0
 timer=30
 wanderrange=0
 moverestrict=nomove
-defaultmode=none
 
 [mm_waymottin]
 name=Waymottin
@@ -2052,7 +2049,6 @@ wanderrange=0
 timer=30
 wanderrange=0
 moverestrict=nomove
-defaultmode=none
 
 [mm_zooknock]
 name=Zooknock
@@ -2700,8 +2696,16 @@ resizev=160
 op1=Talk-to
 vislevel=hide
 head1=npc_1437_head
-// category=category_396
-// patrolling TODO
+timer=5
+defaultmode=patrol
+patrol1=0_42_43_54_42,15
+patrol2=0_42_43_55_40,30
+patrol3=0_42_43_55_35,5
+patrol4=0_42_43_53_34,5
+patrol5=0_42_43_49_34,5
+patrol6=0_42_43_48_40,5
+patrol7=0_42_43_45_40,15
+patrol8=0_42_43_49_42,15
 
 [mm_monkey_guard]
 name=Monkey Guard
@@ -2767,8 +2771,12 @@ param=attack_sound,arrowlaunch2
 param=defend_sound,monkey_hit
 param=death_sound,monkey_death
 param=death_drop,mm_small_ninja_monkey_bones
-// huntmode=TODO
-// huntrange=TODO
+param=rangeattack_sound,arrowlaunch2
+param=proj_launch,iron_arrow_launch
+param=proj_height,24
+param=proj_travel,iron_arrow_travel
+huntmode=aa_aggressive_ranged
+huntrange=6
 
 [mm_ravine_archer]
 name=Monkey Archer
@@ -2799,8 +2807,12 @@ param=attack_sound,arrowlaunch2
 param=defend_sound,monkey_hit
 param=death_sound,monkey_death
 param=death_drop,mm_small_ninja_monkey_bones
-// huntmode=TODO
-// huntrange=TODO
+param=rangeattack_sound,arrowlaunch2
+param=proj_launch,iron_arrow_launch
+param=proj_height,24
+param=proj_travel,iron_arrow_travel
+huntmode=aa_aggressive_ranged
+huntrange=15
 
 [mm_posted_archer]
 name=Monkey Archer
@@ -2834,8 +2846,12 @@ param=attack_sound,arrowlaunch2
 param=defend_sound,monkey_hit
 param=death_sound,monkey_death
 param=death_drop,mm_small_ninja_monkey_bones
-// huntmode=TODO
-// huntrange=TODO
+param=rangeattack_sound,arrowlaunch2
+param=proj_launch,iron_arrow_launch
+param=proj_height,24
+param=proj_travel,iron_arrow_travel
+huntmode=aa_aggressive_ranged
+huntrange=6
 
 [mm_religious_guard]
 name=Monkey Guard

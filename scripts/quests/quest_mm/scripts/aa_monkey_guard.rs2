@@ -7,3 +7,17 @@
 [ai_opplayer2,mm_monkey_guard]
 if(random(4) = 0) queue(aa_knockout, 0, 0);
 else gosub(npc_default_attack);
+
+
+[ai_opplayer2,mm_religious_guard] @mm_religious_guard_attack;
+[ai_opplayer2,mm_religious_trapdoor_guard] @mm_religious_guard_attack;
+
+[label,mm_religious_guard_attack]
+if(npc_stat(hitpoints) <= 30 & random(12) = 0) {
+    npc_anim(m_gorilla_poundchest, 0);
+    npc_statheal(hitpoints, 24, 0); // looks to be always 24 rather than 25 like the wiki says (checked w/monster examine)
+    sound_synth(gorilla_beatchest, 0, 0);
+    // will not attack on the same tick as healing, will delay the next attack by 1t if it was supposed to attack this tick
+    return;
+}
+gosub(npc_default_attack);

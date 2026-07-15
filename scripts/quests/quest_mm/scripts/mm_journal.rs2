@@ -174,13 +174,13 @@ if(%mm_main > ^mm_shown_seal) {
 
             $text = append($text, "||@dbl@For the monkey talisman I still need:");
 
-            if(testbit(%mm_bits, ^mm_given_talisman) = ^true) {
+            if(%mm_zooknock_has_magical_talisman = ^true) {
                 $text = append($text, "|@str@ - An authentic magical monkey talisman.");
             } else {
                 $text = append($text, "|@dre@ - An authentic magical monkey talisman.");
             }
 
-            if(~get_zooknock_held_bones = 0) {
+            if(%mm_zooknock_has_monkey_relic = ^true) {
                 $text = append($text, "|@str@ - Some kind of monkey remains.");
             } else {
                 $text = append($text, "|@dre@ - Some kind of monkey remains.");

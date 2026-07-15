@@ -1811,6 +1811,7 @@ recol1d=30513
 width=2
 length=2
 op1=Pray-at
+category=prayer_altar
 
 [mm_gorillastatue2]
 name=Gorilla Statue
