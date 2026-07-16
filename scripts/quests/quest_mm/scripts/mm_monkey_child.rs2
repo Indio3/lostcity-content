@@ -6,9 +6,7 @@ if(%mm_monkey_child = ^mm_not_started) {
     ~chatplayer("<p,neutral>Hello again little monkey.");
 }
 if(inv_total(worn, mm_amulet_of_monkey_speak) = 0) {
-    ~mm_monkeyspeak;
-    ~mesbox("You cannot understand what he is saying.");
-    return;
+    @mm_no_amulet_monkey;
 }
 
 if(%mm_monkey_child = ^mm_not_started) {
@@ -109,9 +107,7 @@ if(%mm_monkey_child = ^mm_not_started) {
 [opnpcu,mm_monkey_child]
 def_obj $last_useitem = last_useitem;
 if(inv_total(worn, mm_amulet_of_monkey_speak) = 0) {
-    ~mm_monkeyspeak;
-    ~mesbox("You cannot understand what he is saying.");
-    return;
+    @mm_no_amulet_monkey;
 }
 if(%mm_monkey_child > ^monkey_child_asked_who) {
     ~chatnpc("<p,happy>Hello there, uncle!");

@@ -1,0 +1,5 @@
+[opnpc1,mm_kruk]
+~chatplayer("<p,quiz>Hello?");
+~chatnpc("<p,quiz>What brings you up here, monkey?");
+~chatplayer("<p,neutral>Nothing ... I'm just exploring.");
+~chatnpc("<p,neutral>You would do better to explore elsewhere - we are extremely busy at the moment.");

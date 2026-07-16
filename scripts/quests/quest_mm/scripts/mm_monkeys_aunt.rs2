@@ -1,6 +1,6 @@
 [opnpc1,mm_monkeys_aunt]
 // as human, this is (reg) queued
-queue*(mm_aunt_caught, 0)(npc_uid);
+queue*(mm_aunt_dialogue, 0)(npc_uid);
 
 [ai_timer,mm_monkeys_aunt]
 if(%npc_action_delay > map_clock) {
@@ -13,23 +13,45 @@ while(huntnext = true) {
     }
     if_close;
     if(p_finduid(uid) = true) {
-        // strongqueue in osrs
         %npc_action_delay = add(map_clock, 80);
-        queue(aa_guards_queue, 6, 0);
-        queue*(mm_aunt_caught, 0)(npc_uid);
+        strongqueue(aa_guards_queue, 6, 0);
+        queue(mm_aunt_caught, 0, 0);
     }
 }
 
-[queue,mm_aunt_caught](npc_uid $uid)
-// strongqueue osrs
-if(getqueue(mm_aunt_caught) > 0) {
-    return;
+[queue,mm_aunt_caught]
+if(inv_total(worn, mm_amulet_of_monkey_speak) = 0) {
+    ~chatnpc_specific(nc_name(mm_monkeys_aunt), mm_monkeys_aunt, "<~monkeyspeak_text><~monkeyspeak_text><~monkeyspeak_text>");
+} else {
+    ~chatnpc_specific(nc_name(mm_monkeys_aunt), mm_monkeys_aunt, "<p,neutral>How dare you come near my farmhouse! Guards! Guards! Remove this human!");
 }
+
+[queue,mm_aunt_dialogue](npc_uid $uid)
+// strongqueue osrs
 if(npc_finduid($uid) = true) {
-    queue(aa_guards_queue, 6, 0); // 6t
+    if(~mm_wearing_greegree = true) {
+        if(inv_total(worn, mm_amulet_of_monkey_speak) = 0) {
+            ~chatnpcnoturn("<~monkeyspeak_text><~monkeyspeak_text><~monkeyspeak_text>");
+        } else {
+            ~chatnpcnoturn("<p,neutral>Hello! What's a monkey like you doing here?");
+        }
+        queue(mm_aunt_dialogue2, 0, 0); // this is also queued for some reason...
+        return;
+    }
+    if(getqueue(aa_guards_queue) = 0) strongqueue(aa_guards_queue, 6, 0); // 6t
     if(inv_total(worn, mm_amulet_of_monkey_speak) = 0) {
         ~chatnpcnoturn("<~monkeyspeak_text><~monkeyspeak_text><~monkeyspeak_text>");
     } else {
         ~chatnpcnoturn("<p,neutral>Guards! Here's a human!");
+    }
+}
+
+[queue,mm_aunt_dialogue2]
+if(npc_find(coord, mm_monkeys_aunt, 10, 0) = true) {
+    if(inv_total(worn, mm_amulet_of_monkey_speak) = 0) {
+        ~mesbox("You cannot understand what she is saying.");
+    } else {
+        ~chatplayer("<p,neutral>I'm just passing through actually.");
+        ~chatnpcnoturn("<p,neutral>Fair enough then.");
     }
 }

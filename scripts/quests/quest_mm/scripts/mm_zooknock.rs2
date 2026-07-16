@@ -1,8 +1,12 @@
 [opnpc1,mm_zooknock]
 switch_int(%mm_zooknock) {
-    case ^zooknock_need_items :
+    case ^zooknock_need_items, ^zooknock_made_talisman :
         if(%mm_zooknock_player_is_collecting_for_amulet = ^false & %mm_zooknock_player_is_collecting_for_talisman = ^true) {
             @multi2("I've lost the monkey amulet...", zooknock_amuletlost, "What do we need for the monkey talisman?", zooknock_talisman);
+        } else if(%mm_zooknock_player_is_collecting_for_amulet = ^false & %mm_zooknock_player_is_collecting_for_talisman = ^false) {
+            @multi2("I've lost the monkey amulet...", zooknock_amuletlost, "Can you make another monkey talisman?", zooknock_anothertali);
+        }else if(%mm_zooknock_player_is_collecting_for_amulet = ^true & %mm_zooknock_player_is_collecting_for_talisman = ^false) {
+            @multi2("What do we need for the monkey amulet?", zooknock_amulet, "Can you make another monkey talisman?", zooknock_anothertali);
         }
         @multi2("What do we need for the monkey amulet?", zooknock_amulet, "What do we need for the monkey talisman?", zooknock_talisman);
     case ^zooknock_told_mission : @mm_zooknock_p5;
@@ -120,6 +124,13 @@ switch_obj(last_useitem) {
             ~chatnpc("<p,neutral>Well done, human.");
         }
         ~mm_zooknock_talisman_check;
+    case mm_monkey_greegree_for_small_ninja_monkey, mm_monkey_greegree_for_medium_ninja_monkey, mm_monkey_greegree_for_normal_gorilla, mm_monkey_greegree_for_bearded_gorilla,
+         mm_monkey_greegree_for_ancient_monkey_skull, mm_monkey_greegree_for_small_zombie_monkey, mm_monkey_greegree_for_large_zombie_monkey, mm_monkey_greegree_for_normal_monkey :
+        if(%mm_zooknock_player_is_collecting_for_talisman = ^false) {
+            ~displaymessage(^dm_default);
+            return;
+        }
+        ~chatnpc("<p,neutral>I have already empowered that talisman.");
     case default : ~displaymessage(^dm_default);
 }
 
@@ -187,12 +198,13 @@ if(%mm_zooknock_has_magical_talisman = ^false) {
 ~chatnpc("<p,neutral>Bear with me human: I must now cast an extremely powerful spell. It is not often we are successful in investing shapeshifting powers within objects.");
 if_close;
 p_delay(4);
-def_namedobj $talisman = mm_monkey_greegree_for_normal_monkey;
+def_namedobj $talisman = enum(int, namedobj, mm_bones_mapping, %mm_zooknock_monkey_relic);
 sound_synth(superheat_all, 0, 0);
 spotanim_npc(windwave_impact, 80, 0);
 inv_add(inv, $talisman, 1);
-queue(mm_ch3_cutscene, 0, 0);
-~objbox($talisman, "Zooknock hands you back the talisman. It seems to glow slightly.", 200, 0, 0);
+if(%mm_zooknock_player_is_collecting_for_talisman = ^true) %mm_zooknock_player_is_collecting_for_talisman = ^false;
+if(%mm_main < ^mm_completed_ch2) queue(mm_ch3_cutscene, 0, 0);
+~objbox($talisman, "Zooknock hands you back the talisman. It seems to glow slightly.", 250, 0, 0);
 ~chatnpc("<p,neutral>I am afraid I have not been able to fully invest my powers in that talisman. You may use it, but it will continue to draw its energy directly from me.");
 ~chatnpc("<p,neutral>The range at which I will be able to sustain it is limited. I cannot ensure it will be effective off the atoll.");
 ~chatnpc("<p,neutral>Furthermore, you will not be able to attack whilst using this, so be careful. Perhaps when I refine my spells I could look into making this possible.");
@@ -211,6 +223,20 @@ if($op = 2) {
 %mm_zooknock_has_amulet_mould = ^false;
 %mm_zooknock_player_is_collecting_for_amulet = ^true;
 ~chatnpcnoturn("<p,neutral>Careless human. No matter - bring me the same materials again and I will prepare for you another one.");
+
+[label,zooknock_anothertali]
+~chatplayer("<p,shifty>Can you make another monkey talisman?");
+~chatnpcnoturn("<p,quiz>Are you sure?");
+def_int $op = ~p_choice2("Yes", 1, "No", 2);
+if($op = 2) {
+    ~chatplayer("<p,neutral>Actually, I'm not that sure.");
+    return;
+}
+~chatplayer("<p,neutral>Yes.");
+%mm_zooknock_has_magical_talisman = ^false;
+%mm_zooknock_has_monkey_relic = ^false;
+%mm_zooknock_player_is_collecting_for_talisman = ^true;
+~chatnpcnoturn("<p,neutral>Very well. Bring me the required materials again and I will prepare for you another one.");
 
 [label,zooknock_amulet]
 ~chatplayer("<p,quiz>What do we need for the monkey amulet?");

@@ -1,0 +1,49 @@
+[apnpc1,mm_monkey_minder]
+if (npc_range(coord) > 5) {
+    p_aprange(5); // range 5 on osrs
+    return;
+}
+// in the monkey cage
+if(inzone(0_40_51_38_10, 0_40_51_40_13, coord) = true | inzone(0_40_51_38_12, 0_40_51_40_14, coord) = true | inzone(0_40_51_40_12, 0_40_51_44_18, coord) = true | inzone(0_40_51_45_12, 0_40_51_46_17, coord) = true) {
+    if(~mm_wearing_greegree = true) {
+        if(random(2) = 0) ~chatnpc("<p,angry>Stop hassling me!");
+        else ~chatnpc("<p,angry>Be quiet, you monkey!");
+        return;
+    }
+    ~chatnpc("<p,neutral>My word - what are you doing in there?");
+    ~chatplayer("<p,neutral>I ... er ... I don't know! One minute I was asleep, and the next minute I was here surrounded by monkeys!");
+    ~chatnpc("<p,neutral>Well, don't worry. We'll have you out of there shortly.");
+    if_close;
+    ~fade_out;
+    p_delay(3);
+    p_telejump(0_40_51_49_13);
+    ~fade_in;
+    p_delay(4);
+    if_openoverlay(null);
+    ~chatplayer("<p,neutral>Thank you.");
+    return;
+}
+
+if(~mm_wearing_greegree = true) {
+    ~chatplayer("<p,neutral>Ook Ook!");
+    if(inv_total(worn, mm_monkey_greegree_for_normal_monkey) = 0) {
+        ~chatnpc("<p,neutral>I don't know what kind of monkey you think you are, but you're not getting anywhere near my monkeys!");
+        return;
+    }
+    ~chatnpc("<p,neutral>Why do you monkeys keep trying to escape? Good thing I've caught you before you got away, you little scoundrel.");
+    ~chatplayer("<p,neutral>Ook!");
+    ~chatnpc("<p,neutral>Let's put you back in your cage where you belong...");
+    ~chatplayer("<p,neutral>Ok!");
+    ~chatnpc("<p,neutral>What??");
+    ~chatplayer("<p,shifty>Err ... Ook?");
+    ~chatnpc("<p,neutral>I must be imagining things ... monkeys can't talk.");
+    if_close;
+    p_delay(0);
+    ~fade_out;
+    p_delay(3);
+    p_telejump(0_40_51_44_17);
+    ~fade_in;
+    p_delay(4);
+    if_openoverlay(null);
+    return;
+}

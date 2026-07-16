@@ -100,9 +100,16 @@ if(%mm_main > ^mm_shown_seal) {
     }
 }
 
-if(%mm_main > ^mm_shown_seal) {
+if(%mm_main > ^mm_shown_seal) $text = append($text, "||@dre@Chapter 2:");
+
+if(%mm_main >  ^mm_arrived_atoll) {
+    $text = append($text, "||@str@I have made contact with the rest of the 10th squad, who are ");
+    $text = append($text, "@str@stranded on an island called Ape Atoll. I have been working ");
+    $text = append($text, "@str@with Sergeant Garkor and High Mage Zooknock to create items ");
+    $text = append($text, "@str@which will allow me to spy on the monkeys: an amulet of ");
+    $text = append($text, "@str@monkey speak and a monkey greegree.");
+} else if(%mm_main = ^mm_arrived_atoll) {
     // https://youtu.be/Qr9nNWqN6Y8?si=IqgynfD_0FE87fSR&t=950
-    $text = append($text, "||@dre@Chapter 2:");
 
     if(%mm_jail_count > 0) {
         $text = append($text, "||@str@I have made my rather painful way to a large village|");
@@ -215,6 +222,36 @@ if(%mm_main > ^mm_shown_seal) {
             $text = append($text, "||@str@I have borrowed a magical monkey talisman from the @str@monkey child.");
         }
     }
+}
 
+if(%mm_main = ^mm_completed_ch2) {
+    $text = append($text, "||@dre@Chapter 3:");
+
+    if(%mm_jail_count > 0) {
+        $text = append($text, "||@str@I have made my rather painful way to a large village|");
+        $text = append($text, "@str@populated by various types of monkey.");
+
+        if(%mm_jail_count > 254) {
+            $text = append($text, "||@str@I have been caught and jailed far too many times to keep @str@count.");
+        } else if(%mm_jail_count > 1) {
+            $text = append($text, "||@str@I have been caught and jailed <tostring(%mm_jail_count)> times.");
+        }
+    }
+
+    if(%mm_garkor > 0) {
+        $text = append($text, "||@dre@Sergeant Garkor:||");
+        $text = append($text, "@str@I found Sergeant Gakor hiding towards the east of the village.|");
+        $text = append($text, "@str@Having eavesdropped on Awowogei's plans, he has come to|");
+        $text = append($text, "@str@the conclusion that they need a monkey on the inside.|");
+
+        if(%mm_garkor = ^garkor_speak_zooknock) {
+            if(%mm_zooknock > ^zooknock_learned_story) {
+                $text = append($text, "||@str@I have seen Zooknock about the so called monkey @str@'disguise'.");
+            } else {
+                $text = append($text, "||@dbl@I must see the squad mage, @dre@Zooknock@dbl@, about obtaining a|");
+                $text = append($text, "@dbl@monkey disguise.|");
+            }
+        }
+    }
 }
 ~quest_journal("Monkey Madness", $text);

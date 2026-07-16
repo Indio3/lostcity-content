@@ -50,7 +50,12 @@ switch_int(%mm_waydar) {
                     ~chatnpc("<p,neutral>I am sure.");
                 case 2 :
                     ~chatplayer("<p,neutral>I need to return to your kingdom.");
-                    ~chatnpc("<p,neutral>As you wish...");
+                    if(%mm_main > ^mm_arrived_atoll) {
+                        ~chatnpc("<p,shifty>Hmmm... as you wish... Why are you looking at me like that?");
+                        ~chatplayer("<p,neutral>Oh, no reason...");
+                    } else {
+                        ~chatnpc("<p,neutral>As you wish...");
+                    }
                     @waydar_return;
             }
             return;

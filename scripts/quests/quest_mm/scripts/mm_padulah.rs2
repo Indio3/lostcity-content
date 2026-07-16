@@ -1,12 +1,14 @@
 [opnpc1,mm_padulah]
-if(inv_total(worn, mm_amulet_of_monkey_speak) = 0) {
-    ~mm_monkeyspeak;
-    return;
-}
-
 if(~mm_wearing_greegree = false) {
+    if(inv_total(worn, mm_amulet_of_monkey_speak) = 0) {
+        ~mm_monkeyspeak;
+        return;
+    }
     ~chatnpc("<p,neutral>Come no closer to the sacred statue, human!");
 } else {
+    if(inv_total(worn, mm_amulet_of_monkey_speak) = 0) {
+        @mm_no_amulet_monkey;
+    }
     ~chatnpc("<p,quiz>What do you want?");
     ~chatplayer("<p,neutral>Oh, nothing in particular really.");
     ~chatnpc("<p,neutral>Well stop distracting me then. I'm meant to be guarding this sacred statue from the temple of Marimbo.");

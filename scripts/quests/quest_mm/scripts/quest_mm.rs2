@@ -357,6 +357,8 @@ if(%mm_cutscene_part = 18) {
 }
 if(%mm_cutscene_part > 18) {
     if_close;
+    %mm_main = ^mm_completed_ch2;
+    %mm_zooknock = ^zooknock_made_talisman;
     ~fade_out;
     p_delay(4);
     %mm_cutscene_part = 0;
@@ -435,6 +437,10 @@ return ($dialogue);
 
 [proc,mm_monkeyspeak]
 ~chatnpc("<p,neutral><~monkeyspeak_text>");
+
+[label,mm_no_amulet_monkey]
+~chatnpc("<p,neutral><~monkeyspeak_text>");
+~mesbox("You cannot understand what he is saying.");
 
 [queue,aa_guards_queue]
 if(getqueue(aa_guards_queue) > 0) {
@@ -739,7 +745,7 @@ p_teleport(movecoord(coord, 0, -1, -4));
 mes("There are no bananas left on the tree.");
 
 [proc,mm_greegree_zone](coord $coord)(boolean)
-if(inzone(0_42_42_0_0, 0_43_43_63_63, $coord) = true | inzone(0_42_142_0_0, 0_42_143_63_63, $coord) = true) {
+if(inzone(0_42_42_0_0, 0_43_43_63_63, $coord) = true | inzone(0_42_142_0_0, 0_43_142_63_63, $coord) = true | inzone(0_40_51_32_1, 0_41_51_15_23, $coord) = true) {
     return (true);
 }
 return (false);
@@ -759,20 +765,16 @@ if(gettimer(mm_guards_check) = -1) {
 cleartimer(mm_guards_check);
 
 [proc,mm_greegree_transmogrify](obj $obj)
-if($obj = mm_monkey_greegree_for_normal_monkey) {
-    p_transmogrify(mm_transmogrification_normal_monkey);
-    p_animprotect(^true);
-    if_settab(null, ^tab_magic);
-    settimer(mm_greegree_timer, 1);
-} else if($obj = mm_monkey_greegree_for_small_ninja_monkey) {
-    p_transmogrify(mm_transmogrification_small_ninja_monkey);
+if($obj = null) return;
+if(oc_category($obj) = mm_greegree) {
+    p_transmogrify(oc_param($obj, next_npc_type));
     p_animprotect(^true);
     if_settab(null, ^tab_magic);
     settimer(mm_greegree_timer, 1);
 }
 
 [proc,mm_wearing_greegree]()(boolean)
-if(inv_total(worn, mm_monkey_greegree_for_normal_monkey) > 0) {
+if(inv_totalcat(worn, mm_greegree) > 0) {
     return (true);
 }
 return (false);

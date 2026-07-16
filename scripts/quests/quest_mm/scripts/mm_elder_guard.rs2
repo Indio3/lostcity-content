@@ -1,0 +1,19 @@
+[opnpc1,mm_elder_guard_1]
+if(~mm_wearing_greegree = false) {
+    return;
+}
+if(inv_total(worn, mm_amulet_of_monkey_speak) = 0) {
+    @mm_no_amulet_monkey;
+} else {
+    ~chatnpc("<p,neutral>Move!");
+}
+
+[opnpc1,mm_elder_guard_2]
+if(~mm_wearing_greegree = false) {
+    return;
+}
+if(inv_total(worn, mm_amulet_of_monkey_speak) = 0) {
+    @mm_no_amulet_monkey;
+} else {
+    ~chatnpc("<p,neutral>Grrr ... What do you want?");
+}

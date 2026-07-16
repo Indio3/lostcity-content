@@ -23,7 +23,7 @@ if(~mm_wearing_greegree = false) {
     return;
 }
 if(inv_total(worn, mm_amulet_of_monkey_speak) = 0) {
-    ~mm_monkeyspeak;
+    @mm_no_amulet_monkey;
 } else {
     ~chatnpc("<p,neutral>Grr ... Get out of my way...");
 }

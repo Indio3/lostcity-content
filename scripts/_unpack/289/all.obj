@@ -909,8 +909,17 @@ model=quest_mm_inv_monkey_talisman
 2dxan=456
 wearpos=righthand
 iop2=Hold
+category=mm_greegree
 // param=param_295,1
 tradeable=no
+param=ready_baseanim,m_monkey_ready
+param=turnonspot_baseanim,m_monkey_walk
+param=walk_f_baseanim,m_monkey_walk
+param=walk_b_baseanim,m_monkey_walk
+param=walk_l_baseanim,m_monkey_walk
+param=walk_r_baseanim,m_monkey_walk
+param=running_baseanim,m_monkey_run
+param=next_npc_type,mm_transmogrification_small_ninja_monkey
 
 [mm_monkey_greegree_for_medium_ninja_monkey]
 // category=category_95
@@ -932,8 +941,17 @@ model=quest_mm_inv_monkey_talisman
 2dxan=456
 wearpos=righthand
 iop2=Hold
+category=mm_greegree
 // param=param_295,1
 tradeable=no
+param=ready_baseanim,m_monkey_ready
+param=turnonspot_baseanim,m_monkey_walk
+param=walk_f_baseanim,m_monkey_walk
+param=walk_b_baseanim,m_monkey_walk
+param=walk_l_baseanim,m_monkey_walk
+param=walk_r_baseanim,m_monkey_walk
+param=running_baseanim,m_monkey_run
+param=next_npc_type,mm_transmogrification_medium_ninja_monkey
 
 [mm_monkey_greegree_for_normal_gorilla]
 // category=category_95
@@ -955,8 +973,17 @@ model=quest_mm_inv_monkey_talisman
 2dxan=456
 wearpos=righthand
 iop2=Hold
+category=mm_greegree
 // param=param_295,1
 tradeable=no
+param=ready_baseanim,m_gorilla_ready
+param=turnonspot_baseanim,m_gorilla_walk
+param=walk_f_baseanim,m_gorilla_walk
+param=walk_b_baseanim,m_gorilla_walk
+param=walk_l_baseanim,m_gorilla_walk
+param=walk_r_baseanim,m_gorilla_walk
+param=running_baseanim,m_gorilla_run
+param=next_npc_type,mm_transmogrification_normal_gorilla
 
 [mm_monkey_greegree_for_bearded_gorilla]
 // category=category_95
@@ -978,8 +1005,17 @@ model=quest_mm_inv_monkey_talisman
 2dxan=456
 wearpos=righthand
 iop2=Hold
+category=mm_greegree
 // param=param_295,1
 tradeable=no
+param=ready_baseanim,m_gorilla_ready
+param=turnonspot_baseanim,m_gorilla_walk
+param=walk_f_baseanim,m_gorilla_walk
+param=walk_b_baseanim,m_gorilla_walk
+param=walk_l_baseanim,m_gorilla_walk
+param=walk_r_baseanim,m_gorilla_walk
+param=running_baseanim,m_gorilla_run
+param=next_npc_type,mm_transmogrification_bearded_gorilla
 
 [mm_monkey_greegree_for_ancient_monkey_skull]
 // category=category_95
@@ -1024,8 +1060,17 @@ model=quest_mm_inv_monkey_talisman
 2dxan=456
 wearpos=righthand
 iop2=Hold
+category=mm_greegree
 // param=param_295,1
 tradeable=no
+param=ready_baseanim,m_monkey_ready
+param=turnonspot_baseanim,m_monkey_walk
+param=walk_f_baseanim,m_monkey_walk
+param=walk_b_baseanim,m_monkey_walk
+param=walk_l_baseanim,m_monkey_walk
+param=walk_r_baseanim,m_monkey_walk
+param=running_baseanim,null
+param=next_npc_type,mm_transmogrification_small_zombie_monkey
 
 [mm_monkey_greegree_for_large_zombie_monkey]
 // category=category_95
@@ -1047,11 +1092,19 @@ model=quest_mm_inv_monkey_talisman
 2dxan=456
 wearpos=righthand
 iop2=Hold
+category=mm_greegree
 // param=param_295,1
 tradeable=no
+param=ready_baseanim,m_monkey_ready
+param=turnonspot_baseanim,m_monkey_walk
+param=walk_f_baseanim,m_monkey_walk
+param=walk_b_baseanim,m_monkey_walk
+param=walk_l_baseanim,m_monkey_walk
+param=walk_r_baseanim,m_monkey_walk
+param=running_baseanim,null
+param=next_npc_type,mm_transmogrification_large_zombie_monkey
 
 [mm_monkey_greegree_for_normal_monkey]
-// category=category_95
 name=Monkey greegree
 recol1s=17969
 recol1d=9409
@@ -1070,9 +1123,9 @@ model=quest_mm_inv_monkey_talisman
 2dxan=456
 wearpos=righthand
 iop2=Hold
+category=mm_greegree
 // param=param_295,1
 tradeable=no
-wearpos=righthand
 param=ready_baseanim,monkey_ready
 param=turnonspot_baseanim,monkey_walk
 param=walk_f_baseanim,monkey_walk
@@ -1080,6 +1133,7 @@ param=walk_b_baseanim,monkey_walk
 param=walk_l_baseanim,monkey_walk
 param=walk_r_baseanim,monkey_walk
 param=running_baseanim,m_normalmonkey_run
+param=next_npc_type,mm_transmogrification_normal_monkey
 
 [fade_to_black_inv]
 name=Dummy
@@ -1115,6 +1169,7 @@ model=quest_mm_inv_monkey_skull_relic
 2dyan=136
 2dxan=96
 tradeable=no
+param=mm_bones_type,8
 
 [mm_sigil]
 name=10th squad sigil

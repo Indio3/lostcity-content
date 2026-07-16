@@ -2,6 +2,7 @@
 ^mm_started = 1
 ^mm_shown_seal = 2
 ^mm_arrived_atoll = 3
+^mm_completed_ch2 = 4
 
 // mm_narnode
 ^narnode_worried = 1
@@ -40,6 +41,7 @@
 ^zooknock_learned_story = 3
 ^zooknock_told_mission = 4
 ^zooknock_need_items = 5
+^zooknock_made_talisman = 6
 
 // mm_lumo
 ^lumo_spoken = 1
