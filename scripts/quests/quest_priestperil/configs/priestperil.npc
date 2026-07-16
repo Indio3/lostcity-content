@@ -1,5 +1,10 @@
 [priestperilevilmonk1]
+walkanim=human_walk_f,human_walk_b,human_walk_l,human_walk_r
+readyanim=human_ready
 name=Monk of Zamorak
+desc=An evil human cleric.
+op2=Attack
+vislevel=22
 model1=man_head_bald
 model2=man_jaw_none
 model3=man_torso_basic
@@ -12,24 +17,21 @@ recol2s=14724
 recol2d=16450
 recol3s=6273
 recol3d=32767
-walkanim=human_walk_f,human_walk_b,human_walk_l,human_walk_r
-readyanim=human_ready
-desc=An evil human cleric.
-op2=Attack
-vislevel=22
 wanderrange=12
-maxrange=14
-hitpoints=20
 attack=18
-strength=18
 defence=22
+strength=18
+hitpoints=20
 magic=25
 param=damagetype,^crush_style
-// osrs stats and Vislvl match 1:1
-// https://raw.githubusercontent.com/Joshua-F/osrs-dumps/refs/heads/master/config/dump.npc npc_3484
 
 [priestperilevilmonk2]
+walkanim=human_walk_f,human_walk_b,human_walk_l,human_walk_r
+readyanim=human_ready
 name=Monk of Zamorak
+desc=An evil human cleric.
+op2=Attack
+vislevel=17
 model1=man_head_bald
 model2=man_feet_basic
 model3=man_jaw_none
@@ -43,24 +45,21 @@ recol2s=14724
 recol2d=19588
 recol3s=6273
 recol3d=32767
-walkanim=human_walk_f,human_walk_b,human_walk_l,human_walk_r
-readyanim=human_ready
-desc=An evil human cleric.
-op2=Attack
-vislevel=17
 wanderrange=12
-maxrange=14
-hitpoints=10
 attack=8
-strength=8
 defence=12
+strength=8
+hitpoints=10
 magic=25
 param=damagetype,^crush_style
-// osrs stats and Vislvl match 1:1
-// https://raw.githubusercontent.com/Joshua-F/osrs-dumps/refs/heads/master/config/dump.npc npc_3485
 
 [priestperilevilmonk3]
+vislevel=30
+walkanim=human_walk_f,human_walk_b,human_walk_l,human_walk_r
+readyanim=human_ready
 name=Monk of Zamorak
+desc=An evil human cleric.
+op2=Attack
 model1=man_head_hood2
 model2=man_jaw_none
 model3=man_torso_basic
@@ -73,24 +72,22 @@ recol2s=14724
 recol2d=14336
 recol3s=6273
 recol3d=32767
-vislevel=30
-walkanim=human_walk_f,human_walk_b,human_walk_l,human_walk_r
-readyanim=human_ready
-desc=An evil human cleric.
-op2=Attack
 wanderrange=12
-maxrange=14
-hitpoints=25
 attack=25
-strength=25
 defence=25
+strength=25
+hitpoints=25
 magic=40
 param=damagetype,^crush_style
-// osrs stats and Vislvl match 1:1
-// https://raw.githubusercontent.com/Joshua-F/osrs-dumps/refs/heads/master/config/dump.npc npc_3486
 
 [priestperilguarddog]
+vislevel=30
+size=2
+walkanim=dm_walk
+readyanim=dm_ready
 name=Temple guardian
+desc=Looks like a big ugly dog.
+op2=Attack
 model1=model_2934
 recol1s=15648
 recol1d=8455
@@ -98,18 +95,12 @@ recol2s=8192
 recol2d=26657
 recol3s=32767
 recol3d=24311
-vislevel=30
-size=2
-walkanim=dm_walk
-readyanim=dm_ready
-desc=Looks like a big ugly dog.
-op2=Attack
 wanderrange=5
 maxrange=5
-hitpoints=45
 attack=20
-strength=20
 defence=20
+strength=20
+hitpoints=45
 param=damagetype,^stab_style
 param=attack_anim,dm_attack
 param=defend_anim,dm_block
@@ -118,12 +109,14 @@ param=attack_sound,wolf_attack
 param=defend_sound,wolf_hit
 param=death_sound,wolf_death
 param=death_drop,null
-// OSRS Monster examine spell mentioned Immune to cannons.
-// osrs stats and Vislvl match 1:1
-// https://raw.githubusercontent.com/Joshua-F/osrs-dumps/refs/heads/master/config/dump.npc npc_3487
 
 [priestperiltrappedmonk]
 name=Drezel
+desc=A holy man.
+vislevel=hide
+walkanim=human_walk_f,human_walk_b,human_walk_l,human_walk_r
+readyanim=human_ready
+op1=Talk-to
 model1=man_head_bald
 model2=man_feet_basic
 model3=man_jaw_none
@@ -131,20 +124,20 @@ model4=man_torso_basic
 model5=man_arms_longsleeves
 model6=man_hands_basic
 model7=man_legs_robe_narrow
+head1=chat_male_head_bald
 recol1s=2340
 recol1d=13539
 recol2s=14724
 recol2d=13539
-desc=A holy man.
-vislevel=hide
-walkanim=human_walk_f,human_walk_b,human_walk_l,human_walk_r
-readyanim=human_ready
-op1=Talk-to
-head1=chat_male_head_bald
 wanderrange=5
 
 [priestperiltrappedmonk2]
 name=Drezel
+desc=A holy man.
+vislevel=hide
+walkanim=human_walk_f,human_walk_b,human_walk_l,human_walk_r
+readyanim=human_ready
+op1=Talk-to
 model1=man_head_bald
 model2=man_feet_basic
 model3=man_jaw_none
@@ -152,14 +145,8 @@ model4=man_torso_basic
 model5=man_arms_longsleeves
 model6=man_hands_basic
 model7=man_legs_robe_narrow
+head1=chat_male_head_bald
 recol1s=2340
 recol1d=13539
 recol2s=14724
 recol2d=13539
-desc=A holy man.
-vislevel=hide
-walkanim=human_walk_f,human_walk_b,human_walk_l,human_walk_r
-readyanim=human_ready
-op1=Talk-to
-head1=chat_male_head_bald
-wanderrange=1

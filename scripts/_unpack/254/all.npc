@@ -1,18 +1,16 @@
 [small_bat]
 name=Bat
-model1=model_3782
 desc=Annoying flappy thing.
 walkanim=bat_walk
 readyanim=bat_ready
 op2=Attack
 vislevel=6
-wanderrange=20
-maxrange=32
-// respawnrate=TODO
-hitpoints=8
+model1=model_3782
+wanderrange=30
 attack=5
-strength=5
 defence=5
+strength=5
+hitpoints=8
 param=stabdefence,2
 param=slashdefence,2
 param=crushdefence,5
@@ -25,10 +23,13 @@ param=attack_sound,bat_attack
 param=defend_sound,bat_hit
 param=death_sound,bat_death
 param=death_drop,bat_bones
-// osrs stats and Vislvl match 1:1
 
 [macro_mime]
 name=Mime
+desc=A mute performer.
+readyanim=human_ready
+alwaysontop=yes
+vislevel=1
 model1=man_headextra_mime_mask
 model2=man_torsoextra_stripes
 model3=man_torso_basic
@@ -50,14 +51,15 @@ recol5s=14724
 recol5d=2114
 recol6s=12677
 recol6d=2114
-desc=A mute performer.
-readyanim=human_ready
-alwaysontop=yes
-vislevel=1
+wanderrange=0
 timer=5
 
 [macro_theatre_saradomin]
+vislevel=hide
 name=Strange watcher
+desc=A member of the audience.
+readyanim=human_sitting_chair
+minimap=no
 model1=man_head_priest
 model2=man_jaw_long
 model3=man_torso_basic
@@ -76,13 +78,14 @@ recol5s=14801
 recol5d=27425
 recol6s=7298
 recol6d=20083
+wanderrange=0
+
+[macro_theatre_guthix]
 vislevel=hide
+name=Strange watcher
 desc=A member of the audience.
 readyanim=human_sitting_chair
 minimap=no
-
-[macro_theatre_guthix]
-name=Strange watcher
 model1=man_head_spikeyhair
 model2=man_jaw_split
 model3=man_torso_bare
@@ -99,13 +102,14 @@ recol4s=2340
 recol4d=7360
 recol5s=7298
 recol5d=3168
+wanderrange=0
+
+[macro_theatre_zamorak]
 vislevel=hide
+name=Strange watcher
 desc=A member of the audience.
 readyanim=human_sitting_chair
 minimap=no
-
-[macro_theatre_zamorak]
-name=Strange watcher
 model1=man_head_skull
 model2=man_torso_platemail
 model3=man_arms_basicforplate
@@ -123,7 +127,4 @@ recol5s=15855
 recol5d=12419
 recol6s=10570
 recol6d=10272
-vislevel=hide
-desc=A member of the audience.
-readyanim=human_sitting_chair
-minimap=no
+wanderrange=0

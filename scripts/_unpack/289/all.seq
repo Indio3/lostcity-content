@@ -1,11 +1,11 @@
 [seq_1363]
 replaceheldright=fishing_rod
 replaceheldleft=fishing_rod
-stretches=yes
+reachforward=yes
 loops=2
 preanim_move=delayanim
 postanim_move=abortanim
-duplicatebehavior=reset_loop
+duplicatebehaviour=reset_loop
 frame1=anim_1517
 frame2=anim_1812
 
@@ -15,7 +15,7 @@ replaceheldleft=steel_pickaxe
 priority=0
 loops=8
 postanim_move=abortanim
-duplicatebehavior=reset
+duplicatebehaviour=reset
 frame1=anim_584
 frame2=anim_876
 frame3=anim_1156
@@ -35,7 +35,7 @@ replaceheldright=hide
 priority=0
 loops=6
 postanim_move=abortanim
-duplicatebehavior=reset
+duplicatebehaviour=reset
 frame1=anim_2020
 frame2=anim_2321
 frame3=anim_599
@@ -47,10 +47,10 @@ frame6=anim_1463
 replaceheldleft=hide
 replaceheldright=iron_sickle
 priority=6
-stretches=yes
+reachforward=yes
 loops=13
 postanim_move=abortanim
-duplicatebehavior=reset
+duplicatebehaviour=reset
 frame1=anim_10109
 frame2=anim_10114
 frame3=anim_10115
@@ -73,11 +73,11 @@ frame2=anim_10123
 replaceheldleft=hide
 replaceheldright=hide
 priority=6
-stretches=yes
+reachforward=yes
 loops=13
 maxloops=4
 postanim_move=abortanim
-duplicatebehavior=reset
+duplicatebehaviour=reset
 frame1=anim_10100
 frame2=anim_10101
 frame3=anim_10102
@@ -92,11 +92,11 @@ frame9=anim_10108
 replaceheldleft=hide
 replaceheldright=iron_sickle
 priority=6
-stretches=yes
+reachforward=yes
 loops=13
 maxloops=4
 postanim_move=abortanim
-duplicatebehavior=reset
+duplicatebehaviour=reset
 frame1=anim_10109
 frame2=anim_10114
 frame3=anim_10115
@@ -115,11 +115,11 @@ frame13=anim_10113
 replaceheldleft=hide
 replaceheldright=silver_sickle
 priority=6
-stretches=yes
+reachforward=yes
 loops=13
 maxloops=4
 postanim_move=abortanim
-duplicatebehavior=reset
+duplicatebehaviour=reset
 frame1=anim_10109
 frame2=anim_10114
 frame3=anim_10115
@@ -138,11 +138,11 @@ frame13=anim_10113
 replaceheldleft=hide
 replaceheldright=silver_sickle_blessed
 priority=6
-stretches=yes
+reachforward=yes
 loops=13
 maxloops=4
 postanim_move=abortanim
-duplicatebehavior=reset
+duplicatebehaviour=reset
 frame1=anim_10109
 frame2=anim_10114
 frame3=anim_10115
@@ -236,7 +236,7 @@ replaceheldleft=hide
 replaceheldright=hide
 priority=2
 preanim_move=delayanim
-stretches=yes
+reachforward=yes
 frame1=anim_10100
 frame2=anim_10101
 frame3=anim_10102
@@ -809,13 +809,13 @@ loops=1
 frame1=anim_1438
 
 [m_human_land]
-stretches=yes
+reachforward=yes
 priority=9
 loops=1
 frame1=anim_8358
 
 [m_human_land_getup]
-stretches=yes
+reachforward=yes
 priority=9
 frame1=anim_8358
 frame2=anim_8359
@@ -940,7 +940,7 @@ frame9=anim_8222
 frame10=anim_8214
 
 [human_bannerready]
-stretches=yes
+reachforward=yes
 frame1=anim_10510
 frame2=anim_10514
 frame3=anim_10515
@@ -955,7 +955,7 @@ frame11=anim_10512
 frame12=anim_10513
 
 [human_bannerwalk_f]
-stretches=yes
+reachforward=yes
 frame1=anim_10494
 frame2=anim_10495
 frame3=anim_10496
@@ -966,7 +966,7 @@ frame7=anim_10500
 frame8=anim_10501
 
 [human_bannerwalk_b]
-stretches=yes
+reachforward=yes
 frame1=anim_10501
 frame2=anim_10500
 frame3=anim_10499
@@ -977,28 +977,28 @@ frame7=anim_10495
 frame8=anim_10494
 
 [human_bannerwalk_l]
-stretches=yes
+reachforward=yes
 frame1=anim_10502
 frame2=anim_10503
 frame3=anim_10504
 frame4=anim_10505
 
 [human_bannerwalk_r]
-stretches=yes
+reachforward=yes
 frame1=anim_10506
 frame2=anim_10507
 frame3=anim_10508
 frame4=anim_10509
 
 [human_bannerturnonspot]
-stretches=yes
+reachforward=yes
 frame1=anim_10490
 frame2=anim_10491
 frame3=anim_10492
 frame4=anim_10493
 
 [human_bannerrunning]
-stretches=yes
+reachforward=yes
 frame1=anim_10482
 frame2=anim_10483
 frame3=anim_10484
@@ -1237,7 +1237,7 @@ frame8=anim_742
 priority=9
 postanim_move=delaymove
 preanim_move=delaymove
-duplicatebehavior=reset_loop
+duplicatebehaviour=reset_loop
 frame1=anim_922
 frame2=anim_1202
 frame3=anim_1486
@@ -1343,7 +1343,7 @@ frame7=anim_10592
 frame8=anim_10593
 
 [mining_crane_attack]
-stretches=yes
+reachforward=yes
 frame1=anim_10539
 frame2=anim_10543
 frame3=anim_10544
@@ -1706,7 +1706,7 @@ frame6=anim_10811
 frame7=anim_10807
 
 [trollromance_cry_test]
-stretches=yes
+reachforward=yes
 frame1=anim_10828
 frame2=anim_10829
 frame3=anim_10830
@@ -1724,7 +1724,7 @@ frame14=anim_10829
 frame15=anim_10828
 
 [seq_1475]
-stretches=yes
+reachforward=yes
 frame1=anim_10828
 frame2=anim_10829
 frame3=anim_10830
@@ -1734,12 +1734,12 @@ frame6=anim_10833
 
 [trollromance_cry_loop]
 loops=2
-stretches=yes
+reachforward=yes
 frame1=anim_10832
 frame2=anim_10833
 
 [seq_1477]
-stretches=yes
+reachforward=yes
 frame1=anim_10832
 frame2=anim_10831
 frame3=anim_10830
@@ -1935,7 +1935,7 @@ frame7=anim_690
 frame8=anim_690
 
 [seq_1488]
-stretches=yes
+reachforward=yes
 replaceheldleft=hide
 frame1=anim_10856
 frame2=anim_10860

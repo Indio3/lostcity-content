@@ -98,12 +98,13 @@ op2=Attack
 vislevel=39
 model1=npc_giantspider
 wanderrange=10
-maxrange=12
-respawnrate=600
-hitpoints=32
 attack=35
-strength=35
 defence=35
+strength=35
+hitpoints=32
+huntrange=1
+respawnrate=600
+huntmode=cowardly
 param=stabdefence,15
 param=slashdefence,16
 param=crushdefence,7
@@ -117,11 +118,6 @@ param=attack_sound,insect_attack
 param=defend_sound,insect_hit
 param=death_sound,insect_death
 param=death_drop,null
-huntmode=cowardly
-huntrange=1
-// osrs stats and Vislvl match 1:1
-// wander and maxrange data taken from rs3. // osrs wanderrange 6 maxrange 8
-// https://raw.githubusercontent.com/Joshua-F/osrs-dumps/refs/heads/master/config/dump.npc npc_4533
 
 [blessed_giantrat]
 size=2
@@ -133,10 +129,10 @@ op2=Attack
 vislevel=9
 model1=model_2959_npc
 wanderrange=6
-maxrange=8
-respawnrate=600
-hitpoints=30
 attack=5
+hitpoints=30
+respawnrate=600
+huntmode=cowardly
 param=strengthbonus,-24
 param=stabdefence,-24
 param=slashdefence,-24
@@ -150,9 +146,6 @@ param=death_anim,giantrat_death
 param=attack_sound,rat_attack
 param=defend_sound,rat_hit
 param=death_sound,rat_death
-huntmode=cowardly
-// osrs stats and Vislvl match 1:1
-// https://raw.githubusercontent.com/Joshua-F/osrs-dumps/refs/heads/master/config/dump.npc npc_4534
 
 [cave_slave1]
 vislevel=hide
@@ -161,12 +154,6 @@ readyanim=human_ready
 name=Slave
 desc=A wretched slave of Iban.
 op1=Talk-to
-recol1s=2340
-recol1d=14724
-recol2s=7298
-recol2d=29460
-recol3s=24075
-recol3d=29460
 model1=man_head_bald
 model2=man_torso_tatty
 model3=man_legs_tatty
@@ -175,6 +162,12 @@ model5=man_arms_bare
 model6=man_feet_basic
 model7=man_hands_basic
 head1=chat_male_head_bald
+recol1s=2340
+recol1d=14724
+recol2s=7298
+recol2d=29460
+recol3s=24075
+recol3d=29460
 
 [cave_slave2]
 vislevel=hide
@@ -183,12 +176,6 @@ readyanim=human_ready
 name=Slave
 desc=A wretched slave of Iban.
 op1=Talk-to
-recol1s=2340
-recol1d=14724
-recol2s=7298
-recol2d=29460
-recol3s=24075
-recol3d=29460
 model1=man_head_longhair
 model2=man_torso_tatty
 model3=man_legs_tatty
@@ -197,6 +184,12 @@ model5=man_arms_bare
 model6=man_feet_basic
 model7=man_hands_basic
 head1=chat_male_head_longhair
+recol1s=2340
+recol1d=14724
+recol2s=7298
+recol2d=29460
+recol3s=24075
+recol3d=29460
 
 [cave_slave3]
 vislevel=hide
@@ -205,12 +198,6 @@ readyanim=human_ready
 name=Slave
 desc=A wretched slave of Iban.
 op1=Talk-to
-recol1s=2340
-recol1d=14724
-recol2s=7298
-recol2d=29460
-recol3s=24075
-recol3d=29460
 model1=man_head_dredlocks
 model2=man_torso_tatty
 model3=man_legs_tatty
@@ -219,6 +206,12 @@ model5=man_arms_bare
 model6=man_feet_basic
 model7=man_hands_basic
 head1=chat_male_head_dredlocks
+recol1s=2340
+recol1d=14724
+recol2s=7298
+recol2d=29460
+recol3s=24075
+recol3d=29460
 
 [cave_slave4]
 vislevel=hide
@@ -227,12 +220,6 @@ readyanim=human_ready
 name=Slave
 desc=A wretched slave of Iban.
 op1=Talk-to
-recol1s=2340
-recol1d=14724
-recol2s=7298
-recol2d=29460
-recol3s=24075
-recol3d=29460
 model1=man_head_hood1
 model2=man_torso_tatty
 model3=man_legs_tatty
@@ -241,6 +228,12 @@ model5=man_arms_bare
 model6=man_feet_basic
 model7=man_hands_basic
 head1=chat_male_head_hood1
+recol1s=2340
+recol1d=14724
+recol2s=7298
+recol2d=29460
+recol3s=24075
+recol3d=29460
 
 [cave_slave5]
 vislevel=hide
@@ -249,14 +242,6 @@ readyanim=human_ready
 name=Slave
 desc=A wretched slave of Iban.
 op1=Talk-to
-recol1s=2340
-recol1d=14724
-recol2s=7298
-recol2d=29460
-recol3s=24075
-recol3d=29460
-recol4s=6273
-recol4d=16877
 model1=man_head_spikeyhair2
 model2=man_torso_tatty
 model3=man_legs_tatty
@@ -265,6 +250,14 @@ model5=man_arms_bare
 model6=man_feet_basic
 model7=man_hands_basic
 head1=chat_male_head_spikeyhair2
+recol1s=2340
+recol1d=14724
+recol2s=7298
+recol2d=29460
+recol3s=24075
+recol3d=29460
+recol4s=6273
+recol4d=16877
 
 [cave_slave6]
 vislevel=hide
@@ -273,12 +266,6 @@ readyanim=human_ready
 name=Slave
 desc=A wretched slave of Iban.
 op1=Talk-to
-recol1s=2340
-recol1d=14724
-recol2s=7298
-recol2d=29460
-recol3s=24075
-recol3d=29460
 model1=man_head_hood2
 model2=man_torso_tatty
 model3=man_legs_tatty
@@ -287,6 +274,12 @@ model5=man_arms_bare
 model6=man_feet_basic
 model7=man_hands_basic
 head1=chat_male_head_hood2
+recol1s=2340
+recol1d=14724
+recol2s=7298
+recol2d=29460
+recol3s=24075
+recol3d=29460
 
 [cave_slave7]
 vislevel=hide
@@ -295,12 +288,6 @@ readyanim=human_ready
 name=Slave
 desc=A wretched slave of Iban.
 op1=Talk-to
-recol1s=2340
-recol1d=14724
-recol2s=7298
-recol2d=29460
-recol3s=24075
-recol3d=29460
 model1=man_head_longhair
 model2=man_torso_tatty
 model3=man_legs_tatty
@@ -309,6 +296,12 @@ model5=man_arms_bare
 model6=man_feet_basic
 model7=man_hands_basic
 head1=chat_male_head_longhair
+recol1s=2340
+recol1d=14724
+recol2s=7298
+recol2d=29460
+recol3s=24075
+recol3d=29460
 
 [boulder_upass]
 name=Boulder
@@ -319,10 +312,11 @@ op1=Push
 vislevel=hide
 minimap=no
 model1=npc_boulder
-defaultmode=none
 wanderrange=0
+maxrange=10
 moverestrict=nomove
 blockwalk=all
+defaultmode=none
 
 [unicorn_upass]
 size=2
@@ -333,17 +327,16 @@ desc=The animal is caged here.
 vislevel=15
 model1=model_2933_npc
 wanderrange=1
-hitpoints=19
 attack=11
-strength=13
 defence=13
+strength=13
+hitpoints=19
 param=damagetype,^stab_style
 param=attack_anim,unicorn_attack
 param=defend_anim,unicorn_block
 param=death_anim,unicorn_death
 param=attack_sound,cow_attack
 param=defend_sound,horse_hit
-// https://raw.githubusercontent.com/Joshua-F/osrs-dumps/refs/heads/master/config/dump.npc npc_9209
 
 [upass_paladin1]
 name=Sir Jerro
@@ -353,14 +346,6 @@ readyanim=human_ready
 op1=Talk-to
 op2=Attack
 vislevel=62
-recol1s=7298
-recol1d=6342
-recol2s=6273
-recol2d=27240
-recol3s=15375
-recol3d=19126
-recol4s=14801
-recol4d=24075
 model1=man_head_mediumhair
 model2=man_jaw_short
 model3=man_torso_paladin
@@ -373,10 +358,18 @@ model9=human_weapons_squareshield
 model10=man_torsoextra_paladin_star
 head1=chat_male_head_mediumhair
 head2=chat_male_jaw_short
-hitpoints=57
+recol1s=7298
+recol1d=6342
+recol2s=6273
+recol2d=27240
+recol3s=15375
+recol3d=19126
+recol4s=14801
+recol4d=24075
 attack=54
-strength=54
 defence=54
+strength=54
+hitpoints=57
 param=attackrate,5
 param=attackbonus,20
 param=strengthbonus,22
@@ -390,8 +383,6 @@ param=attack_anim,human_sword_slash
 param=defend_anim,human_sword_def
 param=attack_sound,hacksword_slash
 param=defend_sound,blade4
-// osrs stats and Vislvl match 1:1
-// https://raw.githubusercontent.com/Joshua-F/osrs-dumps/refs/heads/master/config/dump.npc npc_8987
 
 [upass_paladin2]
 name=Sir Carl
@@ -401,12 +392,6 @@ readyanim=human_ready
 op1=Talk-to
 op2=Attack
 vislevel=62
-recol1s=7298
-recol1d=6342
-recol2s=15375
-recol2d=19126
-recol3s=14801
-recol3d=24075
 model1=man_head_longhair
 model2=man_jaw_long
 model3=man_torso_paladin
@@ -419,10 +404,16 @@ model9=human_weapons_squareshield
 model10=man_torsoextra_paladin_star
 head1=chat_male_head_longhair
 head2=chat_male_jaw_long
-hitpoints=57
+recol1s=7298
+recol1d=6342
+recol2s=15375
+recol2d=19126
+recol3s=14801
+recol3d=24075
 attack=54
-strength=54
 defence=54
+strength=54
+hitpoints=57
 param=attackrate,5
 param=attackbonus,20
 param=strengthbonus,22
@@ -436,8 +427,6 @@ param=attack_anim,human_sword_slash
 param=defend_anim,human_sword_def
 param=attack_sound,hacksword_slash
 param=defend_sound,blade4
-// osrs stats and Vislvl match 1:1
-// https://raw.githubusercontent.com/Joshua-F/osrs-dumps/refs/heads/master/config/dump.npc npc_8988
 
 [upass_paladin3]
 name=Sir Harry
@@ -447,12 +436,6 @@ readyanim=human_ready
 op1=Talk-to
 op2=Attack
 vislevel=62
-recol1s=7298
-recol1d=6342
-recol2s=15375
-recol2d=19126
-recol3s=14801
-recol3d=24075
 model1=man_head_longhair
 model2=man_jaw_long
 model3=man_torso_paladin
@@ -465,10 +448,16 @@ model9=human_weapons_squareshield
 model10=man_torsoextra_paladin_star
 head1=chat_male_head_longhair
 head2=chat_male_jaw_long
-hitpoints=57
+recol1s=7298
+recol1d=6342
+recol2s=15375
+recol2d=19126
+recol3s=14801
+recol3d=24075
 attack=54
-strength=54
 defence=54
+strength=54
+hitpoints=57
 param=attackrate,5
 param=attackbonus,20
 param=strengthbonus,22
@@ -482,8 +471,6 @@ param=attack_anim,human_sword_slash
 param=defend_anim,human_sword_def
 param=attack_sound,hacksword_slash
 param=defend_sound,blade4
-// osrs stats and Vislvl match 1:1
-// https://raw.githubusercontent.com/Joshua-F/osrs-dumps/refs/heads/master/config/dump.npc npc_8989
 
 [soulman]
 size=2
@@ -492,6 +479,13 @@ desc=A creature empty of emotion.
 walkanim=caged
 readyanim=caged
 vislevel=1
+model1=man_head_bald
+model2=man_torso_tatty
+model3=man_legs_tatty
+model4=man_jaw_none
+model5=man_arms_thin
+model6=man_feet_basic
+model7=man_hands_basic
 recol1s=2340
 recol1d=18952
 recol2s=7298
@@ -502,16 +496,10 @@ recol4s=14724
 recol4d=18952
 recol5s=14801
 recol5d=26389
-model1=man_head_bald
-model2=man_torso_tatty
-model3=man_legs_tatty
-model4=man_jaw_none
-model5=man_arms_thin
-model6=man_feet_basic
-model7=man_hands_basic
-defaultmode=none
 wanderrange=0
+maxrange=0
 moverestrict=nomove
+defaultmode=none
 
 [cavewitch]
 vislevel=hide
@@ -520,16 +508,6 @@ desc=A dark and evil crone.
 walkanim=human_walk_f,human_walk_b,human_walk_l,human_walk_r
 readyanim=human_staffready
 op1=Talk-to
-recol1s=14801
-recol1d=15850
-recol2s=24075
-recol2d=15850
-recol3s=455
-recol3d=15850
-recol4s=239
-recol4d=5123
-recol5s=2340
-recol5d=5123
 model1=woman_head_witch
 model2=woman_torso_tatty
 model3=woman_arms_thin
@@ -540,6 +518,16 @@ model7=woman_torsoextra_cloak_plain
 model8=woman_necklaces_greennecklace
 model9=human_weapons_staff
 model10=woman_hat_wizards
+recol1s=14801
+recol1d=15850
+recol2s=24075
+recol2d=15850
+recol3s=455
+recol3d=15850
+recol4s=239
+recol4d=5123
+recol5s=2340
+recol5d=5123
 
 [cavewitchcat]
 vislevel=hide
@@ -550,11 +538,10 @@ readyanim=cat_ready
 op1=Pick-up
 resizeh=60
 resizev=60
-recol1s=15855
-recol1d=4228
 model1=npc_cat_body1
 model2=npc_cat_head
-// rs3 rate
+recol1s=15855
+recol1d=4228
 respawnrate=100
 param=death_anim,cat_death
 
@@ -566,6 +553,13 @@ name=Nilhoof
 desc=A hardy dwarf.
 op1=Talk-to
 desc=A strong and hardy dwarf.
+model1=model_2970_npc
+model2=model_2984_npc
+model3=model_2981_npc
+model4=model_2979_npc
+model5=model_2985_npc
+model6=model_2990_npc
+head1=dwarf_chat_model0
 recol1s=15426
 recol1d=5319
 recol2s=24075
@@ -574,13 +568,6 @@ recol3s=10434
 recol3d=16912
 recol4s=15855
 recol4d=6384
-model1=model_2970_npc
-model2=model_2984_npc
-model3=model_2981_npc
-model4=model_2979_npc
-model5=model_2985_npc
-model6=model_2990_npc
-head1=dwarf_chat_model0
 param=death_anim,dwarf_death
 
 [upassdwarf2]
@@ -591,18 +578,18 @@ name=Klank
 desc=A hardy dwarf.
 op1=Talk-to
 desc=A dwarven maker of gauntlets.
-recol1s=15426
-recol1d=5248
-recol2s=24075
-recol2d=14596
-recol3s=15855
-recol3d=5376
 model1=npc_dwarf_head2
 model2=model_2984_npc
 model3=model_2981_npc
 model4=model_2979_npc
 model5=model_2985_npc
 head1=dwarf_chat_model1
+recol1s=15426
+recol1d=5248
+recol2s=24075
+recol2d=14596
+recol3s=15855
+recol3d=5376
 param=death_anim,dwarf_death
 
 [upassdwarf3]
@@ -613,10 +600,6 @@ name=Kamen
 desc=A hardy dwarf.
 op1=Talk-to
 desc=This dwarf looks intoxicated.
-recol1s=15426
-recol1d=5319
-recol2s=24075
-recol2d=20934
 model1=model_2972_npc
 model2=model_2984_npc
 model3=model_2981_npc
@@ -624,6 +607,10 @@ model4=model_2979_npc
 model5=model_2985_npc
 model6=model_2990_npc
 head1=dwarf_chat_model2
+recol1s=15426
+recol1d=5319
+recol2s=24075
+recol2d=20934
 param=death_anim,dwarf_death
 
 [kalrag]
@@ -639,11 +626,13 @@ vislevel=89
 model1=npc_giantspider
 wanderrange=10
 maxrange=10
-respawnrate=100
-hitpoints=78
 attack=78
-strength=78
 defence=78
+strength=78
+hitpoints=78
+huntrange=5
+respawnrate=100
+huntmode=cowardly
 param=stabdefence,20
 param=slashdefence,17
 param=crushdefence,12
@@ -657,10 +646,6 @@ param=attack_sound,kilrag_attack
 param=defend_sound,kilrag_hit
 param=death_sound,kilrag_death
 param=death_drop,null
-huntrange=5
-huntmode=cowardly
-// osrs stats and Vislvl match 1:1
-// https://raw.githubusercontent.com/Joshua-F/osrs-dumps/refs/heads/master/config/dump.npc npc_8993
 
 [othainian]
 size=3
@@ -673,13 +658,15 @@ resizeh=110
 resizev=110
 vislevel=91
 model1=model_2942_npc
-wanderrange=7
+wanderrange=6
 maxrange=9
-respawnrate=60
-hitpoints=87
 attack=76
-strength=78
 defence=77
+strength=78
+hitpoints=87
+huntrange=3
+respawnrate=60
+huntmode=cowardly
 param=magicdefence,-10
 param=damagetype,^slash_style
 param=attack_anim,demon_attack
@@ -690,10 +677,6 @@ param=defend_sound,black_demon_hit
 param=death_sound,black_demon_death
 param=demonbane_vulnerable,yes
 param=death_drop,ashes
-huntrange=3
-huntmode=cowardly
-// osrs stats and Vislvl match 1:1
-// https://raw.githubusercontent.com/Joshua-F/osrs-dumps/refs/heads/master/config/dump.npc npc_8994
 
 [doomion]
 size=3
@@ -706,13 +689,15 @@ resizeh=110
 resizev=110
 vislevel=91
 model1=model_2942_npc
-wanderrange=7
+wanderrange=6
 maxrange=9
-respawnrate=60
-hitpoints=87
 attack=76
-strength=78
 defence=77
+strength=78
+hitpoints=87
+huntrange=3
+respawnrate=60
+huntmode=cowardly
 param=magicdefence,-10
 param=damagetype,^slash_style
 param=attack_anim,demon_attack
@@ -723,10 +708,6 @@ param=defend_sound,black_demon_hit
 param=death_sound,black_demon_death
 param=demonbane_vulnerable,yes
 param=death_drop,ashes
-huntrange=3
-huntmode=cowardly
-// osrs stats and Vislvl match 1:1
-// https://raw.githubusercontent.com/Joshua-F/osrs-dumps/refs/heads/master/config/dump.npc npc_8995
 
 [holthion]
 size=3
@@ -739,13 +720,15 @@ resizeh=110
 resizev=110
 vislevel=91
 model1=model_2942_npc
-wanderrange=7
+wanderrange=6
 maxrange=9
-respawnrate=60
-hitpoints=87
 attack=76
-strength=78
 defence=77
+strength=78
+hitpoints=87
+huntrange=3
+respawnrate=60
+huntmode=cowardly
 param=magicdefence,-10
 param=damagetype,^slash_style
 param=attack_anim,demon_attack
@@ -756,10 +739,6 @@ param=defend_sound,black_demon_hit
 param=death_sound,black_demon_death
 param=demonbane_vulnerable,yes
 param=death_drop,ashes
-huntrange=3
-huntmode=cowardly
-// osrs stats and Vislvl match 1:1
-// https://raw.githubusercontent.com/Joshua-F/osrs-dumps/refs/heads/master/config/dump.npc npc_8996
 
 [ibanmonk]
 walkanim=human_walk_f,human_walk_b,human_walk_l,human_walk_r
@@ -769,14 +748,6 @@ desc=A dark magic user.
 op1=Talk-to
 op2=Attack
 vislevel=13
-recol1s=2340
-recol1d=19588
-recol2s=14724
-recol2d=19588
-recol3s=6273
-recol3d=32767
-recol4s=24075
-recol4d=29460
 model1=man_head_shorthair2
 model2=man_feet_basic
 model3=man_jaw_goaty
@@ -785,14 +756,21 @@ model5=man_arms_longsleeves
 model6=man_hands_basic
 model7=man_legs_robe_narrow
 head1=chat_male_head_shorthair2
-respawnrate=500
-hitpoints=20
+recol1s=2340
+recol1d=19588
+recol2s=14724
+recol2d=19588
+recol3s=6273
+recol3d=32767
+recol4s=24075
+recol4d=29460
+wanderrange=5
 attack=8
-strength=8
 defence=12
+strength=8
+hitpoints=20
+respawnrate=500
 param=damagetype,^crush_style
-// osrs stats and Vislvl match 1:1
-// https://raw.githubusercontent.com/Joshua-F/osrs-dumps/refs/heads/master/config/dump.npc npc_8997
 
 [iban]
 vislevel=hide
@@ -801,6 +779,15 @@ walkanim=human_walk_f,human_walk_b,human_walk_l,human_walk_r
 readyanim=sitting_throne
 name=Lord Iban
 desc=The great and dreadful Lord Iban
+model1=man_head_rangershood
+model2=man_torso_basic
+model3=man_hands_gloves
+model4=man_arms_longsleeves
+model5=man_torsoextra_priestdecor
+model6=man_necklaces_stylezamarock
+model7=man_jaw_medium
+model8=man_legs_robe
+head1=chat_male_jaw_medium
 recol1s=15855
 recol1d=6342
 recol2s=7329
@@ -813,25 +800,15 @@ recol5s=15360
 recol5d=15375
 recol6s=289
 recol6d=5285
-model1=man_head_rangershood
-model2=man_torso_basic
-model3=man_hands_gloves
-model4=man_arms_longsleeves
-model5=man_torsoextra_priestdecor
-model6=man_necklaces_stylezamarock
-model7=man_jaw_medium
-model8=man_legs_robe
-head1=chat_male_jaw_medium
-defaultmode=none
 wanderrange=0
-moverestrict=nomove
-respawnrate=100
-hitpoints=87
 attack=76
-strength=78
 defence=77
+strength=78
+hitpoints=87
 timer=10
-// https://raw.githubusercontent.com/Joshua-F/osrs-dumps/refs/heads/master/config/dump.npc npc_8998
+respawnrate=100
+moverestrict=nomove
+defaultmode=none
 
 [upass_little_spider]
 walkanim=spider_walk
@@ -839,13 +816,12 @@ name=Spider
 desc=Incey wincey.
 op2=Attack
 vislevel=1
+model1=model_2996_npc
 recol1s=15855
 recol1d=5284
-model1=model_2996_npc
 wanderrange=8
-maxrange=10
-respawnrate=70
 hitpoints=2
+respawnrate=70
 param=attackbonus,-35
 param=strengthbonus,-58
 param=stabdefence,-53
@@ -861,9 +837,6 @@ param=attack_sound,insect_attack
 param=defend_sound,insect_hit
 param=death_sound,insect_death
 param=death_drop,null
-// osrs stats and Vislvl match 1:1
-// osrs sounds small_spider_attack, small_spider_hit, small_spider_death
-// https://raw.githubusercontent.com/Joshua-F/osrs-dumps/refs/heads/master/config/dump.npc npc_4561
 
 [non_combat_bat]
 name=Giant bat

@@ -6,12 +6,6 @@ readyanim=human_ready
 op1=Talk-to
 op2=Attack
 vislevel=3
-recol1s=14801
-recol1d=12547
-recol2s=2340
-recol2d=6208
-recol3s=24075
-recol3d=12547
 model1=woman_head_shorthair2
 model2=woman_feet_boots
 model3=woman_torso_tatty
@@ -19,17 +13,21 @@ model4=woman_arms_basic
 model5=woman_hands_basic
 model6=woman_legs_tatty
 head1=chat_female_head_shorthair2
-respawnrate=100
-hitpoints=10
+recol1s=14801
+recol1d=12547
+recol2s=2340
+recol2d=6208
+recol3s=24075
+recol3d=12547
 attack=2
+hitpoints=10
+respawnrate=100
 param=stabdefence,1
 param=slashdefence,1
 param=crushdefence,1
 param=damagetype,^crush_style
 param=defend_sound,female_hit
 param=death_sound,female_death
-// osrs stats and Vislvl match 1:1
-// https://raw.githubusercontent.com/Joshua-F/osrs-dumps/refs/heads/master/config/dump.npc npc_1119
 
 [w_ardoungecitizenlady1]
 name=Woman
@@ -39,10 +37,6 @@ readyanim=human_ready
 op1=Talk-to
 op2=Attack
 vislevel=4
-recol1s=14801
-recol1d=24075
-recol2s=2340
-recol2d=6208
 model1=woman_head_longhair
 model2=woman_torso_tatty
 model3=woman_arms_bare
@@ -50,17 +44,19 @@ model4=woman_hands_basic
 model5=woman_legs_tatty
 model6=woman_feet_basic
 head1=chat_female_head_longhair
-respawnrate=100
-hitpoints=13
+recol1s=14801
+recol1d=24075
+recol2s=2340
+recol2d=6208
 attack=2
+hitpoints=13
+respawnrate=100
 param=stabdefence,1
 param=slashdefence,1
 param=crushdefence,1
 param=damagetype,^crush_style
 param=defend_sound,female_hit
 param=death_sound,female_death
-// osrs stats and Vislvl match 1:1
-// https://raw.githubusercontent.com/Joshua-F/osrs-dumps/refs/heads/master/config/dump.npc npc_1130
 
 [dskin_w_ardoungecitizenlady1]
 name=Woman
@@ -70,12 +66,6 @@ readyanim=human_ready
 op1=Talk-to
 op2=Attack
 vislevel=3
-recol1s=14801
-recol1d=12547
-recol2s=2340
-recol2d=6208
-recol3s=24075
-recol3d=12547
 model1=woman_head_bun
 model2=woman_torso_tatty
 model3=woman_arms_bare
@@ -83,17 +73,21 @@ model4=woman_hands_basic
 model5=woman_legs_tatty
 model6=woman_feet_basic
 head1=chat_female_head_bun
-respawnrate=100
-hitpoints=10
+recol1s=14801
+recol1d=12547
+recol2s=2340
+recol2d=6208
+recol3s=24075
+recol3d=12547
 attack=2
+hitpoints=10
+respawnrate=100
 param=stabdefence,1
 param=slashdefence,1
 param=crushdefence,1
 param=damagetype,^crush_style
 param=defend_sound,female_hit
 param=death_sound,female_death
-// osrs stats and Vislvl match 1:1
-// https://raw.githubusercontent.com/Joshua-F/osrs-dumps/refs/heads/master/config/dump.npc npc_1131
 
 [dskin_w_ardoungecitizenlady3]
 name=Woman
@@ -103,12 +97,6 @@ readyanim=human_ready
 op1=Talk-to
 op2=Attack
 vislevel=4
-recol1s=14801
-recol1d=12547
-recol2s=2340
-recol2d=6208
-recol3s=24075
-recol3d=12547
 model1=woman_head_pigtails
 model2=woman_torso_tatty
 model3=woman_arms_bare
@@ -116,17 +104,21 @@ model4=woman_hands_basic
 model5=woman_legs_turnups
 model6=woman_feet_basic
 head1=chat_female_head_pigtails
-respawnrate=100
-hitpoints=13
+recol1s=14801
+recol1d=12547
+recol2s=2340
+recol2d=6208
+recol3s=24075
+recol3d=12547
 attack=2
+hitpoints=13
+respawnrate=100
 param=stabdefence,1
 param=slashdefence,1
 param=crushdefence,1
 param=damagetype,^crush_style
 param=defend_sound,female_hit
 param=death_sound,female_death
-// osrs stats and Vislvl match 1:1
-// https://raw.githubusercontent.com/Joshua-F/osrs-dumps/refs/heads/master/config/dump.npc npc_1139
 
 [dskin_w_ardoungecitizenlady4]
 name=Woman
@@ -136,12 +128,6 @@ readyanim=human_ready
 op1=Talk-to
 op2=Attack
 vislevel=12
-recol1s=14801
-recol1d=12547
-recol2s=2340
-recol2d=6208
-recol3s=24075
-recol3d=12547
 model1=woman_head_tribal
 model2=woman_torso_bare
 model3=woman_arms_bare
@@ -149,16 +135,20 @@ model4=woman_hands_basic
 model5=woman_legs_turnups
 model6=woman_feet_basic
 head1=model_121_npc_head
-respawnrate=100
-hitpoints=13
+recol1s=14801
+recol1d=12547
+recol2s=2340
+recol2d=6208
+recol3s=24075
+recol3d=12547
 attack=10
-strength=10
 defence=10
+strength=10
+hitpoints=13
+respawnrate=100
 param=damagetype,^crush_style
 param=defend_sound,female_hit
 param=death_sound,female_death
-// osrs stats and Vislvl match 1:1
-// https://raw.githubusercontent.com/Joshua-F/osrs-dumps/refs/heads/master/config/dump.npc npc_1140
 
 [w_ardoungecitizenlady2]
 name=Woman
@@ -168,10 +158,6 @@ readyanim=human_ready
 op1=Talk-to
 op2=Attack
 vislevel=3
-recol1s=14801
-recol1d=24075
-recol2s=2340
-recol2d=12615
 model1=woman_head_tribal
 model2=woman_torso_fat
 model3=woman_arms_bare
@@ -179,14 +165,16 @@ model4=woman_hands_basic
 model5=woman_legs_turnups
 model6=woman_feet_basic
 head1=model_121_npc_head
-respawnrate=100
-hitpoints=10
+recol1s=14801
+recol1d=24075
+recol2s=2340
+recol2d=12615
 attack=2
+hitpoints=10
+respawnrate=100
 param=damagetype,^crush_style
 param=defend_sound,female_hit
 param=death_sound,female_death
-// osrs stats and Vislvl match 1:1
-// https://raw.githubusercontent.com/Joshua-F/osrs-dumps/refs/heads/master/config/dump.npc npc_1141
 
 [w_ardoungecitizenlady4]
 name=Woman
@@ -196,10 +184,6 @@ readyanim=human_ready
 op1=Talk-to
 op2=Attack
 vislevel=14
-recol1s=14801
-recol1d=24075
-recol2s=2340
-recol2d=12615
 model1=woman_head_tribal
 model2=woman_torso_fat
 model3=woman_arms_bare
@@ -207,13 +191,15 @@ model4=woman_hands_basic
 model5=woman_legs_turnups
 model6=woman_feet_basic
 head1=model_121_npc_head
-respawnrate=100
-hitpoints=23
+recol1s=14801
+recol1d=24075
+recol2s=2340
+recol2d=12615
 attack=10
-strength=10
 defence=10
+strength=10
+hitpoints=23
+respawnrate=100
 param=damagetype,^crush_style
 param=defend_sound,female_hit
 param=death_sound,female_death
-// osrs stats and Vislvl match 1:1
-// https://raw.githubusercontent.com/Joshua-F/osrs-dumps/refs/heads/master/config/dump.npc npc_1142

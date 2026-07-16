@@ -6,10 +6,6 @@ readyanim=human_ready
 op1=Talk-to
 op2=Attack
 vislevel=23
-recol1s=15855
-recol1d=5285
-recol2s=2340
-recol2d=3104
 model1=man_head_bald
 model2=man_jaw_split
 model3=man_torso_platemail
@@ -20,13 +16,16 @@ model7=man_feet_boots
 model8=human_weapons_axe
 head1=chat_male_head_bald
 head2=chat_male_jaw_split
-wanderrange=3
-maxrange=5
-respawnrate=100
-hitpoints=25
+recol1s=15855
+recol1d=5285
+recol2s=2340
+recol2d=3104
+wanderrange=1
 attack=20
-strength=18
 defence=20
+strength=18
+hitpoints=25
+respawnrate=100
 param=attackbonus,10
 param=strengthbonus,14
 param=stabdefence,44
@@ -37,8 +36,6 @@ param=attack_anim,human_axe_hack
 param=defend_anim,human_axe_def
 param=attack_sound,baxe_slash
 param=defend_sound,blade3_mail
-// osrs stats and Vislvl match 1:1
-// https://raw.githubusercontent.com/Joshua-F/osrs-dumps/refs/heads/master/config/dump.npc npc_1208
 
 [arena_guard2]
 name=Khazard Guard
@@ -48,10 +45,6 @@ readyanim=human_ready
 op1=Talk-to
 op2=Attack
 vislevel=23
-recol1s=15855
-recol1d=5285
-recol2s=2340
-recol2d=3104
 model1=man_head_bald
 model2=man_jaw_short2
 model3=man_torso_platemail
@@ -62,13 +55,16 @@ model7=man_feet_boots
 model8=human_weapons_axe
 head1=chat_male_head_bald
 head2=chat_male_jaw_short2
+recol1s=15855
+recol1d=5285
+recol2s=2340
+recol2d=3104
 wanderrange=4
-maxrange=6
-respawnrate=100
-hitpoints=25
 attack=20
-strength=18
 defence=20
+strength=18
+hitpoints=25
+respawnrate=100
 param=attackbonus,10
 param=strengthbonus,14
 param=stabdefence,44
@@ -79,9 +75,6 @@ param=attack_anim,human_axe_hack
 param=defend_anim,human_axe_def
 param=attack_sound,baxe_slash
 param=defend_sound,blade3_mail
-// osrs stats and Vislvl match 1:1
-// The NPC in question has been replaced by another NPC that no longer has an attack option or stats. npc_1209
-// stats and params is guess.
 
 [arena_guard3]
 name=Khazard Guard
@@ -91,10 +84,6 @@ readyanim=human_ready
 op1=Talk-to
 op2=Attack
 vislevel=23
-recol1s=15855
-recol1d=5285
-recol2s=2340
-recol2d=3104
 model1=man_head_mediumhelmet
 model2=man_jaw_none
 model3=man_torso_platemail
@@ -104,13 +93,16 @@ model6=man_legs_basic
 model7=man_feet_boots
 model8=human_weapons_axe
 head1=chat_male_head_mediumhelmet
+recol1s=15855
+recol1d=5285
+recol2s=2340
+recol2d=3104
 wanderrange=4
-maxrange=6
-respawnrate=100
-hitpoints=25
 attack=20
-strength=18
 defence=20
+strength=18
+hitpoints=25
+respawnrate=100
 param=attackbonus,10
 param=strengthbonus,14
 param=stabdefence,35
@@ -121,9 +113,6 @@ param=attack_anim,human_axe_hack
 param=defend_anim,human_axe_def
 param=attack_sound,baxe_slash
 param=defend_sound,blade3_mail
-// osrs stats and Vislvl match 1:1
-// The NPC in question has been replaced by another NPC that no longer has an attack option or stats. npc_1210
-// stats and params is guess.
 
 [arena_guard4]
 name=Khazard Guard
@@ -133,10 +122,6 @@ readyanim=human_ready
 op1=Talk-to
 op2=Attack
 vislevel=23
-recol1s=15855
-recol1d=5285
-recol2s=2340
-recol2d=3104
 model1=man_head_mediumhelmet
 model2=man_jaw_short2
 model3=man_torso_platemail
@@ -147,13 +132,16 @@ model7=man_feet_boots
 model8=human_weapons_axe
 head1=chat_male_head_mediumhelmet
 head2=chat_male_jaw_short2
+recol1s=15855
+recol1d=5285
+recol2s=2340
+recol2d=3104
 wanderrange=4
-maxrange=6
-respawnrate=100
-hitpoints=25
 attack=20
-strength=18
 defence=20
+strength=18
+hitpoints=25
+respawnrate=100
 param=attackbonus,10
 param=strengthbonus,14
 param=stabdefence,35
@@ -164,8 +152,6 @@ param=attack_anim,human_axe_hack
 param=defend_anim,human_axe_def
 param=attack_sound,baxe_slash
 param=defend_sound,blade3_mail
-// osrs stats and Vislvl match 1:1
-// https://raw.githubusercontent.com/Joshua-F/osrs-dumps/refs/heads/master/config/dump.npc npc_1211
 
 [arena_leadguard]
 name=Khazard Guard
@@ -173,10 +159,6 @@ desc=It's one of General Khazard's guards.
 walkanim=human_walk_f,human_walk_b,human_walk_l,human_walk_r
 readyanim=human_ready
 vislevel=25
-recol1s=15855
-recol1d=5285
-recol2s=2340
-recol2d=3104
 model1=man_head_bald
 model2=man_jaw_split
 model3=man_torso_platemail
@@ -187,12 +169,16 @@ model7=man_feet_boots
 model8=human_weapons_axe
 head1=chat_male_head_bald
 head2=chat_male_jaw_split
-wanderrange=0
-respawnrate=100
-hitpoints=25
+recol1s=15855
+recol1d=5285
+recol2s=2340
+recol2d=3104
+wanderrange=4
 attack=20
-strength=18
 defence=20
+strength=18
+hitpoints=25
+respawnrate=100
 param=attackbonus,10
 param=strengthbonus,14
 param=stabdefence,44
@@ -203,7 +189,6 @@ param=attack_anim,human_axe_hack
 param=defend_anim,human_axe_def
 param=attack_sound,baxe_slash
 param=defend_sound,blade3_mail
-// https://chisel.weirdgloop.org/moid/npc_id.html#1212 npc_1212
 
 [general_khazard]
 name=General Khazard
@@ -213,10 +198,6 @@ readyanim=human_ready
 op1=Talk-to
 op2=Attack
 vislevel=112
-recol1s=15855
-recol1d=5285
-recol2s=14798
-recol2d=5285
 model1=man_head_skull
 model2=man_torso_platemail
 model3=man_arms_platemail
@@ -226,24 +207,20 @@ model6=man_feet_boots
 model7=human_weapons_dh-sword
 model8=man_torsoextra_cloak
 head1=model_149_npc_head
+recol1s=15855
+recol1d=5285
+recol2s=14798
+recol2d=5285
 wanderrange=1
-// copying bouncers but guessed (OSRS and RS3 are both changed)
 maxrange=25
-hitpoints=170
 attack=75
-strength=78
 defence=80
+strength=78
+hitpoints=170
 param=damagetype,^slash_style
 param=attack_anim,human_dhsword_chop
 param=defend_anim,human_dhsword_def
 param=attack_sound,2H_slash
-//attack sound -> https://youtu.be/4Nqjep2E5pw?si=uKZDy4fObgJdVLUO&t=528
-// param=defend_sound, TODO
-// defend sound before rework -> https://youtu.be/KgifYQQpOYM?si=syuNCONCW0tsKhuk&t=490
-// defend sound after rework -> https://youtube.com/shorts/GIVtSFgpV0E?si=qM6VhY_DZ5DW9XUo
-// TODO monster examine spell
-// Stats match osrs version but our version Vislvl is different.
-// https://raw.githubusercontent.com/Joshua-F/osrs-dumps/refs/heads/master/config/dump.npc npc_12025
 
 [khazard_barman]
 vislevel=hide
@@ -252,12 +229,6 @@ desc=A tough looking barman.
 walkanim=human_walk_f,human_walk_b,human_walk_l,human_walk_r
 readyanim=human_ready
 op1=Talk-to
-recol1s=2340
-recol1d=4226
-recol2s=14724
-recol2d=27481
-recol3s=14801
-recol3d=24075
 model1=man_head_bald
 model2=man_jaw_moustache
 model3=man_torso_basic
@@ -268,6 +239,13 @@ model7=man_feet_basic
 model8=man_torsoextra_buttons2
 head1=chat_male_head_bald
 head2=chat_male_jaw_moustache
+recol1s=2340
+recol1d=4226
+recol2s=14724
+recol2d=27481
+recol3s=14801
+recol3d=24075
+wanderrange=2
 
 [fightslave_kelvin]
 vislevel=hide
@@ -276,12 +254,6 @@ desc=A fightslave. He looks mistreated and weak.
 walkanim=human_walk_f,human_walk_b,human_walk_l,human_walk_r
 readyanim=human_ready
 op1=Talk-to
-recol1s=7298
-recol1d=24075
-recol2s=2340
-recol2d=7362
-recol3s=14724
-recol3d=16709
 model1=man_head_longhair
 model2=man_jaw_none
 model3=man_torso_tatty
@@ -290,7 +262,14 @@ model5=man_hands_basic
 model6=man_legs_tatty
 model7=man_feet_basic
 head1=chat_male_head_longhair
+recol1s=7298
+recol1d=24075
+recol2s=2340
+recol2d=7362
+recol3s=14724
+recol3d=16709
 wanderrange=1
+maxrange=1
 
 [fightslave_joe]
 vislevel=hide
@@ -299,6 +278,15 @@ desc=A fightslave. He looks mistreated and weak.
 walkanim=human_walk_f,human_walk_b,human_walk_l,human_walk_r
 readyanim=human_ready
 op1=Talk-to
+model1=man_head_spikeyhair
+model2=man_jaw_none
+model3=man_torso_tatty
+model4=man_arms_basic
+model5=man_hands_basic
+model6=man_legs_tatty
+model7=man_feet_basic
+model8=man_torsoextra_buttons2
+head1=chat_male_head_spikeyhair
 recol1s=7298
 recol1d=25166
 recol2s=2340
@@ -309,16 +297,8 @@ recol4s=14724
 recol4d=15686
 recol5s=24075
 recol5d=25166
-model1=man_head_spikeyhair
-model2=man_jaw_none
-model3=man_torso_tatty
-model4=man_arms_basic
-model5=man_hands_basic
-model6=man_legs_tatty
-model7=man_feet_basic
-model8=man_torsoextra_buttons2
-head1=chat_male_head_spikeyhair
 wanderrange=1
+maxrange=1
 
 [fightslave]
 vislevel=hide
@@ -327,10 +307,6 @@ desc=A fightslave. He looks mistreated and weak.
 walkanim=human_walk_f,human_walk_b,human_walk_l,human_walk_r
 readyanim=human_ready
 op1=Talk-to
-recol1s=7298
-recol1d=24075
-recol2s=2340
-recol2d=7298
 model1=man_head_longhair
 model2=man_jaw_none
 model3=man_torso_tatty
@@ -339,7 +315,12 @@ model5=man_hands_basic
 model6=man_legs_tatty
 model7=man_feet_basic
 head1=chat_male_head_longhair
+recol1s=7298
+recol1d=24075
+recol2s=2340
+recol2d=7298
 wanderrange=1
+maxrange=1
 
 [hengrad]
 vislevel=hide
@@ -348,12 +329,6 @@ desc=He looks mistreated and weak.
 walkanim=human_walk_f,human_walk_b,human_walk_l,human_walk_r
 readyanim=human_ready
 op1=Talk-to
-recol1s=7298
-recol1d=24075
-recol2s=2340
-recol2d=7362
-recol3s=14724
-recol3d=14730
 model1=man_head_bald
 model2=man_jaw_none
 model3=man_torso_tatty
@@ -362,7 +337,14 @@ model5=man_hands_basic
 model6=man_legs_tatty
 model7=man_feet_basic
 head1=chat_male_head_bald
+recol1s=7298
+recol1d=24075
+recol2s=2340
+recol2d=7362
+recol3s=14724
+recol3d=14730
 wanderrange=1
+maxrange=1
 
 [lady_servil]
 vislevel=hide
@@ -371,12 +353,6 @@ desc=She looks wealthy.
 walkanim=human_walk_f,human_walk_b,human_walk_l,human_walk_r
 readyanim=human_ready
 op1=Talk-to
-recol1s=2340
-recol1d=2387
-recol2s=14724
-recol2d=6649
-recol3s=14724
-recol3d=27551
 model1=woman_head_bun
 model2=woman_torso_basic
 model3=woman_arms_longsleeves
@@ -384,6 +360,13 @@ model4=woman_hands_basic
 model5=woman_legs_longskirt
 model6=woman_feet_basic
 head1=chat_female_head_bun
+recol1s=2340
+recol1d=2387
+recol2s=14724
+recol2d=6649
+recol3s=14724
+recol3d=27551
+wanderrange=1
 
 [jeremy_servil]
 vislevel=hide
@@ -392,15 +375,16 @@ desc=A young squire. He looks worse for wear.
 walkanim=midget_walk
 readyanim=midget_ready
 op1=Talk-to
-recol1s=416
-recol1d=13360
-recol2s=14724
-recol2d=13360
 model1=model_2918_npc
 model2=model_2910_npc
 model3=model_2906_npc
 head1=chat_male_head_shorthair
+recol1s=416
+recol1d=13360
+recol2s=14724
+recol2d=13360
 wanderrange=1
+maxrange=1
 param=death_anim,midget_death
 
 [jeremy_servil_arena]
@@ -410,15 +394,16 @@ desc=A young squire. He looks worse for wear.
 walkanim=midget_walk
 readyanim=midget_ready
 op1=Talk-to
-recol1s=416
-recol1d=13360
-recol2s=14724
-recol2d=13360
 model1=model_2918_npc
 model2=model_2910_npc
 model3=model_2906_npc
 head1=chat_male_head_shorthair
-wanderrange=1
+recol1s=416
+recol1d=13360
+recol2s=14724
+recol2d=13360
+wanderrange=0
+maxrange=0
 param=death_anim,midget_death
 
 [justin_servil]
@@ -428,10 +413,6 @@ desc=Jeremy's father Sir Servil.
 walkanim=human_walk_f,human_walk_b,human_walk_l,human_walk_r
 readyanim=human_ready
 op1=Talk-to
-recol1s=7298
-recol1d=24075
-recol2s=2340
-recol2d=7298
 model1=man_head_bald
 model2=man_jaw_long
 model3=man_torso_tatty
@@ -441,9 +422,13 @@ model6=man_legs_tatty
 model7=man_feet_basic
 head1=chat_male_head_bald
 head2=chat_male_jaw_long
-wanderrange=7
+recol1s=7298
+recol1d=24075
+recol2s=2340
+recol2d=7298
+wanderrange=0
+maxrange=0
 hitpoints=20
-// https://raw.githubusercontent.com/Joshua-F/osrs-dumps/refs/heads/master/config/dump.npc npc_12035
 
 [arena_spectator]
 vislevel=hide
@@ -452,10 +437,6 @@ desc=A scruffy looking chap.
 walkanim=human_walk_f,human_walk_b,human_walk_l,human_walk_r
 readyanim=human_ready
 op1=Talk-to
-recol1s=14724
-recol1d=8192
-recol2s=2340
-recol2d=8456
 model1=man_head_bald
 model2=man_jaw_goaty
 model3=man_headextra_eyepatch
@@ -467,6 +448,10 @@ model8=man_feet_boots
 head1=chat_male_head_bald
 head2=chat_male_jaw_goaty
 head3=chat_male_headextra_eyepatch
+recol1s=14724
+recol1d=8192
+recol2s=2340
+recol2d=8456
 
 [arena_bouncer]
 size=2
@@ -477,14 +462,14 @@ desc=Nice doggy.
 op2=Attack
 vislevel=137
 model1=model_2997_npc
-// Guess, based off old videos they will likely hunt through the whole arena: https://youtu.be/qRUXxpnYUp4?si=o4ePw20m2vZrLNBG&t=416
-// wanderrange=TODO
-maxrange=25
-respawnrate=100
-hitpoints=116
+maxrange=35
 attack=120
-strength=120
 defence=120
+strength=120
+hitpoints=116
+huntrange=2
+respawnrate=100
+huntmode=aggressive_melee
 param=damagetype,^stab_style
 param=attack_anim,hell_attack
 param=defend_anim,hell_block
@@ -492,10 +477,6 @@ param=death_anim,hell_death
 param=attack_sound,growl6
 param=defend_sound,growl5
 param=death_sound,growl3
-huntmode=aggressive_melee
-huntrange=2
-// osrs stats and Vislvl match 1:1
-// https://raw.githubusercontent.com/Joshua-F/osrs-dumps/refs/heads/master/config/dump.npc npc_1224
 
 [arena_ogre]
 name=Khazard Ogre
@@ -507,15 +488,15 @@ op2=Attack
 vislevel=63
 model1=model_2880_npc
 model2=model_2876_npc
-// wanderrange=TODO
-// Guess, based off old videos they will likely hunt through the whole arena: https://youtu.be/qRUXxpnYUp4?si=o4ePw20m2vZrLNBG&t=416
-maxrange=25
-// TODO respawnrate might be wrong, copying bouncers
-respawnrate=100
-hitpoints=60
+wanderrange=15
+maxrange=35
 attack=54
-strength=53
 defence=53
+strength=53
+hitpoints=60
+huntrange=2
+respawnrate=100
+huntmode=aggressive_melee
 param=attackrate,6
 param=attackbonus,22
 param=strengthbonus,20
@@ -526,11 +507,6 @@ param=death_anim,ogre_death
 param=attack_sound,giant_attack
 param=defend_sound,giant_hit
 param=death_sound,giant_death
-huntmode=aggressive_melee
-huntrange=2
-// TODO monster examine spell
-// osrs stats and Vislvl match 1:1
-// https://raw.githubusercontent.com/Joshua-F/osrs-dumps/refs/heads/master/config/dump.npc npc_1225
 
 [arena_scorpion]
 name=Khazard Scorpion
@@ -540,20 +516,20 @@ walkanim=scorpion_walk
 readyanim=scorpion_ready
 op2=Attack
 vislevel=44
+model1=model_2967_npc
 recol1s=16677
 recol1d=10570
 recol2s=11426
 recol2d=6342
-model1=model_2967_npc
-// wanderrange=TODO
-// Guess, based off old videos they will likely hunt through the whole arena: https://youtu.be/qRUXxpnYUp4?si=o4ePw20m2vZrLNBG&t=416
-maxrange=25
-// TODO respawnrate might be wrong, copying bouncers
-respawnrate=100
-hitpoints=40
+wanderrange=15
+maxrange=35
 attack=40
-strength=39
 defence=34
+strength=39
+hitpoints=40
+huntrange=2
+respawnrate=100
+huntmode=aggressive_melee
 param=stabdefence,5
 param=slashdefence,15
 param=crushdefence,15
@@ -566,8 +542,3 @@ param=attack_sound,insect_attack
 param=defend_sound,insect_hit
 param=death_sound,insect_death
 param=death_drop,null
-huntmode=aggressive_melee
-huntrange=2
-// TODO monster examine spell
-// osrs stats and Vislvl match 1:1
-// https://raw.githubusercontent.com/Joshua-F/osrs-dumps/refs/heads/master/config/dump.npc npc_1226

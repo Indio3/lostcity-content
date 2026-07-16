@@ -5,12 +5,6 @@ desc=She looks like a tourist.
 walkanim=human_walk_f,human_walk_b,human_walk_l,human_walk_r
 readyanim=human_ready
 op1=Talk-to
-recol1s=6273
-recol1d=25313
-recol2s=2340
-recol2d=14724
-recol3s=6144
-recol3d=14724
 model1=woman_head_pigtails
 model2=woman_torso_basic4
 model3=woman_arms_longsleeves
@@ -19,21 +13,26 @@ model5=woman_legs_longskirt
 model6=woman_feet_boots
 model7=human_weapons_pickaxe
 head1=chat_female_head_pigtails
-wanderrange=3
-
-[anabarrel]
-vislevel=hide
-op1=Talk-to
 recol1s=6273
 recol1d=25313
 recol2s=2340
 recol2d=14724
 recol3s=6144
 recol3d=14724
+wanderrange=3
+
+[anabarrel]
+vislevel=hide
+op1=Talk-to
 model1=woman_feet_boots
 head1=chat_female_head_pigtails
 head2=model_135_npc_head
-wanderrange=0
+recol1s=6273
+recol1d=25313
+recol2s=2340
+recol2d=14724
+recol3s=6144
+recol3d=14724
 moverestrict=nomove
 
 [mining_slave_female]
@@ -43,10 +42,6 @@ desc=She looks like she's been down here a long time.
 walkanim=human_walk_f,human_walk_b,human_walk_l,human_walk_r
 readyanim=human_ready
 op1=Talk-to
-recol1s=2340
-recol1d=14724
-recol2s=6144
-recol2d=14724
 model1=woman_head_mediumhair
 model2=woman_torso_basic4
 model3=woman_arms_longsleeves
@@ -55,10 +50,11 @@ model5=woman_legs_longskirt
 model6=woman_feet_boots
 model7=human_weapons_pickaxe
 head1=chat_female_head_mediumhair
+recol1s=2340
+recol1d=14724
+recol2s=6144
+recol2d=14724
 wanderrange=3
-//There are 2 male slave npc on the osrs side that have
-//a different id than the others, they have wander 3
-//these 2 are the original id versions from before the rework.
 
 [mining_slave_male]
 vislevel=hide
@@ -67,10 +63,6 @@ desc=It looks like he's been here a long time.
 walkanim=human_walk_f,human_walk_b,human_walk_l,human_walk_r
 readyanim=human_ready
 op1=Talk-to
-recol1s=2340
-recol1d=14724
-recol2s=6144
-recol2d=14724
 model1=man_head_mediumhair
 model2=man_jaw_long
 model3=man_torso_basic
@@ -81,10 +73,11 @@ model7=man_feet_boots
 model8=human_weapons_pickaxe
 head1=chat_male_head_mediumhair
 head2=chat_male_jaw_long
-wanderrange=3
-//There are 2 male slave npc on the osrs side that have
-//a different id than the others, they have wander 3
-//these 2 are the original id versions from before the rework.
+recol1s=2340
+recol1d=14724
+recol2s=6144
+recol2d=14724
+maxrange=1
 
 [escaped_slave]
 vislevel=hide
@@ -94,6 +87,15 @@ walkanim=human_walk_f,human_walk_b,human_walk_l,human_walk_r
 readyanim=human_ready
 vislevel=hide
 op1=Talk-to
+model1=man_head_mediumhair
+model2=man_jaw_long
+model3=man_torso_basic
+model4=man_arms_longsleeves
+model5=man_hands_basic
+model6=man_legs_robe
+model7=man_feet_boots
+head1=chat_male_head_mediumhair
+head2=chat_male_jaw_long
 recol1s=14724
 recol1d=32767
 recol2s=2340
@@ -104,15 +106,7 @@ recol4s=14801
 recol4d=24075
 recol5s=6144
 recol5d=32767
-model1=man_head_mediumhair
-model2=man_jaw_long
-model3=man_torso_basic
-model4=man_arms_longsleeves
-model5=man_hands_basic
-model6=man_legs_robe
-model7=man_feet_boots
-head1=chat_male_head_mediumhair
-head2=chat_male_jaw_long
+wanderrange=3
 
 [slave_rowdy]
 name=Rowdy slave
@@ -122,14 +116,6 @@ readyanim=human_ready
 op1=Talk-to
 op2=Attack
 vislevel=10
-recol1s=2340
-recol1d=14724
-recol2s=6144
-recol2d=14724
-recol3s=24075
-recol3d=14596
-recol4s=15853
-recol4d=25313
 model1=man_head_mediumhair
 model2=man_jaw_long
 model3=man_torso_basic
@@ -140,22 +126,28 @@ model7=man_feet_boots
 model8=human_weapons_pickaxe
 head1=chat_male_head_mediumhair
 head2=chat_male_jaw_long
+recol1s=2340
+recol1d=14724
+recol2s=6144
+recol2d=14724
+recol3s=24075
+recol3d=14596
+recol4s=15853
+recol4d=25313
 wanderrange=3
 maxrange=40
-respawnrate=100
-hitpoints=16
 attack=7
-strength=7
 defence=7
-magic=0
+strength=7
+hitpoints=16
 ranged=0
+magic=0
+huntrange=1
+respawnrate=100
+huntmode=cowardly
 param=damagetype,^crush_style
 param=defend_anim,human_unarmedblock
 param=attack_sound,baxe_crush
-huntmode=cowardly
-huntrange=1
-// Unknown reason osrs side this npc use unarmed attacks --attack seq_422 defend seq_424--
-// osrs stats and Vislvl match 1:1
 
 [desertminingmercenary1]
 name=Mercenary
@@ -165,14 +157,6 @@ readyanim=human_ready
 op1=Talk-to
 op2=Attack
 vislevel=45
-recol1s=2340
-recol1d=25313
-recol2s=14724
-recol2d=25313
-recol3s=24075
-recol3d=14596
-recol4s=15853
-recol4d=25313
 model1=man_head_bald
 model2=man_jaw_none
 model3=man_torso_chainmail
@@ -185,15 +169,23 @@ model9=human_weapons_roundshield
 model10=man_hat_persianhelmet
 head1=chat_male_head_bald
 head2=chat_male_model_34
+recol1s=2340
+recol1d=25313
+recol2s=14724
+recol2d=25313
+recol3s=24075
+recol3d=14596
+recol4s=15853
+recol4d=25313
 wanderrange=3
 maxrange=3
-respawnrate=100
-hitpoints=60
 attack=32
-strength=32
 defence=39
-magic=0
+strength=32
+hitpoints=60
 ranged=0
+magic=0
+respawnrate=100
 param=attackbonus,9
 param=strengthbonus,14
 param=stabdefence,17
@@ -206,9 +198,6 @@ param=attack_anim,human_sword_slash
 param=defend_anim,human_sword_def
 param=attack_sound,hacksword_slash
 param=defend_sound,blade2_mail
-// osrs stats and Vislvl match 1:1
-// desertminingcamp guards,mercenarys,mercenary captain,rowdy guards share same seqs + param stats.
-// https://raw.githubusercontent.com/Joshua-F/osrs-dumps/refs/heads/master/config/dump.npc npc_4665
 
 [desertminingmercenary2]
 name=Mercenary
@@ -218,14 +207,6 @@ readyanim=human_ready
 op1=Talk-to
 op2=Attack
 vislevel=45
-recol1s=2340
-recol1d=25313
-recol2s=14724
-recol2d=25313
-recol3s=24075
-recol3d=14596
-recol4s=15853
-recol4d=25313
 model1=man_head_bald
 model2=man_hat_persianhelmet
 model3=man_jaw_none
@@ -238,15 +219,23 @@ model9=human_weapons_scimitar
 model10=human_weapons_roundshield
 head1=chat_male_model_34
 head2=chat_male_head_bald
+recol1s=2340
+recol1d=25313
+recol2s=14724
+recol2d=25313
+recol3s=24075
+recol3d=14596
+recol4s=15853
+recol4d=25313
 wanderrange=1
 maxrange=1
-respawnrate=100
-hitpoints=60
 attack=32
-strength=32
 defence=39
-magic=0
+strength=32
+hitpoints=60
 ranged=0
+magic=0
+respawnrate=100
 param=attackbonus,9
 param=strengthbonus,14
 param=stabdefence,17
@@ -259,9 +248,6 @@ param=attack_anim,human_sword_slash
 param=defend_anim,human_sword_def
 param=attack_sound,hacksword_slash
 param=defend_sound,blade2_mail
-// osrs stats and Vislvl match 1:1
-// desertminingcamp guards,mercenarys,mercenary captain,rowdy guards share same seqs + param stats.
-// https://raw.githubusercontent.com/Joshua-F/osrs-dumps/refs/heads/master/config/dump.npc npc_4669
 
 [desertminingcaptain]
 name=Mercenary Captain
@@ -272,16 +258,6 @@ op1=Talk-to
 op2=Attack
 op3=Watch
 vislevel=47
-recol1s=2340
-recol1d=25313
-recol2s=14724
-recol2d=25313
-recol3s=24075
-recol3d=14596
-recol4s=8386
-recol4d=22689
-recol5s=15853
-recol5d=25313
 model1=man_head_bald
 model2=man_hat_persianhelmet
 model3=man_jaw_moustache
@@ -296,15 +272,24 @@ model11=man_torsoextra_cloak
 head1=chat_male_head_bald
 head2=chat_male_model_34
 head3=chat_male_jaw_moustache
+recol1s=2340
+recol1d=25313
+recol2s=14724
+recol2d=25313
+recol3s=24075
+recol3d=14596
+recol4s=8386
+recol4d=22689
+recol5s=15853
+recol5d=25313
 wanderrange=3
-maxrange=5
-respawnrate=50
-hitpoints=80
 attack=32
-strength=29
 defence=32
-magic=0
+strength=29
+hitpoints=80
 ranged=0
+magic=0
+respawnrate=50
 param=attackbonus,9
 param=strengthbonus,14
 param=stabdefence,17
@@ -317,9 +302,6 @@ param=attack_anim,human_sword_slash
 param=defend_anim,human_sword_def
 param=attack_sound,hacksword_slash
 param=defend_sound,blade2_mail
-// osrs stats and Vislvl match 1:1
-// desertminingcamp guards,mercenarys,mercenary captain,rowdy guards share same seqs + param stats.
-// https://raw.githubusercontent.com/Joshua-F/osrs-dumps/refs/heads/master/config/dump.npc npc_4635
 
 [capt_siad]
 name=Captain Siad
@@ -328,16 +310,6 @@ walkanim=human_walk_f,human_walk_b,human_walk_l,human_walk_r
 readyanim=human_ready
 op1=Talk-to
 vislevel=hide
-recol1s=14724
-recol1d=398
-recol2s=15855
-recol2d=398
-recol3s=2340
-recol3d=398
-recol4s=6144
-recol4d=32767
-recol5s=24075
-recol5d=14596
 model1=man_head_shorthair
 model2=man_jaw_short
 model3=man_hat_headband
@@ -350,7 +322,17 @@ model9=man_feet_boots
 head1=chat_male_head_shorthair
 head2=chat_male_headband
 head3=chat_male_jaw_short
-wanderrange=3
+recol1s=14724
+recol1d=398
+recol2s=15855
+recol2d=398
+recol3s=2340
+recol3d=398
+recol4s=6144
+recol4d=32767
+recol5s=24075
+recol5d=14596
+wanderrange=0
 
 [mining_cart_driver]
 vislevel=hide
@@ -359,6 +341,14 @@ desc=He looks busy attending to his cart.
 walkanim=human_walk_f,human_walk_b,human_walk_l,human_walk_r
 readyanim=human_ready
 op1=Talk-to
+model1=man_head_mediumhair
+model2=man_jaw_none
+model3=man_torso_basic
+model4=man_arms_longsleeves
+model5=man_hands_basic
+model6=man_legs_robe
+model7=man_feet_boots
+head1=chat_male_head_mediumhair
 recol1s=14724
 recol1d=32767
 recol2s=2340
@@ -369,14 +359,6 @@ recol4s=6144
 recol4d=32767
 recol5s=15649
 recol5d=32767
-model1=man_head_mediumhair
-model2=man_jaw_none
-model3=man_torso_basic
-model4=man_arms_longsleeves
-model5=man_hands_basic
-model6=man_legs_robe
-model7=man_feet_boots
-head1=chat_male_head_mediumhair
 wanderrange=3
 
 [rowdymineguard]
@@ -387,12 +369,6 @@ readyanim=human_ready
 op1=Talk-to
 op2=Attack
 vislevel=43
-recol1s=2340
-recol1d=25313
-recol2s=14724
-recol2d=25313
-recol3s=24075
-recol3d=14596
 model1=man_head_mediumhelmet
 model2=man_jaw_none
 model3=man_torso_chainmail
@@ -403,15 +379,22 @@ model7=man_feet_boots
 model8=human_weapons_scimitar
 model9=human_weapons_roundshield
 head1=chat_male_head_mediumhelmet
+recol1s=2340
+recol1d=25313
+recol2s=14724
+recol2d=25313
+recol3s=24075
+recol3d=14596
 wanderrange=3
 maxrange=40
-huntrange=1
-hitpoints=60
 attack=32
-strength=32
 defence=32
-magic=0
+strength=32
+hitpoints=60
 ranged=0
+magic=0
+huntrange=1
+huntmode=cowardly
 param=attackbonus,9
 param=strengthbonus,14
 param=stabdefence,17
@@ -424,9 +407,3 @@ param=attack_anim,human_sword_slash
 param=defend_anim,human_sword_def
 param=attack_sound,hacksword_slash
 param=defend_sound,blade2_mail
-huntmode=cowardly
-// osrs stats and Vislvl match 1:1
-// stats taken from osrs cache...
-// https://oldschool.runescape.wiki/w/Guard_(Desert_Mining_Camp)#Brown_hair
-// desertminingcamp guards,mercenarys,mercenary captain,rowdy guards share same seqs + param stats.
-// https://raw.githubusercontent.com/Joshua-F/osrs-dumps/refs/heads/master/config/dump.npc npc_4654
