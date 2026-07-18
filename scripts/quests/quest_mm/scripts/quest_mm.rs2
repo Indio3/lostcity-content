@@ -7,6 +7,9 @@ if(%mm_monkey_child = ^monkey_child_received_talisman & testbit(%mm_bits, ^mm_lo
     %mm_bits = setbit(%mm_bits, ^mm_child_has_toy);
     %mm_bits = setbit(%mm_bits, ^mm_child_done_crying);
 }
+if(inv_total(inv, mm_monkey_in_backpack) > 0) {
+    settimer(monkey_backpack_timer, ~random_range(5, 50));
+}
 
 [label,mm_ch1]
 ~music_jingle("new chapter");

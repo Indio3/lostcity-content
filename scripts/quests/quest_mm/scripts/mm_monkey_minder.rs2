@@ -16,7 +16,7 @@ if(inzone(0_40_51_38_10, 0_40_51_40_13, coord) = true | inzone(0_40_51_38_12, 0_
     if_close;
     ~fade_out;
     p_delay(3);
-    p_telejump(0_40_51_49_13);
+    p_telejump(map_findsquare(npc_coord, 1, 5, ^vis_lineofwalk));
     ~fade_in;
     p_delay(4);
     if_openoverlay(null);
@@ -46,4 +46,28 @@ if(~mm_wearing_greegree = true) {
     p_delay(4);
     if_openoverlay(null);
     return;
+}
+
+
+if(%mm_monkey_minder = 0) {
+    ~chatplayer("<p,neutral>Hello there.");
+    ~chatnpc("<p,neutral>Hello, <text_gender("sir", "madam")>.");
+    ~chatplayer("<p,neutral>I haven't seen Monkey Minders here before...");
+    ~chatnpc("<p,neutral>Yes, you wouldn't have. We have newly been posted here.");
+    ~chatplayer("<p,quiz>But why do we need Monkey Minders?");
+    ~chatnpc("<p,neutral>It's entirely necessary: just take a look at the monkeys. They've been multiplying out of control!");
+    %mm_monkey_minder = 1; // todo: recheck this i accidently clicked through the dialogue mindlessly
+    ~chatnpc("<p,neutral>Every time we turn our backs another one of them tries to break free. It's almost as if they're plotting to escape!");
+}
+def_int $op = ~p_choice2("Why have the monkeys been multiplying?", 1, "What are you going to do about the monkeys?", 2);
+switch_int($op) {
+    case 1 :
+        ~chatplayer("<p,quiz>Why have the monkeys been multiplying?");
+        ~chatnpc("<p,neutral>We just don't know. Perhaps it's the weather. Perhaps it's something in the food. Perhaps it's just that time of year.");
+        ~chatnpc("<p,neutral>Your guess is as good as ours.");
+    case 2 :
+        ~chatplayer("<p,quiz>What are you going to do about the monkeys?");
+        ~chatnpc("<p,neutral>We're going to post enough men here to be able to contain the monkeys in case they manage to escape.");
+        ~chatplayer("<p,quiz>Is that very likely?");
+        ~chatnpc("<p,quiz>Stranger things have happened in Ardougne.");
 }

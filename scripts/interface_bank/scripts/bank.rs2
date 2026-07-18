@@ -118,6 +118,11 @@ if ($obj = macro_cube) {
     return(false);
 }
 
+if ($obj = mm_monkey_in_backpack) {
+    mes("Sorry, you can't bank the monkey!");
+    return(false);
+}
+
 if (playermember = ^false) {
     // check for f2p bank limits, use the player's membership status rather than world type
     if ((inv_total(bank, oc_uncert($obj)) = 0) & (sub(inv_size(bank), inv_freespace(bank)) >= ^bank_free_slots)) {

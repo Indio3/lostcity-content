@@ -85,6 +85,9 @@ switch_int(%mm_daero) {
         }
 }
 
+[opnpcu,mm_daero]
+p_opnpc(1); // osrs
+
 [label,mm_daero_p2]
 ~chatplayer("<p,neutral>I have been asked to give you orders from King Narnode.");
 ~chatnpc("<p,neutral>Well hand them over here then.");

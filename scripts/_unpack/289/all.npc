@@ -1947,16 +1947,6 @@ recol4s=416
 recol4d=9618
 wanderrange=2
 maxrange=2
-
-[mm_zooknock_final_battle]
-name=Zooknock
-desc=A wizened little Gnome dressed in brightly coloured clothes.
-walkanim=midget_walk
-readyanim=midget_ready
-op1=Talk-to
-vislevel=hide
-head1=npc_1425_head
-wanderrange=2
 timer=30
 
 [mm_zooknock_final_battle]
@@ -2750,6 +2740,7 @@ head1=chat_main_gorilla_beard
 wanderrange=0
 moverestrict=nomove
 defaultmode=none
+blockwalk=all
 param=damagetype,^crush_style
 
 [mm_elder_guard_2]
@@ -2766,6 +2757,7 @@ head1=chat_main_gorilla_beard
 wanderrange=0
 moverestrict=nomove
 defaultmode=none
+blockwalk=all
 param=damagetype,^crush_style
 
 [mm_zoo_monkey]
