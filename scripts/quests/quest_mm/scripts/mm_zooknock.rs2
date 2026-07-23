@@ -1,4 +1,7 @@
 [opnpc1,mm_zooknock]
+if(inzone(0_42_143_0_0, 2_42_143_63_63, npc_coord) = true) {
+    @zooknock_final_battle_dialogue;
+}
 switch_int(%mm_zooknock) {
     case ^zooknock_need_items, ^zooknock_made_talisman :
         if(%mm_zooknock_player_is_collecting_for_amulet = ^false & %mm_zooknock_player_is_collecting_for_talisman = ^true) {
@@ -106,6 +109,7 @@ switch_obj(last_useitem) {
         } else {
             %mm_zooknock_has_monkey_relic = ^true;
             %mm_zooknock_monkey_relic = oc_param($last_useitem, mm_bones_type);
+            inv_del(inv, $last_useitem, 1);
             ~objbox(last_useitem, "You hand Zooknock the monkey remains.", 250, 0, 0);
             ~chatnpc("<p,neutral>Excellent.");
             ~mm_zooknock_talisman_check;
@@ -135,11 +139,21 @@ switch_obj(last_useitem) {
 }
 
 [ai_timer,mm_zooknock]
+if(inzone(0_42_143_0_0, 2_42_143_63_63, npc_coord) = true) {
+    if(finduid(%npc_aggressive_player) = false) {
+        npc_del;
+        return;
+    }
+    if(inzone(1_42_143_0_0, 1_42_143_63_63, coord) = false) {
+        npc_del;
+    }
+    return;
+}
 ~sound_area(fire_blast_all, 0, npc_coord, 10);
 npc_setmode(null);
 npc_facesquare(0_43_142_52_60);
 npc_anim(m_mage_attack, 0);
-def_int $duration = ~coord_projectile(npc_coord, 0_43_142_52_60, fireblast_travel, 31, 31, 16, 32, 54, 128, 0);
+def_int $duration = ~coord_projectile(npc_coord, 0_43_142_52_60, fireblast_travel, 25, 50, 25, 16, 0, 64, 5);
 spotanim_map(fireblast_impact, 0_43_142_52_60, 124, $duration);
 
 [proc,mm_zooknock_amulet_check]
@@ -293,6 +307,7 @@ while($op ! null) {
 ~chatnpcnoturn("<p,neutral>Similarly, the transformation spell should be stored in a monkey talisman of some kind.");
 %mm_zooknock = ^zooknock_need_items;
 %mm_zooknock_player_is_collecting_for_amulet = ^true;
+%mm_zooknock_player_is_collecting_for_talisman = ^true;
 @multi2("What do we need for the monkey amulet?", zooknock_amulet, "What do we need for the monkey talisman?", zooknock_talisman);
 
 [label,mm_zooknock_p4]
@@ -342,10 +357,15 @@ while($op ! null) {
 ~chatplayer("<p,quiz>Why don't you just go overground?");
 ~chatnpcnoturn("<p,neutral>We have considered this, but every entrance seems to be excessively guarded.");
 %mm_zooknock = ^zooknock_learned_story;
-if(%mm_garkor < 1) { // todo: actual check
+if(%mm_garkor < ^garkor_speak_zooknock) {
     ~chatplayer("<p,neutral>I'll be back later.");
     return;
 }
+~chatplayer("<p,neutral>I see.");
+~chatplayer("<p,neutral>I have spoken to your Sergeant. He believes that the best way to rescue the rest of your squad with the minimum of casualties is to have an insider - a monkey working for us.");
+~chatnpc("<p,neutral>Aha. He wants me to turn you into a monkey.");
+@mm_zooknock_p4;
+
 
 [opnpc1,mm_bunkwicket] @mm_sapper_dialogue;
 [opnpc1,mm_waymottin] @mm_sapper_dialogue;
@@ -354,12 +374,40 @@ if(%mm_garkor < 1) { // todo: actual check
 [ai_timer,mm_waymottin] @mm_sapper_timer;
 
 [label,mm_sapper_timer]
+// final battle
+if(inzone(0_42_143_0_0, 2_42_143_63_63, npc_coord) = true) {
+    if(finduid(%npc_aggressive_player) = false) {
+        npc_del;
+        return;
+    }
+    if(inzone(1_42_143_0_0, 1_42_143_63_63, coord) = false) {
+        npc_del;
+    }
+    return;
+}
 npc_facesquare(movecoord(npc_coord, 0, 0, 1));
 npc_anim(m_sapper_wallwipe, 0);
 
 [label,mm_sapper_dialogue]
+if(inzone(0_42_143_0_0, 2_42_143_63_63, npc_coord) = true) {
+    return;
+}
 switch_int(random(3)) { 
     case 0 : ~chatnpcnoturn("<p,neutral>Can't you see I'm busy?");
     case 1 : ~chatnpcnoturn("<p,neutral>Can't talk now.");
     case 2 : ~chatnpcnoturn("<p,neutral>I'm too busy to talk, sorry.");
+}
+if(npc_type = mm_waymottin) {
+    if(%mm_main = ^mm_completed_ch3 & %mm_garkor = ^garkor_joined_10th_squad) {
+        if(inv_total(inv, mm_sigil) = 0 & inv_total(worn, mm_sigil) = 0) { // not 100% if this checks worn, since its not possible to wear it anymore!
+            ~chatplayer("<p,neutral>Sergeant Garkor has sent me. You are asked to create another replica of the 10th squad sigil so that I may join you for the final battle.");
+            ~chatnpc("<p,neutral>Already made one. Figured it would come in handy.");
+            if(.npc_find(coord, mm_bunkwicket, 5, 0) = true) ~.chatnpc("<p,neutral>He's cleverer than he looks, is that Waymottin.");
+            ~chatnpc("<p,neutral>Oi!");
+            ~chatplayer("<p,quiz>Can I have it then?");
+            ~chatnpc("<p,neutral>Of course.");
+            inv_add(inv, mm_sigil, 1);
+            ~objbox(mm_sigil, "Garkor hands you some kind of medallion.", 250, 0, 0);
+        }
+    }
 }

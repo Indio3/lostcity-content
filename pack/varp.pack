@@ -364,9 +364,9 @@
 363=misc_varbit_3
 364=varp_364
 365=mm_main
-366=mm_bits
-367=mm_cutscene_part
-368=mm_cutscene_coord
+366=mm_cutscene_part
+367=mm_cutscene_coord
+368=mm_guards_cooldown
 369=varp_369
 370=varp_370
 371=mm_flags

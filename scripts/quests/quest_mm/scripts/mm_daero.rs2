@@ -6,10 +6,11 @@ if(%mm_narnode < ^narnode_received_orders) {
     ~mesbox("Daero seems like he is enjoying himself too much to talk.");
     return;
 }
-if(%mm_daero >= ^daero_left_grandtree) {
+if(%mm_main = ^mm_complete) {
+    @daero_training;
+} else if(%mm_daero >= ^daero_left_grandtree) {
     @daero_return_hangar;
-}
-if(%mm_daero = ^daero_learnt_mission) {
+}else if(%mm_daero = ^daero_learnt_mission) {
     @daero_p4_menu;
 } else if(%mm_daero = ^daero_given_orders) {
     ~chatplayer("<p,quiz>What do the orders say?");
@@ -132,7 +133,7 @@ if(%mm_daero_option_bit_two = ^false) %mm_daero_option_bit_two = ^true;
 @multi4("Why did the King send a squad of the Royal Guard?", daero_royalguard, "Who is Garkor?", daero_garkor, "Why are the 10th squad so famous?", daero_10famous, "@blu@Return to previous menu", daero_p4_menu);
 
 [label,daero_caranock]
-if(%mm_daero_option_bit_two = ^false) %mm_daero_option_bit_three = ^true;
+if(%mm_daero_option_bit_three = ^false) %mm_daero_option_bit_three = ^true;
 @multi4("Who is Caranock?", daero_whocara, "What is a Gnome Liaison Officer?", daero_glo, "I'm not so sure about Caranock...", daero_surecara, "@blu@Return to previous menu", daero_p4_menu);
 
 [label,daero_southkara]
@@ -219,12 +220,85 @@ switch_int(~p_choice2("Yes", 1, "No", 2)) {
 }
 
 [proc,daero_move_hangar]
-if_openmain(castlewars_shopside);
-if_setobject(castlewars_shopside:com_0, fade_to_black_inv, 1000);
-if_setanim(castlewars_shopside:com_0, fade_in);
+if_close;
+~fade_out;
 p_delay(4);
 if(%mm_daero < ^daero_reinit_complete) p_teleport(0_37_154_25_36);
 else p_teleport(0_41_70_25_36);
-if_setanim(castlewars_shopside:com_0, fade_out);
+~fade_in;
 p_delay(4);
+if_openoverlay(null);
+
+[label,daero_training]
+// https://youtu.be/GW9py01xZC8?si=dfetxOiU3ySh8Wtk&t=3237
+~chatplayer("<p,neutral>Good day, High Tree Guardian.");
+~chatnpc("<p,neutral>Hello there. I hear your mission is complete.");
+~chatplayer("<p,neutral>News travels quickly on this tree. I expect you also know that I am to be enrolled in the Royal Guard training programme.");
+~chatnpc("<p,neutral>Indeed I do.");
+~chatplayer("<p,quiz>How long does it take?");
+~chatnpc("<p,neutral>For you, it should hardly take any time at all.");
+~chatplayer("<p,neutral>Then let us begin.");
+~chatnpc("<p,neutral>Enthusiasm. I like that. We will first begin with a series of exercises designed to increase your strength and stamina.");
+~chatnpc("<p,neutral>We then will follow these up by improving your attack and defence techniques.");
+~chatnpc("<p,neutral>Let us begin. You must choose what you want to focus on:");
+def_int $op = ~p_choice2("Focus on increasing strength and stamina...", 1, "Focus on improving attack and defence techniques...", 2);
 if_close;
+~fade_out;
+p_delay(3);
+if($op = 2) p_teleport(1_38_54_52_34);
+else p_teleport(1_38_54_50_25);
+if_settext(inter_199:com_2, ^string_empty);
+if_settext(inter_199:com_3, ^string_empty);
+if_settext(inter_199:com_4, ^string_empty);
+if_settext(inter_199:com_5, ^string_empty);
+if_settext(inter_199:com_6, ^string_empty);
+if_settext(inter_199:com_7, "Several hours later...");
+if_setcolour(inter_199:com_7, ^white_rgb);
+if_settext(inter_199:com_8, ^string_empty);
+if_settext(inter_199:com_9, ^string_empty);
+if_settext(inter_199:com_10, ^string_empty);
+if_settext(inter_199:com_11, ^string_empty);
+if_settext(inter_199:com_12, ^string_empty);
+if_settext(inter_199:com_13, ^string_empty);
+if_openmain(inter_199);
+p_delay(0);
+~human_hit_sound;
+p_delay(2);
+sound_synth(human_block_1, 1, 20);
+p_delay(0);
+~human_hit_sound;
+p_delay(1);
+sound_synth(human_block_1, 1, 20);
+p_delay(2);
+sound_synth(human_block_1, 1, 20);
+p_delay(0);
+sound_synth(human_block_1, 1, 20);
+p_delay(1);
+~human_hit_sound;
+p_delay(0);
+sound_synth(human_block_1, 1, 20);
+p_delay(0);
+if_close;
+~fade_in;
+p_delay(3);
+
+%mm_main = ^mm_complete_training;
+if($op = 1) {
+    stat_advance(attack, 200000);
+    stat_advance(defence, 200000);
+    stat_advance(strength, 350000);
+    stat_advance(hitpoints, 350000);
+    mes("You gain 35,000 Strength XP.");
+    mes("You gain 35,000 Hitpoints XP.");
+    mes("You gain 20,000 Attack XP.");
+    mes("You gain 20,000 Defence XP.");
+} else {
+    stat_advance(attack, 350000);
+    stat_advance(defence, 350000);
+    stat_advance(strength, 200000);
+    stat_advance(hitpoints, 200000);
+    mes("You gain 20,000 Strength XP.");
+    mes("You gain 20,000 Hitpoints XP.");
+    mes("You gain 35,000 Attack XP.");
+    mes("You gain 35,000 Defence XP.");
+}

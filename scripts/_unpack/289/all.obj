@@ -818,6 +818,7 @@ model=inv_bowl-full
 2dyan=1856
 2dxan=204
 iop1=Eat
+param=next_obj_stage,bowl_empty
 
 [mm_monkey_wrench]
 name=Monkey wrench
@@ -890,7 +891,6 @@ iop2=Hold
 tradeable=no
 
 [mm_monkey_greegree_for_small_ninja_monkey]
-// category=category_95
 name=Monkey greegree
 recol1s=17969
 recol1d=5285
@@ -920,9 +920,10 @@ param=walk_l_baseanim,m_monkey_walk
 param=walk_r_baseanim,m_monkey_walk
 param=running_baseanim,m_monkey_run
 param=next_npc_type,mm_transmogrification_small_ninja_monkey
+param=transform_sound,human_into_smallmonkey
+param=revert_sound,smallmonkey_into_human
 
 [mm_monkey_greegree_for_medium_ninja_monkey]
-// category=category_95
 name=Monkey greegree
 recol1s=17969
 recol1d=5285
@@ -954,7 +955,6 @@ param=running_baseanim,m_monkey_run
 param=next_npc_type,mm_transmogrification_medium_ninja_monkey
 
 [mm_monkey_greegree_for_normal_gorilla]
-// category=category_95
 name=Monkey greegree
 recol1s=17969
 recol1d=6342
@@ -984,9 +984,10 @@ param=walk_l_baseanim,m_gorilla_walk
 param=walk_r_baseanim,m_gorilla_walk
 param=running_baseanim,m_gorilla_run
 param=next_npc_type,mm_transmogrification_normal_gorilla
+param=transform_sound,human_into_gorilla
+param=revert_sound,gorilla_into_human
 
 [mm_monkey_greegree_for_bearded_gorilla]
-// category=category_95
 name=Monkey greegree
 recol1s=17969
 recol1d=6342
@@ -1006,7 +1007,6 @@ model=quest_mm_inv_monkey_talisman
 wearpos=righthand
 iop2=Hold
 category=mm_greegree
-// param=param_295,1
 tradeable=no
 param=ready_baseanim,m_gorilla_ready
 param=turnonspot_baseanim,m_gorilla_walk
@@ -1016,9 +1016,10 @@ param=walk_l_baseanim,m_gorilla_walk
 param=walk_r_baseanim,m_gorilla_walk
 param=running_baseanim,m_gorilla_run
 param=next_npc_type,mm_transmogrification_bearded_gorilla
+param=transform_sound,human_into_gorilla
+param=revert_sound,gorilla_into_human
 
 [mm_monkey_greegree_for_ancient_monkey_skull]
-// category=category_95
 name=Monkey greegree
 recol1s=17969
 recol1d=31
@@ -1037,7 +1038,6 @@ model=quest_mm_inv_monkey_talisman
 2dxan=456
 wearpos=righthand
 iop2=Hold
-// param=param_295,1
 tradeable=no
 
 [mm_monkey_greegree_for_small_zombie_monkey]
@@ -1071,6 +1071,8 @@ param=walk_l_baseanim,m_monkey_walk
 param=walk_r_baseanim,m_monkey_walk
 param=running_baseanim,null
 param=next_npc_type,mm_transmogrification_small_zombie_monkey
+param=transform_sound,human_into_zombiemonkey
+param=revert_sound,zombiemonkey_into_human
 
 [mm_monkey_greegree_for_large_zombie_monkey]
 // category=category_95
@@ -1103,6 +1105,8 @@ param=walk_l_baseanim,m_monkey_walk
 param=walk_r_baseanim,m_monkey_walk
 param=running_baseanim,null
 param=next_npc_type,mm_transmogrification_large_zombie_monkey
+param=transform_sound,human_into_zombiemonkey
+param=revert_sound,zombiemonkey_into_human
 
 [mm_monkey_greegree_for_normal_monkey]
 name=Monkey greegree

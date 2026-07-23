@@ -76,7 +76,7 @@ if(last_useitem = mm_monkey_nuts | last_useitem = mm_monkey_bar | last_useitem =
     }
     if(random(256) = 0) {
         if(%mm_player_received_monkey_trail_clue = ^false & $clue ! null) {
-            inv_add(inv $clue, 1);
+            inv_add(inv, $clue, 1);
             %mm_player_received_monkey_trail_clue = ^true;
             ~doubleobjbox(mm_monkey_in_backpack, trail_clue_medium_anagram001, "The monkey chews on the banana and spits out a clue!", 200);
         }
@@ -110,7 +110,7 @@ if(inv_total(inv, mm_monkey_in_backpack) = 0) {
     cleartimer(monkey_backpack_timer);
     return;
 }
-if(busy2 = false) { // wont run while interacting/walking
+if(busy2 = true) { // wont run while interacting/walking
     return;
 }
 def_int $rand = random(5);
@@ -124,7 +124,7 @@ if(inv_total(inv, banana) > 0) {
     }
 }
 if(inv_total(worn, mm_amulet_of_monkey_speak) = 0) {
-    ~mm_monkeyspeak;
+    ~chatnpc_specific("The monkey in your backpack...", mm_zoo_monkey, "<p,neutral><~monkeyspeak_text>");
     return;
 }
 if($rand = 0) ~chatnpc_specific("The monkey in your backpack...", mm_zoo_monkey, "<p,quiz>Are we nearly there yet?");
@@ -142,7 +142,7 @@ else if($rand = 4) {
 def_int $rand = random(4);
 sound_synth(ooks, 0, 0);
 if(inv_total(worn, mm_amulet_of_monkey_speak) = 0) {
-    ~mm_monkeyspeak;
+    ~chatnpc_specific("The monkey in your backpack...", mm_zoo_monkey, "<p,neutral><~monkeyspeak_text>");
     return;
 }
 if($rand = 0) ~chatnpc_specific("The monkey in your backpack...", mm_zoo_monkey, "<p,angry>What are you trying to do to me!?");

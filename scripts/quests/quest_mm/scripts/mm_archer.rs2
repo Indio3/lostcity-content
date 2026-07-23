@@ -1,8 +1,8 @@
 [ai_queue1,mm_posted_archer] ~npc_default_retaliate_ap;
 [ai_opplayer2,mm_posted_archer] npc_setmode(applayer2);
 [ai_applayer2,mm_posted_archer]
-// archers can not attack you in the long grass, they will still try to though
-if(loc_find(coord, mm_long_jungle_grass1) = true | loc_find(coord, mm_long_jungle_grass2) = true | loc_find(coord, mm_long_jungle_grass3) = true) {
+// archers can not attack you in the long grass or if in monkey form, they will still try to though
+if(~mm_wearing_greegree = true | %mm_player_is_unconscious = ^true | loc_find(coord, mm_long_jungle_grass1) = true | loc_find(coord, mm_long_jungle_grass2) = true | loc_find(coord, mm_long_jungle_grass3) = true) {
     return;
 }
 ~npc_rangeattack;
@@ -16,17 +16,19 @@ if(random(11) = 0) {
     ~npc_rangeattack;
 }
 
-[walktrigger,clear_seq]
+[walktrigger,wake_up]
+%mm_player_is_unconscious = ^false;
 anim(null, 0);
 
 [queue,aa_knockout]
 p_stopaction;
+%mm_player_is_unconscious = ^true;
 ~update_bas;
 anim(human_death, 0);
 p_delay(2);
 ~fade_out;
 p_delay(3);
-walktrigger(clear_seq);
+walktrigger(wake_up);
 ~combat_clearqueue;
 clearqueue(aa_knockout);
 p_teleport(0_43_43_18_42);

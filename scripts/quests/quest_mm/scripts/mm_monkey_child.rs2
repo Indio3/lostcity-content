@@ -43,52 +43,24 @@ if(%mm_monkey_child = ^mm_not_started) {
     @mm_child_give_bananas;
 } else if(%mm_monkey_child = ^monkey_child_given_bananas) {
     ~chatplayer("<p,quiz>Has Aunty given you the toy yet?");
-    if(testbit(%mm_bits, ^mm_child_has_toy) = ^true) {
+    if(%mm_monkey_child_waiting_for_talisman = ^false) {
         ~chatnpc("<p,happy>Yeah - it's really neat!");
         ~chatplayer("<p,quiz>Can I borrow it now then?");
         ~chatnpc("<p,neutral>But I only just got it!");
         ~chatplayer("<p,quiz>Please?");
         ~chatnpc("<p,neutral>Ok then...");
         %mm_monkey_child = ^monkey_child_received_talisman;
-        %mm_bits = clearbit(%mm_bits, ^mm_child_has_toy);
+        %mm_monkey_child_waiting_for_talisman = ^true;
         inv_add(inv, mm_monkey_talisman, 1);
-        ~objbox(mm_monkey_talisman, "The monkey child gives you some kind of talisman", 250, 0, 0);
+        ~objbox(mm_monkey_talisman, "The monkey child gives you some kind of talisman.", 250, 0, 0);
         return;
     }
     ~chatnpc("<p,sad>No, not yet... she said she's too busy dealing with something called humans.");
 } else if(%mm_monkey_child = ^monkey_child_received_talisman) {
-    if(testbit(%mm_bits, ^mm_lost_toy) = ^true) {
-        if(testbit(%mm_bits, ^mm_child_done_crying) = ^true) {
-            ~chatnpc("<p,neutral>I'm feeling a bit better now...");
-            ~chatplayer("<p,quiz>It's good to see you've cheered up then.");
-            ~chatnpc("<p,happy>Yes - Aunty gave me a new toy!");
-            $op = ~p_choice2("That's really sweet of her!", 1, "Wow - can I borrow it?", 2);
-            if($op = 1) {
-                ~chatplayer("<p,shifty>That's really sweet of her!");
-                return;
-            }
-            ~chatplayer("<p,quiz>Wow - can I borrow it?");
-            ~chatnpc("<p,neutral>Only if you promise to give it back...");
-            $op = ~p_choice2("Ok, I promise!", 1, "Actually, I don't really need it.", 2);
-            if($op = 2) {
-                ~chatplayer("<p,neutral>Actually, I don't really need it.");
-                return;
-            }
-            ~chatplayer("<p,neutral>Ok, I promise!");
-            %mm_bits = clearbit(%mm_bits, ^mm_child_has_toy);
-            %mm_bits = clearbit(%mm_bits, ^mm_child_done_crying);
-            %mm_bits = clearbit(%mm_bits, ^mm_lost_toy);
-            inv_add(inv, mm_monkey_talisman, 1);
-            ~objbox(mm_monkey_talisman, "The monkey child gives you some kind of talisman", 250, 0, 0);
-            return;
-        }
-        mes("The monkey child is too busy crying...");
-        return;
-    }
     switch_int(~p_choice2("How are you today?", 1, "I've lost that toy you gave me...", 2)) {
         case 1 :
             ~chatplayer("<p,quiz>How are you today?");
-            if(testbit(%mm_bits, ^mm_child_has_toy) = ^true) {
+            if(%mm_monkey_child_waiting_for_talisman = ^false) {
                 ~chatnpc("<p,happy>I'm good, uncle!");
                 return;
             }
@@ -96,12 +68,35 @@ if(%mm_monkey_child = ^mm_not_started) {
         case 2 :
             ~chatplayer("<p,shifty>I've lost that toy you gave me...");
             ~chatnpc("<p,sad>You lost it!? What am I going to play with now?");
-            %mm_bits = setbit(%mm_bits, ^mm_lost_toy);
-            %mm_bits = clearbit(%mm_bits, ^mm_child_has_toy);
-            %mm_bits = clearbit(%mm_bits, ^mm_child_done_crying);
-            settimer(mm_child_donecrying, 100);
+            %mm_monkey_child = ^monkey_child_lost_toy;
+            settimer(mm_child_crying, 100);
             mes("The monkey child begins to cry...");
     }
+} else if(%mm_monkey_child = ^monkey_child_lost_toy) {
+    if(gettimer(mm_child_crying) > 0) {
+        mes("The monkey child is too busy crying...");
+        return;
+    }
+    ~chatnpc("<p,neutral>I'm feeling a bit better now...");
+    ~chatplayer("<p,quiz>It's good to see you've cheered up then.");
+    ~chatnpc("<p,happy>Yes - Aunty gave me a new toy!");
+    $op = ~p_choice2("That's really sweet of her!", 1, "Wow - can I borrow it?", 2);
+    if($op = 1) {
+        ~chatplayer("<p,shifty>That's really sweet of her!");
+        return;
+    }
+    ~chatplayer("<p,quiz>Wow - can I borrow it?");
+    ~chatnpc("<p,neutral>Only if you promise to give it back...");
+    $op = ~p_choice2("Ok, I promise!", 1, "Actually, I don't really need it.", 2);
+    if($op = 2) {
+        ~chatplayer("<p,neutral>Actually, I don't really need it.");
+        return;
+    }
+    ~chatplayer("<p,neutral>Ok, I promise!");
+    %mm_monkey_child = ^monkey_child_received_talisman;
+    %mm_monkey_child_waiting_for_talisman = ^true;
+    inv_add(inv, mm_monkey_talisman, 1);
+    ~objbox(mm_monkey_talisman, "The monkey child gives you some kind of talisman.", 250, 0, 0);
 }
 
 [opnpcu,mm_monkey_child]
@@ -115,7 +110,7 @@ if(%mm_monkey_child > ^monkey_child_asked_who) {
         @mm_child_give_bananas;
     } else if($last_useitem = mm_monkey_talisman) {
         inv_del(inv, mm_monkey_talisman, 1);
-        %mm_bits = setbit(%mm_bits, ^mm_child_has_toy);
+        %mm_monkey_child_waiting_for_talisman = ^false;
         ~chatnpc("<p,happy>Thank you uncle - I love you!");
         ~objbox(mm_monkey_in_backpack, "The monkey child gives you a hug!", 250, 0, 0);
         return;
@@ -126,11 +121,10 @@ if(%mm_monkey_child > ^monkey_child_asked_who) {
 ~chatnpc("<p,neutral>I don't know you - go away!");
 
 [timer,mm_give_child_toy]
-%mm_bits = setbit(%mm_bits, ^mm_child_has_toy);
+%mm_monkey_child_waiting_for_talisman = ^false;
 
-[timer,mm_child_donecrying]
-%mm_bits = setbit(%mm_bits, ^mm_child_has_toy);
-%mm_bits = setbit(%mm_bits, ^mm_child_done_crying);
+// not setting anything here its just for the check (seems like only the one varb exists for this)
+[timer,mm_child_crying]
 
 [label,mm_child_give_bananas]
 if(inv_total(inv, banana) > 4) {
@@ -138,6 +132,7 @@ if(inv_total(inv, banana) > 4) {
     ~chatplayer("<p,shifty>Yes, of course there are.");
     inv_del(inv, banana, ^max_32bit_int);
     %mm_monkey_child = ^monkey_child_given_bananas;
+    %mm_monkey_child_waiting_for_talisman = ^true;
     settimer(mm_give_child_toy, 100);
     ~objbox(banana, "You give the monkey child your bananas.", 250, 0, 0);
     ~chatnpc("<p,happy>Aunty will be so happy!");

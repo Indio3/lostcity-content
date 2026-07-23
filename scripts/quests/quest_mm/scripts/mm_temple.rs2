@@ -20,7 +20,7 @@ loc_change(mm_temple_trapdoor, 500);
 p_delay(0);
 anim(human_reachforladder, 0);
 p_delay(1);
-p_teleport(map_findsquare(0_43_43_55_33, 0, 2, ^map_findsquare_lineofwalk));
+p_teleport(map_findsquare(0_43_43_55_33, 1, 2, ^map_findsquare_lineofwalk));
 
 [mapzone,0_43_143]
 if(gettimer(mm_dungeon_spikes) = -1) {
@@ -29,6 +29,17 @@ if(gettimer(mm_dungeon_spikes) = -1) {
 @music_playbyregion(coord);
 
 [mapzoneexit,0_43_143]
-if(inzone(0_43_143_0_0, 0_43_143_63_63, coord) = false) {
+if(inzone(0_42_142_0_0, 0_43_143_63_63, coord) = false) {
+    cleartimer(mm_dungeon_spikes);
+}
+
+[mapzone,0_42_143]
+if(gettimer(mm_dungeon_spikes) = -1) {
+    settimer(mm_dungeon_spikes, 1);
+}
+@music_playbyregion(coord);
+
+[mapzoneexit,0_42_143]
+if(inzone(0_42_142_0_0, 0_43_143_63_63, coord) = false) {
     cleartimer(mm_dungeon_spikes);
 }

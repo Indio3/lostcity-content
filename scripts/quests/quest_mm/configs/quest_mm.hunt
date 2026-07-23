@@ -20,24 +20,11 @@ check_notbusy=off
 find_keephunting=off
 find_newmode=applayer2
 
-[mm_jail_guard]
+[mm_guard]
 type=player
 check_vis=lineofsight
 check_nottoostrong=off
-check_notbusy=off
-check_afk=off
-check_invcat=worn,mm_greegree,<1
-find_keephunting=on
-find_newmode=applayer2
-
-[dugopul]
-type=player
-check_vis=lineofsight
-check_nottoostrong=off
-check_notcombat=%lastcombat
-check_notcombat_self=%npc_lastcombat
-check_invcat=worn,mm_greegree,<1
-check_notbusy=off
+check_notbusy=on
 check_afk=off
 find_keephunting=on
 find_newmode=applayer2

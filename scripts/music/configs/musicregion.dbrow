@@ -569,6 +569,11 @@ table=musicregion
 data=mapsquare,0_41_157_0_0
 data=musicdata,music_Warrior
 
+[musicregion_42_42]
+table=musicregion
+data=mapsquare,0_42_42_0_0
+data=musicdata,music_Island_Life
+
 [musicregion_42_43]
 table=musicregion
 data=mapsquare,0_42_43_0_0
@@ -653,6 +658,11 @@ data=musicdata,music_Attack5
 table=musicregion
 data=mapsquare,0_42_154_0_0
 data=musicdata,music_Twilight
+
+[musicregion_43_42]
+table=musicregion
+data=mapsquare,0_43_42_0_0
+data=musicdata,music_Island_Life
 
 [musicregion_43_43]
 table=musicregion

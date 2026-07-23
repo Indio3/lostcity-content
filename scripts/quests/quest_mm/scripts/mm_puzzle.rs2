@@ -30,7 +30,7 @@ if_openmain(reinitialisation_puzzle);
 [opheld5,_mm_reinit_inactive] // nothing
 
 [label,mm_open_puzzle]
-if(testbit(%mm_bits, ^mm_paid_glough) = ^true) { // force reset puzzle and do move 1 move from completion
+if(%mm_hangar_puzzle_complete = ^true) { // force reset puzzle and do move 1 move from completion
     inv_clear(reinitialisation_inv);
     ~init_reinit_puzzle;
 } else if(inv_freespace(reinitialisation_inv) > 1) {
@@ -70,7 +70,7 @@ inv_setslot(reinitialisation_inv, 23, reinitialisation_24, 1);
 
 [proc,shuffle_reinit_puzzle]
 def_int $moves = 255; // 255 moves for mm puzzle
-if(testbit(%mm_bits, ^mm_paid_glough) = ^true) {
+if(%mm_hangar_puzzle_complete = ^true) {
     $moves = 1;
 }
 def_int $current_idx = 24;
@@ -144,11 +144,33 @@ if(~reinit_puzzle_complete = true) {
     mes("As you slide the final piece into place you begin to hear a low rumbling");
     mes("sound...");
     cam_shake(0, 10, 0, 0);
+    if(%mm_hangar_puzzle_complete = ^false) %mm_hangar_puzzle_complete = ^true;
     //sound_synth(rumbling_loop, 5, 15);
-    queue(hangar_cutscene, 3, 0);
+    settimer(hangar_cutscene, 3);
 }
 
-[queue,hangar_cutscene]
+[timer,hangar_cutscene]
+if(inzone(0_37_154_0_0, 0_37_154_63_63, coord) = false) {
+    cleartimer(hangar_cutscene);
+    cam_reset;
+    return;
+}
+// search to make sure no one else is entering the cutscene
+huntall(coord, 10, 0);
+while(.huntnext = true) {
+    if(.%mm_hangar_cutscene_flag = ^true) {
+        return;
+    }
+}
+
+huntall(0_40_70_25_36, 1, 0);
+while(.huntnext = true) {
+    if(.%mm_hangar_cutscene_flag = ^true) {
+        return;
+    }
+}
+cleartimer(hangar_cutscene);
+%mm_hangar_cutscene_flag = ^true;
 ~fade_out;
 p_delay(4);
 p_teleport(0_40_70_25_36);
@@ -162,7 +184,9 @@ if(loc_find(0_40_70_16_34, mm_glider) = true) loc_anim(m_glider_unfold);
 if(loc_find(0_40_70_16_38, mm_glider) = true) loc_anim(m_glider_unfold);
 if(loc_find(0_40_70_16_46, mm_glider) = true) loc_anim(m_glider_unfold);
 sound_synth(wing_unfold, 0, 0);
+p_delay(7); // 8t
 if_settab(magic, ^tab_magic);
 cam_reset;
 p_teleport(0_41_70_25_27);
+%mm_hangar_cutscene_flag = ^false;
 %mm_daero = ^daero_reinit_complete;

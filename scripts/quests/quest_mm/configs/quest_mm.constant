@@ -3,6 +3,12 @@
 ^mm_shown_seal = 2
 ^mm_arrived_atoll = 3
 ^mm_completed_ch2 = 4
+^mm_completed_ch3 = 5
+^mm_defeated_demon = 6
+^mm_reported_narnode = 7
+^mm_received_reward = 8
+^mm_complete = 9
+^mm_complete_training = 10
 
 // mm_narnode
 ^narnode_worried = 1
@@ -52,6 +58,11 @@
 // mm_garkor
 ^garkor_spoken = 1
 ^garkor_speak_zooknock = 2
+^garkor_need_correct_disguise = 3
+^garkor_seek_alliance = 4
+^garkor_learned_plan = 5
+^garkor_joined_10th_squad = 6
+^garkor_finished_mission = 7
 
 // mm_monkey_child
 ^monkey_child_spoke = 1
@@ -61,10 +72,14 @@
 ^monkey_child_finding_bananas = 5
 ^monkey_child_given_bananas = 6
 ^monkey_child_received_talisman = 7
+^monkey_child_lost_toy = 8
 
-// mm_bits
-^mm_made_talisman = 10
-^mm_child_has_toy = 11
-^mm_lost_toy = 12
-^mm_child_done_crying = 13
-^mm_paid_glough = 30
+// mm_elder_guard
+^elder_guard_spoken = 1
+
+// mm_kruk
+^kruk_spoken = 1
+
+// mm_awowogei
+^awowogei_sent_mission = 1
+^awowogei_complete_mission = 2

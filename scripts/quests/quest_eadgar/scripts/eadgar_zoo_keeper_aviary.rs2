@@ -60,11 +60,12 @@ if (testbit(%eadgar_bits, ^eadgar_pete_dialog_1) = ^true) { // no message is giv
 }
 
 [oplocu,eadgar_aviary_wall_hatch]
+def_obj $last_useitem = last_useitem;
 if(~mm_wearing_greegree = true) {
     ~force_unequip_greegree;
 }
 // mesanims rsprox/branon
-switch_obj(last_useitem) {
+switch_obj($last_useitem) {
     case eadgar_alco_chunks : @eadgar_catch_parrot;
     case pineapple_chunks : @eadgar_aviary_pineapple_chunks;
     case vodka, gin, brandy, whisky : @eadgar_aviary_liquor;

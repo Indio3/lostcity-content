@@ -1415,8 +1415,8 @@
 1414=m_sapper_wallwipe
 1415=m_mage_attack
 1416=seq_1416
-1417=seq_1417
-1418=seq_1418
+1417=skeleton_reverse_death
+1418=demon_appear
 1419=m_normalmonkey_run
 1420=mm_floorspikes_activate
 1421=human_bannerready

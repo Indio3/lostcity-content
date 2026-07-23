@@ -124,6 +124,15 @@ if(%mm_main = 0) {
     ~mesbox("Lumo seems too busy to talk.");
     return;
 }
+if(%mm_main >= ^mm_defeated_demon) {
+    ~chatplayer("<p,quiz>How did you get back in there?");
+    ~chatnpc("<p,neutral>Simple: we got caught again.");
+    ~chatplayer("<p,quiz>Deliberately?");
+    ~chatnpc("<p,quiz>Yes. We are working undercover here. Isn't that right, guys?");
+    ~chatnpc_specific(nc_name(mm_carado), mm_carado, "<p,neutral>Whatever you say, boss.");
+    ~chatnpc("<p,neutral>See.");
+    return;
+}
 switch_int(%mm_lumo) {
     case ^lumo_spoken :
         ~chatnpc("<p,quiz>What can I do for you, human?");
@@ -194,4 +203,5 @@ if(%mm_main = 0) {
 }
 ~chatnpc("<p,neutral>Well I'm not complaining - this jail cell is larger than my room in the Grand Tree! It is a little sparse however...");
 ~chatplayer("<p,neutral>We'll get you out of there soon enough.");
-~chatnpc("<p,neutral>No hurries...");
+if(%mm_main >= ^mm_defeated_demon) ~chatnpc("<p,neutral>I'm meant to be here now. We're working undercover.");
+else ~chatnpc("<p,neutral>No hurries...");

@@ -29,7 +29,7 @@ data=track,ambient jungle
 [music_Anywhere]
 table=music
 data=name,Anywhere
-data=playbutton,music:com_276
+data=playbutton,music:anywhere
 data=unlock,8,16
 data=track,anywhere
 
@@ -519,7 +519,7 @@ data=track,fanfare3
 [music_Find_My_Way]
 table=music
 data=name,Find My Way
-data=playbutton,music:com_284
+data=playbutton,music:find_my_way
 data=unlock,8,22
 data=track,find my way
 
@@ -718,6 +718,13 @@ data=name,Intrepid
 data=playbutton,music:intrepid
 data=unlock,3,0
 data=track,intrepid
+
+[music_Island_Life]
+table=music
+data=name,Island Life
+data=playbutton,music:island_life
+data=unlock,8,18
+data=track,island life
 
 [music_Jolly-R]
 table=music
@@ -953,7 +960,7 @@ data=track,monarch waltz
 [music_Monkey_Madness]
 table=music
 data=name,Monkey Madness
-data=playbutton,music:com_278
+data=playbutton,music:monkey_madness
 data=unlock,8,15
 data=track,monkey madness
 
@@ -1227,6 +1234,13 @@ data=playbutton,music:shining
 data=unlock,6,0
 data=track,shining
 
+[music_Showdown]
+table=music
+data=name,Showdown
+data=playbutton,music:showdown
+data=unlock,8,21
+data=track,showdown
+
 [music_Sojourn]
 table=music
 data=name,Sojourn
@@ -1310,6 +1324,13 @@ data=name,Superstition
 data=playbutton,music:superstition
 data=unlock,9,5
 data=track,superstition
+
+[music_Suspicious]
+table=music
+data=name,Suspicious
+data=playbutton,music:suspicious
+data=unlock,8,20
+data=track,suspicious
 
 [music_Talking_Forest]
 table=music

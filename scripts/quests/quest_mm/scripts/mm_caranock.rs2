@@ -3,6 +3,10 @@ if(%mm_main = ^mm_not_started) {
     ~mesbox("Caranock seems too busy to talk.");
     return;
 }
+if(%mm_narnode >= ^mm_defeated_demon) {
+    ~chatnpc("<p,angry>Get out of my office! We WILL have our revenge, human!");
+    return;
+}
 if(%mm_narnode >= ^narnode_returned_shipyard) {
     ~chatnpc("<p,angry>Get out of my office, human. You do not belong here.");
     return;

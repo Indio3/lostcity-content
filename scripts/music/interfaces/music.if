@@ -3818,7 +3818,7 @@ text=Miscellania
 colour=0xFF0000
 activecolour=0x00FF00
 
-[com_275]
+[narnodes_theme]
 layer=com_0
 type=text
 x=10
@@ -3834,7 +3834,7 @@ text=Narnode's Theme
 colour=0xFF0000
 activecolour=0x00FF00
 
-[com_276]
+[anywhere]
 layer=com_0
 type=text
 x=10
@@ -3850,7 +3850,7 @@ text=Anywhere
 colour=0xFF0000
 activecolour=0x00FF00
 
-[com_277]
+[technology]
 layer=com_0
 type=text
 x=10
@@ -3866,7 +3866,7 @@ text=Technology
 colour=0xFF0000
 activecolour=0x00FF00
 
-[com_278]
+[monkey_madness]
 layer=com_0
 type=text
 x=10
@@ -3882,7 +3882,7 @@ text=Monkey Madness
 colour=0xFF0000
 activecolour=0x00FF00
 
-[com_279]
+[marooned]
 layer=com_0
 type=text
 x=10
@@ -3898,7 +3898,7 @@ text=Marooned
 colour=0xFF0000
 activecolour=0x00FF00
 
-[com_280]
+[island_life]
 layer=com_0
 type=text
 x=10
@@ -3914,7 +3914,7 @@ text=Island Life
 colour=0xFF0000
 activecolour=0x00FF00
 
-[com_281]
+[temple]
 layer=com_0
 type=text
 x=10
@@ -3930,7 +3930,7 @@ text=Temple
 colour=0xFF0000
 activecolour=0x00FF00
 
-[com_282]
+[suspicious]
 layer=com_0
 type=text
 x=10
@@ -3946,7 +3946,7 @@ text=Suspicious
 colour=0xFF0000
 activecolour=0x00FF00
 
-[com_283]
+[showdown]
 layer=com_0
 type=text
 x=10
@@ -3962,7 +3962,7 @@ text=Showdown
 colour=0xFF0000
 activecolour=0x00FF00
 
-[com_284]
+[find_my_way]
 layer=com_0
 type=text
 x=10

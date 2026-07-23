@@ -44,6 +44,7 @@ if (map_clock > add(%musicstart, %musiclength)) {
 [if_button,music:al_kharid] @music_playbybutton(music:al_kharid);
 [if_button,music:alone] @music_playbybutton(music:alone);
 [if_button,music:ambient_jungle] @music_playbybutton(music:ambient_jungle);
+[if_button,music:anywhere] @music_playbybutton(music:anywhere);
 [if_button,music:arabian] @music_playbybutton(music:arabian);
 [if_button,music:arabian2] @music_playbybutton(music:arabian2);
 [if_button,music:arabian3] @music_playbybutton(music:arabian3);
@@ -113,7 +114,7 @@ if (map_clock > add(%musicstart, %musiclength)) {
 [if_button,music:fanfare] @music_playbybutton(music:fanfare);
 [if_button,music:fanfare2] @music_playbybutton(music:fanfare2);
 [if_button,music:fanfare3] @music_playbybutton(music:fanfare3);
-[if_button,music:com_284] @music_playbybutton(music:com_284);
+[if_button,music:find_my_way] @music_playbybutton(music:find_my_way);
 [if_button,music:fishing] @music_playbybutton(music:fishing);
 [if_button,music:flute_salad] @music_playbybutton(music:flute_salad);
 [if_button,music:forbidden] @music_playbybutton(music:forbidden);
@@ -142,6 +143,7 @@ if (map_clock > add(%musicstart, %musiclength)) {
 [if_button,music:insect_queen] @music_playbybutton(music:insect_queen);
 [if_button,music:inspiration] @music_playbybutton(music:inspiration);
 [if_button,music:intrepid] @music_playbybutton(music:intrepid);
+[if_button,music:island_life] @music_playbybutton(music:island_life);
 [if_button,music:jollyr] @music_playbybutton(music:jollyr);
 [if_button,music:jungle_island] @music_playbybutton(music:jungle_island);
 [if_button,music:jungly1] @music_playbybutton(music:jungly1);
@@ -174,6 +176,7 @@ if (map_clock > add(%musicstart, %musiclength)) {
 [if_button,music:meridian] @music_playbybutton(music:meridian);
 [if_button,music:miles_away] @music_playbybutton(music:miles_away);
 [if_button,music:miracle_dance] @music_playbybutton(music:miracle_dance);
+[if_button,music:monkey_madness] @music_playbybutton(music:monkey_madness);
 [if_button,music:monarch_waltz] @music_playbybutton(music:monarch_waltz);
 [if_button,music:moody] @music_playbybutton(music:moody);
 [if_button,music:morytania] @music_playbybutton(music:morytania);

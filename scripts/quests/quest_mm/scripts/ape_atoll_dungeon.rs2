@@ -43,9 +43,10 @@ if(last_useitem = woodplank) {
 [timer,mm_dungeon_rocks]
 settimer(mm_dungeon_rocks, ~random_range(20, 30));
 // zooknock area
-if(inzone(0_43_142_49_49, 0_43_142_59_60, coord) = true) {
+if(inzone(0_43_142_49_49, 0_43_142_59_60, coord) = true | inzone(0_42_142_0_0, 0_43_142_63_63, coord) = false) {
     return;
 }
+%mm_rock_falling = ^true;
 cam_shake(0, ~random_range(2, 5), 0, 0);
 cam_shake(1, ~random_range(2, 5), 0, 0);
 cam_shake(2, ~random_range(2, 5), 0, 0);
@@ -79,9 +80,31 @@ if (loc_find(coord, mm_floorspikes) = true) {
     queue(damage_player, 0, calc(((stat(hitpoints) * 7) / 100) + 1)); // 7% round up
 }
 
+[timer,mm_dungeon_wallspikes]
+if (loc_find(coord, mm_speartrap) = true) {
+    if_close;
+    if (%poison > -1) { 
+        if (%poison = 0) {
+            mes("You have been poisoned!");
+        }
+        ~set_poison_timer;
+        %poison = max(%poison, 3);
+    } else {
+        mes("You are immune to the poison coating the spikes.");
+    }
+    loc_anim(speartrap_release);
+    sound_synth(floor_spikes, 0, 0);
+    say("Ouch!");
+    queue(damage_player, 0, calc(((stat(hitpoints) * 7) / 100) + 1)); // 7% round up
+}
+
 [queue,mm_dungeon_roof_collapse]
 cam_reset;
-if(loc_find(movecoord(coord, 0, 1, 0), cavewall_top) = true | loc_find(movecoord(coord, 0, 1, 0), cavewall_face1_not_low_detail) = true) return; 
+%mm_rock_falling = ^false;
+if(inzone(0_42_142_0_0, 0_43_142_63_63, coord) = false) {
+    return;
+}
+if(map_blocked(movecoord(coord, 0, 1, 0)) = true) return; // under a ledge
 spotanim_map(mm_roofcollapse, coord, 0, 0);
 strongqueue(damage_player, 0, calc(((stat(hitpoints) * 3) / 100) + 1)); //strongqueue
 
@@ -91,6 +114,9 @@ if(gettimer(mm_dungeon_rocks) = -1) {
 }
 if(gettimer(mm_dungeon_spikes) = -1) {
     settimer(mm_dungeon_spikes, 1);
+}
+if(gettimer(mm_dungeon_wallspikes) = -1) {
+    settimer(mm_dungeon_wallspikes, 1);
 }
 if(gettimer(mm_springtrap) = -1) {
     settimer(mm_springtrap, 1);
@@ -104,6 +130,9 @@ if(gettimer(mm_dungeon_rocks) = -1) {
 if(gettimer(mm_dungeon_spikes) = -1) {
     settimer(mm_dungeon_spikes, 1);
 }
+if(gettimer(mm_dungeon_wallspikes) = -1) {
+    settimer(mm_dungeon_wallspikes, 1);
+}
 if(gettimer(mm_springtrap) = -1) {
     settimer(mm_springtrap, 1);
 }
@@ -114,6 +143,7 @@ def_int $bones_count = inv_total(inv, mm_skeleton_bones);
 if(inzone(0_42_142_0_0, 0_43_142_63_63, coord) = false) {
     cleartimer(mm_dungeon_rocks);
     cleartimer(mm_dungeon_spikes);
+    cleartimer(mm_dungeon_wallspikes);
     cleartimer(mm_springtrap);
     if($bones_count > 0) {
         inv_del(inv, mm_skeleton_bones, $bones_count);
@@ -127,6 +157,7 @@ def_int $bones_count = inv_total(inv, mm_skeleton_bones);
 if(inzone(0_42_142_0_0, 0_43_142_63_63, coord) = false) {
     cleartimer(mm_dungeon_rocks);
     cleartimer(mm_dungeon_spikes);
+    cleartimer(mm_dungeon_wallspikes);
     cleartimer(mm_springtrap);
     if($bones_count > 0) {
         inv_del(inv, mm_skeleton_bones, $bones_count);

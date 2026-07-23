@@ -26,7 +26,7 @@ switch_int(~p_choice2("Yes, I suppose I do.", 1, "No, I'd rather skin a monkey t
         }
         ~chatplayer("<p,neutral>Ok then. You win again, Glough.");
         inv_del(inv, coins, 200000);
-        %mm_bits = setbit(%mm_bits, ^mm_paid_glough);
+        %mm_hangar_puzzle_complete = ^true;
         ~chatnpc("<p,neutral>It's been a pleasure doing business with you.");
         ~chatplayer("<p,neutral>Indeed. I wish I could say the same for you.");
     case 2 :

@@ -1,10 +1,35 @@
-[ai_opplayer2,mm_duke] queue(aa_knockout, 0, 0);
-[ai_opplayer2,mm_oipuis] queue(aa_knockout, 0, 0);
-[ai_opplayer2,mm_uyoro] queue(aa_knockout, 0, 0);
-[ai_opplayer2,mm_ouhai] queue(aa_knockout, 0, 0);
-[ai_opplayer2,mm_uodai] queue(aa_knockout, 0, 0);
+[ai_opplayer2,mm_duke] @mm_guard_attack;
+[ai_opplayer2,mm_oipuis] @mm_guard_attack;
+[ai_opplayer2,mm_uyoro] @mm_guard_attack;
+[ai_opplayer2,mm_ouhai] @mm_guard_attack;
+[ai_opplayer2,mm_uodai] @mm_guard_attack;
+[ai_opplayer2,mm_monkey_guard] @mm_guard_attack;
 
-[ai_opplayer2,mm_monkey_guard]
+[ai_queue4,mm_duke] @mm_guard_karam_death;
+[ai_queue4,mm_oipuis] @mm_guard_karam_death;
+[ai_queue4,mm_uyoro] @mm_guard_karam_death;
+[ai_queue4,mm_ouhai] @mm_guard_karam_death;
+[ai_queue4,mm_uodai] @mm_guard_karam_death;
+[ai_queue4,mm_monkey_guard] @mm_guard_karam_death;
+
+// killed by karam -> drops bones globally
+[label,mm_guard_karam_death]
+npc_walk(npc_coord);
+npc_setmode(none);
+npc_arrivedelay; // arrivedelay for up to two ticks (current osrs too) https://youtu.be/Vsnkdq8OOMg?t=209
+~.sound_area(monkey_death, 0, npc_coord, 12);
+npc_anim(npc_param(death_anim), 0);
+npc_delay(1); // osrs has an extra tick of delay here. I think this delay can vary from npc to npc
+npc_del;
+
+obj_addall(npc_coord, npc_param(death_drop), 1, ^lootdrop_duration);
+
+[label,mm_guard_attack]
+if(~mm_wearing_greegree = true | %mm_player_is_unconscious = ^true) {
+    npc_del;
+    spotanim_map(smokepuff, npc_coord, 50, 0);
+    return;
+}
 if(random(4) = 0) queue(aa_knockout, 0, 0);
 else gosub(npc_default_attack);
 
@@ -13,6 +38,9 @@ else gosub(npc_default_attack);
 [ai_opplayer2,mm_religious_trapdoor_guard] @mm_religious_guard_attack;
 
 [label,mm_religious_guard_attack]
+if(~mm_wearing_greegree = true) { // this does come before the healing check
+    return;
+}
 if(npc_stat(hitpoints) <= 30 & random(12) = 0) {
     npc_anim(m_gorilla_poundchest, 0);
     npc_statheal(hitpoints, 24, 0); // looks to be always 24 rather than 25 like the wiki says (checked w/monster examine)
