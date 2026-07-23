@@ -11,6 +11,15 @@ p_delay(3);
 if (.finduid(%duel2accept) = true & ~.in_duel_arena(.coord) = true) {
     @player_death_duel;
 }
+if (~in_castlewars_game(coord) = true) {
+    if (findhero = true) {
+        .queue(castlewars_increment_kills, 0, 0);
+    }
+    if (p_finduid(uid) = true) @player_death_castlewars;
+}
+if (~in_castlewars_waitingroom(coord) = true) {
+    if (p_finduid(uid) = true) @player_death_castlewars_waitingroom;
+}
 ~player_death;
 ~music_jingle(death2);
 // https://storage.googleapis.com/tannerdino/images/6543.jpg
@@ -33,7 +42,10 @@ p_teleport(map_findsquare(0_50_50_21_18, 0, 2, ^map_findsquare_lineofwalk));
 buildappearance(worn);
 p_transmogrify(null);
 ~prayer_deactivate_all;
-~follower_death;
+if (npc_finduid(%follower_uid) = true) {
+    ~remove_follower;
+    npc_add(npc_coord, npc_type, 50);
+}
 anim(null, 0);
 p_stopaction;
 
@@ -73,11 +85,12 @@ while ($i < $size) {
         if (oc_category($currentitem) = armour_godcape) {
             mes(oc_param($currentitem, lose_cape_message));
         }
-        if($currentitem = ikov_bootsoflightnessworn) { // can make a namedobj param for this later with barrows
-            inv_setslot(inv, oc_wearpos(ikov_bootsoflightnessworn), ikov_bootsoflightness, 1);
-        }
         if (oc_param($currentitem, destroy_drop) = ^true | oc_param($currentitem, destroy_death) = ^true) {
             inv_delslot(inv, $i);
+        }
+        if(oc_param($currentitem, follower_id) ! null) {
+            ~remove_follower_inv($currentitem, $i);
+            npc_add(coord, oc_param($currentitem, follower_id), 50);
         }
     }
     $i = calc($i + 1);
@@ -91,7 +104,7 @@ while ($i < $size) {
         if (oc_category($currentitem) = armour_godcape) {
             mes(oc_param($currentitem, lose_cape_message));
         }
-        if($currentitem = ikov_bootsoflightnessworn) {
+        if($currentitem = ikov_bootsoflightnessworn) { // can make a namedobj param for this later with barrows
             inv_setslot(worn, oc_wearpos(ikov_bootsoflightnessworn), ikov_bootsoflightness, 1);
         }
         if (oc_param($currentitem, destroy_drop) = ^true | oc_param($currentitem, destroy_death) = ^true) {
@@ -133,14 +146,14 @@ while ($i < $size) {
     if (inv_getnum(inv, $i) > 0) {
         $currentitem = inv_getobj(inv, $i);
         if (oc_param($currentitem, destroy_drop) = ^true | oc_param($currentitem, destroy_death) = ^true) {
-            if (oc_category(inv_getobj(inv, $i)) = armour_godcape) {
-                mes(oc_param(inv_getobj(inv, $i), lose_cape_message));
+            if (oc_category($currentitem) = armour_godcape) {
+                mes(oc_param($currentitem, lose_cape_message));
             }
             inv_delslot(inv, $i);
+        } else if(oc_param($currentitem, follower_id) ! null) {
+            ~remove_follower_inv($currentitem, $i);
+            npc_add(coord, oc_param($currentitem, follower_id), 50);
         } else {
-            if($currentitem = ikov_bootsoflightnessworn) {
-                inv_setslot(inv, oc_wearpos(ikov_bootsoflightnessworn), ikov_bootsoflightness, 1);
-            }
             both_dropslot(inv, coord, $i, ^lootdrop_duration);
         }
     }

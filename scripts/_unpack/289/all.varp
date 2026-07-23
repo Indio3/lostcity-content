@@ -20,17 +20,26 @@ scope=perm
 // todo: osrs has "armourhitsound" here?
 [varp_375]
 
-[varp_376]
+[castlewars_team]
+scope=perm
 
 [castlewars_zamorak]
+protect=no
+transmit=yes
 
 [castlewars_saradomin]
+protect=no
+transmit=yes
 
 [castlewars_main]
+protect=no
 
 [castlewars_timer]
+protect=no
+transmit=yes
 
-[varp_381]
+[castlewars_clock]
+scope=perm
 
 [hauntedmine]
 scope=perm
@@ -57,4 +66,4 @@ scope=perm
 
 [trawler_water_overlay]
 
-[varp_392]
+[castlewars_flag_clock]

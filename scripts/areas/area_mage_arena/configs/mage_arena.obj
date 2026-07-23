@@ -30,7 +30,7 @@ param=crushdefence,2
 param=magicdefence,10
 param=destroy_drop,^true
 param=lose_cape_message,Saradomin reclaims the cape as it touches the ground.
-param=saradominitem,1
+param=saradominitem,^true
 tradeable=no
 
 [guthix_cape]
@@ -65,7 +65,7 @@ param=crushdefence,2
 param=magicdefence,10
 param=destroy_drop,^true
 param=lose_cape_message,Guthix reclaims the cape as it touches the ground.
-param=guthixitem,1
+param=guthixitem,^true
 tradeable=no
 
 [zamorak_cape]
@@ -100,7 +100,7 @@ param=crushdefence,2
 param=magicdefence,10
 param=destroy_drop,^true
 param=lose_cape_message,Zamorak reclaims the cape as it touches the ground.
-param=zamorakitem,1
+param=zamorakitem,^true
 tradeable=no
 
 [saradomin_staff]
@@ -132,7 +132,7 @@ param=attackrate,5
 param=crushattack_anim,human_blunt_pound
 param=defend_anim,human_blunt_block
 param=crush_sound,staff_hit
-param=saradominitem,1
+param=saradominitem,^true
 tradeable=no
 // osrs crush attack sound newstaff / crush attack sound is a guess.
 
@@ -165,7 +165,7 @@ param=attackrate,5
 param=crushattack_anim,human_blunt_pound
 param=defend_anim,human_blunt_block
 param=crush_sound,staff_hit
-param=guthixitem,1
+param=guthixitem,^true
 tradeable=no
 // osrs crush attack sound newstaff / crush attack sound is a guess.
 
@@ -199,6 +199,6 @@ param=attackrate,5
 param=crushattack_anim,human_blunt_pound
 param=defend_anim,human_blunt_block
 param=crush_sound,staff_hit
-param=zamorakitem,1
+param=zamorakitem,^true
 tradeable=no
 // osrs crush attack sound newstaff / crush attack sound is a guess.

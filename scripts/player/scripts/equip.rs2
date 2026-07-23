@@ -28,6 +28,10 @@ if (p_finduid(uid) = true) {
         mes("gnomeball pitch");
         return;
     }
+    if (~wearpos_conflicts($obj, castlewars_cloak_saradomin) = true & (~in_castlewars_game(coord) = true | ~in_castlewars_waitingroom(coord) = true)) {
+        mes("You can't remove your team's colours.");
+        return;
+    }
     def_obj $previous = inv_getobj(worn, ^wearpos_rhand);
     if (~try_equip($slot) = false) {
         mes("You don't have enough free space to do that.");
@@ -72,6 +76,10 @@ if (p_finduid(uid) = true) {
         mes("You feel it would be cheating to put the ball in your pack whilst on the pitch.");
         return;
     }
+    if (($obj = castlewars_cloak_zamorak | $obj = castlewars_cloak_saradomin) & (~in_castlewars_game(coord) = true | ~in_castlewars_waitingroom(coord) = true)) {
+        mes("You can't remove your team's colours.");
+        return;
+    }
     def_int $count = inv_getnum(worn, $slot);
     def_int $overflow = inv_itemspace2(inv, $obj, $count, inv_size(inv));
     if ($overflow >= $count) {
@@ -101,6 +109,9 @@ if($obj = mm_sigil) {
     cleartimer(teleport_mm_sigil);
 }
 if($update_all = ^true) ~update_all($obj);
+if ($obj = castlewars_saradomin_banner | $obj = castlewars_zamorak_banner) {
+    ~castlewars_flag_drop(inv, $obj);
+}
 
 // used for duel arena, no weapon/no armour
 [proc,try_unequip](int $slot)

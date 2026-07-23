@@ -335,7 +335,7 @@ param=slashdefence,80
 param=crushdefence,72
 param=magicdefence,-6
 param=rangedefence,80
-param=zamorakitem,1
+param=zamorakitem,^true
 
 [rune_platelegs_zamorak]
 name=Zamorak platelegs
@@ -364,7 +364,7 @@ param=slashdefence,49
 param=crushdefence,47
 param=magicdefence,-4
 param=rangedefence,49
-param=zamorakitem,1
+param=zamorakitem,^true
 
 [rune_full_helm_zamorak]
 name=Zamorak full helm
@@ -397,7 +397,7 @@ param=slashdefence,32
 param=crushdefence,27
 param=magicdefence,-1
 param=rangedefence,30
-param=zamorakitem,1
+param=zamorakitem,^true
 
 [rune_kiteshield_zamorak]
 name=Zamorak kiteshield
@@ -429,7 +429,7 @@ param=crushdefence,46
 param=magicdefence,-1
 param=rangedefence,46
 param=defend_anim,human_shield_defence
-param=zamorakitem,1
+param=zamorakitem,^true
 
 [rune_platebody_saradomin]
 name=Saradomin plate
@@ -465,7 +465,7 @@ param=slashdefence,80
 param=crushdefence,72
 param=magicdefence,-6
 param=rangedefence,80
-param=saradominitem,1
+param=saradominitem,^true
 
 [rune_platelegs_saradomin]
 name=Saradomin legs
@@ -494,7 +494,7 @@ param=slashdefence,49
 param=crushdefence,47
 param=magicdefence,-4
 param=rangedefence,49
-param=saradominitem,1
+param=saradominitem,^true
 
 [rune_full_helm_saradomin]
 name=Saradomin full
@@ -527,7 +527,7 @@ param=slashdefence,32
 param=crushdefence,27
 param=magicdefence,-1
 param=rangedefence,30
-param=saradominitem,1
+param=saradominitem,^true
 
 [rune_kiteshield_saradomin]
 name=Saradomin kite
@@ -559,7 +559,7 @@ param=crushdefence,46
 param=magicdefence,-1
 param=rangedefence,46
 param=defend_anim,human_shield_defence
-param=saradominitem,1
+param=saradominitem,^true
 
 [rune_platebody_guthix]
 name=Guthix platebody
@@ -593,7 +593,7 @@ param=slashdefence,80
 param=crushdefence,72
 param=magicdefence,-6
 param=rangedefence,80
-param=guthixitem,1
+param=guthixitem,^true
 
 [rune_platelegs_guthix]
 name=Guthix platelegs
@@ -622,7 +622,7 @@ param=slashdefence,49
 param=crushdefence,47
 param=magicdefence,-4
 param=rangedefence,49
-param=guthixitem,1
+param=guthixitem,^true
 
 [rune_full_helm_guthix]
 name=Guthix full helm
@@ -655,7 +655,7 @@ param=slashdefence,32
 param=crushdefence,27
 param=magicdefence,-1
 param=rangedefence,30
-param=guthixitem,1
+param=guthixitem,^true
 
 [rune_kiteshield_guthix]
 name=Guthix kiteshield
@@ -687,7 +687,7 @@ param=crushdefence,46
 param=magicdefence,-1
 param=rangedefence,46
 param=defend_anim,human_shield_defence
-param=guthixitem,1
+param=guthixitem,^true
 
 [black_platebody_trim]
 name=Black platebody (t)
@@ -1637,7 +1637,7 @@ param=slashdefence,49
 param=crushdefence,47
 param=magicdefence,-4
 param=rangedefence,49
-param=zamorakitem,1
+param=zamorakitem,^true
 
 [rune_plateskirt_saradomin]
 name=Saradomin skirt
@@ -1669,7 +1669,7 @@ param=slashdefence,49
 param=crushdefence,47
 param=magicdefence,-4
 param=rangedefence,49
-param=saradominitem,1
+param=saradominitem,^true
 
 [rune_plateskirt_guthix]
 name=Guthix plateskirt
@@ -1701,7 +1701,7 @@ param=slashdefence,49
 param=crushdefence,47
 param=magicdefence,-4
 param=rangedefence,49
-param=guthixitem,1
+param=guthixitem,^true
 
 [rune_platebody_goldplate]
 name=Gilded platebody

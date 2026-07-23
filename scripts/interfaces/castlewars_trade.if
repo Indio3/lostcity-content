@@ -887,7 +887,7 @@ activetext=Castlewars Manual
 colour=0x888888
 activecolour=0xCCCCCC
 
-[com_102]
+[helm]
 type=graphic
 x=64
 y=88
@@ -896,7 +896,7 @@ width=81
 height=78
 option=Buy for 4 tickets
 
-[com_103]
+[body]
 type=graphic
 x=209
 y=88
@@ -905,7 +905,7 @@ width=83
 height=97
 option=Buy for 8 tickets
 
-[com_104]
+[legs]
 type=graphic
 x=355
 y=88
@@ -914,7 +914,7 @@ width=81
 height=100
 option=Buy for 6 tickets
 
-[com_105]
+[sword]
 type=graphic
 x=64
 y=213
@@ -923,7 +923,7 @@ width=89
 height=86
 option=Buy for 5 tickets
 
-[com_106]
+[shield]
 type=graphic
 x=209
 y=213
@@ -932,7 +932,7 @@ width=89
 height=90
 option=Buy for 6 tickets
 
-[com_107]
+[manual]
 type=graphic
 x=355
 y=213

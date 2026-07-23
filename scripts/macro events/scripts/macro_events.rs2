@@ -66,6 +66,9 @@ return(true);
 if (~macro_event_area(coord) = false) {
     return(false);
 }
+if (~in_castlewars_game(coord) = true | ~in_castlewars_waitingroom(coord) = true) {
+    return(false);
+}
 // if this var isnt reset on npc delete, then youll never get a random event: https://youtu.be/vRlOfkCCGkw
 if (%macro_event > 0) {
     return(false);

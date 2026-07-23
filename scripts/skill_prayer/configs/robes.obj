@@ -53,7 +53,7 @@ manwear=man_legs_robe,0
 womanwear=woman_legs_longskirt,0
 weight=2lb
 param=prayerbonus,5
-param=saradominitem,1
+param=saradominitem,^true
 
 [monkrobetop]
 model=inv_robetop
@@ -74,7 +74,7 @@ manwear2=man_torso_basic
 womanwear2=woman_torso_basic
 weight=2lb
 param=prayerbonus,6
-param=saradominitem,1
+param=saradominitem,^true
 
 [blackrobetop]
 model=inv_robetop

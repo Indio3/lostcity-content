@@ -157,7 +157,8 @@ type=player_uid
 
 [skill_sound]
 
-[varp_134]
+[last_logout]
+scope=perm
 
 [varp_135]
 

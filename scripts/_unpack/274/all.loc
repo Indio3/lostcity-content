@@ -1194,6 +1194,8 @@ ambient=40
 contrast=40
 
 [castlewars_saradomin_maindoorr]
+category=door_right_closed
+param=next_loc_stage,castlewars_saradomin_maindoorr_open
 name=Large door
 desc=A large double door.
 model=castle_doubledoorl
@@ -1203,6 +1205,8 @@ mirror=yes
 raiseobject=no
 
 [castlewars_saradomin_maindoorl]
+category=door_left_closed
+param=next_loc_stage,castlewars_saradomin_maindoorl_open
 name=Large door
 desc=A large double door.
 model=castle_doubledoorl
@@ -1211,6 +1215,8 @@ op2=Attack
 raiseobject=no
 
 [castlewars_saradomin_maindoorr_open]
+category=door_right_opened
+param=next_loc_stage,castlewars_saradomin_maindoorr
 name=Large door
 desc=A large double door.
 model=castle_doubledoorl
@@ -1219,6 +1225,8 @@ mirror=yes
 raiseobject=no
 
 [castlewars_saradomin_maindoorl_open]
+category=door_left_opened
+param=next_loc_stage,castlewars_saradomin_maindoorl
 name=Large door
 desc=A large double door.
 model=castle_doubledoorl
@@ -1226,6 +1234,8 @@ op1=Close
 raiseobject=no
 
 [castlewars_zamorak_maindoorr]
+category=door_right_closed
+param=next_loc_stage,castlewars_zamorak_maindoorr_open
 name=Large door
 desc=A large double door.
 model=castle_doubledoorl
@@ -1235,6 +1245,8 @@ mirror=yes
 raiseobject=no
 
 [castlewars_zamorak_maindoorl]
+category=door_left_closed
+param=next_loc_stage,castlewars_zamorak_maindoorl_open
 name=Large door
 desc=A large double door.
 model=castle_doubledoorl
@@ -1243,6 +1255,8 @@ op2=Attack
 raiseobject=no
 
 [castlewars_zamorak_maindoorr_open]
+category=door_right_opened
+param=next_loc_stage,castlewars_zamorak_maindoorr
 name=Large door
 desc=A large double door.
 model=castle_doubledoorl
@@ -1251,6 +1265,8 @@ mirror=yes
 raiseobject=no
 
 [castlewars_zamorak_maindoorl_open]
+category=door_left_opened
+param=next_loc_stage,castlewars_zamorak_maindoorl
 name=Large door
 desc=A large double door.
 model=castle_doubledoorl
@@ -1539,6 +1555,7 @@ blockrange=no
 op1=Take-from
 
 [castlewars_saradomin_sidedoor]
+param=next_loc_stage,castlewars_saradomin_sidedoor_open
 name=Door
 desc=An elf-fashioned door.
 model=basic_wall
@@ -1551,6 +1568,7 @@ op1=Unlock
 raiseobject=no
 
 [castlewars_saradomin_sidedoor_open]
+param=next_loc_stage,castlewars_saradomin_sidedoor
 name=Door
 desc=An elf-fashioned door.
 model=basic_wall
@@ -1563,6 +1581,7 @@ op1=Lock
 raiseobject=no
 
 [castlewars_zamorak_sidedoor]
+param=next_loc_stage,castlewars_zamorak_sidedoor_open
 name=Door
 desc=The door is closed.
 model=basic_wall
@@ -1575,6 +1594,7 @@ op1=Unlock
 raiseobject=no
 
 [castlewars_zamorak_sidedoor_open]
+param=next_loc_stage,castlewars_zamorak_sidedoor
 name=Door
 desc=The door is closed.
 model=basic_wall
