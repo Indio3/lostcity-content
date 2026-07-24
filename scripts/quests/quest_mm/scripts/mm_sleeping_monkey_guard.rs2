@@ -21,6 +21,7 @@ while(huntnext = true) {
 
 if($hunted = ^false & %npc_int = ^true) {
     npc_anim(m_monkey_jailofficer_liedown, 0);
+    sound_synth(snore, 0, 0);
     %npc_int = ^false;
 }
 
