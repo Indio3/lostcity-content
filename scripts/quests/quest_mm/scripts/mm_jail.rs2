@@ -1,11 +1,12 @@
 [oploc1,mm_jail_door]
 mes("You attempt to pick the lock.");
 p_delay(2);
-mes("You manage to pick the lock.");
-if(stat_random(thieving, 96, 250) = false) { // TODO: actual rate
+if(stat_random(thieving, 95, 295) = false) { // TODO: actual rate
     mes("You fail to pick the lock.");
     return;
 }
+mes("You manage to pick the lock.");
+stat_advance(thieving, 15);
 sound_synth(locked, 0, 0);
 ~open_and_close_door2(mm_jail_door_inactive, ~check_axis(coord, loc_coord, loc_angle), iron_door_open);
 
@@ -119,8 +120,9 @@ def_int $dir;
 def_int $dist;
 huntall(npc_coord, 1, ^vis_lineofsight);
 while(huntnext = true) {
-    if(~mm_wearing_greegree = false & %mm_player_is_unconscious = ^false) {
+    if(~mm_wearing_greegree = false & getqueue(aa_jail_knockout) = 0) {
         if (%npc_action_delay <= map_clock) {
+            if_close;
             %npc_action_delay = add(map_clock, 4);
             npc_facesquare(coord);
             if(p_finduid(uid) = true) p_delay(0);

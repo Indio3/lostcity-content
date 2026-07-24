@@ -1,17 +1,15 @@
 [ai_timer,mm_dugopul]
-huntall(npc_coord, 10, 0);
-while(huntnext = true) {
-    if(lineofsight(npc_coord, coord) = false | inzone(0_43_43_48_7, 0_43_43_52_12, coord) = true) {
-        npc_setmode(null);
-    } else {
-        npc_setmode(applayer2);
-    }
+if(inzone(0_43_43_48_6, 0_43_43_52_12, npc_destination) = true) {
+    npc_setmode(null);
+    npc_sethuntmode(null);
+} else {
+    npc_sethuntmode(mm_guard);
 }
 
 [ai_applayer2,mm_dugopul]
 // will always try to hunt -> ap you whether ur wearing a greegree or not
 // sets to none when ap runs, you'll notice if you're in monkey form and in aprange, dugopul will stop moving
-// and if you walk underneath, he will step out to try and interact
+// and if you walk underneath, he will step out to try and interact;
 if(~mm_wearing_greegree = true) {
     npc_setmode(null);
     return;

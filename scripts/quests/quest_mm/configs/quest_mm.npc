@@ -413,6 +413,8 @@ head1=npc_1429_head
 maxrange=10
 attackrange=10
 timer=1
+huntmode=mm_guard
+huntrange=10
 
 [mm_salenab]
 name=Salenab
