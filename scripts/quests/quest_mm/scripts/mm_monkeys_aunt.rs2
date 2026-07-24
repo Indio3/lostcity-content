@@ -8,8 +8,15 @@ while(huntnext = true) {
     if(~mm_wearing_greegree = true) {
         return;
     }
-    // if you are on the opposite indoors flag, the aunt wont target you
-    if((map_indoors(npc_coord) = true & map_indoors(coord) = false) | (map_indoors(coord) = true & map_indoors(npc_coord) = false)) {
+    // you have to be in the same area as her sort of, otherwise she wont target you, she does not check los
+    // if she is in the garden, you have to be in the garden, if she is in the house, you have to be in the house
+    // but if you are in the house, she can target you from anywhere but the garden, also, the aunt being in the house
+    // is different than the player being in the house (in terms of inzone)...
+    if((inzone(0_42_43_52_40, 0_42_43_58_46, npc_coord) = true & inzone(0_42_43_52_40, 0_42_43_58_46, coord) = false) 
+        | (inzone(0_42_43_52_40, 0_42_43_58_46, npc_coord) = false & inzone(0_42_43_52_40, 0_42_43_58_46, coord) = true)) {
+        return;
+    }
+    if(inzone(0_42_43_45_40, 0_42_43_51_42, npc_coord) = true & inzone(0_42_43_44_37, 0_42_43_51_44, coord) = false) {
         return;
     }
     if_close; // the aunt will continiously if_close from this timer, this confirms it's 2t as well
