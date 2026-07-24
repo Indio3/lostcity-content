@@ -7,6 +7,7 @@ loc_change(mm_temple_trapdoor_open, 500);
 mes("The trapdoor opens...");
 
 [oploc1,mm_temple_trapdoor_open]
+mes("You climb down the trapdoor.");
 ~fade_out;
 p_delay(3);
 p_teleport(0_43_143_55_49);
