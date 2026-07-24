@@ -1,7 +1,4 @@
 [opnpc1,mm_zooknock]
-if(inzone(0_42_143_0_0, 2_42_143_63_63, npc_coord) = true) {
-    @zooknock_final_battle_dialogue;
-}
 switch_int(%mm_zooknock) {
     case ^zooknock_need_items, ^zooknock_made_talisman :
         if(%mm_zooknock_player_is_collecting_for_amulet = ^false & %mm_zooknock_player_is_collecting_for_talisman = ^true) {
@@ -139,16 +136,6 @@ switch_obj(last_useitem) {
 }
 
 [ai_timer,mm_zooknock]
-if(inzone(0_42_143_0_0, 2_42_143_63_63, npc_coord) = true) {
-    if(finduid(%npc_aggressive_player) = false) {
-        npc_del;
-        return;
-    }
-    if(inzone(1_42_143_0_0, 1_42_143_63_63, coord) = false) {
-        npc_del;
-    }
-    return;
-}
 def_int $rand = random(2);
 if($rand = 1) ~sound_area(water_blast_all, 0, npc_coord, 10);
 else ~sound_area(fire_blast_all, 0, npc_coord, 10);
@@ -163,6 +150,7 @@ if($rand = 1) {
     $duration = ~coord_projectile(npc_coord, 0_43_142_52_60, fireblast_travel, 25, 50, 16, 32, 54, 128, 0);
     spotanim_map(fireblast_impact, 0_43_142_52_60, 124, $duration);
 }
+
 [proc,mm_zooknock_amulet_check]
 if(%mm_zooknock_has_gold_bar = ^false & %mm_zooknock_has_amulet_mould = ^false & 
     %mm_zooknock_has_dentures = ^false) {

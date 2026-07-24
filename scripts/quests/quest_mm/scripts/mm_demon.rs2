@@ -138,7 +138,7 @@ npc_add(map_findsquare(coord, 1, 5, ^map_findsquare_lineofwalk), mm_waymottin, a
 spotanim_npc(smokepuff_large, 50, 0);
 %npc_aggressive_player = uid;
 
-npc_add(map_findsquare(coord, 1, 5, ^map_findsquare_lineofwalk), mm_zooknock, add(2000, random(200)));
+npc_add(map_findsquare(coord, 1, 5, ^map_findsquare_lineofwalk), mm_zooknock_final_battle, add(2000, random(200)));
 spotanim_npc(smokepuff_large, 50, 0);
 %npc_aggressive_player = uid;
 
@@ -182,35 +182,28 @@ hint_npc;
 [ai_timer,mm_carado_final_battle] ~gnome_finalbattle_ophunt;
 [ai_opnpc2,mm_carado_final_battle] ~gnome_finalbattle_melee;
 
-[ai_timer,mm_lumdo]
-if(inzone(0_42_143_0_0, 2_42_143_63_63, npc_coord) = false) {
-    return;
-}
-~gnome_finalbattle_ophunt;
-
-[ai_opnpc2,mm_lumdo] ~gnome_finalbattle_melee;
-
-// the final_battle version uses a bow, the standard uses a sword (reminder for converting later)
-
+// the final_battle version uses a bow, the standard uses a sword
+// [ai_opnpc2,mm_lumdo] ~gnome_finalbattle_range;
 // [ai_apnpc2,mm_lumdo] ~gnome_finalbattle_range;
 // [ai_apnpc2,mm_waymottin] ~gnome_finalbattle_vial;
 // [ai_apnpc2,mm_bunkwicket] ~gnome_finalbattle_vial;
 
-// [ai_apnpc2,mm_zooknock]
-// npc_anim(m_mage_attack, 0);
-// def_int $duration = 64;
-// def_spotanim $spell = fireblast_travel;
-// def_spotanim $spell_impact = fireblast_impact;
-// if(random(2) = 0) {
-//     $spell = waterblast_travel;
-//     $spell_impact = waterblast_impact;
-// }
-// $duration = ~npc_to_npc_projectile(.npc_uid, fireblast_travel, 25, 50, 25, 16, 0, 64, 5);
-// npc_setmode(null);
-// .spotanim_npc($spell_impact, 200, calc($duration / 30));
-// .npc_queue(4, random(2), calc($duration / 30));
-// .npc_anim(demon_block, calc($duration / 30));
-// ~.sound_area(black_demon_hit, calc($duration / 30), .npc_coord, 15);
+[ai_timer,mm_zooknock_final_battle]  ~gnome_finalbattle_aphunt;
+[ai_apnpc2,mm_zooknock_final_battle]
+npc_anim(m_mage_attack, 0);
+def_int $duration = 64;
+def_spotanim $spell = fireblast_travel;
+def_spotanim $spell_impact = fireblast_impact;
+if(random(2) = 0) {
+    $spell = waterblast_travel;
+    $spell_impact = waterblast_impact;
+}
+$duration = ~npc_to_npc_projectile(.npc_uid, $spell, 25, 50, 25, 16, 21, 64, 5);
+npc_setmode(null);
+.spotanim_npc($spell_impact, 200, $duration);
+.npc_queue(4, random(2), calc($duration / 30));
+.npc_anim(demon_block, calc($duration / 30));
+~.sound_area(black_demon_hit, calc($duration / 30), .npc_coord, 15);
 
 [proc,gnome_finalbattle_ophunt]
 if(finduid(%npc_aggressive_player) = false) {
@@ -227,13 +220,20 @@ while(.npc_findnext = true) {
     }
 }
 
-// [proc,gnome_finalbattle_aphunt]
-// npc_huntall(npc_coord, 5, 0);
-// while(.npc_findnext = true) {
-//     if(.npc_type = mm_demon & .%npc_aggressive_player = %npc_aggressive_player) {
-//         npc_setmode(apnpc2);
-//     }
-// }
+[proc,gnome_finalbattle_aphunt]
+if(finduid(%npc_aggressive_player) = false) {
+    npc_del;
+    return;
+}
+if(inzone(1_42_143_0_0, 1_42_143_63_63, coord) = false) {
+    npc_del;
+}
+npc_huntall(npc_coord, 5, 0);
+while(.npc_findnext = true) {
+    if(.npc_type = mm_demon & .%npc_aggressive_player = %npc_aggressive_player) {
+        npc_setmode(apnpc2);
+    }
+}
 
 [proc,gnome_finalbattle_melee]
 if(npc_type = mm_karam_final_battle) npc_anim(m_assassin_attack, 0);
@@ -481,7 +481,7 @@ if(%mm_garkor < ^garkor_finished_mission) {
 if(%mm_garkor < ^garkor_finished_mission) %mm_garkor = ^garkor_finished_mission;
 ~chatnpc("<p,neutral>Speak to Zooknock. He will arrange for you to leave.");
 
-[label,zooknock_final_battle_dialogue]
+[opnpc1,mm_zooknock_final_battle]
 if(%mm_main < ^mm_defeated_demon) {
     ~chatnpcnoturn("<p,angry>Stop talking and start fighting!");
     return;
