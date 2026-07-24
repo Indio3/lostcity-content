@@ -2,6 +2,13 @@
 @lumo_jailed_dialogue;
 
 [label,lumo_jailed_dialogue]
+// can confirm this is set here, if you summon guards through dugopul to queue ninja guards and get knocked out
+// by an elder guard, then use a player to block your character from the ninja guards until this queue
+// runs without running the walktrigger, you can still get knocked out again
+%mm_player_is_unconscious = ^false;
+if(inzone(0_43_43_14_41, 0_43_43_24_50, coord) = false) {
+    return;
+}
 if(%mm_jail_count = 1) {
     ~chatnpc_specific(nc_name(mm_lumo), mm_lumo, "<p,neutral>Look - a newcomer. I'd say let me be the first to welcome you to Ape Atoll, but I see you've already met the welcoming party...");
 } else if(%mm_jail_count = 5) {

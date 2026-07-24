@@ -38,11 +38,13 @@ if(inv_total(worn, mm_amulet_of_monkey_speak) = 0) {
 ~mm_jail_patrol;
 
 [queue,aa_jail_knockout]
+%mm_player_is_unconscious = ^true;
 ~fade_out;
 p_delay(3);
 walktrigger(wake_up);
 clearqueue(aa_knockout);
-p_telejump(0_43_43_18_42);
+clearqueue(aa_jail_knockout);
+p_teleport(movecoord(0_43_43_18_41, randominc(6), 0, randominc(1)));
 queue(lumo_jailed_dialogue, 10, 0);
 ~fade_in;
 p_delay(4);
@@ -50,6 +52,7 @@ if(%mm_jail_count < 255) %mm_jail_count = add(%mm_jail_count, 1);
 if_openoverlay(null);
 
 [queue,mm_jail_guard_attack](npc_uid $npc_uid)
+clearqueue(mm_jail_guard_attack);
 def_coord $dest;
 def_coord $npc_center;
 def_int $dir;
@@ -100,8 +103,6 @@ if(npc_finduid($npc_uid) = true) {
                 }
             }
         }
-
-        %mm_player_is_unconscious = ^true;
         anim(human_mm_flyback, 20);
         ~damage_self(divide(stat(hitpoints), 5)); // 1/5th of hp?
         if(lineofwalk(coord, $dest) = true & coord ! $dest) {
@@ -129,6 +130,7 @@ while(huntnext = true) {
             if(huntnext = true) {
                 if_close;
                 if(busy = false & ~mm_wearing_greegree = false) {
+                    clearqueue(lumo_jailed_dialogue); // you can stack this queue, but not from getting hit by jail guard multiple times
                     queue*(mm_jail_guard_attack, 0)(npc_uid);
                 }
             }

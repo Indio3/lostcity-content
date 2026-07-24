@@ -1518,6 +1518,7 @@ vislevel=1
 model1=model_2996_npc
 recol1s=15855
 recol1d=5285
+blockwalk=none
 wanderrange=5
 maxrange=5
 hitpoints=2
