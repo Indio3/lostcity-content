@@ -100,6 +100,10 @@ if(%mm_monkey_child = ^mm_not_started) {
 }
 
 [opnpcu,mm_monkey_child]
+if(gettimer(mm_child_crying) > 0) {
+    mes("The monkey child is far too busy crying...");
+    return;
+}
 def_obj $last_useitem = last_useitem;
 if(inv_total(worn, mm_amulet_of_monkey_speak) = 0) {
     @mm_no_amulet_monkey;
@@ -125,6 +129,7 @@ if(%mm_monkey_child > ^monkey_child_asked_who) {
 
 // not setting anything here its just for the check (seems like only the one varb exists for this)
 [timer,mm_child_crying]
+cleartimer(mm_child_crying);
 
 [label,mm_child_give_bananas]
 if(inv_total(inv, banana) > 4) {

@@ -5,17 +5,6 @@ settimer(teleport_mm_sigil, 10);
 ~equip(last_slot);
 
 [proc,mm_sigil_valid_teleport]()(boolean)
-if(%mm_main >= ^mm_defeated_demon)  {
-    mes("The sigil doesn't activate as you have already helped the");
-    mes("10th squad defeat the demon.");
-    cleartimer(teleport_mm_sigil);
-    return (false);
-}
-if(inzone(0_42_143_0_0, 2_42_143_63_63, coord) = true) {
-    mes("You are already helping the 10th squad defeat the demon!");
-    cleartimer(teleport_mm_sigil);
-    return (false);
-}
 if (~wilderness_level(coord) > 0) {
     mes("You cannot teleport out of the wilderness using the sigil."); // anywhere in wilderness
     return (false);
@@ -26,6 +15,15 @@ if (~pre_tele_checks(coord) = false) {
 
 [timer,teleport_mm_sigil]
 cleartimer(teleport_mm_sigil);
+if(%mm_main >= ^mm_defeated_demon)  {
+    mes("The sigil doesn't activate as you have already helped the");
+    mes("10th squad defeat the demon.");
+    return;
+}
+if(inzone(0_42_143_0_0, 2_42_143_63_63, coord) = true) {
+    mes("You are already helping the 10th squad defeat the demon!");
+    return;
+}
 if (~mm_sigil_valid_teleport = false) {
     settimer(teleport_mm_sigil, 10);
     return;

@@ -126,7 +126,7 @@ if(%mm_main >  ^mm_arrived_atoll) {
         $text = append($text, "||@dre@Sergeant Garkor:||");
         $text = append($text, "@str@I found Sergeant Gakor hiding towards the east of the village. ");
         $text = append($text, "@str@Having eavesdropped on Awowogei's plans, he has|@str@come to ");
-        $text = append($text, "the conclusion that they need a monkey|@str@on the inside.");
+        $text = append($text, "the conclusion that they need a monkey on the|@str@inside.");
 
         if(%mm_garkor = ^garkor_speak_zooknock) {
             if(%mm_zooknock > ^zooknock_learned_story) {
@@ -219,7 +219,7 @@ if(%mm_main >  ^mm_arrived_atoll) {
     //         $text = append($text, "||@dbl@I have offered to get the @dre@bananas@dbl@.");
     //     }
 
-    //     if(%mm_monkey_child = ^monkey_child_received_talisman) {
+    //     if(%mm_monkey_child >= ^monkey_child_received_talisman) {
     //         $text = append($text, "||@str@I have borrowed a magical monkey talisman from the @str@monkey child.");
     //     }
     // }
@@ -249,7 +249,7 @@ if(%mm_main >= ^mm_defeated_demon) {
         $text = append($text, "||@dre@Sergeant Garkor:||");
         $text = append($text, "@str@I found Sergeant Gakor hiding towards the east of the village. ");
         $text = append($text, "@str@Having eavesdropped on Awowogei's plans, he has|@str@come to ");
-        $text = append($text, "the conclusion that they need a monkey|@str@on the inside.");
+        $text = append($text, "the conclusion that they need a monkey on the|@str@inside.");
 
         if(%mm_garkor >= ^garkor_speak_zooknock) {
             if(%mm_zooknock > ^zooknock_learned_story) {
@@ -297,14 +297,14 @@ if(%mm_main >= ^mm_defeated_demon) {
 
 if(%mm_main > ^mm_defeated_demon) {
     $text = append($text, "||@str@With the help of the 10th squad I managed to slay Glough's ");
-    $text = append($text, "@str@'pet,' which turned out to be of all things a Jungle Demon. ");
-    $text = append($text, "@str@Somehow I don't think that is the last I'll be @str@seeing of Glough, his demons or the monkeys...");
+    $text = append($text, "@str@'pet,' which turned out to be of all things a|@str@Jungle Demon. ");
+    $text = append($text, "Somehow I don't think that is the last I'll be @str@seeing of Glough, his demons or the monkeys...");
 
     $text = append($text, "||@str@I have reported to King Narnode.");
 } else if(%mm_main = ^mm_defeated_demon) {
     $text = append($text, "||@dbl@With the help of the 10th squad I managed to slay @dre@Glough's@dbl@ ");
-    $text = append($text, "'pet,' which turned out to be of all things a @dre@Jungle Demon@dbl@. ");
-    $text = append($text, "@dbl@Somehow I don't think that is the last I'll be seeing of @dre@Glough@dbl@, his demons or the monkeys...");
+    $text = append($text, "'pet,' which turned out to be of all things a|@dre@Jungle Demon@dbl@. ");
+    $text = append($text, "Somehow I don't think that is the last I'll be seeing of @dre@Glough@dbl@, his demons or the monkeys...");
 
     $text = append($text, "||@dbl@I must now report to @dre@King Narnode@dbl@.");
 }
