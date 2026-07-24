@@ -23,7 +23,7 @@ if(%mm_jail_count = 1) {
     ~chatnpc_specific(nc_name(mm_carado), mm_carado, "<p,neutral>I was only kidding...");
 } else if(%mm_jail_count = 100) {
     ~chatnpc_specific(nc_name(mm_lumo), mm_lumo, "<p,neutral>One hundred times... It's just not real anymore.");
-    ~chatnpc_specific(nc_name(mm_bunkdo), mm_bunkdo, "<p,neutral>I think we should give him a prize.");
+    ~chatnpc_specific(nc_name(mm_bunkdo), mm_bunkdo, "<p,neutral>I think we should give <text_gender("him", "her")> a prize.");
     ~chatnpc_specific(nc_name(mm_lumo), mm_lumo, "<p,neutral>You're right. I know just the thing.");
     ~chatnpc_specific(nc_name(mm_lumo), mm_lumo, "<p,neutral>No... not the..");
     ~chatnpc_specific(nc_name(mm_carado), mm_carado, "<p,neutral>Monkey corpse stuffed with seaweed!?");
@@ -157,7 +157,7 @@ switch_int(%mm_lumo) {
         ~chatnpc("<p,neutral>So human, what can we do for you?");
 }
 ~chatplayer("<p,neutral>Well I suppose I ought to help you escape.");
-~chatnpc_specific(nc_name(mm_bunkdo), mm_bunkdo, "<p,neutral>No, it's alright, laddie, we quite like it in here.");
+~chatnpc_specific(nc_name(mm_bunkdo), mm_bunkdo, "<p,neutral>No, it's alright, <text_gender("laddie", "lass")>, we quite like it in here.");
 ~chatnpc("<p,neutral>Do your best to ignore him...");
 if(inzone(0_43_43_18_41, 0_43_43_24_43, coord) = false) {
     ~chatnpc("<p,neutral>Not all of us were captured. If you have not done so, you should make contact with those of us who escaped.");
