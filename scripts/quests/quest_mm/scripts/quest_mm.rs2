@@ -632,6 +632,7 @@ else ~mesbox("You do not know what you are doing.");
 [oploc1,mm_reinitialisation_crate]
 mes("You search the crate.");
 p_delay(2);
+// https://web.archive.org/web/20060910110938im_/http://www.runeweb.net/Roth/monkey-maddness3.PNG
 if(inv_freespace(inv) = 0) {
     ~objbox(mm_reinitialisation_hint, "This crate is full of...  spare controls!|You don't have space to take any.", 250, 0, 0);
     return;
@@ -896,10 +897,18 @@ if($op = 2) {
 }
 inv_add(inv, mm_eye_of_gnome, 1);
 
+[oploc1,mm_pineapple_plant_one]
+// no invspace
+loc_change(pineapple_plant_no_pineapples, 50);
+inv_add(inv, pineapple, 1);
+mes("You pick a pineapple.");
+sound_synth(pick, 1, 0);
+
 [oploc1,mm_crate_over_hole]
 mes("You search the crate.");
 p_delay(2);
-~mesbox("You find a hole in the floor under the crate! All you can see is the faint glimmer of light from extremely far below.");
+// https://web.archive.org/web/20060910110938im_/http://www.runeweb.net/Roth/monkey-maddness-c.PNG
+~mesbox("You find a hole in the floor under the crate!|All you can see is the faint glimmer of light|from extremely far below.");
 def_int $op = ~p_choice2_header("Yes, I'm sure.", 1, "No, not yet.", 2, "Would you like to go down?");
 if($op = 2) {
     ~mesbox("You push the crate over the hole again.");

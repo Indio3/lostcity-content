@@ -150,7 +150,7 @@ if(%mm_main >  ^mm_arrived_atoll) {
 
         if(%mm_zooknock > ^zooknock_learned_story) {
             $text = append($text, "||@str@Zooknock is capable of transforming my body into that of a ");
-            $text = append($text, "@str@monkey. He can also help me communicate with the monkeys.");
+            $text = append($text, "@str@monkey. He can also help me communicate with the|@str@monkeys.");
         }
 
         if(%mm_zooknock = ^zooknock_need_items) {

@@ -30,9 +30,9 @@ if(~mm_wearing_greegree = true | %mm_player_is_unconscious = ^true) {
     spotanim_map(smokepuff, npc_coord, 50, 0);
     return;
 }
-if(random(4) = 0) queue(aa_knockout, 0, 0);
+// regular guards dont always knockout, named guards will always knockout
+if(npc_type = mm_monkey_guard & random(10) = 0) queue(aa_knockout, 0, 0);
 else gosub(npc_default_attack);
-
 
 [ai_opplayer2,mm_religious_guard] @mm_religious_guard_attack;
 [ai_opplayer2,mm_religious_trapdoor_guard] @mm_religious_guard_attack;

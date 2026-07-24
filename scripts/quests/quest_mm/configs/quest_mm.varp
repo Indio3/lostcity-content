@@ -21,3 +21,6 @@ scope=perm
 
 [mm_monkeys]
 scope=perm
+
+[mm_misc]
+scope=perm

@@ -14,9 +14,6 @@ scope=perm
 
 [varp_364]
 
-[mm_misc]
-scope=perm
-
 // todo: osrs has "armourhitsound" here?
 [varp_375]
 

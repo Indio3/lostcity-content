@@ -818,3 +818,45 @@ timer=1
 moverestrict=nomove
 defaultmode=none
 param=fishing_movement_enum,fishing_movement_slimey_eel_south_enum
+
+[0_43_42_memberfish]
+vislevel=hide
+readyanim=fishingspot_ready
+walkanim=fishingspot_walk
+name=Fishing spot
+desc=I can see fish swimming in the water.
+minimap=no
+op1=Net
+op3=Harpoon
+op4=hidden
+op5=hidden
+model1=outdoorfurniture_loc_42
+wanderrange=0
+maxrange=50
+moverestrict=nomove
+defaultmode=none
+category=memberfish
+timer=1
+param=whirlpool,macro_whirlpool_memberfish
+param=fishing_movement_enum,fishing_movement_0_43_42_memberfish_enum
+
+[0_42_42_memberfish]
+vislevel=hide
+readyanim=fishingspot_ready
+walkanim=fishingspot_walk
+name=Fishing spot
+desc=I can see fish swimming in the water.
+minimap=no
+op1=Net
+op3=Harpoon
+op4=hidden
+op5=hidden
+model1=outdoorfurniture_loc_42
+wanderrange=0
+maxrange=50
+moverestrict=nomove
+defaultmode=none
+category=memberfish
+timer=1
+param=whirlpool,macro_whirlpool_memberfish
+param=fishing_movement_enum,fishing_movement_0_42_42_memberfish_enum

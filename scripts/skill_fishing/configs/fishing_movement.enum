@@ -452,3 +452,15 @@ val=11,0_53_51_52_16
 val=12,0_53_51_51_18
 val=13,0_53_51_49_20
 val=14,0_53_51_47_20
+
+[fishing_movement_0_43_42_memberfish_enum]
+inputtype=int
+outputtype=coord
+val=0,0_43_42_19_45
+val=1,0_41_57_28_53
+
+[fishing_movement_0_42_42_memberfish_enum]
+inputtype=int
+outputtype=coord
+val=0,0_42_42_6_18
+val=1,0_42_42_19_10

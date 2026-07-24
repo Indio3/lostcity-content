@@ -149,13 +149,20 @@ if(inzone(0_42_143_0_0, 2_42_143_63_63, npc_coord) = true) {
     }
     return;
 }
-~sound_area(fire_blast_all, 0, npc_coord, 10);
+def_int $rand = random(2);
+if($rand = 1) ~sound_area(water_blast_all, 0, npc_coord, 10);
+else ~sound_area(fire_blast_all, 0, npc_coord, 10);
 npc_setmode(null);
 npc_facesquare(0_43_142_52_60);
 npc_anim(m_mage_attack, 0);
-def_int $duration = ~coord_projectile(npc_coord, 0_43_142_52_60, fireblast_travel, 25, 50, 25, 16, 0, 64, 5);
-spotanim_map(fireblast_impact, 0_43_142_52_60, 124, $duration);
-
+def_int $duration;
+if($rand = 1) {
+    $duration = ~coord_projectile(npc_coord, 0_43_142_52_60, waterblast_travel, 25, 50, 16, 32, 54, 128, 0);
+    spotanim_map(waterblast_impact, 0_43_142_52_60, 124, $duration);
+} else {
+    $duration = ~coord_projectile(npc_coord, 0_43_142_52_60, fireblast_travel, 25, 50, 16, 32, 54, 128, 0);
+    spotanim_map(fireblast_impact, 0_43_142_52_60, 124, $duration);
+}
 [proc,mm_zooknock_amulet_check]
 if(%mm_zooknock_has_gold_bar = ^false & %mm_zooknock_has_amulet_mould = ^false & 
     %mm_zooknock_has_dentures = ^false) {

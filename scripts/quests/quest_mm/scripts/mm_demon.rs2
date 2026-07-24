@@ -5,7 +5,7 @@ settimer(teleport_mm_sigil, 10);
 ~equip(last_slot);
 
 [proc,mm_sigil_valid_teleport]()(boolean)
-if(%mm_main < ^mm_defeated_demon)  {
+if(%mm_main >= ^mm_defeated_demon)  {
     mes("The sigil doesn't activate as you have already helped the");
     mes("10th squad defeat the demon.");
     cleartimer(teleport_mm_sigil);
