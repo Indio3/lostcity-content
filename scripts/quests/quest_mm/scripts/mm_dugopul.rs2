@@ -17,7 +17,7 @@ if(~mm_wearing_greegree = true) {
     return;
 }
 if_close;
-if(%mm_guards_cooldown > map_clock | %mm_player_is_unconscious = ^true) {
+if(%mm_guards_cooldown > map_clock) {
     npc_setmode(null);
     return;
 }

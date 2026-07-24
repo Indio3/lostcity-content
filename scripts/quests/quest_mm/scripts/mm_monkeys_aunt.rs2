@@ -28,6 +28,7 @@ while(huntnext = true) {
 }
 
 [queue,mm_aunt_caught]
+if(getqueue(mm_aunt_caught) > 0) return;
 %mm_guards_cooldown = add(map_clock, 50);
 if(inv_total(worn, mm_amulet_of_monkey_speak) = 0) {
     ~chatnpc_specific(nc_name(mm_monkeys_aunt), mm_monkeys_aunt, "<~monkeyspeak_text><~monkeyspeak_text><~monkeyspeak_text>");
