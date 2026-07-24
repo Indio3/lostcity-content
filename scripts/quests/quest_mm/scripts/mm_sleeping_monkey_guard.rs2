@@ -1,5 +1,5 @@
 [ai_timer,mm_sleeping_monkey_guard]
-huntall(0_43_43_12_17, 3, 0);
+huntall(0_43_43_12_17, 5, 0);
 def_int $hunted = ^false;
 while(huntnext = true) {
     $hunted = ^true;
@@ -13,7 +13,7 @@ while(huntnext = true) {
     } else {
         if(%npc_int = ^true) {
             npc_anim(m_monkey_jailofficer_liedown, 0);
-            sound_synth(snore, 0, 0);
+            ~.sound_area(snore, 0, npc_coord, 5); // still uses this instead of area sounds in current osrs
             %npc_int = ^false;
         }
     }
