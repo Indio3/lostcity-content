@@ -591,7 +591,7 @@ if(npc_findexact(1_41_71_53_34, mm_waydar_cutscene) = true & .npc_findexact(1_41
     }
     if(%mm_cutscene_part = 20) {
         %mm_cutscene_part = add(%mm_cutscene_part, 1);
-        ~chatnpc("<p,neutral>Ignore <text_gender("him", "her")>. My colleague's official mission was to look after a human in the area, but don't worry: it is probably dead already.");
+        ~.chatnpc("<p,neutral>Ignore <text_gender("him", "her")>. My colleague's official mission was to look after a human in the area, but don't worry: it is probably dead already.");
     }
     if(%mm_cutscene_part = 21) {
         %mm_cutscene_part = add(%mm_cutscene_part, 1);
@@ -1088,9 +1088,11 @@ mes("You put some string on your amulet. It makes a slight 'Ook' sound.");
 
 [oploc1,mm_stairs_base]
 p_teleport(movecoord(coord, 0, 1, 4));
+mes("You climb up the stairs.");
 
 [oploc1,mm_stairs_top]
 p_teleport(movecoord(coord, 0, -1, -4));
+mes("You climb down the stairs.");
 
 [oploc1,mm_bananatreeempty]
 mes("There are no bananas left on the tree.");
