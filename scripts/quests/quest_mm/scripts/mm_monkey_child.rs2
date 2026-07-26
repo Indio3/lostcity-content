@@ -43,7 +43,7 @@ if(%mm_monkey_child = ^mm_not_started) {
     @mm_child_give_bananas;
 } else if(%mm_monkey_child = ^monkey_child_given_bananas) {
     ~chatplayer("<p,quiz>Has Aunty given you the toy yet?");
-    if(gettimer(mm_give_child_toy) = 0) {
+    if(gettimer(mm_give_child_toy) = -1) {
         ~chatnpc("<p,happy>Yeah - it's really neat!");
         ~chatplayer("<p,quiz>Can I borrow it now then?");
         ~chatnpc("<p,neutral>But I only just got it!");
