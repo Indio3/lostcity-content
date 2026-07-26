@@ -864,7 +864,7 @@ inv_add(inv, iron_scimitar, 1);
 [oploc1,mm_bronze_scimitar_crate]
 mes("You search the crate.");
 p_delay(2);
-~objbox(iron_scimitar, "This crate is full of ...  bronze scimitars!", 250, 0, 0);
+~objbox(bronze_scimitar, "This crate is full of ...  bronze scimitars!", 250, 0, 0);
 def_int $op = ~p_choice2_header("Yes", 1, "No", 2, "Do you wish to take one?");
 if($op = 2) {
     return;
