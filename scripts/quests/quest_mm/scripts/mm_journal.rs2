@@ -317,7 +317,7 @@ if(%mm_main > ^mm_reported_narnode) {
 if(%mm_main >= ^mm_complete) $text = append($text, "||@red@QUEST COMPLETE!");
 
 if(%mm_main > ^mm_complete) {
-    $text = append($text, "||@str@I found Daero and enrolled in the Royal Guard training@str@programme. I underwent a series of exercises designed to@str@increase strength and stamina. This was followed by training@str@my attack and defence techniques.");
+    $text = append($text, "||@str@I found Daero and enrolled in the Royal Guard training @str@programme. I underwent a series of exercises designed to @str@increase strength and stamina. This was followed by training @str@my attack and defence techniques.");
 } else if(%mm_main = ^mm_complete) {
     $text = append($text, "||@dbl@I should find Daero and enroll with the Royal Guard training programme.");
 }

@@ -6,6 +6,13 @@ if(%mm_narnode < ^narnode_received_orders) {
     ~mesbox("Daero seems like he is enjoying himself too much to talk.");
     return;
 }
+if(%mm_main = ^mm_complete_training) {
+    ~chatplayer("<p,neutral>I need to return to Crash Island.");
+    ~chatnpc("<p,neutral>You know the routine...");
+    ~objbox(eye_patch, "You wear the blindfold Daero hands you.", 250, 0, 0);
+    ~daero_move_hangar;
+    return;
+}
 if(%mm_main = ^mm_complete) {
     @daero_training;
 } else if(%mm_daero >= ^daero_left_grandtree) {

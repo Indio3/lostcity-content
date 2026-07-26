@@ -234,7 +234,9 @@ if_openmain(inter_199);
 p_delay(4);
 if_close;
 if(npc_findexact(1_41_71_54_35, mm_awowogei_cutscene) = true) {
-    p_teleport(1_41_71_47_28);
+    // https://youtu.be/Qr9nNWqN6Y8?si=g2jLc94-ao414-5r&t=3784
+    // cutscene start and facing is different compared to osrs
+    p_teleport(1_41_71_47_35);
     npc_facesquare(1_41_71_53_35);
     if_settab(null, ^tab_magic);
     p_delay(0);
@@ -246,8 +248,8 @@ if(npc_findexact(1_41_71_54_35, mm_awowogei_cutscene) = true) {
         walktrigger(mm_ch4_walktrigger);
         if_settext(music:com_177, "Suspicious");
         midi_song("suspicious");
-        cam_moveto(1_41_71_47_36, 600, 232, 232);
-        cam_lookat(1_41_71_53_35, 160, 232, 232);
+        cam_moveto(1_41_71_47_35, 740, 232, 232);
+        cam_lookat(1_41_71_53_35, 240, 232, 232);
         @mm_ch4_cutscene_dialogue;
     }
 }

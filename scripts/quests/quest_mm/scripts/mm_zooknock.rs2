@@ -106,6 +106,7 @@ switch_obj(last_useitem) {
                     ~chatplayer("<p,neutral>Yes.");
                     %mm_zooknock_has_monkey_relic = ^true;
                     %mm_zooknock_monkey_relic = oc_param($last_useitem, mm_bones_type);
+                    inv_del(inv, $last_useitem, 1);
                     ~objbox($last_useitem, "You hand Zooknock the monkey remains.", 250, 0, 0);
                 case 2 :
                     ~chatplayer("<p,neutral>Actually, no.");
