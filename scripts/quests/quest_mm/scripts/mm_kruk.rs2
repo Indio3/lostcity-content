@@ -7,6 +7,10 @@ if(inv_total(worn, mm_amulet_of_monkey_speak) = 0) {
     return;
 }
 ~chatplayer("<p,quiz>Hello?");
+if(%mm_kruk = ^kruk_spoken) {
+    ~chatnpc("<p,neutral>Sorry, I am far too busy dealing with the invaders right now.");
+    return;
+}
 ~chatnpc("<p,quiz>What brings you up here, monkey?");
 if(%mm_elder_guard = ^elder_guard_spoken) {
     ~chatplayer("<p,neutral>I have come to seek audience with Awowogei. I am told I need your permission to do so.");

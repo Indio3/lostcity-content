@@ -478,6 +478,9 @@ if(%mm_garkor < ^garkor_finished_mission) {
 ~chatplayer("<p,neutral>Rest assured, I will do so. How do I leave this place?");
 if(%mm_garkor < ^garkor_finished_mission) %mm_garkor = ^garkor_finished_mission;
 ~chatnpc("<p,neutral>Speak to Zooknock. He will arrange for you to leave.");
+if(npc_find(coord, mm_zooknock_final_battle, 15, 0) = true) {
+    hint_npc;
+}
 
 [opnpc1,mm_zooknock_final_battle]
 if(%mm_main < ^mm_defeated_demon) {

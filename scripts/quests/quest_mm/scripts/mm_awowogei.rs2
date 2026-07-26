@@ -87,6 +87,7 @@ switch_int(%mm_awowogei) {
             ~chatnpc_specific(nc_name(mm_awowogei_cutscene), mm_awowogei_cutscene, "<p,neutral>There are several of your kind kept captive there. I challenge you to free one and return it to me.");
             ~chatplayer("<p,quiz>How am I meant to free one of them?");
             ~chatnpc_specific(nc_name(mm_awowogei_cutscene), mm_awowogei_cutscene, "<p,neutral>This is for you to decide, visitor.");
+            // https://youtu.be/CrIK9wa_6j0?si=TP_5XVR8Ap397MAf&t=1820
             ~chatplayer("<p,neutral>Very well. I will be back later,  with one of the captives.");
         }
 }

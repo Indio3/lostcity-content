@@ -268,6 +268,9 @@ walktrigger(mm_ch2_walktrigger);
 queue(mm_ch2_cutscene_queue, 0, 0);
 
 [queue,mm_ch2_cutscene_queue]
+if(inzone(0_40_71_0_0, 0_40_71_63_63, coord) = false) {
+    return;
+}
 %mm_cutscene_part = add(%mm_cutscene_part, 1);
 @mm_ch2_cutscene_dialogue;
 
@@ -368,6 +371,9 @@ walktrigger(mm_ch3_walktrigger);
 queue(mm_ch3_cutscene_queue, 0, 0);
 
 [queue,mm_ch3_cutscene_queue]
+if(inzone(0_41_71_0_0, 0_41_71_63_63, coord) = false) {
+    return;
+}
 %mm_cutscene_part = add(%mm_cutscene_part, 1);
 @mm_ch3_cutscene_dialogue;
 
@@ -493,6 +499,9 @@ walktrigger(mm_ch4_walktrigger);
 queue(mm_ch4_cutscene_queue, 0, 0);
 
 [queue,mm_ch4_cutscene_queue]
+if(inzone(1_41_71_0_0, 1_41_71_63_63, coord) = false) {
+    return;
+}
 %mm_cutscene_part = add(%mm_cutscene_part, 1);
 @mm_ch4_cutscene_dialogue;
 
@@ -642,6 +651,7 @@ def_int $op = ~p_choice2_header("Yes", 1, "No", 2, "Do you wish to take one?");
 if($op = 2) return;
 inv_add(inv, mm_reinitialisation_hint, 1);
 
+[oploc1,bunker_teleport] @mm_bunker_teleport;
 [oploc1,bunker_teleport_floor] @mm_bunker_teleport;
 [oploc1,bunker_teleport_corner] @mm_bunker_teleport;
 
@@ -729,6 +739,7 @@ switch_int(random(5)) {
 
 npc_add(map_findsquare(coord, 0, 10, ^map_findsquare_lineofsight), $main_guard, 50);
 spotanim_map(smokepuff, npc_coord, 50, 0);
+sound_synth(smokepuff, 0, 0);
 %npc_aggressive_player = uid;
 npc_setmode(opplayer2);
 
@@ -737,6 +748,7 @@ def_int $count = 0;
 while(random(2) = 0 & $count < 3) {
     npc_add(map_findsquare($main_coord, 1, 1, ^map_findsquare_lineofsight), mm_monkey_guard, 50);
     spotanim_map(smokepuff, npc_coord, 50, 0);
+    sound_synth(smokepuff, 0, 0);
     %npc_aggressive_player = uid;
     npc_setmode(opplayer2);
     $count = add($count,1);
@@ -755,6 +767,36 @@ anim(human_pickupfloor, 0);
 p_delay(1);
 p_teleport(movecoord(coord, 0, -1, 0));
 mes("You climb down the ladder.");
+
+[oploc1,mm_bamboo_ladder_top_reverse]
+p_delay(0);
+anim(human_reachforladder, 0);
+p_delay(1);
+def_int $dx = 0;
+def_int $dz = 0;
+switch_int(loc_angle) {
+    case ^loc_west : $dx = 1;
+    case ^loc_north : $dz = -1;
+    case ^loc_east : $dx = -1;
+    case ^loc_south : $dz = 1;
+}
+p_teleport(movecoord(loc_coord, $dx, -1, $dz));
+mes("You climb down the ladder.");
+
+[oploc1,mm_bamboo_ladder_reverse]
+p_delay(0);
+anim(human_reachforladder, 0);
+p_delay(1);
+def_int $dx = 0;
+def_int $dz = 0;
+switch_int(loc_angle) {
+    case ^loc_west : $dx = -1;
+    case ^loc_north : $dz = 1;
+    case ^loc_east : $dx = 1;
+    case ^loc_south : $dz = -1;
+}
+p_teleport(movecoord(loc_coord, $dx, 1, $dz));
+mes("You climb up the ladder.");
 
 [oploc1,mm_bamboo_ladder_watchtower_west]
 p_delay(0);
@@ -816,6 +858,16 @@ if($op = 2) {
     return;
 }
 inv_add(inv, iron_scimitar, 1);
+
+[oploc1,mm_bronze_scimitar_crate]
+mes("You search the crate.");
+p_delay(2);
+~objbox(iron_scimitar, "This crate is full of ...  bronze scimitars!", 250, 0, 0);
+def_int $op = ~p_choice2_header("Yes", 1, "No", 2, "Do you wish to take one?");
+if($op = 2) {
+    return;
+}
+inv_add(inv, bronze_scimitar, 1);
 
 [oploc1,mm_tinderbox_crate]
 mes("You search the crate.");
@@ -896,6 +948,9 @@ if($op = 2) {
     return;
 }
 inv_add(inv, mm_eye_of_gnome, 1);
+
+[oploc2,mm_bookcase]
+mes("You find nothing to suit your reading taste here.");
 
 [oploc1,mm_pineapple_plant_one]
 // no invspace
