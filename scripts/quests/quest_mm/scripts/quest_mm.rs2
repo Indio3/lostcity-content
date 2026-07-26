@@ -1041,7 +1041,12 @@ queue(damage_player, 0, 1);
 p_teleport(0_43_42_51_36);
 
 [opobj1,mm_enchanted_gold_bar]
-~objbox(mm_enchanted_gold_bar, "The enchanted gold bar says:|@dbl@<~monkeyspeak_text>", 250, 0, 0);
+def_string $text = "<~monkeyspeak_text>";
+if(inv_total(worn, mm_amulet_of_monkey_speak) > 0) {
+    if(random(2) = 0) $text = "'I'm stuck in this horrible gold bar!'";
+    else $text = "'Argh! Get me out of here!'";
+}
+~objbox(mm_enchanted_gold_bar, "The enchanted gold bar says:|@dbl@<$text>", 250, 0, 0);
 
 [oplocu,mm_pyre]
 if(last_useitem = mm_enchanted_gold_bar) {

@@ -185,7 +185,7 @@ while($op ! null) {
 
 [label,mm_narnode_p5]
 %mm_narnode = ^narnode_southern_winds;
-~chatplayer("<p,neutral>Caranock suggested they were blown off course by extreme southern winds.");
+~chatplayer("<p,neutral>Caranock suggested they were blown off course by extreme southerly winds.");
 ~chatnpc("<p,neutral>Do you believe him?");
 @mm_narnode_p6;
 
@@ -198,3 +198,5 @@ p_delay(3);
 %mm_narnode = ^narnode_received_orders;
 inv_add(inv, mm_narnode_orders, 1);
 ~objbox(mm_narnode_orders, "Narnode hands you some handwritten orders.", 250, 0, 0);
+~chatplayer("<p,quiz>Where will I find Daero?");
+~chatnpc("<p,neutral>You will find him attending to business somewhere on the Grand Tree.");

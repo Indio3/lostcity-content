@@ -73,7 +73,8 @@ switch_int(%mm_daero) {
             .npc_setmode(apnpc1);
             ~chatnpc_specific(nc_name(mm_daero), mm_daero, "<p,neutral>Not just any old visitor Waydar; this is the person who exposed Glough and defeated his demon.");
             ~chatnpc_specific(nc_name(mm_waydar), mm_waydar, "<p,neutral>I see. Well, there are no more demons left here.");
-            ~chatnpc_specific(nc_name(mm_daero), mm_daero, "<p,neutral>Quite. He is now on a secret mission for the King.");
+            ~chatnpc_specific(nc_name(mm_daero), mm_daero, "<p,neutral>Quite. <text_gender("He", "She")> is now on a secret mission for the King.");
+            ~chatnpc_specific(nc_name(mm_daero), mm_daero, "<p,neutral>As you know, the 10th squad went missing during their mission to decommission the eastern shipyard of Karamja.");
             ~chatnpc_specific(nc_name(mm_daero), mm_daero, "<p,neutral>We still do not know what happened, but evidence suggests they were blown far off course to the south.");
             ~chatnpc_specific(nc_name(mm_waydar), mm_waydar, "<p,neutral>Their standard gliders must have fallen prey to the tropical weather.");
             ~chatnpcnoturn("<p,neutral>When reinitialisation has been completed, you are to fly to the south of Karamja with <displayname()> and accompany <text_gender("him", "her")> on the mission.");

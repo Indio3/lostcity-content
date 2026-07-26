@@ -95,12 +95,12 @@ switch_int(%mm_garkor) {
     case ^mm_not_started :
         ~chatplayer("<p,quiz>Hello?");
         ~chatnpc("<p,neutral>A fine day you have chosen to visit this hellish island, human.");
-        ~chatplayer("<p,neutral>Good day to you too Sergeant. I've been sent by your King Narnode to -");
+        ~chatplayer("<p,neutral>Good day to you to Sergeant. I've been sent by your King Narnode to -");
         ~chatnpc("<p,neutral>Investigate the circumstances surrounding the mysterious disappearance of my squad. Yes, I know.");
         ~chatplayer("<p,quiz>How did you know that?");
         ~chatnpc("<p,neutral>The King and I are still in communication, albeit sporadic. I decided I need a human of your calibre to assist me. It is pleasing to see you are still alive.");
         ~chatplayer("<p,quiz>Why do you need a human?");
-        ~chatnpc("<p,quiz>There is more going on than meets your eye, human. Did you not find it strange that an entire squad be sent to decommission a shipyard?");
+        ~chatnpc("<p,quiz>There is more going on than meets your eye, human. Did you not find it strange that an entire squad be sent to decomission a shipyard?");
         ~chatplayer("<p,neutral>Well -");
         ~chatnpc("<p,neutral>Indeed. But there are more pressing matters at hand. Three of my squad have been captured and placed in the jail. They are watched over by somewhat overpowering guards.");
         ~chatnpc("<p,neutral>Before we can resume our original mission we must rescue them.");

@@ -71,7 +71,6 @@ anim(human_death, 0);
 p_delay(2);
 ~fade_out;
 p_delay(3);
-// no poison arrow thing here? watched tons of videos and never saw it
 p_teleport(movecoord(0_43_43_18_41, randominc(6), 0, randominc(1)));
 walktrigger(wake_up);
 ~combat_clearqueue;
@@ -82,4 +81,17 @@ queue(lumo_jailed_dialogue, 10, 0);
 if(%mm_jail_count < 255) %mm_jail_count = add(%mm_jail_count, 1);
 ~fade_in;
 p_delay(4);
+def_int $severity = ~random_range(10, 20);
+if(random(10) = 0) { // seems random originally? only have one video of it: youtube.com/watch?si=-n3GpFUbwPR5L3PB&t=32&v=YGXz6CqRqig&feature=youtu.be
+    // assume the severity should be the same as the rest of the ape atoll stuff, maybe thats why it doesnt happen everytime?
+    // its not wrapped in the antipsn check, the player in the video is antipoisoned (same behaviour as osrs in this case)
+    if (%poison > -1) { 
+        if (%poison > $severity) {
+            mes("You have been poisoned!");
+            ~set_poison_timer;
+            %poison = $severity;
+        }
+    }
+    ~objbox(iron_arrow_p, "You have been hit by poisoned arrows and knocked out!", 250, 0, 0);
+}
 if_openoverlay(null);
