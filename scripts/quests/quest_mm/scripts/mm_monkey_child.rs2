@@ -126,6 +126,7 @@ if(%mm_monkey_child > ^monkey_child_asked_who) {
 
 [timer,mm_give_child_toy]
 %mm_monkey_child_waiting_for_talisman = ^false;
+cleartimer(mm_give_child_toy);
 
 // not setting anything here its just for the check (seems like only the one varb exists for this)
 [timer,mm_child_crying]
