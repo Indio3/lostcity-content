@@ -1,7 +1,8 @@
 [varp_364]
 
-// todo: osrs has "armourhitsound" here?
-[varp_375]
+[armourhitsound]
+protect=no
+type=synth
 
 [castlewars_team]
 scope=perm

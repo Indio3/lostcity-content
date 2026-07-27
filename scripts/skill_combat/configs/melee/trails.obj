@@ -336,6 +336,7 @@ param=crushdefence,72
 param=magicdefence,-6
 param=rangedefence,80
 param=zamorakitem,^true
+param=defend_sound,swordclash3
 
 [rune_platelegs_zamorak]
 name=Zamorak platelegs
@@ -430,6 +431,7 @@ param=magicdefence,-1
 param=rangedefence,46
 param=defend_anim,human_shield_defence
 param=zamorakitem,^true
+param=defend_sound,swordclash6
 
 [rune_platebody_saradomin]
 name=Saradomin plate
@@ -466,6 +468,7 @@ param=crushdefence,72
 param=magicdefence,-6
 param=rangedefence,80
 param=saradominitem,^true
+param=defend_sound,swordclash3
 
 [rune_platelegs_saradomin]
 name=Saradomin legs
@@ -560,6 +563,7 @@ param=magicdefence,-1
 param=rangedefence,46
 param=defend_anim,human_shield_defence
 param=saradominitem,^true
+param=defend_sound,swordclash6
 
 [rune_platebody_guthix]
 name=Guthix platebody
@@ -594,6 +598,7 @@ param=crushdefence,72
 param=magicdefence,-6
 param=rangedefence,80
 param=guthixitem,^true
+param=defend_sound,swordclash3
 
 [rune_platelegs_guthix]
 name=Guthix platelegs
@@ -688,6 +693,7 @@ param=magicdefence,-1
 param=rangedefence,46
 param=defend_anim,human_shield_defence
 param=guthixitem,^true
+param=defend_sound,swordclash6
 
 [black_platebody_trim]
 name=Black platebody (t)
@@ -719,6 +725,7 @@ param=slashdefence,40
 param=crushdefence,30
 param=magicdefence,-6
 param=rangedefence,40
+param=defend_sound,sword_hit2
 
 [black_platelegs_trim]
 name=Black platelegs (t)
@@ -810,6 +817,7 @@ param=crushdefence,18
 param=magicdefence,-1
 param=rangedefence,18
 param=defend_anim,human_shield_defence
+param=defend_sound,blade5
 
 [black_platebody_gold]
 name=Black platebody (g)
@@ -841,6 +849,7 @@ param=slashdefence,40
 param=crushdefence,30
 param=magicdefence,-6
 param=rangedefence,40
+param=defend_sound,sword_hit2
 
 [black_platelegs_gold]
 name=Black platelegs (g)
@@ -932,6 +941,7 @@ param=crushdefence,18
 param=magicdefence,-1
 param=rangedefence,18
 param=defend_anim,human_shield_defence
+param=defend_sound,blade5
 
 [adamant_platebody_trim]
 name=Adam platebody (t)
@@ -963,6 +973,7 @@ param=slashdefence,63
 param=crushdefence,55
 param=magicdefence,-6
 param=rangedefence,63
+param=defend_sound,sword_hit2
 
 [adamant_platelegs_trim]
 name=Adam platelegs (t)
@@ -1085,6 +1096,7 @@ param=slashdefence,63
 param=crushdefence,55
 param=magicdefence,-6
 param=rangedefence,63
+param=defend_sound,sword_hit2
 
 [adamant_platelegs_gold]
 name=Adam platelegs (g)
@@ -1207,6 +1219,7 @@ param=slashdefence,80
 param=crushdefence,72
 param=magicdefence,-6
 param=rangedefence,80
+param=defend_sound,swordclash3
 
 [rune_platelegs_gold]
 name=Rune platelegs (g)
@@ -1298,6 +1311,7 @@ param=crushdefence,46
 param=magicdefence,-1
 param=rangedefence,46
 param=defend_anim,human_shield_defence
+param=defend_sound,swordclash6
 
 [rune_platebody_trim]
 name=Rune platebody (t)
@@ -1329,6 +1343,7 @@ param=slashdefence,80
 param=crushdefence,72
 param=magicdefence,-6
 param=rangedefence,80
+param=defend_sound,swordclash3
 
 [rune_platelegs_trim]
 name=Rune platelegs (t)
@@ -1420,6 +1435,7 @@ param=crushdefence,46
 param=magicdefence,-1
 param=rangedefence,46
 param=defend_anim,human_shield_defence
+param=defend_sound,swordclash6
 
 [black_plateskirt_trim]
 name=Black plateskirt (t)

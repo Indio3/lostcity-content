@@ -1116,6 +1116,7 @@ param=crushdefence,29
 param=magicdefence,-1
 param=rangedefence,29
 param=defend_anim,human_shield_defence
+param=defend_sound,wood_armour3_1
 
 [viking_cloak_green]
 name=Fremennik cloak

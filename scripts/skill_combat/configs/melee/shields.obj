@@ -22,6 +22,7 @@ param=crushdefence,3
 param=magicdefence,1
 param=rangedefence,4
 param=defend_anim,human_shield_defence
+param=defend_sound,wood_armour3_1
 
 [bronze_sq_shield]
 name=Bronze sq shield
@@ -49,6 +50,7 @@ param=slashdefence,6
 param=crushdefence,4
 param=rangedefence,5
 param=defend_anim,human_shield_defence
+param=defend_sound,brassclash
 
 [iron_sq_shield]
 name=Iron sq shield
@@ -75,6 +77,7 @@ param=slashdefence,9
 param=crushdefence,7
 param=rangedefence,8
 param=defend_anim,human_shield_defence
+param=defend_sound,brassclash2
 
 [steel_sq_shield]
 name=Steel sq shield
@@ -101,6 +104,7 @@ param=slashdefence,13
 param=crushdefence,11
 param=rangedefence,12
 param=defend_anim,human_shield_defence
+param=defend_sound,blade4
 
 [black_sq_shield]
 name=Black sq shield
@@ -127,6 +131,7 @@ param=slashdefence,16
 param=crushdefence,14
 param=rangedefence,15
 param=defend_anim,human_shield_defence
+param=defend_sound,blade5
 
 [mithril_sq_shield]
 name=Mithril sq shield
@@ -153,6 +158,7 @@ param=slashdefence,19
 param=crushdefence,15
 param=rangedefence,17
 param=defend_anim,human_shield_defence
+param=defend_sound,swordclash2
 
 [adamant_sq_shield]
 name=Adamant sq shield
@@ -179,6 +185,7 @@ param=slashdefence,26
 param=crushdefence,22
 param=rangedefence,24
 param=defend_anim,human_shield_defence
+param=defend_sound,swordclash5
 
 [rune_sq_shield]
 name=Rune sq shield
@@ -205,6 +212,7 @@ param=slashdefence,40
 param=crushdefence,36
 param=rangedefence,38
 param=defend_anim,human_shield_defence
+param=defend_sound,swordclash6
 
 [dragon_sq_shield]
 name=Dragon sq shield
@@ -230,6 +238,8 @@ param=slashdefence,52
 param=crushdefence,48
 param=rangedefence,50
 param=defend_anim,human_shield_defence
+// guess
+param=defend_sound,swordclash6
 
 [antidragonbreathshield]
 name=Dragonfire shield
@@ -253,6 +263,7 @@ param=crushdefence,8
 param=magicdefence,2
 param=rangedefence,8
 param=defend_anim,human_shield_defence
+param=defend_sound,brassclash2
 
 [granite_shield]
 name=Granite shield
@@ -277,3 +288,4 @@ param=slashdefence,42
 param=crushdefence,38
 param=magicdefence,-2
 param=rangedefence,65
+param=defend_sound,stone_armour1

@@ -1189,6 +1189,7 @@ param=stabdefence,36
 param=slashdefence,26
 param=crushdefence,42
 param=magicdefence,15
+param=defend_sound,wood_armour3_1
 // Used tip.it guide attack stats and 2006 guide defence stats
 // 2004 stats https://web.archive.org/web/20050303033424/http://koti.mbnet.fi/~timpat/index2.htm
 // 2004 stats https://web.archive.org/web/20050411232314/http://www.tip.it/runescape/index.php?page=splitbark_armour.htm
