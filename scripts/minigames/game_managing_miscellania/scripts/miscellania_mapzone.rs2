@@ -8,3 +8,4 @@ if (%varp_360 = 0) {
     %misc_approval = ^MISC_APPROVAL_25_PERCENT; // Start at 25%
 }
 ~manage_misc_daily_update;
+@music_playbyregion(coord);
