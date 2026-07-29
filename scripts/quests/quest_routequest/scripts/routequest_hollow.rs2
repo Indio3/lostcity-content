@@ -305,12 +305,11 @@ if (npc_find(coord, route_curpile_fyod, 10, 0) = true) {
     p_delay(0);
     ~damage_self(1);
     spotanim_pl(stunned_thieving, 124, 0);
-    anim(human_death, 0); // todo: verify this is the right anim.
+    anim(%com_defendanim, 0); // osrs
     sound_synth(stunned, 0, 0);
     p_delay(0);
     ~fade_out;
     p_delay(4);
-    anim(null, 0);
     p_teleport(0_55_51_2_21);
     ~fade_in;
     queue(fade_clear, 2, 0);
