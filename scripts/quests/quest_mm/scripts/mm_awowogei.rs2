@@ -77,7 +77,7 @@ switch_int(%mm_awowogei) {
             facesquare(loc_coord);
             ~chatnpc_specific(nc_name(mm_awowogei_cutscene), mm_awowogei_cutscene, "<p,neutral>I must admit, I have always regarded your kind as our inferior cousins, visitor.");
             ~chatnpc_specific(nc_name(mm_awowogei_cutscene), mm_awowogei_cutscene, "<p,neutral>However, I am well aware that you may have a few things to offer.");
-            ~chatnpc("<p,neutral>Don't listen to him, Awowogei!");
+            ~chatnpc("<p,neutral>Don't listen to him Awowogei!");
             facesquare(loc_coord);
             ~chatnpc_specific(nc_name(mm_awowogei_cutscene), mm_awowogei_cutscene, "<p,angry>Be silent, Uwogo.");
             ~chatnpc_specific(nc_name(mm_awowogei_cutscene), mm_awowogei_cutscene, "<p,neutral>I have heard your kind are exceptionally resourceful. I wish to put this reputation to the test.");
@@ -87,6 +87,7 @@ switch_int(%mm_awowogei) {
             ~chatnpc_specific(nc_name(mm_awowogei_cutscene), mm_awowogei_cutscene, "<p,neutral>There are several of your kind kept captive there. I challenge you to free one and return it to me.");
             ~chatplayer("<p,quiz>How am I meant to free one of them?");
             ~chatnpc_specific(nc_name(mm_awowogei_cutscene), mm_awowogei_cutscene, "<p,neutral>This is for you to decide, visitor.");
+            // https://youtu.be/CrIK9wa_6j0?si=TP_5XVR8Ap397MAf&t=1820
             ~chatplayer("<p,neutral>Very well. I will be back later,  with one of the captives.");
         }
 }
@@ -110,3 +111,5 @@ loc_anim(m_monkey_ape_ruler_nod);
 ~chatplayer("<p,neutral>Thank you.");
 ~chatnpc_specific(nc_name(mm_awowogei_cutscene), mm_awowogei_cutscene, "<p,neutral>You are clearly well acquainted with the ways of this world. We will talk more on this later.");
 ~chatnpc_specific(nc_name(mm_awowogei_cutscene), mm_awowogei_cutscene, "<p,neutral>In the meantime, feel free to remain as long as you like on my island.");
+~chatplayer("<p,neutral>What about the proposed alliance, Awowogei?");
+~chatnpc_specific(nc_name(mm_awowogei_cutscene), mm_awowogei_cutscene, "<p,neutral>I must think upon it some more and discuss the matter with my advisers. We will contact you when we are ready.");

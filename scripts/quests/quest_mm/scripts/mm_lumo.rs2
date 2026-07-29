@@ -164,7 +164,8 @@ switch_int(%mm_lumo) {
         ~chatnpc("<p,neutral>So human, what can we do for you?");
 }
 ~chatplayer("<p,neutral>Well I suppose I ought to help you escape.");
-~chatnpc_specific(nc_name(mm_bunkdo), mm_bunkdo, "<p,neutral>No, it's alright, <text_gender("laddie", "lass")>, we quite like it in here.");
+// https://youtu.be/qMJyd1UJjlI?si=g9Vx4lN3fKCuIckN&t=1119
+~chatnpc_specific(nc_name(mm_bunkdo), mm_bunkdo, "<p,neutral>No it's alright <text_gender("laddy", "lass")>, we quite like it in here.");
 ~chatnpc("<p,neutral>Do your best to ignore him...");
 if(inzone(0_43_43_18_41, 0_43_43_24_43, coord) = false) {
     ~chatnpc("<p,neutral>Not all of us were captured. If you have not done so, you should make contact with those of us who escaped.");

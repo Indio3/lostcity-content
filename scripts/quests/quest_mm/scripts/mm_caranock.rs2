@@ -40,7 +40,7 @@ else if(%mm_caranock = ^mm_asked_caranock)  {
 
 [label,mm_caranock_p3]
 %mm_caranock = ^mm_caranock_p3;
-~chatnpc("<p,shifty>I shall personally see to the decommission. You should report to the King immediately.");
+~chatnpc("<p,shifty>I shall see personally to the decommission. You should report to the King immediately.");
 
 [label,mm_shipyardworker_dialogue]
 ~chatplayer("<p,angry>I am on a special mission for King Narnode of the Gnomes.");

@@ -486,7 +486,7 @@ val=14,0_53_51_47_20
 inputtype=int
 outputtype=coord
 val=0,0_43_42_19_45
-val=1,0_41_57_28_53
+val=1,0_43_42_28_53
 
 [fishing_movement_0_42_42_memberfish_enum]
 inputtype=int

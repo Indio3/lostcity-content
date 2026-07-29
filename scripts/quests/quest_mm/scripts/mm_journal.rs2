@@ -1,7 +1,7 @@
 [if_button,questlist:mm]
 def_string $text;
 if(%mm_main = ^mm_not_started) {
-    $text = "@dbl@In @dre@The Grand Tree@dbl@, I exposed the treachery of @dre@King Narnode Shareen's@dbl@ then High Tree Guardian, @dre@Glough@dbl@. @dre@Glough@dbl@ has since been deposed. To start this quest I must check how @dre@King Shareen@dbl@ is fairing.";
+    $text = "@dbl@In @dre@The Grand Tree@dbl@, I exposed the treachery of @dre@King Narnode Shareen's@dbl@ then High Tree Guardian, @dre@Glough@dbl@. @dre@Glough@dbl@ has since been deposed. To start this quest I must check how @dre@King Shareen@dbl@ is faring.";
     $text = append($text, "||@dbl@To complete this quest I need:|@dbl@- To be able to defeat a @dre@level 195 Jungle Demon");
     ~quest_journal("Monkey Madness", $text);
     return;
@@ -317,7 +317,7 @@ if(%mm_main > ^mm_reported_narnode) {
 if(%mm_main >= ^mm_complete) $text = append($text, "||@red@QUEST COMPLETE!");
 
 if(%mm_main > ^mm_complete) {
-    $text = append($text, "||@str@I found Daero and enrolled in the Royal Guard training@str@programme. I underwent a series of exercises designed to@str@increase strength and stamina. This was followed by training@str@my attack and defence techniques.");
+    $text = append($text, "||@str@I found Daero and enrolled in the Royal Guard training @str@programme. I underwent a series of exercises designed to @str@increase strength and stamina. This was followed by training @str@my attack and defence techniques.");
 } else if(%mm_main = ^mm_complete) {
     $text = append($text, "||@dbl@I should find Daero and enroll with the Royal Guard training programme.");
 }

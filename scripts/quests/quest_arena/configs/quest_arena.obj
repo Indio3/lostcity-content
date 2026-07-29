@@ -52,6 +52,7 @@ category=armour_body
 param=stabdefence,9
 param=slashdefence,11
 param=crushdefence,10
+param=defend_sound,blade3
 tradeable=no
 
 [khazard_cellkeys]

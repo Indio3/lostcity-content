@@ -20,4 +20,4 @@ if(p_finduid(uid) = true) @mm_ch2_cutscene;
 if(p_finduid(uid) = true) queue(mm_ch3_cutscene, 0, 0);
 
 [debugproc,mmch4]
-if(p_finduid(uid) = true) @mm_ch2_cutscene;
+if(p_finduid(uid) = true) @mm_ch4_cutscene;

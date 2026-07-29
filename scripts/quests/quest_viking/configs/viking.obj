@@ -1116,6 +1116,7 @@ param=crushdefence,29
 param=magicdefence,-1
 param=rangedefence,29
 param=defend_anim,human_shield_defence
+param=defend_sound,wood_armour3_1
 
 [viking_cloak_green]
 name=Fremennik cloak
@@ -1604,7 +1605,7 @@ womanwear=woman_hands_gloves,0
 members=yes
 weight=1lb
 wearpos=hands
-category=armour_hands
+category=gloves
 param=slashdefence,1
 param=crushdefence,2
 

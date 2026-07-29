@@ -28,11 +28,16 @@ obj_addall(npc_coord, npc_param(death_drop), 1, ^lootdrop_duration);
 if(~mm_wearing_greegree = true | %mm_player_is_unconscious = ^true) {
     npc_del;
     spotanim_map(smokepuff, npc_coord, 50, 0);
+    sound_synth(smokepuff, 0, 0);
     return;
 }
 // regular guards dont always knockout, named guards will always knockout
-if(npc_type = mm_monkey_guard & random(10) = 0) queue(aa_knockout, 0, 0);
-else gosub(npc_default_attack);
+if(npc_type ! mm_monkey_guard) {
+    strongqueue(aa_guard_knockout, 0, 0);
+} else {
+    if(random(10) = 0) strongqueue(aa_guard_knockout, 0, 0);
+    else gosub(npc_default_attack);
+}
 
 [ai_opplayer2,mm_religious_guard] @mm_religious_guard_attack;
 [ai_opplayer2,mm_religious_trapdoor_guard] @mm_religious_guard_attack;
@@ -49,3 +54,23 @@ if(npc_stat(hitpoints) <= 30 & random(12) = 0) {
     return;
 }
 gosub(npc_default_attack);
+
+[queue,aa_guard_knockout]
+p_stopaction;
+%mm_player_is_unconscious = ^true;
+~update_bas;
+anim(human_death, 0);
+p_delay(2);
+~fade_out;
+p_delay(2);
+~fade_in;
+p_teleport(movecoord(0_43_43_18_41, randominc(6), 0, randominc(1)));
+walktrigger(wake_up);
+~combat_clearqueue;
+clearqueue(aa_archer_knockout);
+clearqueue(aa_guard_knockout);
+clearqueue(aa_jail_knockout);
+queue(lumo_jailed_dialogue, 10, 0);
+queue(fade_clear, 0, 0);
+if(%mm_jail_count < 255) %mm_jail_count = add(%mm_jail_count, 1);
+~objbox(steel_scimitar, "You are knocked unconscious by a blow to the head!", 250, 0, 0);

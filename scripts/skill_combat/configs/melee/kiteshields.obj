@@ -26,6 +26,7 @@ param=crushdefence,6
 param=magicdefence,-1
 param=rangedefence,6
 param=defend_anim,human_shield_defence
+param=defend_sound,brassclash
 
 [iron_kiteshield]
 name=Iron kiteshield
@@ -55,6 +56,7 @@ param=crushdefence,9
 param=magicdefence,-1
 param=rangedefence,9
 param=defend_anim,human_shield_defence
+param=defend_sound,brassclash2
 
 [steel_kiteshield]
 name=Steel kiteshield
@@ -82,6 +84,7 @@ param=crushdefence,14
 param=magicdefence,-1
 param=rangedefence,14
 param=defend_anim,human_shield_defence
+param=defend_sound,blade4
 
 [black_kiteshield]
 name=Black kiteshield
@@ -111,6 +114,7 @@ param=crushdefence,18
 param=magicdefence,-1
 param=rangedefence,18
 param=defend_anim,human_shield_defence
+param=defend_sound,blade5
 
 [mithril_kiteshield]
 name=Mithril kiteshield
@@ -140,6 +144,7 @@ param=crushdefence,20
 param=magicdefence,-1
 param=rangedefence,20
 param=defend_anim,human_shield_defence
+param=defend_sound,swordclash2
 
 [adamant_kiteshield]
 name=Adamant kiteshield
@@ -169,6 +174,7 @@ param=crushdefence,29
 param=magicdefence,-1
 param=rangedefence,29
 param=defend_anim,human_shield_defence
+param=defend_sound,swordclash5
 
 [rune_kiteshield]
 name=Rune kiteshield
@@ -198,3 +204,4 @@ param=crushdefence,46
 param=magicdefence,-1
 param=rangedefence,46
 param=defend_anim,human_shield_defence
+param=defend_sound,swordclash6
