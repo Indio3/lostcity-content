@@ -7,8 +7,7 @@ if (map_playercount(2_54_153_43_57, 2_54_153_62_34) > 0) {
         if (map_playercount(1_54_153_43_57, 1_54_153_62_34) > 0) {
             if (map_playercount(2_54_153_5_57, 2_54_153_24_34) > 0) {
                 // all 4 cutscene rooms are full!!
-                // guessed - this code path has likely never hit when it was live in either games.
-                ~chatnpc("<p,neutral>I'm sorry but I'm still a bit busy at the moment.");
+                ~chatnpc("<p,neutral>I'm sorry my friend, but an issue needs my urgent attention. Please come and chat with me again in a short while though and we'll talk in detail about a suitable payment.");
                 return;
             } else  {
                 %roomnum = 4;
