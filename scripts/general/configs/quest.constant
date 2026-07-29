@@ -66,6 +66,7 @@
 ^mortton_quest_complete = 85
 ^viking_complete = 10
 ^horror_complete = 10
+^routequest_complete = 105
 
 ^arena_questpoints = 2
 ^arthur_questpoints = 6
@@ -133,3 +134,4 @@
 ^viking_questpoints = 3
 ^horror_questpoints = 2
 ^mm_questpoints = 3
+^routequest_questpoints = 2

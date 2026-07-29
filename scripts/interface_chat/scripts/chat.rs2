@@ -293,7 +293,7 @@ if ($lines = 0) {
     if_setanim(npcchat1:com_0, split_getanim($page));
     if_settext(npcchat1:com_1, $npc_name);
     if_settext(npcchat1:com_2, split_get($page, 0));
-} else if ($lines = 2) {
+} else if ($lines < 3) {
     $interface = npcchat2;
     if_setnpchead(npcchat2:com_0, $npc);
     if_setanim(npcchat2:com_0, split_getanim($page));
@@ -1116,4 +1116,38 @@ if(p_finduid(uid) = true) {
 [if_close,skill_multi5]
 if(p_finduid(uid) = true) {
     %weakqueue_map_clock = map_clock;
+}
+
+[proc,chatnpc_cutscene_page](string $npc_name, npc $npc, int $page)
+def_int $lines = split_linecount($page);
+def_interface $interface = null;
+if ($lines = 0) {
+    return;
+} 
+if ($lines < 3) {
+    if_setnpchead(inter_213:com_0, $npc);
+    if_setanim(inter_213:com_0, split_getanim($page));
+    if_settext(inter_213:com_1, $npc_name);
+    if_settext(inter_213:com_2, "");
+    if_settext(inter_213:com_3, split_get($page, 0));
+    if_settext(inter_213:com_4, split_get($page, 1));
+    if_settext(inter_213:com_5, "");
+} else if ($lines > 2) {
+    if_setnpchead(inter_213:com_0, $npc);
+    if_setanim(inter_213:com_0, split_getanim($page));
+    if_settext(inter_213:com_1, $npc_name);
+    if_settext(inter_213:com_2, split_get($page, 0));
+    if_settext(inter_213:com_3, split_get($page, 1));
+    if_settext(inter_213:com_4, split_get($page, 2));
+    if_settext(inter_213:com_5, split_get($page, 3));
+}
+if_openchat(inter_213);
+
+[proc,chatnc_cutscene](string $npc_name, npc $npc, string $string)
+split_init($string, 380, 4, q8_full);
+def_int $page = 0;
+def_int $pagetotal = split_pagecount;
+while ($page < $pagetotal) {
+    ~chatnpc_cutscene_page($npc_name, $npc, $page);
+    $page = calc($page + 1);
 }

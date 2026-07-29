@@ -2146,7 +2146,7 @@ frame126=anim_10963
 frame127=anim_10964
 frame128=anim_10965
 
-[seq_1491]
+[swamp_boatjourney]
 frame1=anim_11175
 frame2=anim_11186
 frame3=anim_11197
@@ -2202,7 +2202,7 @@ frame52=anim_11222
 frame53=anim_11223
 frame54=anim_11224
 
-[seq_1492]
+[swamp_boatjourney_back]
 frame1=anim_11224
 frame2=anim_11223
 frame3=anim_11222
@@ -2273,7 +2273,7 @@ loops=2
 frame1=anim_11143
 frame2=anim_11144
 
-[seq_1495]
+[skeleton_hound_attack]
 priority=6
 frame1=anim_11118
 frame2=anim_11120
@@ -2286,7 +2286,7 @@ frame8=anim_11126
 frame9=anim_11127
 frame10=anim_11119
 
-[seq_1496]
+[skeleton_hound_block]
 frame1=anim_11128
 frame2=anim_11129
 frame3=anim_11130
@@ -2297,7 +2297,7 @@ frame7=anim_11130
 frame8=anim_11129
 frame9=anim_11128
 
-[seq_1497]
+[skeleton_hound_death]
 priority=10
 frame1=anim_11133
 frame2=anim_11134
@@ -2310,7 +2310,7 @@ frame8=anim_11140
 frame9=anim_11141
 delay9=1000
 
-[seq_1498]
+[skeleton_hound_summon]
 priority=5
 frame1=anim_11145
 frame2=anim_11146
@@ -2350,7 +2350,7 @@ frame24=anim_11091
 frame25=anim_11092
 frame26=anim_11092
 
-[seq_1500]
+[wings_launch]
 frame1=anim_11061
 frame2=anim_11061
 frame3=anim_11062
@@ -2388,7 +2388,7 @@ frame13=anim_11073
 frame14=anim_11071
 frame15=anim_11071
 
-[seq_1502]
+[wings_summon]
 frame1=anim_11075
 frame2=anim_11080
 frame3=anim_11081

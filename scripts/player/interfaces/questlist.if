@@ -1037,7 +1037,7 @@ colour=0xFF0000
 overcolour=0xFFFFFF
 option=Troll Romance
 
-[com_93]
+[routequest]
 layer=com_0
 type=text
 x=10
