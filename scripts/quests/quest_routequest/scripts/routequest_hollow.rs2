@@ -253,10 +253,8 @@ if(%routequest < ^routequest_answered_questions) {
 ~chatplayer("<p,neutral>I don't have to answer to you!");
 ~chatnpc("<p,neutral>You do if you know what's good for you!");
 mes("Curpile punches you.");
-npc_setmode(playerface);
-npc_anim(human_sword_slash, 0);
-sound_synth(hacksword_slash, 0, 0);
-~damage_self(1);
+npc_anim(human_unarmedpunch, 0);
+~damage_self(3);
 
 [label,route_curpile_no_reason]
 ~chatplayer("<p,neutral>No reason.");
@@ -294,8 +292,7 @@ switch_int($q) {
     case 2 : return ("Who is the leader of the Myreque?");
     case 3 : return ("Which member of the Myreque was originally a scholar?");
     case 4 : return ("What is the boatman's name?");
-    case 5 : return ("What family is rumoured to rule Morytania.");
-    case default : return ("Unknown question. Please report this bug.");
+    case default : return ("What family is rumoured to rule Morytania.");
 }
 
 [proc,route_ask_question](int $q)
