@@ -123,6 +123,46 @@ switch_coord (loc_coord) {
     case default : ~displaymessage(^dm_default);
 }
 
+[oploc5,swamp_bridge1]
+switch_coord (loc_coord) {
+    case 0_54_53_46_35 : mes("This bridge rung already looks fixed; that's why you're able to stand on it.");
+    case 0_54_53_46_36 :
+        if(%bridgerung1 = ^true) {
+            mes("You have already fixed this part of the bridge.");
+            return;
+        }
+        if(~routequest_try_fix_rung = true) {
+            %bridgerung1 = 1;
+            anim(human_smithing, 0);
+            p_delay(2);
+            ~forcemove(movecoord(coord, 0, 0, 1));
+        }
+        mes("This bridge rung already looks fixed; that's why you're able to stand on it.");
+    case 0_54_53_46_37 :
+        if(%bridgerung2 = ^true) {
+            mes("You have already fixed this part of the bridge.");
+            return;
+        }
+        if(~routequest_try_fix_rung = true) {
+            %bridgerung2 = 1;
+            anim(human_smithing, 0);
+            p_delay(2);
+            ~forcemove(movecoord(coord, 0, 0, 1));
+        }
+    case 0_54_53_46_38 :
+        if(%bridgerung3 = ^true) {
+            mes("You have already fixed this part of the bridge.");
+            return;
+        }
+        if(~routequest_try_fix_rung = true) {
+            %bridgerung3 = 1;
+            anim(human_smithing, 0);
+            p_delay(2);
+            ~forcemove(movecoord(coord, 0, 0, 1));
+        }
+    case default : ~displaymessage(^dm_default);
+}
+
 [proc,routequest_try_fix_rung]()(boolean)
 if(inv_total(inv, woodplank) = 0) {
     // RS3
@@ -216,7 +256,7 @@ mes("Curpile punches you.");
 npc_setmode(playerface);
 npc_anim(human_sword_slash, 0);
 sound_synth(hacksword_slash, 0, 0);
-// remove 1hp
+~damage_self(1);
 
 [label,route_curpile_no_reason]
 ~chatplayer("<p,neutral>No reason.");
