@@ -20,14 +20,14 @@ if (%troll_love < ^troll_love_started) {
     @trollromance_ug_defeated_arrg;
     
 } else if (%troll_love = ^troll_love_complete) {
-    ~chatplayer("<p,scared>How did it go with Aga?");
-    ~chatnpc("<p,scared>I give Trollweiss to Aga and she say it taste very nice. She very happy and we together now.");
-    ~chatplayer("<p,scared>What?! I went through all that trouble to get a snack for a hungry troll?");
-    ~chatnpc("<p,scared>Thank you many for getting Ug together with Aga. We much happy together! I so happy I can't stop crying!");
+    ~chatplayer("<p,neutral>How did it go with Aga?");
+    ~chatnpc("<p,happy>I give Trollweiss to Aga and she say it taste very nice. She very happy and we together now.");
+    ~chatplayer("<p,angry>What?! I went through all that trouble to get a snack for a hungry troll?");
+    ~chatnpc("<p,happy>Thank you many for getting Ug together with Aga. We much happy together! I so happy I can't stop crying!");
 }
 
 [label,trollromance_ug_start_trollromance]
-if (%troll_quest < ^troll_complete | stat_base(agility) < 28) { // Check requirements to begin quest (Unsure if Agility is a hard requirement)
+if (%troll_quest < ^troll_complete) {
     ~mesbox("He doesn't look like he feels like talking.");
     return;
 }
@@ -105,13 +105,12 @@ inv_del(inv, trollromance_rare_flower, 1);
 ~chatnpc("<p,neutral>You defeat Arrg yet?");
 ~chatplayer("<p,neutral>No, not yet. Something like this requires careful planning.");
 
-// TODO: MesAnims & check whether queue is before the last chatnpc proc
 [label,trollromance_ug_defeated_arrg]
 ~chatnpc("<p,neutral>You defeat Arrg yet?");
 ~chatplayer("<p,neutral>Yes, he has been defeated.");
-~chatnpc("<p,neutral>You very strong and nice. Take pretty rocks as thanks.");
+~chatnpc("<p,scared>You very strong and nice. Take pretty rocks as thanks.");
 ~chatplayer("<p,neutral>Thanks, Ug. So, now you can go and speak to Aga!");
-~chatnpc("<p,neutral>I too scared.");
+~chatnpc("<p,scared>I too scared.");
 ~chatplayer("<p,neutral>Has anyone ever told you that you are a useless troll? My grandmother has more guts than you and she doesn't even have her teeth anymore!");
-~chatnpc("<p,neutral>Whaaat? Man-thing want to die? Ug no scared of you or your grandmother! Ug show you. Ug go to Aga now.");
+~chatnpc("<p,angry>Whaaat? Man-thing want to die? Ug no scared of you or your grandmother! Ug show you. Ug go to Aga now.");
 queue(trollromance_quest_complete, 0, 0);

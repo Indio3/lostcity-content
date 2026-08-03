@@ -31,11 +31,6 @@ scope=perm
 [hauntedmine_bits]
 scope=perm
 
-[varp_386]
-
-[troll_love]
-scope=perm
-
 [varp_390]
 
 [trawler_water_overlay]

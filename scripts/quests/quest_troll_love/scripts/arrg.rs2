@@ -62,20 +62,68 @@ if ($choice = 1) {
     ~chatplayer("<p,neutral>I've got to go.");
 }
 
-
-// TODO: Implement boss fight properly (Ranged and melee)
-
 [label,trollromance_arrg_combat]
 p_teleport(map_findsquare(0_45_56_34_27, 1, 2, ^map_findsquare_lineofwalk));
 npc_add(movecoord(coord, -4, 0, 0), trollromance_arrg_attackable, 500);
+npc_facesquare(coord);
 npc_setmode(opplayer2);
-%npc_aggressive_player = uid;
+hint_stop;
 hint_npc;
-//queue*(playerhit_n_retaliate, 0)(npc_uid); // Is this correct?
+if_close;
+
+[opnpc2,trollromance_arrg_attackable]
+npc_setmode(opplayer2);
+@player_combat_start;
+
+[apnpc2,trollromance_arrg_attackable]
+npc_setmode(opplayer2);
+@player_combat_start_ap;
+
+[ai_opplayer2,trollromance_arrg_attackable]
+def_int $style = random(2);
+
+if ($style = 0) {
+    ~trollromance_arrg_ranged_attack;
+} else {
+    ~npc_default_attack;
+}
 
 [ai_queue3,trollromance_arrg_attackable]
 npc_say("Arrg!");
-gosub(npc_death);
-if(p_finduid(%npc_aggressive_player) = true) {
-    if(%troll_love = ^troll_love_dispose_of_arrg) %troll_love = ^troll_love_defeated_arrg;
+~troll_drop_table;
+if (npc_findhero = ^true & %npc_aggressive_player = uid)  {
+    queue(trollromance_arrg_death, 0, 0);
 }
+
+[proc,trollromance_arrg_ranged_attack]
+if (%npc_action_delay > map_clock) {
+    npc_setmode(opplayer2);
+    return;
+}
+if (~npc_check_notcombat = false) {
+    npc_setmode(null);
+    return;
+}
+if (~npc_check_notcombat_self = false) {
+    return;
+}
+def_int $attack_roll = ~npc_ranged_attack_roll;
+def_int $defence_roll = ~player_defence_roll_specific(npc_param(damagetype));
+def_int $maxhit = ~npc_ranged_maxhit;
+
+npc_anim(troll_rock_throw_lefthand, 0);
+sound_synth(npc_param(rangeattack_sound), 1, 0);
+
+%npc_action_delay = add(map_clock, npc_param(attackrate));
+def_int $duration = 64;
+$duration = ~player_projectile(npc_coord, coord, uid, npc_param(proj_travel), 36, 36, 31, 8, 15, 128, 1);
+
+if (randominc($attack_roll) > randominc($defence_roll)) {
+    ~playerhit_n_ranged(true, randominc($maxhit), $duration, npc_param(attackrate));
+    ~npc_poison_player;
+    return;
+}
+~playerhit_n_ranged(true, 0, $duration, npc_param(attackrate));
+
+[queue,trollromance_arrg_death]
+if (%troll_love = ^troll_love_dispose_of_arrg) %troll_love = ^troll_love_defeated_arrg;
