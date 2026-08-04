@@ -427,7 +427,7 @@ if(inv_total(inv, eadgar_drunk_parrot) > 0) {
 // to match OSRS videos - the drunk parrot/fake man swap is queued
 // and does not occur until the player clicks through or cancels eadgar's default dialog tree
 queue(eadgar_fake_man, 0, 0);
-~chatnpc_model("Fake Man", 4053, "<p,neutral>What am I doing here? Ow! Where's the rest of the|Guard? Agh! I won't tell you anything!"); // linebreaks from runeweb 2004
+~chatnpc_model("Fake man", 4053, "<p,neutral>What am I doing here? Ow! Where's the rest of the|Guard? Agh! I won't tell you anything!"); // linebreaks from runeweb 2004
 @eadgar_default_tree;
 
 [queue,eadgar_fake_man]
