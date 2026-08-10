@@ -9,6 +9,7 @@ if (stat_base(attack) > 7) {
     return;
 }
 mes("You hit the dummy.");
+stat_advance(attack, 50);
 anim(%com_attackanim, 0);
 sound_synth(%com_attacksound, 1, 0);
 p_delay(4);
