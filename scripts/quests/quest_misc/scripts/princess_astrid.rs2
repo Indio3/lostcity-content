@@ -94,9 +94,9 @@ if (%misc_s1_d1 = 0) {
 [label,astrid_laughingattargetpractice]
 ~chatplayer("<p,laugh>Hahahaha!");
 ~chatplayer("<p,happy>I can hold them still for you if you like.");
-~chatnpc("<p,happy>How do you know I wouldn't hit you as well?");
 %misc_s1_d2 = 1;
 %misc_affection = add(%misc_affection, 1); 
+~chatnpc("<p,happy>How do you know I wouldn't hit you as well?");
 ~chatplayer("<p,happy>I have confidence in your skills, Your Royal Highness.");
 
 [label,astrid_randomset1branch3]
