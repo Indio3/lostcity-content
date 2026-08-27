@@ -89,6 +89,7 @@ recol4d=30320
 recol5s=6273
 recol5d=22057
 wanderrange=5
+respawnrate=50
 
 [misc_etc_man_2]
 name=Haming
@@ -120,6 +121,7 @@ recol5d=22057
 recol6s=21001
 recol6d=8555
 wanderrange=5
+respawnrate=50
 
 [misc_etc_man_3]
 name=Moldof
@@ -149,6 +151,7 @@ recol4d=30320
 recol5s=6273
 recol5d=22057
 wanderrange=5
+respawnrate=50
 
 [misc_etc_woman_1]
 name=Helga
@@ -181,6 +184,7 @@ recol6d=21103
 param=defend_sound,female_hit
 param=death_sound,female_death
 wanderrange=5
+respawnrate=50
 
 [misc_etc_woman_2]
 name=Matilda
@@ -213,6 +217,7 @@ recol6d=98
 param=defend_sound,female_hit
 param=death_sound,female_death
 wanderrange=5
+respawnrate=50
 
 [misc_etc_woman_3]
 name=Ashild
@@ -244,6 +249,7 @@ recol6d=98
 param=defend_sound,female_hit
 param=death_sound,female_death
 wanderrange=5
+respawnrate=50
 
 [etc_guard1]
 name=Skraeling
@@ -298,6 +304,7 @@ param=defend_sound,null
 param=death_sound,null
 wanderrange=5
 maxrange=7
+respawnrate=50
 
 [etc_guard2]
 name=Skraeling
@@ -352,6 +359,7 @@ param=defend_sound,null
 param=death_sound,null
 wanderrange=5
 maxrange=7
+respawnrate=50
 
 [etc_fish_monger]
 vislevel=hide
@@ -729,6 +737,7 @@ param=defend_sound,human_hit
 param=death_sound,human_death
 wanderrange=5
 maxrange=7
+respawnrate=50
 
 [misc_man_2]
 name=Einar
@@ -768,6 +777,7 @@ param=defend_sound,human_hit
 param=death_sound,human_death
 wanderrange=5
 maxrange=7
+respawnrate=50
 
 [misc_man_3]
 name=Alrik
@@ -810,6 +820,7 @@ param=defend_sound,human_hit
 param=death_sound,human_death
 wanderrange=5
 maxrange=7
+respawnrate=50
 
 [misc_woman_1]
 name=Thorhild
@@ -848,6 +859,7 @@ param=defend_sound,human_hit
 param=death_sound,human_death
 wanderrange=5
 maxrange=7
+respawnrate=50
 
 [misc_woman_2]
 name=Halla
@@ -886,6 +898,7 @@ param=defend_sound,female_hit
 param=death_sound,female_death
 wanderrange=5
 maxrange=7
+respawnrate=50
 
 [misc_woman_3]
 name=Yrsa
@@ -925,6 +938,7 @@ param=defend_sound,female_hit
 param=death_sound,female_death
 wanderrange=5
 maxrange=7
+respawnrate=50
 
 [misc_sailor]
 vislevel=hide
@@ -1003,6 +1017,7 @@ param=defend_sound,female_hit
 param=death_sound,female_death
 wanderrange=5
 maxrange=7
+respawnrate=50
 
 [misc_woman_5]
 name=Thora
@@ -1045,6 +1060,7 @@ param=defend_sound,female_hit
 param=death_sound,female_death
 wanderrange=5
 maxrange=7
+respawnrate=50
 
 [misc_woman_6]
 name=Valgerd
@@ -1089,6 +1105,7 @@ param=defend_sound,female_hit
 param=death_sound,female_death
 wanderrange=5
 maxrange=7
+respawnrate=50
 
 [misc_man_4]
 name=Skraeling
@@ -1143,6 +1160,7 @@ param=defend_sound,null
 param=death_sound,null
 wanderrange=5
 maxrange=7
+respawnrate=50
 
 [misc_man_5]
 name=Broddi
@@ -1192,6 +1210,7 @@ param=defend_sound,human_hit
 param=death_sound,human_death
 wanderrange=5
 maxrange=7
+respawnrate=50
 
 [misc_man_6]
 name=Skraeling
@@ -1245,6 +1264,7 @@ param=defend_sound,human_hit
 param=death_sound,human_death
 wanderrange=5
 maxrange=7
+respawnrate=50
 
 [misc_man_7]
 name=Ragnvald
@@ -1296,6 +1316,7 @@ param=defend_sound,human_hit
 param=death_sound,human_death
 wanderrange=5
 maxrange=7
+respawnrate=50
 
 [misc_fish_monger]
 vislevel=hide
@@ -1541,6 +1562,7 @@ recol2s=16801
 recol2d=25398
 recol3s=31649
 recol3d=30241
+respawnrate=50
 maxrange=20
 attack=22
 defence=17
@@ -1566,6 +1588,8 @@ readyanim=chicken_ready
 op2=Attack
 vislevel=1
 model1=model_2849_npc
+category=chicken
+respawnrate=50
 wanderrange=5
 maxrange=7
 hitpoints=3
@@ -1601,6 +1625,8 @@ recol3s=21104
 recol3d=11490
 recol4s=15855
 recol4d=11490
+category=chicken
+respawnrate=50
 wanderrange=5
 maxrange=7
 hitpoints=3
@@ -1638,6 +1664,8 @@ recol3s=21104
 recol3d=11328
 recol4s=15855
 recol4d=11328
+category=chicken
+respawnrate=50
 wanderrange=5
 maxrange=7
 hitpoints=5
