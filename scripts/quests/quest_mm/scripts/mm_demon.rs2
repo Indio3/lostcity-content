@@ -216,6 +216,7 @@ if(finduid(%npc_aggressive_player) = false) {
 }
 if(inzone(1_42_143_0_0, 1_42_143_63_63, coord) = false) {
     npc_del;
+    return;
 }
 npc_huntall(npc_coord, 5, 0);
 while(.npc_findnext = true) {
@@ -231,6 +232,7 @@ if(finduid(%npc_aggressive_player) = false) {
 }
 if(inzone(1_42_143_0_0, 1_42_143_63_63, coord) = false) {
     npc_del;
+    return;
 }
 npc_huntall(npc_coord, 5, 0);
 while(.npc_findnext = true) {
