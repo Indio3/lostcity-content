@@ -27,7 +27,10 @@ if (%misc_quest = ^misc_complete) {
 mes("Lumberjack Leif is already chopping that down.");
 
 // This is to intercept woodcutting in miscellania
-[proc,leif_intercept_wood](string $woodcut_mes, int $exp)(boolean)
+[proc,leif_intercept_wood](obj $product)(boolean)
+if($product ! maple_logs) { // only maple trees can be counted here
+    return (false);
+}
 if (inzone(^miscellania_lower_bound, ^miscellania_upper_bound, coord) = true) {
     if (%misc_approval < 127) { %misc_approval = add(%misc_approval, 1); }
     if (npc_find(0_39_60_54_29, misc_lumberjack, 2, 0) = true) { 
@@ -40,8 +43,8 @@ if (inzone(^miscellania_lower_bound, ^miscellania_upper_bound, coord) = true) {
             }
         }
     }
-    stat_advance(mining, $exp);
-    mes("<substring($woodcut_mes, 0, sub(string_length($woodcut_mes), 1))> and give them to Lumberjack Leif.");
+    stat_advance(woodcutting, 1);
+    mes("You get some <lowercase(oc_name($product))> and give them to Lumberjack Leif.");
     return (true);
 }
 return (false);

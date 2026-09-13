@@ -139,7 +139,7 @@ if ($respawnrate = 0) {
 }
 if (stat_random(woodcutting, $tree_chance_low, $tree_chance_high) = true) {
     def_namedobj $product = db_getfield($data, woodcutting_trees:product, 0);
-    if (~leif_intercept_wood("You get some <lowercase(oc_name($product))>.", db_getfield($data, woodcutting_trees:productexp, 0)) = true) {
+    if (~leif_intercept_wood($product) = true) {
         // Intercept for Miscellania, you don't get the wood.
     } else {
         mes("You get some <lowercase(oc_name($product))>.");

@@ -39,6 +39,7 @@ if (inzone(^miscellania_lower_bound, ^miscellania_upper_bound, coord) = true) {
             }
         }
     }
+    stat_advance(fishing, 1);
     mes("<substring($fishing_mes, 0, sub(string_length($fishing_mes), 1))> and give it to Fisherman Frodi.");
     return (true);
 }

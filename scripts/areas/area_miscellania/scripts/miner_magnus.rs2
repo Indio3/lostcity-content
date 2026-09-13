@@ -30,7 +30,7 @@ mes("Miner Magnus is already mining that.");
 @prospect_rock(finish_prospect_normal);
 
 // This is to intercept mining in miscellania
-[proc,magnus_intercept_ore](string $fishing_mes, int $exp)(boolean)
+[proc,magnus_intercept_ore](string $ore_name, int $exp)(boolean)
 if (inzone(^miscellania_lower_bound, ^miscellania_upper_bound, coord) = true) {
     if (%misc_approval < 127) { %misc_approval = add(%misc_approval, 1); }
     if (npc_find(0_39_60_30_53, misc_miner, 2, 0) = true) { 
@@ -43,8 +43,9 @@ if (inzone(^miscellania_lower_bound, ^miscellania_upper_bound, coord) = true) {
             }
         }
     }
-    stat_advance(mining, $exp);
-    mes("<substring($fishing_mes, 0, sub(string_length($fishing_mes), 1))>, and give it to Miner Magnus.");
+    // https://youtu.be/3JPE0glCQnY?si=-tTogcIxfipgGEhp&t=189
+    stat_advance(mining, 1);
+    mes("You manage to mine some <$ore_name> and give it to Miner Magnus.");
     return (true);
 }
 return (false);
