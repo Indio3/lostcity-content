@@ -36,6 +36,16 @@ if (inzone(^miscellania_lower_bound, ^miscellania_upper_bound, coord) = true) {
         }
         return;
     }
+    if(%misc_approval >= ^MISC_APPROVAL_100_PERCENT) {
+        if (npc_find(0_39_60_30_53, misc_miner, 2, 0) = true) {
+            if(%misc_quest = ^misc_complete) {
+                ~chatnpcnoturn("<p,happy>Don't trouble yourself further, Your Highness, you've already done so much!");
+            } else {
+                ~chatnpcnoturn("<p,happy>Don't trouble yourself further, <text_gender("Sir", "Madam")>, you've already done so much!");
+            }
+        }
+        return;
+    }
 }
 
 if (inv_freespace(inv) < 1) {
@@ -130,8 +140,16 @@ if (random($chance) = ^true) {
     if ($gem ! null) {
         db_find(gem_cutting_table:uncut_gem, $gem);
         $data = db_findnext;
-        inv_add(inv, $gem, 1);
-        mes("You just found <~add_article(oc_name(db_getfield($data, gem_cutting_table:cut_gem, 0)))>!");
+        // miscellania intercept
+        if (inzone(^miscellania_lower_bound, ^miscellania_upper_bound, coord) = true) {
+            if (%misc_approval < 127) %misc_approval = min(127, add(%misc_approval, 2));
+            if (npc_find(0_39_60_30_53, misc_miner, 2, 0) = true) npc_say("Thanks!");
+            // https://youtu.be/q0znbNkOg84?si=eLmFFqjccU95qp6o&t=1169
+            mes("You just found <~add_article(oc_name(db_getfield($data, gem_cutting_table:cut_gem, 0)))>! You give it to Miner Magnus.");
+        } else {
+            inv_add(inv, $gem, 1);
+            mes("You just found <~add_article(oc_name(db_getfield($data, gem_cutting_table:cut_gem, 0)))>!");
+        }
     }
 } else if (stat_random(mining, db_getfield($data, mining_table:rock_successchance, 0)) = true) {
     // They added a 1t p_delay in this update: https://oldschool.runescape.wiki/w/Update:Special_Attacks

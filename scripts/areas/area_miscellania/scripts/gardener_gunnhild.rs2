@@ -61,6 +61,9 @@ else ~chatnpcnoturn("<~man_misc_mesanim>At the moment I'm selling iron sickles. 
 if (inv_total(inv, coins) >= 15) {
     inv_del(inv, coins, 15);
     inv_add(inv, iron_sickle, 1);
+    if(random(10) = 0) { // about 1/10?
+        if (%misc_approval < 127) %misc_approval = add(%misc_approval, 1);
+    }
     ~chatnpcnoturn("<p,neutral>Thank you! Here you go.");
 } else {
     ~chatplayer("<p,sad>Oh, I'm sorry, I don't have enough money.");

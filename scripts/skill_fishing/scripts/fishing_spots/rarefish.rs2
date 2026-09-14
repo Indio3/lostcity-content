@@ -38,6 +38,16 @@ if (inzone(^miscellania_lower_bound, ^miscellania_upper_bound, coord) = true) {
         }
         return;
     }
+    if(%misc_approval >= ^MISC_APPROVAL_100_PERCENT) {
+        if (.npc_find(0_40_60_16_12, misc_fisherman, 2, 0) = true) {
+            if(%misc_quest = ^misc_complete) {
+                ~chatnpcnoturn("<p,happy>Don't trouble yourself further, Your Highness, you've already done so much!");
+            } else {
+                ~chatnpcnoturn("<p,happy>Don't trouble yourself further, <text_gender("Sir", "Madam")>, you've already done so much!");
+            }
+        }
+        return;
+    }
 }
 
 // check if inv is full
