@@ -36,7 +36,7 @@ if (inzone(^miscellania_lower_bound, ^miscellania_upper_bound, coord) = true) {
     if (npc_find(0_39_60_30_53, misc_miner, 2, 0) = true) npc_say("Thanks!");
     // https://youtu.be/3JPE0glCQnY?si=-tTogcIxfipgGEhp&t=189
     stat_advance(mining, 1);
-    mes("You manage to mine some <$ore_name> and give it to Miner Magnus.");
+    mes("You manage to mine some <$ore_name>, and give it to Miner Magnus.");
     return (true);
 }
 return (false);
