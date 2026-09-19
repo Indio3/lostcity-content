@@ -30,14 +30,14 @@ if(%xmas_yoyo_unlocked = ^true) {
 @aprilfoolshorsesalesman_reclaim_yoyo;
 
 // may move these to another script later
-[opheld1,horsey_brown] @toy_horsey_say(human_playhorsey_brown); // the anim delay lets the client finish running visually
+[opheld1,horsey_brown] @toy_horsey_say(human_playhorsey_brown);
 [opheld1,horsey_white] @toy_horsey_say(human_playhorsey_white);
 [opheld1,horsey_black] @toy_horsey_say(human_playhorsey_black);
 [opheld1,horsey_grey] @toy_horsey_say(human_playhorsey_grey);
 
 [label,toy_horsey_say](seq $anim)
 p_stopaction;
-anim($anim, 20); // the anim delay lets the client finish running visually
+anim($anim, 0);
 // was mes super early rs2? not sure when it was changed. https://storage.googleapis.com/tannerdino/images/Old%20Runescape%202004%20screenshots%20(%20From%20June%20to%20August%202004%20)%20(13).jpeg
 switch_int (random(3)) {
     case 0 : mes("Come-on Dobbin, we can win the race!"); // extra hyphen here
