@@ -2,24 +2,28 @@
 if(%xmas_yoyo_unlocked = ^true) {
     ~chatnpc("<p,happy>Howdy there partner!|Are ya here to buy a horse?|Or did ya want yer yo-yo back?");
     @multi3(
-        "A horse please!", aprilfoolshorsesalesman_option1,
+        "A horse please!", aprilfoolshorsesalesman_horse,
         "Can I have my yo-yo back?", aprilfoolshorsesalesman_yoyo,
         "No thanks.", aprilfoolshorsesalesman_option2
     );
 } else {
     ~chatnpc("<p,happy>Howdy there partner!|Are ya here to buy a horse?");
     @multi2(
-        "A horse please!", aprilfoolshorsesalesman_option1,
+        "Yes please!", aprilfoolshorsesalesman_option1,
         "No thanks.", aprilfoolshorsesalesman_option2
     );
 }
 
 [label,aprilfoolshorsesalesman_option1]
-~chatplayer("<p,happy>A horse please!");
+~chatplayer("<p,happy>Yes please!");
 ~openshop_activenpc;
 
 [label,aprilfoolshorsesalesman_option2]
 ~chatplayer("<p,happy>No thanks.");
+
+[label,aprilfoolshorsesalesman_horse]
+~chatplayer("<p,happy>A horse please!");
+~openshop_activenpc;
 
 [label,aprilfoolshorsesalesman_yoyo]
 ~chatplayer("<p,quiz>Can I have my yo-yo back?");
