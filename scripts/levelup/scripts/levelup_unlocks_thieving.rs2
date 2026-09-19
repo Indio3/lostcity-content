@@ -1,7 +1,7 @@
 [label,levelup_thieving]
 //Thieving level up unlock messages
 switch_int(stat_base(thieving)) {
-    case 5 : ~mesbox("You can now steal from @dbl@Cake Stalls@bla@, @dbl@Tea Stalls@bla@, @dbl@Crafting Stalls@bla@ and @dbl@Monkey Food Stalls@dbl@!");
+    case 5 : ~mesbox("You can now steal from @dbl@Cake Stalls@bla@, @dbl@Tea Stalls@bla@, @dbl@Crafting Stalls@bla@ and @dbl@Monkey Food Stalls@bla@!");
     case 10 : ~mesbox("You can now pickpocket from @dbl@Farmers@bla@!");
     case 13 : ~mesbox("You can now steal from certain @dbl@chests@bla@ in Ardougne and the Wilderness!");
     // case 15 : ~mesbox("You can now pickpocket from @dbl@HAM followers@bla@!");
