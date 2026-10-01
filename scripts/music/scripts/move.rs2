@@ -94,7 +94,6 @@ settimer(upass_trap, 1);
 [mapzone,0_39_54] @music_playbyregion(coord);
 [mapzone,0_39_55] @music_playbyregion(coord);
 [mapzone,0_39_56] @music_playbyregion(coord);
-[mapzone,0_39_60] @music_playbyregion(coord);
 [mapzone,0_39_72] @music_playbyregion(coord);
 [mapzone,0_39_75] @music_playbyregion(coord);
 [mapzone,0_39_147] @music_playbyregion(coord);

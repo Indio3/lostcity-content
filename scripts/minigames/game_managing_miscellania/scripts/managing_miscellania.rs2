@@ -203,7 +203,7 @@ if(%misc_last_update = $misc_last_update) return;
 %misc_coffers = $CofferTotal;
 %misc_approval = $Approval;
 // set last update to time of collection: https://x.com/JagexAsh/status/1017386808563335170
-%misc_last_update = map_clock;
+%misc_last_update = date_minutes;
 %misc_restotal = $ResourcePts;
 
 
