@@ -41,6 +41,11 @@ if(%viking = ^viking_not_started) {
     p_delay(6);
     ~initalltabs;
     if_close;
+    if(%misc_visited = ^false) {
+        %misc_visited = ^true;
+        %misc_last_update = map_clock;
+        %misc_approval = ^MISC_APPROVAL_25_PERCENT;
+    }
     ~mesbox("The ship arrives at Miscellania.");
 } 
 

@@ -26,5 +26,6 @@ if_settab(null, 12);
 if_settab(null, 13);
 p_telejump(^from_miscellania_tele_coord);
 p_delay(6);
+~initalltabs;
 if_close;
 ~mesbox("The ship arrives at Rellekka.");

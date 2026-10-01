@@ -1,4 +1,5 @@
 [opnpc1,misc_lumberjack]
+~manage_misc_daily_update;
 if (%misc_quest = ^misc_complete) {
     ~chatnpcnoturn("<~man_misc_mesanim>Good day, Your Royal Highness.");
 } else {

@@ -1,6 +1,7 @@
 // Note: Gunnhild is at 0,30,12 instead of 0,29,10 because of the dummy weed position that she is weeding at.
 
 [opnpc1,misc_gardener]
+~manage_misc_daily_update;
 if (%misc_quest = ^misc_complete) {
     ~chatnpcnoturn("<~man_misc_mesanim>Good day, Your Royal Highness.");
 } else {

@@ -5,6 +5,7 @@ if(npc_getmode ! playerfaceclose & npc_getmode ! playerface) npc_facesquare(1_39
 // IMPORTANT/IMPORTANT/IMPORTANT : manage_misc_resource_generation CALCS RESOURCES 
 
 [opnpc1,misc_advisor_ghrim]
+~manage_misc_daily_update;
 switch_int (%misc_quest) {
     case 0 :
         @advisor_ghrim_quest_stage_0;
