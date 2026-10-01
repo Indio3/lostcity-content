@@ -163,11 +163,6 @@ if (calc($currenttime - $misc_last_update) > calc(^MISCELLANIA_INTERVAL * 30)) {
     $misc_last_update = calc($currenttime - ^MISCELLANIA_INTERVAL * 30);
 }
 
-// unchanged, dont do anything
-if(%misc_last_update = $misc_last_update) {
-    return;
-}
-
 // Then for every 1440 minutes in currenttime - %misc_last_update
 while (calc($currenttime - $misc_last_update) >= ^MISCELLANIA_INTERVAL) {
     // Money in coffer?
@@ -200,6 +195,9 @@ while (calc($currenttime - $misc_last_update) >= ^MISCELLANIA_INTERVAL) {
     // Repeat until out of 1440 minute chunks - each iteration adding 1440 to %misc_last_update
     $misc_last_update = calc($misc_last_update + ^MISCELLANIA_INTERVAL);
 }
+
+// if there was no change dont set vars
+if(%misc_last_update = $misc_last_update) return;
 
 // Save varps and varbits
 %misc_coffers = $CofferTotal;
