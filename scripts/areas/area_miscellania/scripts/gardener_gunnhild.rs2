@@ -7,16 +7,6 @@ if (%misc_quest = ^misc_complete) {
 } else {
     ~chatnpcnoturn("<~man_misc_mesanim>Hello.");
 }
-if (%misc_quest >= ^misc_king_signed_treaty) {
-    @multi2(
-        "Gardener Gunnhild.", gunnhild_main_talk,
-        "Your approval rating.", misc_quest_approval_rating
-    );
-} else {
-    @gunnhild_main_talk;
-}
-
-[label,gunnhild_main_talk]
 ~chatplayer("<p,happy>Good day. What are you doing?");
 ~chatnpcnoturn("<~man_misc_mesanim>I'm weeding this herb garden. It's hard work! I also sell a few gardening supplies.");
 @multi2(

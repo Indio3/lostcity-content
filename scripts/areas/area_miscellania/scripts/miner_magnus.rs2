@@ -5,16 +5,6 @@ if (%misc_quest = ^misc_complete) {
 } else {
     ~chatnpcnoturn("<~man_misc_mesanim>Hello.");
 }
-if (%misc_quest >= ^misc_king_signed_treaty) {
-    @multi2(
-        "Miner Magnus.", magnus_main_talk,
-        "Your approval rating.", misc_quest_approval_rating
-    );
-} else {
-    @magnus_main_talk;
-}
-
-[label,magnus_main_talk]
 ~chatplayer("<p,happy>Good day. What are you doing?");
 ~chatnpcnoturn("<~man_misc_mesanim>I'm mining coal. It's pretty tough going.");
 ~chatplayer("<p,happy>Good luck with that.");
