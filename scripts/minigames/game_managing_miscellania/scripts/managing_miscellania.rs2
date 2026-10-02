@@ -147,15 +147,11 @@ inv_add(inv, coins, $withdraw_amt);
 if(%misc_quest < ^misc_complete) { // do not tick before the quest is complete
     return;
 }
-// We store a time in minutes when it last updated, %misc_last_update, first set when first visiting Miscellania
-// Fetch varps and varbits
+
 def_int $currenttime = date_minutes;
-def_int $misc_last_update = %misc_last_update; // This is a guess. We will use varp_360 as %misc_last_update.
-def_int $CofferTotal = %misc_coffers;
-def_int $Approval = %misc_approval;
-def_int $ResourcePts = %misc_restotal; // It literally has max 262143 https://chisel.weirdgloop.org/varbs/display?varbit=71
-def_int $ReductionAmt;
-def_int $WorkerEffectiveness;
+def_int $misc_last_update = %misc_last_update;
+def_int $reduction;
+def_int $worker_effectiveness;
 
 
 // We compare it to the current time, but if it has been more than 30 days, we pretend you last updated 30 days ago.
@@ -163,49 +159,31 @@ if (calc($currenttime - $misc_last_update) > calc(^MISCELLANIA_INTERVAL * 30)) {
     $misc_last_update = calc($currenttime - ^MISCELLANIA_INTERVAL * 30);
 }
 
-// Then for every 1440 minutes in currenttime - %misc_last_update
+// Then for every 1440 minutes in currenttime - $misc_last_update
 while (calc($currenttime - $misc_last_update) >= ^MISCELLANIA_INTERVAL) {
     // Money in coffer?
-    if ($CofferTotal > 0) {
-        // Yes
-
-        // Calc coffer ReductionAmt = 5 + CofferTotal / 10
-        $ReductionAmt = calc(5 + ($CofferTotal / 10));
+    if (%misc_coffers > 0) {
         // The amount withdrawn from the coffers is equivalent to 10% of the balance in the coffer up to a maximum of 50,000 coins, or 75,000 coins after Royal Trouble.
         // If the max amount of coins is able to be subtracted, a clean 10% will be taken out of the coffers. Otherwise, 10% will be taken out, and then an additional 5 coins.
-        if ($ReductionAmt > 50000) { $ReductionAmt = 50000; }
-        if (calc($CofferTotal - $ReductionAmt) < 0) { $ReductionAmt = $CofferTotal; } // If you have less than 5 coins... makes sure CoffersTotal doesn't go negative.
-        $CofferTotal = calc($CofferTotal - $ReductionAmt);
-        
-        // Calc Worker effectiveness = ReductionAmt x 100/8333
-        $WorkerEffectiveness = calc($ReductionAmt * 100 / 8333);
-        
-        // Update resource pts resourcePts += workerEffectiveness/100 * approvalRating * 127/100
-        $ResourcePts = calc($ResourcePts + (($WorkerEffectiveness / 100) * $Approval)); // Note approval is already in range 0-127
-        
-        // This is capped at 262,143
-        if ($ResourcePts > 262143) {
-            $ResourcePts = 262143;
-        }
+        $reduction = calc(5 + (%misc_coffers / 10));
+        if ($reduction > 50000) { $reduction = 50000; }
+        if ($reduction > %misc_coffers) { $reduction = %misc_coffers; }
+        %misc_coffers = calc(%misc_coffers - $reduction);
+        // Worker effectiveness = reduction * 100 / 8333, then scaled by approval (already 0-127), capped at 262,143
+        $worker_effectiveness = calc($reduction * 100 / 8333);
+        %misc_restotal = min(262143, calc(%misc_restotal + ($worker_effectiveness * %misc_approval / 100)));
     }
-    
-    // Update Approval rating, decreasing towards 32%, but more slowly with Royal Trouble completed.
-    // Wiki states: 2.5% loss percent with throne of miscellania, 1% with royal trouble.
-    $Approval = calc($Approval * 975 / 1000); // Royal trouble would be 990 / 1000
-    // Repeat until out of 1440 minute chunks - each iteration adding 1440 to %misc_last_update
+
+    // Update Approval rating, abs minimum of 25% (32 points)
+    // wiki seems to be wrong, based off the data I have for favour dropping pre royal trouble
+    // this lin formula seems to work fine, obtained as drops inc by 1 for each 14.5 favour, min of 3 at max favour
+    // 3 + 14.5(127 - cur_approval) represents fine
+    %misc_approval = max(32, sub(%misc_approval, calc(3 + ((2 * (127 - %misc_approval)) / 29))));
     $misc_last_update = calc($misc_last_update + ^MISCELLANIA_INTERVAL);
 }
 
-// if there was no change dont set vars
-if(%misc_last_update = $misc_last_update) return;
-
-// Save varps and varbits
-%misc_coffers = $CofferTotal;
-%misc_approval = $Approval;
 // set last update to time of collection: https://x.com/JagexAsh/status/1017386808563335170
-%misc_last_update = date_minutes;
-%misc_restotal = $ResourcePts;
-
+if(%misc_last_update ! $misc_last_update) %misc_last_update = date_minutes;
 
 // Most of these comments are direct from the OSRS Managing Miscellania calculation image.
 // Resource Generation
