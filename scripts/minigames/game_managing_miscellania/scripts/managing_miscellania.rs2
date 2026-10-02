@@ -177,7 +177,7 @@ while (calc($currenttime - $misc_last_update) >= ^MISCELLANIA_INTERVAL) {
     // Update Approval rating, abs minimum of 25% (32 points)
     // wiki seems to be wrong, based off the data I have for favour dropping pre royal trouble
     // this lin formula seems to work fine, obtained as drops inc by 1 for each 14.5 favour, min of 3 at max favour
-    // 3 + 14.5(127 - cur_approval) represents fine
+    // 3 + (2/29)(127 - cur_approval) represents fine
     %misc_approval = max(32, sub(%misc_approval, calc(3 + ((2 * (127 - %misc_approval)) / 29))));
     $misc_last_update = calc($misc_last_update + ^MISCELLANIA_INTERVAL);
 }
