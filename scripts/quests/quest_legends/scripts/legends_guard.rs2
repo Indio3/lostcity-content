@@ -89,26 +89,22 @@ if(%temp = 1 & loc_find(^legends_guild_gate_west_coord, legendsguildgatel) = tru
     return;
 }
 
-if (loc_find(^legends_guild_gate_west_coord, legendsguildgatel) = true) {
-    def_coord $inside_dest = ^legends_guild_gate_dest_in_coord;
-    if (coord ! loc_coord) {
-        // If you're not right next to the gate: sends you two steps away, then opens gate
-        // and triggers walk to left inside tile on same tick. Always starts on right outside
-        // tile and finishes on left inside tile.
-        def_coord $player_coord = coord;
-        // https://youtu.be/Lid8enDEF_U?si=_WsthPuYw2_-MSwZ&t=256, will always walk, use forcemove
-        ~forcemove(^legends_guild_gate_dest_out_coord);
-        p_delay(0);
-    }
-    else {
-        // If you are right next to it, you just go in straight away and don't cross sides.
-        $inside_dest = movecoord(coord, 0, 0, 1);
-    }
-    sound_synth(grate_open, 1, 0);
-    ~open_double_doors_left(3, double_door_open_and_close_right, null);
-    // 2 tile p_teleport (OSRS)
-    p_teleport($inside_dest);
+def_coord $inside_dest = ^legends_guild_gate_dest_in_coord;
+if (coord ! ^legends_guild_gate_west_coord) {
+    // If you're not right next to the gate: sends you two steps away, then opens gate
+    // and triggers walk to left inside tile on same tick. Always starts on right outside
+    // tile and finishes on left inside tile.
+    // https://youtu.be/Lid8enDEF_U?si=_WsthPuYw2_-MSwZ&t=256, will always walk, use forcemove
+    ~forcemove(^legends_guild_gate_dest_out_coord);
+    p_delay(0);
+} else {
+    // If you are right next to it, you just go in straight away and don't cross sides.
+    $inside_dest = movecoord(coord, 0, 0, 1);
 }
+sound_synth(grate_open, 1, 0);
+if (loc_find(^legends_guild_gate_west_coord, legendsguildgatel) = true) ~open_double_doors_left(3, double_door_open_and_close_right, null);
+// 2 tile p_teleport (OSRS)
+p_teleport($inside_dest);
 
 [label,legends_guard_enter]
 ~chatplayer("<p,neutral>Yes, I'd like to talk to Grand Vizier Erkle.");
